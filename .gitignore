@@ -1,0 +1,11 @@
+.claude/settings.local.json
+
+# ficheros temporales
+*.tmp
+*.swp
+*.bak
+*~
+.DS_Store
+
+# prompts de arranque, no forman parte del wiki
+prompt*.txt
