@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "playwright-cdp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@latest",
+        "--cdp-endpoint=${CDP_ENDPOINT:-http://192.168.1.5:9222}"
+      ]
+    }
+  }
+}

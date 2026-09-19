@@ -105,6 +105,14 @@ Al ejecutar lint, además de corregir:
 - Busca contradicciones entre notas. Escribe una nota en `areas/` señalando la contradicción y enlazándola a las notas implicadas.
 - No esperes a que te lo pidan.
 
+## Reutilización de skills
+
+- Antes de resolver algo, comprobar si ya existe una skill que lo haga y usarla.
+- Antes de crear una skill, buscar si existe algo ya hecho y mantenido que lo haga mejor. Preferir herramienta existente a script improvisado.
+- Cada skill lleva en su cabecera: fecha de creación, fecha de última revisión, y qué alternativa se descartó al crearla y por qué.
+- En la revisión periódica (durante el lint): comprobar si la skill sigue funcionando, si ha aparecido algo mejor, y sustituirla o retirarla, anotándolo en `areas/decisiones.md`.
+- Búsquedas y consultas en internet: usar `/investigar-web` (WebSearch → WebFetch) y, solo si eso falla de verdad, `/navegador-cdp` (Chrome real vía CDP). Ver `areas/entorno.md` para las herramientas ya montadas en esta máquina.
+
 ## Qué no hacer
 
 - No borrar ni modificar nada de `fuentes/`.
