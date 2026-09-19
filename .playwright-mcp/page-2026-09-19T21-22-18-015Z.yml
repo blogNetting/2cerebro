@@ -1,0 +1,1619 @@
+- generic [ref=f27e3]:
+  - link "Ir al contenido principal" [ref=f27e5] [cursor=pointer]:
+    - /url: "#main"
+  - generic [ref=f27e7]:
+    - banner [ref=f27e22]:
+      - generic [ref=f27e23]:
+        - navigation [ref=f27e24]:
+          - link "Booking.com" [ref=f27e28] [cursor=pointer]:
+            - /url: https://www.booking.com/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+          - generic [ref=f27e31]:
+            - button "Precios en Euro EUR" [ref=f27e33] [cursor=pointer]:
+              - generic [ref=f27e34]: EUR
+            - 'button "Idioma: Español" [ref=f27e36] [cursor=pointer]'
+            - link "Atención al cliente" [ref=f27e41] [cursor=pointer]:
+              - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&source=header&src=profile_contact_cs
+            - link "Registra tu alojamiento" [ref=f27e46] [cursor=pointer]:
+              - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=topbar
+            - 'button "Menú de tu cuenta: Enrique Andrade Gonzalez Nivel 2 de Genius" [ref=f27e50] [cursor=pointer]':
+              - 'generic "Menú de tu cuenta: Enrique Andrade Gonzalez Nivel 2 de Genius" [ref=f27e52]':
+                - 'img "Menú de tu cuenta: Enrique Andrade Gonzalez Nivel 2 de Genius" [ref=f27e55]'
+                - generic [ref=f27e56]:
+                  - generic [ref=f27e57]: Enrique Andrade Gonzalez
+                  - generic [ref=f27e58]: Nivel 2 de Genius
+        - navigation "¿Qué estás buscando?" [ref=f27e61]:
+          - menubar [ref=f27e64]:
+            - menuitem "Alojamiento" [ref=f27e65] [cursor=pointer]
+            - menuitem "Vuelos" [ref=f27e71] [cursor=pointer]
+            - menuitem "Vuelo + Hotel" [ref=f27e77] [cursor=pointer]
+            - menuitem "Alquiler de coches" [ref=f27e83] [cursor=pointer]
+            - menuitem "Atracciones" [ref=f27e89] [cursor=pointer]
+            - menuitem "Taxis aeropuerto" [ref=f27e95] [cursor=pointer]
+    - main [ref=f27e101]:
+      - generic [ref=f27e110]:
+        - generic [ref=f27e117]:
+          - heading "¿Adónde irás, Enrique?" [level=1] [ref=f27e119]
+          - paragraph [ref=f27e121]: ¡Encuentra ventajas exclusivas Genius en cualquier rincón del mundo!
+        - region "Buscar alojamientos" [ref=f27e126]:
+          - generic [ref=f27e127]:
+            - generic [ref=f27e131]:
+              - generic [ref=f27e136]:
+                - generic [ref=f27e137]: Indica el destino
+                - combobox "Indica el destino" [ref=f27e141]: Londres
+              - button [ref=f27e143] [cursor=pointer]:
+                - img "Borrar" [ref=f27e144]
+            - button "Seleccionar fechas vie, 4 dic — mié, 9 dic" [ref=f27e149] [cursor=pointer]:
+              - generic [ref=f27e154]:
+                - generic [ref=f27e155]: Seleccionar fechas
+                - generic [ref=f27e156]: vie, 4 dic — mié, 9 dic
+            - generic [ref=f27e162] [cursor=pointer]:
+              - generic [ref=f27e163]: Selecciona la ocupación
+              - 'button "Número de personas y de habitaciones. Selección actual: 2 adultos · 0 niños · 1 habitación" [ref=f27e165]':
+                - generic [ref=f27e166]: 2 adultos · 0 niños · 1 habitación
+            - button "Buscar" [ref=f27e172] [cursor=pointer]
+          - group [ref=f27e174]:
+            - generic [ref=f27e175]:
+              - checkbox "Busco una casa o un apartamento entero" [ref=f27e176]
+              - generic [ref=f27e177] [cursor=pointer]: Busco una casa o un apartamento entero
+            - generic [ref=f27e184]:
+              - checkbox "Viajo por trabajo" [ref=f27e185]
+              - generic [ref=f27e186] [cursor=pointer]: Viajo por trabajo
+            - generic [ref=f27e193]:
+              - checkbox "Añadir vuelos a mi búsqueda" [ref=f27e194]
+              - generic [ref=f27e195] [cursor=pointer]: Añadir vuelos a mi búsqueda
+      - generic [ref=f27e206]:
+        - generic [ref=f27e214]:
+          - generic [ref=f27e216]:
+            - heading "Continúa tu búsqueda" [level=2] [ref=f27e221]
+            - generic "Continúa tu búsqueda" [ref=f27e222]:
+              - region [ref=f27e223]:
+                - group [ref=f27e224]:
+                  - link "Londres vie, 4 dic-mié, 9 dic 2 personas" [ref=f27e226] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&order=popularity&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e235]:
+                      - heading "Londres" [level=3] [ref=f27e236]
+                      - generic [ref=f27e237]: vie, 4 dic-mié, 9 dic
+                      - generic [ref=f27e242]: 2 personas
+                - group [ref=f27e247]:
+                  - link "Sevilla jue, 8 oct-jue, 15 oct 1 persona" [ref=f27e249] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-10-08&checkout=2026-10-15&dest_id=-402849&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e258]:
+                      - heading "Sevilla" [level=3] [ref=f27e259]
+                      - generic [ref=f27e260]: jue, 8 oct-jue, 15 oct
+                      - generic [ref=f27e265]: 1 persona
+                - group [ref=f27e270]:
+                  - link "Centro de Londres vie, 4 dic-mié, 9 dic 2 personas" [ref=f27e272] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=2280&dest_type=district&order=popularity&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e281]:
+                      - heading "Centro de Londres" [level=3] [ref=f27e282]
+                      - generic [ref=f27e283]: vie, 4 dic-mié, 9 dic
+                      - generic [ref=f27e288]: 2 personas
+                - group [ref=f27e293]:
+                  - link "Sevilla mar, 1 dic-jue, 10 dic 1 persona" [ref=f27e295] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-01&checkout=2026-12-10&dest_id=-402849&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e304]:
+                      - heading "Sevilla" [level=3] [ref=f27e305]
+                      - generic [ref=f27e306]: mar, 1 dic-jue, 10 dic
+                      - generic [ref=f27e311]: 1 persona
+                - group [ref=f27e316]:
+                  - link "Málaga mié, 2 dic-mié, 9 dic 1 persona" [ref=f27e318] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-02&checkout=2026-12-09&dest_id=-390787&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e327]:
+                      - heading "Málaga" [level=3] [ref=f27e328]
+                      - generic [ref=f27e329]: mié, 2 dic-mié, 9 dic
+                      - generic [ref=f27e334]: 1 persona
+                - group [ref=f27e339]:
+                  - link "Córdoba mié, 9 dic-sáb, 12 dic 1 persona" [ref=f27e341] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-09&checkout=2026-12-12&dest_id=-378765&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e350]:
+                      - heading "Córdoba" [level=3] [ref=f27e351]
+                      - generic [ref=f27e352]: mié, 9 dic-sáb, 12 dic
+                      - generic [ref=f27e357]: 1 persona
+                - group [ref=f27e362]:
+                  - link "Málaga vie, 4 dic-sáb, 5 dic 1 persona" [ref=f27e364] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-05&dest_id=-390787&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e373]:
+                      - heading "Málaga" [level=3] [ref=f27e374]
+                      - generic [ref=f27e375]: vie, 4 dic-sáb, 5 dic
+                      - generic [ref=f27e380]: 1 persona
+                - group [ref=f27e385]:
+                  - link "Málaga AGP Londres Todos los aeropuertos vie, 4 dic 2 pasajeros" [ref=f27e387] [cursor=pointer]:
+                    - /url: https://flights.booking.com/flights/AGP.AIRPORT-LON.CITY/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&adults=2&type=ONEWAY&depart=2026-12-04&from=AGP.AIRPORT&to=LON.CITY&cabinClass=ECONOMY&sort=BEST&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a&locale=es&showLoader=1
+                    - generic [ref=f27e396]:
+                      - generic [ref=f27e397]:
+                        - generic [ref=f27e399]:
+                          - generic [ref=f27e400]: Málaga
+                          - generic [ref=f27e401]: AGP
+                        - generic [ref=f27e406]:
+                          - generic [ref=f27e407]: Londres
+                          - generic [ref=f27e408]: Todos los aeropuertos
+                      - generic [ref=f27e409]: vie, 4 dic
+                      - generic [ref=f27e414]: 2 pasajeros
+                - group [ref=f27e419]:
+                  - link "Centro de Londres vie, 4 dic-mar, 8 dic 2 personas" [ref=f27e421] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-08&dest_id=2280&dest_type=district&order=popularity&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e430]:
+                      - heading "Centro de Londres" [level=3] [ref=f27e431]
+                      - generic [ref=f27e432]: vie, 4 dic-mar, 8 dic
+                      - generic [ref=f27e437]: 2 personas
+                - group [ref=f27e442]:
+                  - link "Londres vie, 4 dic-mar, 8 dic 1 persona" [ref=f27e444] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-08&dest_id=-2601889&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e453]:
+                      - heading "Londres" [level=3] [ref=f27e454]
+                      - generic [ref=f27e455]: vie, 4 dic-mar, 8 dic
+                      - generic [ref=f27e460]: 1 persona
+                - group [ref=f27e465]:
+                  - link "Madrid vie, 25 sep-vie, 2 oct 1 persona" [ref=f27e467] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-09-25&checkout=2026-10-02&dest_id=-390625&dest_type=city&order=popularity&group_adults=1&req_adults=1&no_rooms=1&group_children=0&req_children=0&adplat=www-homescreen-recent_searches_carousel-stays-n_a-n_a
+                    - generic [ref=f27e476]:
+                      - heading "Madrid" [level=3] [ref=f27e477]
+                      - generic [ref=f27e478]: vie, 25 sep-vie, 2 oct
+                      - generic [ref=f27e483]: 1 persona
+              - button "Siguiente" [ref=f27e488] [cursor=pointer]
+          - generic [ref=f27e491]:
+            - heading "¿Todavía te interesa?" [level=2] [ref=f27e496]
+            - generic [ref=f27e497]:
+              - region "¿Todavía te interesa?" [ref=f27e498]:
+                - group [ref=f27e499]:
+                  - link "Guardar Central Studios & Ensuite Rooms! - Camberwell en una lista de viaje Apartamento Central Studios & Ensuite Rooms! - Camberwell Londres, Reino Unido 6,3 Agradable" [ref=f27e500] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/newly-renovated-studio-37-camberwell.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-12-04&checkout=2026-12-09&adplat=www-homescreen-recently_viewed_carousel-stays-n_a-n_a
+                    - generic [ref=f27e501]:
+                      - button "Guardar Central Studios & Ensuite Rooms! - Camberwell en una lista de viaje" [ref=f27e509]
+                      - generic [ref=f27e516]:
+                        - generic [ref=f27e517]: Apartamento
+                        - generic [ref=f27e519]:
+                          - heading "Central Studios & Ensuite Rooms! - Camberwell" [level=3] [ref=f27e520]
+                          - generic [ref=f27e521]: Londres, Reino Unido
+                        - generic [ref=f27e524]:
+                          - generic [ref=f27e525]: 6,3
+                          - generic [aria-hidden] [ref=f27e526]: 6,3
+                          - generic [ref=f27e527]: Agradable
+                          - generic [aria-hidden] [ref=f27e528]:
+                            - generic [ref=f27e529]: Agradable
+                            - generic [ref=f27e530]: 1.415 comentarios
+                - group [ref=f27e531]:
+                  - link "Guardar Maddox House en una lista de viaje Apartamento Maddox House Londres, Reino Unido 8,9 Fabuloso" [ref=f27e532] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/maddox-house-london.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-12-04&checkout=2026-12-09&adplat=www-homescreen-recently_viewed_carousel-stays-n_a-n_a
+                    - generic [ref=f27e533]:
+                      - button "Guardar Maddox House en una lista de viaje" [ref=f27e541]
+                      - generic [ref=f27e548]:
+                        - generic [ref=f27e549]: Apartamento
+                        - generic [ref=f27e551]:
+                          - heading "Maddox House" [level=3] [ref=f27e552]
+                          - generic [ref=f27e553]: Londres, Reino Unido
+                        - generic [ref=f27e556]:
+                          - generic [ref=f27e557]: 8,9
+                          - generic [aria-hidden] [ref=f27e558]: 8,9
+                          - generic [ref=f27e559]: Fabuloso
+                          - generic [aria-hidden] [ref=f27e560]:
+                            - generic [ref=f27e561]: Fabuloso
+                            - generic [ref=f27e562]: 57 comentarios
+                - group [ref=f27e563]:
+                  - link "Guardar In Style Studio Apartment Close to Everything en una lista de viaje Apartamento In Style Studio Apartment Close to Everything Londres, Reino Unido 6,9 Agradable" [ref=f27e564] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/in-style-studio-apartment-close-to-everything.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-12-04&checkout=2026-12-09&adplat=www-homescreen-recently_viewed_carousel-stays-n_a-n_a
+                    - generic [ref=f27e565]:
+                      - button "Guardar In Style Studio Apartment Close to Everything en una lista de viaje" [ref=f27e573]
+                      - generic [ref=f27e580]:
+                        - generic [ref=f27e581]: Apartamento
+                        - generic [ref=f27e583]:
+                          - heading "In Style Studio Apartment Close to Everything" [level=3] [ref=f27e584]
+                          - generic [ref=f27e585]: Londres, Reino Unido
+                        - generic [ref=f27e588]:
+                          - generic [ref=f27e589]: 6,9
+                          - generic [aria-hidden] [ref=f27e590]: 6,9
+                          - generic [ref=f27e591]: Agradable
+                          - generic [aria-hidden] [ref=f27e592]:
+                            - generic [ref=f27e593]: Agradable
+                            - generic [ref=f27e594]: 12 comentarios
+                - group [ref=f27e595]:
+                  - link "Guardar An Economic Studio in the heart of Chiswick - London en una lista de viaje Apartamento An Economic Studio in the heart of Chiswick - London Londres, Reino Unido 8,1 Muy bien" [ref=f27e596] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/a-economic-studio-in-the-heart-of-chiswick-london.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-12-04&checkout=2026-12-09&adplat=www-homescreen-recently_viewed_carousel-stays-n_a-n_a
+                    - generic [ref=f27e597]:
+                      - button "Guardar An Economic Studio in the heart of Chiswick - London en una lista de viaje" [ref=f27e605]
+                      - generic [ref=f27e612]:
+                        - generic [ref=f27e613]: Apartamento
+                        - generic [ref=f27e615]:
+                          - heading "An Economic Studio in the heart of Chiswick - London" [level=3] [ref=f27e616]
+                          - generic [ref=f27e617]: Londres, Reino Unido
+                        - generic [ref=f27e620]:
+                          - generic [ref=f27e621]: 8,1
+                          - generic [aria-hidden] [ref=f27e622]: 8,1
+                          - generic [ref=f27e623]: Muy bien
+                          - generic [aria-hidden] [ref=f27e624]:
+                            - generic [ref=f27e625]: Muy bien
+                            - generic [ref=f27e626]: 14 comentarios
+                - group [ref=f27e627]:
+                  - link "Guardar Mayfair Flat en una lista de viaje Apartamento Mayfair Flat Londres, Reino Unido 4,6 Decepcionante" [ref=f27e628] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/mayfair-flat.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&checkin=2026-12-04&checkout=2026-12-09&adplat=www-homescreen-recently_viewed_carousel-stays-n_a-n_a
+                    - generic [ref=f27e629]:
+                      - button "Guardar Mayfair Flat en una lista de viaje" [ref=f27e637]
+                      - generic [ref=f27e644]:
+                        - generic [ref=f27e645]: Apartamento
+                        - generic [ref=f27e647]:
+                          - heading "Mayfair Flat" [level=3] [ref=f27e648]
+                          - generic [ref=f27e649]: Londres, Reino Unido
+                        - generic [ref=f27e652]:
+                          - generic [ref=f27e653]: 4,6
+                          - generic [aria-hidden] [ref=f27e654]: 4,6
+                          - generic [ref=f27e655]: Decepcionante
+                          - generic [aria-hidden] [ref=f27e656]:
+                            - generic [ref=f27e657]: Decepcionante
+                            - generic [ref=f27e658]: 335 comentarios
+              - 'button "Siguiente: ¿Todavía te interesa?" [ref=f27e659] [cursor=pointer]'
+        - region [ref=f27e667]:
+          - generic [ref=f27e668]:
+            - img "Apartamentos San Marcial" [ref=f27e670]
+            - generic [ref=f27e672]:
+              - heading "¿Qué tal fue en Apartamentos San Marcial?" [level=3] [ref=f27e674]
+              - paragraph [ref=f27e675]: No olvides dejar un comentario. Tienes 23 días para hacerlo.
+              - link "Valora tu estancia" [ref=f27e678] [cursor=pointer]:
+                - /url: https://secure.booking.com/review/5e3f3172659546b3ae6f26050ea2af57.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&utm_campaign=pending_reviews_fragment&utm_source=index
+        - generic [ref=f27e687]:
+          - generic [ref=f27e688]:
+            - heading "Ofertas" [level=2] [ref=f27e689]
+            - generic [ref=f27e690]: Promociones, descuentos y ofertas especiales para ti
+          - generic [ref=f27e695]:
+            - generic [ref=f27e697]:
+              - generic [ref=f27e698]: Oferta de finales de año
+              - heading "Ahorra un 15% para finales de año" [level=3] [ref=f27e699]
+              - generic [ref=f27e700]: Escápate por menos con las Ofertas de finales de año. Reserva hasta el 07/01/27 para estancias entre el 01/10/26 y el 07/01/27.
+              - link "Buscar ofertas - Buscar estancias con, al menos, un 15% de ahorro" [ref=f27e703] [cursor=pointer]:
+                - /url: https://www.booking.com/dealspage.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&campaign_id=late_escape
+                - generic [ref=f27e704]: Buscar ofertas
+            - img "Resort de lujo en un acantilado que incluye piscina infinita con vistas al océano." [ref=f27e708]
+        - generic [ref=f27e717]:
+          - generic [ref=f27e723]:
+            - heading "Busca por tipo de alojamiento en Londres" [level=2] [ref=f27e728]
+            - generic [ref=f27e729]:
+              - region "Busca por tipo de alojamiento en Londres" [ref=f27e730]:
+                - group [ref=f27e731]:
+                  - link "Hoteles 4 dic-9 dic, 2 adultos 884 disponibles" [ref=f27e732] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D204&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e733]:
+                      - generic [ref=f27e736]:
+                        - heading "Hoteles" [level=3] [ref=f27e737]
+                        - generic [ref=f27e738]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e739]: 884 disponibles
+                - group [ref=f27e740]:
+                  - link "Apartamentos 4 dic-9 dic, 2 adultos 4297 disponibles" [ref=f27e741] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D201&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e742]:
+                      - generic [ref=f27e745]:
+                        - heading "Apartamentos" [level=3] [ref=f27e746]
+                        - generic [ref=f27e747]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e748]: 4297 disponibles
+                - group [ref=f27e749]:
+                  - link "Villas 4 dic-9 dic, 2 adultos 18 disponibles" [ref=f27e750] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D213&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e751]:
+                      - generic [ref=f27e754]:
+                        - heading "Villas" [level=3] [ref=f27e755]
+                        - generic [ref=f27e756]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e757]: 18 disponibles
+                - group [ref=f27e758]:
+                  - link "Chalets de montaña No disponible en tus fechas" [ref=f27e759] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-09-20&checkout=2026-09-21&dest_id=-2601889&dest_type=city&nflt=ht_id%3D228&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e763]:
+                      - heading "Chalets de montaña" [level=3] [ref=f27e764]
+                      - generic [ref=f27e765]: No disponible en tus fechas
+                - group [ref=f27e766]:
+                  - link "Casas y chalets 4 dic-9 dic, 2 adultos 306 disponibles" [ref=f27e767] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D220&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e768]:
+                      - generic [ref=f27e771]:
+                        - heading "Casas y chalets" [level=3] [ref=f27e772]
+                        - generic [ref=f27e773]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e774]: 306 disponibles
+                - group [ref=f27e775]:
+                  - link "Hostales y pensiones 4 dic-9 dic, 2 adultos 242 disponibles" [ref=f27e776] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D216&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e777]:
+                      - generic [ref=f27e780]:
+                        - heading "Hostales y pensiones" [level=3] [ref=f27e781]
+                        - generic [ref=f27e782]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e783]: 242 disponibles
+                - group [ref=f27e784]:
+                  - link "Albergues 4 dic-9 dic, 2 adultos 55 disponibles" [ref=f27e785] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D203&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e786]:
+                      - generic [ref=f27e789]:
+                        - heading "Albergues" [level=3] [ref=f27e790]
+                        - generic [ref=f27e791]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e792]: 55 disponibles
+                - group [ref=f27e793]:
+                  - link "Bed and Breakfasts 4 dic-9 dic, 2 adultos 31 disponibles" [ref=f27e794] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D208&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e795]:
+                      - generic [ref=f27e798]:
+                        - heading "Bed and Breakfasts" [level=3] [ref=f27e799]
+                        - generic [ref=f27e800]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e801]: 31 disponibles
+                - group [ref=f27e802]:
+                  - link "Campings resort No disponible en tus fechas" [ref=f27e803] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-09-20&checkout=2026-09-21&dest_id=-2601889&dest_type=city&nflt=ht_id%3D212&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e807]:
+                      - heading "Campings resort" [level=3] [ref=f27e808]
+                      - generic [ref=f27e809]: No disponible en tus fechas
+                - group [ref=f27e810]:
+                  - link "Habitaciones en casas particulares 4 dic-9 dic, 2 adultos 241 disponibles" [ref=f27e811] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D222&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e812]:
+                      - generic [ref=f27e815]:
+                        - heading "Habitaciones en casas particulares" [level=3] [ref=f27e816]
+                        - generic [ref=f27e817]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e818]: 241 disponibles
+                - group [ref=f27e819]:
+                  - link "Barcos 4 dic-9 dic, 2 adultos 6 disponibles" [ref=f27e820] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&nflt=ht_id%3D215&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e821]:
+                      - generic [ref=f27e824]:
+                        - heading "Barcos" [level=3] [ref=f27e825]
+                        - generic [ref=f27e826]: 4 dic-9 dic, 2 adultos
+                      - generic [ref=f27e827]: 6 disponibles
+                - group [ref=f27e828]:
+                  - link "Tented camps No disponible en tus fechas" [ref=f27e829] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-09-20&checkout=2026-09-21&dest_id=-2601889&dest_type=city&nflt=ht_id%3D224&group_adults=0&req_adults=0&no_rooms=0&group_children=0&req_children=0
+                    - generic [ref=f27e833]:
+                      - heading "Tented camps" [level=3] [ref=f27e834]
+                      - generic [ref=f27e835]: No disponible en tus fechas
+              - 'button "Siguiente: Busca por tipo de alojamiento en Londres" [ref=f27e836] [cursor=pointer]'
+          - generic [ref=f27e840]:
+            - generic [ref=f27e842]:
+              - heading "Destinos de moda" [level=2] [ref=f27e843]
+              - generic [ref=f27e844]: Quienes han buscado en Reino Unido también han reservado aquí
+            - generic [ref=f27e845]:
+              - link "Londres, Reino Unido" [ref=f27e846] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=f27e849]:
+                  - text: Londres
+                  - img "Reino Unido" [ref=f27e851]
+              - link "París, Francia" [ref=f27e852] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-1456928&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=f27e855]:
+                  - text: París
+                  - img "Francia" [ref=f27e857]
+            - generic [ref=f27e858]:
+              - link "Ámsterdam, Países Bajos" [ref=f27e859] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2140479&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=f27e862]:
+                  - text: Ámsterdam
+                  - img "Países Bajos" [ref=f27e864]
+              - link "Roma, Italia" [ref=f27e865] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-126693&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=f27e868]:
+                  - text: Roma
+                  - img "Italia" [ref=f27e870]
+              - link "Madrid, España" [ref=f27e871] [cursor=pointer]:
+                - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-390625&dest_type=city&group_adults=2&req_adults=2&no_rooms=1&group_children=0&req_children=0
+                - generic [ref=f27e874]:
+                  - text: Madrid
+                  - img "España" [ref=f27e876]
+          - generic [ref=f27e882]:
+            - generic [ref=f27e886]:
+              - heading "Descubre Reino Unido" [level=2] [ref=f27e887]
+              - generic [ref=f27e888]: Estos destinos populares tienen mucho que ofrecer
+            - generic [ref=f27e889]:
+              - region "Descubre Reino Unido" [ref=f27e890]:
+                - group [ref=f27e891]:
+                  - link "Londres 25.804 alojamientos" [ref=f27e892] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e896]:
+                      - heading "Londres" [level=3] [ref=f27e897]
+                      - generic [ref=f27e898]: 25.804 alojamientos
+                - group [ref=f27e899]:
+                  - link "Edimburgo 2.907 alojamientos" [ref=f27e900] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2595386&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e904]:
+                      - heading "Edimburgo" [level=3] [ref=f27e905]
+                      - generic [ref=f27e906]: 2.907 alojamientos
+                - group [ref=f27e907]:
+                  - link "Mánchester 3.636 alojamientos" [ref=f27e908] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2602512&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e912]:
+                      - heading "Mánchester" [level=3] [ref=f27e913]
+                      - generic [ref=f27e914]: 3.636 alojamientos
+                - group [ref=f27e915]:
+                  - link "Oxford 943 alojamientos" [ref=f27e916] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2604911&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e920]:
+                      - heading "Oxford" [level=3] [ref=f27e921]
+                      - generic [ref=f27e922]: 943 alojamientos
+                - group [ref=f27e923]:
+                  - link "Brighton & Hove 1.590 alojamientos" [ref=f27e924] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2590884&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e928]:
+                      - heading "Brighton & Hove" [level=3] [ref=f27e929]
+                      - generic [ref=f27e930]: 1.590 alojamientos
+                - group [ref=f27e931]:
+                  - link "York 1.793 alojamientos" [ref=f27e932] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2612321&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e936]:
+                      - heading "York" [level=3] [ref=f27e937]
+                      - generic [ref=f27e938]: 1.793 alojamientos
+                - group [ref=f27e939]:
+                  - link "Bath 923 alojamientos" [ref=f27e940] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2589418&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e944]:
+                      - heading "Bath" [level=3] [ref=f27e945]
+                      - generic [ref=f27e946]: 923 alojamientos
+                - group [ref=f27e947]:
+                  - link "Birmingham 2.968 alojamientos" [ref=f27e948] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2589989&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e952]:
+                      - heading "Birmingham" [level=3] [ref=f27e953]
+                      - generic [ref=f27e954]: 2.968 alojamientos
+                - group [ref=f27e955]:
+                  - link "Bristol 1.597 alojamientos" [ref=f27e956] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2590919&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e960]:
+                      - heading "Bristol" [level=3] [ref=f27e961]
+                      - generic [ref=f27e962]: 1.597 alojamientos
+                - group [ref=f27e963]:
+                  - link "Cotswolds 2.718 alojamientos" [ref=f27e964] [cursor=pointer]:
+                    - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&checkin=2026-12-04&checkout=2026-12-09&dest_id=2802&dest_type=region&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                    - generic [ref=f27e968]:
+                      - heading "Cotswolds" [level=3] [ref=f27e969]
+                      - generic [ref=f27e970]: 2.718 alojamientos
+              - 'button "Siguiente: Descubre Reino Unido" [ref=f27e971] [cursor=pointer]'
+          - generic [ref=f27e977]:
+            - generic [ref=f27e981]:
+              - heading "Quédate en un alojamiento único" [level=2] [ref=f27e982]
+              - generic [ref=f27e983]: Castillos, villas, barcos, iglús... Tenemos de todo
+            - generic [ref=f27e984]:
+              - region "Quédate en un alojamiento único" [ref=f27e985]:
+                - group [ref=f27e986]:
+                  - link "Guardar Malmaison Hotel Leeds en una lista de viaje Hotel 4 estrellas de 5 logo azul de Genius Malmaison Hotel Leeds Leeds, Reino Unido 8,6 Fabuloso 3319 comentarios Desde Precio original € 850. Precio actual € 714." [ref=f27e987] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/malmaisonhotelleeds.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e988]:
+                      - button "Guardar Malmaison Hotel Leeds en una lista de viaje" [ref=f27e996]
+                      - generic [ref=f27e1002]:
+                        - generic [ref=f27e1003]:
+                          - generic [ref=f27e1004]:
+                            - generic [ref=f27e1005]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1007]
+                            - img "logo azul de Genius" [ref=f27e1036]
+                          - generic [ref=f27e1042]:
+                            - heading "Malmaison Hotel Leeds" [level=3] [ref=f27e1043]
+                            - generic [ref=f27e1044]: Leeds, Reino Unido
+                          - generic [ref=f27e1047]:
+                            - generic [ref=f27e1048]: 8,6
+                            - generic [aria-hidden] [ref=f27e1049]: 8,6
+                            - generic [ref=f27e1050]:
+                              - generic [ref=f27e1051]: Fabuloso
+                              - generic [ref=f27e1052]: 3319 comentarios
+                        - generic [ref=f27e1055]:
+                          - generic [ref=f27e1056]: Desde
+                          - generic [ref=f27e1057]:
+                            - generic [aria-hidden] [ref=f27e1058]: € 850
+                            - generic [aria-hidden] [ref=f27e1059]: € 714
+                          - generic [ref=f27e1060]: Precio original € 850. Precio actual € 714.
+                - group [ref=f27e1061]:
+                  - link "Guardar De Vere Tortworth Court en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius De Vere Tortworth Court Wotton-under-Edge, Reino Unido 8,4 Muy bien 5677 comentarios Desde Precio original € 771. Precio actual € 612." [ref=f27e1062] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/tortworthcourt-devere.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1063]:
+                      - button "Guardar De Vere Tortworth Court en una lista de viaje" [ref=f27e1071]
+                      - generic [ref=f27e1077]:
+                        - generic [ref=f27e1078]:
+                          - generic [ref=f27e1079]:
+                            - generic [ref=f27e1080]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1082]
+                            - button [ref=f27e1112]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1113]
+                            - img "logo azul de Genius" [ref=f27e1116]
+                          - generic [ref=f27e1122]:
+                            - heading "De Vere Tortworth Court" [level=3] [ref=f27e1123]
+                            - generic [ref=f27e1124]: Wotton-under-Edge, Reino Unido
+                          - generic [ref=f27e1127]:
+                            - generic [ref=f27e1128]: 8,4
+                            - generic [aria-hidden] [ref=f27e1129]: 8,4
+                            - generic [ref=f27e1130]:
+                              - generic [ref=f27e1131]: Muy bien
+                              - generic [ref=f27e1132]: 5677 comentarios
+                        - generic [ref=f27e1135]:
+                          - generic [ref=f27e1136]: Desde
+                          - generic [ref=f27e1137]:
+                            - generic [aria-hidden] [ref=f27e1138]: € 771
+                            - generic [aria-hidden] [ref=f27e1139]: € 612
+                          - generic [ref=f27e1140]: Precio original € 771. Precio actual € 612.
+                - group [ref=f27e1141]:
+                  - link "Guardar The Swan Hotel and Spa en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius The Swan Hotel and Spa Newby Bridge, Reino Unido 7,9 Bien 2918 comentarios Desde Precio original € 1.252. Precio actual € 993." [ref=f27e1142] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/the-swan-and-spa.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1143]:
+                      - button "Guardar The Swan Hotel and Spa en una lista de viaje" [ref=f27e1151]
+                      - generic [ref=f27e1157]:
+                        - generic [ref=f27e1158]:
+                          - generic [ref=f27e1159]:
+                            - generic [ref=f27e1160]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1162]
+                            - button [ref=f27e1192]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1193]
+                            - img "logo azul de Genius" [ref=f27e1196]
+                          - generic [ref=f27e1202]:
+                            - heading "The Swan Hotel and Spa" [level=3] [ref=f27e1203]
+                            - generic [ref=f27e1204]: Newby Bridge, Reino Unido
+                          - generic [ref=f27e1207]:
+                            - generic [ref=f27e1208]: 7,9
+                            - generic [aria-hidden] [ref=f27e1209]: 7,9
+                            - generic [ref=f27e1210]:
+                              - generic [ref=f27e1211]: Bien
+                              - generic [ref=f27e1212]: 2918 comentarios
+                        - generic [ref=f27e1215]:
+                          - generic [ref=f27e1216]: Desde
+                          - generic [ref=f27e1217]:
+                            - generic [aria-hidden] [ref=f27e1218]: € 1.252
+                            - generic [aria-hidden] [ref=f27e1219]: € 993
+                          - generic [ref=f27e1220]: Precio original € 1.252. Precio actual € 993.
+                - group [ref=f27e1221]:
+                  - link "Guardar Stirling Highland Hotel- Part of the Cairn Collection en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Stirling Highland Hotel- Part of the Cairn Collection Stirling, Reino Unido 7,6 Bien 4189 comentarios Desde Precio original € 479. Precio actual € 402." [ref=f27e1222] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/stirlinghighland.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1223]:
+                      - button "Guardar Stirling Highland Hotel- Part of the Cairn Collection en una lista de viaje" [ref=f27e1231]
+                      - generic [ref=f27e1237]:
+                        - generic [ref=f27e1238]:
+                          - generic [ref=f27e1239]:
+                            - generic [ref=f27e1240]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1242]
+                            - button [ref=f27e1272]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1273]
+                            - img "logo azul de Genius" [ref=f27e1276]
+                          - generic [ref=f27e1282]:
+                            - heading "Stirling Highland Hotel- Part of the Cairn Collection" [level=3] [ref=f27e1283]
+                            - generic [ref=f27e1284]: Stirling, Reino Unido
+                          - generic [ref=f27e1287]:
+                            - generic [ref=f27e1288]: 7,6
+                            - generic [aria-hidden] [ref=f27e1289]: 7,6
+                            - generic [ref=f27e1290]:
+                              - generic [ref=f27e1291]: Bien
+                              - generic [ref=f27e1292]: 4189 comentarios
+                        - generic [ref=f27e1295]:
+                          - generic [ref=f27e1296]: Desde
+                          - generic [ref=f27e1297]:
+                            - generic [aria-hidden] [ref=f27e1298]: € 479
+                            - generic [aria-hidden] [ref=f27e1299]: € 402
+                          - generic [ref=f27e1300]: Precio original € 479. Precio actual € 402.
+                - group [ref=f27e1301]:
+                  - link "Guardar Dunkeld House Hotel en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. Dunkeld House Hotel Dunkeld, Reino Unido 8,7 Fabuloso 2835 comentarios Desde Precio original € 930. Precio actual € 868." [ref=f27e1302] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/hilton-dunkeld-house.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1303]:
+                      - button "Guardar Dunkeld House Hotel en una lista de viaje" [ref=f27e1311]
+                      - generic [ref=f27e1317]:
+                        - generic [ref=f27e1318]:
+                          - generic [ref=f27e1319]:
+                            - generic [ref=f27e1320]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1322]
+                            - button [ref=f27e1352]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1353]
+                          - generic [ref=f27e1356]:
+                            - heading "Dunkeld House Hotel" [level=3] [ref=f27e1357]
+                            - generic [ref=f27e1358]: Dunkeld, Reino Unido
+                          - generic [ref=f27e1361]:
+                            - generic [ref=f27e1362]: 8,7
+                            - generic [aria-hidden] [ref=f27e1363]: 8,7
+                            - generic [ref=f27e1364]:
+                              - generic [ref=f27e1365]: Fabuloso
+                              - generic [ref=f27e1366]: 2835 comentarios
+                        - generic [ref=f27e1369]:
+                          - generic [ref=f27e1370]: Desde
+                          - generic [ref=f27e1371]:
+                            - generic [aria-hidden] [ref=f27e1372]: € 930
+                            - generic [aria-hidden] [ref=f27e1373]: € 868
+                          - generic [ref=f27e1374]: Precio original € 930. Precio actual € 868.
+                - group [ref=f27e1375]:
+                  - link "Guardar The Black Swan - The Inn Collection Group en una lista de viaje Hostal / Pensión 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. The Black Swan - The Inn Collection Group Helmsley, Reino Unido 8,2 Muy bien 2641 comentarios Desde Precio € 717" [ref=f27e1376] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/thebackswan.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1377]:
+                      - button "Guardar The Black Swan - The Inn Collection Group en una lista de viaje" [ref=f27e1385]
+                      - generic [ref=f27e1391]:
+                        - generic [ref=f27e1392]:
+                          - generic [ref=f27e1393]:
+                            - generic [ref=f27e1394]: Hostal / Pensión
+                            - img "4 estrellas de 5" [ref=f27e1396]
+                            - button [ref=f27e1426]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1427]
+                          - generic [ref=f27e1430]:
+                            - heading "The Black Swan - The Inn Collection Group" [level=3] [ref=f27e1431]
+                            - generic [ref=f27e1432]: Helmsley, Reino Unido
+                          - generic [ref=f27e1435]:
+                            - generic [ref=f27e1436]: 8,2
+                            - generic [aria-hidden] [ref=f27e1437]: 8,2
+                            - generic [ref=f27e1438]:
+                              - generic [ref=f27e1439]: Muy bien
+                              - generic [ref=f27e1440]: 2641 comentarios
+                        - generic [ref=f27e1443]:
+                          - generic [ref=f27e1444]: Desde
+                          - generic [aria-hidden] [ref=f27e1446]: € 717
+                          - generic [ref=f27e1447]: Precio € 717
+                - group [ref=f27e1448]:
+                  - link "Guardar Malmaison Newcastle en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Malmaison Newcastle Newcastle, Reino Unido 8,7 Fabuloso 4373 comentarios Desde Precio original € 917. Precio actual € 771." [ref=f27e1449] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/malmaison-newcastle.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1450]:
+                      - button "Guardar Malmaison Newcastle en una lista de viaje" [ref=f27e1458]
+                      - generic [ref=f27e1464]:
+                        - generic [ref=f27e1465]:
+                          - generic [ref=f27e1466]:
+                            - generic [ref=f27e1467]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1469]
+                            - button [ref=f27e1499]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1500]
+                            - img "logo azul de Genius" [ref=f27e1503]
+                          - generic [ref=f27e1509]:
+                            - heading "Malmaison Newcastle" [level=3] [ref=f27e1510]
+                            - generic [ref=f27e1511]: Newcastle, Reino Unido
+                          - generic [ref=f27e1514]:
+                            - generic [ref=f27e1515]: 8,7
+                            - generic [aria-hidden] [ref=f27e1516]: 8,7
+                            - generic [ref=f27e1517]:
+                              - generic [ref=f27e1518]: Fabuloso
+                              - generic [ref=f27e1519]: 4373 comentarios
+                        - generic [ref=f27e1522]:
+                          - generic [ref=f27e1523]: Desde
+                          - generic [ref=f27e1524]:
+                            - generic [aria-hidden] [ref=f27e1525]: € 917
+                            - generic [aria-hidden] [ref=f27e1526]: € 771
+                          - generic [ref=f27e1527]: Precio original € 917. Precio actual € 771.
+                - group [ref=f27e1528]:
+                  - link "Guardar Grange Hotel en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. Grange Hotel Grange-over-Sands, Reino Unido 8,6 Fabuloso 2681 comentarios Desde Precio original € 669. Precio actual € 549." [ref=f27e1529] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/grange-grange-over-sands.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1530]:
+                      - button "Guardar Grange Hotel en una lista de viaje" [ref=f27e1538]
+                      - generic [ref=f27e1544]:
+                        - generic [ref=f27e1545]:
+                          - generic [ref=f27e1546]:
+                            - generic [ref=f27e1547]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1549]
+                            - button [ref=f27e1579]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1580]
+                          - generic [ref=f27e1583]:
+                            - heading "Grange Hotel" [level=3] [ref=f27e1584]
+                            - generic [ref=f27e1585]: Grange-over-Sands, Reino Unido
+                          - generic [ref=f27e1588]:
+                            - generic [ref=f27e1589]: 8,6
+                            - generic [aria-hidden] [ref=f27e1590]: 8,6
+                            - generic [ref=f27e1591]:
+                              - generic [ref=f27e1592]: Fabuloso
+                              - generic [ref=f27e1593]: 2681 comentarios
+                        - generic [ref=f27e1596]:
+                          - generic [ref=f27e1597]: Desde
+                          - generic [ref=f27e1598]:
+                            - generic [aria-hidden] [ref=f27e1599]: € 669
+                            - generic [aria-hidden] [ref=f27e1600]: € 549
+                          - generic [ref=f27e1601]: Precio original € 669. Precio actual € 549.
+                - group [ref=f27e1602]:
+                  - link "Guardar Titanic Hotel Belfast en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. Titanic Hotel Belfast Belfast, Reino Unido 8,9 Fabuloso 3397 comentarios Desde Precio original € 1.045. Precio actual € 829." [ref=f27e1603] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/titanic-belfast.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1604]:
+                      - button "Guardar Titanic Hotel Belfast en una lista de viaje" [ref=f27e1612]
+                      - generic [ref=f27e1618]:
+                        - generic [ref=f27e1619]:
+                          - generic [ref=f27e1620]:
+                            - generic [ref=f27e1621]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1623]
+                            - button [ref=f27e1653]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1654]
+                          - generic [ref=f27e1657]:
+                            - heading "Titanic Hotel Belfast" [level=3] [ref=f27e1658]
+                            - generic [ref=f27e1659]: Belfast, Reino Unido
+                          - generic [ref=f27e1662]:
+                            - generic [ref=f27e1663]: 8,9
+                            - generic [aria-hidden] [ref=f27e1664]: 8,9
+                            - generic [ref=f27e1665]:
+                              - generic [ref=f27e1666]: Fabuloso
+                              - generic [ref=f27e1667]: 3397 comentarios
+                        - generic [ref=f27e1670]:
+                          - generic [ref=f27e1671]: Desde
+                          - generic [ref=f27e1672]:
+                            - generic [aria-hidden] [ref=f27e1673]: € 1.045
+                            - generic [aria-hidden] [ref=f27e1674]: € 829
+                          - generic [ref=f27e1675]: Precio original € 1.045. Precio actual € 829.
+                - group [ref=f27e1676]:
+                  - link "Guardar St Michaels Resort, Falmouth en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius St Michaels Resort, Falmouth Falmouth, Reino Unido 8,3 Muy bien 1742 comentarios Desde Precio original € 997. Precio actual € 897." [ref=f27e1677] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/stmichaels.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1678]:
+                      - button "Guardar St Michaels Resort, Falmouth en una lista de viaje" [ref=f27e1686]
+                      - generic [ref=f27e1692]:
+                        - generic [ref=f27e1693]:
+                          - generic [ref=f27e1694]:
+                            - generic [ref=f27e1695]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1697]
+                            - button [ref=f27e1727]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1728]
+                            - img "logo azul de Genius" [ref=f27e1731]
+                          - generic [ref=f27e1737]:
+                            - heading "St Michaels Resort, Falmouth" [level=3] [ref=f27e1738]
+                            - generic [ref=f27e1739]: Falmouth, Reino Unido
+                          - generic [ref=f27e1742]:
+                            - generic [ref=f27e1743]: 8,3
+                            - generic [aria-hidden] [ref=f27e1744]: 8,3
+                            - generic [ref=f27e1745]:
+                              - generic [ref=f27e1746]: Muy bien
+                              - generic [ref=f27e1747]: 1742 comentarios
+                        - generic [ref=f27e1750]:
+                          - generic [ref=f27e1751]: Desde
+                          - generic [ref=f27e1752]:
+                            - generic [aria-hidden] [ref=f27e1753]: € 997
+                            - generic [aria-hidden] [ref=f27e1754]: € 897
+                          - generic [ref=f27e1755]: Precio original € 997. Precio actual € 897.
+                - group [ref=f27e1756]:
+                  - link "Guardar Clayton Hotel Birmingham en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Clayton Hotel Birmingham Birmingham, Reino Unido 8,2 Muy bien 4857 comentarios Desde Precio original € 1.197. Precio actual € 948." [ref=f27e1757] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/clayton-hotel-birmingham.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1758]:
+                      - button "Guardar Clayton Hotel Birmingham en una lista de viaje" [ref=f27e1766]
+                      - generic [ref=f27e1772]:
+                        - generic [ref=f27e1773]:
+                          - generic [ref=f27e1774]:
+                            - generic [ref=f27e1775]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1777]
+                            - button [ref=f27e1807]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1808]
+                            - img "logo azul de Genius" [ref=f27e1811]
+                          - generic [ref=f27e1817]:
+                            - heading "Clayton Hotel Birmingham" [level=3] [ref=f27e1818]
+                            - generic [ref=f27e1819]: Birmingham, Reino Unido
+                          - generic [ref=f27e1822]:
+                            - generic [ref=f27e1823]: 8,2
+                            - generic [aria-hidden] [ref=f27e1824]: 8,2
+                            - generic [ref=f27e1825]:
+                              - generic [ref=f27e1826]: Muy bien
+                              - generic [ref=f27e1827]: 4857 comentarios
+                        - generic [ref=f27e1830]:
+                          - generic [ref=f27e1831]: Desde
+                          - generic [ref=f27e1832]:
+                            - generic [aria-hidden] [ref=f27e1833]: € 1.197
+                            - generic [aria-hidden] [ref=f27e1834]: € 948
+                          - generic [ref=f27e1835]: Precio original € 1.197. Precio actual € 948.
+                - group [ref=f27e1836]:
+                  - link "Guardar The Green Dragon Hotel en una lista de viaje Hotel Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius The Green Dragon Hotel Hereford, Reino Unido 7,3 Bien 1925 comentarios Desde Precio original € 883. Precio actual € 742." [ref=f27e1837] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/thegreendragon.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1838]:
+                      - button "Guardar The Green Dragon Hotel en una lista de viaje" [ref=f27e1846]
+                      - generic [ref=f27e1852]:
+                        - generic [ref=f27e1853]:
+                          - generic [ref=f27e1854]:
+                            - generic [ref=f27e1855]: Hotel
+                            - button [ref=f27e1857]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1858]
+                            - img "logo azul de Genius" [ref=f27e1861]
+                          - generic [ref=f27e1867]:
+                            - heading "The Green Dragon Hotel" [level=3] [ref=f27e1868]
+                            - generic [ref=f27e1869]: Hereford, Reino Unido
+                          - generic [ref=f27e1872]:
+                            - generic [ref=f27e1873]: 7,3
+                            - generic [aria-hidden] [ref=f27e1874]: 7,3
+                            - generic [ref=f27e1875]:
+                              - generic [ref=f27e1876]: Bien
+                              - generic [ref=f27e1877]: 1925 comentarios
+                        - generic [ref=f27e1880]:
+                          - generic [ref=f27e1881]: Desde
+                          - generic [ref=f27e1882]:
+                            - generic [aria-hidden] [ref=f27e1883]: € 883
+                            - generic [aria-hidden] [ref=f27e1884]: € 742
+                          - generic [ref=f27e1885]: Precio original € 883. Precio actual € 742.
+                - group [ref=f27e1886]:
+                  - link "Guardar Wotton House en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Wotton House Dorking, Reino Unido 8,1 Muy bien 2063 comentarios Desde Precio original € 912. Precio actual € 766." [ref=f27e1887] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/wottonhouse.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1888]:
+                      - button "Guardar Wotton House en una lista de viaje" [ref=f27e1896]
+                      - generic [ref=f27e1902]:
+                        - generic [ref=f27e1903]:
+                          - generic [ref=f27e1904]:
+                            - generic [ref=f27e1905]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e1907]
+                            - button [ref=f27e1937]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e1938]
+                            - img "logo azul de Genius" [ref=f27e1941]
+                          - generic [ref=f27e1947]:
+                            - heading "Wotton House" [level=3] [ref=f27e1948]
+                            - generic [ref=f27e1949]: Dorking, Reino Unido
+                          - generic [ref=f27e1952]:
+                            - generic [ref=f27e1953]: 8,1
+                            - generic [aria-hidden] [ref=f27e1954]: 8,1
+                            - generic [ref=f27e1955]:
+                              - generic [ref=f27e1956]: Muy bien
+                              - generic [ref=f27e1957]: 2063 comentarios
+                        - generic [ref=f27e1960]:
+                          - generic [ref=f27e1961]: Desde
+                          - generic [ref=f27e1962]:
+                            - generic [aria-hidden] [ref=f27e1963]: € 912
+                            - generic [aria-hidden] [ref=f27e1964]: € 766
+                          - generic [ref=f27e1965]: Precio original € 912. Precio actual € 766.
+                - group [ref=f27e1966]:
+                  - link "Guardar The Grand, York en una lista de viaje Hotel 5 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. The Grand, York York, Reino Unido 9,2 Fantástico 5874 comentarios Desde Precio original € 2.404. Precio actual € 2.243." [ref=f27e1967] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/cedar-court-grand.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e1968]:
+                      - button "Guardar The Grand, York en una lista de viaje" [ref=f27e1976]
+                      - generic [ref=f27e1982]:
+                        - generic [ref=f27e1983]:
+                          - generic [ref=f27e1984]:
+                            - generic [ref=f27e1985]: Hotel
+                            - img "5 estrellas de 5" [ref=f27e1987]
+                            - button [ref=f27e2024]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e2025]
+                          - generic [ref=f27e2028]:
+                            - heading "The Grand, York" [level=3] [ref=f27e2029]
+                            - generic [ref=f27e2030]: York, Reino Unido
+                          - generic [ref=f27e2033]:
+                            - generic [ref=f27e2034]: 9,2
+                            - generic [aria-hidden] [ref=f27e2035]: 9,2
+                            - generic [ref=f27e2036]:
+                              - generic [ref=f27e2037]: Fantástico
+                              - generic [ref=f27e2038]: 5874 comentarios
+                        - generic [ref=f27e2041]:
+                          - generic [ref=f27e2042]: Desde
+                          - generic [ref=f27e2043]:
+                            - generic [aria-hidden] [ref=f27e2044]: € 2.404
+                            - generic [aria-hidden] [ref=f27e2045]: € 2.243
+                          - generic [ref=f27e2046]: Precio original € 2.404. Precio actual € 2.243.
+                - group [ref=f27e2047]:
+                  - link "Guardar Titanic Hotel Liverpool en una lista de viaje Hotel 4 estrellas de 5 Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. Titanic Hotel Liverpool Liverpool, Reino Unido 9,2 Fantástico 6614 comentarios Desde Precio original € 1.229. Precio actual € 1.148." [ref=f27e2048] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/titanic-liverpool.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1
+                    - generic [ref=f27e2049]:
+                      - button "Guardar Titanic Hotel Liverpool en una lista de viaje" [ref=f27e2057]
+                      - generic [ref=f27e2063]:
+                        - generic [ref=f27e2064]:
+                          - generic [ref=f27e2065]:
+                            - generic [ref=f27e2066]: Hotel
+                            - img "4 estrellas de 5" [ref=f27e2068]
+                            - button [ref=f27e2098]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e2099]
+                          - generic [ref=f27e2102]:
+                            - heading "Titanic Hotel Liverpool" [level=3] [ref=f27e2103]
+                            - generic [ref=f27e2104]: Liverpool, Reino Unido
+                          - generic [ref=f27e2107]:
+                            - generic [ref=f27e2108]: 9,2
+                            - generic [aria-hidden] [ref=f27e2109]: 9,2
+                            - generic [ref=f27e2110]:
+                              - generic [ref=f27e2111]: Fantástico
+                              - generic [ref=f27e2112]: 6614 comentarios
+                        - generic [ref=f27e2115]:
+                          - generic [ref=f27e2116]: Desde
+                          - generic [ref=f27e2117]:
+                            - generic [aria-hidden] [ref=f27e2118]: € 1.229
+                            - generic [aria-hidden] [ref=f27e2119]: € 1.148
+                          - generic [ref=f27e2120]: Precio original € 1.229. Precio actual € 1.148.
+              - 'button "Siguiente: Quédate en un alojamiento único" [ref=f27e2121] [cursor=pointer]'
+          - generic [ref=f27e2127]:
+            - generic [ref=f27e2130]:
+              - heading "Planificador de viajes rápido y sencillo" [level=2] [ref=f27e2131]
+              - generic [ref=f27e2132]: Elige un estilo y descubre los principales destinos en el Reino Unido
+            - navigation [ref=f27e2133]:
+              - tablist [ref=f27e2137]:
+                - tab "Expediciones Históricas" [selected] [ref=f27e2138] [cursor=pointer]
+                - tab "Mercados Navideños" [ref=f27e2141] [cursor=pointer]
+                - tab "Escapadas Románticas" [ref=f27e2144] [cursor=pointer]
+                - tab "Experiencias Culturales" [ref=f27e2147] [cursor=pointer]
+                - tab "Maravillas Invernales" [ref=f27e2150] [cursor=pointer]
+                - generic [ref=f27e2154]: Más
+                - tab "Artes y Teatro" [ref=f27e2158] [cursor=pointer]
+                - tab "Tours Gastronómicos" [ref=f27e2161] [cursor=pointer]
+                - tab "Experiencias de Festival" [ref=f27e2164] [cursor=pointer]
+                - tab "Paseos por la Playa" [ref=f27e2167] [cursor=pointer]
+              - tabpanel "Expediciones Históricas" [ref=f27e2171]:
+                - generic [ref=f27e2173]:
+                  - region "Planificador de viajes rápido y sencillo" [ref=f27e2174]:
+                    - group [ref=f27e2175]:
+                      - link "Winchester A 1.196 km" [ref=f27e2176] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2611813&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2180]:
+                          - heading "Winchester" [level=3] [ref=f27e2181]
+                          - generic [ref=f27e2182]: A 1.196 km
+                    - group [ref=f27e2183]:
+                      - link "Bath A 1.222 km" [ref=f27e2184] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2589418&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2188]:
+                          - heading "Bath" [level=3] [ref=f27e2189]
+                          - generic [ref=f27e2190]: A 1.222 km
+                    - group [ref=f27e2191]:
+                      - link "Canterbury A 1.261 km" [ref=f27e2192] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2591722&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2196]:
+                          - heading "Canterbury" [level=3] [ref=f27e2197]
+                          - generic [ref=f27e2198]: A 1.261 km
+                    - group [ref=f27e2199]:
+                      - link "Oxford A 1.273 km" [ref=f27e2200] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2604911&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2204]:
+                          - heading "Oxford" [level=3] [ref=f27e2205]
+                          - generic [ref=f27e2206]: A 1.273 km
+                    - group [ref=f27e2207]:
+                      - link "Cambridge A 1.341 km" [ref=f27e2208] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2591658&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2212]:
+                          - heading "Cambridge" [level=3] [ref=f27e2213]
+                          - generic [ref=f27e2214]: A 1.341 km
+                    - group [ref=f27e2215]:
+                      - link "Chester A 1.420 km" [ref=f27e2216] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2592377&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2220]:
+                          - heading "Chester" [level=3] [ref=f27e2221]
+                          - generic [ref=f27e2222]: A 1.420 km
+                    - group [ref=f27e2223]:
+                      - link "York A 1.517 km" [ref=f27e2224] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2612321&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2228]:
+                          - heading "York" [level=3] [ref=f27e2229]
+                          - generic [ref=f27e2230]: A 1.517 km
+                    - group [ref=f27e2231]:
+                      - link "Durham A 1.603 km" [ref=f27e2232] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2594983&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2236]:
+                          - heading "Durham" [level=3] [ref=f27e2237]
+                          - generic [ref=f27e2238]: A 1.603 km
+                    - group [ref=f27e2239]:
+                      - link "Edimburgo A 1.726 km" [ref=f27e2240] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2595386&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2244]:
+                          - heading "Edimburgo" [level=3] [ref=f27e2245]
+                          - generic [ref=f27e2246]: A 1.726 km
+                    - group [ref=f27e2247]:
+                      - link "Stirling A 1.744 km" [ref=f27e2248] [cursor=pointer]:
+                        - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&dest_id=-2608742&dest_type=city&group_adults=null&req_adults=null&no_rooms=null&group_children=null&req_children=null
+                        - generic [ref=f27e2252]:
+                          - heading "Stirling" [level=3] [ref=f27e2253]
+                          - generic [ref=f27e2254]: A 1.744 km
+                  - 'button "Siguiente: Planificador de viajes rápido y sencillo" [ref=f27e2255] [cursor=pointer]'
+          - generic [ref=f27e2261]:
+            - generic [ref=f27e2265]:
+              - heading "¿Buscas el alojamiento perfecto?" [level=2] [ref=f27e2266]
+              - generic [ref=f27e2267]: Alojamientos reservados después de búsquedas similares
+            - generic [ref=f27e2268]:
+              - region "¿Buscas el alojamiento perfecto?" [ref=f27e2269]:
+                - group [ref=f27e2270]:
+                  - link "Guardar Britannia Stay Stockwell - 13 min to Oxford Circus - 2min to Stockwell Station en una lista de viaje Hostal / Pensión Britannia Stay Stockwell - 13 min to Oxford Circus - 2min to Stockwell Station 7,1 Bien Desde Precio original € 340. Precio actual € 317." [ref=f27e2271] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/binfield-stay.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2272]:
+                      - button "Guardar Britannia Stay Stockwell - 13 min to Oxford Circus - 2min to Stockwell Station en una lista de viaje" [ref=f27e2280]
+                      - generic [ref=f27e2286]:
+                        - generic [ref=f27e2287]:
+                          - generic [ref=f27e2288]: Hostal / Pensión
+                          - heading "Britannia Stay Stockwell - 13 min to Oxford Circus - 2min to Stockwell Station" [level=3] [ref=f27e2291]
+                          - generic [ref=f27e2293]:
+                            - generic [ref=f27e2294]: 7,1
+                            - generic [aria-hidden] [ref=f27e2295]: 7,1
+                            - generic [ref=f27e2296]: Bien
+                            - generic [aria-hidden] [ref=f27e2297]:
+                              - generic [ref=f27e2298]: Bien
+                              - generic [ref=f27e2299]: 170 comentarios
+                        - generic [ref=f27e2302]:
+                          - generic [ref=f27e2303]: Desde
+                          - generic [ref=f27e2304]:
+                            - generic [aria-hidden] [ref=f27e2305]: € 340
+                            - generic [aria-hidden] [ref=f27e2306]: € 317
+                          - generic [ref=f27e2307]: Precio original € 340. Precio actual € 317.
+                - group [ref=f27e2308]:
+                  - link "Guardar Surrey Quays House en una lista de viaje Hostal / Pensión Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Surrey Quays House 7,4 Bien Desde Precio original € 749. Precio actual € 562." [ref=f27e2309] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/city-view-house.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2310]:
+                      - button "Guardar Surrey Quays House en una lista de viaje" [ref=f27e2318]
+                      - generic [ref=f27e2324]:
+                        - generic [ref=f27e2325]:
+                          - generic [ref=f27e2326]:
+                            - generic [ref=f27e2327]: Hostal / Pensión
+                            - button [ref=f27e2329]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e2330]
+                            - img "logo azul de Genius" [ref=f27e2333]
+                          - heading "Surrey Quays House" [level=3] [ref=f27e2340]
+                          - generic [ref=f27e2342]:
+                            - generic [ref=f27e2343]: 7,4
+                            - generic [aria-hidden] [ref=f27e2344]: 7,4
+                            - generic [ref=f27e2345]: Bien
+                            - generic [aria-hidden] [ref=f27e2346]:
+                              - generic [ref=f27e2347]: Bien
+                              - generic [ref=f27e2348]: 523 comentarios
+                        - generic [ref=f27e2351]:
+                          - generic [ref=f27e2352]: Desde
+                          - generic [ref=f27e2353]:
+                            - generic [aria-hidden] [ref=f27e2354]: € 749
+                            - generic [aria-hidden] [ref=f27e2355]: € 562
+                          - generic [ref=f27e2356]: Precio original € 749. Precio actual € 562.
+                - group [ref=f27e2357]:
+                  - link "Guardar Central Palace - Excellent Stay in London Zone 1 en una lista de viaje Apartamento logo azul de Genius Central Palace - Excellent Stay in London Zone 1 6,6 Agradable Desde Precio original € 717. Precio actual € 365." [ref=f27e2358] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/centel-deluxe-stay-in-london-zone-1.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2359]:
+                      - button "Guardar Central Palace - Excellent Stay in London Zone 1 en una lista de viaje" [ref=f27e2367]
+                      - generic [ref=f27e2373]:
+                        - generic [ref=f27e2374]:
+                          - generic [ref=f27e2375]:
+                            - generic [ref=f27e2376]: Apartamento
+                            - img "logo azul de Genius" [ref=f27e2377]
+                          - heading "Central Palace - Excellent Stay in London Zone 1" [level=3] [ref=f27e2384]
+                          - generic [ref=f27e2386]:
+                            - generic [ref=f27e2387]: 6,6
+                            - generic [aria-hidden] [ref=f27e2388]: 6,6
+                            - generic [ref=f27e2389]: Agradable
+                            - generic [aria-hidden] [ref=f27e2390]:
+                              - generic [ref=f27e2391]: Agradable
+                              - generic [ref=f27e2392]: 625 comentarios
+                        - generic [ref=f27e2395]:
+                          - generic [ref=f27e2396]: Desde
+                          - generic [ref=f27e2397]:
+                            - generic [aria-hidden] [ref=f27e2398]: € 717
+                            - generic [aria-hidden] [ref=f27e2399]: € 365
+                          - generic [ref=f27e2400]: Precio original € 717. Precio actual € 365.
+                - group [ref=f27e2401]:
+                  - link "Guardar Portobello Self Check-In Rooms 611 en una lista de viaje Hostal / Pensión logo azul de Genius Portobello Self Check-In Rooms 611 7,4 Bien Desde Precio original € 465. Precio actual € 436." [ref=f27e2402] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/portobello-self-check-in-rooms.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2403]:
+                      - button "Guardar Portobello Self Check-In Rooms 611 en una lista de viaje" [ref=f27e2411]
+                      - generic [ref=f27e2417]:
+                        - generic [ref=f27e2418]:
+                          - generic [ref=f27e2419]:
+                            - generic [ref=f27e2420]: Hostal / Pensión
+                            - img "logo azul de Genius" [ref=f27e2421]
+                          - heading "Portobello Self Check-In Rooms 611" [level=3] [ref=f27e2428]
+                          - generic [ref=f27e2430]:
+                            - generic [ref=f27e2431]: 7,4
+                            - generic [aria-hidden] [ref=f27e2432]: 7,4
+                            - generic [ref=f27e2433]: Bien
+                            - generic [aria-hidden] [ref=f27e2434]:
+                              - generic [ref=f27e2435]: Bien
+                              - generic [ref=f27e2436]: 69 comentarios
+                        - generic [ref=f27e2439]:
+                          - generic [ref=f27e2440]: Desde
+                          - generic [ref=f27e2441]:
+                            - generic [aria-hidden] [ref=f27e2442]: € 465
+                            - generic [aria-hidden] [ref=f27e2443]: € 436
+                          - generic [ref=f27e2444]: Precio original € 465. Precio actual € 436.
+                - group [ref=f27e2445]:
+                  - link "Guardar Studio 169 en una lista de viaje Albergue Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Studio 169 7,4 Bien Desde Precio original € 818. Precio actual € 487." [ref=f27e2446] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/studio-169.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2447]:
+                      - button "Guardar Studio 169 en una lista de viaje" [ref=f27e2455]
+                      - generic [ref=f27e2461]:
+                        - generic [ref=f27e2462]:
+                          - generic [ref=f27e2463]:
+                            - generic [ref=f27e2464]: Albergue
+                            - button [ref=f27e2466]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e2467]
+                            - img "logo azul de Genius" [ref=f27e2470]
+                          - heading "Studio 169" [level=3] [ref=f27e2477]
+                          - generic [ref=f27e2479]:
+                            - generic [ref=f27e2480]: 7,4
+                            - generic [aria-hidden] [ref=f27e2481]: 7,4
+                            - generic [ref=f27e2482]: Bien
+                            - generic [aria-hidden] [ref=f27e2483]:
+                              - generic [ref=f27e2484]: Bien
+                              - generic [ref=f27e2485]: 363 comentarios
+                        - generic [ref=f27e2488]:
+                          - generic [ref=f27e2489]: Desde
+                          - generic [ref=f27e2490]:
+                            - generic [aria-hidden] [ref=f27e2491]: € 818
+                            - generic [aria-hidden] [ref=f27e2492]: € 487
+                          - generic [ref=f27e2493]: Precio original € 818. Precio actual € 487.
+                - group [ref=f27e2494]:
+                  - link "Guardar South London Guest Rooms en una lista de viaje Hostal / Pensión South London Guest Rooms 6,4 Agradable Desde Precio € 501" [ref=f27e2495] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/south-london-guest-rooms.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2496]:
+                      - button "Guardar South London Guest Rooms en una lista de viaje" [ref=f27e2504]
+                      - generic [ref=f27e2510]:
+                        - generic [ref=f27e2511]:
+                          - generic [ref=f27e2512]: Hostal / Pensión
+                          - heading "South London Guest Rooms" [level=3] [ref=f27e2515]
+                          - generic [ref=f27e2517]:
+                            - generic [ref=f27e2518]: 6,4
+                            - generic [aria-hidden] [ref=f27e2519]: 6,4
+                            - generic [ref=f27e2520]: Agradable
+                            - generic [aria-hidden] [ref=f27e2521]:
+                              - generic [ref=f27e2522]: Agradable
+                              - generic [ref=f27e2523]: 57 comentarios
+                        - generic [ref=f27e2526]:
+                          - generic [ref=f27e2527]: Desde
+                          - generic [aria-hidden] [ref=f27e2529]: € 501
+                          - generic [ref=f27e2530]: Precio € 501
+                - group [ref=f27e2531]:
+                  - link "Guardar The Prestige Suite - London en una lista de viaje Hostal / Pensión logo azul de Genius The Prestige Suite - London 5,8 Por encima de la media Desde Precio original € 549. Precio actual € 467." [ref=f27e2532] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/the-prestige-suite-revan-row.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2533]:
+                      - button "Guardar The Prestige Suite - London en una lista de viaje" [ref=f27e2541]
+                      - generic [ref=f27e2547]:
+                        - generic [ref=f27e2548]:
+                          - generic [ref=f27e2549]:
+                            - generic [ref=f27e2550]: Hostal / Pensión
+                            - img "logo azul de Genius" [ref=f27e2551]
+                          - heading "The Prestige Suite - London" [level=3] [ref=f27e2558]
+                          - generic [ref=f27e2560]:
+                            - generic [ref=f27e2561]: 5,8
+                            - generic [aria-hidden] [ref=f27e2562]: 5,8
+                            - generic [ref=f27e2563]: Por encima de la media
+                            - generic [aria-hidden] [ref=f27e2564]:
+                              - generic [ref=f27e2565]: Por encima de la media
+                              - generic [ref=f27e2566]: 445 comentarios
+                        - generic [ref=f27e2569]:
+                          - generic [ref=f27e2570]: Desde
+                          - generic [ref=f27e2571]:
+                            - generic [aria-hidden] [ref=f27e2572]: € 549
+                            - generic [aria-hidden] [ref=f27e2573]: € 467
+                          - generic [ref=f27e2574]: Precio original € 549. Precio actual € 467.
+                - group [ref=f27e2575]:
+                  - link "Guardar Oak Guest Rooms en una lista de viaje Hostal / Pensión Oak Guest Rooms 6,6 Agradable Desde Precio original € 315. Precio actual € 297." [ref=f27e2576] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/oak-guest-rooms-greater-london.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2577]:
+                      - button "Guardar Oak Guest Rooms en una lista de viaje" [ref=f27e2585]
+                      - generic [ref=f27e2591]:
+                        - generic [ref=f27e2592]:
+                          - generic [ref=f27e2593]: Hostal / Pensión
+                          - heading "Oak Guest Rooms" [level=3] [ref=f27e2596]
+                          - generic [ref=f27e2598]:
+                            - generic [ref=f27e2599]: 6,6
+                            - generic [aria-hidden] [ref=f27e2600]: 6,6
+                            - generic [ref=f27e2601]: Agradable
+                            - generic [aria-hidden] [ref=f27e2602]:
+                              - generic [ref=f27e2603]: Agradable
+                              - generic [ref=f27e2604]: 128 comentarios
+                        - generic [ref=f27e2607]:
+                          - generic [ref=f27e2608]: Desde
+                          - generic [ref=f27e2609]:
+                            - generic [aria-hidden] [ref=f27e2610]: € 315
+                            - generic [aria-hidden] [ref=f27e2611]: € 297
+                          - generic [ref=f27e2612]: Precio original € 315. Precio actual € 297.
+                - group [ref=f27e2613]:
+                  - link "Guardar Cosy Flat Close To East Dulwich Station en una lista de viaje Hostal / Pensión Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva. logo azul de Genius Cosy Flat Close To East Dulwich Station 7,5 Bien Desde Precio original € 509. Precio actual € 401." [ref=f27e2614] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/double-room-very-close-to-east-dulwich.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2615]:
+                      - button "Guardar Cosy Flat Close To East Dulwich Station en una lista de viaje" [ref=f27e2623]
+                      - generic [ref=f27e2629]:
+                        - generic [ref=f27e2630]:
+                          - generic [ref=f27e2631]:
+                            - generic [ref=f27e2632]: Hostal / Pensión
+                            - button [ref=f27e2634]:
+                              - img "Este alojamiento participa en nuestro programa de Alojamientos preferentes. Nos pagará una comisión más alta si haces una reserva." [ref=f27e2635]
+                            - img "logo azul de Genius" [ref=f27e2638]
+                          - heading "Cosy Flat Close To East Dulwich Station" [level=3] [ref=f27e2645]
+                          - generic [ref=f27e2647]:
+                            - generic [ref=f27e2648]: 7,5
+                            - generic [aria-hidden] [ref=f27e2649]: 7,5
+                            - generic [ref=f27e2650]: Bien
+                            - generic [aria-hidden] [ref=f27e2651]:
+                              - generic [ref=f27e2652]: Bien
+                              - generic [ref=f27e2653]: 28 comentarios
+                        - generic [ref=f27e2656]:
+                          - generic [ref=f27e2657]: Desde
+                          - generic [ref=f27e2658]:
+                            - generic [aria-hidden] [ref=f27e2659]: € 509
+                            - generic [aria-hidden] [ref=f27e2660]: € 401
+                          - generic [ref=f27e2661]: Precio original € 509. Precio actual € 401.
+                - group [ref=f27e2662]:
+                  - link "Guardar The Aldgate Rooms en una lista de viaje Hostal / Pensión The Aldgate Rooms 6,8 Agradable Desde Precio original € 500. Precio actual € 469." [ref=f27e2663] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/parfett-guest-house.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2664]:
+                      - button "Guardar The Aldgate Rooms en una lista de viaje" [ref=f27e2672]
+                      - generic [ref=f27e2678]:
+                        - generic [ref=f27e2679]:
+                          - generic [ref=f27e2680]: Hostal / Pensión
+                          - heading "The Aldgate Rooms" [level=3] [ref=f27e2683]
+                          - generic [ref=f27e2685]:
+                            - generic [ref=f27e2686]: 6,8
+                            - generic [aria-hidden] [ref=f27e2687]: 6,8
+                            - generic [ref=f27e2688]: Agradable
+                            - generic [aria-hidden] [ref=f27e2689]:
+                              - generic [ref=f27e2690]: Agradable
+                              - generic [ref=f27e2691]: 251 comentarios
+                        - generic [ref=f27e2694]:
+                          - generic [ref=f27e2695]: Desde
+                          - generic [ref=f27e2696]:
+                            - generic [aria-hidden] [ref=f27e2697]: € 500
+                            - generic [aria-hidden] [ref=f27e2698]: € 469
+                          - generic [ref=f27e2699]: Precio original € 500. Precio actual € 469.
+                - group [ref=f27e2700]:
+                  - link "Guardar Portobello Rooms by PrimeCityHosts en una lista de viaje Hostal / Pensión Portobello Rooms by PrimeCityHosts 5,9 Por encima de la media Desde Precio original € 431. Precio actual € 404." [ref=f27e2701] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/portobello-rooms-by-dc-london-rooms.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2702]:
+                      - button "Guardar Portobello Rooms by PrimeCityHosts en una lista de viaje" [ref=f27e2710]
+                      - generic [ref=f27e2716]:
+                        - generic [ref=f27e2717]:
+                          - generic [ref=f27e2718]: Hostal / Pensión
+                          - heading "Portobello Rooms by PrimeCityHosts" [level=3] [ref=f27e2721]
+                          - generic [ref=f27e2723]:
+                            - generic [ref=f27e2724]: 5,9
+                            - generic [aria-hidden] [ref=f27e2725]: 5,9
+                            - generic [ref=f27e2726]: Por encima de la media
+                            - generic [aria-hidden] [ref=f27e2727]:
+                              - generic [ref=f27e2728]: Por encima de la media
+                              - generic [ref=f27e2729]: 145 comentarios
+                        - generic [ref=f27e2732]:
+                          - generic [ref=f27e2733]: Desde
+                          - generic [ref=f27e2734]:
+                            - generic [aria-hidden] [ref=f27e2735]: € 431
+                            - generic [aria-hidden] [ref=f27e2736]: € 404
+                          - generic [ref=f27e2737]: Precio original € 431. Precio actual € 404.
+                - group [ref=f27e2738]:
+                  - link "Guardar Hannah Homes en una lista de viaje Hostal / Pensión Hannah Homes 6,1 Agradable Desde Precio € 570" [ref=f27e2739] [cursor=pointer]:
+                    - /url: https://www.booking.com/hotel/gb/hannah-homes.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ucfs=1&arphpl=1&group_adults=2&req_adults=2&no_rooms=1&group_children=null&req_children=null&srpvid=213d96413a270044&srepoch=1789852934
+                    - generic [ref=f27e2740]:
+                      - button "Guardar Hannah Homes en una lista de viaje" [ref=f27e2748]
+                      - generic [ref=f27e2754]:
+                        - generic [ref=f27e2755]:
+                          - generic [ref=f27e2756]: Hostal / Pensión
+                          - heading "Hannah Homes" [level=3] [ref=f27e2759]
+                          - generic [ref=f27e2761]:
+                            - generic [ref=f27e2762]: 6,1
+                            - generic [aria-hidden] [ref=f27e2763]: 6,1
+                            - generic [ref=f27e2764]: Agradable
+                            - generic [aria-hidden] [ref=f27e2765]:
+                              - generic [ref=f27e2766]: Agradable
+                              - generic [ref=f27e2767]: 72 comentarios
+                        - generic [ref=f27e2770]:
+                          - generic [ref=f27e2771]: Desde
+                          - generic [aria-hidden] [ref=f27e2773]: € 570
+                          - generic [ref=f27e2774]: Precio € 570
+              - 'button "Siguiente: ¿Buscas el alojamiento perfecto?" [ref=f27e2775] [cursor=pointer]'
+        - generic [ref=f27e2784]:
+          - generic [ref=f27e2788]:
+            - generic [ref=f27e2790]:
+              - heading "Viaja más por menos" [level=2] [ref=f27e2793]
+              - link "Más info sobre tus ventajas" [ref=f27e2796] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - generic [ref=f27e2798]:
+              - region [ref=f27e2799]:
+                - group [ref=f27e2800]:
+                  - link [ref=f27e2801] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2804]:
+                      - img "logo azul de Genius" [ref=f27e2806]
+                      - generic [ref=f27e2817]:
+                        - text: Enrique, estás en el
+                        - strong [ref=f27e2818]: Nivel 2 de Genius
+                        - text: ", nuestro programa de fidelización"
+                - group [ref=f27e2819]:
+                  - link "Descuentos del 10-15% en el alojamiento Disfruta de descuentos en alojamientos de todo el mundo que forman parte del programa" [ref=f27e2820] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2823]:
+                      - generic [ref=f27e2824]: Descuentos del 10-15% en el alojamiento
+                      - generic [ref=f27e2827]: Disfruta de descuentos en alojamientos de todo el mundo que forman parte del programa
+                - group [ref=f27e2831]:
+                  - link "10-15% de descuento en coches de alquiler Ahorra en coches de alquiler seleccionados" [ref=f27e2832] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2835]:
+                      - generic [ref=f27e2836]: 10-15% de descuento en coches de alquiler
+                      - generic [ref=f27e2839]: Ahorra en coches de alquiler seleccionados
+                - group [ref=f27e2843]:
+                  - link "Alertas sobre precios de vuelos Sigue los precios de tu fecha y ruta favoritas en la app" [ref=f27e2844] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2847]:
+                      - generic [ref=f27e2848]: Alertas sobre precios de vuelos
+                      - generic [ref=f27e2851]: Sigue los precios de tu fecha y ruta favoritas en la app
+                - group [ref=f27e2855]:
+                  - link "Desayunos gratis Empieza el día con el desayuno gratis en opciones seleccionadas" [ref=f27e2856] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2859]:
+                      - generic [ref=f27e2860]: Desayunos gratis
+                      - generic [ref=f27e2863]: Empieza el día con el desayuno gratis en opciones seleccionadas
+                - group [ref=f27e2867]:
+                  - link "Cambios gratis a una categoría superior Mejora tu estancia con una habitación superior sin ningún coste extra" [ref=f27e2868] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2871]:
+                      - generic [ref=f27e2872]: Cambios gratis a una categoría superior
+                      - generic [ref=f27e2875]: Mejora tu estancia con una habitación superior sin ningún coste extra
+                - group [ref=f27e2879]:
+                  - link "Ahorra un 10-20% en el alojamiento Completa 15 reservas para pasar al Nivel 3 de Genius" [ref=f27e2880] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2883]:
+                      - generic [ref=f27e2884]: Ahorra un 10-20% en el alojamiento
+                      - generic [ref=f27e2887]: Completa 15 reservas para pasar al Nivel 3 de Genius
+                - group [ref=f27e2891]:
+                  - link "Atención prioritaria en reservas de alojamiento Completa 15 reservas para pasar al Nivel 3 de Genius" [ref=f27e2892] [cursor=pointer]:
+                    - /url: https://www.booking.com/genius.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                    - generic [ref=f27e2895]:
+                      - generic [ref=f27e2896]: Atención prioritaria en reservas de alojamiento
+                      - generic [ref=f27e2899]: Completa 15 reservas para pasar al Nivel 3 de Genius
+              - button "Siguiente" [ref=f27e2903] [cursor=pointer]
+          - generic [ref=f27e2909]:
+            - generic [ref=f27e2910]:
+              - generic [ref=f27e2912]:
+                - heading "¿Quieres recomendaciones, Enrique?" [level=2] [ref=f27e2913]
+                - generic [ref=f27e2914]: Recibe sugerencias basadas en IA para diseñar el viaje perfecto
+              - img "AI chat de Booking.com" [ref=f27e2916]:
+                - generic:
+                  - generic:
+                    - img "Dot"
+                - generic [aria-hidden] [ref=f27e2918]: · AI chat de Booking.com
+            - generic [ref=f27e2921]:
+              - textbox "Quiero planificar 5 días en Tokio" [ref=f27e2925]:
+                - /placeholder: Quiero planificar 5 días en Tokio
+              - button "Enviar mensaje" [disabled] [ref=f27e2927] [cursor=pointer]
+        - generic [ref=f27e2940]:
+          - heading "Popular entre la comunidad viajera de España" [level=2] [ref=f27e2942]
+          - navigation [ref=f27e2943]:
+            - tablist [ref=f27e2945]:
+              - tab "Ciudades nacionales" [selected] [ref=f27e2946] [cursor=pointer]
+              - tab "Ciudades internacionales" [ref=f27e2949] [cursor=pointer]
+              - tab "Regiones" [ref=f27e2952] [cursor=pointer]
+              - tab "Países" [ref=f27e2955] [cursor=pointer]
+              - tab "Alojamientos" [ref=f27e2958] [cursor=pointer]
+              - tab "Qué hacer" [ref=f27e2961] [cursor=pointer]
+            - tabpanel "Ciudades nacionales" [ref=f27e2965]:
+              - generic [ref=f27e2966]:
+                - list [ref=f27e2967]:
+                  - listitem [ref=f27e2968]:
+                    - link "Hoteles de Madrid" [ref=f27e2972] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/madrid.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e2974]:
+                    - link "Hoteles de Barcelona" [ref=f27e2978] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/barcelona.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e2980]:
+                    - link "Hoteles de Granada" [ref=f27e2984] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/granada.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e2986]:
+                    - link "Hoteles de Sevilla" [ref=f27e2990] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/sevilla.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e2992]:
+                    - link "Hoteles de Córdoba" [ref=f27e2996] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/cordoba.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e2998]:
+                    - link "Hoteles de Valencia" [ref=f27e3002] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/valencia.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3004]:
+                    - link "Hoteles de Bilbao" [ref=f27e3008] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/bilbao.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3010]:
+                    - link "Hoteles de Santander" [ref=f27e3014] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/santander.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3016]:
+                    - link "Hoteles de Toledo" [ref=f27e3020] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/toledo.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3022]:
+                    - link "Hoteles de Málaga" [ref=f27e3026] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/malaga.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3028]:
+                    - link "Hoteles de Alicante" [ref=f27e3032] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/alicante.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3034]:
+                    - link "Hoteles de A Coruña" [ref=f27e3038] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/la-coruna.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3040]:
+                    - link "Hoteles de Zaragoza" [ref=f27e3044] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/zaragoza.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3046]:
+                    - link "Hoteles de Murcia" [ref=f27e3050] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/murcia.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3052]:
+                    - link "Hoteles de O Cebreiro" [ref=f27e3056] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/cebreiro.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3058]:
+                    - link "Hoteles de Salamanca" [ref=f27e3062] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/salamanca.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3064]:
+                    - link "Hoteles de San Sebastián" [ref=f27e3068] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/donostia-san-sebastian.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3070]:
+                    - link "Hoteles de Pamplona" [ref=f27e3074] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/pamplona.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3076]:
+                    - link "Hoteles de Santiago de Compostela" [ref=f27e3080] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/santiago-de-compostela.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3082]:
+                    - link "Hoteles de Cádiz" [ref=f27e3086] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/cadiz.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3088]:
+                    - link "Hoteles de Sierra Nevada" [ref=f27e3092] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/sierra-nevada.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3094]:
+                    - link "Hoteles de Sarria" [ref=f27e3098] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/sarria.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3100]:
+                    - link "Hoteles de Cuenca" [ref=f27e3104] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/cuenca.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3106]:
+                    - link "Hoteles de Burgos" [ref=f27e3110] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/burgos.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                  - listitem [ref=f27e3112]:
+                    - link "Hoteles de Valladolid" [ref=f27e3116] [cursor=pointer]:
+                      - /url: https://www.booking.com/city/es/valladolid.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+                - button "Ver más" [ref=f27e3119] [cursor=pointer]
+    - contentinfo [ref=f27e3138]:
+      - navigation "Enlaces rápidos" [ref=f27e3141]:
+        - list [ref=f27e3142]:
+          - listitem [ref=f27e3143]:
+            - link "Países" [ref=f27e3144] [cursor=pointer]:
+              - /url: https://www.booking.com/country.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3147]:
+            - link "Regiones" [ref=f27e3148] [cursor=pointer]:
+              - /url: https://www.booking.com/region.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3151]:
+            - link "Ciudades" [ref=f27e3152] [cursor=pointer]:
+              - /url: https://www.booking.com/city.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3155]:
+            - link "Zonas" [ref=f27e3156] [cursor=pointer]:
+              - /url: https://www.booking.com/district.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3159]:
+            - link "Aeropuertos" [ref=f27e3160] [cursor=pointer]:
+              - /url: https://www.booking.com/airport.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3163]:
+            - link "Hoteles" [ref=f27e3164] [cursor=pointer]:
+              - /url: https://www.booking.com/hotel/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3167]:
+            - link "Lugares de interés" [ref=f27e3168] [cursor=pointer]:
+              - /url: https://www.booking.com/landmark.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3171]:
+            - link "Casas y chalets" [ref=f27e3172] [cursor=pointer]:
+              - /url: https://www.booking.com/booking-home/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3175]:
+            - link "Apartamentos" [ref=f27e3176] [cursor=pointer]:
+              - /url: https://www.booking.com/apartments/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3179]:
+            - link "Resorts" [ref=f27e3180] [cursor=pointer]:
+              - /url: https://www.booking.com/resorts/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3183]:
+            - link "Villas" [ref=f27e3184] [cursor=pointer]:
+              - /url: https://www.booking.com/villas/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3187]:
+            - link "Albergues" [ref=f27e3188] [cursor=pointer]:
+              - /url: https://www.booking.com/hostels/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3191]:
+            - link "Bed and Breakfasts" [ref=f27e3192] [cursor=pointer]:
+              - /url: https://www.booking.com/bed-and-breakfast/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3195]:
+            - link "Hostales y pensiones" [ref=f27e3196] [cursor=pointer]:
+              - /url: https://www.booking.com/guest-house/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3199]:
+            - link "Alojamientos únicos" [ref=f27e3200] [cursor=pointer]:
+              - /url: https://www.booking.com/accommodations.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3203]:
+            - link "Todos los destinos" [ref=f27e3204] [cursor=pointer]:
+              - /url: https://www.booking.com/destination.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3207]:
+            - link "Todos los destinos de vuelos" [ref=f27e3208] [cursor=pointer]:
+              - /url: https://www.booking.com/flights/sitemap.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3211]:
+            - link "Todos los puntos de alquiler de coches" [ref=f27e3212] [cursor=pointer]:
+              - /url: https://www.booking.com/cars/sitemap.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3215]:
+            - link "Todos los destinos de vacaciones" [ref=f27e3216] [cursor=pointer]:
+              - /url: https://www.booking.com/holidays/sitemap.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3219]:
+            - link "Guías" [ref=f27e3220] [cursor=pointer]:
+              - /url: https://www.booking.com/guides/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3223]:
+            - link "Descubrir" [ref=f27e3224] [cursor=pointer]:
+              - /url: https://www.booking.com/discover.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f27e3227]:
+            - link "Descubrir las estancias mensuales" [ref=f27e3228] [cursor=pointer]:
+              - /url: https://www.booking.com/extended-stays/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f27e3232]:
+        - generic [ref=f27e3233]:
+          - heading "Ayuda" [level=3] [ref=f27e3235]
+          - list [ref=f27e3236]:
+            - listitem [ref=f27e3237]:
+              - link "Gestiona tus viajes" [ref=f27e3238] [cursor=pointer]:
+                - /url: https://secure.booking.com/mytrips.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3240]:
+              - link "Contactar con Atención al cliente" [ref=f27e3241] [cursor=pointer]:
+                - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3243]:
+              - link "Centro de recursos sobre seguridad" [ref=f27e3244] [cursor=pointer]:
+                - /url: https://www.booking.com/trust_and_safety.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+        - generic [ref=f27e3246]:
+          - heading "Descubre" [level=3] [ref=f27e3248]
+          - list [ref=f27e3249]:
+            - listitem [ref=f27e3250]:
+              - link "Programa de fidelización Genius" [ref=f27e3251] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3253]:
+              - link "Ofertas de temporada y para las vacaciones" [ref=f27e3254] [cursor=pointer]:
+                - /url: https://www.booking.com/deals/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3256]:
+              - link "Artículos de viajes" [ref=f27e3257] [cursor=pointer]:
+                - /url: https://www.booking.com/articles.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3259]:
+              - link "Booking.com Business" [ref=f27e3260] [cursor=pointer]:
+                - /url: https://business.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3262]:
+              - link "Traveller Review Awards" [ref=f27e3263] [cursor=pointer]:
+                - /url: https://www.booking.com/traveller-awards/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3265]:
+              - link "Alquiler de coches" [ref=f27e3266] [cursor=pointer]:
+                - /url: https://www.booking.com/cars/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3268]:
+              - link "Buscador de vuelos" [ref=f27e3269] [cursor=pointer]:
+                - /url: https://booking.com/pxgo?lang=es&token=UmFuZG9tSVYkc2RlIyh9YaAHsRE_5bn37xbD79rr7Uj0vtnOL9CcgEu50_oZk1wfLjaDtPSI6ptl9hxLzW9j4ANpWbpw7HZaDitzUpXQDaXKRso6V6aj22sAB57PI0iz6p6_578dXncyVBpFSpWT3tAgG8yVIdPD0rE3vQ5MbiMIjlQPpX1aH5EthFAsdgePPWPaeQVu_G-bgC-A9PeO3me72GPke1mjHfKP2WGUbEf1N28mKw5gKq_8cCQZj6vplrUJHL7YzTpX-d99SkI4YQxj24Xq6TBNYcMBmQug2f5xXRNvhPsZwtPqMOxp17-G7qSkG_hd0FQUv4jM1_ivj-dFkzqrym8ZsyfXJQf1eOwOqC-sclgWbtifeo7azVT6bA7b_kPanj7-3BVa1ov2csVo5yumfCNAuzDOAzcDGiIpJl80fvGMSwRyYSJnUowM1DOmlrhS6KWwZB1QO1pGvTh2Apz8ikPFRtl-e5kUoDcb7cbfGMrqhrCekHMVdJkThP_z1TKwHSGzVNspFRa3cw&aid=304142&url=https%3A%2F%2Fbooking.kayak.com%2Fin%3Fsid%3Dfa3fc75425f1238471e91409a927f910%26mc%3DEUR%26bdclc%3Des%26p%3Dfooter_link%26a%3Dbdc%252Ffooter_link&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3271]:
+              - link "Reservas en restaurantes" [ref=f27e3272] [cursor=pointer]:
+                - /url: https://www.opentable.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&ref=16087
+            - listitem [ref=f27e3274]:
+              - link "Booking.com para Agentes de viajes" [ref=f27e3275] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=travel-agents-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f27e3277]:
+          - heading "Términos y configuración" [level=3] [ref=f27e3279]
+          - list [ref=f27e3280]:
+            - listitem [ref=f27e3281]:
+              - link "Gestionar la configuración de las cookies" [ref=f27e3282] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3284]:
+              - link "Política de privacidad" [ref=f27e3285] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3287]:
+              - link "Condiciones del servicio" [ref=f27e3288] [cursor=pointer]:
+                - /url: https://www.booking.com/content/terms.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3290]:
+              - link "Declaración de accesibilidad" [ref=f27e3291] [cursor=pointer]:
+                - /url: https://www.booking.com/content/accessibility_statement.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3293]:
+              - link "Resolución de litigios" [ref=f27e3294] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/complaints.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3296]:
+              - link "Declaración sobre la esclavitud moderna" [ref=f27e3297] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/modern-slavery-statement/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3299]:
+              - link "Declaración sobre derechos humanos" [ref=f27e3300] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/about/compliance-and-ethics/human-rights/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3302]:
+              - link "Gestiona las recomendaciones personalizadas" [ref=f27e3303] [cursor=pointer]:
+                - /url: https://account.booking.com/mysettings/preferences?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&lang=es
+        - generic [ref=f27e3305]:
+          - heading "Colaboradores" [level=3] [ref=f27e3307]
+          - list [ref=f27e3308]:
+            - listitem [ref=f27e3309]:
+              - link "Acceder a la extranet" [ref=f27e3310] [cursor=pointer]:
+                - /url: https://admin.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=login_footer_v0&utm_medium=frontend&utm_source=extranet_login_footer
+            - listitem [ref=f27e3312]:
+              - link "Ayuda para colaboradores" [ref=f27e3313] [cursor=pointer]:
+                - /url: https://partner.booking.com/es?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=footer_list&utm_medium=frontend_footer&utm_source=booking.com
+            - listitem [ref=f27e3315]:
+              - link "Registra tu alojamiento" [ref=f27e3316] [cursor=pointer]:
+                - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=footer_menu
+            - listitem [ref=f27e3318]:
+              - link "Conviértete en afiliado" [ref=f27e3319] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=become-an-affiliate-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f27e3321]:
+          - heading "Información" [level=3] [ref=f27e3323]
+          - list [ref=f27e3324]:
+            - listitem [ref=f27e3325]:
+              - link "Sobre Booking.com" [ref=f27e3326] [cursor=pointer]:
+                - /url: https://www.booking.com/content/about.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3328]:
+              - link "Cómo trabajamos" [ref=f27e3329] [cursor=pointer]:
+                - /url: https://www.booking.com/content/how_we_work.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3331]:
+              - link "Sostenibilidad" [ref=f27e3332] [cursor=pointer]:
+                - /url: https://sustainability.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3334]:
+              - link "Centro de prensa" [ref=f27e3335] [cursor=pointer]:
+                - /url: https://news.booking.com/es
+            - listitem [ref=f27e3337]:
+              - link "Trabaja con nosotros" [ref=f27e3338] [cursor=pointer]:
+                - /url: https://careers.booking.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3340]:
+              - link "Relación con inversores" [ref=f27e3341] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB
+            - listitem [ref=f27e3343]:
+              - link "Contacto corporativo" [ref=f27e3344] [cursor=pointer]:
+                - /url: https://www.booking.com/content/contact-us.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f27e3346]:
+              - link "Pautas sobre el contenido y comunicación de usos inadecuados" [ref=f27e3347] [cursor=pointer]:
+                - /url: https://www.booking.com/content-moderation-policy/overview-page.es.html?aid=304142&label=gen173nr-10CAEoggI46AdIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4AoP6u9UGwAIB0gIkMGUyZmQxY2QtZmMyMC00MTM5LThhYTItMmE0YTcxZjdlOGFl2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f27e3350]:
+        - generic [ref=f27e3351]:
+          - 'button "Idioma: Español" [ref=f27e3353] [cursor=pointer]'
+          - button "Precios en Euro EUR" [ref=f27e3358] [cursor=pointer]:
+            - generic [ref=f27e3359]: EUR
+        - separator [aria-hidden] [ref=f27e3360]
+        - generic [ref=f27e3361]:
+          - generic [ref=f27e3362]: Booking.com forma parte de Booking Holdings Inc., líder mundial en viajes online y servicios relacionados.
+          - generic [ref=f27e3364]: Copyright © 1996-2026 Booking.com™. Todos los derechos reservados.
+        - generic [ref=f27e3365]:
+          - img "Booking.com" [ref=f27e3366]
+          - img "Priceline.com" [ref=f27e3367]
+          - img "Kayak" [ref=f27e3368]
+          - img "Agoda" [ref=f27e3369]
+          - img "OpenTable" [ref=f27e3370]

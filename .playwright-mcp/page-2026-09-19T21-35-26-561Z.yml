@@ -1,0 +1,609 @@
+- generic [ref=f155e1]:
+  - link "Skip to content" [ref=f155e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=f155e3]:
+    - generic [ref=f155e4]:
+      - link "The Chapter Hotels – Home" [ref=f155e5] [cursor=pointer]:
+        - /url: /
+        - img [aria-hidden] [ref=f155e6]:
+          - generic [ref=f155e7]: Hotels
+      - generic [ref=f155e33]:
+        - paragraph [ref=f155e34]: EUR prices · Charged in GBP
+        - link "Find my stays" [ref=f155e35] [cursor=pointer]:
+          - /url: /find-stay
+        - link "Log in" [ref=f155e36] [cursor=pointer]:
+          - /url: /login
+        - button "Open menu" [ref=f155e38]
+  - main [ref=f155e42]:
+    - generic [ref=f155e43]:
+      - generic [ref=f155e45]:
+        - button "Bayswater Whiteleys Hotel" [ref=f155e46]:
+          - generic:
+            - paragraph: Bayswater
+            - paragraph: Whiteleys Hotel
+        - generic [ref=f155e47]:
+          - button [ref=f155e48]
+          - button "25+ View More" [ref=f155e49]:
+            - generic:
+              - generic: 25+
+              - generic: View More
+      - region "Check availability and rates" [ref=f155e50]:
+        - generic [ref=f155e51]:
+          - generic [ref=f155e52]:
+            - generic [ref=f155e53]: Check-in → Check-out
+            - button "Check-in and check-out dates" [ref=f155e56]:
+              - generic [ref=f155e59]: Sat, 19 Sep → Sun, 20 Sep
+          - generic [ref=f155e60]:
+            - generic [ref=f155e61]: Rooms & guests
+            - button "Rooms and guests" [ref=f155e64]:
+              - generic [ref=f155e65]: 1 room, 2 guests
+          - button "Search" [ref=f155e71]
+      - generic [ref=f155e72]:
+        - generic [ref=f155e74]:
+          - generic [ref=f155e75]:
+            - heading "Whiteleys Hotel" [level=1] [ref=f155e76]
+            - paragraph [ref=f155e77]:
+              - link "64-65 Prince's Square, London, W2 4PX" [ref=f155e78] [cursor=pointer]:
+                - /url: https://www.google.com/maps?q=64-65%20Prince's%20Square%2C%20London%2C%20W2%204PX
+            - paragraph [ref=f155e83]: Whiteleys Hotel is a stylish and inviting retreat situated in the vibrant and well-connected neighbourhood of Bayswater. Located within a beautifully restored Victorian townhouse on the scenic Prince’s Square, the hotel seamlessly combines timeless elegance with modern comforts. Whether visiting London for business or leisure, Whiteleys Hotel provides a welcoming and comfortable base in an ideal location. The hotel’s prime position makes it easy to explore the city’s top attractions, with excellent transport links nearby. Guest comfort and safety are priorities at Whiteleys Hotel, which features 24-hour reception and secure access to ensure a stress-free stay. Friendly, professional staff are always available to assist with requests, from local recommendations to travel arrangements, whether arriving late or during the day. The thoughtfully designed guest rooms offer a peaceful haven away from the city’s hustle and bustle. Each room is furnished with comfortable beds, modern en-suite bathrooms, complimentary Wi-Fi, flat-screen TVs, and tea and coffee-making facilities. The interiors preserve the historic charm of the building while incorporating contemporary amenities to ensure a relaxing and enjoyable stay. Set in the quiet, tree-lined Prince’s Square, guests can unwind after a day of sightseeing or meetings in a tranquil environment. The hotel also provides additional services such as luggage storage and daily housekeeping to enhance convenience. Whether visiting London for a romantic escape, business trip, or family holiday, Whiteleys Hotel offers an excellent base. With its superb location, secure facilities, and welcoming atmosphere, it combines easy access to London's attractions with the comforts of a home away from home.
+          - generic [ref=f155e84]:
+            - generic [ref=f155e85]:
+              - heading "Top amenities" [level=3] [ref=f155e86]
+              - list [ref=f155e87]:
+                - listitem [ref=f155e88]:
+                  - generic [ref=f155e91]: Fire
+                - listitem [ref=f155e92]:
+                  - generic [ref=f155e95]: Well
+                - listitem [ref=f155e96]:
+                  - generic [ref=f155e101]: WiFi
+                - listitem [ref=f155e102]:
+                  - generic [ref=f155e105]: Cleaning
+                - listitem [ref=f155e106]:
+                  - generic [ref=f155e109]: Housekeeping
+                - listitem [ref=f155e110]:
+                  - generic [ref=f155e114]: CCTV
+            - generic [ref=f155e115]:
+              - heading "The Chapter standard" [level=3] [ref=f155e116]
+              - paragraph [ref=f155e117]: Working, relaxing, and living. Our spaces have all the essentials you need for your stay.
+              - list [ref=f155e118]:
+                - listitem [ref=f155e119]: Contactless check-in
+                - listitem [ref=f155e122]: Fast WiFi
+                - listitem [ref=f155e127]: Professionally cleaned
+                - listitem [ref=f155e130]: Fresh towels
+                - listitem [ref=f155e133]: 24/7 support
+                - listitem [ref=f155e136]: Smart lock entry
+        - navigation "Property page menu" [ref=f155e141]:
+          - list [ref=f155e142]:
+            - listitem [ref=f155e143]:
+              - link "Overview" [ref=f155e144] [cursor=pointer]:
+                - /url: "#overview"
+            - listitem [ref=f155e145]:
+              - link "Availability and rates" [ref=f155e146] [cursor=pointer]:
+                - /url: "#availability"
+            - listitem [ref=f155e147]:
+              - link "Amenities" [ref=f155e148] [cursor=pointer]:
+                - /url: "#facilities-sec"
+            - listitem [ref=f155e149]:
+              - link "The neighborhood" [ref=f155e150] [cursor=pointer]:
+                - /url: "#neighborhood"
+            - listitem [ref=f155e151]:
+              - link "Location & map" [ref=f155e152] [cursor=pointer]:
+                - /url: "#location-map"
+            - listitem [ref=f155e153]:
+              - link "Booking policies" [ref=f155e154] [cursor=pointer]:
+                - /url: "#booking-policy"
+        - generic [ref=f155e155]:
+          - heading "Availability and rates" [level=2] [ref=f155e156]
+          - paragraph [ref=f155e157]: Select dates above to see rates and availability for each room.
+          - generic [ref=f155e158]:
+            - article [ref=f155e159]:
+              - generic [ref=f155e160]:
+                - generic [ref=f155e161]:
+                  - button "View Standard Single Room photos full screen" [ref=f155e163]:
+                    - img "Standard Single Room — photo 1 of 22"
+                    - button "Previous photo" [ref=f155e164]
+                    - button "Next photo" [ref=f155e167]
+                  - generic [ref=f155e170]:
+                    - heading "Standard Single Room" [level=3] [ref=f155e171]
+                    - paragraph [ref=f155e172]: 1 single bed · Sleeps 1
+                    - paragraph [ref=f155e173]: Free high speed Internet · Free WiFi Internet · Non-smoking · Tea and coffee making facilities · High speed internet · WiFi Internet
+                    - generic [ref=f155e174]: Select dates above to see rates
+                - paragraph [ref=f155e177]: Select your dates above to see rates and availability.
+            - article [ref=f155e178]:
+              - generic [ref=f155e179]:
+                - generic [ref=f155e180]:
+                  - button "View Standard Double Room photos full screen" [ref=f155e182]:
+                    - img "Standard Double Room — photo 1 of 28"
+                    - button "Previous photo" [ref=f155e183]
+                    - button "Next photo" [ref=f155e186]
+                  - generic [ref=f155e189]:
+                    - heading "Standard Double Room" [level=3] [ref=f155e190]
+                    - paragraph [ref=f155e191]: 8 m² · 1 double bed · Sleeps 2
+                    - paragraph [ref=f155e192]: Fire alarm with light · Free high speed Internet · Free WiFi Internet · Non-smoking · Tea and coffee making facilities · Heating
+                    - generic [ref=f155e193]: Select dates above to see rates
+                - paragraph [ref=f155e196]: Select your dates above to see rates and availability.
+            - article [ref=f155e197]:
+              - generic [ref=f155e198]:
+                - generic [ref=f155e199]:
+                  - button "View Double Room with Extra Bed photos full screen" [ref=f155e201]:
+                    - img "Double Room with Extra Bed — photo 1 of 25"
+                    - button "Previous photo" [ref=f155e202]
+                    - button "Next photo" [ref=f155e205]
+                  - generic [ref=f155e208]:
+                    - heading "Double Room with Extra Bed" [level=3] [ref=f155e209]
+                    - paragraph [ref=f155e210]: 8 m² · 1 double bed · 1 single bed · Sleeps 3
+                    - paragraph [ref=f155e211]: Free WiFi Internet · Hairdryer · WiFi Internet · Heating · Linen provided · Flat Panel HD TV
+                    - generic [ref=f155e212]: Select dates above to see rates
+                - paragraph [ref=f155e215]: Select your dates above to see rates and availability.
+        - generic [ref=f155e216]:
+          - heading "Amenities at Whiteleys Hotel" [level=2] [ref=f155e217]
+          - paragraph [ref=f155e218]: What this property offers
+          - generic [ref=f155e220]:
+            - heading "The Chapter standard" [level=3] [ref=f155e221]
+            - paragraph [ref=f155e222]: Working, relaxing, and living. Our spaces have all the essentials you need for your stay.
+            - list [ref=f155e223]:
+              - listitem [ref=f155e224]: Contactless check-in
+              - listitem [ref=f155e227]: Fast WiFi
+              - listitem [ref=f155e232]: Professionally cleaned
+              - listitem [ref=f155e235]: Fresh towels
+              - listitem [ref=f155e238]: 24/7 support
+              - listitem [ref=f155e241]: Smart lock entry
+          - generic [ref=f155e245]:
+            - generic [ref=f155e246]:
+              - generic [ref=f155e247]:
+                - heading "Property facilities" [level=3] [ref=f155e248]
+                - paragraph [ref=f155e249]: Services and features available throughout the hotel.
+              - generic [ref=f155e250]:
+                - generic [ref=f155e251]:
+                  - heading "Accessibility & safety" [level=4] [ref=f155e252]
+                  - list [ref=f155e253]:
+                    - listitem [ref=f155e254]:
+                      - generic [ref=f155e257]: Fire alarms with lights
+                    - listitem [ref=f155e258]:
+                      - generic [ref=f155e261]: Well lit path(s) to entrance
+                - generic [ref=f155e262]:
+                  - heading "Business services" [level=4] [ref=f155e263]
+                  - list [ref=f155e264]:
+                    - listitem [ref=f155e265]:
+                      - generic [ref=f155e270]: Free high speed internet
+                    - listitem [ref=f155e271]:
+                      - generic [ref=f155e276]: Free WiFi internet
+                    - listitem [ref=f155e277]:
+                      - generic [ref=f155e282]: WiFi internet
+                - generic [ref=f155e283]:
+                  - heading "Cleaning services" [level=4] [ref=f155e284]
+                  - list [ref=f155e285]:
+                    - listitem [ref=f155e286]:
+                      - generic [ref=f155e289]: Cleaning service
+                    - listitem [ref=f155e290]:
+                      - generic [ref=f155e293]: Housekeeping - daily
+                - generic [ref=f155e294]:
+                  - heading "Ground Facilities" [level=4] [ref=f155e295]
+                  - list [ref=f155e296]:
+                    - listitem [ref=f155e297]:
+                      - generic [ref=f155e301]: CCTV in common areas
+                    - listitem [ref=f155e302]:
+                      - generic [ref=f155e306]: CCTV outside property
+                - generic [ref=f155e307]:
+                  - heading "Guest services" [level=4] [ref=f155e308]
+                  - list [ref=f155e309]:
+                    - listitem [ref=f155e310]:
+                      - generic [ref=f155e314]: 24h reception
+                    - listitem [ref=f155e315]:
+                      - generic [ref=f155e318]: Meet & greet service
+                    - listitem [ref=f155e319]:
+                      - generic [ref=f155e322]: Express check out
+                - generic [ref=f155e323]:
+                  - heading "Hygiene Security" [level=4] [ref=f155e324]
+                  - list [ref=f155e325]:
+                    - listitem [ref=f155e326]:
+                      - generic [ref=f155e329]: Professionally cleaned
+                    - listitem [ref=f155e330]:
+                      - generic [ref=f155e333]: First aid kit
+                - generic [ref=f155e334]:
+                  - heading "Sustainability" [level=4] [ref=f155e335]
+                  - list [ref=f155e336]:
+                    - listitem [ref=f155e337]:
+                      - generic [ref=f155e341]: Keycard for room electricity
+            - generic [ref=f155e342]:
+              - generic [ref=f155e343]:
+                - heading "Room type amenities" [level=3] [ref=f155e344]
+                - paragraph [ref=f155e345]: Each list applies only to that room category.
+              - generic [ref=f155e346]:
+                - generic [ref=f155e347]:
+                  - heading "Standard Single Room" [level=4] [ref=f155e348]
+                  - list [ref=f155e349]:
+                    - listitem [ref=f155e350]:
+                      - generic [ref=f155e355]: Free high speed Internet
+                    - listitem [ref=f155e356]:
+                      - generic [ref=f155e361]: Free WiFi Internet
+                    - listitem [ref=f155e362]:
+                      - generic [ref=f155e365]: Non-smoking
+                    - listitem [ref=f155e366]:
+                      - generic [ref=f155e369]: Tea and coffee making facilities
+                    - listitem [ref=f155e370]:
+                      - generic [ref=f155e375]: High speed internet
+                    - listitem [ref=f155e376]:
+                      - generic [ref=f155e381]: WiFi Internet
+                    - listitem [ref=f155e382]:
+                      - generic [ref=f155e385]: Heating
+                    - listitem [ref=f155e386]:
+                      - generic [ref=f155e389]: Soundproofing
+                    - listitem [ref=f155e390]:
+                      - generic [ref=f155e393]: First aid kit
+                    - listitem [ref=f155e394]:
+                      - generic [ref=f155e398]: High quality bedding
+                    - listitem [ref=f155e399]:
+                      - generic [ref=f155e403]: Linen provided
+                    - listitem [ref=f155e404]:
+                      - generic [ref=f155e407]: Electric kettle
+                    - listitem [ref=f155e408]:
+                      - generic [ref=f155e412]: Key card access
+                    - listitem [ref=f155e413]:
+                      - generic [ref=f155e416]: Smoke detector
+                    - listitem [ref=f155e417]:
+                      - generic [ref=f155e420]: Cleaning products
+                    - listitem [ref=f155e421]:
+                      - generic [ref=f155e424]: Bottle of Water
+                    - listitem [ref=f155e425]:
+                      - generic [ref=f155e428]: Rubbish bin
+                    - listitem [ref=f155e429]:
+                      - generic [ref=f155e433]: Flat Panel HD TV
+                    - listitem [ref=f155e434]:
+                      - generic [ref=f155e438]: Shower only
+                    - listitem [ref=f155e439]:
+                      - generic [ref=f155e443]: Free toiletries
+                    - listitem [ref=f155e444]:
+                      - generic [ref=f155e447]: Towels
+                    - listitem [ref=f155e448]:
+                      - generic [ref=f155e452]: Toilet paper and soap
+                    - listitem [ref=f155e453]:
+                      - generic [ref=f155e456]: Hot water
+                    - listitem [ref=f155e457]:
+                      - generic [ref=f155e460]: Body soap
+                    - listitem [ref=f155e461]:
+                      - generic [ref=f155e464]: Conditioner
+                    - listitem [ref=f155e465]:
+                      - generic [ref=f155e469]: Shower gel
+                - generic [ref=f155e470]:
+                  - heading "Standard Double Room" [level=4] [ref=f155e471]
+                  - list [ref=f155e472]:
+                    - listitem [ref=f155e473]:
+                      - generic [ref=f155e476]: Fire alarm with light
+                    - listitem [ref=f155e477]:
+                      - generic [ref=f155e482]: Free high speed Internet
+                    - listitem [ref=f155e483]:
+                      - generic [ref=f155e488]: Free WiFi Internet
+                    - listitem [ref=f155e489]:
+                      - generic [ref=f155e492]: Non-smoking
+                    - listitem [ref=f155e493]:
+                      - generic [ref=f155e496]: Tea and coffee making facilities
+                    - listitem [ref=f155e497]:
+                      - generic [ref=f155e500]: Heating
+                    - listitem [ref=f155e501]:
+                      - generic [ref=f155e504]: Soundproofing
+                    - listitem [ref=f155e505]:
+                      - generic [ref=f155e509]: Wardrobe
+                    - listitem [ref=f155e510]:
+                      - generic [ref=f155e513]: Carpeted floor
+                    - listitem [ref=f155e514]:
+                      - generic [ref=f155e518]: High quality bedding
+                    - listitem [ref=f155e519]:
+                      - generic [ref=f155e523]: Linen provided
+                    - listitem [ref=f155e524]:
+                      - generic [ref=f155e527]: Electric kettle
+                    - listitem [ref=f155e528]:
+                      - generic [ref=f155e532]: Key card access
+                    - listitem [ref=f155e533]:
+                      - generic [ref=f155e536]: Smoke detector
+                    - listitem [ref=f155e537]:
+                      - generic [ref=f155e540]: Bottle of Water
+                    - listitem [ref=f155e541]:
+                      - generic [ref=f155e545]: Flat Panel HD TV
+                    - listitem [ref=f155e546]:
+                      - generic [ref=f155e549]: Emergency exit
+                    - listitem [ref=f155e550]:
+                      - generic [ref=f155e554]: Shower only
+                    - listitem [ref=f155e555]:
+                      - generic [ref=f155e559]: Free toiletries
+                    - listitem [ref=f155e560]:
+                      - generic [ref=f155e563]: Towels
+                    - listitem [ref=f155e564]:
+                      - generic [ref=f155e568]: Toilet paper and soap
+                    - listitem [ref=f155e569]:
+                      - generic [ref=f155e572]: Hot water
+                    - listitem [ref=f155e573]:
+                      - generic [ref=f155e576]: Body soap
+                    - listitem [ref=f155e577]:
+                      - generic [ref=f155e580]: Conditioner
+                    - listitem [ref=f155e581]:
+                      - generic [ref=f155e584]: Shampoo
+                    - listitem [ref=f155e585]:
+                      - generic [ref=f155e589]: Shower gel
+                - generic [ref=f155e590]:
+                  - heading "Double Room with Extra Bed" [level=4] [ref=f155e591]
+                  - list [ref=f155e592]:
+                    - listitem [ref=f155e593]:
+                      - generic [ref=f155e598]: Free WiFi Internet
+                    - listitem [ref=f155e599]:
+                      - generic [ref=f155e602]: Hairdryer
+                    - listitem [ref=f155e603]:
+                      - generic [ref=f155e608]: WiFi Internet
+                    - listitem [ref=f155e609]:
+                      - generic [ref=f155e612]: Heating
+                    - listitem [ref=f155e613]:
+                      - generic [ref=f155e617]: Linen provided
+                    - listitem [ref=f155e618]:
+                      - generic [ref=f155e622]: Flat Panel HD TV
+                    - listitem [ref=f155e623]:
+                      - generic [ref=f155e627]: Shower only
+                    - listitem [ref=f155e628]:
+                      - generic [ref=f155e632]: Free toiletries
+                    - listitem [ref=f155e633]:
+                      - generic [ref=f155e636]: Towels
+        - generic [ref=f155e637]:
+          - heading "The neighborhood" [level=2] [ref=f155e638]
+          - paragraph [ref=f155e639]: Bayswater — Where you'll be staying
+          - generic [ref=f155e640]:
+            - generic [ref=f155e641]:
+              - heading "Address" [level=3] [ref=f155e642]
+              - link "64-65 Prince's Square, London, W2 4PX" [ref=f155e643] [cursor=pointer]:
+                - /url: https://www.google.com/maps?q=64-65%20Prince's%20Square%2C%20London%2C%20W2%204PX
+            - generic [ref=f155e647]:
+              - heading "In the area" [level=3] [ref=f155e648]
+              - paragraph [ref=f155e649]: Nearby places, transport links, and sights from the Eviivo facility codes.
+              - list [ref=f155e652]:
+                - listitem [ref=f155e653]:
+                  - generic [ref=f155e659]: "Nearby: Fine dining"
+                - listitem [ref=f155e660]:
+                  - generic [ref=f155e663]: "Nearby: Gambling"
+                - listitem [ref=f155e664]:
+                  - generic [ref=f155e667]: "Nearby: Art galleries & museums"
+                - listitem [ref=f155e668]:
+                  - generic [ref=f155e671]: "Nearby: Nightlife - nightclubs"
+                - listitem [ref=f155e672]:
+                  - generic [ref=f155e675]: "Nearby: Shopping"
+                - listitem [ref=f155e676]:
+                  - generic [ref=f155e679]: "Nearby: Walking"
+            - generic [ref=f155e680]:
+              - heading "About the area" [level=3] [ref=f155e681]
+              - paragraph [ref=f155e682]: You're staying in Bayswater. Open the map below for directions and to explore cafés, transport, and sights nearby.
+        - generic [ref=f155e683]:
+          - heading "Location & directions" [level=2] [ref=f155e684]
+          - paragraph [ref=f155e685]: Find us on the map. One tap for directions to your door — your phone or browser will open the map you use.
+          - link "Get directions" [ref=f155e690] [cursor=pointer]:
+            - /url: https://www.google.com/maps/dir/?api=1&destination=Whiteleys%20Hotel%2C%2064-65%20Prince's%20Square%2C%20London%2C%20W2%204PX&travelmode=driving
+        - generic [ref=f155e698]:
+          - heading "What's nearby" [level=2] [ref=f155e699]
+          - paragraph [ref=f155e700]: Planning around an event or landmark? Whiteleys Hotel is well placed for these London destinations — see our stay guides for distances and tips.
+          - list [ref=f155e701]:
+            - listitem [ref=f155e702]:
+              - link "Hotels near Hyde Park" [ref=f155e703] [cursor=pointer]:
+                - /url: /locations/near/hyde-park
+            - listitem [ref=f155e704]:
+              - link "Hotels near BST Hyde Park (27 June – 12 July 2026)" [ref=f155e705] [cursor=pointer]:
+                - /url: /locations/near/bst-hyde-park
+            - listitem [ref=f155e706]:
+              - link "Hotels near Notting Hill Carnival (29 – 31 August 2026)" [ref=f155e707] [cursor=pointer]:
+                - /url: /locations/near/notting-hill-carnival
+            - listitem [ref=f155e708]:
+              - link "Hotels near Notting Hill" [ref=f155e709] [cursor=pointer]:
+                - /url: /locations/near/notting-hill
+          - paragraph [ref=f155e710]:
+            - link "Browse all London guides →" [ref=f155e711] [cursor=pointer]:
+              - /url: /locations/near
+        - generic [ref=f155e712]:
+          - heading "Booking policies" [level=2] [ref=f155e713]
+          - paragraph [ref=f155e714]: Check-in, cancellation, children, pets, and payment information below comes from the property listing. The rate you choose at checkout always has the final wording.
+          - paragraph [ref=f155e716]: "Check-in is from 15: 00, and check-out is by 11: 00. Guests may request early check-in or late check-out after booking; we will do our best to accommodate these requests subject to availability. Additional housekeeping visits can be arranged for a fee, depending on availability. Please note, no pets, parties, or smoking are permitted on the property. We appreciate your cooperation in maintaining a comfortable environment for all guests."
+          - list [ref=f155e718]:
+            - listitem [ref=f155e719]:
+              - generic [ref=f155e723]:
+                - heading "Check-in and check-out" [level=3] [ref=f155e724]
+                - paragraph [ref=f155e725]: Check-in from 3:00pm · Check-out by 11:00am
+            - listitem [ref=f155e726]:
+              - generic [ref=f155e731]:
+                - heading "Property type" [level=3] [ref=f155e732]
+                - paragraph [ref=f155e733]: Bed and Breakfast
+            - listitem [ref=f155e734]:
+              - generic [ref=f155e741]:
+                - heading "Accessibility" [level=3] [ref=f155e742]
+                - paragraph [ref=f155e743]: Fire alarms with lights; Well lit path(s) to entrance
+            - listitem [ref=f155e744]:
+              - generic [ref=f155e748]:
+                - heading "Children and beds" [level=3] [ref=f155e749]
+                - paragraph [ref=f155e750]: Infants and children welcome
+            - listitem [ref=f155e751]:
+              - generic [ref=f155e756]:
+                - heading "Pets" [level=3] [ref=f155e757]
+                - paragraph [ref=f155e758]: No pets
+            - listitem [ref=f155e759]:
+              - generic [ref=f155e762]:
+                - heading "Payment methods" [level=3] [ref=f155e763]
+                - paragraph [ref=f155e764]: Cash (USD); Cheque; Cash (GBP); Bank transfer; Cash (GBP); 0
+            - listitem [ref=f155e765]:
+              - generic [ref=f155e769]:
+                - heading "Fine print" [level=3] [ref=f155e770]
+                - list [ref=f155e771]:
+                  - listitem [ref=f155e772]:
+                    - generic [ref=f155e774]: LGBT friendly
+        - generic [ref=f155e775]:
+          - heading "Enquire about this property" [level=2] [ref=f155e776]
+          - paragraph [ref=f155e777]: Have a question about Whiteleys Hotel? Fill in the form below and we'll get back to you.
+          - generic [ref=f155e778]:
+            - generic [ref=f155e780]:
+              - generic [ref=f155e781]:
+                - generic [ref=f155e782]:
+                  - text: Hotel *
+                  - generic [ref=f155e783]: Whiteleys Hotel
+                - generic [ref=f155e784]:
+                  - text: Room type
+                  - combobox "Room type" [ref=f155e785]:
+                    - option "Select room type" [selected]
+                    - option "Standard Single Room"
+                    - option "Standard Double Room"
+                    - option "Double Room with Extra Bed"
+              - generic [ref=f155e786]:
+                - generic [ref=f155e787]:
+                  - text: Check-in
+                  - textbox "Check-in" [ref=f155e788]
+                - generic [ref=f155e789]:
+                  - text: Check-out
+                  - textbox "Check-out" [ref=f155e790]
+              - generic [ref=f155e791]:
+                - generic [ref=f155e792]:
+                  - text: Name *
+                  - textbox "Name *" [ref=f155e793]:
+                    - /placeholder: Your name
+                - generic [ref=f155e794]:
+                  - text: Email *
+                  - textbox "Email *" [ref=f155e795]:
+                    - /placeholder: your@email.com
+              - generic [ref=f155e796]:
+                - text: Phone *
+                - textbox "Phone *" [ref=f155e797]:
+                  - /placeholder: +44 20 1234 5678
+                - paragraph [ref=f155e798]: We need your phone number to reach you about your enquiry.
+              - generic [ref=f155e799]:
+                - text: Reservation ID
+                - textbox "Reservation ID" [ref=f155e800]:
+                  - /placeholder: If you already have a booking with us
+              - generic [ref=f155e801]:
+                - text: Message
+                - textbox "Message" [ref=f155e802]:
+                  - /placeholder: Any special requests or questions...
+              - paragraph [ref=f155e804]: Security check helps stop automated spam enquiries.
+              - button "Send enquiry" [ref=f155e805]
+            - complementary [ref=f155e806]:
+              - heading "Need a quick answer?" [level=3] [ref=f155e807]
+              - paragraph [ref=f155e808]: For booking support, check-in details, or special requests, call the property front desk or email our team and we'll help you quickly.
+              - generic [ref=f155e809]:
+                - link "Call front desk · +44 20 8191 3598" [ref=f155e810] [cursor=pointer]:
+                  - /url: tel:+442081913598
+                - link "Email the-chapter-hotels@send.bedmerge.com" [ref=f155e811] [cursor=pointer]:
+                  - /url: mailto:the-chapter-hotels@send.bedmerge.com
+        - generic [ref=f155e815]:
+          - heading "FAQs" [level=2] [ref=f155e816]
+          - generic [ref=f155e817]:
+            - heading [level=3] [ref=f155e819]:
+              - button "Are there any pet-friendly rooms available?" [ref=f155e820]
+            - heading [level=3] [ref=f155e823]:
+              - button "Do you offer airport transfers?" [ref=f155e824]
+            - heading [level=3] [ref=f155e827]:
+              - button "Is breakfast included in the stay?" [ref=f155e828]
+            - heading [level=3] [ref=f155e831]:
+              - button "Do you have parking facilities?" [ref=f155e832]
+            - heading [level=3] [ref=f155e835]:
+              - button "Can I modify or cancel my reservation?" [ref=f155e836]
+          - paragraph [ref=f155e838]:
+            - text: Still have questions?
+            - link "Email us" [ref=f155e839] [cursor=pointer]:
+              - /url: mailto:the-chapter-hotels@send.bedmerge.com
+  - contentinfo [ref=f155e843]:
+    - generic [ref=f155e844]:
+      - generic [ref=f155e845]:
+        - generic [ref=f155e846]:
+          - link "The Chapter Hotels – Home" [ref=f155e847] [cursor=pointer]:
+            - /url: /
+            - img [aria-hidden] [ref=f155e848]:
+              - generic [ref=f155e849]: Hotels
+          - paragraph [ref=f155e875]: Where timeless design meets modern living. Crafting memorable stays, one chapter at a time.
+        - generic [ref=f155e876]:
+          - heading "Our Hotels" [level=3] [ref=f155e877]
+          - list [ref=f155e878]:
+            - listitem [ref=f155e879]:
+              - link "Griffin House Hotel" [ref=f155e880] [cursor=pointer]:
+                - /url: /locations/griffin-house-hotel
+            - listitem [ref=f155e881]:
+              - link "The J Hyde Park Hotel" [ref=f155e882] [cursor=pointer]:
+                - /url: /locations/the-j-hyde-park-hotel
+            - listitem [ref=f155e883]:
+              - link "The Lancaster Hotel" [ref=f155e884] [cursor=pointer]:
+                - /url: /locations/lancaster-hotel
+            - listitem [ref=f155e885]:
+              - link "The Gate Hotel" [ref=f155e886] [cursor=pointer]:
+                - /url: /locations/gate-hotel
+            - listitem [ref=f155e887]:
+              - link "Camden Road Hotel" [ref=f155e888] [cursor=pointer]:
+                - /url: /locations/camden-road-hotel
+            - listitem [ref=f155e889]:
+              - link "Whiteleys Hotel" [ref=f155e890] [cursor=pointer]:
+                - /url: /locations/whiteleys-hotel
+            - listitem [ref=f155e891]:
+              - link "Falcon Hotel" [ref=f155e892] [cursor=pointer]:
+                - /url: /locations/falcon-hotel
+            - listitem [ref=f155e893]:
+              - link "The Porchester Hotel" [ref=f155e894] [cursor=pointer]:
+                - /url: /locations/porchester-hotel
+            - listitem [ref=f155e895]:
+              - link "Parkwood Hotel" [ref=f155e896] [cursor=pointer]:
+                - /url: /locations/parkwood-hotel
+        - generic [ref=f155e897]:
+          - heading "Explore London" [level=3] [ref=f155e898]
+          - list [ref=f155e899]:
+            - listitem [ref=f155e900]:
+              - link "All guides" [ref=f155e901] [cursor=pointer]:
+                - /url: /locations/near
+            - listitem [ref=f155e902]:
+              - link "Hotels near Hyde Park" [ref=f155e903] [cursor=pointer]:
+                - /url: /locations/near/hyde-park
+            - listitem [ref=f155e904]:
+              - link "Hotels near BST Hyde Park" [ref=f155e905] [cursor=pointer]:
+                - /url: /locations/near/bst-hyde-park
+            - listitem [ref=f155e906]:
+              - link "Hotels near Pride in London" [ref=f155e907] [cursor=pointer]:
+                - /url: /locations/near/pride-london
+            - listitem [ref=f155e908]:
+              - link "Hotels near Wimbledon Championships" [ref=f155e909] [cursor=pointer]:
+                - /url: /locations/near/wimbledon
+            - listitem [ref=f155e910]:
+              - link "Hotels near Paddington Station" [ref=f155e911] [cursor=pointer]:
+                - /url: /locations/near/paddington-station
+            - listitem [ref=f155e912]:
+              - link "Hotels near Notting Hill Carnival" [ref=f155e913] [cursor=pointer]:
+                - /url: /locations/near/notting-hill-carnival
+            - listitem [ref=f155e914]:
+              - link "Hotels near Kensington Gardens" [ref=f155e915] [cursor=pointer]:
+                - /url: /locations/near/kensington-gardens
+            - listitem [ref=f155e916]:
+              - link "Hotels near Oxford Street" [ref=f155e917] [cursor=pointer]:
+                - /url: /locations/near/oxford-street
+            - listitem [ref=f155e918]:
+              - link "Hotels near Camden Market" [ref=f155e919] [cursor=pointer]:
+                - /url: /locations/near/camden-market
+            - listitem [ref=f155e920]:
+              - link "Hotels near BBC Proms" [ref=f155e921] [cursor=pointer]:
+                - /url: /locations/near/bbc-proms
+        - generic [ref=f155e922]:
+          - heading "Information" [level=3] [ref=f155e923]
+          - list [ref=f155e924]:
+            - listitem [ref=f155e925]:
+              - link "About Us" [ref=f155e926] [cursor=pointer]:
+                - /url: /about-us
+            - listitem [ref=f155e927]:
+              - link "Contact Us" [ref=f155e928] [cursor=pointer]:
+                - /url: /contact-us
+            - listitem [ref=f155e929]:
+              - link "Email us" [ref=f155e930] [cursor=pointer]:
+                - /url: mailto:the-chapter-hotels@send.bedmerge.com
+            - listitem [ref=f155e934]:
+              - link "Terms & Conditions" [ref=f155e935] [cursor=pointer]:
+                - /url: /terms-and-conditions
+            - listitem [ref=f155e936]:
+              - link "Privacy Policy" [ref=f155e937] [cursor=pointer]:
+                - /url: /privacy-policy
+            - listitem [ref=f155e938]:
+              - link "Cookie Policy" [ref=f155e939] [cursor=pointer]:
+                - /url: /cookie-policy
+        - generic [ref=f155e940]:
+          - heading "Follow us" [level=3] [ref=f155e941]
+          - generic [ref=f155e942]:
+            - link "LinkedIn" [ref=f155e943] [cursor=pointer]:
+              - /url: https://linkedin.com/company/the-chapter-hotels
+            - link "Instagram" [ref=f155e948] [cursor=pointer]:
+              - /url: https://www.instagram.com/thechapterhotels
+      - paragraph [ref=f155e953]:
+        - text: © 2026 The Chapter Hotels – All Rights Reserved. Designed by
+        - link "Bedmerge" [ref=f155e954] [cursor=pointer]:
+          - /url: https://bedmerge.com
+  - alert [ref=f155e955]

@@ -1,0 +1,717 @@
+- generic [ref=f178e1]:
+  - generic [ref=f178e2]:
+    - banner [ref=f178e3]:
+      - generic [ref=f178e4]:
+        - generic:  
+        - navigation [ref=f178e5]:
+          - generic [ref=f178e6]:
+            - link [ref=f178e10] [cursor=pointer]:
+              - /url: /
+            - generic [ref=f178e12]:
+              - article [ref=f178e13]:
+                - list [ref=f178e15]:
+                  - listitem [ref=f178e16] [cursor=pointer]:
+                    - link "Home" [ref=f178e17]:
+                      - /url: https://www.travelodge.co.uk/
+                  - listitem [ref=f178e18] [cursor=pointer]:
+                    - link "Best Price Finder" [ref=f178e19]:
+                      - /url: https://pricefinder.travelodge.co.uk/
+                  - listitem [ref=f178e20] [cursor=pointer]:
+                    - link "Business" [ref=f178e21]:
+                      - /url: /business
+                  - listitem [ref=f178e22] [cursor=pointer]:
+                    - link "Deals" [ref=f178e23]:
+                      - /url: https://tldge.co.uk/deals
+                  - listitem [ref=f178e24] [cursor=pointer]:
+                    - link "Destinations" [ref=f178e25]:
+                      - /url: /destinations
+                  - listitem [ref=f178e26] [cursor=pointer]:
+                    - link "Manage Booking" [ref=f178e27]:
+                      - /url: /manage-bookings
+              - list [ref=f178e28]:
+                - listitem [ref=f178e29]:
+                  - button "Login / Sign up" [ref=f178e30] [cursor=pointer]
+            - link [ref=f178e32] [cursor=pointer]:
+              - /url: /basket
+      - article [ref=f178e35]:
+        - listbox [ref=f178e37]:
+          - generic [ref=f178e38]:
+            - link [ref=f178e40] [cursor=pointer]:
+              - /url: https://www.travelodge.co.uk/hotel-deals
+            - generic [ref=f178e42]:
+              - heading [level=2]:
+                - link:
+                  - /url: https://www.travelodge.co.uk/hotel-deals
+    - generic [ref=f178e43]:
+      - generic [ref=f178e45]:
+        - heading "Where would you like to go?" [level=1] [ref=f178e48]
+        - group [ref=f178e49]:
+          - generic [ref=f178e50]:
+            - generic [ref=f178e51]: "Destination:"
+            - generic [ref=f178e52]:
+              - generic [ref=f178e53] [cursor=pointer]
+              - textbox "Place, postcode or hotel name" [ref=f178e55]
+          - generic [ref=f178e56]:
+            - generic [ref=f178e57]: "Check in:"
+            - generic [ref=f178e58]:
+              - generic [ref=f178e60] [cursor=pointer]
+              - textbox "Check in:" [ref=f178e61]
+          - generic [ref=f178e62]:
+            - generic [ref=f178e63]: "Check out:"
+            - generic [ref=f178e64]:
+              - generic [ref=f178e66] [cursor=pointer]
+              - textbox "Check out:" [ref=f178e67]
+          - generic [ref=f178e68]:
+            - generic [ref=f178e69]: "Rooms & guests:"
+            - generic "Rooms & Guests" [ref=f178e70]:
+              - generic [ref=f178e73] [cursor=pointer]
+              - textbox [disabled] [ref=f178e74]:
+                - /placeholder: "1"
+              - generic [ref=f178e76] [cursor=pointer]
+              - textbox [disabled] [ref=f178e77]:
+                - /placeholder: "1"
+          - button "Search" [ref=f178e79] [cursor=pointer]
+      - generic [ref=f178e80]:
+        - article [ref=f178e81]:
+          - link "Don't miss October's Deal Drop Don't miss October's Deal Drop" [ref=f178e82] [cursor=pointer]:
+            - /url: https://tldge.co.uk/dealdrop
+            - generic [ref=f178e83]:
+              - img "Don't miss October's Deal Drop" [ref=f178e85]
+              - generic [ref=f178e86]: Don't miss October's Deal Drop
+        - article [ref=f178e87]:
+          - link "10% off the Travelodge Dreamer® range 10% off the Travelodge Dreamer® range" [ref=f178e88] [cursor=pointer]:
+            - /url: https://www.travelodge.co.uk/about/sleepeezee-travelodge-dreamer/
+            - generic [ref=f178e89]:
+              - img "10% off the Travelodge Dreamer® range" [ref=f178e91]
+              - generic [ref=f178e92]: 10% off the Travelodge Dreamer® range
+        - article [ref=f178e93]:
+          - generic [ref=f178e94]:
+            - list [ref=f178e96]:
+              - listitem [ref=f178e97] [cursor=pointer]: "1"
+              - listitem [ref=f178e98] [cursor=pointer]: "2"
+              - listitem [ref=f178e99] [cursor=pointer]: "3"
+              - listitem [ref=f178e100] [cursor=pointer]: "4"
+              - listitem [ref=f178e101] [cursor=pointer]: "5"
+              - listitem [ref=f178e102] [cursor=pointer]: "6"
+              - listitem [ref=f178e103] [cursor=pointer]: "7"
+              - listitem [ref=f178e104] [cursor=pointer]: "8"
+            - listbox [ref=f178e105]:
+              - generic [ref=f178e106]:
+                - img "Rise and shine with our Unlimited Breakfast*" [ref=f178e110]
+                - generic [ref=f178e112]:
+                  - heading "Rise and shine with our Unlimited Breakfast*" [level=3] [ref=f178e113]
+                  - paragraph
+                  - paragraph [ref=f178e114]:
+                    - text: Our
+                    - link "Unlimited Breakfast" [ref=f178e115] [cursor=pointer]:
+                      - /url: https://www.travelodge.co.uk/about/our-restaurants/breakfast/
+                    - text: is served in our hotels with an onsite Bar Café. Plus kids eat for £1*. Who's joining us?
+                  - paragraph [ref=f178e116]:
+                    - text: "*"
+                    - emphasis [ref=f178e117]: For every full paying adult, up to two children under 15 years old get breakfast for £1 each.
+                  - link "Find out more" [ref=f178e119] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/breakfast/
+            - list:
+              - listitem:
+                - button [ref=f178e120] [cursor=pointer]
+              - listitem:
+                - button [ref=f178e121] [cursor=pointer]
+        - article [ref=f178e122]:
+          - link "Our new look Travelodge Our new look Travelodge Next generation rooms" [ref=f178e123] [cursor=pointer]:
+            - /url: https://www.travelodge.co.uk/about/refitted-hotels/?r=123
+            - generic [ref=f178e124]:
+              - img "Our new look Travelodge" [ref=f178e126]
+              - generic [ref=f178e127]: Our new look Travelodge Next generation rooms
+        - article [ref=f178e128]:
+          - link "NEW SuperRooms™ NEW SuperRooms™ Upgrade your stay" [ref=f178e129] [cursor=pointer]:
+            - /url: https://www.travelodge.co.uk/about/super-rooms/
+            - generic [ref=f178e130]:
+              - img "NEW SuperRooms™" [ref=f178e132]
+              - generic [ref=f178e133]: NEW SuperRooms™ Upgrade your stay
+      - text: 
+    - contentinfo [ref=f178e134]:
+      - generic [ref=f178e135]:
+        - generic [ref=f178e136]:
+          - generic [ref=f178e137]:
+            - generic [ref=f178e138]:
+              - list [ref=f178e139]:
+                - listitem [ref=f178e140]:
+                  - link "Home" [ref=f178e141] [cursor=pointer]:
+                    - /url: "https://www.travelodge.co.uk "
+                - listitem [ref=f178e142]:
+                  - link "Business" [ref=f178e143] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/business
+                - listitem [ref=f178e144]:
+                  - link "Deals" [ref=f178e145] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/hotel-deals
+                - listitem [ref=f178e146]:
+                  - link "Destinations" [ref=f178e147] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/destinations
+                - listitem [ref=f178e148]:
+                  - link "Manage Booking" [ref=f178e149] [cursor=pointer]:
+                    - /url: /manage-bookings
+                - listitem [ref=f178e150]:
+                  - link "Contact Us" [ref=f178e151] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/help/contact-us
+                - listitem:
+                  - link:
+                    - /url: javascript:void(0);
+                - link:
+                  - /url: javascript:void(0);
+              - link [ref=f178e152] [cursor=pointer]:
+                - /url: javascript:void(0);
+                - img "Image of Travelodge logo" [ref=f178e153]
+            - link:
+              - /url: javascript:void(0);
+          - link:
+            - /url: javascript:void(0);
+        - link:
+          - /url: javascript:void(0);
+        - generic [ref=f178e154]:
+          - link:
+            - /url: javascript:void(0);
+          - generic [ref=f178e155]:
+            - link:
+              - /url: javascript:void(0);
+            - generic [ref=f178e156]:
+              - link [ref=f178e157] [cursor=pointer]:
+                - /url: javascript:void(0);
+                - heading "Our hotels" [level=1] [ref=f178e158]
+              - list [ref=f178e159]:
+                - link:
+                  - /url: javascript:void(0);
+                - listitem [ref=f178e160]:
+                  - link:
+                    - /url: javascript:void(0);
+                  - link "Our Unlimited Breakfast" [ref=f178e161] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/our-restaurants/breakfast/
+                - listitem [ref=f178e162]:
+                  - link "Our SuperRooms" [ref=f178e163] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/super-rooms/
+                - listitem [ref=f178e164]:
+                  - link "Our new look Travelodge" [ref=f178e165] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/new-look/
+                - listitem [ref=f178e166]:
+                  - link "Our StaySmart Hotel experience" [ref=f178e167] [cursor=pointer]:
+                    - /url: https://tldge.co.uk/GB2075-HPF
+                - listitem [ref=f178e168]:
+                  - link "Our rooms" [ref=f178e169] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/hotel-facilities/our-rooms/
+                - listitem [ref=f178e170]:
+                  - link "Our restaurants" [ref=f178e171] [cursor=pointer]:
+                    - /url: /about/our-restaurants/
+                - listitem [ref=f178e172]:
+                  - link "Dinner" [ref=f178e173] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/our-restaurants/dinner/
+            - generic [ref=f178e174]:
+              - heading "Our destinations" [level=1] [ref=f178e175]
+              - list [ref=f178e176]:
+                - listitem [ref=f178e177]:
+                  - link "Blog" [ref=f178e178] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/blog/
+                - listitem [ref=f178e179]:
+                  - link "New hotels" [ref=f178e180] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/locations/new-hotels/
+                - listitem [ref=f178e181]:
+                  - link "Travelodge Property" [ref=f178e182] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/property/
+                - listitem [ref=f178e183]:
+                  - link "Destinations" [ref=f178e184] [cursor=pointer]:
+                    - /url: /destinations
+                - listitem [ref=f178e185]:
+                  - link "Find a hotel" [ref=f178e186] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/locations/
+            - generic [ref=f178e187]:
+              - heading "What we offer" [level=1] [ref=f178e188]
+              - list [ref=f178e189]:
+                - listitem [ref=f178e190]:
+                  - link "Travelodge Business" [ref=f178e191] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/business
+                - listitem [ref=f178e192]:
+                  - link "Group bookings" [ref=f178e193] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/group-bookings/
+                - listitem [ref=f178e194]:
+                  - link "Affiliates" [ref=f178e195] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/affiliate-programme/
+                - listitem [ref=f178e196]:
+                  - link "Amazing value prices" [ref=f178e197] [cursor=pointer]:
+                    - /url: /about/amazing-value-prices/
+                - listitem [ref=f178e198]:
+                  - link "Early check in/Late check out" [ref=f178e199] [cursor=pointer]:
+                    - /url: /about/extend-your-stay/
+                - listitem [ref=f178e200]:
+                  - link "Deals" [ref=f178e201] [cursor=pointer]:
+                    - /url: /hotel-deals
+                - listitem [ref=f178e202]:
+                  - link "WiFi" [ref=f178e203] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/wifi/
+                - listitem [ref=f178e204]:
+                  - link "Trips by Travelodge" [ref=f178e205] [cursor=pointer]:
+                    - /url: https://experiences.travelodge.co.uk/en-GB/GBP?sorting=popularity
+            - generic [ref=f178e206]:
+              - heading "Find out more" [level=1] [ref=f178e207]
+              - list [ref=f178e208]:
+                - listitem [ref=f178e209]:
+                  - link "Careers" [ref=f178e210] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/vacancies/
+                - listitem [ref=f178e211]:
+                  - link "Press centre" [ref=f178e212] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/media/press-releases/
+                - listitem [ref=f178e213]:
+                  - link "Our company" [ref=f178e214] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/about-us/company-overview/
+                - listitem [ref=f178e215]:
+                  - link "Integrity statement" [ref=f178e216] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/integrity-statement/
+                - listitem [ref=f178e217]:
+                  - link "Modern Slavery Act statement" [ref=f178e218] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/slavery-statement/
+                - listitem [ref=f178e219]:
+                  - link "Accessibility Guide" [ref=f178e220] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/accessibility-guide/
+                - listitem [ref=f178e221]:
+                  - link "Sustainability" [ref=f178e222] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/sustainability/
+                - listitem [ref=f178e223]:
+                  - link "Levelling Up report" [ref=f178e224] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/sustainability/inclusive/
+                - listitem [ref=f178e225]:
+                  - link "Corporate website" [ref=f178e226] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/our-business/
+                - listitem [ref=f178e227]:
+                  - link "Customer Reviews Policy" [ref=f178e228] [cursor=pointer]:
+                    - /url: https://www.travelodge.co.uk/about/customer-reviews-policy/
+            - generic [ref=f178e229]:
+              - heading "Download the app" [level=1] [ref=f178e230]
+              - generic [ref=f178e231]:
+                - img "Image of mobile app" [ref=f178e233]
+                - generic [ref=f178e234]:
+                  - generic [ref=f178e235]:
+                    - paragraph [ref=f178e236]: Find, book and explore our upgraded rooms in moments - even when you're on the go.
+                    - paragraph [ref=f178e237]
+                    - paragraph [ref=f178e238]: Get the best value prices at your fingertips.
+                    - paragraph [ref=f178e239]
+                    - paragraph [ref=f178e240]: Free for iOS and Android.
+                  - link [ref=f178e241] [cursor=pointer]:
+                    - /url: "                                    https://play.google.com/store/apps/details?id=co.uk.travelodge.app\n                                    "
+                    - img "Image of Google Play" [ref=f178e242]
+                  - link [ref=f178e243] [cursor=pointer]:
+                    - /url: "                                    https://itunes.apple.com/gb/app/travelodge-hotels/id978132900?mt=8\n                                    "
+                    - img "Image of App Store" [ref=f178e244]
+        - generic [ref=f178e246]:
+          - list [ref=f178e247]:
+            - listitem [ref=f178e248]: © Travelodge 2026
+            - listitem [ref=f178e249]:
+              - link "Privacy policy" [ref=f178e250] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/privacy-policy/
+            - listitem [ref=f178e251]:
+              - link "Booking T&Cs" [ref=f178e252] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/booking-terms-conditions/
+            - listitem [ref=f178e253]:
+              - link "Promotional T&Cs" [ref=f178e254] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/promo-terms-conditions/
+            - listitem [ref=f178e255]:
+              - link "Site accessibility" [ref=f178e256] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/accessibility-guide/
+            - listitem [ref=f178e257]:
+              - link "Integrity statement" [ref=f178e258] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/integrity-statement/
+            - listitem [ref=f178e259]:
+              - link "Disclosure" [ref=f178e260] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/about/responsible-disclosure-policy/
+            - listitem [ref=f178e261]:
+              - link "Corporate website" [ref=f178e262] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/our-business/
+            - listitem [ref=f178e263]:
+              - link "Blog" [ref=f178e264] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/blog/
+            - listitem [ref=f178e265]:
+              - link "Careers" [ref=f178e266] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/vacancies/
+            - listitem [ref=f178e267]:
+              - link "Sustainability" [ref=f178e268] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/our-business/sustainability/
+            - listitem [ref=f178e269]:
+              - link "Press centre" [ref=f178e270] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/our-business/media/press-releases/
+          - list [ref=f178e272]:
+            - listitem [ref=f178e273]:
+              - link [ref=f178e274] [cursor=pointer]:
+                - /url: https://en-gb.facebook.com/travelodgeuk
+                - img "i_facebook.png" [ref=f178e275]
+            - listitem [ref=f178e276]:
+              - link [ref=f178e277] [cursor=pointer]:
+                - /url: https://www.instagram.com/TravelodgeUK/
+                - img "instagram.png" [ref=f178e278]
+            - listitem [ref=f178e279]:
+              - link [ref=f178e280] [cursor=pointer]:
+                - /url: https://www.youtube.com/user/TravelodgeUK
+                - img "i_mail.png" [ref=f178e281]
+            - listitem [ref=f178e282]:
+              - link [ref=f178e283] [cursor=pointer]:
+                - /url: https://www.travelodge.co.uk/blog
+                - img "blog-link_0_grey.png" [ref=f178e284]
+        - generic [ref=f178e285]:
+          - generic [ref=f178e286] [cursor=pointer]: Explore Destinations
+          - list:
+            - listitem:
+              - heading "Top destinations" [level=3]
+              - list:
+                - listitem:
+                  - link "West London hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/west-london/index.html
+                - listitem:
+                  - link "Breaks":
+                    - /url: https://www.travelodge.co.uk/blog/short-breaks/city-breaks/
+                - listitem:
+                  - link "London hotels":
+                    - /url: /uk/london/index.html
+                - listitem:
+                  - link "Central London hotels":
+                    - /url: /uk/london/central-london/index.html
+                - listitem:
+                  - link "North London hotels":
+                    - /url: /uk/greater-london/north-london/index.html
+                - listitem:
+                  - link "South London hotels":
+                    - /url: /uk/greater-london/south-london/index.html
+                - listitem:
+                  - link "East London hotels":
+                    - /url: /uk/greater-london/east-london/index.html
+                - listitem:
+                  - link "West London hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/west-london/index.html
+                - listitem:
+                  - link "Alton Towers hotels":
+                    - /url: /uk/staffordshire/alton-towers/index.html
+                - listitem:
+                  - link "Bath hotels":
+                    - /url: /uk/somerset/bath/index.html
+                - listitem:
+                  - link "Bicester Village hotels":
+                    - /url: /uk/oxfordshire/bicester/bicester-village/index.html
+                - listitem:
+                  - link "Birmingham hotels":
+                    - /url: /uk/west-midlands/birmingham/index.html
+                - listitem:
+                  - link "Blackpool hotels":
+                    - /url: /uk/lancashire/blackpool/index.html
+                - listitem:
+                  - link "Bournemouth hotels":
+                    - /url: /uk/dorset/bournemouth/index.html
+                - listitem:
+                  - link "Brighton hotels":
+                    - /url: /uk/east-sussex/brighton/index.html
+                - listitem:
+                  - link "Bristol hotels":
+                    - /url: /uk/bristol/index.html
+                - listitem:
+                  - link "Cambridge hotels":
+                    - /url: /uk/cambridgeshire/cambridge/index.html
+                - listitem:
+                  - link "Cardiff hotels":
+                    - /url: /uk/glamorgan/cardiff/index.html
+                - listitem:
+                  - link "Chester hotels":
+                    - /url: /uk/cheshire/chester/index.html
+                - listitem:
+                  - link "Chester Zoo hotels":
+                    - /url: /uk/cheshire/chester/chester-zoo/index.html
+                - listitem:
+                  - link "Colwyn Bay hotels":
+                    - /url: /uk/clwyd/colwyn-bay/index.html
+                - listitem:
+                  - link "Excel hotels":
+                    - /url: /uk/greater-london/excel/index.html
+                - listitem:
+                  - link "Earls Court hotels":
+                    - /url: /uk/greater-london/earls-court/index.html
+                - listitem:
+                  - link "Hotels near attractions":
+                    - /url: /blog/short-breaks/
+                - listitem:
+                  - link "Leeds hotels":
+                    - /url: /uk/west-yorkshire/leeds/index.html
+                - listitem:
+                  - link "Legoland hotels":
+                    - /url: /uk/berkshire/windsor/legoland/index.html
+                - listitem:
+                  - link "Liverpool hotels":
+                    - /url: /uk/merseyside/liverpool/index.html
+                - listitem:
+                  - link "London Zoo hotels":
+                    - /url: /uk/london/london-zoo/index.html
+                - listitem:
+                  - link "Manchester Arena hotels":
+                    - /url: /uk/manchester/manchester-arena/index.html
+                - listitem:
+                  - link "Manchester hotels":
+                    - /url: /uk/manchester/index.html
+                - listitem:
+                  - link "York hotels":
+                    - /url: /uk/north-yorkshire/york/index.html
+                - listitem:
+                  - link "Wimbledon hotels":
+                    - /url: /uk/greater-london/wimbledon/index.html
+                - listitem:
+                  - link "Wembley hotels":
+                    - /url: /uk/greater-london/wembley/index.html
+                - listitem:
+                  - link "Warwick Castle hotels":
+                    - /url: /uk/warwickshire/warwick/warwick-castle/index.html
+                - listitem:
+                  - link "Twickenham hotels":
+                    - /url: /uk/greater-london/twickenham/index.html
+                - listitem:
+                  - link "Trafford Centre hotels":
+                    - /url: /uk/manchester/trafford-centre/index.html
+                - listitem:
+                  - link "Thorpe Park hotels":
+                    - /url: /uk/surrey/staines/thorpe-park/index.html
+                - listitem:
+                  - link "Spain hotels":
+                    - /url: https://www.travelodge.co.uk/about/locations/spain-hotels/
+                - listitem:
+                  - link "Southampton hotels":
+                    - /url: /uk/hampshire/southampton/index.html
+                - listitem:
+                  - link "Silverstone hotels":
+                    - /url: /uk/northamptonshire/silverstone/index.html
+                - listitem:
+                  - link "Sheffield hotels":
+                    - /url: /uk/south-yorkshire/sheffield/index.html
+                - listitem:
+                  - link "Oxford hotels":
+                    - /url: /uk/oxfordshire/oxford/index.html
+                - listitem:
+                  - link "Old Trafford hotels":
+                    - /url: /uk/manchester/old-trafford/index.html
+                - listitem:
+                  - link "O2 hotels":
+                    - /url: /uk/greater-london/o2/index.html
+                - listitem:
+                  - link "Nottingham hotels":
+                    - /url: /uk/nottinghamshire/nottingham/index.html
+                - listitem:
+                  - link "Newcastle hotels":
+                    - /url: /uk/tyne-and-wear/newcastle/index.html
+                - listitem:
+                  - link "NEC hotels":
+                    - /url: /uk/west-midlands/birmingham/nec/index.html
+            - listitem:
+              - heading "England" [level=3]
+              - list:
+                - listitem:
+                  - link "Bedford hotels":
+                    - /url: https://www.travelodge.co.uk/uk/bedfordshire/bedford/index.html
+                - listitem:
+                  - link "Chippenham hotels":
+                    - /url: https://www.travelodge.co.uk/uk/wiltshire/chippenham/index.html
+                - listitem:
+                  - link "Coventry hotels":
+                    - /url: https://www.travelodge.co.uk/uk/warwickshire/coventry/index.html
+                - listitem:
+                  - link "Crawley hotels":
+                    - /url: https://www.travelodge.co.uk/uk/west-sussex/crawley/index.html
+                - listitem:
+                  - link "Crewe hotels":
+                    - /url: https://www.travelodge.co.uk/uk/cheshire/crewe/index.html
+                - listitem:
+                  - link "Derby hotels":
+                    - /url: https://www.travelodge.co.uk/uk/derbyshire/derby/index.html
+                - listitem:
+                  - link "Doncaster hotels":
+                    - /url: https://www.travelodge.co.uk/uk/south-yorkshire/doncaster/index.html
+                - listitem:
+                  - link "Durham hotels":
+                    - /url: https://www.travelodge.co.uk/uk/county-durham/durham/index.html
+                - listitem:
+                  - link "Eastleigh hotels":
+                    - /url: https://www.travelodge.co.uk/uk/hampshire/eastleigh/index.html
+                - listitem:
+                  - link "Grantham hotels":
+                    - /url: https://www.travelodge.co.uk/uk/lincolnshire/grantham/index.html
+                - listitem:
+                  - link "Hemel Hempstead hotels":
+                    - /url: https://www.travelodge.co.uk/uk/hertfordshire/hemel-hempstead/index.html
+                - listitem:
+                  - link "Hereford hotels":
+                    - /url: https://www.travelodge.co.uk/uk/herefordshire/hereford/index.html
+                - listitem:
+                  - link "Heywood hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-manchester/heywood/index.html
+                - listitem:
+                  - link "Hounslow hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/hounslow/index.html
+                - listitem:
+                  - link "Ilford hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/ilford/index.html
+                - listitem:
+                  - link "Ipswich hotels":
+                    - /url: https://www.travelodge.co.uk/uk/suffolk/ipswich/index.html
+                - listitem:
+                  - link "Kidderminster hotels":
+                    - /url: https://www.travelodge.co.uk/uk/worcestershire/kidderminster/index.html
+                - listitem:
+                  - link "Kingston Upon Thames hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/kingston-upon-thames/index.html
+                - listitem:
+                  - link "Lancaster hotels":
+                    - /url: https://www.travelodge.co.uk/uk/lancashire/lancaster/index.html
+                - listitem:
+                  - link "Leicester hotels":
+                    - /url: https://www.travelodge.co.uk/uk/leicestershire/leicester/index.html
+                - listitem:
+                  - link "Milton Keynes hotels":
+                    - /url: https://www.travelodge.co.uk/uk/buckinghamshire/milton-keynes/index.html
+                - listitem:
+                  - link "Newbury hotels":
+                    - /url: https://www.travelodge.co.uk/uk/berkshire/newbury/index.html
+                - listitem:
+                  - link "Newport hotels":
+                    - /url: https://www.travelodge.co.uk/uk/hampshire/newport/index.html
+                - listitem:
+                  - link "Northampton hotels":
+                    - /url: https://www.travelodge.co.uk/uk/northamptonshire/northampton/index.html
+                - listitem:
+                  - link "Norwich hotels":
+                    - /url: https://www.travelodge.co.uk/uk/norfolk/norwich/index.html
+                - listitem:
+                  - link "Nuneaton hotels":
+                    - /url: https://www.travelodge.co.uk/uk/warwickshire/nuneaton/index.html
+                - listitem:
+                  - link "Okehampton hotels":
+                    - /url: https://www.travelodge.co.uk/uk/devon/okehampton/index.html
+                - listitem:
+                  - link "Peterborough hotels":
+                    - /url: https://www.travelodge.co.uk/uk/cambridgeshire/peterborough/index.html
+                - listitem:
+                  - link "Plymouth hotels":
+                    - /url: https://www.travelodge.co.uk/uk/devon/plymouth/index.html
+                - listitem:
+                  - link "Portsmouth hotels":
+                    - /url: https://www.travelodge.co.uk/uk/hampshire/portsmouth/index.html
+                - listitem:
+                  - link "Ramsgate hotels":
+                    - /url: https://www.travelodge.co.uk/uk/kent/ramsgate/index.html
+                - listitem:
+                  - link "Reading hotels":
+                    - /url: https://www.travelodge.co.uk/uk/berkshire/reading/index.html
+                - listitem:
+                  - link "Shrewsbury hotels":
+                    - /url: https://www.travelodge.co.uk/uk/shropshire/shrewsbury/index.html
+                - listitem:
+                  - link "Slough hotels":
+                    - /url: https://www.travelodge.co.uk/uk/berkshire/slough/index.html
+                - listitem:
+                  - link "Stoke on Trent hotels":
+                    - /url: https://www.travelodge.co.uk/uk/staffordshire/stoke-on-trent/index.html
+                - listitem:
+                  - link "Spalding hotels":
+                    - /url: https://www.travelodge.co.uk/uk/lincolnshire/spalding/index.html
+                - listitem:
+                  - link "Sunderland hotels":
+                    - /url: https://www.travelodge.co.uk/uk/tyne-and-wear/sunderland/index.html
+                - listitem:
+                  - link "Sutton Coldfield hotels":
+                    - /url: https://www.travelodge.co.uk/uk/west-midlands/sutton-coldfield/index.html
+                - listitem:
+                  - link "Wakefield hotels":
+                    - /url: https://www.travelodge.co.uk/uk/west-yorkshire/wakefield/index.html
+                - listitem:
+                  - link "Warrington hotels":
+                    - /url: https://www.travelodge.co.uk/uk/cheshire/warrington/index.html
+                - listitem:
+                  - link "Ascot hotels":
+                    - /url: /uk/berkshire/ascot/index.html
+                - listitem:
+                  - link "Bradford hotels":
+                    - /url: /uk/west-yorkshire/bradford/index.html
+                - listitem:
+                  - link "Birtley hotels":
+                    - /url: /uk/tyne-and-wear/birtley/index.html
+                - listitem:
+                  - link "Bromsgrove hotels":
+                    - /url: /uk/worcestershire/bromsgrove/index.html
+                - listitem:
+                  - link "Camberley hotels":
+                    - /url: /uk/surrey/camberley/index.html
+                - listitem:
+                  - link "Carlisle hotels":
+                    - /url: /uk/cumbria/carlisle/index.html
+            - listitem:
+              - heading "Scotland" [level=3]
+              - list:
+                - listitem:
+                  - link "Aberdeen hotels":
+                    - /url: https://www.travelodge.co.uk/uk/aberdeenshire/aberdeen/index.html
+                - listitem:
+                  - link "Dundee hotels":
+                    - /url: https://www.travelodge.co.uk/uk/dundee/index.html
+                - listitem:
+                  - link "Edinburgh hotels":
+                    - /url: https://www.travelodge.co.uk/uk/edinburgh/index.html
+                - listitem:
+                  - link "Glasgow hotels":
+                    - /url: https://www.travelodge.co.uk/uk/lanarkshire/glasgow/index.html
+                - listitem:
+                  - link "Inverness hotels":
+                    - /url: https://www.travelodge.co.uk/uk/highlands/inverness/index.html
+                - listitem:
+                  - link "Perth hotels":
+                    - /url: https://www.travelodge.co.uk/uk/perthshire/perth/index.html
+                - listitem:
+                  - link "St Andrews hotels":
+                    - /url: https://www.travelodge.co.uk/uk/edinburgh/standrews-hotels-edinburgh/index.html
+                - listitem:
+                  - link "Weekend breaks Scotland":
+                    - /url: https://www.travelodge.co.uk/blog/short-breaks/guide/scotland-breaks/
+            - listitem:
+              - heading "Ireland" [level=3]:
+                - link "Ireland":
+                  - /url: https://www.travelodge.co.uk/about/locations/ireland-hotels/
+              - list:
+                - listitem:
+                  - link "Belfast hotels":
+                    - /url: /ireland/hotels-in-belfast
+                - listitem:
+                  - link "Dublin hotels":
+                    - /url: https://www.travelodge.co.uk/about/locations/dublin-hotels/
+                - listitem:
+                  - link "Ireland hotels":
+                    - /url: https://www.travelodge.co.uk/about/locations/ireland-hotels/
+                - listitem:
+                  - link "Limerick hotels":
+                    - /url: /ireland/hotels-in-limerick
+            - listitem:
+              - heading "Airport" [level=3]:
+                - link "Airport":
+                  - /url: https://www.travelodge.co.uk/about/locations/airport-hotels/
+              - list:
+                - listitem:
+                  - link "Gatwick airport hotels":
+                    - /url: https://www.travelodge.co.uk/uk/west-sussex/crawley/gatwick-airport/index.html
+                - listitem:
+                  - link "Airport hotels":
+                    - /url: https://www.travelodge.co.uk/about/locations/airport-hotels/
+                - listitem:
+                  - link "Heathrow airport hotels":
+                    - /url: https://www.travelodge.co.uk/uk/greater-london/heathrow-airport/index.html
+                - listitem:
+                  - link "Dublin airport hotels":
+                    - /url: https://www.travelodge.co.uk/about/locations/dublin-hotels/
+  - dialog "Consent Banner" [ref=f178e289]:
+    - generic [ref=f178e290]:
+      - generic [ref=f178e291]:
+        - generic [ref=f178e292]: Cookies
+        - generic [ref=f178e293]:
+          - text: At Travelodge, we and our partners use cookies to give you the best experience on our website and to ensure any communications from Travelodge are relevant to you. For more details see our
+          - link "privacy policy" [ref=f178e294] [cursor=pointer]:
+            - /url: /about/privacy-policy/
+          - text: . By clicking 'Yes, I agree', you agree to our use of all cookies. You can
+          - button "Cookie Consent Tool" [ref=f178e295] [cursor=pointer]: manage your preferences
+          - text: at any time.
+      - generic [ref=f178e296]:
+        - button "Yes, I agree" [ref=f178e297] [cursor=pointer]
+        - button "No, thanks" [ref=f178e298] [cursor=pointer]
+        - button "Cookie Settings" [ref=f178e299] [cursor=pointer]

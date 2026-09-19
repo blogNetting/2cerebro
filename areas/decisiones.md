@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-09-09
+updated: 2026-09-19
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -37,6 +37,13 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Descartada la capa de datos de producto/precio sin scraping (Keepa API, SerpApi): requieren API key de pago y el usuario decidió no incluirla por ahora. Si se revisita, evaluar bajo el mismo criterio de "herramienta existente antes que script improvisado".
 - Registrado en `.mcp.json` del proyecto: `playwright-cdp`, con `--cdp-endpoint=${CDP_ENDPOINT:-http://192.168.1.5:9222}`. Limitación asumida: el endpoint se fija al arrancar el proceso MCP; cambiar de máquina dentro de la misma sesión no es posible, hace falta relanzar `claude` con `CDP_ENDPOINT` puesto a la IP de la otra máquina.
 - Regla añadida a `AGENTS.md`: reutilización de skills — comprobar si ya existe una antes de resolver algo o de crear una nueva, y registrar en cada skill qué alternativa se descartó y por qué.
+
+## 2026-09-19 — Corrección: el escalado a CDP es obligatorio tras un bloqueo
+
+- Fallo detectado por el usuario: en una consulta de precios, `WebFetch` devolvió HTML vacío en Amazon y 403 en Leroy Merlin y Bauhaus, y se entregó «no verificado» en vez de escalar a `/navegador-cdp`, pese a que `investigar-web` ya listaba esos casos. Además se leyó un escepticismo del usuario («sin navegador real no creo que los saques») como prohibición.
+- Correcciones aplicadas: `investigar-web` paso 3 pasa a obligatorio; nuevos pasos 4-8 (un bloqueo no es un resultado; solo una prohibición explícita suspende el escalado; el sitio que el usuario prioriza se resuelve primero; los resúmenes del buscador no son precio; informar por partes). `AGENTS.md` (sección Reutilización de skills) alineado.
+- `navegador-cdp`: nuevo paso 0. Si `CDP_ENDPOINT` ya está definida y responde a `curl`, esa es la máquina elegida y no se pregunta otra vez; la pregunta a/b solo aplica si la variable no está definida. Es un cambio sobre el diseño original («se elige por consulta»); revertible si el usuario prefiere preguntar siempre.
+- Sitios comprobados y selectores de Amazon: ver [[entorno]].
 
 ## 2026-09-19 — Puente de contexto entre sesiones (VSCode ↔ CLI)
 

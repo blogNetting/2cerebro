@@ -1,0 +1,33 @@
+- generic [ref=f29e1]:
+  - link "Ir al contenido" [ref=f29e2] [cursor=pointer]:
+    - /url: "#site-content"
+  - alert
+  - generic [ref=f29e18]:
+    - generic [ref=f29e24]:
+      - link "Página de inicio de Airbnb" [ref=f29e26] [cursor=pointer]:
+        - /url: /
+      - search [ref=f29e30]:
+        - generic:
+          - generic:
+            - generic:
+              - tablist:
+                - tab "Alojamientos" [selected]
+                - tab "Experiencias"
+                - tab "Servicios"
+            - search "Empieza tu búsqueda" [ref=f29e32] [cursor=pointer]:
+              - generic [ref=f29e34]:
+                - button "Destino" [disabled] [ref=f29e35]
+                - button "Llegada/Salida" [disabled] [ref=f29e41]
+                - button "Viajeros" [disabled] [ref=f29e46]
+      - navigation "Perfil" [ref=f29e58]:
+        - generic [ref=f29e59]:
+          - link "Hazte anfitrión" [ref=f29e60] [cursor=pointer]:
+            - /url: "#guest-header-become-a-host-menu"
+          - link "Selecciona un idioma y una moneda" [ref=f29e63] [cursor=pointer]:
+            - /url: "#simple-header-locale-menu-combined"
+        - generic [ref=f29e68]:
+          - link "Menú de navegación principal" [ref=f29e69] [cursor=pointer]:
+            - /url: "#guest-header-dropdownmenu"
+          - link "Cerrar":
+            - /url: "#"
+    - main [ref=f29e74]
