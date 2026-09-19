@@ -1,0 +1,1325 @@
+- generic [ref=f6e1]:
+  - link "Ir al contenido principal" [ref=f6e3] [cursor=pointer]:
+    - /url: "#basiclayout"
+  - banner [ref=f6e10]:
+    - generic [ref=f6e11]:
+      - navigation [ref=f6e12]:
+        - link "Booking.com" [ref=f6e16] [cursor=pointer]:
+          - /url: https://www.booking.com/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+        - generic [ref=f6e19]:
+          - button "Precios en Euro EUR" [ref=f6e21] [cursor=pointer]:
+            - generic [ref=f6e22]: EUR
+          - 'button "Idioma: Español" [ref=f6e24] [cursor=pointer]'
+          - link "Atención al cliente" [ref=f6e29] [cursor=pointer]:
+            - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&source=header&src=profile_contact_cs
+          - link "Registra tu alojamiento" [ref=f6e34] [cursor=pointer]:
+            - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=topbar
+          - link "Hacerse una cuenta" [ref=f6e36] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=es&aid=304142&bkng_action=hotel&prompt=signin&state=UrICixsxvO1RoNapZ4gYW6OslIoqofxF-UR4dgLPdhmQDSPFUrrFxAhQDod--4zqnhMyMaacAhGkdR-osdb0Gp7PFn03fa_KN8X8oG_pdSYLveSE0zrcLPIKLYrEWuE3ynN7NpCwSagq6BdsOoG48IpXq1FI74-FxEc_rp8wmeTNAgYblSMJyQsEfDyQkCvNy15GS9hLd-Rbh_IejUGGg47wMyEbpzUG4SYVUGVUhjiz2ErJOJB08WU2ML4jcjo-k-H1--G6n2caAKZ5YQGSYVusAs__seU--e6PpEzgXXAH65ju7LBDRVf79CHypO5phfZ8yWTlZ4UBvvJrTWcqKQiUZKlnMcbt5CYENgIiQWEynHSA3ghs4_f5Rt0gKDEsHa3t16XJE4RCxAP1PeZlbYcsBRTs*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=f6e37]: Hazte una cuenta
+          - link "Iniciar sesión" [ref=f6e39] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=es&aid=304142&bkng_action=hotel&prompt=signin&state=UrICixsxvO1RoNapZ4gYW6OslIoqofxF-UR4dgLPdhmQDSPFUrrFxAhQDod--4zqnhMyMaacAhGkdR-osdb0Gp7PFn03fa_KN8X8oG_pdSYLveSE0zrcLPIKLYrEWuE3ynN7NpCwSagq6BdsOoG48IpXq1FI74-FxEc_rp8wmeTNAgYblSMJyQsEfDyQkCvNy15GS9hLd-Rbh_IejUGGg47wMyEbpzUG4SYVUGVUhjiz2ErJOJB08WU2ML4jcjo-k-H1--G6n2caAKZ5YQGSYVusAs__seU--e6PpEzgXXAH65ju7LBDRVf79CHypO5phfZ8yWTlZ4UBvvJrTWcqKQiUZKlnMcbt5CYENgIiQWEynHSA3ghs4_f5Rt0gKDEsHa3t16XJE4RCxAP1PeZlbYcsBRTs*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=f6e40]: Inicia sesión
+      - navigation "¿Qué estás buscando?" [ref=f6e41]:
+        - menubar [ref=f6e44]:
+          - menuitem "Alojamiento" [ref=f6e45] [cursor=pointer]
+          - menuitem "Vuelos" [ref=f6e51] [cursor=pointer]
+          - menuitem "Vuelo + Hotel" [ref=f6e57] [cursor=pointer]
+          - menuitem "Alquiler de coches" [ref=f6e63] [cursor=pointer]
+          - menuitem "Atracciones" [ref=f6e69] [cursor=pointer]
+          - menuitem "Taxis aeropuerto" [ref=f6e75] [cursor=pointer]
+  - region "Buscar alojamientos" [ref=f6e86]:
+    - generic [ref=f6e87]:
+      - generic [ref=f6e91]:
+        - generic [ref=f6e96]:
+          - generic [ref=f6e97]: Indica el destino
+          - combobox "Indica el destino" [ref=f6e101]: Londres
+        - button [ref=f6e103] [cursor=pointer]:
+          - img "Borrar" [ref=f6e104]
+      - button "Seleccionar fechas vie, 4 dic — mié, 9 dic" [ref=f6e109] [cursor=pointer]:
+        - generic [ref=f6e114]:
+          - generic [ref=f6e115]: Seleccionar fechas
+          - generic [ref=f6e116]: vie, 4 dic — mié, 9 dic
+      - generic [ref=f6e122] [cursor=pointer]:
+        - generic [ref=f6e123]: Selecciona la ocupación
+        - 'button "Número de personas y de habitaciones. Selección actual: 2 adultos · 0 niños · 1 habitación" [ref=f6e125]':
+          - generic [ref=f6e126]: 2 adultos · 0 niños · 1 habitación
+      - button "Buscar" [ref=f6e132] [cursor=pointer]
+  - generic [ref=f6e135]:
+    - navigation "Breadcrumbs" [ref=f6e139]:
+      - list [ref=f6e140]:
+        - listitem [ref=f6e141]:
+          - link "Inicio" [ref=f6e142] [cursor=pointer]:
+            - /url: https://www.booking.com/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+        - listitem [ref=f6e147]:
+          - link "Hoteles" [ref=f6e148] [cursor=pointer]:
+            - /url: https://www.booking.com/hotel/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+        - listitem [ref=f6e153]:
+          - link "Todas las opciones de albergues" [ref=f6e154] [cursor=pointer]:
+            - /url: https://www.booking.com/hostels/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+        - listitem [ref=f6e159]:
+          - link "Reino Unido" [ref=f6e160] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&dest_id=222&dest_type=country&nflt=sth%3D4
+        - listitem [ref=f6e165]:
+          - link "Gran Londres" [ref=f6e166] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&dest_id=2415&dest_type=region&nflt=sth%3D4
+        - listitem [ref=f6e171]:
+          - link "Londres" [ref=f6e172] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&dest_id=-2601889&dest_type=city&nflt=sth%3D4
+        - listitem [ref=f6e177]:
+          - heading "Ofertas en el YHA London Earl's Court (Albergue) (Reino Unido)" [level=1] [ref=f6e179]
+    - generic [ref=f6e181]:
+      - main [ref=f6e182]:
+        - generic [ref=f6e183]:
+          - generic [ref=f6e184]:
+            - generic [ref=f6e185]:
+              - navigation "Enlace a página interna" [ref=f6e189]:
+                - list [ref=f6e191]:
+                  - listitem [ref=f6e192]:
+                    - link "Vista general" [ref=f6e193] [cursor=pointer]:
+                      - /url: "#hotelTmpl"
+                  - listitem [ref=f6e196]:
+                    - link "Info y precios" [ref=f6e197] [cursor=pointer]:
+                      - /url: "#availability"
+                  - listitem [ref=f6e200]:
+                    - link "Servicios" [ref=f6e201] [cursor=pointer]:
+                      - /url: "#hp_facilities_box"
+                  - listitem [ref=f6e204]:
+                    - link "Normas de la casa" [ref=f6e205] [cursor=pointer]:
+                      - /url: "#policies"
+                  - listitem [ref=f6e208]:
+                    - link "Información legal e importante" [ref=f6e209] [cursor=pointer]:
+                      - /url: "#important_info"
+                  - listitem [ref=f6e212]:
+                    - link "Comentarios de clientes (2.187)" [ref=f6e213] [cursor=pointer]:
+                      - /url: "#blockdisplay4"
+              - generic [ref=f6e217]:
+                - generic [ref=f6e218]:
+                  - button "Guardar YHA London Earl's Court en una lista de viaje" [ref=f6e225] [cursor=pointer]
+                  - button "Compartir este alojamiento" [ref=f6e236] [cursor=pointer]
+                  - button "Reserva ahora" [ref=f6e241] [cursor=pointer]
+                  - button "Igualamos el precio" [ref=f6e246] [cursor=pointer]
+                - generic [ref=f6e253]:
+                  - generic [ref=f6e256]:
+                    - button "4 estrellas de 5" [ref=f6e258]:
+                      - img "4 estrellas de 5" [ref=f6e259]
+                    - button "Travel Proud" [ref=f6e289] [cursor=pointer]
+                  - heading "YHA London Earl's Court" [level=2] [ref=f6e309]
+                - generic [ref=f6e313]:
+                  - link "YHA London Earl's Court, Londres - Comprobar la ubicación" [ref=f6e314] [cursor=pointer]:
+                    - /url: "#map_opened-map_trigger_header_pin"
+                  - generic [ref=f6e319]:
+                    - button [ref=f6e321] [cursor=pointer]:
+                      - generic [ref=f6e322]:
+                        - text: 38 Bolton Gardens, Kensington y Chelsea, Londres, SW5 0AQ, Reino Unido
+                        - generic [aria-hidden] [ref=f6e323]:
+                          - generic [ref=f6e324]:
+                            - text: Ubicación excelente, ¡puntuada con 9.2/10!
+                            - generic [ref=f6e325]: (puntuación basada en 2150 comentarios)
+                          - generic [ref=f6e326]: Valorado por los clientes después de alojarse en el YHA London Earl's Court.
+                    - text: –
+                    - link "Ubicación excelente - Ver mapa" [ref=f6e327] [cursor=pointer]:
+                      - /url: "#map_opened-map_trigger_header"
+                    - text: –
+                    - button [ref=f6e329] [cursor=pointer]:
+                      - generic [ref=f6e330]:
+                        - text: Cerca del metro
+                        - generic [aria-hidden] [ref=f6e331]: A 400 m a pie de la estación de Estación de metro Earls Court
+              - generic "Galería de fotos del YHA London Earl's Court" [ref=f6e335]:
+                - region "Galería de fotos de YHA London Earl's Court" [ref=f6e337]:
+                  - generic [ref=f6e340]:
+                    - generic [ref=f6e341]:
+                      - button [ref=f6e343] [cursor=pointer]:
+                        - img "una puerta de un edificio con una planta delante en YHA London Earl's Court, en Londres" [ref=f6e345]
+                      - generic [ref=f6e346]:
+                        - button [ref=f6e348] [cursor=pointer]:
+                          - img "Una habitación con literas con dos literas y una puerta. en YHA London Earl's Court, en Londres" [ref=f6e350]
+                        - button [ref=f6e352] [cursor=pointer]:
+                          - img "Un dormitorio con paredes rojas y una ventana. en YHA London Earl's Court, en Londres" [ref=f6e354]
+                    - generic [ref=f6e355]:
+                      - button [ref=f6e357] [cursor=pointer]:
+                        - img "Una habitación con mesas y sillas con flores en botellas. en YHA London Earl's Court, en Londres" [ref=f6e359]
+                      - button [ref=f6e361] [cursor=pointer]:
+                        - img "una sala de estar con dos sofás y una mesa en YHA London Earl's Court, en Londres" [ref=f6e363]
+                      - button [ref=f6e365] [cursor=pointer]:
+                        - img "Un felpudo de bienvenida delante de una puerta con dos jarrones amarillos. en YHA London Earl's Court, en Londres" [ref=f6e367]
+                      - button [ref=f6e369] [cursor=pointer]:
+                        - img "Un dormitorio con una cama y un patio con sombrilla. en YHA London Earl's Court, en Londres" [ref=f6e371]
+                      - generic [ref=f6e372]:
+                        - button [ref=f6e373] [cursor=pointer]:
+                          - img "Una mesa con un plato de pan y una botella de cerveza. en YHA London Earl's Court, en Londres 25 fotos más" [ref=f6e375]
+                        - generic: 25 fotos más
+              - generic [ref=f6e377]:
+                - button "Siguiente" [ref=f6e381] [cursor=pointer]
+                - button [ref=f6e385] [cursor=pointer]:
+                  - button "Ver en el mapa" [ref=f6e391]
+            - list [ref=f6e400]:
+              - listitem [ref=f6e401]:
+                - generic [ref=f6e407]: Buen desayuno
+              - listitem [ref=f6e409]:
+                - generic [ref=f6e415]: WiFi gratis
+              - listitem [ref=f6e417]:
+                - generic [ref=f6e423]: 2 restaurantes
+              - listitem [ref=f6e425]:
+                - generic [ref=f6e431]: Habitaciones sin humo
+              - listitem [ref=f6e433]:
+                - generic [ref=f6e439]: Habitaciones familiares
+              - listitem [ref=f6e441]:
+                - generic [ref=f6e447]: Baño privado
+              - listitem [ref=f6e449]:
+                - generic [ref=f6e455]: Ducha
+              - listitem [ref=f6e457]:
+                - generic [ref=f6e463]: Salas de reuniones / banquetes
+              - listitem [ref=f6e465]:
+                - generic [ref=f6e471]: Jardín
+              - listitem [ref=f6e473]:
+                - generic [ref=f6e479]: Recepción 24 horas
+          - generic [ref=f6e481]:
+            - generic [ref=f6e482]:
+              - generic [ref=f6e483]:
+                - generic [ref=f6e487]:
+                  - paragraph [ref=f6e488]: Este albergue YHA se encuentra a 5 minutos a pie de la estación de metro de Earl's Court. El establecimiento ofrece alojamientos económicos en habitaciones compartidas y privadas, recepción abierta las 24 horas, WiFi y salón de TV. El YHA London Earl's Court dispone de instalaciones independientes. La cafetería sirve un desayuno continental y una selección de aperitivos durante todo el día. También hay juegos de mesa en la recepción a disposición de los huéspedes. El establecimiento YHA Earls Court cuenta con servicios de lavandería y consigna de equipaje. El personal del complejo puede hacer recomendaciones a los huéspedes sobre lugares de interés turístico y organizar servicios de traslado. Tanto el Museo de Historia Natural como el Museo Albert & Victoria quedan a menos de 10 minutos a pie. Además, el albergue está cerca de la moderna calle de Kensington High Street y su fantástica selección de tiendas. La mayoría de las habitaciones tienen literas.
+                  - paragraph [ref=f6e489]: A las parejas les encanta la ubicación — Le han puesto un 9,2 para viajes de dos personas.
+                  - paragraph [ref=f6e490]: Las distancias en la descripción del alojamiento se calculan con OpenStreetMap©
+                - generic [ref=f6e494]:
+                  - heading "Servicios más populares" [level=3] [ref=f6e495]
+                  - list [ref=f6e497]:
+                    - listitem [ref=f6e498]:
+                      - generic [ref=f6e499]: Habitaciones sin humo
+                    - listitem [ref=f6e507]:
+                      - generic [ref=f6e508]: 2 restaurantes
+                    - listitem [ref=f6e516]:
+                      - generic [ref=f6e517]: WiFi gratis
+                    - listitem [ref=f6e525]:
+                      - generic [ref=f6e526]: Habitaciones familiares
+                    - listitem [ref=f6e534]:
+                      - generic [ref=f6e535]: Recepción 24 horas
+                    - listitem [ref=f6e543]:
+                      - generic [ref=f6e544]: Bar
+                    - listitem [ref=f6e552]:
+                      - generic [ref=f6e553]: Calefacción
+                    - listitem [ref=f6e561]:
+                      - generic [ref=f6e562]: Jardín
+                    - listitem [ref=f6e570]:
+                      - generic [ref=f6e571]: Servicio de limpieza diario
+                    - listitem [ref=f6e579]:
+                      - button "Buen desayuno" [ref=f6e587] [cursor=pointer]
+              - generic [ref=f6e591]:
+                - generic [ref=f6e597]:
+                  - generic [ref=f6e598]: Youth Hostels Association
+                  - generic [ref=f6e599]: Marca/cadena de hotel
+                - generic [ref=f6e601]:
+                  - heading "Puntos fuertes del alojamiento" [level=3] [ref=f6e602]
+                  - generic [ref=f6e603]:
+                    - generic [ref=f6e604]:
+                      - heading "¡Ideal para estancias de 5 noches!" [level=4] [ref=f6e605]
+                      - paragraph [ref=f6e606]:
+                        - generic [ref=f6e610]: "Este alojamiento está en el corazón de Londres y tiene una puntuación excelente en ubicación: 9,2"
+                    - generic [ref=f6e611]:
+                      - heading "Información sobre el desayuno" [level=4] [ref=f6e612]
+                      - paragraph [ref=f6e613]:
+                        - generic [ref=f6e614]: Continental, Inglés/irlandés completo, Buffet
+                    - generic:
+                      - list
+            - separator [ref=f6e615]
+            - generic [ref=f6e617]:
+              - generic [ref=f6e618]:
+                - heading "Disponibilidad" [level=2] [ref=f6e619]
+                - button "Igualamos el precio" [ref=f6e623] [cursor=pointer]
+              - generic [ref=f6e631]:
+                - generic [ref=f6e632]: Precios convertidos a EUR
+                - button [ref=f6e634] [cursor=pointer]
+              - region "Buscar alojamientos" [ref=f6e641]:
+                - generic [ref=f6e642]:
+                  - button "Seleccionar fechas vie, 4 dic — mié, 9 dic" [ref=f6e645] [cursor=pointer]:
+                    - generic [ref=f6e650]:
+                      - generic [ref=f6e651]: Seleccionar fechas
+                      - generic [ref=f6e652]: vie, 4 dic — mié, 9 dic
+                  - generic [ref=f6e658] [cursor=pointer]:
+                    - generic [ref=f6e659]: Selecciona la ocupación
+                    - 'button "Número de personas y de habitaciones. Selección actual: 2 adultos · 0 niños · 1 habitación" [ref=f6e661]':
+                      - generic [ref=f6e662]: 2 adultos · 0 niños · 1 habitación
+                  - button "Modificar búsqueda" [ref=f6e668] [cursor=pointer]
+              - generic [ref=f6e676]:
+                - table [ref=f6e678]:
+                  - caption [ref=f6e679]: Selecciona un tipo de habitación y el número de habitaciones que quieres reservar.
+                  - rowgroup [ref=f6e680]:
+                    - row [ref=f6e681]:
+                      - columnheader "Tipo de habitación" [ref=f6e682]
+                      - columnheader [ref=f6e683]
+                      - columnheader "Tus opciones" [ref=f6e686]
+                      - columnheader "Seleccionar cantidad" [ref=f6e687]
+                  - rowgroup [ref=f6e688]:
+                    - row [ref=f6e689]:
+                      - 'rowheader "Habitación privada con 2 camas y baño compartido Capacidad: 2 adultos Cama: 1 litera Servicios incluidos" [ref=f6e690]':
+                        - generic [ref=f6e691]:
+                          - link "Habitación privada con 2 camas y baño compartido" [ref=f6e693] [cursor=pointer]:
+                            - /url: "#RD28008003"
+                          - generic [ref=f6e694]: "Capacidad: 2 adultos"
+                          - generic [ref=f6e704]:
+                            - text: "Cama:"
+                            - generic [ref=f6e705]: 1 litera
+                          - generic [ref=f6e707]:
+                            - list
+                            - separator [ref=f6e708]
+                            - list "Servicios incluidos" [ref=f6e709]:
+                              - listitem [ref=f6e710]:
+                                - generic [ref=f6e711]: Ducha
+                              - listitem [ref=f6e715]:
+                                - generic [ref=f6e716]: Aseo
+                              - listitem [ref=f6e720]:
+                                - generic [ref=f6e721]: Ropa de cama
+                              - listitem [ref=f6e725]:
+                                - generic [ref=f6e726]: Enchufe cerca de la cama
+                              - listitem [ref=f6e730]:
+                                - generic [ref=f6e731]: Baño compartido
+                              - listitem [ref=f6e735]:
+                                - generic [ref=f6e736]: Calefacción
+                              - listitem [ref=f6e740]:
+                                - generic [ref=f6e741]: Ventilador
+                              - listitem [ref=f6e745]:
+                                - generic [ref=f6e746]: Las plantas superiores solo son accesibles por escaleras
+                              - listitem [ref=f6e750]:
+                                - generic [ref=f6e751]: Papel higiénico
+                      - cell "Precio € 541 Incluye impuestos y cargos" [ref=f6e755]:
+                        - generic [ref=f6e757]:
+                          - generic [ref=f6e759]:
+                            - generic [aria-hidden] [ref=f6e760]: € 541
+                            - generic [ref=f6e761]: Precio € 541
+                          - generic [ref=f6e762]: Incluye impuestos y cargos
+                      - cell "Desayuno bueno por € 10 No reembolsable Pagas al alojamiento antes de llegar • Nos queda 1 Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f6e763]:
+                        - generic [ref=f6e764]:
+                          - list [ref=f6e765]:
+                            - listitem [ref=f6e766]:
+                              - generic [ref=f6e769]: Desayuno bueno por € 10
+                            - listitem [ref=f6e771]:
+                              - strong [ref=f6e782]: No reembolsable
+                            - listitem [ref=f6e783]:
+                              - generic [ref=f6e784]:
+                                - generic [aria-hidden] [ref=f6e786]: •
+                                - generic [ref=f6e787]: Pagas al alojamiento antes de llegar
+                            - listitem [ref=f6e791]:
+                              - generic [ref=f6e792]: •
+                              - generic [ref=f6e793]: Nos queda 1
+                          - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f6e796] [cursor=pointer]
+                      - cell [ref=f6e800]:
+                        - generic [ref=f6e801]:
+                          - generic: Seleccionar habitaciones
+                          - combobox "Seleccionar habitaciones" [ref=f6e803]:
+                            - option "0" [selected]
+                            - option "1 (€ 541)"
+                - generic [ref=f6e806]:
+                  - button "Reservaré" [ref=f6e808] [cursor=pointer]
+                  - list [ref=f6e811]:
+                    - listitem [ref=f6e812]: Todavía no se te cobrará nada
+            - generic [ref=f6e815]:
+              - generic [ref=f6e817]:
+                - generic [ref=f6e818]:
+                  - heading "Comentarios de los clientes" [level=2] [ref=f6e820]
+                  - button "Ver disponibilidad" [ref=f6e822] [cursor=pointer]
+                - generic [ref=f6e826]:
+                  - 'button "Puntuación: Muy bien 8.3, basada en 2.187 comentarios" [ref=f6e827] [cursor=pointer]':
+                    - generic [ref=f6e828]:
+                      - generic [ref=f6e829]: 8,3
+                      - generic [ref=f6e830]:
+                        - generic [ref=f6e831]: Muy bien
+                        - generic [ref=f6e832]: · 2.187 comentarios
+                  - button "Leer todos los comentarios" [ref=f6e833] [cursor=pointer]
+                - group "Categorías de los comentarios" [ref=f6e836]:
+                  - heading "Categorías:" [level=3] [ref=f6e838]
+                  - generic [ref=f6e839]:
+                    - generic [ref=f6e841]:
+                      - generic [ref=f6e842]: Personal, 9,3, Puntuación media sobre 10
+                      - generic [ref=f6e844]:
+                        - generic [ref=f6e845]:
+                          - generic [ref=f6e846]: Personal
+                          - generic [aria-hidden] [ref=f6e850]: 9,3
+                        - meter [ref=f6e851]
+                    - generic [ref=f6e854]:
+                      - generic [ref=f6e855]: Instalaciones y servicios, 8,2, Puntuación media sobre 10
+                      - generic [ref=f6e857]:
+                        - generic [ref=f6e858]:
+                          - generic [ref=f6e859]: Instalaciones y servicios
+                          - generic [aria-hidden] [ref=f6e863]: 8,2
+                        - meter [ref=f6e864]
+                    - generic [ref=f6e867]:
+                      - generic [ref=f6e868]: Limpieza, 8,4, Puntuación media sobre 10
+                      - generic [ref=f6e870]:
+                        - generic [ref=f6e871]:
+                          - generic [ref=f6e872]: Limpieza
+                          - generic [aria-hidden] [ref=f6e876]: 8,4
+                        - meter [ref=f6e877]
+                    - generic [ref=f6e880]:
+                      - generic [ref=f6e881]: Confort, 8,2, Puntuación media sobre 10
+                      - generic [ref=f6e883]:
+                        - generic [ref=f6e884]:
+                          - generic [ref=f6e885]: Confort
+                          - generic [aria-hidden] [ref=f6e889]: 8,2
+                        - meter [ref=f6e890]
+                    - generic [ref=f6e893]:
+                      - generic [ref=f6e894]: Relación calidad-precio, 8,8, Puntuación media sobre 10
+                      - generic [ref=f6e896]:
+                        - generic [ref=f6e897]:
+                          - generic [ref=f6e898]: Relación calidad-precio
+                          - generic [aria-hidden] [ref=f6e902]: 8,8
+                        - meter [ref=f6e903]
+                    - generic [ref=f6e906]:
+                      - generic [ref=f6e907]: Ubicación, 9,2, Puntuación media sobre 10
+                      - generic [ref=f6e909]:
+                        - generic [ref=f6e910]:
+                          - generic [ref=f6e911]: Ubicación
+                          - generic [aria-hidden] [ref=f6e915]: 9,2
+                        - meter [ref=f6e916]
+                    - generic [ref=f6e919]:
+                      - generic [ref=f6e920]: WiFi gratis, 8,1, Puntuación media sobre 10
+                      - generic [ref=f6e922]:
+                        - generic [ref=f6e923]:
+                          - generic [ref=f6e924]: WiFi gratis
+                          - generic [aria-hidden] [ref=f6e928]: 8,1
+                        - meter [ref=f6e929]
+                - group "Elige los temas de los comentarios:" [ref=f6e932]:
+                  - heading "Elige los temas de los comentarios:" [level=3] [ref=f6e935]
+                  - group "Elige los temas de los comentarios:" [ref=f6e937]:
+                    - generic [ref=f6e938]:
+                      - checkbox "Ubicacion" [ref=f6e939]
+                      - generic [ref=f6e940] [cursor=pointer]: Ubicacion
+                    - generic [ref=f6e945]:
+                      - checkbox "Habitacion" [ref=f6e946]
+                      - generic [ref=f6e947] [cursor=pointer]: Habitacion
+                    - generic [ref=f6e952]:
+                      - checkbox "Cama" [ref=f6e953]
+                      - generic [ref=f6e954] [cursor=pointer]: Cama
+                    - generic [ref=f6e959]:
+                      - checkbox "Cocina" [ref=f6e960]
+                      - generic [ref=f6e961] [cursor=pointer]: Cocina
+                    - generic [ref=f6e966]:
+                      - checkbox "Baño" [ref=f6e967]
+                      - generic [ref=f6e968] [cursor=pointer]: Baño
+                - generic [ref=f6e974]:
+                  - generic [ref=f6e975]:
+                    - heading "Lo que más gustó a otros clientes:" [level=3] [ref=f6e976]
+                    - generic [ref=f6e977]:
+                      - region "Lo que más gustó a otros clientes:" [ref=f6e978]:
+                        - group [ref=f6e979]:
+                          - generic [ref=f6e981]:
+                            - generic [ref=f6e986]:
+                              - heading "Eva" [level=4] [ref=f6e988]
+                              - generic [ref=f6e989]:
+                                - img "España" [ref=f6e990]
+                                - generic [ref=f6e991]: España
+                            - blockquote [ref=f6e994]: “La zona es estupenda, el hostal está cerca de una parada de metro y un súper. La habitación era bastante amplia, las zonas comunes estaban muy limpias, la cocina compartida era grande y tiene un patio con mesas fuera.”
+                            - button "Seguir leyendo el comentario de Eva" [ref=f6e996] [cursor=pointer]: Más info
+                        - group [ref=f6e997]:
+                          - generic [ref=f6e999]:
+                            - generic [ref=f6e1004]:
+                              - heading "María" [level=4] [ref=f6e1006]
+                              - generic [ref=f6e1007]:
+                                - img "España" [ref=f6e1008]
+                                - generic [ref=f6e1009]: España
+                            - blockquote [ref=f6e1012]: “Las instalaciones muy completas, incluso con un patio exterior para cenar o pasar el rato. Muchos baños y duchas, sin problema para compartirlos.”
+                            - button "Seguir leyendo el comentario de María" [ref=f6e1014] [cursor=pointer]: Más info
+                        - group [ref=f6e1015]:
+                          - generic [ref=f6e1017]:
+                            - generic [ref=f6e1022]:
+                              - heading "Anya" [level=4] [ref=f6e1024]
+                              - generic [ref=f6e1025]:
+                                - img "Chile" [ref=f6e1026]
+                                - generic [ref=f6e1027]: Chile
+                            - blockquote [ref=f6e1030]: “Ubicación, cerca del metro y transporte público. La habitación muy limpia y de buen tamaño. Las camas muy cómodas! Tiene una cocina bien equipada!”
+                            - button "Seguir leyendo el comentario de Anya" [ref=f6e1032] [cursor=pointer]: Más info
+                        - group [ref=f6e1033]:
+                          - generic [ref=f6e1035]:
+                            - generic [ref=f6e1040]:
+                              - heading "María" [level=4] [ref=f6e1042]
+                              - generic [ref=f6e1043]:
+                                - img "España" [ref=f6e1044]
+                                - generic [ref=f6e1045]: España
+                            - blockquote [ref=f6e1048]: “Está a 5 min de la estación de metro, es muy silencioso, personal muy agradable. Yo me quedé en una habitación con baño privado y fenomenal.”
+                            - button "Seguir leyendo el comentario de María" [ref=f6e1050] [cursor=pointer]: Más info
+                        - group [ref=f6e1051]:
+                          - generic [ref=f6e1053]:
+                            - generic [ref=f6e1058]:
+                              - heading "Alida" [level=4] [ref=f6e1060]
+                              - generic [ref=f6e1061]:
+                                - img "Portugal" [ref=f6e1062]
+                                - generic [ref=f6e1063]: Portugal
+                            - blockquote [ref=f6e1066]: “Muy limpio, personal amable . Ambiente familiar. Super recomendado”
+                            - button "Seguir leyendo el comentario de Alida" [ref=f6e1068] [cursor=pointer]: Más info
+                        - group [ref=f6e1069]:
+                          - generic [ref=f6e1071]:
+                            - generic [ref=f6e1076]:
+                              - heading "Manyari" [level=4] [ref=f6e1078]
+                              - generic [ref=f6e1079]:
+                                - img "Perú" [ref=f6e1080]
+                                - generic [ref=f6e1081]: Perú
+                            - blockquote [ref=f6e1084]: “Me gusto mucho la atención muy buena del personal ,la limpieza y la.ubicacion”
+                            - button "Seguir leyendo el comentario de Manyari" [ref=f6e1086] [cursor=pointer]: Más info
+                        - group [ref=f6e1087]:
+                          - generic [ref=f6e1089]:
+                            - generic [ref=f6e1094]:
+                              - heading "Sonnya" [level=4] [ref=f6e1096]
+                              - generic [ref=f6e1097]:
+                                - img "España" [ref=f6e1098]
+                                - generic [ref=f6e1099]: España
+                            - blockquote [ref=f6e1102]: “Me gustó mucho la ubicación, es un barrio bonito y el hostel esta cerca del metro y las paradas de autobuses.”
+                            - button "Seguir leyendo el comentario de Sonnya" [ref=f6e1104] [cursor=pointer]: Más info
+                        - group [ref=f6e1105]:
+                          - generic [ref=f6e1107]:
+                            - generic [ref=f6e1112]:
+                              - heading "Alfonso" [level=4] [ref=f6e1114]
+                              - generic [ref=f6e1115]:
+                                - img "Chile" [ref=f6e1116]
+                                - generic [ref=f6e1117]: Chile
+                            - blockquote [ref=f6e1120]: “Muy buena ubicación, buena relación calidad precio y muy buena atención del personal”
+                            - button "Seguir leyendo el comentario de Alfonso" [ref=f6e1122] [cursor=pointer]: Más info
+                        - group [ref=f6e1123]:
+                          - generic [ref=f6e1125]:
+                            - generic [ref=f6e1127]:
+                              - generic [ref=f6e1129]: J
+                              - generic [ref=f6e1130]:
+                                - heading "Julio" [level=4] [ref=f6e1132]
+                                - generic [ref=f6e1133]:
+                                  - img "Perú" [ref=f6e1134]
+                                  - generic [ref=f6e1135]: Perú
+                            - blockquote [ref=f6e1138]: “La tranquilidad de la zona; y está cerca caminando a una estación del “Underground””
+                            - button "Seguir leyendo el comentario de Julio" [ref=f6e1140] [cursor=pointer]: Más info
+                        - group [ref=f6e1141]:
+                          - generic [ref=f6e1143]:
+                            - generic [ref=f6e1148]:
+                              - heading "Ricardo" [level=4] [ref=f6e1150]
+                              - generic [ref=f6e1151]:
+                                - img "Argentina" [ref=f6e1152]
+                                - generic [ref=f6e1153]: Argentina
+                            - blockquote [ref=f6e1156]: “La ubicación es en un barrio muy bonito y tranquilo. Está cerca de medios de transporte y es silencioso. El baño es muy cómodo y limpio, pese a ser compartido. El área exterior suma a la experiencia, pero en invierno su uso es limitado por el...”
+                            - button "Seguir leyendo el comentario de Ricardo" [ref=f6e1158] [cursor=pointer]: Más info
+                      - button "Siguiente" [ref=f6e1159] [cursor=pointer]
+                  - button "Leer todos los comentarios" [ref=f6e1160] [cursor=pointer]
+              - generic [ref=f6e1169]:
+                - generic [ref=f6e1170]:
+                  - heading "Preguntas de otras personas" [level=2] [ref=f6e1172]
+                  - button "Ver disponibilidad" [ref=f6e1175] [cursor=pointer]
+                - generic [ref=f6e1178]:
+                  - generic [ref=f6e1179]:
+                    - list [ref=f6e1181]:
+                      - listitem [ref=f6e1182]:
+                        - button "¿Puedo aparcar aquí?" [ref=f6e1183] [cursor=pointer]
+                      - listitem [ref=f6e1194]:
+                        - button "¿Se sirven desayunos?" [ref=f6e1195] [cursor=pointer]
+                      - listitem [ref=f6e1206]:
+                        - button "¿Cuál es el horario de check-in y check-out?" [ref=f6e1207] [cursor=pointer]
+                      - listitem [ref=f6e1218]:
+                        - button "¿Hay piscina?" [ref=f6e1219] [cursor=pointer]
+                      - listitem [ref=f6e1230]:
+                        - button "¿Está abierto el restaurante?" [ref=f6e1231] [cursor=pointer]
+                      - listitem [ref=f6e1242]:
+                        - button "¿Hay spa?" [ref=f6e1243] [cursor=pointer]
+                      - listitem [ref=f6e1254]:
+                        - button "¿Qué restaurantes, atracciones turísticas y medios de transporte público hay cerca?" [ref=f6e1255] [cursor=pointer]
+                      - listitem [ref=f6e1266]:
+                        - button "¿Puedo llevar a mi mascota?" [ref=f6e1267] [cursor=pointer]
+                      - listitem [ref=f6e1278]:
+                        - button "¿Hay habitaciones con baño privado?" [ref=f6e1279] [cursor=pointer]
+                      - listitem [ref=f6e1290]:
+                        - button "¿Cómo y cuándo pago?" [ref=f6e1291] [cursor=pointer]
+                    - generic [ref=f6e1303]:
+                      - heading "¿Sigues buscando?" [level=3] [ref=f6e1304]
+                      - button "Haz una pregunta" [ref=f6e1305] [cursor=pointer]
+                      - paragraph [ref=f6e1307]: Podemos contestar a la mayoría de las preguntas al momento
+                  - button "Ver otras preguntas (20)" [ref=f6e1310] [cursor=pointer]
+              - generic [ref=f6e1316]:
+                - generic [ref=f6e1317]:
+                  - heading "Alrededores del alojamiento" [level=2] [ref=f6e1319]
+                  - button "Ver disponibilidad" [ref=f6e1322] [cursor=pointer]
+                - generic [ref=f6e1324]:
+                  - generic [ref=f6e1325]:
+                    - button "¡A los clientes les encantó pasear por el barrio!" [ref=f6e1327] [cursor=pointer]
+                    - link "Ubicación excelente - Ver mapa" [ref=f6e1331] [cursor=pointer]:
+                      - /url: "#map_opened-hotel_surroundings"
+                  - generic [ref=f6e1333]:
+                    - generic [ref=f6e1334]:
+                      - generic [ref=f6e1335]:
+                        - heading "¿Qué hay cerca?" [level=3] [ref=f6e1340]
+                        - list [ref=f6e1342]:
+                          - listitem [ref=f6e1343]:
+                            - listitem [ref=f6e1344]:
+                              - generic [ref=f6e1345]:
+                                - generic [ref=f6e1346]: Baden-Powell House
+                                - generic [ref=f6e1347]: 1,2 km
+                          - listitem [ref=f6e1349]:
+                            - listitem [ref=f6e1350]:
+                              - generic [ref=f6e1351]:
+                                - generic [ref=f6e1352]: Hyde Park
+                                - generic [ref=f6e1353]: 1,3 km
+                          - listitem [ref=f6e1355]:
+                            - listitem [ref=f6e1356]:
+                              - generic [ref=f6e1357]:
+                                - generic [ref=f6e1358]: Museo de Historia Natural
+                                - generic [ref=f6e1359]: 1,3 km
+                          - listitem [ref=f6e1361]:
+                            - listitem [ref=f6e1362]:
+                              - generic [ref=f6e1363]:
+                                - generic [ref=f6e1364]: Plaza Kensington
+                                - generic [ref=f6e1365]: 1,5 km
+                          - listitem [ref=f6e1367]:
+                            - listitem [ref=f6e1368]:
+                              - generic [ref=f6e1369]:
+                                - generic [ref=f6e1370]: Museo Victoria y Alberto
+                                - generic [ref=f6e1371]: 1,6 km
+                          - listitem [ref=f6e1373]:
+                            - listitem [ref=f6e1374]:
+                              - generic [ref=f6e1375]:
+                                - generic [ref=f6e1376]: Museo de la Ciencia de Londres
+                                - generic [ref=f6e1377]: 1,6 km
+                          - listitem [ref=f6e1379]:
+                            - listitem [ref=f6e1380]:
+                              - generic [ref=f6e1381]:
+                                - generic [ref=f6e1382]: Museo de la Ciencia
+                                - generic [ref=f6e1383]: 1,7 km
+                          - listitem [ref=f6e1385]:
+                            - listitem [ref=f6e1386]:
+                              - generic [ref=f6e1387]:
+                                - generic [ref=f6e1388]: The Design Museum
+                                - generic [ref=f6e1389]: 1,7 km
+                          - listitem [ref=f6e1391]:
+                            - listitem [ref=f6e1392]:
+                              - generic [ref=f6e1393]:
+                                - generic [ref=f6e1394]: Jardines Cremorne
+                                - generic [ref=f6e1395]: 1,7 km
+                          - listitem [ref=f6e1397]:
+                            - listitem [ref=f6e1398]:
+                              - generic [ref=f6e1399]:
+                                - generic [ref=f6e1400]: Jardines Ropers
+                                - generic [ref=f6e1401]: 1,8 km
+                      - generic [ref=f6e1403]:
+                        - heading "Restaurantes y cafeterías" [level=3] [ref=f6e1408]
+                        - list [ref=f6e1410]:
+                          - listitem [ref=f6e1411]:
+                            - listitem [ref=f6e1412]:
+                              - generic [ref=f6e1413]:
+                                - generic [ref=f6e1414]: Restaurante Bistec y ostras
+                                - generic [ref=f6e1415]: 50 m
+                          - listitem [ref=f6e1417]:
+                            - listitem [ref=f6e1418]:
+                              - generic [ref=f6e1419]:
+                                - generic [ref=f6e1420]: Restaurante The Bottlery
+                                - generic [ref=f6e1421]: 50 m
+                          - listitem [ref=f6e1423]:
+                            - listitem [ref=f6e1424]:
+                              - generic [ref=f6e1425]:
+                                - generic [ref=f6e1426]: Restaurante Flora Indica
+                                - generic [ref=f6e1427]: 150 m
+                      - generic [ref=f6e1429]:
+                        - heading "Atracciones turísticas destacadas" [level=3] [ref=f6e1434]
+                        - list [ref=f6e1436]:
+                          - listitem [ref=f6e1437]:
+                            - listitem [ref=f6e1438]:
+                              - generic [ref=f6e1439]:
+                                - generic [ref=f6e1440]: Palacio de Buckingham
+                                - generic [ref=f6e1441]: 4,2 km
+                          - listitem [ref=f6e1443]:
+                            - listitem [ref=f6e1444]:
+                              - generic [ref=f6e1445]:
+                                - generic [ref=f6e1446]: St James's Park
+                                - generic [ref=f6e1447]: 4,7 km
+                          - listitem [ref=f6e1449]:
+                            - listitem [ref=f6e1450]:
+                              - generic [ref=f6e1451]:
+                                - generic [ref=f6e1452]: Piccadilly Circus
+                                - generic [ref=f6e1453]: 4,9 km
+                          - listitem [ref=f6e1455]:
+                            - listitem [ref=f6e1456]:
+                              - generic [ref=f6e1457]:
+                                - generic [ref=f6e1458]: Salas de Guerra de Churchill
+                                - generic [ref=f6e1459]: 5 km
+                          - listitem [ref=f6e1461]:
+                            - listitem [ref=f6e1462]:
+                              - generic [ref=f6e1463]:
+                                - generic [ref=f6e1464]: Museo de cera Madame Tussauds
+                                - generic [ref=f6e1465]: 5 km
+                          - listitem [ref=f6e1467]:
+                            - listitem [ref=f6e1468]:
+                              - generic [ref=f6e1469]:
+                                - generic [ref=f6e1470]: Banqueting House
+                                - generic [ref=f6e1471]: 5 km
+                          - listitem [ref=f6e1473]:
+                            - listitem [ref=f6e1474]:
+                              - generic [ref=f6e1475]:
+                                - generic [ref=f6e1476]: Plaza de Trafalgar
+                                - generic [ref=f6e1477]: 5 km
+                          - listitem [ref=f6e1479]:
+                            - listitem [ref=f6e1480]:
+                              - generic [ref=f6e1481]:
+                                - generic [ref=f6e1482]: Big Ben
+                                - generic [ref=f6e1483]: 5 km
+                          - listitem [ref=f6e1485]:
+                            - listitem [ref=f6e1486]:
+                              - generic [ref=f6e1487]:
+                                - generic [ref=f6e1488]: Museo Británico
+                                - generic [ref=f6e1489]: 6 km
+                          - listitem [ref=f6e1491]:
+                            - listitem [ref=f6e1492]:
+                              - generic [ref=f6e1493]:
+                                - generic [ref=f6e1494]: Regent's Park
+                                - generic [ref=f6e1495]: 6 km
+                      - generic [ref=f6e1497]:
+                        - heading "Entorno natural" [level=3] [ref=f6e1502]
+                        - list [ref=f6e1504]:
+                          - listitem [ref=f6e1505]:
+                            - listitem [ref=f6e1506]:
+                              - generic [ref=f6e1507]:
+                                - generic [ref=f6e1508]: Lago Lago Long Water
+                                - generic [ref=f6e1509]: 2,7 km
+                      - generic [ref=f6e1511]:
+                        - heading "Transporte público" [level=3] [ref=f6e1516]
+                        - list [ref=f6e1518]:
+                          - listitem [ref=f6e1519]:
+                            - listitem [ref=f6e1520]:
+                              - generic [ref=f6e1521]:
+                                - generic [ref=f6e1522]: Metro Estación de metro Earls Court
+                                - generic [ref=f6e1523]: 400 m
+                          - listitem [ref=f6e1525]:
+                            - listitem [ref=f6e1526]:
+                              - generic [ref=f6e1527]:
+                                - generic [ref=f6e1528]: Metro Estación de metro West Brompton
+                                - generic [ref=f6e1529]: 650 m
+                          - listitem [ref=f6e1531]:
+                            - listitem [ref=f6e1532]:
+                              - generic [ref=f6e1533]:
+                                - generic [ref=f6e1534]: Tren Estación Imperial Wharf
+                                - generic [ref=f6e1535]: 2,2 km
+                          - listitem [ref=f6e1537]:
+                            - listitem [ref=f6e1538]:
+                              - generic [ref=f6e1539]:
+                                - generic [ref=f6e1540]: Tren Estación de Shepherd's Bush
+                                - generic [ref=f6e1541]: 3,2 km
+                          - listitem [ref=f6e1543]:
+                            - listitem [ref=f6e1544]:
+                              - generic [ref=f6e1545]:
+                                - generic [ref=f6e1546]: Autobús Estación de autocares Victoria
+                                - generic [ref=f6e1547]: 3,4 km
+                          - listitem [ref=f6e1549]:
+                            - listitem [ref=f6e1550]:
+                              - generic [ref=f6e1551]:
+                                - generic [ref=f6e1552]: Autobús Iglesia de San Francisco de Asís (Parada J)
+                                - generic [ref=f6e1553]: 12 km
+                      - generic [ref=f6e1555]:
+                        - heading "Aeropuertos más cercanos" [level=3] [ref=f6e1560]
+                        - list [ref=f6e1562]:
+                          - listitem [ref=f6e1563]:
+                            - listitem [ref=f6e1564]:
+                              - generic [ref=f6e1565]:
+                                - generic [ref=f6e1566]: Aeropuerto de Londres-Heathrow
+                                - generic [ref=f6e1567]: 18 km
+                          - listitem [ref=f6e1569]:
+                            - listitem [ref=f6e1570]:
+                              - generic [ref=f6e1571]:
+                                - generic [ref=f6e1572]: Aeropuerto de Londres-City
+                                - generic [ref=f6e1573]: 18 km
+                          - listitem [ref=f6e1575]:
+                            - listitem [ref=f6e1576]:
+                              - generic [ref=f6e1577]:
+                                - generic [ref=f6e1578]: Aeropuerto de Londres-Gatwick
+                                - generic [ref=f6e1579]: 44 km
+                    - generic [ref=f6e1581]: Se muestran las distancias estimadas más cortas a pie o en coche (las distancias reales pueden variar)
+                  - group "¿Te falta información?" [ref=f6e1584]:
+                    - generic [ref=f6e1586]:
+                      - generic [aria-hidden] [ref=f6e1587]: ¿Te falta información?
+                      - button "Sí" [ref=f6e1589] [cursor=pointer]
+                      - generic [ref=f6e1590]:
+                        - text: /
+                        - button "No" [ref=f6e1591] [cursor=pointer]
+              - generic [ref=f6e1595]:
+                - generic [ref=f6e1597]:
+                  - heading "Restaurantes" [level=2] [ref=f6e1598]
+                  - generic [ref=f6e1600]: Tiene 2 restaurantes
+                - region [ref=f6e1603]:
+                  - group [ref=f6e1604]:
+                    - generic [ref=f6e1605]:
+                      - heading "'All day' À la carte Menu" [level=3] [ref=f6e1606]
+                      - list [ref=f6e1608]:
+                        - listitem [ref=f6e1609]:
+                          - generic [ref=f6e1610]: Tipo de cocina
+                          - generic [ref=f6e1611]: Británica • Pizza
+                        - listitem [ref=f6e1612]:
+                          - generic [ref=f6e1613]: Abierto para
+                          - generic [ref=f6e1614]: Almuerzo • Cena
+                        - listitem [ref=f6e1615]:
+                          - generic [ref=f6e1616]: Ambiente
+                          - generic [ref=f6e1617]: Familiar
+                        - listitem [ref=f6e1618]:
+                          - generic [ref=f6e1619]: Opciones dietéticas
+                          - generic [ref=f6e1620]: Vegetariana • Vegana • Sin gluten • Sin lactosa
+                  - group [ref=f6e1621]:
+                    - generic [ref=f6e1622]:
+                      - heading "Continental Breakfast" [level=3] [ref=f6e1623]
+                      - list [ref=f6e1625]:
+                        - listitem [ref=f6e1626]:
+                          - generic [ref=f6e1627]: Tipo de cocina
+                          - generic [ref=f6e1628]: Británica • Europea
+                        - listitem [ref=f6e1629]:
+                          - generic [ref=f6e1630]: Abierto para
+                          - generic [ref=f6e1631]: Desayuno
+                        - listitem [ref=f6e1632]:
+                          - generic [ref=f6e1633]: Ambiente
+                          - generic [ref=f6e1634]: Familiar
+                        - listitem [ref=f6e1635]:
+                          - generic [ref=f6e1636]: Opciones dietéticas
+                          - generic [ref=f6e1637]: Vegetariana • Vegana • Sin gluten
+              - generic [ref=f6e1642]:
+                - generic [ref=f6e1644]:
+                  - generic [ref=f6e1645]:
+                    - heading "Cosas que hacer" [level=2] [ref=f6e1646]
+                    - button "Los precios que se muestran son estimados, el importe final se verá justo antes de reservar. Las condiciones de cancelación gratis pueden cambiar según las fechas que elijas para reservar." [ref=f6e1649] [cursor=pointer]
+                  - link "Ver todo" [ref=f6e1653] [cursor=pointer]:
+                    - /url: https://ch.booking.com/c?target=aHR0cHM6Ly93d3cuYm9va2luZy5jb20vYXR0cmFjdGlvbnMvc2VhcmNocmVzdWx0cy9nYi9sb25kb24uZXMuaHRtbD9lbmRfZGF0ZT0yMDI2LTA5LTI5JnNlbGVjdGVkX2N1cnJlbmN5PUVVUiZldFN0YXRlQmxvYj1FZWZwQVJaV3NNOW4xMFFMTzRMdWstT1d1MFJQQy1fV3NOemtOVF9QRUxwZjgyOVJVN3lMYkpaLWxsYmZNYlVBQ29pOWZDM01fcFpFajNNMTZ4Ri1DeE02VWZZMktwdzFEJmFkcGxhdD13d3ctQUNDT01NT0RBVElPTl9fUFJPUEVSVFktRElTQ09WRVJZX1NVUFBMWS1hdHRyYWN0aW9uLW1pc3NpbmdfY3JlYXRpdmUtNjhWZmhZbDNQbFJPdkFYQUdDWjhnSSZkZXN0X2lkPS0yNjAxODg5JnNvcnRfYnk9JmxhYmVsPWdlbjE3M25yLTEwQ0Fzb1VFSVhlV2hoTFd4dmJtUnZiaTFsWVhKc0xYTXRZMjkxY25SSUNsZ0VhRWFJQVFHWUFUTzRBUmZJQVF6WUFRUG9BUUg0QVFHSUFnR29BZ0c0QXEzWnU5VUd3QUlCMGdJa05qQXpNR0poTkRZdE9UVmxaUzAwWW1FMkxXRTVOemd0TVRreE1EWXlZVGRoTlRsazJBSUI0QUlCJmRpc3RyaWJ1dGlvbl9pZD02OFZmaFlsM1BsUk92QVhBR0NaOGdJJmFpZD0zMDQxNDImY2xpZW50X25hbWU9ZXhwb3N1cmUmc3RhcnRfZGF0ZT0yMDI2LTA5LTI2&st=QVRUUkFDVElPTg==&lt=VklFV19BTEw=&rid=ccedf8a5-bbce-4fdc-aa91-a27f586612e9&si=ChZiLXBhbmRhLXRvcC1rLXNlbGVjdG9yEAMaQBSCABb7bJkULKfM4YmRs7paAsRr4cl/lYHQWJgcZfQnB0pGRfefUv+vN3IlT5BM1jWr4FJ4FDeQCWilUN/ctQg=
+                - generic [ref=f6e1656]:
+                  - generic [ref=f6e1657]:
+                    - checkbox "Popular" [checked] [ref=f6e1658]
+                    - generic [ref=f6e1659] [cursor=pointer]: Popular
+                  - generic [ref=f6e1661]:
+                    - checkbox "Mejores comentarios" [ref=f6e1662]
+                    - generic [ref=f6e1663] [cursor=pointer]: Mejores comentarios
+                - generic [ref=f6e1669]:
+                  - region "Carousel" [ref=f6e1670]:
+                    - group [ref=f6e1671]:
+                      - 'link "Entrada al London Eye Valoración: 4.5. Basada en 6071 comentarios Cancelación gratis disponible Desde ‎€ 30,23‏" [ref=f6e1674] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1678]:
+                          - generic [ref=f6e1679]:
+                            - generic [ref=f6e1680]: Entrada al London Eye
+                            - generic [ref=f6e1682]:
+                              - 'group "Valoración: 4.5. Basada en 6071 comentarios" [ref=f6e1683]':
+                                - generic [ref=f6e1684]: 4.5 (6071 comentarios)
+                              - generic [ref=f6e1692]: Cancelación gratis disponible
+                          - generic [ref=f6e1701]:
+                            - generic [ref=f6e1702]: Desde
+                            - strong [ref=f6e1703]: ‎€ 30,23‏
+                    - group [ref=f6e1704]:
+                      - 'link "Entrada a Madame Tussauds de Londres Valoración: 4.6. Basada en 4024 comentarios Cancelación gratis disponible Desde ‎€ 31,39‏" [ref=f6e1707] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1711]:
+                          - generic [ref=f6e1712]:
+                            - generic [ref=f6e1713]: Entrada a Madame Tussauds de Londres
+                            - generic [ref=f6e1715]:
+                              - 'group "Valoración: 4.6. Basada en 4024 comentarios" [ref=f6e1716]':
+                                - generic [ref=f6e1717]: 4.6 (4024 comentarios)
+                              - generic [ref=f6e1725]: Cancelación gratis disponible
+                          - generic [ref=f6e1734]:
+                            - generic [ref=f6e1735]: Desde
+                            - strong [ref=f6e1736]: ‎€ 31,39‏
+                    - group [ref=f6e1737]:
+                      - 'link "Tour de la Torre de Londres y las joyas de la Corona Valoración: 4.38. Basada en 4651 comentarios Cancelación gratis disponible Desde ‎€ 43,01‏" [ref=f6e1740] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1744]:
+                          - generic [ref=f6e1745]:
+                            - generic [ref=f6e1746]: Tour de la Torre de Londres y las joyas de la Corona
+                            - generic [ref=f6e1748]:
+                              - 'group "Valoración: 4.38. Basada en 4651 comentarios" [ref=f6e1749]':
+                                - generic [ref=f6e1750]: 4.38 (4651 comentarios)
+                              - generic [ref=f6e1758]: Cancelación gratis disponible
+                          - generic [ref=f6e1767]:
+                            - generic [ref=f6e1768]: Desde
+                            - strong [ref=f6e1769]: ‎€ 43,01‏
+                    - group [ref=f6e1770]:
+                      - 'link "Sin marco: experiencia artística inmersiva en Londres Valoración: 4.7. Basada en 2733 comentarios Cancelación gratis disponible Desde ‎€ 34,29‏" [ref=f6e1773] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1777]:
+                          - generic [ref=f6e1778]:
+                            - generic [ref=f6e1779]: "Sin marco: experiencia artística inmersiva en Londres"
+                            - generic [ref=f6e1781]:
+                              - 'group "Valoración: 4.7. Basada en 2733 comentarios" [ref=f6e1782]':
+                                - generic [ref=f6e1783]: 4.7 (2733 comentarios)
+                              - generic [ref=f6e1791]: Cancelación gratis disponible
+                          - generic [ref=f6e1800]:
+                            - generic [ref=f6e1801]: Desde
+                            - strong [ref=f6e1802]: ‎€ 34,29‏
+                    - group [ref=f6e1803]:
+                      - 'link "Visita a los estudios Harry Potter Warner Bros. con transporte desde Londres Valoración: 4.49. Basada en 1866 comentarios Cancelación gratis disponible Desde ‎€ 110,44‏" [ref=f6e1806] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1810]:
+                          - generic [ref=f6e1811]:
+                            - generic [ref=f6e1812]: Visita a los estudios Harry Potter Warner Bros. con transporte desde Londres
+                            - generic [ref=f6e1814]:
+                              - 'group "Valoración: 4.49. Basada en 1866 comentarios" [ref=f6e1815]':
+                                - generic [ref=f6e1816]: 4.49 (1866 comentarios)
+                              - generic [ref=f6e1824]: Cancelación gratis disponible
+                          - generic [ref=f6e1833]:
+                            - generic [ref=f6e1834]: Desde
+                            - strong [ref=f6e1835]: ‎€ 110,44‏
+                    - group [ref=f6e1836]:
+                      - 'link "Ruta en autobús turístico Valoración: 4.0. Basada en 2298 comentarios Cancelación gratis disponible Desde ‎€ 35‏ ‎€ 29,64‏" [ref=f6e1839] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1843]:
+                          - generic [ref=f6e1844]:
+                            - generic [ref=f6e1845]: Ruta en autobús turístico
+                            - generic [ref=f6e1847]:
+                              - 'group "Valoración: 4.0. Basada en 2298 comentarios" [ref=f6e1848]':
+                                - generic [ref=f6e1849]: 4.0 (2298 comentarios)
+                              - generic [ref=f6e1857]: Cancelación gratis disponible
+                          - generic [ref=f6e1866]:
+                            - generic [ref=f6e1867]: Desde
+                            - generic [ref=f6e1868]: ‎€ 35‏
+                            - strong [ref=f6e1870]: ‎€ 29,64‏
+                    - group [ref=f6e1871]:
+                      - 'link "De Westminster a Greenwich | Recorrido turístico por el río Támesis Valoración: 4.7. Basada en 1122 comentarios Cancelación gratis disponible Desde ‎€ 20‏ ‎€ 17‏" [ref=f6e1874] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1878]:
+                          - generic [ref=f6e1879]:
+                            - generic [ref=f6e1880]: De Westminster a Greenwich | Recorrido turístico por el río Támesis
+                            - generic [ref=f6e1882]:
+                              - 'group "Valoración: 4.7. Basada en 1122 comentarios" [ref=f6e1883]':
+                                - generic [ref=f6e1884]: 4.7 (1122 comentarios)
+                              - generic [ref=f6e1892]: Cancelación gratis disponible
+                          - generic [ref=f6e1901]:
+                            - generic [ref=f6e1902]: Desde
+                            - generic [ref=f6e1903]: ‎€ 20‏
+                            - strong [ref=f6e1905]: ‎€ 17‏
+                    - group [ref=f6e1906]:
+                      - 'link "Entradas para la Abadía de Westminster Valoración: 4.5. Basada en 1052 comentarios Cancelación gratis disponible Desde ‎€ 36,04‏" [ref=f6e1909] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1913]:
+                          - generic [ref=f6e1914]:
+                            - generic [ref=f6e1915]: Entradas para la Abadía de Westminster
+                            - generic [ref=f6e1917]:
+                              - 'group "Valoración: 4.5. Basada en 1052 comentarios" [ref=f6e1918]':
+                                - generic [ref=f6e1919]: 4.5 (1052 comentarios)
+                              - generic [ref=f6e1927]: Cancelación gratis disponible
+                          - generic [ref=f6e1936]:
+                            - generic [ref=f6e1937]: Desde
+                            - strong [ref=f6e1938]: ‎€ 36,04‏
+                    - group [ref=f6e1939]:
+                      - 'link "Entradas para la Torre de Londres Valoración: 4.7. Basada en 176 comentarios Cancelación gratis disponible Desde ‎€ 43,01‏" [ref=f6e1942] [cursor=pointer]':
+                        - /url: "#"
+                        - generic [ref=f6e1946]:
+                          - generic [ref=f6e1947]:
+                            - generic [ref=f6e1948]: Entradas para la Torre de Londres
+                            - generic [ref=f6e1950]:
+                              - 'group "Valoración: 4.7. Basada en 176 comentarios" [ref=f6e1951]':
+                                - generic [ref=f6e1952]: 4.7 (176 comentarios)
+                              - generic [ref=f6e1960]: Cancelación gratis disponible
+                          - generic [ref=f6e1969]:
+                            - generic [ref=f6e1970]: Desde
+                            - strong [ref=f6e1971]: ‎€ 43,01‏
+                  - button [aria-hidden] [ref=f6e1972] [cursor=pointer]
+              - generic [ref=f6e1980]:
+                - generic [ref=f6e1981]:
+                  - generic [ref=f6e1982]:
+                    - heading "Servicios de YHA London Earl's Court" [level=2] [ref=f6e1983]
+                    - generic [ref=f6e1985]: "¡Buenos servicios! Puntuación: 8,2"
+                  - button "Ver disponibilidad" [ref=f6e1987] [cursor=pointer]
+                - generic [ref=f6e1989]:
+                  - generic [ref=f6e1992]:
+                    - heading "Servicios más populares" [level=3] [ref=f6e1993]
+                    - list [ref=f6e1995]:
+                      - listitem [ref=f6e1996]:
+                        - generic [ref=f6e1997]: Habitaciones sin humo
+                      - listitem [ref=f6e2005]:
+                        - generic [ref=f6e2006]: 2 restaurantes
+                      - listitem [ref=f6e2014]:
+                        - generic [ref=f6e2015]: WiFi gratis
+                      - listitem [ref=f6e2023]:
+                        - generic [ref=f6e2024]: Habitaciones familiares
+                      - listitem [ref=f6e2032]:
+                        - generic [ref=f6e2033]: Recepción 24 horas
+                      - listitem [ref=f6e2041]:
+                        - generic [ref=f6e2042]: Bar
+                      - listitem [ref=f6e2050]:
+                        - generic [ref=f6e2051]: Calefacción
+                      - listitem [ref=f6e2059]:
+                        - generic [ref=f6e2060]: Jardín
+                      - listitem [ref=f6e2068]:
+                        - generic [ref=f6e2069]: Servicio de limpieza diario
+                      - listitem [ref=f6e2077]:
+                        - button "Buen desayuno" [ref=f6e2085] [cursor=pointer]
+                  - group "¿Te falta información?" [ref=f6e2090]:
+                    - generic [ref=f6e2092]:
+                      - generic [aria-hidden] [ref=f6e2093]: ¿Te falta información?
+                      - button "Sí" [ref=f6e2095] [cursor=pointer]
+                      - generic [ref=f6e2096]:
+                        - text: /
+                        - button "No" [ref=f6e2097] [cursor=pointer]
+              - region "Encuesta con 2 preguntas" [ref=f6e2099]:
+                - generic [ref=f6e2103]:
+                  - button "Cerrar encuesta" [ref=f6e2105] [cursor=pointer]
+                  - heading "¿Cómo lo estamos haciendo?" [level=3] [ref=f6e2110]
+                  - generic [ref=f6e2115]:
+                    - generic [ref=f6e2116]:
+                      - generic "Pregunta 1 de 2" [ref=f6e2117]: 1 de 2
+                      - generic [ref=f6e2118]: Me resulta fácil buscar opciones de alojamiento relevantes
+                    - radiogroup "Me resulta fácil buscar opciones de alojamiento relevantes" [ref=f6e2120]:
+                      - generic "5 Totalmente de acuerdo" [ref=f6e2121]:
+                        - radio "Totalmente de acuerdo" [ref=f6e2122]
+                        - generic [ref=f6e2123] [cursor=pointer]: Totalmente de acuerdo
+                      - generic "4 De acuerdo" [ref=f6e2127]:
+                        - radio "De acuerdo" [ref=f6e2128]
+                        - generic [ref=f6e2129] [cursor=pointer]: De acuerdo
+                      - generic "3 Indiferente" [ref=f6e2133]:
+                        - radio "Indiferente" [ref=f6e2134]
+                        - generic [ref=f6e2135] [cursor=pointer]: Indiferente
+                      - generic "2 En desacuerdo" [ref=f6e2139]:
+                        - radio "En desacuerdo" [ref=f6e2140]
+                        - generic [ref=f6e2141] [cursor=pointer]: En desacuerdo
+                      - generic "1 Totalmente en desacuerdo" [ref=f6e2145]:
+                        - radio "Totalmente en desacuerdo" [ref=f6e2146]
+                        - generic [ref=f6e2147] [cursor=pointer]: Totalmente en desacuerdo
+              - generic [ref=f6e2154]:
+                - generic [ref=f6e2155]:
+                  - generic [ref=f6e2156]:
+                    - heading "Normas de la casa" [level=2] [ref=f6e2157]
+                    - generic [ref=f6e2159]: YHA London Earl's Court acepta peticiones especiales. ¡Añádelas en el siguiente paso!
+                  - button "Ver disponibilidad" [ref=f6e2161] [cursor=pointer]
+                - generic [ref=f6e2164]:
+                  - generic [ref=f6e2165]:
+                    - generic [ref=f6e2166]: Entrada
+                    - generic [ref=f6e2172]:
+                      - generic [ref=f6e2173]: Desde las 15:00
+                      - generic [ref=f6e2174]: Los clientes deben mostrar un documento de identidad con fotografía y una tarjeta de crédito en el momento de hacer el check-in
+                  - separator [aria-hidden] [ref=f6e2175]
+                  - generic [ref=f6e2176]:
+                    - generic [ref=f6e2177]: Salida
+                    - generic [ref=f6e2183]: Hasta las 10:00
+                  - separator [aria-hidden] [ref=f6e2185]
+                  - generic [ref=f6e2186]:
+                    - generic [ref=f6e2187]: Cancelación / prepago
+                    - generic [ref=f6e2194]:
+                      - text: Las condiciones de cancelación y de pago por adelantado pueden variar según el tipo de alojamiento. Consulta las
+                      - link "condiciones" [ref=f6e2195] [cursor=pointer]:
+                        - /url: "#availability_target"
+                      - text: que puede tener cada opción cuando la elijas.
+                  - separator [aria-hidden] [ref=f6e2196]
+                  - generic [ref=f6e2197]:
+                    - generic [ref=f6e2198]: Camas para niños
+                    - generic [ref=f6e2205]:
+                      - generic [ref=f6e2206]:
+                        - heading "Condiciones para estancias con niños" [level=3] [ref=f6e2207]
+                        - paragraph [ref=f6e2208]: Se pueden alojar niños de cualquier edad.
+                        - paragraph [ref=f6e2209]: Para ver la información correcta sobre precios y ocupación, añade a la búsqueda el número de niños con los que viajas y sus edades.
+                      - heading "Condiciones sobre cunas y camas supletorias" [level=3] [ref=f6e2210]
+                      - paragraph [ref=f6e2211]: En este alojamiento no hay cunas ni camas supletorias.
+                  - separator [aria-hidden] [ref=f6e2212]
+                  - generic [ref=f6e2213]:
+                    - generic [ref=f6e2214]: Restricción por edad
+                    - generic [ref=f6e2220]: "Edad mínima para el check-in: 18"
+                  - separator [aria-hidden] [ref=f6e2222]
+                  - generic [ref=f6e2223]:
+                    - generic [ref=f6e2224]: Mascotas
+                    - generic [ref=f6e2230]: No se admiten.
+                  - separator [aria-hidden] [ref=f6e2232]
+                  - generic [ref=f6e2233]:
+                    - generic [ref=f6e2234]: Métodos de pago aceptados
+                    - generic [ref=f6e2241]:
+                      - img "Visa" [ref=f6e2243]
+                      - img "Mastercard" [ref=f6e2245]
+                      - img "JCB" [ref=f6e2247]
+                      - img "Maestro" [ref=f6e2249]
+                      - img "Solo" [ref=f6e2251]
+                      - generic [ref=f6e2252]: Efectivo
+              - generic [ref=f6e2257]:
+                - generic [ref=f6e2258]:
+                  - generic [ref=f6e2259]:
+                    - heading "A tener en cuenta" [level=2] [ref=f6e2260]
+                    - generic [ref=f6e2262]: Información importante sobre el alojamiento
+                  - button "Ver disponibilidad" [ref=f6e2264] [cursor=pointer]
+                - generic [ref=f6e2268]:
+                  - paragraph [ref=f6e2269]: Please note that this property does not accept group bookings for 16 people or more.
+                  - paragraph [ref=f6e2270]: Stays exceeding 14 consecutive nights at this property will not be allowed.
+                  - paragraph [ref=f6e2271]: Please note that all adult guests need to provide a valid ID with a matching name and address at check-in.
+                  - paragraph [ref=f6e2272]: Please note discounts are not available for members of YHA (England and Wales) or Hostelling International as part of this booking.
+                  - paragraph [ref=f6e2273]: Towels are not included in the rate. Guests can rent them at the property for an additional charge or bring their own.
+                  - paragraph [ref=f6e2274]: Please contact the property to confirm the availability of accessible rooms before booking.
+                  - paragraph [ref=f6e2275]: Los huéspedes deberán mostrar un documento de identidad válido y una tarjeta de crédito al realizar el registro de entrada. Ten en cuenta que todas las peticiones especiales están sujetas a disponibilidad y pueden comportar suplementos.
+              - generic [ref=f6e2277]:
+                - heading "Información legal" [level=2] [ref=f6e2278]
+                - generic [ref=f6e2279]:
+                  - text: "Este alojamiento lo gestiona, autoriza o representa una empresa. Esta etiqueta no tiene ninguna importancia en términos fiscales, incluido el IVA y otros \"impuestos indirectos\", pero es obligatoria según la legislación sobre los derechos de los consumidores correspondiente. Puedes encontrar más información sobre la empresa aquí:"
+                  - button "ver los datos de la empresa" [ref=f6e2280] [cursor=pointer]
+                  - text: .
+            - generic [ref=f6e2283]:
+              - heading "Preguntas frecuentes sobre YHA London Earl's Court" [level=2] [ref=f6e2285]
+              - generic [ref=f6e2286]:
+                - generic [ref=f6e2288]:
+                  - button [ref=f6e2291] [cursor=pointer]:
+                    - heading "¿Qué tipo de desayuno se sirve en YHA London Earl's Court?" [level=3] [ref=f6e2293]
+                  - separator [aria-hidden] [ref=f6e2297]
+                  - button [ref=f6e2300] [cursor=pointer]:
+                    - heading "¿Cuál es el horario de entrada y salida de YHA London Earl's Court?" [level=3] [ref=f6e2302]
+                  - separator [aria-hidden] [ref=f6e2306]
+                  - button [ref=f6e2309] [cursor=pointer]:
+                    - heading "¿Cuánto cuesta alojarse en YHA London Earl's Court?" [level=3] [ref=f6e2311]
+                - generic [ref=f6e2316]:
+                  - button [ref=f6e2319] [cursor=pointer]:
+                    - heading "¿Hay restaurante dentro de YHA London Earl's Court?" [level=3] [ref=f6e2321]
+                  - separator [aria-hidden] [ref=f6e2325]
+                  - button [ref=f6e2328] [cursor=pointer]:
+                    - heading "¿A qué distancia está YHA London Earl's Court del centro de Londres?" [level=3] [ref=f6e2330]
+      - generic [ref=f6e2338]:
+        - heading "Otros alojamientos de Youth Hostels Association que te pueden gustar" [level=2] [ref=f6e2339]
+        - paragraph
+        - region [ref=f6e2342]:
+          - list [ref=f6e2343]:
+            - listitem [ref=f6e2344]:
+              - link "Albergue 2 estrellas YHA London Thameside 8.2 Muy bien A 5,7 km del centro Desde € 345" [ref=f6e2345] [cursor=pointer]:
+                - /url: /hotel/gb/yha-london-thameside.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=ef265b698850e9b5ed615218f9c3d802&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&group_adults=2&group_children=0&no_rooms=1&sb_travel_purpose=0&ucfac=481&
+                - generic [ref=f6e2348]:
+                  - generic [ref=f6e2349]:
+                    - text: Albergue
+                    - generic "2 estrellas" [ref=f6e2350]
+                  - generic [ref=f6e2354]:
+                    - heading "YHA London Thameside" [level=3] [ref=f6e2355]
+                    - heading "8.2 Muy bien" [level=4] [ref=f6e2356]
+                  - generic [ref=f6e2357]:
+                    - generic [ref=f6e2358]: A 5,7 km del centro
+                    - generic [ref=f6e2361]:
+                      - generic [ref=f6e2362]: Desde
+                      - generic [ref=f6e2363]: € 345
+            - listitem [ref=f6e2364]:
+              - link "Albergue 4 estrellas YHA London St Paul's 7.9 Bien A 2 km del centro Desde € 543" [ref=f6e2365] [cursor=pointer]:
+                - /url: /hotel/gb/yha-london-st-paul-s.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=ef265b698850e9b5ed615218f9c3d802&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&group_adults=2&group_children=0&no_rooms=1&sb_travel_purpose=0&ucfac=481&
+                - generic [ref=f6e2368]:
+                  - generic [ref=f6e2369]:
+                    - text: Albergue
+                    - generic "4 estrellas" [ref=f6e2370]
+                  - generic [ref=f6e2374]:
+                    - heading "YHA London St Paul's" [level=3] [ref=f6e2375]
+                    - heading "7.9 Bien" [level=4] [ref=f6e2376]
+                  - generic [ref=f6e2377]:
+                    - generic [ref=f6e2378]: A 2 km del centro
+                    - generic [ref=f6e2381]:
+                      - generic [ref=f6e2382]: Desde
+                      - generic [ref=f6e2383]: € 543
+            - listitem [ref=f6e2384]:
+              - link "Albergue 4 estrellas YHA London Central 8.2 Muy bien A 1,8 km del centro Desde € 1.026" [ref=f6e2385] [cursor=pointer]:
+                - /url: /hotel/gb/yha-london-central.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=ef265b698850e9b5ed615218f9c3d802&checkin=2026-12-04&checkout=2026-12-09&dest_id=-2601889&dest_type=city&group_adults=2&group_children=0&no_rooms=1&sb_travel_purpose=0&ucfac=481&
+                - generic [ref=f6e2388]:
+                  - generic [ref=f6e2389]:
+                    - text: Albergue
+                    - generic "4 estrellas" [ref=f6e2390]
+                  - generic [ref=f6e2394]:
+                    - heading "YHA London Central" [level=3] [ref=f6e2395]
+                    - heading "8.2 Muy bien" [level=4] [ref=f6e2396]
+                  - generic [ref=f6e2397]:
+                    - generic [ref=f6e2398]: A 1,8 km del centro
+                    - generic [ref=f6e2401]:
+                      - generic [ref=f6e2402]: Desde
+                      - generic [ref=f6e2403]: € 1.026
+      - button "Lo mejor de Londres Haz clic aquí para ver más hoteles y alojamientos cerca de los sitios de interés más visitados de Londres" [ref=f6e2407] [cursor=pointer]:
+        - generic [ref=f6e2409]:
+          - generic [ref=f6e2410]: Lo mejor de Londres
+          - generic [ref=f6e2412]: Haz clic aquí para ver más hoteles y alojamientos cerca de los sitios de interés más visitados de Londres
+  - contentinfo [ref=f6e2416]:
+    - contentinfo [ref=f6e2420]:
+      - navigation "Enlaces rápidos" [ref=f6e2423]:
+        - list [ref=f6e2424]:
+          - listitem [ref=f6e2425]:
+            - link "Países" [ref=f6e2426] [cursor=pointer]:
+              - /url: https://www.booking.com/country.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2429]:
+            - link "Regiones" [ref=f6e2430] [cursor=pointer]:
+              - /url: https://www.booking.com/region.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2433]:
+            - link "Ciudades" [ref=f6e2434] [cursor=pointer]:
+              - /url: https://www.booking.com/city.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2437]:
+            - link "Zonas" [ref=f6e2438] [cursor=pointer]:
+              - /url: https://www.booking.com/district.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2441]:
+            - link "Aeropuertos" [ref=f6e2442] [cursor=pointer]:
+              - /url: https://www.booking.com/airport.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2445]:
+            - link "Hoteles" [ref=f6e2446] [cursor=pointer]:
+              - /url: https://www.booking.com/hotel/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2449]:
+            - link "Lugares de interés" [ref=f6e2450] [cursor=pointer]:
+              - /url: https://www.booking.com/landmark.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2453]:
+            - link "Casas y chalets" [ref=f6e2454] [cursor=pointer]:
+              - /url: https://www.booking.com/booking-home/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2457]:
+            - link "Apartamentos" [ref=f6e2458] [cursor=pointer]:
+              - /url: https://www.booking.com/apartments/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2461]:
+            - link "Resorts" [ref=f6e2462] [cursor=pointer]:
+              - /url: https://www.booking.com/resorts/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2465]:
+            - link "Villas" [ref=f6e2466] [cursor=pointer]:
+              - /url: https://www.booking.com/villas/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2469]:
+            - link "Albergues" [ref=f6e2470] [cursor=pointer]:
+              - /url: https://www.booking.com/hostels/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2473]:
+            - link "Bed and Breakfasts" [ref=f6e2474] [cursor=pointer]:
+              - /url: https://www.booking.com/bed-and-breakfast/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2477]:
+            - link "Hostales y pensiones" [ref=f6e2478] [cursor=pointer]:
+              - /url: https://www.booking.com/guest-house/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2481]:
+            - link "Alojamientos únicos" [ref=f6e2482] [cursor=pointer]:
+              - /url: https://www.booking.com/accommodations.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f6e2485]:
+            - link "Descubrir las estancias mensuales" [ref=f6e2486] [cursor=pointer]:
+              - /url: https://www.booking.com/extended-stays/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f6e2490]:
+        - generic [ref=f6e2491]:
+          - heading "Ayuda" [level=3] [ref=f6e2493]
+          - list [ref=f6e2494]:
+            - listitem [ref=f6e2495]:
+              - link "Gestiona tus viajes" [ref=f6e2496] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/cs.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2498]:
+              - link "Contactar con Atención al cliente" [ref=f6e2499] [cursor=pointer]:
+                - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2501]:
+              - link "Centro de recursos sobre seguridad" [ref=f6e2502] [cursor=pointer]:
+                - /url: https://www.booking.com/trust_and_safety.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+        - generic [ref=f6e2504]:
+          - heading "Descubre" [level=3] [ref=f6e2506]
+          - list [ref=f6e2507]:
+            - listitem [ref=f6e2508]:
+              - link "Programa de fidelización Genius" [ref=f6e2509] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2511]:
+              - link "Ofertas de temporada y para las vacaciones" [ref=f6e2512] [cursor=pointer]:
+                - /url: https://www.booking.com/deals/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2514]:
+              - link "Artículos de viajes" [ref=f6e2515] [cursor=pointer]:
+                - /url: https://www.booking.com/articles.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2517]:
+              - link "Booking.com Business" [ref=f6e2518] [cursor=pointer]:
+                - /url: https://business.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2520]:
+              - link "Traveller Review Awards" [ref=f6e2521] [cursor=pointer]:
+                - /url: https://www.booking.com/traveller-awards/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2523]:
+              - link "Alquiler de coches" [ref=f6e2524] [cursor=pointer]:
+                - /url: https://www.booking.com/cars/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2526]:
+              - link "Buscador de vuelos" [ref=f6e2527] [cursor=pointer]:
+                - /url: https://booking.com/pxgo?aid=304142&lang=es&token=UmFuZG9tSVYkc2RlIyh9YXOod6xipXL60d6GAE_cXs94LJHzX-KPgEnDpDmGgwXMVr0eXIrum6I_-jggbe_t6ro0F_6ee0Xvxmo2YrZd1vS8SMOtSI3WtCHYwCYf1ufyYNUWzI-rP0uYRKZF5FUHDWiavBK3_uFkFUSPMzAqJHFBB9E11CTNjtW2Vgl2g7GWmI5h_lV2HIJUVuuPVbddiuBUYOk1wvVjuCFS8v2ncFG73PFNKF3Ca6S2Mdtc4DEWyLv9Vqgngg6LdmgU03YQ3ZAddajKxj225zjvHDKnOv8sgTco0UPBFlZSDIc76fizMDlQS0ZO6ee06Wcx_J94wu3cMTGeAZGb1ZYXor6hnAthInb7-iA_2bib6yA960vsRGXT1t0ZRYx931R2GKhXc8FD3JW657tM9J1L47u-iQrd07_6OCAioO1kmzPnuHuH_3nVAJqs3zLU1MPhmPXQbihTBw1uEJpb3DDYtSYHWYoipFkqsQW9vGObpygJ48OguV3lVp0nKh6DHOyZJCZI7W2VnFvqTAuRhvCMYKUv104itDZzSvBZRcMAmvB2Oa86&url=https%3A%2F%2Fbooking.kayak.com%2Fin%3Fsid%3Dfa3fc75425f1238471e91409a927f910%26mc%3DEUR%26bdclc%3Des%26p%3Dfooter_link%26a%3Dbdc%252Ffooter_link&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2529]:
+              - link "Reservas en restaurantes" [ref=f6e2530] [cursor=pointer]:
+                - /url: https://www.opentable.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&ref=16087
+            - listitem [ref=f6e2532]:
+              - link "Booking.com para Agentes de viajes" [ref=f6e2533] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=travel-agents-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f6e2535]:
+          - heading "Términos y configuración" [level=3] [ref=f6e2537]
+          - list [ref=f6e2538]:
+            - listitem [ref=f6e2539]:
+              - link "Gestionar la configuración de las cookies" [ref=f6e2540] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2542]:
+              - link "Política de privacidad" [ref=f6e2543] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2545]:
+              - link "Condiciones del servicio" [ref=f6e2546] [cursor=pointer]:
+                - /url: https://www.booking.com/content/terms.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2548]:
+              - link "Declaración de accesibilidad" [ref=f6e2549] [cursor=pointer]:
+                - /url: https://www.booking.com/content/accessibility_statement.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2551]:
+              - link "Resolución de litigios" [ref=f6e2552] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/complaints.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2554]:
+              - link "Declaración sobre la esclavitud moderna" [ref=f6e2555] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/modern-slavery-statement/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2557]:
+              - link "Declaración sobre derechos humanos" [ref=f6e2558] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/about/compliance-and-ethics/human-rights/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2560]:
+              - link "Gestiona las recomendaciones personalizadas" [ref=f6e2561] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f6e2563]:
+          - heading "Colaboradores" [level=3] [ref=f6e2565]
+          - list [ref=f6e2566]:
+            - listitem [ref=f6e2567]:
+              - link "Acceder a la extranet" [ref=f6e2568] [cursor=pointer]:
+                - /url: https://admin.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=login_footer_v0&utm_medium=frontend&utm_source=extranet_login_footer
+            - listitem [ref=f6e2570]:
+              - link "Ayuda para colaboradores" [ref=f6e2571] [cursor=pointer]:
+                - /url: https://partner.booking.com/es?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=footer_list&utm_medium=frontend_footer&utm_source=booking.com
+            - listitem [ref=f6e2573]:
+              - link "Registra tu alojamiento" [ref=f6e2574] [cursor=pointer]:
+                - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=footer_menu
+            - listitem [ref=f6e2576]:
+              - link "Conviértete en afiliado" [ref=f6e2577] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=become-an-affiliate-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f6e2579]:
+          - heading "Información" [level=3] [ref=f6e2581]
+          - list [ref=f6e2582]:
+            - listitem [ref=f6e2583]:
+              - link "Sobre Booking.com" [ref=f6e2584] [cursor=pointer]:
+                - /url: https://www.booking.com/content/about.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2586]:
+              - link "Cómo trabajamos" [ref=f6e2587] [cursor=pointer]:
+                - /url: https://www.booking.com/content/how_we_work.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2589]:
+              - link "Sostenibilidad" [ref=f6e2590] [cursor=pointer]:
+                - /url: https://sustainability.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2592]:
+              - link "Centro de prensa" [ref=f6e2593] [cursor=pointer]:
+                - /url: https://news.booking.com/es
+            - listitem [ref=f6e2595]:
+              - link "Trabaja con nosotros" [ref=f6e2596] [cursor=pointer]:
+                - /url: https://careers.booking.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2598]:
+              - link "Relación con inversores" [ref=f6e2599] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB
+            - listitem [ref=f6e2601]:
+              - link "Contacto corporativo" [ref=f6e2602] [cursor=pointer]:
+                - /url: https://www.booking.com/content/contact-us.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f6e2604]:
+              - link "Pautas sobre el contenido y comunicación de usos inadecuados" [ref=f6e2605] [cursor=pointer]:
+                - /url: https://www.booking.com/content-moderation-policy/overview-page.es.html?aid=304142&label=gen173nr-10CAsoUEIXeWhhLWxvbmRvbi1lYXJsLXMtY291cnRIClgEaEaIAQGYATO4ARfIAQzYAQPoAQH4AQGIAgGoAgG4Aq3Zu9UGwAIB0gIkNjAzMGJhNDYtOTVlZS00YmE2LWE5NzgtMTkxMDYyYTdhNTlk2AIB4AIB&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f6e2608]:
+        - generic [ref=f6e2609]:
+          - 'button "Idioma: Español" [ref=f6e2611] [cursor=pointer]'
+          - button "Precios en Euro EUR" [ref=f6e2616] [cursor=pointer]:
+            - generic [ref=f6e2617]: EUR
+        - separator [aria-hidden] [ref=f6e2618]
+        - generic [ref=f6e2619]:
+          - generic [ref=f6e2620]: Booking.com forma parte de Booking Holdings Inc., líder mundial en viajes online y servicios relacionados.
+          - generic [ref=f6e2622]: Copyright © 1996-2026 Booking.com™. Todos los derechos reservados.
+        - generic [ref=f6e2623]:
+          - img "Booking.com" [ref=f6e2624]
+          - img "Priceline.com" [ref=f6e2625]
+          - img "Kayak" [ref=f6e2626]
+          - img "Agoda" [ref=f6e2627]
+          - img "OpenTable" [ref=f6e2628]
+  - text: 끖 낝 끲 낝 넌
+  - region "pancarta de galletas" [ref=f6e2629]:
+    - dialog "Gestionar la configuración de las cookies" [ref=f6e2630]:
+      - generic [ref=f6e2632]:
+        - generic [ref=f6e2634]:
+          - heading "Gestionar la configuración de las cookies" [level=2] [ref=f6e2635]
+          - generic [ref=f6e2636]:
+            - paragraph [ref=f6e2637]: "Cuando utilizas Booking.com, nosotros (Booking.com y nuestros colaboradores) usamos las siguientes categorías de cookies (y tecnologías similares) que requieren tu consentimiento: cookies analíticas y cookies de marketing."
+            - heading "Cookies analíticas" [level=3] [ref=f6e2638]
+            - paragraph [ref=f6e2639]: Tanto nosotros como nuestros colaboradores usamos cookies analíticas para obtener información del uso que haces de nuestro servicio, lo que a su vez se utiliza para comprender la manera en que se usa nuestra plataforma y para mejorar el rendimiento de nuestro sitio y nuestros servicios.
+            - heading "Cookies de marketing" [level=3] [ref=f6e2640]
+            - paragraph [ref=f6e2641]: Nosotros y nuestros colaboradores utilizamos cookies de marketing, incluidas las de redes sociales, para recopilar información sobre tu comportamiento en esta plataforma, lo que nos ayuda a decidir qué productos mostrarte dentro y fuera de ella, y para mostrar contenido y anuncios personalizados en Booking.com y otras plataformas. El contenido personalizado se basa en tu comportamiento y en los servicios que hayas reservado. Estas cookies también te permiten compartir páginas en redes sociales o darles a "me gusta".
+            - paragraph [ref=f6e2642]: Al seleccionar "Aceptar", das tu consentimiento para el uso de cookies analíticas y de marketing, así como para el correspondiente tratamiento de tus datos personales. Puedes actualizar tu consentimiento para cada plataforma en cualquier momento. En el sitio web, en "Gestionar la configuración de las cookies" en el pie de página; en la aplicación, en "Mi cuenta/Iniciar sesión" > "Preferencias del dispositivo" > "Gestionar ajustes de privacidad".
+            - paragraph [ref=f6e2643]: Al seleccionar "Rechazar", tendrás una experiencia menos personalizada en nuestra plataforma.
+            - paragraph [ref=f6e2644]:
+              - text: Puedes encontrar más información sobre el correspondiente tratamiento de los datos personales en la
+              - link "Política de privacidad" [ref=f6e2645] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.html
+              - text: .
+        - generic [ref=f6e2647]:
+          - button "Gestiona tus ajustes de privacidad" [ref=f6e2648] [cursor=pointer]
+          - button "Rechazar" [ref=f6e2649] [cursor=pointer]
+          - button "Aceptar" [ref=f6e2650] [cursor=pointer]

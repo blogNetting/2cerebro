@@ -1,0 +1,1097 @@
+- generic [ref=f11e1]:
+  - link "Ir al contenido principal" [ref=f11e3] [cursor=pointer]:
+    - /url: "#basiclayout"
+  - banner [ref=f11e10]:
+    - generic [ref=f11e11]:
+      - navigation [ref=f11e12]:
+        - link "Booking.com" [ref=f11e16] [cursor=pointer]:
+          - /url: https://www.booking.com/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+        - generic [ref=f11e19]:
+          - button "Precios en Euro EUR" [ref=f11e21] [cursor=pointer]:
+            - generic [ref=f11e22]: EUR
+          - 'button "Idioma: Español" [ref=f11e24] [cursor=pointer]'
+          - link "Atención al cliente" [ref=f11e29] [cursor=pointer]:
+            - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910&source=header&src=profile_contact_cs
+          - link "Registra tu alojamiento" [ref=f11e34] [cursor=pointer]:
+            - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=topbar
+          - link "Hacerse una cuenta" [ref=f11e36] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=es&aid=304142&bkng_action=hotel&prompt=signin&state=UrYCixsxvO1RoNb0YoQ9ZJhjvH4SRAqXI7-VvCHWKNUQXsxpng25G3HspR2mtn0pXO4sq4A6P7PaJieaA1ganC-o0rPpvFQQSAt9CUIFcEc3gn5Q4FKOZOO9uiWukdjb9qJWy0n5lfO9UeUd-YSz-y_CEQNCDPTpCzjsJDrRsPLNUi82keJEflhcndDNWQ1UZ5ZwvZEv2klIA0UAB-RIHqoe3VxVdC71v_z23rF_BEDWmm87Gr8RCOi0bV754svy7qZP9y7WLt9qdP3s-NJpcGdac4gqkWdoSCe-Mtj7AzSz3B2DAV4Z4jmZF2Mpv_LbS9Nt67apUEyxhGMXPm0Ps3mZsG2PyibzCZZMwBFDl3magQWBJeYaK0HDwhOBzyqQQMm2n9bawpY4N4grGTOcV6qCOlZpf3Alhg%3D%3D*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=f11e37]: Hazte una cuenta
+          - link "Iniciar sesión" [ref=f11e39] [cursor=pointer]:
+            - /url: https://account.booking.com/auth/oauth2?client_id=vO1Kblk7xX9tUn2cpZLS&redirect_uri=https%3A%2F%2Fsecure.booking.com%2Flogin.html%3Fop%3Doauth_return&response_type=code&lang=es&aid=304142&bkng_action=hotel&prompt=signin&state=UrYCixsxvO1RoNb0YoQ9ZJhjvH4SRAqXI7-VvCHWKNUQXsxpng25G3HspR2mtn0pXO4sq4A6P7PaJieaA1ganC-o0rPpvFQQSAt9CUIFcEc3gn5Q4FKOZOO9uiWukdjb9qJWy0n5lfO9UeUd-YSz-y_CEQNCDPTpCzjsJDrRsPLNUi82keJEflhcndDNWQ1UZ5ZwvZEv2klIA0UAB-RIHqoe3VxVdC71v_z23rF_BEDWmm87Gr8RCOi0bV754svy7qZP9y7WLt9qdP3s-NJpcGdac4gqkWdoSCe-Mtj7AzSz3B2DAV4Z4jmZF2Mpv_LbS9Nt67apUEyxhGMXPm0Ps3mZsG2PyibzCZZMwBFDl3magQWBJeYaK0HDwhOBzyqQQMm2n9bawpY4N4grGTOcV6qCOlZpf3Alhg%3D%3D*eyJpZCI6InRyYXZlbGxlcl9oZWFkZXIifQ%3D%3D
+            - generic [ref=f11e40]: Inicia sesión
+      - navigation "¿Qué estás buscando?" [ref=f11e41]:
+        - menubar [ref=f11e44]:
+          - menuitem "Alojamiento" [ref=f11e45] [cursor=pointer]
+          - menuitem "Vuelos" [ref=f11e51] [cursor=pointer]
+          - menuitem "Vuelo + Hotel" [ref=f11e57] [cursor=pointer]
+          - menuitem "Alquiler de coches" [ref=f11e63] [cursor=pointer]
+          - menuitem "Atracciones" [ref=f11e69] [cursor=pointer]
+          - menuitem "Taxis aeropuerto" [ref=f11e75] [cursor=pointer]
+  - region "Buscar alojamientos" [ref=f11e86]:
+    - generic [ref=f11e87]:
+      - generic [ref=f11e91]:
+        - generic [ref=f11e96]:
+          - generic [ref=f11e97]: Indica el destino
+          - combobox "Indica el destino" [ref=f11e101]: Londres
+        - button [ref=f11e103] [cursor=pointer]:
+          - img "Borrar" [ref=f11e104]
+      - button "Seleccionar fechas vie, 4 dic — mié, 9 dic" [ref=f11e109] [cursor=pointer]:
+        - generic [ref=f11e114]:
+          - generic [ref=f11e115]: Seleccionar fechas
+          - generic [ref=f11e116]: vie, 4 dic — mié, 9 dic
+      - generic [ref=f11e122] [cursor=pointer]:
+        - generic [ref=f11e123]: Selecciona la ocupación
+        - 'button "Número de personas y de habitaciones. Selección actual: 2 adultos · 0 niños · 1 habitación" [ref=f11e125]':
+          - generic [ref=f11e126]: 2 adultos · 0 niños · 1 habitación
+      - button "Buscar" [ref=f11e132] [cursor=pointer]
+  - generic [ref=f11e135]:
+    - navigation "Breadcrumbs" [ref=f11e139]:
+      - list [ref=f11e140]:
+        - listitem [ref=f11e141]:
+          - link "Inicio" [ref=f11e142] [cursor=pointer]:
+            - /url: https://www.booking.com/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+        - listitem [ref=f11e147]:
+          - link "Hoteles" [ref=f11e148] [cursor=pointer]:
+            - /url: https://www.booking.com/hotel/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+        - listitem [ref=f11e153]:
+          - link "Todas las opciones de habitaciones en casas particulares" [ref=f11e154] [cursor=pointer]:
+            - /url: https://www.booking.com/homestay/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+        - listitem [ref=f11e159]:
+          - link "Reino Unido" [ref=f11e160] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&dest_id=222&dest_type=country&nflt=sth%3D28
+        - listitem [ref=f11e165]:
+          - link "Gran Londres" [ref=f11e166] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&dest_id=2415&dest_type=region&nflt=sth%3D28
+        - listitem [ref=f11e171]:
+          - link "Londres" [ref=f11e172] [cursor=pointer]:
+            - /url: https://www.booking.com/searchresults.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&dest_id=-2601889&dest_type=city&nflt=sth%3D28
+        - listitem [ref=f11e177]:
+          - heading "Ofertas en el The Private Rooms in Paddington (Habitación en casa particular) (Reino Unido)" [level=1] [ref=f11e179]
+    - generic [ref=f11e181]:
+      - main [ref=f11e182]:
+        - generic [ref=f11e183]:
+          - generic [ref=f11e185]:
+            - navigation "Enlace a página interna" [ref=f11e189]:
+              - list [ref=f11e191]:
+                - listitem [ref=f11e192]:
+                  - link "Vista general" [ref=f11e193] [cursor=pointer]:
+                    - /url: "#hotelTmpl"
+                - listitem [ref=f11e196]:
+                  - link "Info y precios" [ref=f11e197] [cursor=pointer]:
+                    - /url: "#availability"
+                - listitem [ref=f11e200]:
+                  - link "Servicios" [ref=f11e201] [cursor=pointer]:
+                    - /url: "#hp_facilities_box"
+                - listitem [ref=f11e204]:
+                  - link "Normas de la casa" [ref=f11e205] [cursor=pointer]:
+                    - /url: "#policies"
+                - listitem [ref=f11e208]:
+                  - link "Información legal e importante" [ref=f11e209] [cursor=pointer]:
+                    - /url: "#important_info"
+                - listitem [ref=f11e212]:
+                  - link "Comentarios de clientes (468)" [ref=f11e213] [cursor=pointer]:
+                    - /url: "#blockdisplay4"
+            - generic [ref=f11e217]:
+              - generic [ref=f11e218]:
+                - button "Guardar The Private Rooms in Paddington en una lista de viaje" [ref=f11e225] [cursor=pointer]
+                - button "Compartir este alojamiento" [ref=f11e236] [cursor=pointer]
+                - button "Reserva ahora" [ref=f11e241] [cursor=pointer]
+                - button "Igualamos el precio" [ref=f11e246] [cursor=pointer]
+              - generic [ref=f11e253]:
+                - button [ref=f11e258] [cursor=pointer]
+                - heading "The Private Rooms in Paddington" [level=2] [ref=f11e263]
+              - generic [ref=f11e267]:
+                - link "The Private Rooms in Paddington, Londres - Comprobar la ubicación" [ref=f11e268] [cursor=pointer]:
+                  - /url: "#map_opened-map_trigger_header_pin"
+                - generic [ref=f11e273]:
+                  - button [ref=f11e275] [cursor=pointer]:
+                    - generic [ref=f11e276]:
+                      - text: 70 Castellain Road, Westminster Borough, Londres, W9 1EX, Reino Unido
+                      - generic [aria-hidden] [ref=f11e277]: Después de reservar, encontrarás todos los datos del alojamiento con el número de teléfono y la dirección en tu confirmación de la reserva y en tu cuenta.
+                  - text: –
+                  - link "Muy buena ubicación - Ver mapa" [ref=f11e278] [cursor=pointer]:
+                    - /url: "#map_opened-map_trigger_header"
+                  - text: –
+                  - button [ref=f11e280] [cursor=pointer]:
+                    - generic [ref=f11e281]:
+                      - text: Cerca del metro
+                      - generic [aria-hidden] [ref=f11e282]: A 500 m a pie de la estación de Estación de metro Maida Vale
+            - generic "Galería de fotos del The Private Rooms in Paddington" [ref=f11e286]:
+              - region "Galería de fotos de The Private Rooms in Paddington" [ref=f11e288]:
+                - generic [ref=f11e291]:
+                  - generic [ref=f11e292]:
+                    - button [ref=f11e294] [cursor=pointer]:
+                      - img "Una cama con toallas y botellas encima. en The Private Rooms in Paddington, en Londres" [ref=f11e296]
+                    - generic [ref=f11e297]:
+                      - button [ref=f11e299] [cursor=pointer]:
+                        - img "Un dormitorio con una gran cama blanca con una manta amarilla. en The Private Rooms in Paddington, en Londres" [ref=f11e301]
+                      - button [ref=f11e303] [cursor=pointer]:
+                        - img "un baño con inodoro y ducha de cristal en The Private Rooms in Paddington, en Londres" [ref=f11e305]
+                  - generic [ref=f11e306]:
+                    - button [ref=f11e308] [cursor=pointer]:
+                      - img "Una cocina con gabinetes blancos y piso de mármol. en The Private Rooms in Paddington, en Londres" [ref=f11e310]
+                    - button [ref=f11e312] [cursor=pointer]:
+                      - img "una lavadora y secadora blancas sobre un suelo de baldosas en The Private Rooms in Paddington, en Londres" [ref=f11e314]
+                    - button [ref=f11e316] [cursor=pointer]:
+                      - img "un cartel para la entrada a una estación del valle de Madlia en The Private Rooms in Paddington, en Londres" [ref=f11e318]
+                    - button [ref=f11e320] [cursor=pointer]:
+                      - img "un dormitorio con una cama y una mesa de cristal en The Private Rooms in Paddington, en Londres" [ref=f11e322]
+                    - generic [ref=f11e323]:
+                      - button [ref=f11e324] [cursor=pointer]:
+                        - img "un baño con bañera, inodoro y lavabo en The Private Rooms in Paddington, en Londres 20 fotos más" [ref=f11e326]
+                      - generic: 20 fotos más
+            - button [ref=f11e335] [cursor=pointer]:
+              - button "Ver en el mapa" [ref=f11e341]
+          - generic [ref=f11e344]:
+            - generic [ref=f11e345]:
+              - generic [ref=f11e349]:
+                - paragraph [ref=f11e350]: "Alojamiento Confortable: The Private Rooms in Paddington ofrece alojamiento en habitación en Londres. Los clientes disfrutan de wifi gratuito, bañera, tetera y cafetera, mesa de comedor y vistas a una calle tranquila. Equipamiento Moderno: Cada habitación cuenta con nevera, baño compartido con artículos de aseo gratuitos, ducha, zona de comedor, hervidor eléctrico, utensilios de cocina y armario. El establecimiento garantiza la limpieza de las habitaciones y una ubicación conveniente. Ubicación Privilegiada: Situado a 1,9 km de la estación de Paddington y a 19 minutos a pie del Lord's Cricket Ground, el alojamiento está cerca del mercado de Portobello y de Madame Tussauds. El aeropuerto de Londres City se encuentra a 20 km. En los alrededores se puede practicar navegación. Satisfacción del Cliente: Altamente valorado por la limpieza de las habitaciones, la cocina y la ubicación conveniente."
+                - paragraph [ref=f11e351]: A las parejas les encanta la ubicación — Le han puesto un 8,7 para viajes de dos personas.
+                - paragraph [ref=f11e352]: Las distancias en la descripción del alojamiento se calculan con OpenStreetMap©
+              - generic [ref=f11e356]:
+                - heading "Servicios más populares" [level=3] [ref=f11e357]
+                - list [ref=f11e359]:
+                  - listitem [ref=f11e360]:
+                    - generic [ref=f11e361]: WiFi gratis
+                  - listitem [ref=f11e369]:
+                    - generic [ref=f11e370]: Calefacción
+                  - listitem [ref=f11e378]:
+                    - generic [ref=f11e379]: Tetera/cafetera en todas las habitaciones
+            - generic [ref=f11e390]:
+              - heading "Puntos fuertes del alojamiento" [level=3] [ref=f11e391]
+              - generic [ref=f11e392]:
+                - generic [ref=f11e393]:
+                  - heading "¡Ideal para estancias de 5 noches!" [level=4] [ref=f11e394]
+                  - paragraph [ref=f11e395]:
+                    - generic [ref=f11e399]: La mejor ubicación. Los viajeros recientes le dan una puntuación alta (8,7)
+                - generic [ref=f11e400]:
+                  - heading "Opciones con:" [level=4] [ref=f11e401]
+                  - list [ref=f11e402]:
+                    - listitem [ref=f11e403]:
+                      - paragraph [ref=f11e404]:
+                        - generic [ref=f11e408]: Vistas a una calle tranquila
+          - separator [ref=f11e409]
+          - generic [ref=f11e411]:
+            - generic [ref=f11e412]:
+              - heading "Disponibilidad" [level=2] [ref=f11e413]
+              - button "Igualamos el precio" [ref=f11e417] [cursor=pointer]
+            - generic [ref=f11e425]:
+              - generic [ref=f11e426]: Precios convertidos a EUR
+              - button [ref=f11e428] [cursor=pointer]
+            - region "Buscar alojamientos" [ref=f11e435]:
+              - generic [ref=f11e436]:
+                - button "Seleccionar fechas vie, 4 dic — mié, 9 dic" [ref=f11e439] [cursor=pointer]:
+                  - generic [ref=f11e444]:
+                    - generic [ref=f11e445]: Seleccionar fechas
+                    - generic [ref=f11e446]: vie, 4 dic — mié, 9 dic
+                - generic [ref=f11e452] [cursor=pointer]:
+                  - generic [ref=f11e453]: Selecciona la ocupación
+                  - 'button "Número de personas y de habitaciones. Selección actual: 2 adultos · 0 niños · 1 habitación" [ref=f11e455]':
+                    - generic [ref=f11e456]: 2 adultos · 0 niños · 1 habitación
+                - button "Modificar búsqueda" [ref=f11e462] [cursor=pointer]
+            - generic [ref=f11e470]:
+              - table [ref=f11e472]:
+                - caption [ref=f11e473]: Selecciona un tipo de habitación y el número de habitaciones que quieres reservar.
+                - rowgroup [ref=f11e474]:
+                  - row [ref=f11e475]:
+                    - columnheader "Tipo de habitación" [ref=f11e476]
+                    - columnheader [ref=f11e477]
+                    - columnheader "Tus opciones" [ref=f11e480]
+                    - columnheader "Seleccionar cantidad" [ref=f11e481]
+                - rowgroup [ref=f11e482]:
+                  - row [ref=f11e483]:
+                    - 'rowheader "Habitación Doble Capacidad: 2 adultos Cama: 1 cama doble Bañera WiFi gratis Servicios incluidos" [ref=f11e484]':
+                      - generic [ref=f11e485]:
+                        - link "Habitación Doble" [ref=f11e487] [cursor=pointer]:
+                          - /url: "#RD1062817902"
+                        - generic [ref=f11e488]: "Capacidad: 2 adultos"
+                        - generic [ref=f11e498]:
+                          - text: "Cama:"
+                          - generic [ref=f11e499]: 1 cama doble
+                        - generic [ref=f11e501]:
+                          - list [ref=f11e502]:
+                            - listitem [ref=f11e503]:
+                              - generic [ref=f11e504]: Bañera
+                            - listitem [ref=f11e507]:
+                              - generic [ref=f11e508]: WiFi gratis
+                          - separator [ref=f11e511]
+                          - list "Servicios incluidos" [ref=f11e512]:
+                            - listitem [ref=f11e513]:
+                              - generic [ref=f11e514]: Vistas
+                            - listitem [ref=f11e518]:
+                              - generic [ref=f11e519]: Artículos de aseo gratis
+                            - listitem [ref=f11e523]:
+                              - generic [ref=f11e524]: Ducha
+                            - listitem [ref=f11e528]:
+                              - generic [ref=f11e529]: Aseo
+                            - listitem [ref=f11e533]:
+                              - generic [ref=f11e534]: Toallas
+                            - listitem [ref=f11e538]:
+                              - generic [ref=f11e539]: Ropa de cama
+                            - listitem [ref=f11e543]:
+                              - generic [ref=f11e544]: Nevera
+                            - listitem [ref=f11e548]:
+                              - generic [ref=f11e549]: Tetera/cafetera
+                            - listitem [ref=f11e553]:
+                              - generic [ref=f11e554]: Baño compartido
+                            - listitem [ref=f11e558]:
+                              - generic [ref=f11e559]: Calefacción
+                            - listitem [ref=f11e563]:
+                              - generic [ref=f11e564]: Utensilios de cocina
+                            - listitem [ref=f11e568]:
+                              - generic [ref=f11e569]: Hervidor eléctrico
+                            - listitem [ref=f11e573]:
+                              - generic [ref=f11e574]: Armario
+                            - listitem [ref=f11e578]:
+                              - generic [ref=f11e579]: Zona de comedor
+                            - listitem [ref=f11e583]:
+                              - generic [ref=f11e584]: Mesa de comedor
+                            - listitem [ref=f11e588]:
+                              - generic [ref=f11e589]: Papel higiénico
+                    - cell "Precio € 489 Incluye impuestos y cargos" [ref=f11e593]:
+                      - generic [ref=f11e595]:
+                        - generic [ref=f11e597]:
+                          - generic [aria-hidden] [ref=f11e598]: € 489
+                          - generic [ref=f11e599]: Precio € 489
+                        - generic [ref=f11e600]: Incluye impuestos y cargos
+                    - cell "Parcialmente reembolsable Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e601]:
+                      - generic [ref=f11e602]:
+                        - list [ref=f11e603]:
+                          - listitem [ref=f11e604]:
+                            - strong [ref=f11e614]: Parcialmente reembolsable
+                          - listitem [ref=f11e615]:
+                            - generic [ref=f11e616]:
+                              - generic [aria-hidden] [ref=f11e618]: •
+                              - generic [ref=f11e619]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e624] [cursor=pointer]
+                    - cell [ref=f11e628]:
+                      - generic [ref=f11e629]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e631]:
+                          - option "0" [selected]
+                          - option "1 (€ 489)"
+                  - row [ref=f11e632]:
+                    - cell "Precio € 586 Incluye impuestos y cargos" [ref=f11e633]:
+                      - generic [ref=f11e635]:
+                        - generic [ref=f11e637]:
+                          - generic [aria-hidden] [ref=f11e638]: € 586
+                          - generic [ref=f11e639]: Precio € 586
+                        - generic [ref=f11e640]: Incluye impuestos y cargos
+                    - cell "Totalmente reembolsable (por Booking.com) antes del 30 de noviembre de 2026 No combinable con otras ofertas Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e641]:
+                      - generic [ref=f11e642]:
+                        - list [ref=f11e643]:
+                          - listitem [ref=f11e644]:
+                            - generic [ref=f11e653]:
+                              - strong [ref=f11e654]: Totalmente reembolsable
+                              - text: (por Booking.com) antes del 30 de noviembre de 2026
+                          - listitem [ref=f11e655]:
+                            - generic [ref=f11e656]:
+                              - generic [aria-hidden] [ref=f11e658]: •
+                              - generic [ref=f11e659]: No combinable con otras ofertas
+                          - listitem [ref=f11e663]:
+                            - generic [ref=f11e664]:
+                              - generic [aria-hidden] [ref=f11e666]: •
+                              - generic [ref=f11e667]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e672] [cursor=pointer]
+                    - cell [ref=f11e676]:
+                      - generic [ref=f11e677]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e679]:
+                          - option "0 ()" [selected]
+                          - option "1 (€ 586)"
+                  - row [ref=f11e680]:
+                    - 'rowheader "Habitación Doble Grande Capacidad: 2 adultos Cama: 1 cama doble grande Bañera WiFi gratis Mostrar más instalaciones" [ref=f11e681]':
+                      - generic [ref=f11e682]:
+                        - link "Habitación Doble Grande" [ref=f11e684] [cursor=pointer]:
+                          - /url: "#RD1062817903"
+                        - generic [ref=f11e685]: "Capacidad: 2 adultos"
+                        - generic [ref=f11e695]:
+                          - text: "Cama:"
+                          - generic [ref=f11e696]: 1 cama doble grande
+                        - generic [ref=f11e698]:
+                          - list [ref=f11e699]:
+                            - listitem [ref=f11e700]:
+                              - generic [ref=f11e701]: Bañera
+                            - listitem [ref=f11e704]:
+                              - generic [ref=f11e705]: WiFi gratis
+                          - button "Mostrar más instalaciones" [ref=f11e708] [cursor=pointer]: Más
+                    - cell "Precio € 508 Incluye impuestos y cargos" [ref=f11e709]:
+                      - generic [ref=f11e711]:
+                        - generic [ref=f11e713]:
+                          - generic [aria-hidden] [ref=f11e714]: € 508
+                          - generic [ref=f11e715]: Precio € 508
+                        - generic [ref=f11e716]: Incluye impuestos y cargos
+                    - cell "Parcialmente reembolsable Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e717]:
+                      - generic [ref=f11e718]:
+                        - list [ref=f11e719]:
+                          - listitem [ref=f11e720]:
+                            - strong [ref=f11e730]: Parcialmente reembolsable
+                          - listitem [ref=f11e731]:
+                            - generic [ref=f11e732]:
+                              - generic [aria-hidden] [ref=f11e734]: •
+                              - generic [ref=f11e735]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e740] [cursor=pointer]
+                    - cell [ref=f11e744]:
+                      - generic [ref=f11e745]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e747]:
+                          - option "0" [selected]
+                          - option "1 (€ 508)"
+                  - row [ref=f11e748]:
+                    - cell "Precio € 610 Incluye impuestos y cargos" [ref=f11e749]:
+                      - generic [ref=f11e751]:
+                        - generic [ref=f11e753]:
+                          - generic [aria-hidden] [ref=f11e754]: € 610
+                          - generic [ref=f11e755]: Precio € 610
+                        - generic [ref=f11e756]: Incluye impuestos y cargos
+                    - cell "Totalmente reembolsable (por Booking.com) antes del 30 de noviembre de 2026 No combinable con otras ofertas Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e757]:
+                      - generic [ref=f11e758]:
+                        - list [ref=f11e759]:
+                          - listitem [ref=f11e760]:
+                            - generic [ref=f11e769]:
+                              - strong [ref=f11e770]: Totalmente reembolsable
+                              - text: (por Booking.com) antes del 30 de noviembre de 2026
+                          - listitem [ref=f11e771]:
+                            - generic [ref=f11e772]:
+                              - generic [aria-hidden] [ref=f11e774]: •
+                              - generic [ref=f11e775]: No combinable con otras ofertas
+                          - listitem [ref=f11e779]:
+                            - generic [ref=f11e780]:
+                              - generic [aria-hidden] [ref=f11e782]: •
+                              - generic [ref=f11e783]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e788] [cursor=pointer]
+                    - cell [ref=f11e792]:
+                      - generic [ref=f11e793]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e795]:
+                          - option "0 ()" [selected]
+                          - option "1 (€ 610)"
+                  - row [ref=f11e796]:
+                    - 'rowheader "Habitación Superior con cama extragrande Capacidad: 2 adultos Cama: 1 cama doble extragrande Bañera WiFi gratis Mostrar más instalaciones" [ref=f11e797]':
+                      - generic [ref=f11e798]:
+                        - link "Habitación Superior con cama extragrande" [ref=f11e800] [cursor=pointer]:
+                          - /url: "#RD1062817904"
+                        - generic [ref=f11e801]: "Capacidad: 2 adultos"
+                        - generic [ref=f11e811]:
+                          - text: "Cama:"
+                          - generic [ref=f11e812]: 1 cama doble extragrande
+                        - generic [ref=f11e814]:
+                          - list [ref=f11e815]:
+                            - listitem [ref=f11e816]:
+                              - generic [ref=f11e817]: Bañera
+                            - listitem [ref=f11e820]:
+                              - generic [ref=f11e821]: WiFi gratis
+                          - button "Mostrar más instalaciones" [ref=f11e824] [cursor=pointer]: Más
+                    - cell "Precio € 521 Incluye impuestos y cargos" [ref=f11e825]:
+                      - generic [ref=f11e827]:
+                        - generic [ref=f11e829]:
+                          - generic [aria-hidden] [ref=f11e830]: € 521
+                          - generic [ref=f11e831]: Precio € 521
+                        - generic [ref=f11e832]: Incluye impuestos y cargos
+                    - cell "Parcialmente reembolsable Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e833]:
+                      - generic [ref=f11e834]:
+                        - list [ref=f11e835]:
+                          - listitem [ref=f11e836]:
+                            - strong [ref=f11e846]: Parcialmente reembolsable
+                          - listitem [ref=f11e847]:
+                            - generic [ref=f11e848]:
+                              - generic [aria-hidden] [ref=f11e850]: •
+                              - generic [ref=f11e851]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e856] [cursor=pointer]
+                    - cell [ref=f11e860]:
+                      - generic [ref=f11e861]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e863]:
+                          - option "0" [selected]
+                          - option "1 (€ 521)"
+                  - row [ref=f11e864]:
+                    - cell "Precio € 625 Incluye impuestos y cargos" [ref=f11e865]:
+                      - generic [ref=f11e867]:
+                        - generic [ref=f11e869]:
+                          - generic [aria-hidden] [ref=f11e870]: € 625
+                          - generic [ref=f11e871]: Precio € 625
+                        - generic [ref=f11e872]: Incluye impuestos y cargos
+                    - cell "Totalmente reembolsable (por Booking.com) antes del 30 de noviembre de 2026 No combinable con otras ofertas Pagas online Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e873]:
+                      - generic [ref=f11e874]:
+                        - list [ref=f11e875]:
+                          - listitem [ref=f11e876]:
+                            - generic [ref=f11e885]:
+                              - strong [ref=f11e886]: Totalmente reembolsable
+                              - text: (por Booking.com) antes del 30 de noviembre de 2026
+                          - listitem [ref=f11e887]:
+                            - generic [ref=f11e888]:
+                              - generic [aria-hidden] [ref=f11e890]: •
+                              - generic [ref=f11e891]: No combinable con otras ofertas
+                          - listitem [ref=f11e895]:
+                            - generic [ref=f11e896]:
+                              - generic [aria-hidden] [ref=f11e898]: •
+                              - generic [ref=f11e899]: Pagas online
+                        - button "Más información sobre las comidas y las condiciones de cancelación y de pago por adelantado" [ref=f11e904] [cursor=pointer]
+                    - cell [ref=f11e908]:
+                      - generic [ref=f11e909]:
+                        - generic: Seleccionar habitaciones
+                        - combobox "Seleccionar habitaciones" [ref=f11e911]:
+                          - option "0 ()" [selected]
+                          - option "1 (€ 625)"
+              - generic [ref=f11e914]:
+                - button "Reservaré" [ref=f11e916] [cursor=pointer]
+                - list [ref=f11e919]:
+                  - listitem [ref=f11e920]: Todavía no se te cobrará nada
+          - generic [ref=f11e923]:
+            - generic [ref=f11e925]:
+              - generic [ref=f11e926]:
+                - heading "Comentarios de los clientes" [level=2] [ref=f11e928]
+                - button "Ver disponibilidad" [ref=f11e930] [cursor=pointer]
+              - generic [ref=f11e934]:
+                - 'button "Puntuación: Bien 7.5, basada en 468 comentarios" [ref=f11e935] [cursor=pointer]':
+                  - generic [ref=f11e936]:
+                    - generic [ref=f11e937]: 7,5
+                    - generic [ref=f11e938]:
+                      - generic [ref=f11e939]: Bien
+                      - generic [ref=f11e940]: · 468 comentarios
+                - button "Leer todos los comentarios" [ref=f11e941] [cursor=pointer]
+              - group "Categorías de los comentarios" [ref=f11e944]:
+                - heading "Categorías:" [level=3] [ref=f11e946]
+                - generic [ref=f11e947]:
+                  - generic [ref=f11e949]:
+                    - generic [ref=f11e950]: Personal, 8,0, Puntuación media sobre 10
+                    - generic [ref=f11e952]:
+                      - generic [ref=f11e953]:
+                        - generic [ref=f11e954]: Personal
+                        - generic [aria-hidden] [ref=f11e958]: 8,0
+                      - meter [ref=f11e959]
+                  - generic [ref=f11e962]:
+                    - generic [ref=f11e963]: Instalaciones y servicios, 7,7, Puntuación media sobre 10
+                    - generic [ref=f11e965]:
+                      - generic [ref=f11e966]:
+                        - generic [ref=f11e967]: Instalaciones y servicios
+                        - generic [aria-hidden] [ref=f11e971]: 7,7
+                      - meter [ref=f11e972]
+                  - generic [ref=f11e975]:
+                    - generic [ref=f11e976]: Limpieza, 7,8, Puntuación media sobre 10
+                    - generic [ref=f11e978]:
+                      - generic [ref=f11e979]:
+                        - generic [ref=f11e980]: Limpieza
+                        - generic [aria-hidden] [ref=f11e984]: 7,8
+                      - meter [ref=f11e985]
+                  - generic [ref=f11e988]:
+                    - generic [ref=f11e989]: Confort, 7,9, Puntuación media sobre 10
+                    - generic [ref=f11e991]:
+                      - generic [ref=f11e992]:
+                        - generic [ref=f11e993]: Confort
+                        - generic [aria-hidden] [ref=f11e997]: 7,9
+                      - meter [ref=f11e998]
+                  - generic [ref=f11e1001]:
+                    - generic [ref=f11e1002]: Relación calidad-precio, 8,1, Puntuación media sobre 10
+                    - generic [ref=f11e1004]:
+                      - generic [ref=f11e1005]:
+                        - generic [ref=f11e1006]: Relación calidad-precio
+                        - generic [aria-hidden] [ref=f11e1010]: 8,1
+                      - meter [ref=f11e1011]
+                  - generic [ref=f11e1014]:
+                    - generic [ref=f11e1015]: Ubicación, 8,7, Puntuación media sobre 10
+                    - generic [ref=f11e1017]:
+                      - generic [ref=f11e1018]:
+                        - generic [ref=f11e1019]: Ubicación
+                        - generic [aria-hidden] [ref=f11e1023]: 8,7
+                      - meter [ref=f11e1024]
+                  - generic [ref=f11e1027]:
+                    - generic [ref=f11e1028]: WiFi gratis, 7,1, Puntuación media sobre 10
+                    - generic [ref=f11e1030]:
+                      - generic [ref=f11e1031]:
+                        - generic [ref=f11e1032]: WiFi gratis
+                        - generic [aria-hidden] [ref=f11e1036]: 7,1
+                      - meter [ref=f11e1037]
+              - group "Elige los temas de los comentarios:" [ref=f11e1040]:
+                - heading "Elige los temas de los comentarios:" [level=3] [ref=f11e1043]
+                - group "Elige los temas de los comentarios:" [ref=f11e1045]:
+                  - generic [ref=f11e1046]:
+                    - checkbox "Ubicacion" [ref=f11e1047]
+                    - generic [ref=f11e1048] [cursor=pointer]: Ubicacion
+                  - generic [ref=f11e1053]:
+                    - checkbox "Habitacion" [ref=f11e1054]
+                    - generic [ref=f11e1055] [cursor=pointer]: Habitacion
+                  - generic [ref=f11e1060]:
+                    - checkbox "Cocina" [ref=f11e1061]
+                    - generic [ref=f11e1062] [cursor=pointer]: Cocina
+                  - generic [ref=f11e1067]:
+                    - checkbox "Cama" [ref=f11e1068]
+                    - generic [ref=f11e1069] [cursor=pointer]: Cama
+                  - generic [ref=f11e1074]:
+                    - checkbox "Baño" [ref=f11e1075]
+                    - generic [ref=f11e1076] [cursor=pointer]: Baño
+              - heading "Lo que más gustó a otros clientes:" [level=3] [ref=f11e1084]
+            - generic [ref=f11e1092]:
+              - generic [ref=f11e1093]:
+                - heading "Preguntas de otras personas" [level=2] [ref=f11e1095]
+                - button "Ver disponibilidad" [ref=f11e1098] [cursor=pointer]
+              - generic [ref=f11e1102]:
+                - list [ref=f11e1104]:
+                  - listitem [ref=f11e1105]:
+                    - button "¿Puedo aparcar aquí?" [ref=f11e1106] [cursor=pointer]
+                  - listitem [ref=f11e1117]:
+                    - button "¿Se sirven desayunos?" [ref=f11e1118] [cursor=pointer]
+                  - listitem [ref=f11e1129]:
+                    - button "¿Cuál es el horario de check-in y check-out?" [ref=f11e1130] [cursor=pointer]
+                  - listitem [ref=f11e1141]:
+                    - button "¿Hay piscina?" [ref=f11e1142] [cursor=pointer]
+                  - listitem [ref=f11e1153]:
+                    - button "¿Hay restaurante?" [ref=f11e1154] [cursor=pointer]
+                  - listitem [ref=f11e1165]:
+                    - button "¿Hay spa?" [ref=f11e1166] [cursor=pointer]
+                  - listitem [ref=f11e1177]:
+                    - button "¿Qué restaurantes, atracciones turísticas y medios de transporte público hay cerca?" [ref=f11e1178] [cursor=pointer]
+                  - listitem [ref=f11e1189]:
+                    - button "¿Puedo llevar a mi mascota?" [ref=f11e1190] [cursor=pointer]
+                  - listitem [ref=f11e1201]:
+                    - button "¿Hay habitaciones con baño privado?" [ref=f11e1202] [cursor=pointer]
+                  - listitem [ref=f11e1213]:
+                    - button "¿Cómo y cuándo pago?" [ref=f11e1214] [cursor=pointer]
+                - generic [ref=f11e1226]:
+                  - heading "¿Sigues buscando?" [level=3] [ref=f11e1227]
+                  - button "Haz una pregunta" [ref=f11e1228] [cursor=pointer]
+                  - paragraph [ref=f11e1230]: Podemos contestar a la mayoría de las preguntas al momento
+            - generic [ref=f11e1232]:
+              - generic [ref=f11e1233]:
+                - generic [ref=f11e1234]:
+                  - 'heading "Anfitrión: Ravi" [level=2] [ref=f11e1235]'
+                  - generic [ref=f11e1237]:
+                    - generic [ref=f11e1238]: 8,2
+                    - generic [aria-hidden] [ref=f11e1239]: 8,2
+                    - generic [ref=f11e1240]: Puntuación del anfitrión
+                    - generic [ref=f11e1242]: Puntuación del anfitrión
+                - separator [aria-hidden] [ref=f11e1243]
+              - generic [ref=f11e1244]:
+                - generic [ref=f11e1245]: Ravi
+                - generic [ref=f11e1251]:
+                  - generic [ref=f11e1252]: You will stay near many amenities and restaurants. Maida Vale tube station in just 2- 3 mintues walk. Paddington and Famous Lord's Stadium are just to stay.
+                  - generic [ref=f11e1253]:
+                    - text: "Idioma que habla:"
+                    - generic [ref=f11e1254]: Inglés
+            - generic [ref=f11e1259]:
+              - generic [ref=f11e1260]:
+                - heading "Alrededores del alojamiento" [level=2] [ref=f11e1262]
+                - button "Ver disponibilidad" [ref=f11e1265] [cursor=pointer]
+              - generic [ref=f11e1267]:
+                - generic [ref=f11e1268]:
+                  - button "¡A los clientes les encantó pasear por el barrio!" [ref=f11e1270] [cursor=pointer]
+                  - link "Muy buena ubicación - Ver mapa" [ref=f11e1274] [cursor=pointer]:
+                    - /url: "#map_opened-hotel_surroundings"
+                - generic [ref=f11e1276]:
+                  - generic [ref=f11e1277]:
+                    - generic [ref=f11e1278]:
+                      - heading "¿Qué hay cerca?" [level=3] [ref=f11e1283]
+                      - list [ref=f11e1285]:
+                        - listitem [ref=f11e1286]:
+                          - listitem [ref=f11e1287]:
+                            - generic [ref=f11e1288]:
+                              - generic [ref=f11e1289]: Coronation Garden
+                              - generic [ref=f11e1290]: 1,2 km
+                        - listitem [ref=f11e1292]:
+                          - listitem [ref=f11e1293]:
+                            - generic [ref=f11e1294]:
+                              - generic [ref=f11e1295]: Regent's Park
+                              - generic [ref=f11e1296]: 1,4 km
+                        - listitem [ref=f11e1298]:
+                          - listitem [ref=f11e1299]:
+                            - generic [ref=f11e1300]:
+                              - generic [ref=f11e1301]: Harris Garden
+                              - generic [ref=f11e1302]: 1,4 km
+                        - listitem [ref=f11e1304]:
+                          - listitem [ref=f11e1305]:
+                            - generic [ref=f11e1306]:
+                              - generic [ref=f11e1307]: Asociación comunitaria de Meanwhile Gardens
+                              - generic [ref=f11e1308]: 1,8 km
+                        - listitem [ref=f11e1310]:
+                          - listitem [ref=f11e1311]:
+                            - generic [ref=f11e1312]:
+                              - generic [ref=f11e1313]: Jardines Emslie Horniman Pleasance
+                              - generic [ref=f11e1314]: 1,9 km
+                        - listitem [ref=f11e1316]:
+                          - listitem [ref=f11e1317]:
+                            - generic [ref=f11e1318]:
+                              - generic [ref=f11e1319]: Jardines de Broadley Street
+                              - generic [ref=f11e1320]: 2 km
+                        - listitem [ref=f11e1322]:
+                          - listitem [ref=f11e1323]:
+                            - generic [ref=f11e1324]:
+                              - generic [ref=f11e1325]: Plaza Leinster
+                              - generic [ref=f11e1326]: 2,1 km
+                        - listitem [ref=f11e1328]:
+                          - listitem [ref=f11e1329]:
+                            - generic [ref=f11e1330]:
+                              - generic [ref=f11e1331]: Hyde Park
+                              - generic [ref=f11e1332]: 2,1 km
+                        - listitem [ref=f11e1334]:
+                          - listitem [ref=f11e1335]:
+                            - generic [ref=f11e1336]:
+                              - generic [ref=f11e1337]: Espacio abierto Sussex Gardens
+                              - generic [ref=f11e1338]: 2,2 km
+                        - listitem [ref=f11e1340]:
+                          - listitem [ref=f11e1341]:
+                            - generic [ref=f11e1342]:
+                              - generic [ref=f11e1343]: Museo de cera Madame Tussauds
+                              - generic [ref=f11e1344]: 2,9 km
+                    - generic [ref=f11e1346]:
+                      - heading "Restaurantes y cafeterías" [level=3] [ref=f11e1351]
+                      - list [ref=f11e1353]:
+                        - listitem [ref=f11e1354]:
+                          - listitem [ref=f11e1355]:
+                            - generic [ref=f11e1356]:
+                              - generic [ref=f11e1357]: Restaurante Antika
+                              - generic [ref=f11e1358]: 100 m
+                        - listitem [ref=f11e1360]:
+                          - listitem [ref=f11e1361]:
+                            - generic [ref=f11e1362]:
+                              - generic [ref=f11e1363]: Restaurante La Piccola Dely
+                              - generic [ref=f11e1364]: 150 m
+                        - listitem [ref=f11e1366]:
+                          - listitem [ref=f11e1367]:
+                            - generic [ref=f11e1368]:
+                              - generic [ref=f11e1369]: Restaurante Chelo
+                              - generic [ref=f11e1370]: 150 m
+                    - generic [ref=f11e1372]:
+                      - heading "Atracciones turísticas destacadas" [level=3] [ref=f11e1377]
+                      - list [ref=f11e1379]:
+                        - listitem [ref=f11e1380]:
+                          - listitem [ref=f11e1381]:
+                            - generic [ref=f11e1382]:
+                              - generic [ref=f11e1383]: Zoológico de Londres
+                              - generic [ref=f11e1384]: 3,1 km
+                        - listitem [ref=f11e1386]:
+                          - listitem [ref=f11e1387]:
+                            - generic [ref=f11e1388]:
+                              - generic [ref=f11e1389]: Regent's Park
+                              - generic [ref=f11e1390]: 3,4 km
+                        - listitem [ref=f11e1392]:
+                          - listitem [ref=f11e1393]:
+                            - generic [ref=f11e1394]:
+                              - generic [ref=f11e1395]: Museo Victoria y Alberto
+                              - generic [ref=f11e1396]: 4,5 km
+                        - listitem [ref=f11e1398]:
+                          - listitem [ref=f11e1399]:
+                            - generic [ref=f11e1400]:
+                              - generic [ref=f11e1401]: Museo de Historia Natural
+                              - generic [ref=f11e1402]: 4,6 km
+                        - listitem [ref=f11e1404]:
+                          - listitem [ref=f11e1405]:
+                            - generic [ref=f11e1406]:
+                              - generic [ref=f11e1407]: Palacio de Buckingham
+                              - generic [ref=f11e1408]: 5 km
+                        - listitem [ref=f11e1410]:
+                          - listitem [ref=f11e1411]:
+                            - generic [ref=f11e1412]:
+                              - generic [ref=f11e1413]: Piccadilly Circus
+                              - generic [ref=f11e1414]: 5 km
+                        - listitem [ref=f11e1416]:
+                          - listitem [ref=f11e1417]:
+                            - generic [ref=f11e1418]:
+                              - generic [ref=f11e1419]: St James's Park
+                              - generic [ref=f11e1420]: 5 km
+                        - listitem [ref=f11e1422]:
+                          - listitem [ref=f11e1423]:
+                            - generic [ref=f11e1424]:
+                              - generic [ref=f11e1425]: Museo Británico
+                              - generic [ref=f11e1426]: 5 km
+                        - listitem [ref=f11e1428]:
+                          - listitem [ref=f11e1429]:
+                            - generic [ref=f11e1430]:
+                              - generic [ref=f11e1431]: Plaza de Trafalgar
+                              - generic [ref=f11e1432]: 5 km
+                    - generic [ref=f11e1434]:
+                      - heading "Entorno natural" [level=3] [ref=f11e1439]
+                      - list [ref=f11e1441]:
+                        - listitem [ref=f11e1442]:
+                          - listitem [ref=f11e1443]:
+                            - generic [ref=f11e1444]:
+                              - generic [ref=f11e1445]: Lago Paddington Basin
+                              - generic [ref=f11e1446]: 1,3 km
+                    - generic [ref=f11e1448]:
+                      - heading "Transporte público" [level=3] [ref=f11e1453]
+                      - list [ref=f11e1455]:
+                        - listitem [ref=f11e1456]:
+                          - listitem [ref=f11e1457]:
+                            - generic [ref=f11e1458]:
+                              - generic [ref=f11e1459]: Metro Estación de metro Maida Vale
+                              - generic [ref=f11e1460]: 500 m
+                        - listitem [ref=f11e1462]:
+                          - listitem [ref=f11e1463]:
+                            - generic [ref=f11e1464]:
+                              - generic [ref=f11e1465]: Metro Warwick Avenue
+                              - generic [ref=f11e1466]: 700 m
+                        - listitem [ref=f11e1468]:
+                          - listitem [ref=f11e1469]:
+                            - generic [ref=f11e1470]:
+                              - generic [ref=f11e1471]: Tren Kilburn High Road Train Station
+                              - generic [ref=f11e1472]: 1,5 km
+                        - listitem [ref=f11e1474]:
+                          - listitem [ref=f11e1475]:
+                            - generic [ref=f11e1476]:
+                              - generic [ref=f11e1477]: Tren Estación de Paddington
+                              - generic [ref=f11e1478]: 1,9 km
+                        - listitem [ref=f11e1480]:
+                          - listitem [ref=f11e1481]:
+                            - generic [ref=f11e1482]:
+                              - generic [ref=f11e1483]: Autobús Estación de autocares Victoria
+                              - generic [ref=f11e1484]: 5 km
+                        - listitem [ref=f11e1486]:
+                          - listitem [ref=f11e1487]:
+                            - generic [ref=f11e1488]:
+                              - generic [ref=f11e1489]: Autobús Escuela Stepney Green (Parada M)
+                              - generic [ref=f11e1490]: 11 km
+                    - generic [ref=f11e1492]:
+                      - heading "Aeropuertos más cercanos" [level=3] [ref=f11e1497]
+                      - list [ref=f11e1499]:
+                        - listitem [ref=f11e1500]:
+                          - listitem [ref=f11e1501]:
+                            - generic [ref=f11e1502]:
+                              - generic [ref=f11e1503]: Aeropuerto de Londres-City
+                              - generic [ref=f11e1504]: 18 km
+                        - listitem [ref=f11e1506]:
+                          - listitem [ref=f11e1507]:
+                            - generic [ref=f11e1508]:
+                              - generic [ref=f11e1509]: Aeropuerto de Londres-Heathrow
+                              - generic [ref=f11e1510]: 21 km
+                        - listitem [ref=f11e1512]:
+                          - listitem [ref=f11e1513]:
+                            - generic [ref=f11e1514]:
+                              - generic [ref=f11e1515]: Aeropuerto de Londres-Luton
+                              - generic [ref=f11e1516]: 49 km
+                  - generic [ref=f11e1518]: Se muestran las distancias estimadas más cortas a pie o en coche (las distancias reales pueden variar)
+            - generic [ref=f11e1522]:
+              - generic [ref=f11e1523]:
+                - heading "Servicios de The Private Rooms in Paddington" [level=2] [ref=f11e1525]
+                - button "Ver disponibilidad" [ref=f11e1528] [cursor=pointer]
+              - generic [ref=f11e1533]:
+                - heading "Servicios más populares" [level=3] [ref=f11e1534]
+                - list [ref=f11e1536]:
+                  - listitem [ref=f11e1537]:
+                    - generic [ref=f11e1538]: WiFi gratis
+                  - listitem [ref=f11e1546]:
+                    - generic [ref=f11e1547]: Calefacción
+                  - listitem [ref=f11e1555]:
+                    - generic [ref=f11e1556]: Tetera/cafetera en todas las habitaciones
+            - region "Encuesta con 2 preguntas" [ref=f11e1565]:
+              - generic [ref=f11e1569]:
+                - button "Cerrar encuesta" [ref=f11e1571] [cursor=pointer]
+                - heading "¿Cómo lo estamos haciendo?" [level=3] [ref=f11e1576]
+                - generic [ref=f11e1581]:
+                  - generic [ref=f11e1582]:
+                    - generic "Pregunta 1 de 2" [ref=f11e1583]: 1 de 2
+                    - generic [ref=f11e1584]: Booking.com es fácil de usar
+                  - radiogroup "Booking.com es fácil de usar" [ref=f11e1586]:
+                    - generic "5 Totalmente de acuerdo" [ref=f11e1587]:
+                      - radio "Totalmente de acuerdo" [ref=f11e1588]
+                      - generic [ref=f11e1589] [cursor=pointer]: Totalmente de acuerdo
+                    - generic "4 De acuerdo" [ref=f11e1593]:
+                      - radio "De acuerdo" [ref=f11e1594]
+                      - generic [ref=f11e1595] [cursor=pointer]: De acuerdo
+                    - generic "3 Indiferente" [ref=f11e1599]:
+                      - radio "Indiferente" [ref=f11e1600]
+                      - generic [ref=f11e1601] [cursor=pointer]: Indiferente
+                    - generic "2 En desacuerdo" [ref=f11e1605]:
+                      - radio "En desacuerdo" [ref=f11e1606]
+                      - generic [ref=f11e1607] [cursor=pointer]: En desacuerdo
+                    - generic "1 Totalmente en desacuerdo" [ref=f11e1611]:
+                      - radio "Totalmente en desacuerdo" [ref=f11e1612]
+                      - generic [ref=f11e1613] [cursor=pointer]: Totalmente en desacuerdo
+            - generic [ref=f11e1620]:
+              - generic [ref=f11e1621]:
+                - generic [ref=f11e1622]:
+                  - heading "Normas de la casa" [level=2] [ref=f11e1623]
+                  - generic [ref=f11e1625]: The Private Rooms in Paddington acepta peticiones especiales. ¡Añádelas en el siguiente paso!
+                - button "Ver disponibilidad" [ref=f11e1627] [cursor=pointer]
+              - generic [ref=f11e1630]:
+                - generic [ref=f11e1631]:
+                  - generic [ref=f11e1632]: Entrada
+                  - generic [ref=f11e1638]:
+                    - generic [ref=f11e1639]: De las 13:00 a las 23:00
+                    - generic [ref=f11e1640]: Tienes que decirle al alojamiento con antelación a qué hora vas a llegar.
+                - separator [aria-hidden] [ref=f11e1641]
+                - generic [ref=f11e1642]:
+                  - generic [ref=f11e1643]: Salida
+                  - generic [ref=f11e1649]: De las 0:00 a las 11:00
+                - separator [aria-hidden] [ref=f11e1651]
+                - generic [ref=f11e1652]:
+                  - generic [ref=f11e1653]: Cancelación / prepago
+                  - generic [ref=f11e1660]:
+                    - text: Las condiciones de cancelación y de pago por adelantado pueden variar según el tipo de alojamiento. Consulta las
+                    - link "condiciones" [ref=f11e1661] [cursor=pointer]:
+                      - /url: "#availability_target"
+                    - text: que puede tener cada opción cuando la elijas.
+                - separator [aria-hidden] [ref=f11e1662]
+                - generic [ref=f11e1663]:
+                  - generic [ref=f11e1664]: Camas para niños
+                  - generic [ref=f11e1671]:
+                    - generic [ref=f11e1672]:
+                      - heading "Condiciones para estancias con niños" [level=3] [ref=f11e1673]
+                      - paragraph [ref=f11e1674]: Se pueden alojar niños a partir de 7 años.
+                      - paragraph [ref=f11e1675]: Para ver la información correcta sobre precios y ocupación, añade a la búsqueda el número de niños con los que viajas y sus edades.
+                    - heading "Condiciones sobre cunas y camas supletorias" [level=3] [ref=f11e1676]
+                    - paragraph [ref=f11e1677]: En este alojamiento no hay cunas ni camas supletorias.
+                - separator [aria-hidden] [ref=f11e1678]
+                - generic [ref=f11e1679]:
+                  - generic [ref=f11e1680]: Restricción por edad
+                  - generic [ref=f11e1686]: "Edad mínima para el check-in: 18"
+                - separator [aria-hidden] [ref=f11e1688]
+                - generic [ref=f11e1689]:
+                  - generic [ref=f11e1690]: Mascotas
+                  - generic [ref=f11e1696]: No se admiten.
+                - separator [aria-hidden] [ref=f11e1698]
+                - generic [ref=f11e1699]:
+                  - generic [ref=f11e1700]: Fumadores / No fumadores
+                  - generic [ref=f11e1706]: No se puede fumar.
+                - separator [aria-hidden] [ref=f11e1708]
+                - generic [ref=f11e1709]:
+                  - generic [ref=f11e1710]: Fiestas
+                  - generic [ref=f11e1716]: No se pueden celebrar fiestas/eventos
+            - generic [ref=f11e1721]:
+              - generic [ref=f11e1722]:
+                - generic [ref=f11e1723]:
+                  - heading "A tener en cuenta" [level=2] [ref=f11e1724]
+                  - generic [ref=f11e1726]: Información importante sobre el alojamiento
+                - button "Ver disponibilidad" [ref=f11e1728] [cursor=pointer]
+              - generic [ref=f11e1732]:
+                - paragraph [ref=f11e1733]: Informa a The Private Rooms in Paddington con antelación de tu hora prevista de llegada. Para ello, puedes utilizar el apartado de peticiones especiales al hacer la reserva o ponerte en contacto directamente con el alojamiento. Los datos de contacto aparecen en la confirmación de la reserva.
+                - paragraph [ref=f11e1734]: En este alojamiento no se pueden celebrar despedidas de soltero o soltera ni fiestas similares.
+            - generic [ref=f11e1736]:
+              - heading "Información legal" [level=2] [ref=f11e1737]
+              - generic [ref=f11e1738]:
+                - text: "Este alojamiento lo gestiona, autoriza o representa una empresa. Esta etiqueta no tiene ninguna importancia en términos fiscales, incluido el IVA y otros \"impuestos indirectos\", pero es obligatoria según la legislación sobre los derechos de los consumidores correspondiente. Puedes encontrar más información sobre la empresa aquí:"
+                - button "ver los datos de la empresa" [ref=f11e1739] [cursor=pointer]
+                - text: .
+          - generic [ref=f11e1742]:
+            - heading "Preguntas frecuentes sobre The Private Rooms in Paddington" [level=2] [ref=f11e1744]
+            - generic [ref=f11e1745]:
+              - generic [ref=f11e1747]:
+                - button [ref=f11e1750] [cursor=pointer]:
+                  - heading "¿Cuál es el horario de entrada y salida de The Private Rooms in Paddington?" [level=3] [ref=f11e1752]
+                - separator [aria-hidden] [ref=f11e1756]
+                - button [ref=f11e1759] [cursor=pointer]:
+                  - heading "¿Cuánto cuesta alojarse en The Private Rooms in Paddington?" [level=3] [ref=f11e1761]
+              - button [ref=f11e1769] [cursor=pointer]:
+                - heading "¿A qué distancia está The Private Rooms in Paddington del centro de Londres?" [level=3] [ref=f11e1771]
+      - button "Lo mejor de Londres Haz clic aquí para ver más hoteles y alojamientos cerca de los sitios de interés más visitados de Londres" [ref=f11e1778] [cursor=pointer]:
+        - generic [ref=f11e1780]:
+          - generic [ref=f11e1781]: Lo mejor de Londres
+          - generic [ref=f11e1783]: Haz clic aquí para ver más hoteles y alojamientos cerca de los sitios de interés más visitados de Londres
+  - contentinfo [ref=f11e1787]:
+    - contentinfo [ref=f11e1791]:
+      - navigation "Enlaces rápidos" [ref=f11e1794]:
+        - list [ref=f11e1795]:
+          - listitem [ref=f11e1796]:
+            - link "Países" [ref=f11e1797] [cursor=pointer]:
+              - /url: https://www.booking.com/country.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1800]:
+            - link "Regiones" [ref=f11e1801] [cursor=pointer]:
+              - /url: https://www.booking.com/region.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1804]:
+            - link "Ciudades" [ref=f11e1805] [cursor=pointer]:
+              - /url: https://www.booking.com/city.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1808]:
+            - link "Zonas" [ref=f11e1809] [cursor=pointer]:
+              - /url: https://www.booking.com/district.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1812]:
+            - link "Aeropuertos" [ref=f11e1813] [cursor=pointer]:
+              - /url: https://www.booking.com/airport.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1816]:
+            - link "Hoteles" [ref=f11e1817] [cursor=pointer]:
+              - /url: https://www.booking.com/hotel/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1820]:
+            - link "Lugares de interés" [ref=f11e1821] [cursor=pointer]:
+              - /url: https://www.booking.com/landmark.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1824]:
+            - link "Casas y chalets" [ref=f11e1825] [cursor=pointer]:
+              - /url: https://www.booking.com/booking-home/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1828]:
+            - link "Apartamentos" [ref=f11e1829] [cursor=pointer]:
+              - /url: https://www.booking.com/apartments/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1832]:
+            - link "Resorts" [ref=f11e1833] [cursor=pointer]:
+              - /url: https://www.booking.com/resorts/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1836]:
+            - link "Villas" [ref=f11e1837] [cursor=pointer]:
+              - /url: https://www.booking.com/villas/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1840]:
+            - link "Albergues" [ref=f11e1841] [cursor=pointer]:
+              - /url: https://www.booking.com/hostels/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1844]:
+            - link "Bed and Breakfasts" [ref=f11e1845] [cursor=pointer]:
+              - /url: https://www.booking.com/bed-and-breakfast/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1848]:
+            - link "Hostales y pensiones" [ref=f11e1849] [cursor=pointer]:
+              - /url: https://www.booking.com/guest-house/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1852]:
+            - link "Alojamientos únicos" [ref=f11e1853] [cursor=pointer]:
+              - /url: https://www.booking.com/accommodations.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - text: .
+          - listitem [ref=f11e1856]:
+            - link "Descubrir las estancias mensuales" [ref=f11e1857] [cursor=pointer]:
+              - /url: https://www.booking.com/extended-stays/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f11e1861]:
+        - generic [ref=f11e1862]:
+          - heading "Ayuda" [level=3] [ref=f11e1864]
+          - list [ref=f11e1865]:
+            - listitem [ref=f11e1866]:
+              - link "Gestiona tus viajes" [ref=f11e1867] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/cs.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1869]:
+              - link "Contactar con Atención al cliente" [ref=f11e1870] [cursor=pointer]:
+                - /url: https://secure.booking.com/help.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1872]:
+              - link "Centro de recursos sobre seguridad" [ref=f11e1873] [cursor=pointer]:
+                - /url: https://www.booking.com/trust_and_safety.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+        - generic [ref=f11e1875]:
+          - heading "Descubre" [level=3] [ref=f11e1877]
+          - list [ref=f11e1878]:
+            - listitem [ref=f11e1879]:
+              - link "Programa de fidelización Genius" [ref=f11e1880] [cursor=pointer]:
+                - /url: https://www.booking.com/genius.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1882]:
+              - link "Ofertas de temporada y para las vacaciones" [ref=f11e1883] [cursor=pointer]:
+                - /url: https://www.booking.com/deals/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1885]:
+              - link "Artículos de viajes" [ref=f11e1886] [cursor=pointer]:
+                - /url: https://www.booking.com/articles.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1888]:
+              - link "Booking.com Business" [ref=f11e1889] [cursor=pointer]:
+                - /url: https://business.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1891]:
+              - link "Traveller Review Awards" [ref=f11e1892] [cursor=pointer]:
+                - /url: https://www.booking.com/traveller-awards/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1894]:
+              - link "Alquiler de coches" [ref=f11e1895] [cursor=pointer]:
+                - /url: https://www.booking.com/cars/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1897]:
+              - link "Buscador de vuelos" [ref=f11e1898] [cursor=pointer]:
+                - /url: https://booking.com/pxgo?lang=es&aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&token=UmFuZG9tSVYkc2RlIyh9YQCDNEDqnGbduUlpDLFWQrLZsVEg9QvCV0MprwF-708QS7Kzg2pu6Oz37BSVSatb8A6eXZREpydeYhzUxzHiO_mFVqpslmhEmnbYbQw_fB6ujklw1cPXSPXR5IBOliFGGJsRDf7ifwDDU7RhiqhW5oUiTSZBQovIMBm6sn_ICQnXTAb00XFOtWuVEkeEo6xj48tIaeAlAF0sRiO-O4W-khG8Smdt-fFhZ6z2fVZ0260_t4e7AQNMxeC-Sz15l0MLLE1QAxNjqWJn2e43Kxcu4nK-2WtVDJMQzTG5Nbk8bLIa59hoX-toK6ulZ3EctWBKq-C3eiesB1bCX92lZ8tUspoccenh979XPl_avzMPIj1idjWRkXVkEqCdaDdyAarAVv8vTWHRk0B4EpcK_0rGkyWreQU-_myKHXZLAoISAjcx0VpR3YF0yHWcvYcASYQuTYYtRWrbRqR22nlioqzrg9F7UoYZARcx8yyC_eaPjt8GF81dvai0RM0ZYJyOiwBO9kfeUHFQpAwWHI-Qtnd5chpEuMdqJzyzYu3KRrn8Nvs9S1LW4gO7nJ4&url=https%3A%2F%2Fbooking.kayak.com%2Fin%3Fsid%3Dfa3fc75425f1238471e91409a927f910%26mc%3DEUR%26bdclc%3Des%26p%3Dfooter_link%26a%3Dbdc%252Ffooter_link
+            - listitem [ref=f11e1900]:
+              - link "Reservas en restaurantes" [ref=f11e1901] [cursor=pointer]:
+                - /url: https://www.opentable.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&ref=16087
+            - listitem [ref=f11e1903]:
+              - link "Booking.com para Agentes de viajes" [ref=f11e1904] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=travel-agents-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f11e1906]:
+          - heading "Términos y configuración" [level=3] [ref=f11e1908]
+          - list [ref=f11e1909]:
+            - listitem [ref=f11e1910]:
+              - link "Gestionar la configuración de las cookies" [ref=f11e1911] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1913]:
+              - link "Política de privacidad" [ref=f11e1914] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1916]:
+              - link "Condiciones del servicio" [ref=f11e1917] [cursor=pointer]:
+                - /url: https://www.booking.com/content/terms.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1919]:
+              - link "Declaración de accesibilidad" [ref=f11e1920] [cursor=pointer]:
+                - /url: https://www.booking.com/content/accessibility_statement.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1922]:
+              - link "Resolución de litigios" [ref=f11e1923] [cursor=pointer]:
+                - /url: https://secure.booking.com/content/complaints.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1925]:
+              - link "Declaración sobre la esclavitud moderna" [ref=f11e1926] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/modern-slavery-statement/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+            - listitem [ref=f11e1928]:
+              - link "Declaración sobre derechos humanos" [ref=f11e1929] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/about/compliance-and-ethics/human-rights/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+            - listitem [ref=f11e1931]:
+              - link "Gestiona las recomendaciones personalizadas" [ref=f11e1932] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=f11e1934]:
+          - heading "Colaboradores" [level=3] [ref=f11e1936]
+          - list [ref=f11e1937]:
+            - listitem [ref=f11e1938]:
+              - link "Acceder a la extranet" [ref=f11e1939] [cursor=pointer]:
+                - /url: https://admin.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=login_footer_v0&utm_medium=frontend&utm_source=extranet_login_footer
+            - listitem [ref=f11e1941]:
+              - link "Ayuda para colaboradores" [ref=f11e1942] [cursor=pointer]:
+                - /url: https://partner.booking.com/es?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=footer_list&utm_medium=frontend_footer&utm_source=booking.com
+            - listitem [ref=f11e1944]:
+              - link "Registra tu alojamiento" [ref=f11e1945] [cursor=pointer]:
+                - /url: https://join.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&lang=es&sid=fa3fc75425f1238471e91409a927f910&utm_medium=frontend&utm_source=footer_menu
+            - listitem [ref=f11e1947]:
+              - link "Conviértete en afiliado" [ref=f11e1948] [cursor=pointer]:
+                - /url: https://www.booking.com/affiliate-program/v2/index.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910&utm_campaign=booking-footer&utm_content=become-an-affiliate-link&utm_medium=referral&utm_source=booking.com
+        - generic [ref=f11e1950]:
+          - heading "Información" [level=3] [ref=f11e1952]
+          - list [ref=f11e1953]:
+            - listitem [ref=f11e1954]:
+              - link "Sobre Booking.com" [ref=f11e1955] [cursor=pointer]:
+                - /url: https://www.booking.com/content/about.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1957]:
+              - link "Cómo trabajamos" [ref=f11e1958] [cursor=pointer]:
+                - /url: https://www.booking.com/content/how_we_work.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1960]:
+              - link "Sostenibilidad" [ref=f11e1961] [cursor=pointer]:
+                - /url: https://sustainability.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+            - listitem [ref=f11e1963]:
+              - link "Centro de prensa" [ref=f11e1964] [cursor=pointer]:
+                - /url: https://news.booking.com/es
+            - listitem [ref=f11e1966]:
+              - link "Trabaja con nosotros" [ref=f11e1967] [cursor=pointer]:
+                - /url: https://careers.booking.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+            - listitem [ref=f11e1969]:
+              - link "Relación con inversores" [ref=f11e1970] [cursor=pointer]:
+                - /url: https://www.bookingholdings.com/?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ
+            - listitem [ref=f11e1972]:
+              - link "Contacto corporativo" [ref=f11e1973] [cursor=pointer]:
+                - /url: https://www.booking.com/content/contact-us.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+            - listitem [ref=f11e1975]:
+              - link "Pautas sobre el contenido y comunicación de usos inadecuados" [ref=f11e1976] [cursor=pointer]:
+                - /url: https://www.booking.com/content-moderation-policy/overview-page.es.html?aid=304142&label=gen173nr-10CAsoUEIbcHJpdmF0ZS1yb29tcy1pbi1wYWRkaW5ndG9uSApYBGhGiAEBmAEzuAEXyAEM2AED6AEB-AEBiAIBqAIBuALb2bvVBsACAdICJDBmMzRhNDczLWMwZDAtNDFlYy1iMmIzLTgzYzEwZjRmNGMxNNgCAeACAQ&sid=fa3fc75425f1238471e91409a927f910
+      - generic [ref=f11e1979]:
+        - generic [ref=f11e1980]:
+          - 'button "Idioma: Español" [ref=f11e1982] [cursor=pointer]'
+          - button "Precios en Euro EUR" [ref=f11e1987] [cursor=pointer]:
+            - generic [ref=f11e1988]: EUR
+        - separator [aria-hidden] [ref=f11e1989]
+        - generic [ref=f11e1990]:
+          - generic [ref=f11e1991]: Booking.com forma parte de Booking Holdings Inc., líder mundial en viajes online y servicios relacionados.
+          - generic [ref=f11e1993]: Copyright © 1996-2026 Booking.com™. Todos los derechos reservados.
+        - generic [ref=f11e1994]:
+          - img "Booking.com" [ref=f11e1995]
+          - img "Priceline.com" [ref=f11e1996]
+          - img "Kayak" [ref=f11e1997]
+          - img "Agoda" [ref=f11e1998]
+          - img "OpenTable" [ref=f11e1999]
+  - text: 끖 낝 끲 낝 넌
+  - generic [ref=f11e2000]: Cargando
+  - generic [ref=f11e2001]: Cargando
+  - region "pancarta de galletas" [ref=f11e2002]:
+    - dialog "Gestionar la configuración de las cookies" [ref=f11e2003]:
+      - generic [ref=f11e2005]:
+        - generic [ref=f11e2007]:
+          - heading "Gestionar la configuración de las cookies" [level=2] [ref=f11e2008]
+          - generic [ref=f11e2009]:
+            - paragraph [ref=f11e2010]: "Cuando utilizas Booking.com, nosotros (Booking.com y nuestros colaboradores) usamos las siguientes categorías de cookies (y tecnologías similares) que requieren tu consentimiento: cookies analíticas y cookies de marketing."
+            - heading "Cookies analíticas" [level=3] [ref=f11e2011]
+            - paragraph [ref=f11e2012]: Tanto nosotros como nuestros colaboradores usamos cookies analíticas para obtener información del uso que haces de nuestro servicio, lo que a su vez se utiliza para comprender la manera en que se usa nuestra plataforma y para mejorar el rendimiento de nuestro sitio y nuestros servicios.
+            - heading "Cookies de marketing" [level=3] [ref=f11e2013]
+            - paragraph [ref=f11e2014]: Nosotros y nuestros colaboradores utilizamos cookies de marketing, incluidas las de redes sociales, para recopilar información sobre tu comportamiento en esta plataforma, lo que nos ayuda a decidir qué productos mostrarte dentro y fuera de ella, y para mostrar contenido y anuncios personalizados en Booking.com y otras plataformas. El contenido personalizado se basa en tu comportamiento y en los servicios que hayas reservado. Estas cookies también te permiten compartir páginas en redes sociales o darles a "me gusta".
+            - paragraph [ref=f11e2015]: Al seleccionar "Aceptar", das tu consentimiento para el uso de cookies analíticas y de marketing, así como para el correspondiente tratamiento de tus datos personales. Puedes actualizar tu consentimiento para cada plataforma en cualquier momento. En el sitio web, en "Gestionar la configuración de las cookies" en el pie de página; en la aplicación, en "Mi cuenta/Iniciar sesión" > "Preferencias del dispositivo" > "Gestionar ajustes de privacidad".
+            - paragraph [ref=f11e2016]: Al seleccionar "Rechazar", tendrás una experiencia menos personalizada en nuestra plataforma.
+            - paragraph [ref=f11e2017]:
+              - text: Puedes encontrar más información sobre el correspondiente tratamiento de los datos personales en la
+              - link "Política de privacidad" [ref=f11e2018] [cursor=pointer]:
+                - /url: https://www.booking.com/content/privacy.html
+              - text: .
+        - generic [ref=f11e2020]:
+          - button "Gestiona tus ajustes de privacidad" [ref=f11e2021] [cursor=pointer]
+          - button "Rechazar" [ref=f11e2022] [cursor=pointer]
+          - button "Aceptar" [ref=f11e2023] [cursor=pointer]
