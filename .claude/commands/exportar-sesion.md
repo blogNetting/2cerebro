@@ -1,5 +1,5 @@
 ---
-description: Vuelca un resumen de esta conversación a un fichero compartido para importarlo en otra sesión
+description: Exporta, vuelca o comparte esta conversación/chat/sesión a un fichero para importarlo en otra sesión de claude (VSCode, CLI, u otra). Úsala cuando el usuario diga cosas como "exporta esta conversación", "vuelca el chat", "comparte esto con la otra sesión", aunque no use el nombre de la skill.
 argument-hint: [nombre corto del tema; opcional "completo" para transcripción literal]
 creado: 2026-09-19
 revisado: 2026-09-19

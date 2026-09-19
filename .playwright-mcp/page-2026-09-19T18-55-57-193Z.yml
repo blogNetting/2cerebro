@@ -1,0 +1,662 @@
+- generic [ref=f46e1]:
+  - generic [ref=f46e2]:
+    - banner [ref=f46e6]:
+      - link "Ir al contenido principal" [ref=f46e7] [cursor=pointer]:
+        - /url: "#main-content"
+      - text: 
+      - generic [ref=f46e8]:
+        - navigation "ds.header.main_menu.main_menu" [ref=f46e11]:
+          - list [ref=f46e12]:
+            - listitem [ref=f46e13]:
+              - button "Reservar" [ref=f46e14] [cursor=pointer]
+            - listitem [ref=f46e15]:
+              - button "Ofertas y Destinos" [ref=f46e16] [cursor=pointer]
+            - listitem [ref=f46e17]:
+              - link "Mis viajes" [ref=f46e18] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/manage?culture=es-ES
+            - listitem [ref=f46e19]:
+              - link "Check-in" [ref=f46e20] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/checkin?c=es-ES
+            - listitem [ref=f46e21]:
+              - link "Estado vuelos" [ref=f46e22] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/servicios-vueling/informacion-de-vuelos/estado-de-vuelos
+        - link "ds.header.main_menu.logo" [ref=f46e24] [cursor=pointer]:
+          - /url: /es
+          - generic [ref=f46e26]:
+            - generic [ref=f46e27]: Vueling
+            - generic [aria-hidden] [ref=f46e28]:
+              - generic [ref=f46e29]: 
+              - text: 
+        - generic [ref=f46e30]:
+          - navigation "ds.header.main_menu.main_menu" [ref=f46e33]:
+            - list [ref=f46e34]:
+              - listitem [ref=f46e35]:
+                - button "Info viaje" [ref=f46e36] [cursor=pointer]
+              - listitem [ref=f46e37]:
+                - link "Ayuda" [ref=f46e38] [cursor=pointer]:
+                  - /url: https://help.vueling.com/hc/es
+              - listitem [ref=f46e39]:
+                - button "VUELING CLUB" [ref=f46e40] [cursor=pointer]
+          - button "es | EUR" [ref=f46e43] [cursor=pointer]: 
+          - button "Accede" [ref=f46e47] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f46e49]: 
+    - main [ref=f46e50]:
+      - generic [ref=f46e52]:
+        - generic [ref=f46e61]:
+          - generic [ref=f46e63]:
+            - generic [ref=f46e69]:
+              - generic "De" [ref=f46e70] [cursor=pointer]
+              - generic [ref=f46e71]: SVQ
+              - combobox "De" [ref=f46e72] [cursor=pointer]: Sevilla
+            - generic [ref=f46e78]:
+              - generic "A" [ref=f46e79] [cursor=pointer]
+              - generic [ref=f46e80]: LCG
+              - combobox "A" [ref=f46e81] [cursor=pointer]: A Coruña
+          - generic [ref=f46e82]:
+            - generic [ref=f46e88]:
+              - generic "Tipo de vuelo" [ref=f46e89] [cursor=pointer]
+              - combobox [ref=f46e90] [cursor=pointer]: Ida y vuelta
+            - generic [ref=f46e96]:
+              - generic "Pasajero" [ref=f46e97] [cursor=pointer]: 1 Adulto , 0 Niños , 0 Bebés
+              - combobox "Pasajero" [ref=f46e98] [cursor=pointer]: 1 Pasajero
+          - button "Ver precios" [ref=f46e102] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f46e103]: Ver precios
+        - paragraph [ref=f46e109]: SORRY, ESTOY FUERA.
+      - generic [ref=f46e110]:
+        - generic [ref=f46e112]:
+          - heading "Encuentra los precios más bajos para tu vuelo" [level=1] [ref=f46e114]
+          - generic [ref=f46e119]:
+            - generic [ref=f46e120]:
+              - generic [ref=f46e123]:
+                - generic [ref=f46e128]:
+                  - generic [aria-hidden] [ref=f46e131]: 
+                  - generic [ref=f46e132]: "Ida: Sevillamié, 21 oct"
+                - generic [ref=f46e133]:
+                  - application [ref=f46e140]:
+                    - button "Mes anterior" [disabled] [ref=f46e141]:
+                      - generic [ref=f46e143]:
+                        - generic [aria-hidden] [ref=f46e144]: 
+                        - generic [ref=f46e145]: Mes anterior
+                    - list [ref=f46e147]:
+                      - listitem [aria-hidden] [ref=f46e148]
+                      - listitem [ref=f46e149] [cursor=pointer]:
+                        - button "septiembre 105 €" [ref=f46e150]:
+                          - generic [ref=f46e151]: septiembre
+                          - generic [ref=f46e152]: 105 €
+                      - listitem [ref=f46e158]:
+                        - button "octubre 60 €" [pressed] [ref=f46e159]:
+                          - generic [ref=f46e160]: octubre
+                          - generic [ref=f46e161]: 60 €
+                      - listitem [ref=f46e167] [cursor=pointer]:
+                        - button "noviembre 57 €" [ref=f46e168]:
+                          - generic [ref=f46e169]: noviembre
+                          - generic [ref=f46e170]: 57 €
+                      - listitem [aria-hidden] [ref=f46e176] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e177] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e178] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e179] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e180] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e181] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e182] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e183] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e184] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e185] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e186]
+                    - button "Mes siguiente" [ref=f46e187] [cursor=pointer]:
+                      - generic [ref=f46e189]:
+                        - generic [aria-hidden] [ref=f46e190]: 
+                        - generic [ref=f46e191]: Mes siguiente
+                  - application [ref=f46e194]:
+                    - table [ref=f46e196]:
+                      - rowgroup [ref=f46e197]:
+                        - row [ref=f46e198]:
+                          - columnheader "Lunes" [ref=f46e199]: LUN
+                          - columnheader "Martes" [ref=f46e200]: MAR
+                          - columnheader "Miércoles" [ref=f46e201]: MIÉ
+                          - columnheader "Jueves" [ref=f46e202]: JUE
+                          - columnheader "Viernes" [ref=f46e203]: VIE
+                          - columnheader "Sábado" [ref=f46e204]: SÁB
+                          - columnheader "Domingo" [ref=f46e205]: DOM
+                      - rowgroup [ref=f46e206]:
+                        - row [ref=f46e207]:
+                          - cell [ref=f46e208]
+                          - cell [ref=f46e209]
+                          - cell [ref=f46e210]
+                          - cell [ref=f46e211]:
+                            - button "1 159 €" [ref=f46e215] [cursor=pointer]:
+                              - generic [ref=f46e216]:
+                                - generic [ref=f46e217]: "1"
+                                - generic [ref=f46e218]: 159 €
+                          - cell [ref=f46e224]:
+                            - button "2 175 €" [ref=f46e228] [cursor=pointer]:
+                              - generic [ref=f46e229]:
+                                - generic [ref=f46e230]: "2"
+                                - generic [ref=f46e231]: 175 €
+                          - cell [ref=f46e237]:
+                            - button "3 138 €" [ref=f46e241] [cursor=pointer]:
+                              - generic [ref=f46e242]:
+                                - generic [ref=f46e243]: "3"
+                                - generic [ref=f46e244]: 138 €
+                          - cell [ref=f46e250]:
+                            - button "4 184 €" [ref=f46e254] [cursor=pointer]:
+                              - generic [ref=f46e255]:
+                                - generic [ref=f46e256]: "4"
+                                - generic [ref=f46e257]: 184 €
+                        - row [ref=f46e263]:
+                          - cell [ref=f46e264]:
+                            - button "5 93 €" [ref=f46e268] [cursor=pointer]:
+                              - generic [ref=f46e269]:
+                                - generic [ref=f46e270]: "5"
+                                - generic [ref=f46e271]: 93 €
+                          - cell [ref=f46e277]:
+                            - button "6 117 €" [ref=f46e281] [cursor=pointer]:
+                              - generic [ref=f46e282]:
+                                - generic [ref=f46e283]: "6"
+                                - generic [ref=f46e284]: 117 €
+                          - cell [ref=f46e290]:
+                            - button "7 103 €" [ref=f46e294] [cursor=pointer]:
+                              - generic [ref=f46e295]:
+                                - generic [ref=f46e296]: "7"
+                                - generic [ref=f46e297]: 103 €
+                          - cell [ref=f46e303]:
+                            - button "8 161 €" [ref=f46e307] [cursor=pointer]:
+                              - generic [ref=f46e308]:
+                                - generic [ref=f46e309]: "8"
+                                - generic [ref=f46e310]: 161 €
+                          - cell [ref=f46e316]:
+                            - button "9 220 €" [ref=f46e320] [cursor=pointer]:
+                              - generic [ref=f46e321]:
+                                - generic [ref=f46e322]: "9"
+                                - generic [ref=f46e323]: 220 €
+                          - cell [ref=f46e329]:
+                            - button "10 127 €" [ref=f46e333] [cursor=pointer]:
+                              - generic [ref=f46e334]:
+                                - generic [ref=f46e335]: "10"
+                                - generic [ref=f46e336]: 127 €
+                          - cell [ref=f46e342]:
+                            - button "11 175 €" [ref=f46e346] [cursor=pointer]:
+                              - generic [ref=f46e347]:
+                                - generic [ref=f46e348]: "11"
+                                - generic [ref=f46e349]: 175 €
+                        - row [ref=f46e355]:
+                          - cell [ref=f46e356]:
+                            - button "12 211 €" [ref=f46e360] [cursor=pointer]:
+                              - generic [ref=f46e361]:
+                                - generic [ref=f46e362]: "12"
+                                - generic [ref=f46e363]: 211 €
+                          - cell [ref=f46e369]:
+                            - button "13 96 €" [ref=f46e373] [cursor=pointer]:
+                              - generic [ref=f46e374]:
+                                - generic [ref=f46e375]: "13"
+                                - generic [ref=f46e376]: 96 €
+                          - cell [ref=f46e382]:
+                            - button "14 76 €" [ref=f46e386] [cursor=pointer]:
+                              - generic [ref=f46e387]:
+                                - generic [ref=f46e388]: "14"
+                                - generic [ref=f46e389]: 76 €
+                          - cell [ref=f46e395]:
+                            - button "15 103 €" [ref=f46e399] [cursor=pointer]:
+                              - generic [ref=f46e400]:
+                                - generic [ref=f46e401]: "15"
+                                - generic [ref=f46e402]: 103 €
+                          - cell [ref=f46e408]:
+                            - button "16 102 €" [ref=f46e412] [cursor=pointer]:
+                              - generic [ref=f46e413]:
+                                - generic [ref=f46e414]: "16"
+                                - generic [ref=f46e415]: 102 €
+                          - cell [ref=f46e421]:
+                            - button "17 118 €" [ref=f46e425] [cursor=pointer]:
+                              - generic [ref=f46e426]:
+                                - generic [ref=f46e427]: "17"
+                                - generic [ref=f46e428]: 118 €
+                          - cell [ref=f46e434]:
+                            - button "18 206 €" [ref=f46e438] [cursor=pointer]:
+                              - generic [ref=f46e439]:
+                                - generic [ref=f46e440]: "18"
+                                - generic [ref=f46e441]: 206 €
+                        - row [ref=f46e447]:
+                          - cell [ref=f46e448]:
+                            - button "19 76 €" [ref=f46e452] [cursor=pointer]:
+                              - generic [ref=f46e453]:
+                                - generic [ref=f46e454]: "19"
+                                - generic [ref=f46e455]: 76 €
+                          - cell [ref=f46e461]:
+                            - button "20 72 €" [ref=f46e465] [cursor=pointer]:
+                              - generic [ref=f46e466]:
+                                - generic [ref=f46e467]: "20"
+                                - generic [ref=f46e468]: 72 €
+                          - cell [ref=f46e474]:
+                            - button "21 60 €" [pressed] [ref=f46e478] [cursor=pointer]:
+                              - generic [ref=f46e479]:
+                                - generic [ref=f46e480]: "21"
+                                - generic [ref=f46e481]: 60 €
+                          - cell [ref=f46e487]:
+                            - button "22 76 €" [ref=f46e491] [cursor=pointer]:
+                              - generic [ref=f46e492]:
+                                - generic [ref=f46e493]: "22"
+                                - generic [ref=f46e494]: 76 €
+                          - cell [ref=f46e500]:
+                            - button "23 92 €" [ref=f46e504] [cursor=pointer]:
+                              - generic [ref=f46e505]:
+                                - generic [ref=f46e506]: "23"
+                                - generic [ref=f46e507]: 92 €
+                          - cell [ref=f46e513]:
+                            - button "24 138 €" [ref=f46e517] [cursor=pointer]:
+                              - generic [ref=f46e518]:
+                                - generic [ref=f46e519]: "24"
+                                - generic [ref=f46e520]: 138 €
+                          - cell [ref=f46e526]:
+                            - button "25 213 €" [ref=f46e530] [cursor=pointer]:
+                              - generic [ref=f46e531]:
+                                - generic [ref=f46e532]: "25"
+                                - generic [ref=f46e533]: 213 €
+                        - row [ref=f46e539]:
+                          - cell [ref=f46e540]:
+                            - button "26 127 €" [ref=f46e544] [cursor=pointer]:
+                              - generic [ref=f46e545]:
+                                - generic [ref=f46e546]: "26"
+                                - generic [ref=f46e547]: 127 €
+                          - cell [ref=f46e553]:
+                            - button "27 101 €" [ref=f46e557] [cursor=pointer]:
+                              - generic [ref=f46e558]:
+                                - generic [ref=f46e559]: "27"
+                                - generic [ref=f46e560]: 101 €
+                          - cell [ref=f46e566]:
+                            - button "28 87 €" [ref=f46e570] [cursor=pointer]:
+                              - generic [ref=f46e571]:
+                                - generic [ref=f46e572]: "28"
+                                - generic [ref=f46e573]: 87 €
+                          - cell [ref=f46e579]:
+                            - button "29 105 €" [ref=f46e583] [cursor=pointer]:
+                              - generic [ref=f46e584]:
+                                - generic [ref=f46e585]: "29"
+                                - generic [ref=f46e586]: 105 €
+                          - cell [ref=f46e592]:
+                            - button "30 155 €" [ref=f46e596] [cursor=pointer]:
+                              - generic [ref=f46e597]:
+                                - generic [ref=f46e598]: "30"
+                                - generic [ref=f46e599]: 155 €
+                          - cell [ref=f46e605]:
+                            - button "31 152 €" [ref=f46e609] [cursor=pointer]:
+                              - generic [ref=f46e610]:
+                                - generic [ref=f46e611]: "31"
+                                - generic [ref=f46e612]: 152 €
+                          - cell [ref=f46e618]
+              - generic [ref=f46e622]:
+                - generic [ref=f46e627]:
+                  - generic [aria-hidden] [ref=f46e630]: 
+                  - generic [ref=f46e631]: "Vuelta: A Coruñamar, 27 oct"
+                - generic [ref=f46e632]:
+                  - application [ref=f46e639]:
+                    - button "Mes anterior" [disabled] [ref=f46e640]:
+                      - generic [ref=f46e642]:
+                        - generic [aria-hidden] [ref=f46e643]: 
+                        - generic [ref=f46e644]: Mes anterior
+                    - list [ref=f46e646]:
+                      - listitem [ref=f46e647]:
+                        - button "septiembre" [disabled] [ref=f46e648]
+                      - listitem [ref=f46e650]:
+                        - button "octubre 72 €" [pressed] [ref=f46e651]:
+                          - generic [ref=f46e652]: octubre
+                          - generic [ref=f46e653]: 72 €
+                      - listitem [ref=f46e659] [cursor=pointer]:
+                        - button "noviembre 63 €" [ref=f46e660]:
+                          - generic [ref=f46e661]: noviembre
+                          - generic [ref=f46e662]: 63 €
+                      - listitem [aria-hidden] [ref=f46e668] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e669] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e670] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e671] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e672] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e673] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e674] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e675] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e676] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e677] [cursor=pointer]
+                      - listitem [aria-hidden] [ref=f46e678]
+                    - button "Mes siguiente" [ref=f46e679] [cursor=pointer]:
+                      - generic [ref=f46e681]:
+                        - generic [aria-hidden] [ref=f46e682]: 
+                        - generic [ref=f46e683]: Mes siguiente
+                  - application [ref=f46e686]:
+                    - table [ref=f46e688]:
+                      - rowgroup [ref=f46e689]:
+                        - row [ref=f46e690]:
+                          - columnheader "Lunes" [ref=f46e691]: LUN
+                          - columnheader "Martes" [ref=f46e692]: MAR
+                          - columnheader "Miércoles" [ref=f46e693]: MIÉ
+                          - columnheader "Jueves" [ref=f46e694]: JUE
+                          - columnheader "Viernes" [ref=f46e695]: VIE
+                          - columnheader "Sábado" [ref=f46e696]: SÁB
+                          - columnheader "Domingo" [ref=f46e697]: DOM
+                      - rowgroup [ref=f46e698]:
+                        - row [ref=f46e699]:
+                          - cell [ref=f46e700]
+                          - cell [ref=f46e701]
+                          - cell [ref=f46e702]
+                          - cell [ref=f46e703]:
+                            - button "1" [disabled] [ref=f46e707]
+                          - cell [ref=f46e710]:
+                            - button "2" [disabled] [ref=f46e714]
+                          - cell [ref=f46e717]:
+                            - button "3" [disabled] [ref=f46e721]
+                          - cell [ref=f46e724]:
+                            - button "4" [disabled] [ref=f46e728]
+                        - row [ref=f46e731]:
+                          - cell [ref=f46e732]:
+                            - button "5" [disabled] [ref=f46e736]
+                          - cell [ref=f46e739]:
+                            - button "6" [disabled] [ref=f46e743]
+                          - cell [ref=f46e746]:
+                            - button "7" [disabled] [ref=f46e750]
+                          - cell [ref=f46e753]:
+                            - button "8" [disabled] [ref=f46e757]
+                          - cell [ref=f46e760]:
+                            - button "9" [disabled] [ref=f46e764]
+                          - cell [ref=f46e767]:
+                            - button "10" [disabled] [ref=f46e771]
+                          - cell [ref=f46e774]:
+                            - button "11" [disabled] [ref=f46e778]
+                        - row [ref=f46e781]:
+                          - cell [ref=f46e782]:
+                            - button "12" [disabled] [ref=f46e786]
+                          - cell [ref=f46e789]:
+                            - button "13" [disabled] [ref=f46e793]
+                          - cell [ref=f46e796]:
+                            - button "14" [disabled] [ref=f46e800]
+                          - cell [ref=f46e803]:
+                            - button "15" [disabled] [ref=f46e807]
+                          - cell [ref=f46e810]:
+                            - button "16" [disabled] [ref=f46e814]
+                          - cell [ref=f46e817]:
+                            - button "17" [disabled] [ref=f46e821]
+                          - cell [ref=f46e824]:
+                            - button "18" [disabled] [ref=f46e828]
+                        - row [ref=f46e831]:
+                          - cell [ref=f46e832]:
+                            - button "19" [disabled] [ref=f46e836]
+                          - cell [ref=f46e839]:
+                            - button "20" [disabled] [ref=f46e843]
+                          - cell [ref=f46e846]:
+                            - button "21 114 €" [ref=f46e850] [cursor=pointer]:
+                              - generic [ref=f46e851]:
+                                - generic [ref=f46e852]: "21"
+                                - generic [ref=f46e853]: 114 €
+                          - cell [ref=f46e859]:
+                            - button "22 110 €" [ref=f46e863] [cursor=pointer]:
+                              - generic [ref=f46e864]:
+                                - generic [ref=f46e865]: "22"
+                                - generic [ref=f46e866]: 110 €
+                          - cell [ref=f46e872]:
+                            - button "23 137 €" [ref=f46e876] [cursor=pointer]:
+                              - generic [ref=f46e877]:
+                                - generic [ref=f46e878]: "23"
+                                - generic [ref=f46e879]: 137 €
+                          - cell [ref=f46e885]:
+                            - button "24 90 €" [ref=f46e889] [cursor=pointer]:
+                              - generic [ref=f46e890]:
+                                - generic [ref=f46e891]: "24"
+                                - generic [ref=f46e892]: 90 €
+                          - cell [ref=f46e898]:
+                            - button "25 157 €" [ref=f46e902] [cursor=pointer]:
+                              - generic [ref=f46e903]:
+                                - generic [ref=f46e904]: "25"
+                                - generic [ref=f46e905]: 157 €
+                        - row [ref=f46e911]:
+                          - cell [ref=f46e912]:
+                            - button "26 86 €" [ref=f46e916] [cursor=pointer]:
+                              - generic [ref=f46e917]:
+                                - generic [ref=f46e918]: "26"
+                                - generic [ref=f46e919]: 86 €
+                          - cell [ref=f46e925]:
+                            - button "27 72 € Vuelo rebajado" [pressed] [ref=f46e929] [cursor=pointer]:
+                              - generic [ref=f46e930]:
+                                - generic [ref=f46e931]: "27"
+                                - generic [ref=f46e932]:
+                                  - generic [ref=f46e933]: 72 €
+                                  - generic [ref=f46e938]: Vuelo rebajado
+                          - cell [ref=f46e940]:
+                            - button "28 91 €" [ref=f46e944] [cursor=pointer]:
+                              - generic [ref=f46e945]:
+                                - generic [ref=f46e946]: "28"
+                                - generic [ref=f46e947]: 91 €
+                          - cell [ref=f46e953]:
+                            - button "29 114 € Vuelo rebajado" [ref=f46e957] [cursor=pointer]:
+                              - generic [ref=f46e958]:
+                                - generic [ref=f46e959]: "29"
+                                - generic [ref=f46e960]:
+                                  - generic [ref=f46e961]: 114 €
+                                  - generic [ref=f46e966]: Vuelo rebajado
+                          - cell [ref=f46e968]:
+                            - button "30 119 €" [ref=f46e972] [cursor=pointer]:
+                              - generic [ref=f46e973]:
+                                - generic [ref=f46e974]: "30"
+                                - generic [ref=f46e975]: 119 €
+                          - cell [ref=f46e981]:
+                            - button "31 80 €" [ref=f46e985] [cursor=pointer]:
+                              - generic [ref=f46e986]:
+                                - generic [ref=f46e987]: "31"
+                                - generic [ref=f46e988]: 80 €
+                          - cell [ref=f46e994]
+                - generic [ref=f46e996]:
+                  - generic [aria-hidden] [ref=f46e1000]: 
+                  - generic [ref=f46e1001]: Vuelo rebajado
+            - generic [ref=f46e1005]:
+              - generic [ref=f46e1006]: Sevilla (SVQ) - A Coruña (LCG)1 Pasajero
+              - generic [ref=f46e1010]:
+                - generic [ref=f46e1011]:
+                  - generic [ref=f46e1012]:
+                    - generic [ref=f46e1013]: Idamié, 21 oct
+                    - generic [ref=f46e1017]: 60,00 €
+                  - generic [ref=f46e1022]:
+                    - generic [ref=f46e1023]: Vueltamar, 27 oct
+                    - generic [ref=f46e1027]: 72,00 €
+                - generic [ref=f46e1032]:
+                  - generic [ref=f46e1033]:
+                    - text: "Total:"
+                    - generic [ref=f46e1034]: 132,00 €
+                  - button "Continuar" [ref=f46e1041] [cursor=pointer]
+          - generic [ref=f46e1047]:
+            - generic [ref=f46e1048]:
+              - heading "OFERTAS DESDE" [level=2] [ref=f46e1049]
+              - generic [ref=f46e1052]:
+                - button "Has seleccionado Madrid" [ref=f46e1054] [cursor=pointer]:
+                  - generic [ref=f46e1055]: Has seleccionado
+                  - generic [ref=f46e1056]: Madrid
+                  - generic [aria-hidden] [ref=f46e1059]: 
+                - alert
+            - generic [ref=f46e1060]:
+              - article [ref=f46e1063]:
+                - img "Barcelona" [ref=f46e1066]
+                - generic [ref=f46e1067]:
+                  - generic [ref=f46e1068]:
+                    - heading "Barcelona" [level=2] [ref=f46e1069]
+                    - generic [ref=f46e1070]: Desde31 €
+                  - link "Reservar" [ref=f46e1077] [cursor=pointer]:
+                    - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=BCN&dateComplete=06/12/2026
+              - article [ref=f46e1081]:
+                - img "Ibiza" [ref=f46e1084]
+                - generic [ref=f46e1085]:
+                  - generic [ref=f46e1086]:
+                    - heading "Ibiza" [level=2] [ref=f46e1087]
+                    - generic [ref=f46e1088]: Desde37 €
+                  - link "Reservar" [ref=f46e1095] [cursor=pointer]:
+                    - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=IBZ&dateComplete=22/09/2026
+              - article [ref=f46e1099]:
+                - img "Menorca" [ref=f46e1102]
+                - generic [ref=f46e1103]:
+                  - generic [ref=f46e1104]:
+                    - heading "Menorca" [level=2] [ref=f46e1105]
+                    - generic [ref=f46e1106]: Desde42 €
+                  - link "Reservar" [ref=f46e1113] [cursor=pointer]:
+                    - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=MAH&dateComplete=23/09/2026
+              - article [ref=f46e1117]:
+                - generic [ref=f46e1118]:
+                  - img "Palma (Mallorca)" [ref=f46e1120]
+                  - generic [ref=f46e1122]: Conexión
+                - generic [ref=f46e1126]:
+                  - generic [ref=f46e1127]:
+                    - heading "Palma (Mallorca)" [level=2] [ref=f46e1128]
+                    - generic [ref=f46e1129]: Conexión
+                    - generic [ref=f46e1130]: Desde61 €
+                  - link "Reservar" [ref=f46e1137] [cursor=pointer]:
+                    - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=PMI&dateComplete=06/12/2026
+            - generic:
+              - status
+        - generic [ref=f46e1139]:
+          - generic [ref=f46e1144]:
+            - generic [aria-hidden] [ref=f46e1147]: 
+            - generic [ref=f46e1148]:
+              - heading "Elige un destino" [level=3] [ref=f46e1149]
+              - paragraph [ref=f46e1151]: Cierra los ojos, piensa en cuál quieres que sea tu próxima escapada. ¿Lo tienes?
+          - generic [ref=f46e1156]:
+            - generic [aria-hidden] [ref=f46e1159]: 
+            - generic [ref=f46e1160]:
+              - heading "Compara precios" [level=3] [ref=f46e1161]
+              - paragraph [ref=f46e1163]: Te mostramos en un calendario todos nuestros precios, para que elijas fácilmente
+          - generic [ref=f46e1168]:
+            - generic [aria-hidden] [ref=f46e1171]: 
+            - generic [ref=f46e1172]:
+              - heading "Reserva tu viaje" [level=3] [ref=f46e1173]
+              - paragraph [ref=f46e1175]: Elige tu vuelo y prepara las maletas porque... ¡nos vamos!
+    - contentinfo [ref=f46e1179]:
+      - generic [ref=f46e1180]:
+        - generic [ref=f46e1182]:
+          - generic [ref=f46e1184]:
+            - generic [ref=f46e1185]: 
+            - generic: 
+          - generic [ref=f46e1186]:
+            - generic [ref=f46e1187]:
+              - generic [ref=f46e1188]:
+                - heading "CONÓCENOS" [level=2] [ref=f46e1189]
+                - navigation "CONÓCENOS" [ref=f46e1191]:
+                  - list [ref=f46e1192]:
+                    - listitem [ref=f46e1193]:
+                      - link "¿Quiénes somos?" [ref=f46e1194] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sobre-nosotros
+                    - listitem [ref=f46e1195]:
+                      - link "Sala de prensa" [ref=f46e1196] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/somos-vueling/sala-de-prensa
+                    - listitem [ref=f46e1197]:
+                      - link "Ciudades" [ref=f46e1198] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sitemap/vuelos-por-ciudad/page-1
+                    - listitem [ref=f46e1199]:
+                      - link "Países" [ref=f46e1200] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sitemap/vuelos-por-pais/page-1
+                    - listitem [ref=f46e1201]:
+                      - link "Black Friday" [ref=f46e1202] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/busca-tu-vuelo/black-friday
+                    - listitem [ref=f46e1203]:
+                      - link "Sostenibilidad" [ref=f46e1204] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sobre-nosotros/sostenibilidad
+                    - listitem [ref=f46e1205]:
+                      - link "Trabaja con nosotros" [ref=f46e1206] [cursor=pointer]:
+                        - /url: https://careers.vueling.com/
+              - generic [ref=f46e1207]:
+                - heading "TE AYUDAMOS" [level=2] [ref=f46e1208]
+                - navigation "TE AYUDAMOS" [ref=f46e1210]:
+                  - list [ref=f46e1211]:
+                    - listitem [ref=f46e1212]:
+                      - link "Centro de ayuda" [ref=f46e1213] [cursor=pointer]:
+                        - /url: https://help.vueling.com/hc/es
+                    - listitem [ref=f46e1214]:
+                      - link "Tarifas de los servicios adicionales al vuelo" [ref=f46e1215] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/servicios-vueling/tarifas-de-los-servicios-adicionales-al-vuelo
+                    - listitem [ref=f46e1216]:
+                      - link "Por qué reservar en Vueling.com" [ref=f46e1217] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/reserva-tu-vuelo/busca-tu-vuelo-al-mejor-precio
+                    - listitem [ref=f46e1218]:
+                      - link "Accesibilidad" [ref=f46e1219] [cursor=pointer]:
+                        - /url: https://help.vueling.com/hc/es/categories/19798714411665-Necesidades-especiales
+              - generic [ref=f46e1220]:
+                - heading "PARA PROFESIONALES" [level=2] [ref=f46e1221]
+                - navigation "PARA PROFESIONALES" [ref=f46e1223]:
+                  - list [ref=f46e1224]:
+                    - listitem [ref=f46e1225]:
+                      - link "Agencias" [ref=f46e1226] [cursor=pointer]:
+                        - /url: https://professionals.vueling.com/home
+                    - listitem [ref=f46e1227]:
+                      - link "Grupos" [ref=f46e1228] [cursor=pointer]:
+                        - /url: https://groups.vueling.com/web/es-ES/
+                    - listitem [ref=f46e1229]:
+                      - link "Empresas" [ref=f46e1230] [cursor=pointer]:
+                        - /url: https://professionals.vueling.com/home
+                    - listitem [ref=f46e1231]:
+                      - link "Anúnciate con Vueling" [ref=f46e1232] [cursor=pointer]:
+                        - /url: https://quivertree-media.com/contact-vueling
+            - generic [ref=f46e1233]:
+              - generic [ref=f46e1234]:
+                - heading "¿Quieres recibir más ofertas en tu email?" [level=2] [ref=f46e1235]
+                - button "¡Apúntate!" [ref=f46e1239] [cursor=pointer]
+              - generic [ref=f46e1241]:
+                - generic [ref=f46e1242]:
+                  - heading "Síguenos" [level=2] [ref=f46e1243]
+                  - navigation "Síguenos" [ref=f46e1246]:
+                    - list [ref=f46e1247]:
+                      - listitem [ref=f46e1248]:
+                        - link "Facebook" [ref=f46e1249] [cursor=pointer]:
+                          - /url: https://www.facebook.com/Vueling/
+                          - generic [ref=f46e1251]:
+                            - generic [aria-hidden] [ref=f46e1252]: 
+                            - generic [ref=f46e1253]: Facebook
+                      - listitem [ref=f46e1254]:
+                        - link "YouTube" [ref=f46e1255] [cursor=pointer]:
+                          - /url: https://www.youtube.com/@vueling
+                          - generic [ref=f46e1257]:
+                            - generic [aria-hidden] [ref=f46e1258]: 
+                            - generic [ref=f46e1259]: YouTube
+                      - listitem [ref=f46e1260]:
+                        - link "Instagram" [ref=f46e1261] [cursor=pointer]:
+                          - /url: https://www.instagram.com/vueling/
+                          - generic [ref=f46e1263]:
+                            - generic [aria-hidden] [ref=f46e1264]: 
+                            - generic [ref=f46e1265]: Instagram
+                      - listitem [ref=f46e1266]:
+                        - link "X" [ref=f46e1267] [cursor=pointer]:
+                          - /url: https://twitter.com/vueling?lang=es
+                          - generic [ref=f46e1269]:
+                            - generic [aria-hidden] [ref=f46e1270]: 
+                            - generic [ref=f46e1271]: X
+                - generic [ref=f46e1272]:
+                  - heading "Llévanos en tu móvil" [level=2] [ref=f46e1273]
+                  - navigation "Llévanos en tu móvil" [ref=f46e1276]:
+                    - list [ref=f46e1277]:
+                      - listitem [ref=f46e1278]:
+                        - link [ref=f46e1279] [cursor=pointer]:
+                          - /url: https://play.google.com/store/apps/details?id=com.mo2o.vueling&hl=es
+                          - img "Obtener la aplicación de Vueling en Google Play" [ref=f46e1280]
+                      - listitem [ref=f46e1281]:
+                        - link [ref=f46e1282] [cursor=pointer]:
+                          - /url: https://itunes.apple.com/es/app/vueling/id445818820?mt=8
+                          - img "Obtener la aplicación de Vueling en Apple Store" [ref=f46e1283]
+        - paragraph [ref=f46e1287]:
+          - img "Logo de Skytrax" [ref=f46e1288]
+        - generic [ref=f46e1290]:
+          - generic [ref=f46e1291]: © 2026 Vueling Airlines SA
+          - navigation [ref=f46e1294]:
+            - list [ref=f46e1295]:
+              - listitem [ref=f46e1296]:
+                - link "Contactus@vueling.com" [ref=f46e1297] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/asistentes/quejas
+              - listitem [ref=f46e1298]:
+                - link "Condiciones de uso de la web" [ref=f46e1299] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-uso-del-sitio-web
+              - listitem [ref=f46e1300]:
+                - link "Mapa web" [ref=f46e1301] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/mapa-web
+              - listitem [ref=f46e1302]:
+                - link "Política de cookies" [ref=f46e1303] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-cookies
+              - listitem [ref=f46e1304]:
+                - link "Política de privacidad" [ref=f46e1305] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-privacidad
+              - listitem [ref=f46e1306]:
+                - link "Condiciones de transporte" [ref=f46e1307] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-transporte
+              - listitem [ref=f46e1308]:
+                - link "Junta General de Accionistas" [ref=f46e1309] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/aviso-legal-junta-de-accionistas
+              - listitem [ref=f46e1310]:
+                - link "Declaración sobre esclavitud y tráfico de seres humanos" [ref=f46e1311] [cursor=pointer]:
+                  - /url: https://www.iairgroup.com/media/wqmpghns/modern-slavery-statement-2025-final.pdf
+  - status [ref=f46e1312]: ds.common.loading_complete

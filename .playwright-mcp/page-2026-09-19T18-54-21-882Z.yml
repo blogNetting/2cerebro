@@ -1,0 +1,22 @@
+- main [ref=f24e3]:
+  - status [ref=f24e4]
+  - generic [ref=f24e16]:
+    - generic [ref=f24e18]:
+      - generic [ref=f24e24]:
+        - generic "De" [ref=f24e25] [cursor=pointer]
+        - generic [ref=f24e26]: SVQ
+        - combobox "De" [ref=f24e27] [cursor=pointer]: Sevilla
+      - generic [ref=f24e33]:
+        - generic "A" [ref=f24e34] [cursor=pointer]
+        - generic [ref=f24e35]: SCQ
+        - combobox "A" [ref=f24e36] [cursor=pointer]: Santiago
+    - generic [ref=f24e37]:
+      - generic [ref=f24e43]:
+        - generic "Tipo de vuelo" [ref=f24e44] [cursor=pointer]
+        - combobox [ref=f24e45] [cursor=pointer]: Ida y vuelta
+      - generic [ref=f24e51]:
+        - generic "Pasajero" [ref=f24e52] [cursor=pointer]: 1 Adulto , 0 Niños , 0 Bebés
+        - combobox "Pasajero" [ref=f24e53] [cursor=pointer]: 1 Pasajero
+    - button "Ver precios" [ref=f24e57] [cursor=pointer]:
+      - generic [aria-hidden] [ref=f24e58]: Ver precios
+  - heading "Encuentra los precios más bajos para tu vuelo" [level=1] [ref=f24e64]

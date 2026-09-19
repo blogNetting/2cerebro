@@ -34,6 +34,11 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Node.js v22.23.2 y npx 10.9.8 instalados (verificado `node --version` / `npx --version`). Suficiente para lanzar `@playwright/mcp` bajo demanda; no hace falta instalación previa, `npx -y` lo descarga la primera vez.
 - Sin GPU, sin entorno gráfico: irrelevante para esta arquitectura porque el navegador real corre en el anfitrión Windows, no aquí. Esta VM solo ejecuta el proceso Node del MCP, que habla por red al CDP remoto.
 
+## Compartir contexto entre sesiones
+
+- La extensión de VSCode y el CLI mantienen almacenes de sesión separados (verificado en docs oficiales): una conversación de VSCode no se puede recuperar con `claude --continue`/`--resume` desde una terminal, ni al revés.
+- Mecanismo puente: `.claude/sesiones/` (gitignored, fuera del wiki, no entra en `/lint`). Skills `/exportar-sesion` (vuelca un resumen de estado a un fichero con nombre `<slug>-<timestamp>.md`) y `/importar-sesion` (lee ese fichero en la sesión destino). Por defecto se vuelca resumen, no transcripción literal — cuesta menos contexto a la sesión receptora.
+
 ## Qué falta / no está resuelto
 
 - No hay skill ni MCP para leer contenido detrás de login sin intervención humana — eso sigue siendo tarea manual del usuario en la ventana visible.

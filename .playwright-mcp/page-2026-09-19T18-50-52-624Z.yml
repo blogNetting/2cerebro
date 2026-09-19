@@ -1,0 +1,382 @@
+- generic [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e6]:
+      - link "Ir al contenido principal" [ref=f3e7] [cursor=pointer]:
+        - /url: "#main-content"
+      - text: 
+      - generic [ref=f3e8]:
+        - navigation "ds.header.main_menu.main_menu" [ref=f3e11]:
+          - list [ref=f3e12]:
+            - listitem [ref=f3e13]:
+              - button "Reservar" [ref=f3e14] [cursor=pointer]
+            - listitem [ref=f3e15]:
+              - button "Ofertas y Destinos" [ref=f3e16] [cursor=pointer]
+            - listitem [ref=f3e17]:
+              - link "Mis viajes" [ref=f3e18] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/manage?culture=es-ES
+            - listitem [ref=f3e19]:
+              - link "Check-in" [ref=f3e20] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/checkin?c=es-ES
+            - listitem [ref=f3e21]:
+              - link "Estado vuelos" [ref=f3e22] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/servicios-vueling/informacion-de-vuelos/estado-de-vuelos
+        - link "ds.header.main_menu.logo" [ref=f3e24] [cursor=pointer]:
+          - /url: /es
+          - generic [ref=f3e26]:
+            - generic [ref=f3e27]: Vueling
+            - generic [aria-hidden] [ref=f3e28]:
+              - generic [ref=f3e29]: 
+              - text: 
+        - generic [ref=f3e30]:
+          - navigation "ds.header.main_menu.main_menu" [ref=f3e33]:
+            - list [ref=f3e34]:
+              - listitem [ref=f3e35]:
+                - button "Info viaje" [ref=f3e36] [cursor=pointer]
+              - listitem [ref=f3e37]:
+                - link "Ayuda" [ref=f3e38] [cursor=pointer]:
+                  - /url: https://help.vueling.com/hc/es
+              - listitem [ref=f3e39]:
+                - button "VUELING CLUB" [ref=f3e40] [cursor=pointer]
+          - button "es | EUR" [ref=f3e43] [cursor=pointer]: 
+          - button "Accede" [ref=f3e47] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f3e49]: 
+    - main [ref=f3e50]:
+      - generic [ref=f3e54]:
+        - list [ref=f3e56]:
+          - listitem [ref=f3e57]:
+            - generic [ref=f3e59]:
+              - generic [ref=f3e60]: VUELOS
+              - generic [aria-hidden] [ref=f3e61]: 
+          - listitem [ref=f3e62]:
+            - link "Vuelo + hotel" [ref=f3e65] [cursor=pointer]:
+              - /url: https://holidays.vueling.com/es/?referralId=home_searchbox
+              - generic [aria-hidden] [ref=f3e67]: 
+          - listitem [ref=f3e68]:
+            - link "hoteles" [ref=f3e71] [cursor=pointer]:
+              - /url: https://hotel.vueling.com/?aid=348292&label=pagesbtab-sbx-348292-click&lang=es
+              - generic [aria-hidden] [ref=f3e73]: 
+          - listitem [ref=f3e74]:
+            - link "coches" [ref=f3e77] [cursor=pointer]:
+              - /url: https://cars.vueling.com/es/?clientID=198383#/searchcars
+              - generic [aria-hidden] [ref=f3e79]: 
+        - generic [ref=f3e84]:
+          - generic [ref=f3e86]:
+            - generic [ref=f3e92]:
+              - generic "De" [ref=f3e93] [cursor=pointer]
+              - generic [ref=f3e94]: MAD
+              - combobox "De" [active] [ref=f3e95] [cursor=pointer]: Madrid
+            - generic [ref=f3e101]:
+              - generic "A" [ref=f3e102] [cursor=pointer]
+              - combobox "A" [ref=f3e103] [cursor=pointer]
+          - generic [ref=f3e104]:
+            - generic [ref=f3e108]:
+              - generic [ref=f3e111]:
+                - generic "Ida" [ref=f3e112] [cursor=pointer]
+                - combobox "Ida" [ref=f3e113] [cursor=pointer]
+              - generic [ref=f3e116]:
+                - generic "Vuelta" [ref=f3e117] [cursor=pointer]
+                - combobox "Vuelta" [ref=f3e118] [cursor=pointer]
+            - generic [ref=f3e124]:
+              - generic "Pasajero" [ref=f3e125] [cursor=pointer]: 1 Adulto , 0 Niños , 0 Bebés
+              - combobox "Pasajero" [ref=f3e126] [cursor=pointer]: 1 Pasajero
+          - button "Buscar" [ref=f3e130] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f3e131]: Buscar
+      - generic [ref=f3e210]:
+        - generic [ref=f3e219]:
+          - generic [ref=f3e220]:
+            - paragraph [ref=f3e221]: SOMOS LA MEJOR AEROLÍNEA LOW COST DE EUROPA
+            - paragraph [ref=f3e222]: CELÉBRALO CON HASTA UN 20% DE DTO
+          - button [ref=f3e638] [cursor=pointer]:
+            - generic [ref=f3e226]: Ver ofertas
+        - generic [ref=f3e235]:
+          - generic [ref=f3e236]:
+            - paragraph [ref=f3e237]: Volamos más alto que nunca
+            - paragraph [ref=f3e238]: Mejor aerolínea low cost de Europa
+          - button "Más info" [ref=f3e639] [cursor=pointer]
+        - region [ref=f3e245]:
+          - generic [ref=f3e246]:
+            - list [ref=f3e247]:
+              - listitem [ref=f3e248]:
+                - button "1" [ref=f3e249] [cursor=pointer]
+              - listitem [ref=f3e252]:
+                - button "2" [ref=f3e253] [cursor=pointer]
+            - button [ref=f3e256] [cursor=pointer]:
+              - generic [aria-hidden] [ref=f3e259]: 
+      - generic [ref=f3e263]:
+        - generic [ref=f3e264]:
+          - heading "OFERTAS DESDE" [level=2] [ref=f3e265]
+          - generic [ref=f3e268]:
+            - button "Has seleccionado Madrid" [ref=f3e270] [cursor=pointer]:
+              - generic [ref=f3e271]: Has seleccionado
+              - generic [ref=f3e272]: Madrid
+              - generic [aria-hidden] [ref=f3e275]: 
+            - alert
+        - generic [ref=f3e276]:
+          - article [ref=f3e279]:
+            - img "Barcelona" [ref=f3e282]
+            - generic [ref=f3e283]:
+              - generic [ref=f3e284]:
+                - heading "Barcelona" [level=2] [ref=f3e285]
+                - generic [ref=f3e286]: Desde31 €
+              - link "Reservar" [ref=f3e293] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=BCN&dateComplete=06/12/2026
+          - article [ref=f3e297]:
+            - img "Ibiza" [ref=f3e300]
+            - generic [ref=f3e301]:
+              - generic [ref=f3e302]:
+                - heading "Ibiza" [level=2] [ref=f3e303]
+                - generic [ref=f3e304]: Desde37 €
+              - link "Reservar" [ref=f3e311] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=IBZ&dateComplete=22/09/2026
+          - article [ref=f3e315]:
+            - img "Menorca" [ref=f3e318]
+            - generic [ref=f3e319]:
+              - generic [ref=f3e320]:
+                - heading "Menorca" [level=2] [ref=f3e321]
+                - generic [ref=f3e322]: Desde42 €
+              - link "Reservar" [ref=f3e329] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=MAH&dateComplete=23/09/2026
+          - article [ref=f3e333]:
+            - generic [ref=f3e334]:
+              - img "Palma (Mallorca)" [ref=f3e336]
+              - generic [ref=f3e338]: Conexión
+            - generic [ref=f3e342]:
+              - generic [ref=f3e343]:
+                - heading "Palma (Mallorca)" [level=2] [ref=f3e344]
+                - generic [ref=f3e345]: Conexión
+                - generic [ref=f3e346]: Desde61 €
+              - link "Reservar" [ref=f3e353] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/calendario-de-precios?originCalendar=MAD&destinationCalendar=PMI&dateComplete=06/12/2026
+        - generic:
+          - status
+      - generic [ref=f3e150]:
+        - generic [ref=f3e152]:
+          - paragraph [ref=f3e154]: Ya está aquí el nuevo Vueling Club
+          - generic [ref=f3e155]: Sube de nivel y desbloquea nuevas ventajas para viajar mejor, sigue acumulando Avios y descubre cómo volar gratis. Y además, ¡disfruta de promociones exclusivas!
+          - button "Apúntate gratis" [ref=f3e158] [cursor=pointer]
+        - generic [ref=f3e160]: ¡Estamos de estreno!
+      - generic [ref=f3e355]:
+        - heading "Completa tu viaje" [level=2] [ref=f3e360]
+        - generic [ref=f3e364]:
+          - generic [ref=f3e367]:
+            - generic [aria-hidden] [ref=f3e372]:
+              - generic [ref=f3e373]: 
+              - text: 
+            - generic [ref=f3e375]:
+              - generic [ref=f3e376]:
+                - heading "Tu alojamiento ideal" [level=2] [ref=f3e377]
+                - paragraph [ref=f3e378]: Aprovecha los descuentos de Vueling Hotels by Booking.com y suma 3 Avios por cada 1 €.
+                - generic [ref=f3e379]: avios
+              - link "RESERVAR ALOJAMIENTO" [ref=f3e383] [cursor=pointer]:
+                - /url: https://hotel.vueling.com/?aid=348292&label=pagenavtab-link-348292-click&lang=es
+          - generic [ref=f3e387]:
+            - generic [aria-hidden] [ref=f3e392]:
+              - generic [ref=f3e393]: 
+              - text: 
+            - generic [ref=f3e395]:
+              - generic [ref=f3e396]:
+                - heading "Coge el volante y explora" [level=2] [ref=f3e397]
+                - paragraph [ref=f3e398]: Compara entre un montón de opciones y precios con Vueling Cars y suma Avios.
+                - generic [ref=f3e399]: avios
+              - link "Alquilar coche" [ref=f3e403] [cursor=pointer]:
+                - /url: https://cars.vueling.com/es/?clientID=301259#/searchcars
+          - generic [ref=f3e407]:
+            - generic [aria-hidden] [ref=f3e412]:
+              - generic [ref=f3e413]: 
+              - text: 
+            - generic [ref=f3e415]:
+              - generic [ref=f3e416]:
+                - heading "Vuelo + hotel" [level=2] [ref=f3e417]
+                - paragraph [ref=f3e418]: Todo lo que necesitas para tus vacaciones en una sola reserva. Además, ¡consigue Avios extra!
+                - generic [ref=f3e419]: avios
+              - link "Buscar ofertas" [ref=f3e423] [cursor=pointer]:
+                - /url: https://holidays.vueling.com/es/?referralId=home_banner
+      - generic [ref=f3e427]:
+        - heading "¿NECESITAS IDEAS?" [level=2] [ref=f3e428]
+        - generic [ref=f3e430]:
+          - link "PARA URBANITAS" [ref=f3e431] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/reserva-tu-vuelo/destinos-urbanos-y-culturales
+          - link "¡A LA PLAYA!" [ref=f3e435] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/reserva-tu-vuelo/destinos-de-sol-y-playa
+          - link "FAMILIA" [ref=f3e439] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/ofertas-viajes-en-familia
+          - link "PLANES AL AIRE LIBRE" [ref=f3e443] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/reserva-tu-vuelo/destinos-de-naturaleza-y-rurales
+      - generic [ref=f3e447]:
+        - heading "Te puede interesar" [level=2] [ref=f3e452]
+        - generic [ref=f3e455]:
+          - link "first card img" [ref=f3e458] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/vuelos-baratos-a-logrono
+            - generic [ref=f3e459]:
+              - img "main card img"
+          - link "second card img" [ref=f3e462] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/vueling-club/vueling-visa
+            - generic [ref=f3e463]:
+              - img "middle card img"
+          - link "third card img" [ref=f3e466] [cursor=pointer]:
+            - /url: https://www.vueling.com/es/ciudades/vuelos-baratos-a-grancanaria
+            - generic [ref=f3e467]:
+              - img "last card img"
+      - generic [ref=f3e468]:
+        - heading "¿POR QUÉ RESERVAR A TRAVÉS DE NUESTRA WEB O APP?" [level=2] [ref=f3e473]
+        - generic [ref=f3e476]:
+          - generic [ref=f3e479]:
+            - generic [aria-hidden] [ref=f3e482]: 
+            - generic [ref=f3e483]:
+              - heading "Sin gastos de gestión" [level=3] [ref=f3e484]
+              - text: Ni por la reserva, ni por el método de pago.
+          - generic [ref=f3e487]:
+            - generic [aria-hidden] [ref=f3e490]: 
+            - generic [ref=f3e491]:
+              - heading "TE RESPONDEMOS" [level=3] [ref=f3e492]
+              - text: Si necesitas ayuda, habla directamente con nosotros.
+          - generic [ref=f3e495]:
+            - generic [aria-hidden] [ref=f3e498]: 
+            - generic [ref=f3e499]:
+              - heading "Suma Avios, vuela gratis" [level=3] [ref=f3e500]
+              - text: Únete a Vueling Club y disfruta de todas las ventajas.
+    - contentinfo [ref=f3e504]:
+      - generic [ref=f3e505]:
+        - generic [ref=f3e507]:
+          - generic [ref=f3e509]:
+            - generic [ref=f3e510]: 
+            - generic: 
+          - generic [ref=f3e511]:
+            - generic [ref=f3e512]:
+              - generic [ref=f3e513]:
+                - heading "CONÓCENOS" [level=2] [ref=f3e514]
+                - navigation "CONÓCENOS" [ref=f3e516]:
+                  - list [ref=f3e517]:
+                    - listitem [ref=f3e518]:
+                      - link "¿Quiénes somos?" [ref=f3e519] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sobre-nosotros
+                    - listitem [ref=f3e520]:
+                      - link "Sala de prensa" [ref=f3e521] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/somos-vueling/sala-de-prensa
+                    - listitem [ref=f3e522]:
+                      - link "Ciudades" [ref=f3e523] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sitemap/vuelos-por-ciudad/page-1
+                    - listitem [ref=f3e524]:
+                      - link "Países" [ref=f3e525] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sitemap/vuelos-por-pais/page-1
+                    - listitem [ref=f3e526]:
+                      - link "Black Friday" [ref=f3e527] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/busca-tu-vuelo/black-friday
+                    - listitem [ref=f3e528]:
+                      - link "Sostenibilidad" [ref=f3e529] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/sobre-nosotros/sostenibilidad
+                    - listitem [ref=f3e530]:
+                      - link "Trabaja con nosotros" [ref=f3e531] [cursor=pointer]:
+                        - /url: https://careers.vueling.com/
+              - generic [ref=f3e532]:
+                - heading "TE AYUDAMOS" [level=2] [ref=f3e533]
+                - navigation "TE AYUDAMOS" [ref=f3e535]:
+                  - list [ref=f3e536]:
+                    - listitem [ref=f3e537]:
+                      - link "Centro de ayuda" [ref=f3e538] [cursor=pointer]:
+                        - /url: https://help.vueling.com/hc/es
+                    - listitem [ref=f3e539]:
+                      - link "Tarifas de los servicios adicionales al vuelo" [ref=f3e540] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/servicios-vueling/tarifas-de-los-servicios-adicionales-al-vuelo
+                    - listitem [ref=f3e541]:
+                      - link "Por qué reservar en Vueling.com" [ref=f3e542] [cursor=pointer]:
+                        - /url: https://www.vueling.com/es/reserva-tu-vuelo/busca-tu-vuelo-al-mejor-precio
+                    - listitem [ref=f3e543]:
+                      - link "Accesibilidad" [ref=f3e544] [cursor=pointer]:
+                        - /url: https://help.vueling.com/hc/es/categories/19798714411665-Necesidades-especiales
+              - generic [ref=f3e545]:
+                - heading "PARA PROFESIONALES" [level=2] [ref=f3e546]
+                - navigation "PARA PROFESIONALES" [ref=f3e548]:
+                  - list [ref=f3e549]:
+                    - listitem [ref=f3e550]:
+                      - link "Agencias" [ref=f3e551] [cursor=pointer]:
+                        - /url: https://professionals.vueling.com/home
+                    - listitem [ref=f3e552]:
+                      - link "Grupos" [ref=f3e553] [cursor=pointer]:
+                        - /url: https://groups.vueling.com/web/es-ES/
+                    - listitem [ref=f3e554]:
+                      - link "Empresas" [ref=f3e555] [cursor=pointer]:
+                        - /url: https://professionals.vueling.com/home
+                    - listitem [ref=f3e556]:
+                      - link "Anúnciate con Vueling" [ref=f3e557] [cursor=pointer]:
+                        - /url: https://quivertree-media.com/contact-vueling
+            - generic [ref=f3e558]:
+              - generic [ref=f3e559]:
+                - heading "¿Quieres recibir más ofertas en tu email?" [level=2] [ref=f3e560]
+                - button "¡Apúntate!" [ref=f3e564] [cursor=pointer]
+              - generic [ref=f3e566]:
+                - generic [ref=f3e567]:
+                  - heading "Síguenos" [level=2] [ref=f3e568]
+                  - navigation "Síguenos" [ref=f3e571]:
+                    - list [ref=f3e572]:
+                      - listitem [ref=f3e573]:
+                        - link "Facebook" [ref=f3e574] [cursor=pointer]:
+                          - /url: https://www.facebook.com/Vueling/
+                          - generic [ref=f3e576]:
+                            - generic [aria-hidden] [ref=f3e577]: 
+                            - generic [ref=f3e578]: Facebook
+                      - listitem [ref=f3e579]:
+                        - link "YouTube" [ref=f3e580] [cursor=pointer]:
+                          - /url: https://www.youtube.com/@vueling
+                          - generic [ref=f3e582]:
+                            - generic [aria-hidden] [ref=f3e583]: 
+                            - generic [ref=f3e584]: YouTube
+                      - listitem [ref=f3e585]:
+                        - link "Instagram" [ref=f3e586] [cursor=pointer]:
+                          - /url: https://www.instagram.com/vueling/
+                          - generic [ref=f3e588]:
+                            - generic [aria-hidden] [ref=f3e589]: 
+                            - generic [ref=f3e590]: Instagram
+                      - listitem [ref=f3e591]:
+                        - link "X" [ref=f3e592] [cursor=pointer]:
+                          - /url: https://twitter.com/vueling?lang=es
+                          - generic [ref=f3e594]:
+                            - generic [aria-hidden] [ref=f3e595]: 
+                            - generic [ref=f3e596]: X
+                - generic [ref=f3e597]:
+                  - heading "Llévanos en tu móvil" [level=2] [ref=f3e598]
+                  - navigation "Llévanos en tu móvil" [ref=f3e601]:
+                    - list [ref=f3e602]:
+                      - listitem [ref=f3e603]:
+                        - link [ref=f3e604] [cursor=pointer]:
+                          - /url: https://play.google.com/store/apps/details?id=com.mo2o.vueling&hl=es
+                          - img "Obtener la aplicación de Vueling en Google Play" [ref=f3e605]
+                      - listitem [ref=f3e606]:
+                        - link [ref=f3e607] [cursor=pointer]:
+                          - /url: https://itunes.apple.com/es/app/vueling/id445818820?mt=8
+                          - img "Obtener la aplicación de Vueling en Apple Store" [ref=f3e608]
+        - paragraph [ref=f3e612]:
+          - img "Logo de Skytrax" [ref=f3e613]
+        - generic [ref=f3e615]:
+          - generic [ref=f3e616]: © 2026 Vueling Airlines SA
+          - navigation [ref=f3e619]:
+            - list [ref=f3e620]:
+              - listitem [ref=f3e621]:
+                - link "Contactus@vueling.com" [ref=f3e622] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/asistentes/quejas
+              - listitem [ref=f3e623]:
+                - link "Condiciones de uso de la web" [ref=f3e624] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-uso-del-sitio-web
+              - listitem [ref=f3e625]:
+                - link "Mapa web" [ref=f3e626] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/mapa-web
+              - listitem [ref=f3e627]:
+                - link "Política de cookies" [ref=f3e628] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-cookies
+              - listitem [ref=f3e629]:
+                - link "Política de privacidad" [ref=f3e630] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-privacidad
+              - listitem [ref=f3e631]:
+                - link "Condiciones de transporte" [ref=f3e632] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-transporte
+              - listitem [ref=f3e633]:
+                - link "Junta General de Accionistas" [ref=f3e634] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/aviso-legal-junta-de-accionistas
+              - listitem [ref=f3e635]:
+                - link "Declaración sobre esclavitud y tráfico de seres humanos" [ref=f3e636] [cursor=pointer]:
+                  - /url: https://www.iairgroup.com/media/wqmpghns/modern-slavery-statement-2025-final.pdf
+  - generic:
+    - generic:
+      - region "Chat window":
+        - button "Open chat" [ref=f3e189] [cursor=pointer]
+  - generic:     

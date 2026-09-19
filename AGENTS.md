@@ -112,6 +112,7 @@ Al ejecutar lint, además de corregir:
 - Cada skill lleva en su cabecera: fecha de creación, fecha de última revisión, y qué alternativa se descartó al crearla y por qué.
 - En la revisión periódica (durante el lint): comprobar si la skill sigue funcionando, si ha aparecido algo mejor, y sustituirla o retirarla, anotándolo en `areas/decisiones.md`.
 - Búsquedas y consultas en internet: usar `/investigar-web` (WebSearch → WebFetch) y, solo si eso falla de verdad, `/navegador-cdp` (Chrome real vía CDP). Ver `areas/entorno.md` para las herramientas ya montadas en esta máquina.
+- Compartir contexto entre sesiones (VSCode y CLI no comparten historial): usar `/exportar-sesion` y `/importar-sesion`. No hace falta escribir el comando — si el usuario dice "exporta esta conversación", "vuelca el chat" o similar, usar la skill directamente. Ver `areas/entorno.md`.
 
 ## Qué no hacer
 

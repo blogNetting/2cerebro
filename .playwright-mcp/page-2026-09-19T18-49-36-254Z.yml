@@ -1,0 +1,116 @@
+- generic [ref=f3e1]:
+  - generic [ref=f3e2]:
+    - banner [ref=f3e6]:
+      - link "Ir al contenido principal" [ref=f3e7] [cursor=pointer]:
+        - /url: "#main-content"
+      - text: 
+      - generic [ref=f3e8]:
+        - navigation "ds.header.main_menu.main_menu" [ref=f3e11]:
+          - list [ref=f3e12]:
+            - listitem [ref=f3e13]:
+              - button "Reservar" [ref=f3e14] [cursor=pointer]
+            - listitem [ref=f3e15]:
+              - button "Ofertas y Destinos" [ref=f3e16] [cursor=pointer]
+            - listitem [ref=f3e17]:
+              - link "Mis viajes" [ref=f3e18] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/manage?culture=es-ES
+            - listitem [ref=f3e19]:
+              - link "Check-in" [ref=f3e20] [cursor=pointer]:
+                - /url: https://tickets.vueling.com/checkin?c=es-ES
+            - listitem [ref=f3e21]:
+              - link "Estado vuelos" [ref=f3e22] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/servicios-vueling/informacion-de-vuelos/estado-de-vuelos
+        - link "ds.header.main_menu.logo" [ref=f3e24] [cursor=pointer]:
+          - /url: /es
+          - generic [ref=f3e26]:
+            - generic [ref=f3e27]: Vueling
+            - generic [aria-hidden] [ref=f3e28]:
+              - generic [ref=f3e29]: 
+              - text: 
+        - generic [ref=f3e30]:
+          - navigation "ds.header.main_menu.main_menu" [ref=f3e33]:
+            - list [ref=f3e34]:
+              - listitem [ref=f3e35]:
+                - button "Info viaje" [ref=f3e36] [cursor=pointer]
+              - listitem [ref=f3e37]:
+                - link "Ayuda" [ref=f3e38] [cursor=pointer]:
+                  - /url: https://help.vueling.com/hc/es
+              - listitem [ref=f3e39]:
+                - button "VUELING CLUB" [ref=f3e40] [cursor=pointer]
+          - button "es | EUR" [ref=f3e43] [cursor=pointer]: 
+          - button "Accede" [ref=f3e47] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f3e49]: 
+    - main [ref=f3e50]:
+      - generic [ref=f3e54]:
+        - list [ref=f3e56]:
+          - listitem [ref=f3e57]:
+            - generic [ref=f3e59]:
+              - generic [ref=f3e60]: VUELOS
+              - generic [aria-hidden] [ref=f3e61]: 
+          - listitem [ref=f3e62]:
+            - link "Vuelo + hotel" [ref=f3e65] [cursor=pointer]:
+              - /url: https://holidays.vueling.com/es/?referralId=home_searchbox
+              - generic [aria-hidden] [ref=f3e67]: 
+          - listitem [ref=f3e68]:
+            - link "hoteles" [ref=f3e71] [cursor=pointer]:
+              - /url: https://hotel.vueling.com/?aid=348292&label=pagesbtab-sbx-348292-click&lang=es
+              - generic [aria-hidden] [ref=f3e73]: 
+          - listitem [ref=f3e74]:
+            - link "coches" [ref=f3e77] [cursor=pointer]:
+              - /url: https://cars.vueling.com/es/?clientID=198383#/searchcars
+              - generic [aria-hidden] [ref=f3e79]: 
+        - generic [ref=f3e84]:
+          - generic [ref=f3e86]:
+            - generic [ref=f3e92]:
+              - generic "De" [ref=f3e93] [cursor=pointer]
+              - generic [ref=f3e94]: MAD
+              - combobox "De" [ref=f3e95] [cursor=pointer]: Madrid
+            - generic [ref=f3e101]:
+              - generic "A" [ref=f3e102] [cursor=pointer]
+              - combobox "A" [ref=f3e103] [cursor=pointer]
+          - generic [ref=f3e104]:
+            - generic [ref=f3e108]:
+              - generic [ref=f3e111]:
+                - generic "Ida" [ref=f3e112] [cursor=pointer]
+                - combobox "Ida" [ref=f3e113] [cursor=pointer]
+              - generic [ref=f3e116]:
+                - generic "Vuelta" [ref=f3e117] [cursor=pointer]
+                - combobox "Vuelta" [ref=f3e118] [cursor=pointer]
+            - generic [ref=f3e124]:
+              - generic "Pasajero" [ref=f3e125] [cursor=pointer]: 1 Adulto , 0 Niños , 0 Bebés
+              - combobox "Pasajero" [ref=f3e126] [cursor=pointer]: 1 Pasajero
+          - button "Buscar" [ref=f3e130] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f3e131]: Buscar
+      - status [ref=f3e138]
+      - status [ref=f3e143]
+      - generic [ref=f3e150]:
+        - generic [ref=f3e152]:
+          - paragraph [ref=f3e154]: Ya está aquí el nuevo Vueling Club
+          - generic [ref=f3e155]: Sube de nivel y desbloquea nuevas ventajas para viajar mejor, sigue acumulando Avios y descubre cómo volar gratis. Y además, ¡disfruta de promociones exclusivas!
+          - button "Apúntate gratis" [ref=f3e158] [cursor=pointer]
+        - generic [ref=f3e160]: ¡Estamos de estreno!
+      - status [ref=f3e172]
+      - status [ref=f3e177]
+      - status [ref=f3e182]
+      - status [ref=f3e187]
+  - generic:
+    - generic:
+      - region "Chat window":
+        - button "Open chat" [ref=f3e189] [cursor=pointer]
+  - generic:
+    - alertdialog "Política de cookies" [ref=f3e193]:
+      - generic [ref=f3e194]:
+        - generic [ref=f3e195]:
+          - generic:
+            - heading "Política de cookies" [level=2] [ref=f3e196]
+            - paragraph [ref=f3e197]:
+              - text: Utilizamos cookies propias y de terceros con fines analíticos, de personalización y de publicidad, para mostrarte ofertas personalizadas sobre productos nuestros y de terceros, tanto en nuestra web como fuera de ella, relacionadas con tus preferencias en base a un perfil elaborado a partir de tus hábitos de navegación. Para más información puedes leer nuestra
+              - link "Más información sobre su privacidad, se abre en una nueva pestaña" [ref=f3e198] [cursor=pointer]:
+                - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-cookies
+                - text: Política de cookies
+        - generic [ref=f3e200]:
+          - generic [ref=f3e201]:
+            - button "Prefiero rechazarlas" [ref=f3e202] [cursor=pointer]
+            - button "OK, las acepto" [ref=f3e203] [cursor=pointer]
+          - button "Quiero configurarlas" [ref=f3e204] [cursor=pointer]
+    - text:     

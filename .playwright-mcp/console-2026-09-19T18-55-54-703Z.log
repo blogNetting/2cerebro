@@ -1,0 +1,6 @@
+[   -3098ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/assets/styles/spinner.css' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -3098ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/assets/styles/spinner.css:0
+[   -3087ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/corporativeCMS/WebComponents/home/browser/landing.css?v=639254407600634096' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -3087ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/corporativeCMS/WebComponents/home/browser/landing.css?v=639254407600634096:0
+[   -3087ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/corporativeCMS/WebComponents/home/browser/blog.css?v=639254407600634183' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -3087ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/corporativeCMS/WebComponents/home/browser/blog.css?v=639254407600634183:0

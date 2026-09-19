@@ -1,0 +1,11 @@
+[   -4330ms] [LOG] [SocketClient] Enabling "forceWebsockets" by default for compatibility with this environment. @ https://static.vueling.com/Chatbots/VY/V4/JS/common/webchat.js:4
+[   -3781ms] [INFO] Everymundo - adnetify loaded and ready @ https://em-frontend-assets.airtrfx.com/mm/x-start.js:12
+[   -1253ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/assets/styles/spinner.css' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -1253ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/assets/styles/spinner.css:0
+[   -1175ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/corporativeCMS/WebComponents/home/browser/home.css?v=639254390759872151' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -1175ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/corporativeCMS/WebComponents/home/browser/home.css?v=639254390759872151:0
+[   -1174ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/Chatbots/VY/V3/styles/common/common-styles.css' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[   -1174ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/Chatbots/VY/V3/styles/common/common-styles.css:0
+[    -996ms] [ERROR] Access to CSS stylesheet at 'https://static.vueling.com/Chatbots/VY/V3/styles/custom/bubble/index.css' from origin 'https://www.vueling.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ about:blank:0
+[    -996ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://static.vueling.com/Chatbots/VY/V3/styles/custom/bubble/index.css:0
+[  112918ms] [LOG] DL push no suggestions: origin Santiago @ https://cdn.quantummetric.com/qscripts/quantum-vueling.js:129
