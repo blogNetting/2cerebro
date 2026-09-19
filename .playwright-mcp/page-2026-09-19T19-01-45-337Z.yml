@@ -1,0 +1,7 @@
+- generic:
+  - generic:
+    - generic:
+      - status:
+        - generic [ref=f180e1]:
+          - generic [ref=f180e2]: Cargando...
+          - paragraph [ref=f180e6]: Cargando...

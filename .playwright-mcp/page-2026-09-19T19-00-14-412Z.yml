@@ -1,0 +1,1024 @@
+- generic [ref=f106e7]:
+  - generic [ref=f106e8]:
+    - generic:
+      - status
+    - generic [ref=f106e11]:
+      - generic [ref=f106e12]:
+        - banner [ref=f106e16]:
+          - generic [ref=f106e17]:
+            - link "Ir a la página de inicio" [ref=f106e19] [cursor=pointer]:
+              - /url: https://www.vueling.com/
+              - generic [ref=f106e21]:
+                - generic [ref=f106e22]: Vueling
+                - generic [aria-hidden] [ref=f106e23]:
+                  - generic [ref=f106e24]: 
+                  - text: 
+            - generic [ref=f106e25]:
+              - button "es | EUR" [ref=f106e28] [cursor=pointer]: 
+              - button "Accede" [ref=f106e32] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f106e34]: 
+              - button "Detalles de la compra Ver el resumen de tu reserva. Detalles de la compra0,0" [ref=f106e36] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f106e37]: 
+                - generic [ref=f106e38]: Ver el resumen de tu reserva. Detalles de la compra0,0
+                - generic [ref=f106e39]: Detalles de la compra
+        - list "Pasos del proceso de compra" [ref=f106e44]:
+          - listitem [ref=f106e45]:
+            - button "Vuelos" [pressed] [ref=f106e46] [cursor=pointer]:
+              - generic [ref=f106e48]:
+                - generic [aria-hidden] [ref=f106e52]: 
+                - generic [ref=f106e53]: Vuelos
+            - generic [aria-hidden] [ref=f106e58]: 
+          - listitem [ref=f106e59]:
+            - button "Datos" [disabled] [ref=f106e60]:
+              - generic [ref=f106e62]:
+                - generic [aria-hidden] [ref=f106e66]: 
+                - generic [ref=f106e67]: Datos
+          - listitem [ref=f106e71]:
+            - button "Asientos" [disabled] [ref=f106e72]:
+              - generic [ref=f106e74]:
+                - generic [aria-hidden] [ref=f106e78]: 
+                - generic [ref=f106e79]: Asientos
+          - listitem [ref=f106e83]:
+            - button "Equipaje" [disabled] [ref=f106e84]:
+              - generic [ref=f106e86]:
+                - generic [aria-hidden] [ref=f106e90]: 
+                - generic [ref=f106e91]: Equipaje
+          - listitem [ref=f106e95]:
+            - button "Extras" [disabled] [ref=f106e96]:
+              - generic [ref=f106e98]:
+                - generic [aria-hidden] [ref=f106e102]: 
+                - generic [ref=f106e103]: Extras
+          - listitem [ref=f106e107]:
+            - button "Pago" [disabled] [ref=f106e108]:
+              - generic [ref=f106e110]:
+                - generic [aria-hidden] [ref=f106e114]: 
+                - generic [ref=f106e115]: Pago
+      - main [ref=f106e120]:
+        - generic [ref=f106e122]:
+          - heading "Selecciona tu vuelo" [level=1] [ref=f106e124]
+          - generic [ref=f106e129]:
+            - generic [ref=f106e131]:
+              - heading "¿Eres residente o familia numerosa?" [level=2] [ref=f106e132]
+              - button "Más información sobre los descuentos para residentes y familias numerosas." [ref=f106e134] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f106e137]: 
+            - generic [ref=f106e139]:
+              - button "Has seleccionado Sin descuento" [ref=f106e141] [cursor=pointer]:
+                - generic [ref=f106e142]: Has seleccionado
+                - generic [ref=f106e143]: Sin descuento
+                - generic [aria-hidden] [ref=f106e146]: 
+              - alert
+          - generic [ref=f106e150]:
+            - generic [ref=f106e151]:
+              - generic [ref=f106e152]:
+                - 'heading "Ida: Santiago - Sevilla" [level=2] [ref=f106e153]':
+                  - generic [ref=f106e156]:
+                    - generic [aria-hidden] [ref=f106e159]: 
+                    - generic [ref=f106e160]: "Ida: Santiago - Sevilla"
+                - generic [ref=f106e161]:
+                  - text: Solo ida •
+                  - generic [ref=f106e162]: 1 Adulto
+              - button "Editar búsqueda" [ref=f106e164] [cursor=pointer]:
+                - generic [aria-hidden] [ref=f106e166]: 
+            - generic [ref=f106e167]:
+              - generic:
+                - status
+              - application [ref=f106e173]:
+                - button "Ver días anteriores" [ref=f106e174] [cursor=pointer]:
+                  - generic [ref=f106e176]:
+                    - generic [aria-hidden] [ref=f106e177]: 
+                    - generic [ref=f106e178]: Ver días anteriores
+                - list [ref=f106e180]:
+                  - listitem [aria-hidden] [ref=f106e181]
+                  - listitem [aria-hidden] [ref=f106e182]
+                  - listitem [aria-hidden] [ref=f106e183]
+                  - listitem [aria-hidden] [ref=f106e184] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e185] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e186] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e187] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e188] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e189] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e190] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e191] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e192] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e193] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e194] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e195] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e196] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e197] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e198] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e199] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e200] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e201] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e202] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e203] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e204] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e205] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e206] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e207] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e208] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e209] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e210] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e211] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e212] [cursor=pointer]
+                  - listitem [ref=f106e213] [cursor=pointer]:
+                    - button "dom 18 oct" [ref=f106e214]
+                  - listitem [ref=f106e216] [cursor=pointer]:
+                    - button "lun 19 oct" [ref=f106e217]
+                  - listitem [ref=f106e219] [cursor=pointer]:
+                    - button "mar 20 oct" [ref=f106e220]
+                  - listitem [ref=f106e222]:
+                    - button "mié 21 oct" [pressed] [ref=f106e223]
+                  - listitem [ref=f106e225] [cursor=pointer]:
+                    - button "jue 22 oct" [ref=f106e226]
+                  - listitem [ref=f106e228] [cursor=pointer]:
+                    - button "vie 23 oct" [ref=f106e229]
+                  - listitem [ref=f106e231] [cursor=pointer]:
+                    - button "sáb 24 oct" [ref=f106e232]
+                  - listitem [aria-hidden] [ref=f106e234] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e235] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e236] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e237] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e238] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e239] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e240] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e241] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e242] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e243] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e244] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e245] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e246] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e247] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e248] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e249] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e250] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e251] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e252] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e253] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e254] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e255] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e256] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e257] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e258] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e259] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e260] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e261] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e262] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e263] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e264] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e265] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e266] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e267] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e268] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e269] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e270] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e271] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e272] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e273] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e274] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e275] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e276] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e277] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e278] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e279] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e280] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e281] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e282] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e283] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e284] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e285] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e286] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e287] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e288] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e289] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e290] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e291] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e292] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e293] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e294] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e295] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e296] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e297] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e298] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e299] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e300] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e301] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e302] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e303] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e304] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e305] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e306] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e307] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e308] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e309] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e310] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e311] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e312] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e313] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e314] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e315] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e316] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e317] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e318] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e319] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e320] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e321] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e322] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e323] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e324] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e325] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e326] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e327] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e328] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e329] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e330] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e331] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e332] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e333] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e334] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e335] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e336] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e337] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e338] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e339] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e340] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e341] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e342] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e343] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e344] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e345] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e346] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e347] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e348] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e349] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e350] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e351] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e352] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e353] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e354] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e355] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e356] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e357] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e358] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e359] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e360] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e361] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e362] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e363] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e364] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e365] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e366] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e367] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e368] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e369] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e370] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e371] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e372] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e373] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e374] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e375] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e376] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e377] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e378] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e379] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e380] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e381] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e382] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e383] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e384] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e385] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e386] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e387] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e388] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e389] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e390] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e391] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e392] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e393] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e394] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e395] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e396] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e397] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e398] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e399] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e400] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e401] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e402] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e403] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e404] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e405] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e406] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e407] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e408] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e409] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e410] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e411] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e412] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e413] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e414] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e415] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e416] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e417] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e418] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e419] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e420] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e421] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e422] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e423] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e424] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e425] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e426] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e427] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e428] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e429] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e430] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e431] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e432] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e433] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e434] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e435] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e436] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e437] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e438] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e439] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e440] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e441] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e442] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e443] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e444] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e445] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e446] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e447] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e448] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e449] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e450] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e451] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e452] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e453] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e454] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e455] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e456] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e457] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e458] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e459] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e460] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e461] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e462] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e463] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e464] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e465] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e466] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e467] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e468] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e469] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e470] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e471] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e472] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e473] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e474] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e475] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e476] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e477] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e478] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e479] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e480] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e481] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e482] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e483] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e484] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e485] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e486] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e487] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e488] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e489] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e490] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e491] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e492] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e493] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e494] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e495] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e496] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e497] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e498] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e499] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e500] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e501] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e502] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e503] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e504] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e505] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e506] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e507] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e508] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e509] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e510] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e511] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e512] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e513] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e514] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e515] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e516] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e517] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e518] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e519] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e520] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e521] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e522] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e523] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e524] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e525] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e526] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e527] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e528] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e529] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e530] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e531] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e532] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e533] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e534] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e535] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e536] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e537] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e538] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e539] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e540] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e541] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e542] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e543] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e544] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e545] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e546] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e547] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e548] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e549] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e550] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e551] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e552] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e553] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e554] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e555] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e556] [cursor=pointer]
+                  - listitem [aria-hidden] [ref=f106e557]
+                  - listitem [aria-hidden] [ref=f106e558]
+                  - listitem [aria-hidden] [ref=f106e559]
+                  - listitem [aria-hidden] [ref=f106e560]
+                  - listitem [aria-hidden] [ref=f106e561]
+                  - listitem [aria-hidden] [ref=f106e562]
+                  - listitem [aria-hidden] [ref=f106e563]
+                  - listitem [aria-hidden] [ref=f106e564]
+                  - listitem [aria-hidden] [ref=f106e565]
+                  - listitem [aria-hidden] [ref=f106e566]
+                  - listitem [aria-hidden] [ref=f106e567]
+                  - listitem [aria-hidden] [ref=f106e568]
+                  - listitem [aria-hidden] [ref=f106e569]
+                  - listitem [aria-hidden] [ref=f106e570]
+                  - listitem [aria-hidden] [ref=f106e571]
+                  - listitem [aria-hidden] [ref=f106e572]
+                  - listitem [aria-hidden] [ref=f106e573]
+                  - listitem [aria-hidden] [ref=f106e574]
+                  - listitem [aria-hidden] [ref=f106e575]
+                  - listitem [aria-hidden] [ref=f106e576]
+                  - listitem [aria-hidden] [ref=f106e577]
+                  - listitem [aria-hidden] [ref=f106e578]
+                  - listitem [aria-hidden] [ref=f106e579]
+                  - listitem [aria-hidden] [ref=f106e580]
+                  - listitem [aria-hidden] [ref=f106e581]
+                  - listitem [aria-hidden] [ref=f106e582]
+                  - listitem [aria-hidden] [ref=f106e583]
+                  - listitem [aria-hidden] [ref=f106e584]
+                  - listitem [aria-hidden] [ref=f106e585]
+                  - listitem [aria-hidden] [ref=f106e586]
+                  - listitem [aria-hidden] [ref=f106e587]
+                  - listitem [aria-hidden] [ref=f106e588]
+                  - listitem [aria-hidden] [ref=f106e589]
+                  - listitem [aria-hidden] [ref=f106e590]
+                  - listitem [aria-hidden] [ref=f106e591]
+                  - listitem [aria-hidden] [ref=f106e592]
+                  - listitem [aria-hidden] [ref=f106e593]
+                  - listitem [aria-hidden] [ref=f106e594]
+                  - listitem [aria-hidden] [ref=f106e595]
+                  - listitem [aria-hidden] [ref=f106e596]
+                  - listitem [aria-hidden] [ref=f106e597]
+                  - listitem [aria-hidden] [ref=f106e598]
+                  - listitem [aria-hidden] [ref=f106e599]
+                  - listitem [aria-hidden] [ref=f106e600]
+                  - listitem [aria-hidden] [ref=f106e601]
+                  - listitem [aria-hidden] [ref=f106e602]
+                  - listitem [aria-hidden] [ref=f106e603]
+                  - listitem [aria-hidden] [ref=f106e604]
+                  - listitem [aria-hidden] [ref=f106e605]
+                  - listitem [aria-hidden] [ref=f106e606]
+                  - listitem [aria-hidden] [ref=f106e607]
+                  - listitem [aria-hidden] [ref=f106e608]
+                  - listitem [aria-hidden] [ref=f106e609]
+                  - listitem [aria-hidden] [ref=f106e610]
+                  - listitem [aria-hidden] [ref=f106e611]
+                  - listitem [aria-hidden] [ref=f106e612]
+                  - listitem [aria-hidden] [ref=f106e613]
+                  - listitem [aria-hidden] [ref=f106e614]
+                  - listitem [aria-hidden] [ref=f106e615]
+                  - listitem [aria-hidden] [ref=f106e616]
+                  - listitem [aria-hidden] [ref=f106e617]
+                  - listitem [aria-hidden] [ref=f106e618]
+                  - listitem [aria-hidden] [ref=f106e619]
+                  - listitem [aria-hidden] [ref=f106e620]
+                  - listitem [aria-hidden] [ref=f106e621]
+                  - listitem [aria-hidden] [ref=f106e622]
+                  - listitem [aria-hidden] [ref=f106e623]
+                  - listitem [aria-hidden] [ref=f106e624]
+                  - listitem [aria-hidden] [ref=f106e625]
+                  - listitem [aria-hidden] [ref=f106e626]
+                  - listitem [aria-hidden] [ref=f106e627]
+                  - listitem [aria-hidden] [ref=f106e628]
+                  - listitem [aria-hidden] [ref=f106e629]
+                  - listitem [aria-hidden] [ref=f106e630]
+                  - listitem [aria-hidden] [ref=f106e631]
+                  - listitem [aria-hidden] [ref=f106e632]
+                  - listitem [aria-hidden] [ref=f106e633]
+                  - listitem [aria-hidden] [ref=f106e634]
+                  - listitem [aria-hidden] [ref=f106e635]
+                  - listitem [aria-hidden] [ref=f106e636]
+                  - listitem [aria-hidden] [ref=f106e637]
+                  - listitem [aria-hidden] [ref=f106e638]
+                  - listitem [aria-hidden] [ref=f106e639]
+                  - listitem [aria-hidden] [ref=f106e640]
+                  - listitem [aria-hidden] [ref=f106e641]
+                  - listitem [aria-hidden] [ref=f106e642]
+                  - listitem [aria-hidden] [ref=f106e643]
+                  - listitem [aria-hidden] [ref=f106e644]
+                  - listitem [aria-hidden] [ref=f106e645]
+                  - listitem [aria-hidden] [ref=f106e646]
+                  - listitem [aria-hidden] [ref=f106e647]
+                  - listitem [aria-hidden] [ref=f106e648]
+                  - listitem [aria-hidden] [ref=f106e649]
+                  - listitem [aria-hidden] [ref=f106e650]
+                  - listitem [aria-hidden] [ref=f106e651]
+                  - listitem [aria-hidden] [ref=f106e652]
+                  - listitem [aria-hidden] [ref=f106e653]
+                  - listitem [aria-hidden] [ref=f106e654]
+                  - listitem [aria-hidden] [ref=f106e655]
+                  - listitem [aria-hidden] [ref=f106e656]
+                  - listitem [aria-hidden] [ref=f106e657]
+                  - listitem [aria-hidden] [ref=f106e658]
+                  - listitem [aria-hidden] [ref=f106e659]
+                  - listitem [aria-hidden] [ref=f106e660]
+                  - listitem [aria-hidden] [ref=f106e661]
+                  - listitem [aria-hidden] [ref=f106e662]
+                  - listitem [aria-hidden] [ref=f106e663]
+                  - listitem [aria-hidden] [ref=f106e664]
+                  - listitem [aria-hidden] [ref=f106e665]
+                  - listitem [aria-hidden] [ref=f106e666]
+                  - listitem [aria-hidden] [ref=f106e667]
+                  - listitem [aria-hidden] [ref=f106e668]
+                  - listitem [aria-hidden] [ref=f106e669]
+                  - listitem [aria-hidden] [ref=f106e670]
+                  - listitem [aria-hidden] [ref=f106e671]
+                  - listitem [aria-hidden] [ref=f106e672]
+                  - listitem [aria-hidden] [ref=f106e673]
+                  - listitem [aria-hidden] [ref=f106e674]
+                  - listitem [aria-hidden] [ref=f106e675]
+                  - listitem [aria-hidden] [ref=f106e676]
+                  - listitem [aria-hidden] [ref=f106e677]
+                  - listitem [aria-hidden] [ref=f106e678]
+                  - listitem [aria-hidden] [ref=f106e679]
+                  - listitem [aria-hidden] [ref=f106e680]
+                  - listitem [aria-hidden] [ref=f106e681]
+                  - listitem [aria-hidden] [ref=f106e682]
+                  - listitem [aria-hidden] [ref=f106e683]
+                  - listitem [aria-hidden] [ref=f106e684]
+                  - listitem [aria-hidden] [ref=f106e685]
+                  - listitem [aria-hidden] [ref=f106e686]
+                  - listitem [aria-hidden] [ref=f106e687]
+                  - listitem [aria-hidden] [ref=f106e688]
+                  - listitem [aria-hidden] [ref=f106e689]
+                  - listitem [aria-hidden] [ref=f106e690]
+                  - listitem [aria-hidden] [ref=f106e691]
+                  - listitem [aria-hidden] [ref=f106e692]
+                  - listitem [aria-hidden] [ref=f106e693]
+                  - listitem [aria-hidden] [ref=f106e694]
+                  - listitem [aria-hidden] [ref=f106e695]
+                  - listitem [aria-hidden] [ref=f106e696]
+                  - listitem [aria-hidden] [ref=f106e697]
+                  - listitem [aria-hidden] [ref=f106e698]
+                  - listitem [aria-hidden] [ref=f106e699]
+                  - listitem [aria-hidden] [ref=f106e700]
+                  - listitem [aria-hidden] [ref=f106e701]
+                  - listitem [aria-hidden] [ref=f106e702]
+                  - listitem [aria-hidden] [ref=f106e703]
+                  - listitem [aria-hidden] [ref=f106e704]
+                  - listitem [aria-hidden] [ref=f106e705]
+                  - listitem [aria-hidden] [ref=f106e706]
+                  - listitem [aria-hidden] [ref=f106e707]
+                  - listitem [aria-hidden] [ref=f106e708]
+                  - listitem [aria-hidden] [ref=f106e709]
+                  - listitem [aria-hidden] [ref=f106e710]
+                  - listitem [aria-hidden] [ref=f106e711]
+                  - listitem [aria-hidden] [ref=f106e712]
+                  - listitem [aria-hidden] [ref=f106e713]
+                  - listitem [aria-hidden] [ref=f106e714]
+                  - listitem [aria-hidden] [ref=f106e715]
+                  - listitem [aria-hidden] [ref=f106e716]
+                  - listitem [aria-hidden] [ref=f106e717]
+                  - listitem [aria-hidden] [ref=f106e718]
+                  - listitem [aria-hidden] [ref=f106e719]
+                  - listitem [aria-hidden] [ref=f106e720]
+                  - listitem [aria-hidden] [ref=f106e721]
+                  - listitem [aria-hidden] [ref=f106e722]
+                  - listitem [aria-hidden] [ref=f106e723]
+                  - listitem [aria-hidden] [ref=f106e724]
+                  - listitem [aria-hidden] [ref=f106e725]
+                  - listitem [aria-hidden] [ref=f106e726]
+                  - listitem [aria-hidden] [ref=f106e727]
+                  - listitem [aria-hidden] [ref=f106e728]
+                  - listitem [aria-hidden] [ref=f106e729]
+                - button "Ver días posteriores" [ref=f106e730] [cursor=pointer]:
+                  - generic [ref=f106e732]:
+                    - generic [aria-hidden] [ref=f106e733]: 
+                    - generic [ref=f106e734]: Ver días posteriores
+              - list [ref=f106e736]:
+                - listitem [ref=f106e737]:
+                  - generic [ref=f106e743]:
+                    - generic [ref=f106e744]:
+                      - generic [ref=f106e746]:
+                        - generic [ref=f106e747]:
+                          - generic [ref=f106e748]: 14:50
+                          - generic [ref=f106e749]: SCQ Santiago
+                        - button "Ver los detalles del vuelo directo" [ref=f106e754] [cursor=pointer]:
+                          - generic [aria-hidden] [ref=f106e755]: Directo
+                          - generic [aria-hidden] [ref=f106e758]: 
+                        - generic [ref=f106e760]:
+                          - generic [ref=f106e761]: Sevilla SVQ
+                          - generic [ref=f106e763]: 16:10
+                      - generic [ref=f106e767]:
+                        - generic [ref=f106e769]:
+                          - generic [aria-hidden] [ref=f106e770]:
+                            - generic [ref=f106e771]: 
+                            - text: 
+                          - generic [ref=f106e772]: Vueling
+                        - generic [ref=f106e773]: VY6369
+                    - generic [ref=f106e775]:
+                      - button "Seleccionar vuelo por 57 EUR VY6369 14:50 16:10" [ref=f106e777] [cursor=pointer]:
+                        - generic [ref=f106e778]: Seleccionar vuelo por 57 EUR
+                        - generic [ref=f106e779]: 57 €
+                      - generic [ref=f106e784]: 4 últimas plazas a este precio
+                - listitem [ref=f106e785]:
+                  - generic [ref=f106e791]:
+                    - generic [ref=f106e792]:
+                      - generic [ref=f106e794]:
+                        - generic [ref=f106e795]:
+                          - generic [ref=f106e796]: 21:40
+                          - generic [ref=f106e797]: SCQ Santiago
+                        - button "Ver los detalles del vuelo directo" [ref=f106e802] [cursor=pointer]:
+                          - generic [aria-hidden] [ref=f106e803]: Directo
+                          - generic [aria-hidden] [ref=f106e806]: 
+                        - generic [ref=f106e808]:
+                          - generic [ref=f106e809]: Sevilla SVQ
+                          - generic [ref=f106e811]: 23:05
+                      - generic [ref=f106e815]:
+                        - generic [ref=f106e817]:
+                          - generic [aria-hidden] [ref=f106e818]:
+                            - generic [ref=f106e819]: 
+                            - text: 
+                          - generic [ref=f106e820]: Vueling
+                        - generic [ref=f106e821]: VY6367
+                    - button "Seleccionar vuelo por 53 EUR VY6367 21:40 23:05" [ref=f106e825] [cursor=pointer]:
+                      - generic [ref=f106e826]: Seleccionar vuelo por 53 EUR
+                      - generic [ref=f106e827]: 53 €
+                - listitem [ref=f106e832]:
+                  - generic [ref=f106e838]:
+                    - generic [ref=f106e839]:
+                      - generic [ref=f106e841]:
+                        - generic [ref=f106e842]:
+                          - generic [ref=f106e843]: 06:35
+                          - generic [ref=f106e844]: SCQ Santiago
+                        - 'button "Conexión en BCN: 50 min" [ref=f106e849] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e853]: 
+                        - generic [ref=f106e856]:
+                          - generic [ref=f106e857]: Sevilla SVQ
+                          - generic [ref=f106e859]: 10:50
+                      - generic [ref=f106e861]:
+                        - generic [ref=f106e863]:
+                          - generic [ref=f106e865]:
+                            - generic [aria-hidden] [ref=f106e866]:
+                              - generic [ref=f106e867]: 
+                              - text: 
+                            - generic [ref=f106e868]: Vueling
+                          - generic [ref=f106e869]: VY1670
+                        - generic [ref=f106e871]:
+                          - generic [ref=f106e873]:
+                            - generic [aria-hidden] [ref=f106e874]:
+                              - generic [ref=f106e875]: 
+                              - text: 
+                            - generic [ref=f106e876]: Vueling
+                          - generic [ref=f106e877]: VY2212
+                    - button "Seleccionar vuelo por 137 EUR VY1670 VY2212 06:35 10:50" [ref=f106e881] [cursor=pointer]:
+                      - generic [ref=f106e882]: Seleccionar vuelo por 137 EUR
+                      - generic [ref=f106e883]: 137 €
+                - listitem [ref=f106e888]:
+                  - generic [ref=f106e894]:
+                    - generic [ref=f106e895]:
+                      - generic [ref=f106e897]:
+                        - generic [ref=f106e898]:
+                          - generic [ref=f106e899]: 06:35
+                          - generic [ref=f106e900]: SCQ Santiago
+                        - 'button "Conexión en BCN: 1 h 45 min" [ref=f106e905] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e909]: 
+                        - generic [ref=f106e912]:
+                          - generic [ref=f106e913]: Sevilla SVQ
+                          - generic [ref=f106e915]: 11:45
+                      - generic [ref=f106e917]:
+                        - generic [ref=f106e919]:
+                          - generic [ref=f106e921]:
+                            - generic [aria-hidden] [ref=f106e922]:
+                              - generic [ref=f106e923]: 
+                              - text: 
+                            - generic [ref=f106e924]: Vueling
+                          - generic [ref=f106e925]: VY1670
+                        - generic [ref=f106e927]:
+                          - generic [ref=f106e929]:
+                            - generic [aria-hidden] [ref=f106e930]:
+                              - generic [ref=f106e931]: 
+                              - text: 
+                            - generic [ref=f106e932]: Vueling
+                          - generic [ref=f106e933]: VY2224
+                    - generic [ref=f106e935]:
+                      - button "Seleccionar vuelo por 118 EUR VY1670 VY2224 06:35 11:45" [ref=f106e937] [cursor=pointer]:
+                        - generic [ref=f106e938]: Seleccionar vuelo por 118 EUR
+                        - generic [ref=f106e939]: 118 €
+                      - generic [ref=f106e944]: 4 últimas plazas a este precio
+                - listitem [ref=f106e945]:
+                  - generic [ref=f106e951]:
+                    - generic [ref=f106e952]:
+                      - generic [ref=f106e954]:
+                        - generic [ref=f106e955]:
+                          - generic [ref=f106e956]: 06:35
+                          - generic [ref=f106e957]: SCQ Santiago
+                        - 'button "Conexión en BCN: 3 h 50 min" [ref=f106e962] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e966]: 
+                        - generic [ref=f106e969]:
+                          - generic [ref=f106e970]: Sevilla SVQ
+                          - generic [ref=f106e972]: 13:50
+                      - generic [ref=f106e974]:
+                        - generic [ref=f106e976]:
+                          - generic [ref=f106e978]:
+                            - generic [aria-hidden] [ref=f106e979]:
+                              - generic [ref=f106e980]: 
+                              - text: 
+                            - generic [ref=f106e981]: Vueling
+                          - generic [ref=f106e982]: VY1670
+                        - generic [ref=f106e984]:
+                          - generic [ref=f106e986]:
+                            - generic [aria-hidden] [ref=f106e987]:
+                              - generic [ref=f106e988]: 
+                              - text: 
+                            - generic [ref=f106e989]: Vueling
+                          - generic [ref=f106e990]: VY2218
+                    - generic [ref=f106e992]:
+                      - button "Seleccionar vuelo por 126 EUR VY1670 VY2218 06:35 13:50" [ref=f106e994] [cursor=pointer]:
+                        - generic [ref=f106e995]: Seleccionar vuelo por 126 EUR
+                        - generic [ref=f106e996]: 126 €
+                      - generic [ref=f106e1001]: 2 últimas plazas a este precio
+                - listitem [ref=f106e1002]:
+                  - generic [ref=f106e1008]:
+                    - generic [ref=f106e1009]:
+                      - generic [ref=f106e1011]:
+                        - generic [ref=f106e1012]:
+                          - generic [ref=f106e1013]: 06:35
+                          - generic [ref=f106e1014]: SCQ Santiago
+                        - 'button "Conexión en BCN: 4 h 45 min" [ref=f106e1019] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1023]: 
+                        - generic [ref=f106e1026]:
+                          - generic [ref=f106e1027]: Sevilla SVQ
+                          - generic [ref=f106e1029]: 14:45
+                      - generic [ref=f106e1031]:
+                        - generic [ref=f106e1033]:
+                          - generic [ref=f106e1035]:
+                            - generic [aria-hidden] [ref=f106e1036]:
+                              - generic [ref=f106e1037]: 
+                              - text: 
+                            - generic [ref=f106e1038]: Vueling
+                          - generic [ref=f106e1039]: VY1670
+                        - generic [ref=f106e1041]:
+                          - generic [ref=f106e1043]:
+                            - generic [aria-hidden] [ref=f106e1044]:
+                              - generic [ref=f106e1045]: 
+                              - text: 
+                            - generic [ref=f106e1046]: Vueling
+                          - generic [ref=f106e1047]: VY2226
+                    - generic [ref=f106e1049]:
+                      - button "Seleccionar vuelo por 118 EUR VY1670 VY2226 06:35 14:45" [ref=f106e1051] [cursor=pointer]:
+                        - generic [ref=f106e1052]: Seleccionar vuelo por 118 EUR
+                        - generic [ref=f106e1053]: 118 €
+                      - generic [ref=f106e1058]: 2 últimas plazas a este precio
+                - listitem [ref=f106e1059]:
+                  - generic [ref=f106e1065]:
+                    - generic [ref=f106e1066]:
+                      - generic [ref=f106e1068]:
+                        - generic [ref=f106e1069]:
+                          - generic [ref=f106e1070]: 09:15
+                          - generic [ref=f106e1071]: SCQ Santiago
+                        - 'button "Conexión en BCN: 1 h 10 min" [ref=f106e1076] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1080]: 
+                        - generic [ref=f106e1083]:
+                          - generic [ref=f106e1084]: Sevilla SVQ
+                          - generic [ref=f106e1086]: 13:50
+                      - generic [ref=f106e1088]:
+                        - generic [ref=f106e1090]:
+                          - generic [ref=f106e1092]:
+                            - generic [aria-hidden] [ref=f106e1093]:
+                              - generic [ref=f106e1094]: 
+                              - text: 
+                            - generic [ref=f106e1095]: Vueling
+                          - generic [ref=f106e1096]: VY1681
+                        - generic [ref=f106e1098]:
+                          - generic [ref=f106e1100]:
+                            - generic [aria-hidden] [ref=f106e1101]:
+                              - generic [ref=f106e1102]: 
+                              - text: 
+                            - generic [ref=f106e1103]: Vueling
+                          - generic [ref=f106e1104]: VY2218
+                    - generic [ref=f106e1106]:
+                      - button "Seleccionar vuelo por 132 EUR VY1681 VY2218 09:15 13:50" [ref=f106e1108] [cursor=pointer]:
+                        - generic [ref=f106e1109]: Seleccionar vuelo por 132 EUR
+                        - generic [ref=f106e1110]: 132 €
+                      - generic [ref=f106e1115]: 2 últimas plazas a este precio
+                - listitem [ref=f106e1116]:
+                  - generic [ref=f106e1122]:
+                    - generic [ref=f106e1123]:
+                      - generic [ref=f106e1125]:
+                        - generic [ref=f106e1126]:
+                          - generic [ref=f106e1127]: 09:15
+                          - generic [ref=f106e1128]: SCQ Santiago
+                        - 'button "Conexión en BCN: 2 h 5 min" [ref=f106e1133] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1137]: 
+                        - generic [ref=f106e1140]:
+                          - generic [ref=f106e1141]: Sevilla SVQ
+                          - generic [ref=f106e1143]: 14:45
+                      - generic [ref=f106e1145]:
+                        - generic [ref=f106e1147]:
+                          - generic [ref=f106e1149]:
+                            - generic [aria-hidden] [ref=f106e1150]:
+                              - generic [ref=f106e1151]: 
+                              - text: 
+                            - generic [ref=f106e1152]: Vueling
+                          - generic [ref=f106e1153]: VY1681
+                        - generic [ref=f106e1155]:
+                          - generic [ref=f106e1157]:
+                            - generic [aria-hidden] [ref=f106e1158]:
+                              - generic [ref=f106e1159]: 
+                              - text: 
+                            - generic [ref=f106e1160]: Vueling
+                          - generic [ref=f106e1161]: VY2226
+                    - generic [ref=f106e1163]:
+                      - button "Seleccionar vuelo por 124 EUR VY1681 VY2226 09:15 14:45" [ref=f106e1165] [cursor=pointer]:
+                        - generic [ref=f106e1166]: Seleccionar vuelo por 124 EUR
+                        - generic [ref=f106e1167]: 124 €
+                      - generic [ref=f106e1172]: 2 últimas plazas a este precio
+                - listitem [ref=f106e1173]:
+                  - generic [ref=f106e1179]:
+                    - generic [ref=f106e1180]:
+                      - generic [ref=f106e1182]:
+                        - generic [ref=f106e1183]:
+                          - generic [ref=f106e1184]: 09:15
+                          - generic [ref=f106e1185]: SCQ Santiago
+                        - 'button "Conexión en BCN: 5 h 15 min" [ref=f106e1190] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1194]: 
+                        - generic [ref=f106e1197]:
+                          - generic [ref=f106e1198]: Sevilla SVQ
+                          - generic [ref=f106e1200]: 17:55
+                      - generic [ref=f106e1202]:
+                        - generic [ref=f106e1204]:
+                          - generic [ref=f106e1206]:
+                            - generic [aria-hidden] [ref=f106e1207]:
+                              - generic [ref=f106e1208]: 
+                              - text: 
+                            - generic [ref=f106e1209]: Vueling
+                          - generic [ref=f106e1210]: VY1681
+                        - generic [ref=f106e1212]:
+                          - generic [ref=f106e1214]:
+                            - generic [aria-hidden] [ref=f106e1215]:
+                              - generic [ref=f106e1216]: 
+                              - text: 
+                            - generic [ref=f106e1217]: Vueling
+                          - generic [ref=f106e1218]: VY2222
+                    - button "Seleccionar vuelo por 161 EUR VY1681 VY2222 09:15 17:55" [ref=f106e1222] [cursor=pointer]:
+                      - generic [ref=f106e1223]: Seleccionar vuelo por 161 EUR
+                      - generic [ref=f106e1224]: 161 €
+                - listitem [ref=f106e1229]:
+                  - generic [ref=f106e1235]:
+                    - generic [ref=f106e1236]:
+                      - generic [ref=f106e1238]:
+                        - generic [ref=f106e1239]:
+                          - generic [ref=f106e1240]: 11:25
+                          - generic [ref=f106e1241]: SCQ Santiago
+                        - 'button "Conexión en BCN: 3 h 5 min" [ref=f106e1246] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1250]: 
+                        - generic [ref=f106e1253]:
+                          - generic [ref=f106e1254]: Sevilla SVQ
+                          - generic [ref=f106e1256]: 17:55
+                      - generic [ref=f106e1258]:
+                        - generic [ref=f106e1260]:
+                          - generic [ref=f106e1262]:
+                            - generic [aria-hidden] [ref=f106e1263]:
+                              - generic [ref=f106e1264]: 
+                              - text: 
+                            - generic [ref=f106e1265]: Vueling
+                          - generic [ref=f106e1266]: VY1682
+                        - generic [ref=f106e1268]:
+                          - generic [ref=f106e1270]:
+                            - generic [aria-hidden] [ref=f106e1271]:
+                              - generic [ref=f106e1272]: 
+                              - text: 
+                            - generic [ref=f106e1273]: Vueling
+                          - generic [ref=f106e1274]: VY2222
+                    - button "Seleccionar vuelo por 167 EUR VY1682 VY2222 11:25 17:55" [ref=f106e1278] [cursor=pointer]:
+                      - generic [ref=f106e1279]: Seleccionar vuelo por 167 EUR
+                      - generic [ref=f106e1280]: 167 €
+                - listitem [ref=f106e1285]:
+                  - generic [ref=f106e1291]:
+                    - generic [ref=f106e1292]:
+                      - generic [ref=f106e1294]:
+                        - generic [ref=f106e1295]:
+                          - generic [ref=f106e1296]: 14:10
+                          - generic [ref=f106e1297]: SCQ Santiago
+                        - 'button "Conexión en BCN: 4 h 40 min" [ref=f106e1302] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1306]: 
+                        - generic [ref=f106e1309]:
+                          - generic [ref=f106e1310]: Sevilla SVQ
+                          - generic [ref=f106e1312]: 22:10
+                      - generic [ref=f106e1314]:
+                        - generic [ref=f106e1316]:
+                          - generic [ref=f106e1318]:
+                            - generic [aria-hidden] [ref=f106e1319]:
+                              - generic [ref=f106e1320]: 
+                              - text: 
+                            - generic [ref=f106e1321]: Vueling
+                          - generic [ref=f106e1322]: VY1676
+                        - generic [ref=f106e1324]:
+                          - generic [ref=f106e1326]:
+                            - generic [aria-hidden] [ref=f106e1327]:
+                              - generic [ref=f106e1328]: 
+                              - text: 
+                            - generic [ref=f106e1329]: Vueling
+                          - generic [ref=f106e1330]: VY2220
+                    - generic [ref=f106e1332]:
+                      - button "Seleccionar vuelo por 176 EUR VY1676 VY2220 14:10 22:10" [ref=f106e1334] [cursor=pointer]:
+                        - generic [ref=f106e1335]: Seleccionar vuelo por 176 EUR
+                        - generic [ref=f106e1336]: 176 €
+                      - generic [ref=f106e1341]: 3 últimas plazas a este precio
+                - listitem [ref=f106e1342]:
+                  - generic [ref=f106e1348]:
+                    - generic [ref=f106e1349]:
+                      - generic [ref=f106e1351]:
+                        - generic [ref=f106e1352]:
+                          - generic [ref=f106e1353]: 18:45
+                          - generic [ref=f106e1354]: SCQ Santiago
+                        - 'button "Conexión en BCN: 1 h 45 min" [ref=f106e1359] [cursor=pointer]':
+                          - generic [aria-hidden] [ref=f106e1363]: 
+                        - generic [ref=f106e1366]:
+                          - generic [ref=f106e1367]: Sevilla SVQ
+                          - generic [ref=f106e1369]: 23:50
+                      - generic [ref=f106e1371]:
+                        - generic [ref=f106e1373]:
+                          - generic [ref=f106e1375]:
+                            - generic [aria-hidden] [ref=f106e1376]:
+                              - generic [ref=f106e1377]: 
+                              - text: 
+                            - generic [ref=f106e1378]: Vueling
+                          - generic [ref=f106e1379]: VY1674
+                        - generic [ref=f106e1381]:
+                          - generic [ref=f106e1383]:
+                            - generic [aria-hidden] [ref=f106e1384]:
+                              - generic [ref=f106e1385]: 
+                              - text: 
+                            - generic [ref=f106e1386]: Vueling
+                          - generic [ref=f106e1387]: VY2214
+                    - generic [ref=f106e1389]:
+                      - button "Seleccionar vuelo por 142 EUR VY1674 VY2214 18:45 23:50" [ref=f106e1391] [cursor=pointer]:
+                        - generic [ref=f106e1392]: Seleccionar vuelo por 142 EUR
+                        - generic [ref=f106e1393]: 142 €
+                      - generic [ref=f106e1398]: Última plaza a este precio
+          - generic [ref=f106e1400]:
+            - generic [aria-hidden] [ref=f106e1403]: 
+            - paragraph [ref=f106e1406]: Si tienes un código promocional, haz la reserva desde tu móvil (app Vueling o navegador).
+      - contentinfo [ref=f106e1410]:
+        - generic [ref=f106e1413]:
+          - generic [ref=f106e1414]: © 2026 Vueling Airlines SA
+          - navigation [ref=f106e1417]:
+            - list [ref=f106e1418]:
+              - listitem [ref=f106e1419]:
+                - link "contactus@vueling.com" [ref=f106e1420] [cursor=pointer]:
+                  - /url: mailto:contactus@vueling.com
+              - listitem [ref=f106e1421]:
+                - link "Condiciones de uso de la web" [ref=f106e1422] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-uso-del-sitio-web
+              - listitem [ref=f106e1423]:
+                - link "Política de cookies" [ref=f106e1424] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-cookies
+              - listitem [ref=f106e1425]:
+                - link "Política de privacidad" [ref=f106e1426] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/politica-de-privacidad
+              - listitem [ref=f106e1427]:
+                - link "Condiciones de transporte" [ref=f106e1428] [cursor=pointer]:
+                  - /url: https://www.vueling.com/es/atencion-al-cliente/condiciones-de-transporte
+  - generic:     
+  - status [ref=f106e1429]: ds.common.loading_complete
