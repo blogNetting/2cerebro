@@ -1,5 +1,4 @@
 .claude/settings.local.json
-.claude/sesiones/
 
 # ficheros temporales
 *.tmp
@@ -10,3 +9,15 @@
 
 # prompts de arranque, no forman parte del wiki
 prompt*.txt
+
+# artefactos de herramientas (logs, capturas, cachés): nunca se versionan.
+# El repo es público y cerebro-sync.sh hace `git add -A` + push cada hora.
+.playwright-mcp/
+*.log
+
+# adjuntos binarios de terceros (fotos de fichas de Booking, PDF generados)
+fuentes/londres-alojamiento-2026-09-19/
+
+# red de seguridad: /exportar-sesion escribe aquí solo cuando el usuario lo pide.
+# No es contenido del wiki y no debe subirse nunca.
+.claude/sesiones/

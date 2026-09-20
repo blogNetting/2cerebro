@@ -1,7 +1,0 @@
-- generic:
-  - generic:
-    - generic:
-      - status:
-        - generic [ref=f232e1]:
-          - generic [ref=f232e2]: Cargando...
-          - paragraph [ref=f232e6]: Cargando...

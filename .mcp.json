@@ -5,7 +5,8 @@
       "args": [
         "-y",
         "@playwright/mcp@latest",
-        "--cdp-endpoint=${CDP_ENDPOINT:-http://192.168.1.5:9222}"
+        "--cdp-endpoint=${CDP_ENDPOINT:-http://192.168.1.5:9222}",
+        "--output-dir=/home/netting/.cache/playwright-mcp"
       ]
     }
   }

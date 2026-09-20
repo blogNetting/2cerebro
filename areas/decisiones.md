@@ -50,3 +50,16 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Verificado en docs oficiales: la extensión de VSCode y el CLI mantienen almacenes de sesión separados; `claude --continue`/`--resume` no puede recuperar una conversación de la otra superficie. Sin solución nativa.
 - Solución: directorio `.claude/sesiones/` (gitignored, fuera del PARA, no lo tocan `/lint` ni las reglas de clasificación de `AGENTS.md`). Skills `/exportar-sesion` y `/importar-sesion` — ver [[entorno]].
 - Por defecto se vuelca un resumen de estado, no la transcripción literal: cuesta menos contexto a la sesión receptora. La transcripción completa queda disponible solo si se pide explícitamente.
+
+## 2026-09-19 — Corrección: `.claude/` es solo configuración; los resultados de trabajo van a PARA
+
+- Fallo detectado por el usuario: resultados de trabajo (búsqueda de alojamiento en Londres, vuelos Vueling) se dejaron dentro de `.claude/sesiones/`. `.claude/` es configuración (commands, agents, settings), nunca contenido.
+- Correcciones: contenido migrado a `proyectos/` ([[viaje-londres-diciembre-2026]] y sus notas, [[vuelos-sevilla-octubre-2026]]) y a `areas/` ([[vueling-busqueda-por-url]]), con frontmatter, enlaces e índices. Los adjuntos (65 fotos y un PDF) van a `fuentes/londres-alojamiento-2026-09-19/`, ignorados por git: son fotos de terceros y el repo es público. `.claude/sesiones/` borrado. Regla nueva en `AGENTS.md` (sección Repositorio y artefactos).
+- Aclaración del usuario: una exportación (`/exportar-sesion`) sirve solo para pasar contenido a una sesión nueva y se hace únicamente cuando él lo dice. No obliga a repetirla, ni a mantenerla actualizada, ni tiene que ver con el wiki. Las skills de exportar/importar no se tocan. Como siguen escribiendo en `.claude/sesiones/`, ese directorio queda ignorado por git como red de seguridad; si el usuario prefiere otro destino, habrá que cambiar las skills.
+
+## 2026-09-19 — Corrección: artefactos de herramienta versionados y publicados
+
+- Fallo detectado por el usuario: `.playwright-mcp/` (logs, capturas y snapshots del navegador) no estaba en `.gitignore` y `cerebro-sync.sh` (cron horario, `git add -A` y push) lo subió a GitHub: 140 ficheros, 11 MB, en los commits de las 19:00, 20:00, 21:00 y 22:00 UTC del 2026-09-19.
+- Hallazgo: el repo `blogNetting/2cerebro` es público. Lo publicado con datos personales: nombre completo y nivel Genius de la cuenta de Booking; nombre y email de una cuenta de Google; la línea de envío de una cuenta de Amazon (nombre, localidad y código postal); 6 URLs de inicio de sesión de Booking con `op_token` en un log. Sin cookies, JWT, claves ni contraseñas. Las 5 capturas son páginas públicas de Vueling.
+- Correcciones: `.playwright-mcp/` y `*.log` en `.gitignore`; carpeta desindexada y borrada; `.mcp.json` con `--output-dir=/home/netting/.cache/playwright-mcp` para que Playwright MCP escriba fuera del repo (aplica al reiniciar la sesión); regla en `AGENTS.md`: todo directorio de caché o artefacto va a `.gitignore` en cuanto aparece; comprobación nueva en `/lint` de ficheros versionados que no deberían estarlo.
+- El historial de GitHub no se ha reescrito: pendiente de decisión del usuario.

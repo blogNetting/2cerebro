@@ -10,7 +10,7 @@ Qué hay montado en esta VM para no redescubrirlo cada sesión, y qué falta.
 
 ## Escalado de búsquedas e investigación web
 
-Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador real por CDP. Skills: [[investigar-web]] (capas 1 y 2, autónoma) y `/navegador-cdp` (capa 3, necesita un Chrome abierto en alguna máquina).
+Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador real por CDP. Skills: `/investigar-web` (capas 1 y 2, autónoma) y `/navegador-cdp` (capa 3, necesita un Chrome abierto en alguna máquina).
 
 ## Navegador por CDP
 
@@ -31,15 +31,22 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Funcionan por `WebFetch`: tiendas pequeñas de ferretería/pintura (precio con IVA legible), fichas técnicas en PDF (se guardan en `tool-results/`, leer con `pdftotext`).
 - Por CDP, amazon.es se lee bien con `browser_evaluate` sobre el DOM: `#productTitle`, `#corePrice_feature_div .a-offscreen` (precio), `#deliveryBlockMessage` (envío al CP configurado en la cuenta), `#acrPopover`/`#acrCustomerReviewText` (nota), `[data-hook="review"]` (reseñas). Reseñas negativas: `/product-reviews/<ASIN>?filterByStar=critical`. Un bucle `browser_run_code_unsafe` sobre varias ASIN saca precio y nota de todas en una llamada, sin CAPTCHA. Trampa comprobada: no usar `.a-price .a-offscreen` como respaldo del precio; en fichas «No disponible» devuelve el precio de otro producto del carrusel (dio 11,16 € al Maurer, que era el PROA). Usar solo `#corePrice_feature_div` y, si falta, tratar el precio como ausente. Para descubrir alternativas, la búsqueda `amazon.es/s?k=...` con `[data-component-type="s-search-result"]` devuelve título, precio, nota y envío de ~12 productos.
 - Los resúmenes de `WebSearch` no son fuente de precio: «desde 13,99 €» resultó no ser el precio de venta (15,65 €).
+- vueling.com: por CDP con URLs directas del calendario y del buscador; ver [[vueling-busqueda-por-url]].
+- booking.com: por CDP con la URL de búsqueda y filtros en `nflt`: `roomfacility=38` (baño privado), `review_score=70` (7+), `distance=5000`, `ht_id=201` (apartamentos) o `204` (hoteles), `tdb=3` (1 cama doble). La tabla de habitaciones de cada ficha es `#hprt-table`. Con `browser_run_code_unsafe` no hay `require`: para acumular resultados entre navegaciones usar `sessionStorage` y volcarlo después con `browser_evaluate`.
 
 ## Datos de producto/precio
 
-- Evaluado y descartado por ahora: Keepa API (histórico de precio/rank de Amazon) y SerpApi Price Monitoring. Ambos evitarían scraping para consultas de precio, pero requieren API key de pago (Keepa por tokens, SerpApi tier gratuito pequeño). Las consultas de precio/comparación de producto se resuelven con el escalado normal de [[investigar-web]], sin capa aparte.
+- Evaluado y descartado por ahora: Keepa API (histórico de precio/rank de Amazon) y SerpApi Price Monitoring. Ambos evitarían scraping para consultas de precio, pero requieren API key de pago (Keepa por tokens, SerpApi tier gratuito pequeño). Las consultas de precio/comparación de producto se resuelven con el escalado normal de `/investigar-web`, sin capa aparte.
 
 ## Herramientas disponibles en esta VM
 
 - Node.js v22.23.2 y npx 10.9.8 instalados (verificado `node --version` / `npx --version`). Suficiente para lanzar `@playwright/mcp` bajo demanda; no hace falta instalación previa, `npx -y` lo descarga la primera vez.
 - Sin GPU, sin entorno gráfico: irrelevante para esta arquitectura porque el navegador real corre en el anfitrión Windows, no aquí. Esta VM solo ejecuta el proceso Node del MCP, que habla por red al CDP remoto.
+
+## Repositorio y sincronización
+
+- El repo `blogNetting/2cerebro` es público. `/home/netting/bin/cerebro-sync.sh` corre por cron cada hora: si hay cambios hace `git add -A`, commit `auto: <fecha>` y `git push`. Todo lo que no esté en `.gitignore` se publica solo. Ver la regla en `AGENTS.md` (Repositorio y artefactos) y el incidente de `.playwright-mcp/` en [[decisiones]].
+- Playwright MCP escribe sus logs, capturas y snapshots en `/home/netting/.cache/playwright-mcp` (`--output-dir` en `.mcp.json`, fuera del repo). Antes de ese cambio escribía en `.playwright-mcp/` dentro del repo, ahora ignorado.
 
 ## Compartir contexto entre sesiones
 

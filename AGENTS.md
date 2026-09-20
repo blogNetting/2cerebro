@@ -83,8 +83,9 @@ Comprueba:
 - Notas duplicadas: dos o más notas sobre el mismo tema que no se enlazan entre sí.
 - Índices desactualizados: `_index.md` que no lista una nota existente, lista una que ya no existe, o le falta la línea de descripción.
 - Frontmatter incompleto: falta algún campo obligatorio o `zona` con valor inválido.
+- Ficheros versionados que no deberían estarlo: los que coinciden con `.gitignore`, cualquier ruta versionada bajo `.claude/` que no sea configuración, artefactos de herramientas (`.playwright-mcp/`, logs, capturas, cachés, binarios fuera de `fuentes/`), ficheros de más de 1 MB, y datos sensibles (credenciales, cookies, datos personales). Los comprueba el propio lint con `git`, ver `.claude/commands/lint.md`.
 
-Corrige lo que encuentres y reporta cada corrección.
+Corrige lo que encuentres y reporta cada corrección. Si algo ya está publicado en `origin/main`, avisa con qué se subió; no reescribas el historial sin que el usuario lo pida.
 
 ## Crecimiento
 
@@ -113,9 +114,19 @@ Al ejecutar lint, además de corregir:
 - En la revisión periódica (durante el lint): comprobar si la skill sigue funcionando, si ha aparecido algo mejor, y sustituirla o retirarla, anotándolo en `areas/decisiones.md`.
 - Búsquedas y consultas en internet: usar `/investigar-web` (WebSearch → WebFetch) y, cuando eso falle de verdad (403, CAPTCHA, HTML sin el contenido), escalar a `/navegador-cdp` (Chrome real vía CDP) es obligatorio: un bloqueo no es un resultado ni un motivo para entregar «no verificado». Solo una prohibición explícita del usuario suspende el escalado; una duda o preferencia suya no lo es. Ver `areas/entorno.md` para las herramientas ya montadas en esta máquina.
 - Compartir contexto entre sesiones (VSCode y CLI no comparten historial): usar `/exportar-sesion` y `/importar-sesion`. No hace falta escribir el comando — si el usuario dice "exporta esta conversación", "vuelca el chat" o similar, usar la skill directamente. Ver `areas/entorno.md`.
+- Una exportación solo se hace cuando el usuario lo dice. Sirve para pasar ese contenido a una sesión nueva y nada más: no obliga a repetirla, ni a mantenerla actualizada, ni a tocar el wiki. Nunca exportar por iniciativa propia. Las exportaciones van a `.claude/sesiones/`, transitoria e ignorada por git: no es contenido del wiki ni resultado de trabajo.
+
+## Repositorio y artefactos
+
+- `.claude/` es solo configuración de Claude Code: commands, agents, skills, hooks y settings. Nunca contenido ni resultados de trabajo. Los resultados van a `proyectos/`, `areas/`, `recursos/` o `archivo/` según PARA; los adjuntos binarios de terceros (fotos, PDF), a `fuentes/`.
+- El repo es público y `cerebro-sync.sh` (cron horario) hace `git add -A` y push: todo lo que no esté en `.gitignore` se publica. Por eso, todo directorio de caché, log, captura o artefacto de una herramienta (`.playwright-mcp/`, salidas temporales, volcados) se añade a `.gitignore` en el mismo momento en que aparece, sin esperar a que el usuario lo vea. Mejor aún: configurar la herramienta para que escriba fuera del repo.
+- Antes de crear un directorio de salida nuevo, comprueba con `git check-ignore` que queda ignorado. Antes de borrar una carpeta, `git ls-files <ruta>`: puede estar versionada o ser de otra sesión.
+- No versionar datos personales, sesiones de navegador, cookies, credenciales ni capturas con datos de cuentas. Fotos y material de terceros, fuera de git.
 
 ## Qué no hacer
 
+- No exportar sesiones por iniciativa propia.
+- No escribir contenido ni resultados en `.claude/`.
 - No borrar ni modificar nada de `fuentes/`.
 - No inventar citas ni referencias.
 - No crear estructura de carpetas nueva sin pedirla.

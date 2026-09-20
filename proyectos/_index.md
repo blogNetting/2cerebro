@@ -12,3 +12,11 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[portero-automatico-timbre-unico]] — solución técnica para que el único timbre del portero automático no moleste a las dos unidades independientes
 - [[portero-bloques-funcionales]] — funciones que necesita el interceptor del portero (detección, conmutación, generador de llamada, locuciones, control), sin elegir piezas
 - [[portero-comprobaciones-en-sitio]] — checklist de mediciones en la instalación real (topología, colores, hilo 4, audio, espacio) que validan o tumban el diseño del portero
+- [[viaje-londres-diciembre-2026]] — hub del viaje a Londres del 4 al 9 dic 2026: vuelos ya reservados, estado y frentes de trabajo (alojamiento, transporte, ETA)
+- [[londres-alojamiento-diciembre-2026]] — criterios y filtros de la búsqueda de alojamiento, resultado en una página y comparativa A (5 noches) frente a B (4 noches + Gatwick)
+- [[londres-alojamiento-fichas-londres]] — ocho finalistas en Londres con tabla exacta de tarifas de Booking, condiciones, fotos y enlaces
+- [[londres-alojamiento-fichas-gatwick]] — hoteles junto a Gatwick para la noche del 8 al 9 dic (variante B), con tarifas, fotos y enlaces
+- [[londres-alojamiento-descartes]] — qué se descartó y por qué: hoteles céntricos fuera de presupuesto, baño compartido, dormitorios y cápsulas
+- [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
+- [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
+- [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
