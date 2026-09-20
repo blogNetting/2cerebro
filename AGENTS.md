@@ -123,6 +123,32 @@ Al ejecutar lint, además de corregir:
 - Antes de crear un directorio de salida nuevo, comprueba con `git check-ignore` que queda ignorado. Antes de borrar una carpeta, `git ls-files <ruta>`: puede estar versionada o ser de otra sesión.
 - No versionar datos personales, sesiones de navegador, cookies, credenciales ni capturas con datos de cuentas. Fotos y material de terceros, fuera de git.
 
+## Formato de investigaciones
+
+Aplica a toda investigación (comparativas, búsquedas de precios, evaluación de herramientas, análisis de opciones). Permanente: el usuario no tiene que repetirlo.
+
+Estructura obligatoria del resultado, en este orden:
+
+1. Introducción: qué se pregunta y por qué.
+2. Considerado y descartado, con el motivo de cada descarte.
+3. Análisis detallado. Tablas, gráficos, diagramas o imágenes siempre que ayuden; prioriza lo visual sobre el texto corrido.
+4. Recomendaciones.
+5. Dónde se ha buscado: fuentes consultadas, incluidas las que no aportaron nada.
+6. Lo relevante que no encaje en lo anterior.
+
+Enlaces (el fallo más frecuente, tratarlo como requisito duro):
+
+- Cada afirmación que venga de una fuente lleva su enlace en la misma línea o celda donde aparece: dato, precio, condición, cita. No basta un bloque de enlaces al final.
+- Cada opción, producto u oferta citada lleva su URL directa, con las fechas o parámetros de la búsqueda puestos cuando la web lo permita.
+- Los descartes y las fuentes que no aportaron también se enlazan.
+- Dato sin fuente enlazable: se marca como «sin verificar» o se omite. No se afirma sin enlace.
+- Antes de entregar, repasa el documento y comprueba que ninguna afirmación con fuente queda sin enlace.
+
+Formato de salida:
+
+- `.md` por defecto. Es una nota del wiki: se clasifica según PARA y cumple las reglas de enlace, frontmatter e índices.
+- PDF solo si el usuario lo pide explícitamente. Se genera a partir del `.md`, que se conserva. Antes de crearlo, `git check-ignore` sobre la ruta de salida (el repo es público).
+
 ## Qué no hacer
 
 - No exportar sesiones por iniciativa propia.

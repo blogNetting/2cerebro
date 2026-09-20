@@ -63,3 +63,10 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Hallazgo: el repo `blogNetting/2cerebro` es público. Lo publicado con datos personales: nombre completo y nivel Genius de la cuenta de Booking; nombre y email de una cuenta de Google; la línea de envío de una cuenta de Amazon (nombre, localidad y código postal); 6 URLs de inicio de sesión de Booking con `op_token` en un log. Sin cookies, JWT, claves ni contraseñas. Las 5 capturas son páginas públicas de Vueling.
 - Correcciones: `.playwright-mcp/` y `*.log` en `.gitignore`; carpeta desindexada y borrada; `.mcp.json` con `--output-dir=/home/netting/.cache/playwright-mcp` para que Playwright MCP escriba fuera del repo (aplica al reiniciar la sesión); regla en `AGENTS.md`: todo directorio de caché o artefacto va a `.gitignore` en cuanto aparece; comprobación nueva en `/lint` de ficheros versionados que no deberían estarlo.
 - El historial de GitHub no se ha reescrito: pendiente de decisión del usuario.
+
+## 2026-09-20 — Regla permanente: formato de investigaciones
+
+- Petición del usuario tras una búsqueda de coche de alquiler Córdoba → A Coruña en la que faltaban enlaces («como siempre me faltan enlaces»). Toda investigación se entrega con una estructura fija: introducción, considerado y descartado (con motivo), análisis detallado y visual, recomendaciones, dónde se ha buscado (incluidas las fuentes que no aportaron) y otros aspectos relevantes.
+- Fallo de fondo: los enlaces se omiten o se dejan solo al final. La regla exige un enlace por cada afirmación con fuente, en el punto donde aparece, además de URL directa por cada opción, y una revisión final antes de entregar. Dato sin fuente enlazable: «sin verificar» u omitido.
+- Salida: `.md` por defecto, como nota del wiki según PARA; PDF solo si el usuario lo pide, generado desde el `.md`.
+- Recogido en `AGENTS.md`, sección «Formato de investigaciones». Complementa `/investigar-web` (cómo buscar); no lo sustituye.
