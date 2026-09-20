@@ -20,4 +20,3 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
-- [[alquiler-coche-cordoba-coruna-noviembre-2026]] — coche de alquiler Córdoba → A Coruña (5-6 nov 2026) con devolución en la ciudad: Alamo vía BSP desde 47 €, Sixt centro 156 €, aeropuerto solo como referencia

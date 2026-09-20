@@ -17,7 +17,6 @@ prompt*.txt
 
 # adjuntos binarios de terceros (fotos de fichas de Booking, PDF generados)
 fuentes/londres-alojamiento-2026-09-19/
-fuentes/alquiler-coche-cordoba-coruna-2026-09-20/
 
 # red de seguridad: /exportar-sesion escribe aquí solo cuando el usuario lo pide.
 # No es contenido del wiki y no debe subirse nunca.
