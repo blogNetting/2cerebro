@@ -45,5 +45,6 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 ## Enlaces
 
 - [[duchas-negras-alquiler]] — opciones de grifería de ducha negra barata para los baños
+- [[app-seguimiento-patrimonio]] — app de patrimonio donde este inmueble aparecerá valorado
 
 - [[_index]]

@@ -1,7 +1,7 @@
 ---
 title: Fiscalidad del alquiler por habitaciones
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-24
 tags: [fiscalidad, irpf, alquiler, amortizacion]
 zona: tecnico
 ---
@@ -107,4 +107,5 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 
 - [[apartamentos-calle-uruguay]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
+- [[app-seguimiento-patrimonio]] — app donde se seguirán ingresos y gastos del alquiler
 - [[_index]]

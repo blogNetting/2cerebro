@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-09-19
+updated: 2026-09-24
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -70,3 +70,16 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Fallo de fondo: los enlaces se omiten o se dejan solo al final. La regla exige un enlace por cada afirmación con fuente, en el punto donde aparece, además de URL directa por cada opción, y una revisión final antes de entregar. Dato sin fuente enlazable: «sin verificar» u omitido.
 - Salida: `.md` por defecto, como nota del wiki según PARA; PDF solo si el usuario lo pide, generado desde el `.md`.
 - Recogido en `AGENTS.md`, sección «Formato de investigaciones». Complementa `/investigar-web` (cómo buscar); no lo sustituye.
+
+## 2026-09-24 — Sistema de desarrollo con agentes: decisiones de partida
+
+- Proyecto nuevo: [[sistema-desarrollo-con-agentes]]. Genérico: debe servir para cualquier desarrollo; stack y plataforma se deciden en cada proyecto.
+- El código de este sistema y de cada app vive en repos propios, nunca en `2cerebro` (es público y se publica cada hora). En el wiki, cada uno tiene una nota hub que enlaza al repo.
+- Regla dura del usuario: no hay código sin tests, sean unitarios o de integración. Los umbrales de cobertura y complejidad se fijarán más adelante.
+- Aceptado usar DeepSeek por su API oficial; que los datos estén en China no es un problema. El coste se controla con saldo prepagado y midiendo el consumo.
+- La arquitectura Opus/DeepSeek se decide por investigación, pruebas y decisión conjunta, no por opinión.
+
+## 2026-09-24 — Herramientas de investigación técnica
+
+- Instalados `gh` y `yt-dlp` en `~/.local/bin`, binarios oficiales con el checksum verificado. No hay sudo; se descartó `apt`. Se descartaron también los MCP de GitHub y de YouTube: la CLI cubre lo mismo sin gastar contexto en definiciones de tools en cada turno.
+- `/investigar-web` tiene un paso 10 nuevo con fuentes directas: GitHub, la API de Algolia de Hacker News y transcripciones de YouTube. Reddit y X van directos a CDP. El deep research de otras IAs solo sirve para descubrir pistas. Ver [[entorno]].

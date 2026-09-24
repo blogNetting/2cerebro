@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-09-24
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -52,6 +52,16 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 
 - La extensión de VSCode y el CLI mantienen almacenes de sesión separados (verificado en docs oficiales): una conversación de VSCode no se puede recuperar con `claude --continue`/`--resume` desde una terminal, ni al revés.
 - Mecanismo puente: `.claude/sesiones/` (gitignored, fuera del wiki, no entra en `/lint`). Skills `/exportar-sesion` (vuelca un resumen de estado a un fichero con nombre `<slug>-<timestamp>.md`) y `/importar-sesion` (lee ese fichero en la sesión destino). Por defecto se vuelca resumen, no transcripción literal — cuesta menos contexto a la sesión receptora.
+
+## Fuentes especializadas para investigación técnica (2026-09-24)
+
+Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
+
+- `gh` 2.101.0 en `~/.local/bin`: binario oficial con el checksum verificado. Sirve para buscar repos, issues, releases y métricas de actividad. Sin autenticar, la API de GitHub da 60 peticiones por hora; autenticado (`gh auth login`), 5000.
+- `yt-dlp` 2026.08.19 en `~/.local/bin`: binario oficial con el checksum verificado. Descarga los subtítulos automáticos de charlas en YouTube sin bajar el vídeo (`--skip-download --write-auto-subs`).
+- Hacker News: la API de Algolia (`hn.algolia.com/api/v1/search`) funciona con `curl`, sin clave.
+- Reddit: su `.json` devuelve 403 y old.reddit redirige; se lee por CDP.
+- X/Twitter: la respuesta es 200, pero el contenido lo genera JavaScript; se lee por CDP.
 
 ## Qué falta / no está resuelto
 
