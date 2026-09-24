@@ -1,7 +1,7 @@
 ---
 title: Apartamentos Calle Uruguay
 created: 2026-09-09
-updated: 2026-09-14
+updated: 2026-09-24
 tags: [alquiler, inmobiliario, legal, fiscalidad, domotica]
 zona: tecnico
 ---
@@ -43,5 +43,7 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 - ¿Reparto de suministros como coste medido (Shelly EM + subcontadores)? Impacto fiscal (frente de fiscalidad, pendiente).
 
 ## Enlaces
+
+- [[duchas-negras-alquiler]] — opciones de grifería de ducha negra barata para los baños
 
 - [[_index]]
