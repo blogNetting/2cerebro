@@ -6,19 +6,23 @@ tags: [desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git]
 zona: tecnico
 ---
 
-Sistema genérico para desarrollar cualquier aplicación de principio a fin: Opus dirige y DeepSeek escribe el código, sobre git, CI/CD y DevSecOps.
+Sistema genérico para desarrollar cualquier aplicación de principio a fin, con IA, git, CI/CD y DevSecOps. Cómo se reparte el trabajo entre modelos se decide con evidencia.
 
 ## Estado
 
 Abierto el 2026-09-24. Bloque 2 investigado: [[orquestacion-opus-deepseek-informe]]. Pendiente de decidir juntos el esqueleto de arquitectura y los finalistas que pasan a pruebas.
+
+## Hipótesis iniciales del usuario (no son decisiones)
+
+Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la pone Anthropic; un modelo más barato (DeepSeek) implementa; el trabajo se entrega en forma de issues; gitflow. Se mantienen o se descartan según la evidencia de la investigación completa.
 
 ## Decisiones cerradas
 
 - **Genérico y abstracto.** Tiene que servir para cualquier desarrollo. Stack, plataforma git y despliegue se deciden en cada proyecto. Preferencias del usuario: Python con algún framework, o Node.js.
 - **Repos propios.** Este sistema y cada app que cuelgue de él tienen su propio repo, fuera de `2cerebro`, que es público y hace push cada hora. Desde el wiki se llega a cada uno con una nota hub (enlace al repo, ruta local y estado).
 - **No hay código sin tests**, sean unitarios o de integración. La exigencia de cobertura y complejidad se fijará más adelante.
-- **DeepSeek por su API oficial es aceptable.** Que los datos estén en China no es un problema para el usuario.
-- **Opus va por suscripción Claude Pro (20 €/mes), no por API.** Es una restricción de diseño: el orquestador tiene límites de uso, así que la arquitectura debe gastar poco Opus por tarea.
+- **Si se usa DeepSeek, su API oficial es aceptable.** Que los datos estén en China no es un problema para el usuario.
+- **Claude va por suscripción Pro (20 €/mes), no por API.** Es una restricción de diseño: hay límites de uso, sobre todo con Opus.
 - **Control de coste por saldo prepagado.** El usuario va recargando y decide la viabilidad según el consumo. Hay que poder medir el gasto por modelo y por tarea.
 
 ## Bloques
@@ -34,7 +38,9 @@ Abierto el 2026-09-24. Bloque 2 investigado: [[orquestacion-opus-deepseek-inform
 
 ## Preguntas abiertas para el usuario (siguiente sesión)
 
-Planteadas el 2026-09-24 tras la investigación del bloque 2. Contexto completo en [[orquestacion-opus-deepseek-informe]]. Hay que retomarlas al volver a este proyecto.
+> **Anuladas (2026-09-24).** Estas preguntas daban por buena la hipótesis del usuario (Opus + DeepSeek con issues) y salían de un informe parcial. Las sustituirán las preguntas de la investigación completa del ciclo, que está en curso.
+
+Planteadas el 2026-09-24 tras la investigación del bloque 2. Contexto en [[orquestacion-opus-deepseek-informe]].
 
 1. **¿Validas el esqueleto de arquitectura?** Opus orquesta en su sesión de suscripción, escribe una especificación tipada con criterios de aceptación y lanza el ejecutor DeepSeek como proceso aparte, en un worktree y un sandbox. Después se pasan los gates deterministas (tests vistos en rojo, cobertura, mutation testing, SAST, SCA y secretos), Opus revisa ejecutando, y se sigue con PR, CI y merge queue.
 2. **¿Pasan a pruebas los tres ejecutores finalistas?** Son Claude Code apuntado a DeepSeek, OpenCode (`opencode run`) y Pi (modos print, JSON y RPC), con Aider en reserva. Se probarían con `deepseek-v4-pro` y `deepseek-flash`, y con dos líneas base: Opus solo y DeepSeek solo.
