@@ -23,3 +23,8 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
 - [[app-seguimiento-patrimonio]] — Patrimonial: webapp autoalojada y responsive para seguir el patrimonio (inmuebles, cripto, pensiones, ahorro) y el gasto desde extractos bancarios
 - [[sistema-desarrollo-con-agentes]] — sistema genérico de desarrollo de apps de principio a fin: Opus dirige, DeepSeek escribe el código, con git, CI/CD y DevSecOps. En investigación, empezando por el reparto de modelos
+- [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación de cómo Opus (suscripción) dirige y DeepSeek programa: hallazgo clave, descartes, 3 ejecutores finalistas y plan de pruebas
+- [[orquestacion-herramientas-y-patrones]] — patrones y herramientas de orquestador/ejecutor (Aider, Cline, Kilo, routers, DeepClaude…) con métricas de repos e integración con git
+- [[orquestacion-modelos-y-costes]] — modelos DeepSeek vigentes, precios, benchmarks frente a Claude, límites de Pro y boceto de coste por tarea
+- [[orquestacion-experiencia-comunidad]] — qué reportan los usuarios reales: patrones que funcionan, fallos, costes y disciplina de tests
+- [[orquestacion-seguridad-ejecutor]] — aislamiento (Podman + gVisor), catálogo de riesgos y controles por capa para el agente ejecutor
