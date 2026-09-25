@@ -16,3 +16,12 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 - [[orquestacion-experiencia-comunidad]] — qué reportan los usuarios reales: patrones que funcionan, fallos, costes y disciplina de tests
 - [[orquestacion-seguridad-ejecutor]] — aislamiento (Podman + gVisor), catálogo de riesgos y controles por capa para el agente ejecutor
 - [[circuito-tareas-definicion]] — definición de la fase actual: cómo se organiza realmente el trabajo con agentes (roles, traspaso, coordinación, topología, revisión, trazabilidad); criterios, método por fases, qué cuenta como contrastado y cuándo termina
+- [[flujo-agentes-informe]] — informe de la investigación sobre cómo se organiza de verdad el trabajo con agentes: correcciones, descartes (Beads incluido), las seis preguntas con evidencia, recomendaciones y comparación con la idea de partida
+- [[flujo-agentes-arquitectura]] — diseño operable: roles y modelos, contratos entre piezas, máquina de estados, reserva y caducidad con primitivas de GitHub Actions, configuración redactada, fallos y cambio de modelo
+- [[flujo-agentes-runbook]] — puesta en marcha paso a paso, recorrido de una tarea con cada conexión verificada y prueba de humo
+- [[flujo-fase-a-practicas-reales]] — fase A: 15 patrones de organización observados en la práctica
+- [[flujo-fase-a2-practica-a-escala]] — fase A2: OpenAI, Stripe, Ramp, Spotify, Anthropic y la especificación de Symphony
+- [[flujo-fase-b-implementaciones]] — fase B: inventario de herramientas y funciones nativas
+- [[flujo-fase-b2-inventario-corregido]] — fase B2: corrección del inventario y de citas
+- [[flujo-fase-c1-spec-y-estado]] — fase C1: frameworks de especificación y sistemas de estado contra R1–R13
+- [[flujo-fase-c2-orquestacion-ejecucion-revision]] — fase C2: orquestadores, ejecutores, revisión y trazabilidad con interfaces exactas

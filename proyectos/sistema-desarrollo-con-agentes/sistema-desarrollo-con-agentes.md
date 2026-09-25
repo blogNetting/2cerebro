@@ -43,7 +43,7 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 
 ## Siguiente paso (2026-09-25)
 
-Fase actual: averiguar cómo se organiza realmente el trabajo con agentes desde el diseño hasta el código revisado (roles, traspaso, coordinación, topología, revisión, trazabilidad), sin presuponer la forma. Hay que investigarlo a fondo antes de nada más: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
+Fase de organización del trabajo con agentes **investigada y diseñada** el 2026-09-25: [[flujo-agentes-informe]] (evidencia), [[flujo-agentes-arquitectura]] (diseño operable) y [[flujo-agentes-runbook]] (puesta en marcha y prueba de humo). Nada instalado. Definición de la fase: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
 
 ### Preguntas anteriores (anuladas)
 
@@ -68,6 +68,7 @@ Después de esas respuestas:
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
+- [[flujo-agentes-arquitectura]] — diseño operable del flujo
 - [[circuito-tareas-definicion]] — definición de la fase actual: cómo se organiza realmente el trabajo con agentes (roles, traspaso, coordinación, topología, revisión, trazabilidad); criterios, método por fases, qué cuenta como contrastado y cuándo termina
 - [[orquestacion-opus-deepseek-informe]] — informe parcial: conexión entre Claude y DeepSeek
 - [[app-seguimiento-patrimonio]] — candidata a primer piloto

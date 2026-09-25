@@ -95,3 +95,9 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 - Petición expresa del usuario («escríbelo en sangre»), tras varias repeticiones del mismo fallo: tomar lo que él nombra (DeepSeek, issues, gitflow, Beads…) como premisa o como centro del trabajo.
 - Se añade la sección «Lo que menciona el usuario no condiciona nada» a `AGENTS.md`, junto con la regla de explicar cada sigla al usarla (ajuste de «no expliques fundamentos»).
+
+## 2026-09-25 — Flujo de desarrollo con agentes: diseño propuesto (pendiente de revisión del usuario)
+
+- Investigación en fases A–C con revisión del orquestador entre fases. Se corrigieron dos citas no literales, un inventario incompleto y un benchmark con fecha imposible ([[flujo-agentes-informe]] §2).
+- Propuesta: GitHub Issues + sub-issues + dependencias como estado; primitivas de GitHub Actions (grupos de concurrencia, `timeout-minutes`) para reserva y caducidad; gh-aw como ejecutor con DeepSeek a través del endpoint compatible con Anthropic; `claude-code-action` con token de la suscripción Pro para que revise Opus; CI determinista y `CODEOWNERS`. Se descarta Beads por R13 (fallos abiertos de corrupción y demonios).
+- Todavía no es una decisión cerrada: la valida el usuario. Detalle en [[flujo-agentes-arquitectura]].

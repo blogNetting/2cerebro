@@ -71,6 +71,26 @@ Salen del problema y se aplican por igual a prácticas, patrones y herramientas.
 | C12 | Seguridad | Inyección de instrucciones a través del trabajo que se traspasa; permisos de cada rol |
 | C13 | Madurez y evidencia | Uso real documentado, mantenimiento y **evidencia en contra** |
 
+## 5 bis. Requisitos del estado del trabajo
+
+Qué tiene que resolver la pieza donde vive el trabajo pendiente cuando un agente lo coge. Se extraen de los problemas que atacan las herramientas de este tipo (por ejemplo, el README de [Beads](https://github.com/gastownhall/beads)) y de la práctica de las fases A y A2. Son requisitos, no una herramienta. Beads y cualquier alternativa se miden contra ellos por igual.
+
+| # | Requisito | Problema que evita |
+|---|---|---|
+| R1 | Estado persistente y estructurado que sobrevive a sesiones y reinicios de contexto | El agente pierde el hilo al empezar una sesión nueva |
+| R2 | Dependencias entre piezas y detección automática de lo que está **listo** (sin bloqueos) | Coger algo cuyo prerrequisito no está hecho |
+| R3 | **Reserva atómica** (*claim*): asignar y marcar «en curso» en una sola operación | Dos agentes con la misma pieza |
+| R4 | Recuperación de reservas abandonadas: caducidad o *lease* | Una pieza queda bloqueada para siempre si el agente muere (fallo documentado en Symphony, fase A2) |
+| R5 | Identificadores sin colisión entre ramas y agentes; fusión sin conflictos | Choques al trabajar en paralelo en varias ramas |
+| R6 | Sincronización entre máquinas y agentes | El estado difiere según dónde se mire |
+| R7 | Interfaz para agentes independiente del modelo: CLI con salida JSON, API o MCP (*Model Context Protocol*, el protocolo estándar para dar herramientas a un agente) | Atarse a un arnés o a un vendor |
+| R8 | Jerarquía: épica → tarea → subtarea | No poder reflejar el desglose del diseño |
+| R9 | Historial de auditoría por pieza: quién, cuándo, qué cambió | No saber quién hizo qué |
+| R10 | Economía de contexto: resumen de lo cerrado e inyección del contexto justo al empezar | Llenar la ventana de contexto con historia irrelevante |
+| R11 | Memoria del proyecto persistente para los agentes | Repetir errores ya resueltos |
+| R12 | Vínculo con GitHub (issues, PRs, commits) y visibilidad para personas | Que el trabajo viva en un sitio que nadie ve |
+| R13 | Coste operativo asumible en la VM (procesos en segundo plano, base de datos) | Complejidad que no compensa (crítica práctica a Beads, [HN](https://news.ycombinator.com/item?id=46487580)) |
+
 ## 6. Método
 
 Principio: **primero cómo se hace realmente; después con qué herramientas; al final, la comparación con la idea de partida.**
@@ -122,6 +142,16 @@ Si falla algo, la fase se repite o se completa. Así se detectaron los fallos de
 - La comparación con la idea de partida está hecha.
 
 ## 10. Entregables
+
+- **Flujo completo y operable, sin instalar nada todavía:**
+  1. Arquitectura: componentes y qué rol cubre cada uno.
+  2. **Contratos entre piezas:** qué entrega cada paso al siguiente, en qué formato y por qué interfaz (CLI, MCP, API, git).
+  3. Configuración redactada: ficheros y parámetros listos para aplicar.
+  4. Runbook paso a paso desde un proyecto vacío.
+  5. **Comprobación de coherencia:** recorrido completo de una unidad de trabajo sobre el papel, verificando en la documentación de cada pieza que cada conexión existe de verdad.
+  6. Escenarios de fallo y su recuperación.
+  7. Cómo se cambia el modelo de cada rol.
+  8. Coste y trazabilidad.
 
 - **Procedimiento replicable** para cualquier proyecto: cómo se hace cada paso, desde lo que define el modelo que diseña hasta el trabajo implementado y revisado por otro modelo. Qué herramientas hacen falta y cómo se configuran, sin depender de qué modelo ocupe cada rol.
 
