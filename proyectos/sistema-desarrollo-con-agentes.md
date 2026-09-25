@@ -1,7 +1,7 @@
 ---
 title: Sistema de desarrollo de aplicaciones con agentes
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-25
 tags: [desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git]
 zona: tecnico
 ---
@@ -10,7 +10,7 @@ Sistema genérico para desarrollar cualquier aplicación de principio a fin, con
 
 ## Estado
 
-Abierto el 2026-09-24. Bloque 2 investigado: [[orquestacion-opus-deepseek-informe]]. Pendiente de decidir juntos el esqueleto de arquitectura y los finalistas que pasan a pruebas.
+Abierto el 2026-09-24. Investigación del ciclo completo cerrada el 2026-09-25: [[desarrollo-agentes-investigacion]]. Faltan las decisiones del usuario (ver abajo). El informe [[orquestacion-opus-deepseek-informe]] es parcial y solo cubre la conexión entre modelos.
 
 ## Hipótesis iniciales del usuario (no son decisiones)
 
@@ -38,6 +38,16 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 
 ## Preguntas abiertas para el usuario (siguiente sesión)
 
+Vigentes desde el 2026-09-25. Salen de [[desarrollo-agentes-investigacion]], sección 7.
+
+1. ¿Un solo vendor por defecto (Anthropic con `opusplan`) y DeepSeek como experimento medido, en lugar de la división fija Anthropic piensa / DeepSeek implementa?
+2. Forja: GitHub (mejor ecosistema de agentes) o Gitea/Forgejo autoalojado (soberanía).
+3. Framework spec-driven para el piloto: Spec Kit u OpenSpec.
+4. Qué rutas exigen siempre aprobación humana (auth, cripto, IaC, workflows, tests).
+5. Piloto: ¿[[app-seguimiento-patrimonio]]?
+
+### Preguntas anteriores (anuladas)
+
 > **Anuladas (2026-09-24).** Estas preguntas daban por buena la hipótesis del usuario (Opus + DeepSeek con issues) y salían de un informe parcial. Las sustituirán las preguntas de la investigación completa del ciclo, que está en curso.
 
 Planteadas el 2026-09-24 tras la investigación del bloque 2. Contexto en [[orquestacion-opus-deepseek-informe]].
@@ -58,7 +68,8 @@ Después de esas respuestas:
 
 ## Enlaces
 
-- [[orquestacion-opus-deepseek-informe]] — investigación del reparto Opus/DeepSeek (bloque 2)
+- [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
+- [[orquestacion-opus-deepseek-informe]] — informe parcial: conexión entre Claude y DeepSeek
 - [[app-seguimiento-patrimonio]] — candidata a primer piloto
 - [[decisiones]] — registro de las decisiones de este proyecto
 - [[entorno]] — herramientas de investigación disponibles en esta máquina

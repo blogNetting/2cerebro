@@ -8,7 +8,7 @@ zona: tecnico
 
 Cómo hacer que Opus (suscripción Pro) dirija y DeepSeek (API) programe: qué hay, qué funciona según la comunidad, qué se descarta y qué arquitecturas pasan a pruebas.
 
-> **Informe parcial (2026-09-24).** Solo cubre la conexión entre modelos, que es una pieza menor. No responde al encargo: arquitectura, estrategia, infraestructura y herramientas del ciclo completo, ni qué es el estándar de la comunidad. El esqueleto de la sección 5 es una propuesta mía, no un hallazgo. Se sustituirá por la investigación completa.
+> **Informe parcial (2026-09-24).** Solo cubre la conexión entre modelos, que es una pieza menor. No responde al encargo: arquitectura, estrategia, infraestructura y herramientas del ciclo completo, ni qué es el estándar de la comunidad. El esqueleto de la sección 5 es una propuesta mía, no un hallazgo. La investigación completa está en [[desarrollo-agentes-investigacion]].
 
 ## 1. Introducción
 

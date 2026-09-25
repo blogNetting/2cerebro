@@ -28,3 +28,8 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[orquestacion-modelos-y-costes]] — modelos DeepSeek vigentes, precios, benchmarks frente a Claude, límites de Pro y boceto de coste por tarea
 - [[orquestacion-experiencia-comunidad]] — qué reportan los usuarios reales: patrones que funcionan, fallos, costes y disciplina de tests
 - [[orquestacion-seguridad-ejecutor]] — aislamiento (Podman + gVisor), catálogo de riesgos y controles por capa para el agente ejecutor
+- [[desarrollo-agentes-investigacion]] — síntesis de la investigación del ciclo completo con agentes: estándar de la comunidad fase a fase, modelos de Anthropic por fase, trazabilidad, hipótesis del usuario contrastadas y arquitectura propuesta
+- [[desarrollo-agentes-f1-especificacion]] — de la idea a las tareas: frameworks spec-driven (Spec Kit, OpenSpec, BMAD, Kiro), formatos de requisitos y modelo por fase
+- [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — de la tarea a la PR: agentes issue→PR, orquestación, datos de revisión y merge, quién hizo qué
+- [[desarrollo-agentes-f3-git-cicd-infra]] — trunk-based, rulesets, merge queue, forja, CI/CD y despliegue a pequeña escala, DORA con IA
+- [[desarrollo-agentes-f4-devsecops]] — ASVS, SLSA, Scorecard, SSDF-AI, toolchain por etapa, mutation testing y no repudio
