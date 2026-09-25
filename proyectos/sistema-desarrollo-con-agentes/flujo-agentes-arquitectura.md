@@ -86,7 +86,7 @@ estado:en-revision ──(CI verde + aprobación del revisor + CODEOWNERS)──
 
 **Reserva (R3), en tres capas:**
 1. **Concurrencia de Actions por tarea:** `concurrency: group: tarea-${{ issue.number }}` hace que haya «at most one running job or workflow in a concurrency group at any time» ✔︎.
-2. **`lock-for-agent: true`** de gh-aw bloquea la issue durante la ejecución ✔︎.
+2. **`lock-for-agent: true`** existe en gh-aw pero va bajo `on/issues`, no en la raíz — en esta versión del workflow se ha retirado por simplicidad (verificado al compilar, sección 7.1); se puede añadir combinándolo con `on.issues.types` si además del `label_command` se quiere bloquear la edición de la issue.
 3. **Comprobación de idempotencia al arrancar:** si la issue ya tiene una PR abierta o `estado:en-curso`, la ejecución termina sin hacer nada. 🧪 implementable con `on.steps` de gh-aw; alternativa: la primera instrucción del prompt.
 4. Endurecimiento opcional: crear la referencia `refs/heads/reserva/tarea-N` con `git push --force-with-lease=<ref>:`, que solo tiene éxito si la referencia no existe ✔︎ (documentación de git).
 
@@ -133,7 +133,7 @@ Es lo que evita la deriva del plan. Todo lo que el ejecutor necesita va dentro. 
 
 ### 7.1 Ejecutor: workflow gh-aw `.github/workflows/implementar.md`
 
-Todas las claves están tomadas de la documentación de gh-aw ✔︎ (engines, triggers, safe-outputs, frontmatter). Los valores concretos se validan con `gh aw compile` en la prueba de humo 🧪.
+> **Compilado y verificado de verdad el 2026-09-25** con `gh aw compile` (extensión oficial `githubnext/gh-aw`, versión instalada v0.89.21) en un repo de prueba local, no publicado. El primer intento **falló**: `lock-for-agent` no va en la raíz de `on`, el propio compilador dice que va bajo `on/issues` o `on/issue_comment` — error de este documento, corregido abajo. Se retira `lock-for-agent` de esta versión (el grupo de concurrencia ya basta para la reserva exclusiva; ver nota tras el bloque). Con la corrección, compiló: `✓ implementar.md (129.9 KB), 1 succeeded, 2 warnings`.
 
 ```markdown
 ---
@@ -141,7 +141,6 @@ on:
   label_command:
     name: agente:implementar
     events: [issues]
-  lock-for-agent: true
 concurrency:
   group: tarea-${{ github.event.issue.number }}
   cancel-in-progress: false
@@ -172,8 +171,9 @@ Implementa la tarea #${{ github.event.issue.number }} siguiendo EXACTAMENTE su c
 6. Abre la PR con «Closes #N» y, en el cuerpo: modelo usado, enlace a esta ejecución y criterios cubiertos.
 ```
 
-- **Endpoint y modelo.** DeepSeek documenta `ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic` para Claude Code ✔︎. gh-aw pasa el modelo al proveedor «verbatim» cuando `ANTHROPIC_BASE_URL` está fijado ✔︎.
-- **Clave.** DeepSeek admite la cabecera `x-api-key` («Fully Supported») ✔︎, así que su clave va en `ANTHROPIC_API_KEY` 🧪.
+- **Endpoint y modelo, verificados en el fichero que de verdad ejecuta GitHub** (`implementar.lock.yml`, generado por el compilador, no escrito a mano): el paso final invoca `claude --print … --prompt-file …` con `env: { ANTHROPIC_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}, ANTHROPIC_BASE_URL: https://api.deepseek.com/anthropic }`. Así es como DeepSeek llega a consumir: cada ejecución del job hace peticiones HTTP reales a `api.deepseek.com`, autenticadas con tu clave, y DeepSeek las factura por token igual que cualquier llamada a su API.
+- **Hallazgo no documentado antes: gh-aw ejecuta el agente dentro de un contenedor con cortafuegos propio** (`ghcr.io/github/gh-aw-firewall/agent`, `api-proxy` y `squid`, con SHA fijado en el propio `.lock.yml`). El `api-proxy` aplica `network.allowed` de verdad (no es solo una advertencia documental) y trae límites de presupuesto propios: `maxRuns`, `maxAiCredits`, `maxCacheMisses`. **Esto exige Docker en el runner** — trivial en runners alojados por GitHub, pero es un requisito real si se opta por un runner propio en la VM (ver §12).
+- **Control de seguridad nuevo, no visto en la investigación previa:** al compilar con un secreto nuevo (`DEEPSEEK_API_KEY`), gh-aw exige aprobación explícita (`gh aw compile --approve`) antes de dejarlo pasar — control propio contra inyección de secretos no autorizados, coherente con el resto del diseño DevSecOps.
 - **Ficheros protegidos.** `create-pull-request` incluye «Protected Files against supply chain attacks» y `allowed-files` ✔︎: se restringe a las rutas de código y de tests nuevos.
 
 **Workflow `rehacer.md`:** el mismo motor, con disparador `label_command: agente:rehacer` en `pull_request` y salida `push-to-pull-request-branch` ✔︎. Toma los comentarios de la revisión como entrada.

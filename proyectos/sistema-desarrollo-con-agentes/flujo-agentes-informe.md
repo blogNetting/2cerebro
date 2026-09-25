@@ -31,6 +31,7 @@ Los subagentes trabajaron en Sonnet 5. La revisión, la verificación y esta sí
 | Informe | Error | Corrección |
 |---|---|---|
 | F1 (anulado) y B | Presentaban como literal de la documentación de subagentes de Claude Code la frase «No explicit task queue… Coordination is implicit». **No existe** en la página | Retirada. Lo cierto: los subagentes no comparten cola; los *agent teams* sí ✔︎ |
+| Este informe (arquitectura, 2026-09-25) | El primer YAML de `implementar.md` tenía `lock-for-agent` en la raíz de `on`, cosa que no describe ningún ejemplo de la documentación de gh-aw que se leyó — nadie lo probó a compilar antes de escribirlo | Corregido al compilar de verdad con `gh aw compile` (extensión oficial instalada, repo de prueba local): el compilador rechazó la clave y dio la ubicación correcta (`on/issues`); la versión corregida sí compila, ver [[flujo-agentes-arquitectura]] §7.1 |
 | F1 (anulado) | Afirmaba que Claude Code no tiene reserva de tareas | Falso: *agent teams* tiene «Task claiming uses file locking» ✔︎ |
 | B | Decía haber clasificado todo repo de 500★ o más y faltaban Symphony, Backlog.md, Vibe Kanban, Claude Squad, Gas Town y BMAD | Completado en B2 |
 | B2 | Paráfrasis de Codex Cloud presentada como cita literal | Corregida en B2 |

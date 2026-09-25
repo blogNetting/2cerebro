@@ -78,7 +78,7 @@ Cada salto indica la pieza que lo hace y la evidencia de que esa conexión exist
 | 2 | Especificación → épica + sub-issues con dependencias | `gh issue create --parent/--blocked-by` | Flags en `gh issue create --help` (gh 2.101.0) | ✔︎ |
 | 3 | Etiqueta → dispara el workflow del ejecutor | gh-aw `label_command` | [triggers](https://github.github.com/gh-aw/reference/triggers/): quita la etiqueta y la deja lista para reaplicar | ✔︎ |
 | 4 | Una sola ejecución por tarea | `concurrency.group` por issue | [Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency): «at most one running» | ✔︎ |
-| 5 | La issue no se modifica durante la ejecución | `lock-for-agent: true` | [triggers](https://github.github.com/gh-aw/reference/triggers/) | ✔︎ (🧪 combinado con `label_command`) |
+| 5 | La issue no se modifica durante la ejecución | Opcional: `lock-for-agent: true` bajo `on.issues` (no en la raíz de `on`) — se probó en la raíz y el compilador lo rechazó; retirado de la versión que sí compila, ver [[flujo-agentes-arquitectura]] §7.1 | [triggers](https://github.github.com/gh-aw/reference/triggers/) | ✔︎ corregido y verificado con `gh aw compile` |
 | 6 | Workflow → Claude Code habla con DeepSeek | `engine.env.ANTHROPIC_BASE_URL` | [gh-aw engines](https://github.github.com/gh-aw/reference/engines/) + [DeepSeek Claude Code](https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code) | ✔︎ (🧪 la clave en `ANTHROPIC_API_KEY`) |
 | 7 | La red del agente permite llegar a DeepSeek | `network.allowed` | [gh-aw engines](https://github.github.com/gh-aw/reference/engines/): «The target domain must also appear in network.allowed» | ✔︎ |
 | 8 | Ejecutor → PR con restricciones de ficheros | `safe-outputs.create-pull-request` + `allowed-files` | [safe-outputs](https://github.github.com/gh-aw/reference/safe-outputs/) | ✔︎ |
@@ -111,7 +111,7 @@ En un repositorio de prueba:
 
 ## 6. Qué queda abierto
 
-- Los 7 puntos 🧪 de §4, que se cierran en la prueba de humo.
+- 6 de los 7 puntos 🧪 de §4 (el compilado real del workflow del ejecutor ya cerró el punto 6: DeepSeek/ANTHROPIC_BASE_URL, confirmado en el `.lock.yml`, 2026-09-25).
 - El umbral de la cobertura del diff y de mutación, que se fija por proyecto.
 - El plan de GitHub (rulesets, merge queue y minutos en privado).
 - La elección entre runners alojados o propio en la VM.
