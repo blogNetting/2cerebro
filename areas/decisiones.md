@@ -101,3 +101,10 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Investigación en fases A–C con revisión del orquestador entre fases. Se corrigieron dos citas no literales, un inventario incompleto y un benchmark con fecha imposible ([[flujo-agentes-informe]] §2).
 - Propuesta: GitHub Issues + sub-issues + dependencias como estado; primitivas de GitHub Actions (grupos de concurrencia, `timeout-minutes`) para reserva y caducidad; gh-aw como ejecutor con DeepSeek a través del endpoint compatible con Anthropic; `claude-code-action` con token de la suscripción Pro para que revise Opus; CI determinista y `CODEOWNERS`. Se descarta Beads por R13 (fallos abiertos de corrupción y demonios).
 - Todavía no es una decisión cerrada: la valida el usuario. Detalle en [[flujo-agentes-arquitectura]].
+
+## 2026-09-25 — Nombre del repo plataforma: Astillero. Mecanismo de replicación verificado
+
+- El repo que contendrá los workflows y la configuración reutilizables del sistema se llamará **Astillero** (decisión del usuario, tras descartar varias tandas de nombres propuestos).
+- Mecanismo de replicación a cada proyecto, verificado en fuente primaria: reusable workflows de GitHub Actions (`workflow_call`, confirmado que funcionan entre repos privados de una cuenta personal) para el revisor y el reconciliador; imports remotos de gh-aw (`imports: owner/repo/path@ref`, confirmado que existen) para el ejecutor; **copier** para lo estático (`CODEOWNERS`, `AGENTS.md`, labels, plantilla de contrato), descartados cruft y `repo-file-sync-action` por falta de mantenimiento. Detalle completo en [[astillero-replicacion]].
+- **Corrección del usuario (2026-09-25):** todo repo de este ecosistema (Astillero y cada proyecto, empezando por Patrimonial) se crea **privado**, siempre, sin plantear la opción pública. Consecuencia: hace falta GitHub Pro (~4 $/mes, cubre todos los repos privados de la cuenta, no es coste por repo) para tener rulesets y merge queue en cualquiera de ellos.
+- Sin decidir todavía: la creación real del repo Astillero en GitHub (hoy solo existe el diseño).

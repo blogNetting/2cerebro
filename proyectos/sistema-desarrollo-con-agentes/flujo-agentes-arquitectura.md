@@ -62,13 +62,13 @@ El diseño del flujo completo: qué pieza cubre cada rol, qué se entregan entre
 | K3 | Desglosador → tracker | Una **épica** por *feature* y una **sub-issue por tarea**, cada una con el **contrato de tarea** (sección 6) y sus dependencias | Cuerpo de issue en markdown | `gh issue create --parent <épica> --blocked-by <n>` ✔︎ | `gh issue create --help` ✔︎ |
 | K4 | Tracker → ejecutor | Orden de ejecutar la tarea N | Etiqueta de un solo uso `agente:implementar` | Disparador `label_command` de gh-aw: «automatically removes that label so it can be re-applied» ✔︎ | [gh-aw triggers](https://github.github.com/gh-aw/reference/triggers/) ✔︎ |
 | K5 | Ejecutor → repo | Rama con el código y los tests, y una PR que referencia la tarea | PR con `Closes #N`, prefijo `[agente]` y etiqueta `estado:en-revision` | Salida segura `create-pull-request` ✔︎ | [gh-aw safe-outputs](https://github.github.com/gh-aw/reference/safe-outputs/) ✔︎ |
-| K6 | PR → CI | Ejecución de las puertas | Checks obligatorios | Evento `pull_request` y rulesets | Nativo |
+| K6 | PR → CI | Ejecución de las puertas | Checks obligatorios | Evento `pull_request` y rulesets — **requiere GitHub Pro en repo privado, confirmado con la API real el 2026-09-25** (ver [[flujo-agentes-runbook]] §2) | Nativo |
 | K7 | CI → revisor | PR con CI en verde | Evento | `claude-code-action` en `pull_request` o `workflow_run` | ✔︎ inputs `prompt`, `claude_args` |
 | K8 | Revisor → PR | Veredicto contra el contrato | Review o comentario; si hay cambios, etiqueta `agente:rehacer` | GitHub | 🧪 que la review de la acción pueda aplicar una etiqueta |
 | K9 | PR → ejecutor (rehacer) | Comentarios de la revisión | Etiqueta de un solo uso `agente:rehacer` | gh-aw `label_command` en `pull_request` + `push-to-pull-request-branch` ✔︎ | safe-outputs ✔︎ |
 | K10 | PR aprobada → integración | Merge | Merge queue | Nativo | — |
 | K11 | Merge → tracker | Cierre de la tarea | `Closes #N` cierra la issue | Nativo | — |
-| K12 | Cierre → reconciliador | Promover lo que se ha desbloqueado | Etiquetas `estado:listo` y `agente:implementar` | Workflow con `issues: closed` + `gh issue view --json` 🧪 (nombre exacto del campo `blockedBy`) | [[flujo-fase-c1-spec-y-estado]] §5 |
+| K12 | Cierre → reconciliador | Promover lo que se ha desbloqueado | Etiquetas `estado:listo` y `agente:implementar` | Workflow con `issues: closed` + `gh issue view --json blockedBy` — **campo confirmado real y probado en vivo el 2026-09-25**: cerrar la tarea A promovió sola la tarea B | [[flujo-agentes-runbook]] §4 |
 
 ## 5. Máquina de estados de una tarea
 
@@ -153,7 +153,7 @@ engine:
     ANTHROPIC_BASE_URL: "https://api.deepseek.com/anthropic"
     ANTHROPIC_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
 network:
-  allowed: [github.com, api.deepseek.com]
+  allowed: [github, api.deepseek.com, python]   # ecosistema del stack del proyecto; node/go/rust/etc. según toque
 safe-outputs:
   create-pull-request:
     title-prefix: "[agente] "
@@ -173,9 +173,10 @@ Implementa la tarea #${{ github.event.issue.number }} siguiendo EXACTAMENTE su c
 ```
 
 - **Endpoint y modelo, verificados en el fichero que de verdad ejecuta GitHub** (`implementar.lock.yml`, generado por el compilador, no escrito a mano): el paso final invoca `claude --print … --prompt-file …` con `env: { ANTHROPIC_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}, ANTHROPIC_BASE_URL: https://api.deepseek.com/anthropic }`. Así es como DeepSeek llega a consumir: cada ejecución del job hace peticiones HTTP reales a `api.deepseek.com`, autenticadas con tu clave, y DeepSeek las factura por token igual que cualquier llamada a su API.
-- **Hallazgo no documentado antes: gh-aw ejecuta el agente dentro de un contenedor con cortafuegos propio** (`ghcr.io/github/gh-aw-firewall/agent`, `api-proxy` y `squid`, con SHA fijado en el propio `.lock.yml`). El `api-proxy` aplica `network.allowed` de verdad (no es solo una advertencia documental) y trae límites de presupuesto propios: `maxRuns`, `maxAiCredits`, `maxCacheMisses`. **Esto exige Docker en el runner** — trivial en runners alojados por GitHub, pero es un requisito real si se opta por un runner propio en la VM (ver §12).
+- **Hallazgo no documentado antes: gh-aw ejecuta el agente dentro de un contenedor con cortafuegos propio** (`ghcr.io/github/gh-aw-firewall/agent`, `api-proxy` y `squid`, con SHA fijado en el propio `.lock.yml`). El `api-proxy` aplica `network.allowed` de verdad (no es solo una advertencia documental) y trae límites de presupuesto propios: `maxRuns`, `maxAiCredits`, `maxCacheMisses`. **Esto exige Docker en el runner** — trivial en runners alojados por GitHub, pero es un requisito real si se opta por un runner propio en la VM (ver §13).
 - **Control de seguridad nuevo, no visto en la investigación previa:** al compilar con un secreto nuevo (`DEEPSEEK_API_KEY`), gh-aw exige aprobación explícita (`gh aw compile --approve`) antes de dejarlo pasar — control propio contra inyección de secretos no autorizados, coherente con el resto del diseño DevSecOps.
 - **Ficheros protegidos.** `create-pull-request` incluye «Protected Files against supply chain attacks» y `allowed-files` ✔︎: se restringe a las rutas de código y de tests nuevos.
+- **Corrección real, encontrada en la primera ejecución completa (2026-09-25), no en la documentación:** con `network.allowed` limitado a `github` y la API del modelo, el ejecutor no puede instalar nada del stack del proyecto (`pip`, `npm`, lo que sea) — el cortafuegos bloquea el registro de paquetes y el ejecutor no puede correr los tests de verdad, solo simular el resultado. **Regla general, no solo para Python:** `network.allowed` tiene que incluir el **identificador de ecosistema de gh-aw del stack del proyecto** (`python` = PyPI+conda+pythonhosted; `node` = npm/yarn/pnpm; también hay `go`, `rust`, `ruby`, `java`, `dotnet`, etc. — lista completa en [gh-aw/reference/network](https://github.github.com/gh-aw/reference/network/)), nunca dominios sueltos a mano. Es parte del checklist de puesta en marcha, [[flujo-agentes-runbook]] §2.
 
 ### 7.1 bis. Por qué el paso 3 del prompt («escribe el test y comprueba que falla») no basta por sí solo, y qué lo hace cumplirse de verdad
 
@@ -316,7 +317,11 @@ Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
 
 La estructura del flujo no cambia en ningún caso.
 
-## 12. Alternativa sin ejecutar en Actions
+## 12. Replicación a cada proyecto (Astillero)
+
+Cómo se lleva este diseño a un repo nuevo (p. ej. [[app-seguimiento-patrimonio]]) y cómo llegan los cambios posteriores a los proyectos ya creados: [[astillero-replicacion]]. Cierra el punto 🧪 de §7.1 sobre includes remotos de gh-aw — **sí los admite** (`imports: owner/repo/path@ref`).
+
+## 13. Alternativa sin ejecutar en Actions
 
 Si se prefiere ejecutar en la VM:
 - **CAO** (AWS Labs) con un perfil `provider: opencode_cli` y el modelo de DeepSeek ✔︎, sobre el mismo tracker, con las mismas etiquetas y contratos.
@@ -327,5 +332,6 @@ Si se prefiere ejecutar en la VM:
 
 - [[flujo-agentes-informe]] — evidencia y descartes
 - [[flujo-agentes-runbook]] — puesta en marcha y comprobación de coherencia
+- [[astillero-replicacion]] — cómo se replica este diseño a cada proyecto y cómo se propagan los cambios
 - [[sistema-desarrollo-con-agentes]] — proyecto
 - [[_index]]

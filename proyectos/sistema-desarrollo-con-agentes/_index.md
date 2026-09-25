@@ -27,3 +27,4 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 - [[flujo-fase-c2-orquestacion-ejecucion-revision]] — fase C2: orquestadores, ejecutores, revisión y trazabilidad con interfaces exactas
 - [[flujo-agentes-evidencia-empirica]] — ¿implementará DeepSeek bien, basándose en tests? Resolución de la contradicción de benchmarks, evidencia real de adherencia a TDD (y por qué falla la mayoría de las veces), tasa de éxito por micro-paso del ciclo
 - [[flujo-agentes-prueba-descomposicion]] — prueba real (no simulada) de Opus descomponiendo una idea en especificación y tareas, con issues creadas de verdad y una implementación de referencia que las valida
+- [[astillero-replicacion]] — cómo se replica el sistema a cada proyecto: reusable workflows verificados cross-repo, imports remotos de gh-aw (cierra el punto sin verificar), copier para lo estático, con copier/cruft/repo-file-sync-action contrastados

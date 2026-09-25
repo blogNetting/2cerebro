@@ -23,9 +23,13 @@ Pasos para poner en marcha el flujo de [[flujo-agentes-arquitectura]] en cualqui
 
 **Runners:** los alojados por GitHub no necesitan instalar nada. Un runner propio en la VM es opcional y debe ser efímero.
 
-**Minutos de Actions:** en repos privados consumen la cuota del plan de GitHub. 🧪 comprobar la cuota de tu plan antes de operar.
+**Minutos de Actions:** en repos privados consumen la cuota del plan de GitHub. Con GitHub Free, la cuota es limitada (verificar la cifra vigente en tu cuenta con `gh api user/settings/billing/actions` antes de operar a volumen); con Pro sube. **Sin verificar la cifra exacta**, a diferencia del bloqueo de rulesets, que sí se confirmó con la llamada real de arriba.
 
 ## 2. Configuración del repositorio (por proyecto)
+
+> **Checklist previo, obligatorio antes de la primera ejecución real.** Nace de dos fallos reales encontrados el 2026-09-25 en la primera ejecución completa contra `blogNetting/prueba-flujo-agentes` — ninguno estaba en la documentación de gh-aw, los dos costaron una ejecución entera desperdiciada. Repetir esta lista en cada proyecto nuevo, no solo en el primero:
+> 1. **Permiso de PR de Actions.** Por defecto GitHub lo tiene desactivado. Sin él, ninguna PR se crea sola aunque nada esté protegido: cae directo a issue de revisión. Se activa por API, sin tocar la interfaz: `gh api -X PUT repos/<owner>/<repo>/actions/permissions/workflow -f default_workflow_permissions=write -F can_approve_pull_request_reviews=true`.
+> 2. **`network.allowed` del ejecutor.** `github` + la API del modelo **no bastan**: sin el identificador de ecosistema del stack del proyecto, el cortafuegos bloquea el registro de paquetes y el ejecutor no puede instalar nada ni correr un solo test de verdad — solo puede simular el resultado, que es justo lo que no queremos. Añadir el identificador que toque (`python`, `node`, `go`, `rust`, `java`, `dotnet`…) en `network.allowed` de `implementar.md` y `rehacer.md`, **no un dominio suelto a mano**: la lista completa está en [gh-aw/reference/network](https://github.github.com/gh-aw/reference/network/) y se actualiza con la propia herramienta, un dominio copiado a mano no.
 
 1. **Etiquetas de estado:**
    ```
@@ -52,7 +56,7 @@ Pasos para poner en marcha el flujo de [[flujo-agentes-arquitectura]] en cualqui
    - Historial lineal.
    - Merge queue.
    
-   🧪 Confirmar que el plan de GitHub permite rulesets y merge queue en un repositorio privado ([[flujo-fase-c2-orquestacion-ejecucion-revision]] §10).
+   > **Cerrado el 2026-09-25, probado en vivo, no leído en la documentación:** en un repo privado del plan actual (`blogNetting`, sin campo `plan` = Free), tanto `POST /rulesets` como la protección de rama clásica devuelven `403 — "Upgrade to GitHub Pro or make this repository public to enable this feature"`. **Sin GitHub Pro (o sin hacer el repo público), no hay rulesets, ni protección de rama, ni merge queue en privado.** Dos salidas: (a) pagar GitHub Pro — 4 $/mes en la fecha de esta comprobación, confirmar precio vigente antes de decidir; (b) hacer público el repo del proyecto real — no vale para código propietario. Se recomienda (a) si el proyecto es privado.
 
 ## 3. Operación: de la idea al merge
 
@@ -113,12 +117,14 @@ En un repositorio de prueba:
 
 - 6 de los 7 puntos 🧪 de §4 (el compilado real del workflow del ejecutor ya cerró el punto 6: DeepSeek/ANTHROPIC_BASE_URL, confirmado en el `.lock.yml`, 2026-09-25).
 - El umbral de la cobertura del diff y de mutación, que se fija por proyecto.
-- El plan de GitHub (rulesets, merge queue y minutos en privado).
+- ~~El plan de GitHub (rulesets, merge queue)~~ — **cerrado**: hace falta GitHub Pro para un repo privado, confirmado con una llamada real a la API (§2). Solo queda por confirmar la cuota exacta de minutos de Actions.
 - La elección entre runners alojados o propio en la VM.
+- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero .` más los secretos propios del proyecto — pendiente de reescribir §2 cuando exista el repo de Astillero.
 
 ## Enlaces
 
 - [[flujo-agentes-arquitectura]] — diseño
 - [[flujo-agentes-informe]] — evidencia
+- [[astillero-replicacion]] — mecanismo de replicación a cada proyecto
 - [[sistema-desarrollo-con-agentes]] — proyecto
 - [[_index]]

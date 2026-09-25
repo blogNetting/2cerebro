@@ -12,6 +12,12 @@ Sistema genérico para desarrollar cualquier aplicación de principio a fin, con
 
 Abierto el 2026-09-24. Investigación del ciclo completo cerrada el 2026-09-25: [[desarrollo-agentes-investigacion]]. Faltan las decisiones del usuario (ver abajo). El informe [[orquestacion-opus-deepseek-informe]] es parcial y solo cubre la conexión entre modelos.
 
+## Repo: Astillero
+
+- **Repo:** [blogNetting/astillero](https://github.com/blogNetting/astillero), privado.
+- **Ruta local:** `~/dev/astillero`.
+- **Estado (2026-09-25):** creado, con acceso de Actions abierto a los repos de `blogNetting` (para los reusable workflows de [[astillero-replicacion]]). Solo tiene el README con los enlaces al diseño; todavía no contiene los workflows reutilizables ni la plantilla de copier — están en borrador en [[flujo-agentes-arquitectura]] §7, pendientes de trasladar.
+
 ## Hipótesis iniciales del usuario (no son decisiones)
 
 Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la pone Anthropic; un modelo más barato (DeepSeek) implementa; el trabajo se entrega en forma de issues; gitflow. Se mantienen o se descartan según la evidencia de la investigación completa.
