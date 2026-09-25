@@ -6,7 +6,7 @@ tags: [agentes, orquestacion, estado-del-trabajo, revision, trazabilidad, invest
 zona: tecnico
 ---
 
-Cómo se organiza de verdad el trabajo con agentes, desde el diseño hasta el código revisado. Qué funciona según la evidencia, qué se descarta, y qué flujo se recomienda. Diseño operable en [[flujo-agentes-arquitectura]] y puesta en marcha en [[flujo-agentes-runbook]].
+Cómo se organiza de verdad el trabajo con agentes, desde el diseño hasta el código revisado. Qué funciona según la evidencia, qué se descarta, y qué flujo se recomienda. Diseño operable en [[flujo-agentes-arquitectura]], puesta en marcha en [[flujo-agentes-runbook]], evidencia de correctitud en [[flujo-agentes-evidencia-empirica]], prueba real de descomposición en [[flujo-agentes-prueba-descomposicion]], y diagrama del mecanismo: https://claude.ai/artifact/LmnofQRqGPyXDdZa6aCihL
 
 ## 1. Introducción
 

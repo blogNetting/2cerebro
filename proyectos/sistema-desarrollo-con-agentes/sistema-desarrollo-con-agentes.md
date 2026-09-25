@@ -43,7 +43,7 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 
 ## Siguiente paso (2026-09-25)
 
-Fase de organización del trabajo con agentes **investigada y diseñada** el 2026-09-25: [[flujo-agentes-informe]] (evidencia), [[flujo-agentes-arquitectura]] (diseño operable) y [[flujo-agentes-runbook]] (puesta en marcha y prueba de humo). Nada instalado. Definición de la fase: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
+Fase de organización del trabajo con agentes **investigada, diseñada y parcialmente probada en vivo** el 2026-09-25: [[flujo-agentes-informe]] (evidencia), [[flujo-agentes-arquitectura]] (diseño operable, con `tdd-guard` como control obligatorio), [[flujo-agentes-runbook]] (puesta en marcha), [[flujo-agentes-evidencia-empirica]] (¿va DeepSeek a implementar bien? — sin garantía, evidencia y mitigación), [[flujo-agentes-prueba-descomposicion]] (Opus real descomponiendo una idea) y el diagrama del mecanismo: https://claude.ai/artifact/LmnofQRqGPyXDdZa6aCihL. Probado en vivo en un repo real desechable: reserva sin colisión (5→1 disparo real) y compilación de los 3 workflows del ejecutor. Sin probar aún: DeepSeek implementando de verdad (falta tu clave) y el revisor con Opus en Actions (falta tu token). Definición de la fase: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
 
 ### Preguntas anteriores (anuladas)
 

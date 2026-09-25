@@ -23,6 +23,7 @@ El diseño del flujo completo: qué pieza cubre cada rol, qué se entregan entre
 | **Quien implementa no aprueba** | Ramp ✔︎; `CODEOWNERS` en rutas sensibles |
 | **Empezar con 1–2 ejecutores** | [[flujo-fase-a-practicas-reales]] P1/P6 |
 | **Cada rol tiene un modelo configurable en un único sitio** | Restricción del proyecto: quien ocupa cada rol es intercambiable |
+| **No basta con pedirle al ejecutor «haz TDD»; hace falta un gate que lo aplique** | La instrucción sola falla la mayoría de las veces. En el estudio preregistrado más riguroso encontrado, solo el 41,9 % de las ejecuciones tuvo un test en rojo antes de implementar, y la condición «con instrucción de TDD» rindió **peor** en corrección que sin instrucción alguna ([Dan Luu](https://danluu.com/agentic-testing/) ✔︎, corroborado de forma independiente por [arXiv 2602.07900](https://arxiv.org/abs/2602.07900) sobre 6 modelos en SWE-bench Verified). Ver [[flujo-agentes-evidencia-empirica]] |
 
 ## 2. Roles y quién los ocupa
 
@@ -175,6 +176,39 @@ Implementa la tarea #${{ github.event.issue.number }} siguiendo EXACTAMENTE su c
 - **Hallazgo no documentado antes: gh-aw ejecuta el agente dentro de un contenedor con cortafuegos propio** (`ghcr.io/github/gh-aw-firewall/agent`, `api-proxy` y `squid`, con SHA fijado en el propio `.lock.yml`). El `api-proxy` aplica `network.allowed` de verdad (no es solo una advertencia documental) y trae límites de presupuesto propios: `maxRuns`, `maxAiCredits`, `maxCacheMisses`. **Esto exige Docker en el runner** — trivial en runners alojados por GitHub, pero es un requisito real si se opta por un runner propio en la VM (ver §12).
 - **Control de seguridad nuevo, no visto en la investigación previa:** al compilar con un secreto nuevo (`DEEPSEEK_API_KEY`), gh-aw exige aprobación explícita (`gh aw compile --approve`) antes de dejarlo pasar — control propio contra inyección de secretos no autorizados, coherente con el resto del diseño DevSecOps.
 - **Ficheros protegidos.** `create-pull-request` incluye «Protected Files against supply chain attacks» y `allowed-files` ✔︎: se restringe a las rutas de código y de tests nuevos.
+
+### 7.1 bis. Por qué el paso 3 del prompt («escribe el test y comprueba que falla») no basta por sí solo, y qué lo hace cumplirse de verdad
+
+**Hallazgo crítico de la investigación (2026-09-25), no conocido al escribir la primera versión de este documento:** pedir «TDD» en el prompt no lo garantiza. En el estudio preregistrado más riguroso encontrado (160 ejecuciones por condición, tarea real, [danluu.com/agentic-testing](https://danluu.com/agentic-testing/) ✔︎), solo el 41,9 % de las ejecuciones con instrucción de TDD mostró un test en rojo antes de implementación sustancial, y **la condición con instrucción de TDD rindió peor en corrección que la condición sin ninguna instrucción**. Un paper académico independiente sobre 6 modelos en SWE-bench Verified llega a la misma dirección: los tests que escribe el agente funcionan como «mecanismo de *feedback* observacional», no como aserciones reales, y forzar más o menos escritura de tests por prompt apenas cambia el resultado ([arXiv 2602.07900](https://arxiv.org/abs/2602.07900) ✔︎). Detalle completo en [[flujo-agentes-evidencia-empirica]].
+
+**Control real encontrado, no un simple check de git log:** [`nizos/tdd-guard`](https://github.com/nizos/tdd-guard) (2.352★, activo, verificado con `npm view tdd-guard` → v1.7.0 real en el registro). Es un *hook* `PreToolUse` de Claude Code que **intercepta cada `Write`/`Edit`/`MultiEdit` en tiempo real** y bloquea la acción si no hay un test en rojo que la justifique — no es una comprobación posterior, es una puerta antes de que la edición ocurra. Funciona con pytest, entre otros. Configuración verificada en la documentación oficial ([docs/installation.md](https://github.com/nizos/tdd-guard/blob/main/docs/installation.md) ✔︎):
+
+```json
+// .claude/settings.json (en el repo del proyecto, no en el runner)
+{
+  "hooks": {
+    "PreToolUse": [
+      { "matcher": "Write|Edit|MultiEdit|TodoWrite", "hooks": [{ "type": "command", "command": "tdd-guard" }] }
+    ],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "tdd-guard" }] }],
+    "SessionStart": [{ "matcher": "startup|resume|clear", "hooks": [{ "type": "command", "command": "tdd-guard" }] }]
+  }
+}
+```
+
+```bash
+pip install tdd-guard-pytest   # reportero verificado en PyPI: https://pypi.org/project/tdd-guard-pytest
+```
+
+```toml
+# pyproject.toml
+[tool.pytest.ini_options]
+tdd_guard_project_root = "/ruta/absoluta/del/repo"
+```
+
+Como es configuración estática (`settings.json`), se aplica igual en el ejecutor de gh-aw, sin sesión interactiva — `claude --print` la lee igual.
+
+**Bypass conocido, documentado por el propio proyecto** ([docs/enforcement.md](https://github.com/nizos/tdd-guard/blob/main/docs/enforcement.md) ✔︎): un agente con permiso de ejecutar `Bash` sin restricción puede saltarse el hook editando ficheros con `echo`, `sed`, `awk` o `perl` en vez de las herramientas interceptadas. **Por eso no basta con instalarlo**: hace falta además denegar esos comandos en el `allowed-tools` del ejecutor (ya restringido por el propio `.lock.yml` de gh-aw, que lista las herramientas permitidas explícitamente — ver el fragmento de `--allowed-tools` verificado en la sección 7.1). Defensa en profundidad, no una sola barrera.
 
 **Workflow `rehacer.md`:** el mismo motor, con disparador `label_command: agente:rehacer` en `pull_request` y salida `push-to-pull-request-branch` ✔︎. Toma los comentarios de la revisión como entrada.
 
