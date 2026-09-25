@@ -18,6 +18,11 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 
 ## Decisiones cerradas
 
+- **Ejecutor abstracto (2026-09-25).** La arquitectura y la infraestructura funcionan igual sea quien sea el que implementa (DeepSeek, Sonnet u otro). Se usará DeepSeek **por coste**, no por calidad. Cómo se invoca a cada ejecutor es un problema aparte. El diseño y el desglose en tareas los hace Opus 5.5; el resultado siempre se revisa.
+- **Forja: GitHub (2026-09-25).**
+- **Framework spec-driven: se elige en cada proyecto**, según encaje.
+- **No hay piloto** hasta que el sistema esté completo. [[app-seguimiento-patrimonio]] no arranca antes.
+
 - **Genérico y abstracto.** Tiene que servir para cualquier desarrollo. Stack, plataforma git y despliegue se deciden en cada proyecto. Preferencias del usuario: Python con algún framework, o Node.js.
 - **Repos propios.** Este sistema y cada app que cuelgue de él tienen su propio repo, fuera de `2cerebro`, que es público y hace push cada hora. Desde el wiki se llega a cada uno con una nota hub (enlace al repo, ruta local y estado).
 - **No hay código sin tests**, sean unitarios o de integración. La exigencia de cobertura y complejidad se fijará más adelante.
@@ -36,15 +41,9 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 7. Economía: coste real, incluido el retrabajo y las revisiones de Opus.
 8. Piloto: seguramente [[app-seguimiento-patrimonio]], sin confirmar. Solo empieza cuando este sistema esté listo.
 
-## Preguntas abiertas para el usuario (siguiente sesión)
+## Siguiente paso (2026-09-25)
 
-Vigentes desde el 2026-09-25. Salen de [[desarrollo-agentes-investigacion]], sección 7.
-
-1. ¿Un solo vendor por defecto (Anthropic con `opusplan`) y DeepSeek como experimento medido, en lugar de la división fija Anthropic piensa / DeepSeek implementa?
-2. Forja: GitHub (mejor ecosistema de agentes) o Gitea/Forgejo autoalojado (soberanía).
-3. Framework spec-driven para el piloto: Spec Kit u OpenSpec.
-4. Qué rutas exigen siempre aprobación humana (auth, cripto, IaC, workflows, tests).
-5. Piloto: ¿[[app-seguimiento-patrimonio]]?
+Fase actual: averiguar cómo se organiza realmente el trabajo con agentes desde el diseño hasta el código revisado (roles, traspaso, coordinación, topología, revisión, trazabilidad), sin presuponer la forma. Hay que investigarlo a fondo antes de nada más: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
 
 ### Preguntas anteriores (anuladas)
 
@@ -69,6 +68,7 @@ Después de esas respuestas:
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
+- [[circuito-tareas-definicion]] — definición de la fase actual: cómo se organiza realmente el trabajo con agentes (roles, traspaso, coordinación, topología, revisión, trazabilidad); criterios, método por fases, qué cuenta como contrastado y cuándo termina
 - [[orquestacion-opus-deepseek-informe]] — informe parcial: conexión entre Claude y DeepSeek
 - [[app-seguimiento-patrimonio]] — candidata a primer piloto
 - [[decisiones]] — registro de las decisiones de este proyecto

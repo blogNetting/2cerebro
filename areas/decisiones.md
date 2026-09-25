@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-09-24
+updated: 2026-09-25
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -83,3 +83,15 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 - Instalados `gh` y `yt-dlp` en `~/.local/bin`, binarios oficiales con el checksum verificado. No hay sudo; se descartó `apt`. Se descartaron también los MCP de GitHub y de YouTube: la CLI cubre lo mismo sin gastar contexto en definiciones de tools en cada turno.
 - `/investigar-web` tiene un paso 10 nuevo con fuentes directas: GitHub, la API de Algolia de Hacker News y transcripciones de YouTube. Reddit y X van directos a CDP. El deep research de otras IAs solo sirve para descubrir pistas. Ver [[entorno]].
+
+## 2026-09-25 — Sistema de desarrollo con agentes: correcciones y decisiones del usuario
+
+- Subcarpeta `proyectos/sistema-desarrollo-con-agentes/` con su `_index.md`, aprobada por el usuario («tiene que estar en una carpeta propia»). Contiene las 11 notas del proyecto. Los wikilinks no cambian porque los nombres se mantienen.
+- El ejecutor es abstracto: la arquitectura no depende de quién implemente. DeepSeek se usa por coste, no por calidad. Corrección: en [[desarrollo-agentes-investigacion]] se trató DeepSeek como si hubiera que justificarlo por calidad.
+- Decisiones: GitHub como forja; framework spec-driven elegido en cada proyecto; no hay piloto hasta tener el sistema completo.
+- Correcciones de forma: explicar cada tecnicismo al usarlo (DORA se usó sin explicar); ante una pregunta amplia, traer una propuesta concreta en vez de devolver la pregunta; no desviarse del problema central (diseño en tareas → cola de tareas tipo Beads → ejecutores → revisión).
+
+## 2026-09-25 — Regla permanente: lo que menciona el usuario no condiciona nada
+
+- Petición expresa del usuario («escríbelo en sangre»), tras varias repeticiones del mismo fallo: tomar lo que él nombra (DeepSeek, issues, gitflow, Beads…) como premisa o como centro del trabajo.
+- Se añade la sección «Lo que menciona el usuario no condiciona nada» a `AGENTS.md`, junto con la regla de explicar cada sigla al usarla (ajuste de «no expliques fundamentos»).
