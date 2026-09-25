@@ -6,15 +6,21 @@ tags: [astillero, desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git, pr
 zona: tecnico
 ---
 
-**Astillero** es el sistema completo, genérico y replicable para desarrollar software de principio a fin con agentes de IA: desde que el usuario tiene una idea, como Product Owner, hasta que el código está en producción — diseño, especificación, implementación, revisión, CI/CD, DevSecOps y el panel desde el que se dirige todo. Opus 5.5 diseña y revisa; un ejecutor más barato (DeepSeek, por coste, intercambiable) implementa. Todo verificado en producción real, no solo diseñado.
+**Astillero** es el sistema completo, genérico y replicable para desarrollar software de principio a fin con agentes de IA: desde que el usuario tiene una idea, como Product Owner, hasta que el código corre en producción y se mantiene controlado ahí — diseño, especificación, implementación, revisión, CI/CD, DevSecOps, despliegue y operación. Opus 5.5 diseña y revisa; un ejecutor más barato (DeepSeek, por coste, intercambiable) implementa. Verificado en producción real donde se pudo probar en vivo; el resto, diseñado con evidencia real y señalado explícitamente como no ejecutado todavía.
 
-## Estado (2026-09-25): completo y documentado
+## Estado (2026-09-25): ¿cubre todo el ciclo idea→producción? No lo cubría hasta hoy — ahora sí, con huecos señalados
 
-Las tres piezas están construidas, probadas y enlazadas entre sí:
+Pregunta que el usuario hizo explícitamente y que se respondió con una auditoría real, no con una reafirmación: la documentación de ayer llegaba hasta el merge en `main` y ahí se paraba — cero notas sobre despliegue, observabilidad en producción o gestión de incidentes. Confirmado leyendo cada nota, no supuesto. Cerrado hoy con investigación real, misma exigencia de evidencia que el resto del proyecto.
 
-1. **Motor de ingeniería** — [[flujo-agentes-arquitectura]]. Diseño operable (roles, contratos, máquina de estados, `tdd-guard` como control obligatorio) probado en vivo en un repo real desechable (`blogNetting/prueba-flujo-agentes`): reserva sin colisión, ejecución real de DeepSeek con 2 fallos reales corregidos (falta de permiso `issues: read`, cortafuegos de red sin el ecosistema `python`) y una tercera ejecución con PR real (#13) correctamente creada y marcada para revisión humana por tocar un fichero protegido.
+Las cinco piezas, construidas y enlazadas entre sí:
+
+1. **Motor de ingeniería** — [[flujo-agentes-arquitectura]] §1-14. Diseño operable (roles, contratos, máquina de estados, `tdd-guard` como control obligatorio) probado en vivo en un repo real desechable (`blogNetting/prueba-flujo-agentes`): reserva sin colisión, ejecución real de DeepSeek con 2 fallos reales corregidos (falta de permiso `issues: read`, cortafuegos de red sin el ecosistema `python`) y una tercera ejecución con PR real (#13) correctamente creada y marcada para revisión humana por tocar un fichero protegido.
 2. **Replicación a proyectos nuevos** — [[astillero-replicacion]]. Repo [blogNetting/astillero](https://github.com/blogNetting/astillero) con los workflows reutilizables (`implementar`/`rehacer`/`revisar`/`reconciliar`) publicados y una plantilla `copier`. Probado de extremo a extremo: un proyecto generado desde cero con `copier` compila contra el import remoto real de este repo.
 3. **Capa de producto** — [[capa-producto]]. Cómo el usuario dirige el motor como Product Owner de una sola persona: captura de idea, backlog sin scoring formal (sin evidencia real de que nadie lo use así en solitario), panel en GitHub Projects v2, bugs con el mismo contrato de tarea que una funcionalidad, versionado por checkpoint, registro de decisiones de producto.
+4. **Despliegue a producción** — [[flujo-agentes-arquitectura]] §15, nuevo hoy. CD automático en cada merge (sin checkpoint manual aparte del versionado), dónde corre la app, rollback como extensión de K10, migraciones de schema siempre en dos tareas — con evidencia real de 40+ operadores en solitario, no manual de empresa grande. **Diseñado, no ejecutado en vivo todavía**: no hay ningún proyecto real desplegado bajo este mecanismo.
+5. **DevOps mínimo en producción** — [[devops-minimo]], nuevo hoy, el informe que pediste. Monitorización, alertado, gestión de incidentes (no hace falta on-call formal con un solo operador — hallazgo contraintuitivo con fuente), backup/DR, rotación de secretos, parcheo de dependencias, coste — todo anclado en un caso real auditable (Healthchecks.io, SaaS operado en solitario, stack de producción público). **Diseñado con evidencia real, no ejecutado en vivo**: nada de esto corre todavía sobre una app real de Astillero.
+
+**Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. El revisor con Opus tampoco se ha ejecutado todavía (falta tu token). La parametrización real de imports de gh-aw sigue sin resolver (ver «Pendiente de decidir»).
 
 Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarrollo-agentes-investigacion]]. El informe [[orquestacion-opus-deepseek-informe]] es la primera versión, parcial, superada por [[flujo-agentes-arquitectura]].
 
@@ -88,6 +94,7 @@ Después de esas respuestas:
 - [[flujo-agentes-arquitectura]] — motor de ingeniería, diseño operable
 - [[astillero-replicacion]] — cómo se replica a cada proyecto nuevo
 - [[capa-producto]] — cómo se dirige como Product Owner
+- [[devops-minimo]] — informe de DevOps mínimo en producción
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
 - [[circuito-tareas-definicion]] — definición de la fase de organización del trabajo con agentes: roles, traspaso, coordinación, topología, revisión, trazabilidad; criterios, método por fases, qué cuenta como contrastado
 - [[orquestacion-opus-deepseek-informe]] — informe parcial (superado): conexión entre Claude y DeepSeek

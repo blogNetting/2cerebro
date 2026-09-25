@@ -58,6 +58,8 @@ Eso alimenta la entrevista ya documentada oficialmente por Anthropic: *«For lar
 
 **SemVer no aplica al conjunto de un producto sin API pública** ✔︎ (el propio spec lo circunscribe a software con consumidores externos) — solo tiene sentido en piezas concretas que sí los tengan (un SDK, un CLI instalable).
 
+**Aclaración (2026-09-25):** este checkpoint es de *versión*, no de *despliegue* — son ejes distintos. El despliegue a producción es continuo, en cada merge a `main` ([[flujo-agentes-arquitectura]] §15, con evidencia real de 40+ operadores solos); el PR de `release-please` sigue corriendo aparte, solo para el changelog/tag legible, sin bloquear el CD.
+
 ## 6. Registro de decisiones de producto
 
 **Aquí no hay precedente real que citar** — es la sección más débil de esta capa, y lo digo así. Ni siquiera Shape Up, la fuente más cercana, documenta qué pasa con lo que se descarta: los pitches rechazados «vuelven si son importantes», sin registro ni motivo ✔︎ — es la ausencia de la práctica que se buscaba, no un ejemplo de ella.

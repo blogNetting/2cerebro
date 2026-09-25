@@ -269,13 +269,15 @@ Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
 | Puerta | Python | Node/TS |
 |---|---|---|
 | Tipos estrictos | mypy/pyright strict | `tsc --strict` |
-| Tests y cobertura | pytest + coverage | vitest + c8 |
-| **Cobertura del diff** | diff-cover (umbral por proyecto) | diff-cover sobre lcov |
+| Tests y cobertura | pytest + coverage.py | Vitest, proveedor `v8` nativo (no `c8` aparte: desde Vitest 3.2 el proveedor `v8` integra el mismo motor, es el recomendado por defecto — [vitest.dev/guide/coverage](https://vitest.dev/guide/coverage.html) ✔︎) |
+| **Cobertura del diff** | Codecov `patch` status, sin umbral global de proyecto — un número fijo alto es gameable con tests triviales (Fowler: *«high coverage numbers are too easy to reach with low quality testing»*, [martinfowler.com/bliki/TestCoverage.html](https://martinfowler.com/bliki/TestCoverage.html) ✔︎). `patch` cerca del 100 % (toda línea nueva de una tarea acotada debe estar cubierta), `project` informativo sin bloquear | Igual, mismo mecanismo |
 | **Mutación del diff** | mutmut sobre los ficheros cambiados | Stryker incremental |
 | **Tests intactos** | Script: si el diff modifica o borra tests existentes, falla salvo aprobación de `CODEOWNERS` | Igual |
 | SAST | Semgrep CE u Opengrep, más Bandit | Semgrep CE u Opengrep |
 | Secretos | gitleaks + push protection | Igual |
 | Dependencias | OSV-Scanner + Dependabot | Igual |
+
+**Reporting de cobertura: Codecov, no Coveralls** — Coveralls no tiene plan gratis para repos privados (mínimo 10 $/mes), y todo repo de Astillero es privado por decisión ya cerrada ([[decisiones]]); Codecov sí (plan Developer gratis, hasta 250 cargas/mes) — [about.codecov.io/pricing](https://about.codecov.io/pricing/) ✔︎ frente a [coveralls.io/pricing](https://coveralls.io/pricing) ✔︎. Se integra como `commit-status` nativo en el ruleset, igual que los demás gates de esta tabla — [docs.codecov.com/docs/commit-status](https://docs.codecov.com/docs/commit-status) ✔︎.
 
 **`CODEOWNERS` con aprobación humana obligatoria:**
 - `.github/**`
@@ -338,11 +340,36 @@ Si se prefiere ejecutar en la VM:
 
 Cómo el usuario dirige este motor como Product Owner de una sola persona (captura de la idea, backlog sin scoring formal, panel, bugs con el mismo contrato de tarea, versionado por checkpoint, registro de decisiones de producto): [[capa-producto]]. No es una pieza más del pipeline técnico, es quien lo dirige.
 
+## 15. Despliegue a producción
+
+Hasta aquí el pipeline termina en K11 (merge en `main`, issue cerrada). Esto es lo que pasa después — hueco real detectado en la auditoría del 2026-09-25, sin cubrir en ninguna nota anterior, cerrado hoy con evidencia real de operadores en solitario (40+ comentarios de dos hilos de HN, [33968378](https://news.ycombinator.com/item?id=33968378) y [43487843](https://news.ycombinator.com/item?id=43487843), más documentación oficial).
+
+**CD automático en cada merge a `main`, sin checkpoint manual aparte.** Es el patrón dominante y sin excepción real encontrada entre 40+ operadores en solitario: *«To deploy, I just push to GitHub. A service on the server side rebuilds whenever it sees new commits»* (nicbou); Fly.io lo documenta como comportamiento por defecto de su propia action — [docs.fly.io/launch/continuous-deployment-with-github-actions](https://docs.fly.io/launch/continuous-deployment-with-github-actions/) ✔︎. No hace falta un segundo portón manual: los gates de §8 ya filtran antes del merge.
+
+**Esto no contradice el versionado por checkpoint de [[capa-producto]] §5 — son dos ejes distintos.** `release-please` sigue generando el PR de changelog/tag que el usuario aprueba, pero eso no bloquea el despliegue: el CD corre en cada merge a `main` sea cual sea su origen. Si se quiere de verdad un checkpoint humano en el despliegue mismo (no en la versión), el mecanismo nativo es `environment: production` con *required reviewers* — soportado en repos privados con GitHub Pro (ya decidido para rulesets, sin coste adicional) — [docs.github.com/actions/reference/environments](https://docs.github.com/en/actions/reference/environments) ✔︎.
+
+**Dónde corre la app** (evidencia real de operadores solos, no lista de mercado):
+
+| Patrón | Cuándo | Evidencia |
+|---|---|---|
+| PaaS gestionado (Fly.io, Render, Railway) | Arrancar rápido, cero ops | apothegm: *«for 95% of products I recommend a Heroku-alike... outsource your infrastructure maintenance»*; caveat real: downtime documentado en Fly.io por certificado no renovado — [community.fly.io](https://community.fly.io/t/ssl-certificate-did-not-renew-automatically/4924) |
+| PaaS autoalojado sobre VPS (Dokku, CapRover) | Experiencia Heroku sin ceder control ni coste de Heroku | dig1: *«Easy to set on your VPS... almost-zero-to-none management»*; Gys: 5-6 años sin incidentes |
+| VPS + Docker Compose (+ Ansible) | Coste mínimo, cero lock-in — coherente con [[desarrollo-agentes-f3-git-cicd-infra]] §3.4 (Compose para &lt;5 servicios) | Mayoría de menciones en ambos hilos (Hetzner, DigitalOcean) |
+
+Kubernetes gestionado aparece solo en minoría, ya descartado por exceso en [[desarrollo-agentes-f3-git-cicd-infra]] §2. **Sin staging permanente por defecto**: en 40+ comentarios reales nadie menciona un entorno de staging fijo — mismo argumento ya anotado para *preview environments* en [[desarrollo-agentes-f3-git-cicd-infra]] §3.4 (exceso probable a esta escala); si hace falta verificar antes de producción, el patrón real es un entorno efímero por PR, no uno permanente.
+
+**Rollback: extiende K10, no infraestructura nueva.** Revertir el commit en `main` dispara el mismo CD hacia atrás — *«Roll backs are easy, just revert»* (ransom1538, [HN 43487843](https://news.ycombinator.com/item?id=43487843)). Blue-green y feature flags no tienen evidencia de adopción real a esta escala — se descartan por ahora, no por principio.
+
+**Migraciones de base de datos: regla dura, no opcional.** Patrón *parallel change / expand-contract* — [martinfowler.com/bliki/ParallelChange.html](https://martinfowler.com/bliki/ParallelChange.html) ✔︎. Como el ejecutor barato puede tocar el schema dentro de una tarea aislada, **expandir y contraer el schema son siempre dos tareas distintas del backlog**, nunca una — igual que cada PR es pequeño y reversible por separado (§6), aquí aplica lo mismo al schema.
+
+Lo que pasa después del despliegue — monitorización, alertado, incidentes, backup, rotación de secretos, parcheo de dependencias — no es parte de este pipeline determinista, es la disciplina operativa del Product Owner: [[devops-minimo]].
+
 ## Enlaces
 
 - [[flujo-agentes-informe]] — evidencia y descartes
 - [[flujo-agentes-runbook]] — puesta en marcha y comprobación de coherencia
 - [[astillero-replicacion]] — cómo se replica este diseño a cada proyecto y cómo se propagan los cambios
 - [[capa-producto]] — cómo el usuario dirige este motor como Product Owner
+- [[devops-minimo]] — mínimo operativo una vez la app está en producción
 - [[astillero]] — proyecto
 - [[_index]]
