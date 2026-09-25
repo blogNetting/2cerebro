@@ -386,7 +386,7 @@ Cobertura exigida: spec/descomposición, estado del trabajo/coordinación, orque
 - [[circuito-tareas-definicion]] — encargo y criterios que sigue este documento
 - `B-implementaciones.md` — documento corregido aquí
 - `A2-practica-a-escala.md` — origen del hueco de `openai/symphony`
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[desarrollo-agentes-investigacion]] — investigación previa del ciclo completo
 -
 

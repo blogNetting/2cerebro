@@ -66,5 +66,5 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 
 - [[apartamentos-calle-uruguay]] — inmueble que entraría en el dashboard
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
-- [[sistema-desarrollo-con-agentes]] — sistema con el que se desarrollará; esta app es la candidata a primer piloto
+- [[astillero]] — sistema con el que se desarrollará; esta app es la candidata a primer piloto
 - [[_index]]

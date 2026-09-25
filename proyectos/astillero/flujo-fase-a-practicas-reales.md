@@ -291,7 +291,7 @@ Esta fase no añade hallazgos nuevos más allá de lo ya establecido en F2 (iden
 - [[circuito-tareas-definicion]] — encargo y criterios de esta fase
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — evidencia reutilizada (dotnet/runtime, AIDev, Cognition, trazabilidad)
 - [[desarrollo-agentes-investigacion]] — síntesis general
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 
 ## Enlaces
 

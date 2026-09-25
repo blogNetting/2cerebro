@@ -178,7 +178,7 @@ Si falla algo, la fase se repite o se completa. Así se detectaron los fallos de
 
 ## Enlaces
 
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[desarrollo-agentes-investigacion]] — investigación previa del ciclo completo
 - [[orquestacion-opus-deepseek-informe]] — conexión con cada modelo (fuera de alcance aquí)
 - [[_index]]

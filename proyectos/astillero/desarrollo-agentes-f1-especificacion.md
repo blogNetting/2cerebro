@@ -239,5 +239,5 @@ Repaso explícito de la hipótesis de partida — *"Claude (Opus/Sonnet) planifi
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación completa
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

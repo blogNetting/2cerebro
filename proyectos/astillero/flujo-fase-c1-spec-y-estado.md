@@ -236,7 +236,7 @@ Alternativa más simple, menor coste de integración pero peor en R9/R12: **spec
 - `A-practicas-reales.md` — origen del hallazgo «contrato verificable» y `until-dev/plugins`
 - `A2-practica-a-escala.md` — caracterización previa de `openai/symphony` (Fuente 6), no re-verificada aquí
 - `B-implementaciones.md`, `B2-inventario-corregido.md` — inventario y preselección de la que parte esta evaluación; B2 ya corrigió la cita fabricada sobre subagentes de Claude Code y confirmó la cita literal de *file locking* en agent teams, re-verificada aquí sobre el documento completo
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 -
 
 ## Enlaces

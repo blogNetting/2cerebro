@@ -221,5 +221,5 @@ Con múltiples agentes IA generando PRs, el requisito no es solo "¿pasa el CI?"
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación completa
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

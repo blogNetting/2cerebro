@@ -25,4 +25,4 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 
 ## Subcarpetas
 
-- `sistema-desarrollo-con-agentes/` — proyecto del sistema genérico de desarrollo de software con agentes: hub, investigaciones y decisiones. Índice propio en esa carpeta
+- `astillero/` — proyecto del sistema genérico de desarrollo de software con agentes: hub, investigaciones y decisiones. Índice propio en esa carpeta

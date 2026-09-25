@@ -129,5 +129,5 @@ No aportaron señal útil / descartadas tras revisar:
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
-- [[sistema-desarrollo-con-agentes]] — proyecto al que pertenece
+- [[astillero]] — proyecto al que pertenece
 - [[_index]]

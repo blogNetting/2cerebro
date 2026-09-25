@@ -70,5 +70,5 @@ Ninguna de las dos cifras es verificable en la fuente que se supone que mide est
 - [[flujo-agentes-arquitectura]] — dónde se aplica esta evidencia
 - [[orquestacion-modelos-y-costes]] — nota con la contradicción de benchmarks, ya corregida
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — nota con la cifra de reverts, ya corregida
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

@@ -265,7 +265,7 @@ Sigue siendo la pregunta peor resuelta en ambas fases combinadas. A2 no encuentr
 - `A-practicas-reales.md` — fase A (patrones P1–P15, no repetidos aquí)
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — evidencia de trazabilidad reutilizada
 - [[desarrollo-agentes-investigacion]] — síntesis general, caso Uvik (estrellas infladas)
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 
 ## Enlaces
 

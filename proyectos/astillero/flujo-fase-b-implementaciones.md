@@ -391,7 +391,7 @@ Neutral respecto a la hipótesis del usuario. Criterio de entrada: evidencia de 
 ## Enlaces
 
 - [[circuito-tareas-definicion]] — define las 6 preguntas, C1–C13 y las reglas de evidencia que sigue este documento
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[desarrollo-agentes-investigacion]] — investigación previa del ciclo completo
 -
 

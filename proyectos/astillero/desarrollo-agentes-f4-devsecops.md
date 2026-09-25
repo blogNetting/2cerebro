@@ -222,5 +222,5 @@ Confianza global de esta subsección: **alta** en los mecanismos disponibles hoy
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación completa
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

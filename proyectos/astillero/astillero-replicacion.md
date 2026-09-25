@@ -77,6 +77,6 @@ Validación independiente: *"Copier wins for fleet management due to native `cop
 
 - [[flujo-agentes-arquitectura]] — diseño operable que esta nota hace replicable
 - [[flujo-agentes-runbook]] — puesta en marcha por proyecto, a actualizar con este mecanismo
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[app-seguimiento-patrimonio]] — primer proyecto candidato a usar este mecanismo
 - [[_index]]

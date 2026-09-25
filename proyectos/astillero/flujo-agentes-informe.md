@@ -159,5 +159,5 @@ Mecanismos verificados, sin firma criptográfica del modelo que hizo cada cambio
 - [[flujo-agentes-arquitectura]] — diseño operable
 - [[flujo-agentes-runbook]] — puesta en marcha paso a paso y comprobación de coherencia
 - [[circuito-tareas-definicion]] — definición de la fase
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

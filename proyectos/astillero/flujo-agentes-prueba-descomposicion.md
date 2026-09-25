@@ -44,5 +44,5 @@ zona: tecnico
 - [[flujo-agentes-informe]] — síntesis general
 - [[flujo-agentes-arquitectura]] — contrato de tarea usado en la prueba
 - [[flujo-agentes-evidencia-empirica]] — por qué la descomposición no es lo que falta comprobar
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

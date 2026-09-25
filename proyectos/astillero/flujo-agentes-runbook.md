@@ -126,5 +126,5 @@ En un repositorio de prueba:
 - [[flujo-agentes-arquitectura]] — diseño
 - [[flujo-agentes-informe]] — evidencia
 - [[astillero-replicacion]] — mecanismo de replicación a cada proyecto
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

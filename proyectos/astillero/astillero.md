@@ -1,16 +1,22 @@
 ---
-title: Sistema de desarrollo de aplicaciones con agentes
+title: Astillero
 created: 2026-09-24
 updated: 2026-09-25
-tags: [desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git]
+tags: [astillero, desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git, producto]
 zona: tecnico
 ---
 
-Sistema genérico para desarrollar cualquier aplicación de principio a fin, con IA, git, CI/CD y DevSecOps. Cómo se reparte el trabajo entre modelos se decide con evidencia.
+**Astillero** es el sistema completo, genérico y replicable para desarrollar software de principio a fin con agentes de IA: desde que el usuario tiene una idea, como Product Owner, hasta que el código está en producción — diseño, especificación, implementación, revisión, CI/CD, DevSecOps y el panel desde el que se dirige todo. Opus 5.5 diseña y revisa; un ejecutor más barato (DeepSeek, por coste, intercambiable) implementa. Todo verificado en producción real, no solo diseñado.
 
-## Estado
+## Estado (2026-09-25): completo y documentado
 
-Abierto el 2026-09-24. Investigación del ciclo completo cerrada el 2026-09-25: [[desarrollo-agentes-investigacion]]. Faltan las decisiones del usuario (ver abajo). El informe [[orquestacion-opus-deepseek-informe]] es parcial y solo cubre la conexión entre modelos.
+Las tres piezas están construidas, probadas y enlazadas entre sí:
+
+1. **Motor de ingeniería** — [[flujo-agentes-arquitectura]]. Diseño operable (roles, contratos, máquina de estados, `tdd-guard` como control obligatorio) probado en vivo en un repo real desechable (`blogNetting/prueba-flujo-agentes`): reserva sin colisión, ejecución real de DeepSeek con 2 fallos reales corregidos (falta de permiso `issues: read`, cortafuegos de red sin el ecosistema `python`) y una tercera ejecución con PR real (#13) correctamente creada y marcada para revisión humana por tocar un fichero protegido.
+2. **Replicación a proyectos nuevos** — [[astillero-replicacion]]. Repo [blogNetting/astillero](https://github.com/blogNetting/astillero) con los workflows reutilizables (`implementar`/`rehacer`/`revisar`/`reconciliar`) publicados y una plantilla `copier`. Probado de extremo a extremo: un proyecto generado desde cero con `copier` compila contra el import remoto real de este repo.
+3. **Capa de producto** — [[capa-producto]]. Cómo el usuario dirige el motor como Product Owner de una sola persona: captura de idea, backlog sin scoring formal (sin evidencia real de que nadie lo use así en solitario), panel en GitHub Projects v2, bugs con el mismo contrato de tarea que una funcionalidad, versionado por checkpoint, registro de decisiones de producto.
+
+Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarrollo-agentes-investigacion]]. El informe [[orquestacion-opus-deepseek-informe]] es la primera versión, parcial, superada por [[flujo-agentes-arquitectura]].
 
 ## Repo: Astillero
 
@@ -47,11 +53,15 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 7. Economía: coste real, incluido el retrabajo y las revisiones de Opus.
 8. Piloto: seguramente [[app-seguimiento-patrimonio]], sin confirmar. Solo empieza cuando este sistema esté listo.
 
-## Siguiente paso (2026-09-25)
+## Motor de ingeniería (2026-09-25): construido y probado en vivo
 
-Fase de organización del trabajo con agentes **investigada, diseñada y parcialmente probada en vivo** el 2026-09-25: [[flujo-agentes-informe]] (evidencia), [[flujo-agentes-arquitectura]] (diseño operable, con `tdd-guard` como control obligatorio), [[flujo-agentes-runbook]] (puesta en marcha), [[flujo-agentes-evidencia-empirica]] (¿va DeepSeek a implementar bien? — sin garantía, evidencia y mitigación), [[flujo-agentes-prueba-descomposicion]] (Opus real descomponiendo una idea) y el diagrama del mecanismo: https://claude.ai/artifact/LmnofQRqGPyXDdZa6aCihL. Probado en vivo en un repo real desechable: reserva sin colisión (5→1 disparo real) y compilación de los 3 workflows del ejecutor. Sin probar aún: DeepSeek implementando de verdad (falta tu clave) y el revisor con Opus en Actions (falta tu token). Definición de la fase: [[circuito-tareas-definicion]]. Las preguntas 1–5 que había aquí quedan respondidas en «Decisiones cerradas»; la de las rutas sensibles la propone el orquestador.
+[[flujo-agentes-informe]] (evidencia), [[flujo-agentes-arquitectura]] (diseño operable, con `tdd-guard` como control obligatorio y, desde hoy, la extensión del panel de producto en §14), [[flujo-agentes-runbook]] (puesta en marcha), [[flujo-agentes-evidencia-empirica]] (¿va DeepSeek a implementar bien? — sin garantía, evidencia y mitigación), [[flujo-agentes-prueba-descomposicion]] (Opus real descomponiendo una idea) y el diagrama del mecanismo: https://claude.ai/artifact/LmnofQRqGPyXDdZa6aCihL. Definición de la fase: [[circuito-tareas-definicion]].
 
-### Preguntas anteriores (anuladas)
+**Probado en vivo, de verdad, en `blogNetting/prueba-flujo-agentes`:** reserva sin colisión (5→1 disparo real); tres ejecuciones reales de DeepSeek — la 1ª falló por falta del permiso `issues: read` (diagnóstico honesto del propio agente, sin fabricar implementación), la 2ª pasó tests pero sin acceso de red a PyPI (cortafuegos sin el identificador de ecosistema `python`), la 3ª completó con tests y `mypy` en verde y un PR real (#13) creado y correctamente marcado para revisión humana por tocar un fichero protegido. Ambos fallos, corregidos y generalizados en la documentación (no solo para pip, para cualquier ecosistema).
+
+**Pendiente de tu parte, no mía:** aprobar o rechazar el PR #13 — el diseño exige revisión humana ahí, no la puedo saltar yo.
+
+### Preguntas anteriores (anuladas, historial)
 
 > **Anuladas (2026-09-24).** Estas preguntas daban por buena la hipótesis del usuario (Opus + DeepSeek con issues) y salían de un informe parcial. Las sustituirán las preguntas de la investigación completa del ciclo, que está en curso.
 
@@ -70,13 +80,17 @@ Después de esas respuestas:
 
 - Plataforma git por proyecto y nivel de autonomía, es decir, en qué puntos aprueba una persona. Aplazado a propósito.
 - Modelo de ramas: está propuesto trunk-based, falta confirmarlo.
+- Parametrización real de los imports de gh-aw (`uses:`/`with:`/`import-schema`): intentada y abandonada tras varios errores de compilación reales; hoy el ecosistema de red y demás variables por proyecto se fijan a mano en el wrapper fino, no se pasan como parámetro. Gap conocido, no bloqueante.
+- Cuándo arranca el primer piloto ([[app-seguimiento-patrimonio]]): el sistema ya está completo; falta que tú lo decidas.
 
 ## Enlaces
 
+- [[flujo-agentes-arquitectura]] — motor de ingeniería, diseño operable
+- [[astillero-replicacion]] — cómo se replica a cada proyecto nuevo
+- [[capa-producto]] — cómo se dirige como Product Owner
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
-- [[flujo-agentes-arquitectura]] — diseño operable del flujo
-- [[circuito-tareas-definicion]] — definición de la fase actual: cómo se organiza realmente el trabajo con agentes (roles, traspaso, coordinación, topología, revisión, trazabilidad); criterios, método por fases, qué cuenta como contrastado y cuándo termina
-- [[orquestacion-opus-deepseek-informe]] — informe parcial: conexión entre Claude y DeepSeek
+- [[circuito-tareas-definicion]] — definición de la fase de organización del trabajo con agentes: roles, traspaso, coordinación, topología, revisión, trazabilidad; criterios, método por fases, qué cuenta como contrastado
+- [[orquestacion-opus-deepseek-informe]] — informe parcial (superado): conexión entre Claude y DeepSeek
 - [[app-seguimiento-patrimonio]] — candidata a primer piloto
 - [[decisiones]] — registro de las decisiones de este proyecto
 - [[entorno]] — herramientas de investigación disponibles en esta máquina

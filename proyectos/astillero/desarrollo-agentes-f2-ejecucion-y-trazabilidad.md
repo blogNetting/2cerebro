@@ -203,5 +203,5 @@ Pregunta añadida por el coordinador: cómo saben los equipos, mirando el repo, 
 ## Enlaces
 
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación completa
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[_index]]

@@ -73,7 +73,7 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 ## 2026-09-24 — Sistema de desarrollo con agentes: decisiones de partida
 
-- Proyecto nuevo: [[sistema-desarrollo-con-agentes]]. Genérico: debe servir para cualquier desarrollo; stack y plataforma se deciden en cada proyecto.
+- Proyecto nuevo: [[astillero]]. Genérico: debe servir para cualquier desarrollo; stack y plataforma se deciden en cada proyecto.
 - El código de este sistema y de cada app vive en repos propios, nunca en `2cerebro` (es público y se publica cada hora). En el wiki, cada uno tiene una nota hub que enlaza al repo.
 - Regla dura del usuario: no hay código sin tests, sean unitarios o de integración. Los umbrales de cobertura y complejidad se fijarán más adelante.
 - Aceptado usar DeepSeek por su API oficial; que los datos estén en China no es un problema. El coste se controla con saldo prepagado y midiendo el consumo.
@@ -108,3 +108,16 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Mecanismo de replicación a cada proyecto, verificado en fuente primaria: reusable workflows de GitHub Actions (`workflow_call`, confirmado que funcionan entre repos privados de una cuenta personal) para el revisor y el reconciliador; imports remotos de gh-aw (`imports: owner/repo/path@ref`, confirmado que existen) para el ejecutor; **copier** para lo estático (`CODEOWNERS`, `AGENTS.md`, labels, plantilla de contrato), descartados cruft y `repo-file-sync-action` por falta de mantenimiento. Detalle completo en [[astillero-replicacion]].
 - **Corrección del usuario (2026-09-25):** todo repo de este ecosistema (Astillero y cada proyecto, empezando por Patrimonial) se crea **privado**, siempre, sin plantear la opción pública. Consecuencia: hace falta GitHub Pro (~4 $/mes, cubre todos los repos privados de la cuenta, no es coste por repo) para tener rulesets y merge queue en cualquiera de ellos.
 - Sin decidir todavía: la creación real del repo Astillero en GitHub (hoy solo existe el diseño).
+
+## 2026-09-25 — Renombrado: sistema-desarrollo-con-agentes → Astillero
+
+- Otra sesión de esta cuenta decidió el nombre **Astillero** para el repo plataforma y ya lo había creado en GitHub (`blogNetting/astillero`, privado) e investigado su mecanismo de replicación ([[astillero-replicacion]]: reusable workflows para revisor/reconciliador, imports remotos de gh-aw para el ejecutor, copier para lo estático), antes de que esta sesión lo supiera.
+- Esta sesión renombró la carpeta y la nota hub del wiki (`sistema-desarrollo-con-agentes` → `astillero`) para que coincidan, sin perder ningún enlace ni contenido. Verificado que no hubo colisión de ediciones concurrentes (el único solape, en `flujo-agentes-arquitectura.md`, era una edición propia de esta sesión capturada por el cron de las 20:00, no un cambio ajeno).
+- A partir de aquí, «Astillero» es el nombre único del proyecto en el wiki y en GitHub.
+
+## 2026-09-25 — Capa de producto: diseño cerrado, Astillero completo
+
+- Petición del usuario: «quiero crear software como si fuera una empresa, hacer de product owner... alguna pregunta porque luego no voy a aceptar cagadas». Aclarado por el propio usuario: enfoque corporativo y serio, no departamentos no técnicos ni ceremonia de equipo; «mientras funcione me da igual».
+- Investigación dirigida activamente a encontrar el patrón contrario y no encontrarlo: **cero operadores solos usando RICE/ICE/WSJF** (hilo de HN de 130 puntos, ~30 operadores solos, sin ninguna mención); **la mesa de apuestas de Shape Up exige pluralidad de personas por diseño del propio libro** («one designer and one programmer» como mínimo) — ninguna de las dos prácticas se adopta.
+- Decisiones: sin scoring de priorización, backlog simple reordenado por juicio directo; captura de idea vía entrevista (patrón oficial de Anthropic) con Appetite y No-gos de Shape Up como únicos campos que sí sobreviven; panel en GitHub Projects v2 vía `update-project`/`create-project-status-update` extendiendo el reconciliador — pieza que `github/gh-aw` documenta pero no usa para sí mismo (verificado dos veces: 0 proyectos en la organización, badges en su lugar); bugs con triage de solo-reproducción (patrón real de Metabase, Repro-Bot, ~10% falsos positivos citado por su autor) antes de entrar al mismo contrato de tarea que una funcionalidad, sin atajos de hotfix; versionado por checkpoint (`release-please` o notas nativas de GitHub) en vez de publicación automática; registro de decisiones de producto sin precedente real encontrado (inferencia explícita, ni siquiera Shape Up documenta sus propios descartes). Detalle completo en [[capa-producto]].
+- Con esto, Astillero queda documentado como sistema completo: motor de ingeniería ([[flujo-agentes-arquitectura]], probado en vivo), replicación ([[astillero-replicacion]], probada en vivo) y capa de producto ([[capa-producto]], diseñada con evidencia, sin implementar en código todavía). Nota hub `astillero.md` actualizada para reflejar las tres piezas como una sola imagen coherente.

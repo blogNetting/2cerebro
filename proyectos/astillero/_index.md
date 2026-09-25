@@ -1,10 +1,10 @@
-# Índice: proyectos/sistema-desarrollo-con-agentes
+# Índice: proyectos/astillero
 
 Sistema genérico para desarrollar software con agentes de IA: hub del proyecto, investigaciones y decisiones.
 
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
-- [[sistema-desarrollo-con-agentes]] — hub del proyecto: decisiones cerradas, hipótesis, bloques y preguntas abiertas
+- [[astillero]] — hub del proyecto: decisiones cerradas, hipótesis, bloques y preguntas abiertas
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación del ciclo completo con agentes: estándar de la comunidad fase a fase, modelos de Anthropic por fase, trazabilidad, hipótesis del usuario contrastadas y arquitectura propuesta
 - [[desarrollo-agentes-f1-especificacion]] — de la idea a las tareas: frameworks spec-driven (Spec Kit, OpenSpec, BMAD, Kiro), formatos de requisitos y modelo por fase
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — de la tarea a la PR: agentes issue→PR, orquestación, datos de revisión y merge, quién hizo qué
@@ -28,3 +28,5 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 - [[flujo-agentes-evidencia-empirica]] — ¿implementará DeepSeek bien, basándose en tests? Resolución de la contradicción de benchmarks, evidencia real de adherencia a TDD (y por qué falla la mayoría de las veces), tasa de éxito por micro-paso del ciclo
 - [[flujo-agentes-prueba-descomposicion]] — prueba real (no simulada) de Opus descomponiendo una idea en especificación y tareas, con issues creadas de verdad y una implementación de referencia que las valida
 - [[astillero-replicacion]] — cómo se replica el sistema a cada proyecto: reusable workflows verificados cross-repo, imports remotos de gh-aw (cierra el punto sin verificar), copier para lo estático, con copier/cruft/repo-file-sync-action contrastados
+- [[capa-producto-definicion]] — definición de la fase de producto: pregunta, qué ya existe y no se repite, 7 etapas a investigar, exclusiones explícitas
+- [[capa-producto]] — diseño cerrado de la capa de producto: sin scoring de priorización (evidencia real de operadores solos), captura de idea vía entrevista, panel con Projects v2, bugs con Repro-Bot + mismo contrato de tarea, versionado por checkpoint, registro de decisiones de producto

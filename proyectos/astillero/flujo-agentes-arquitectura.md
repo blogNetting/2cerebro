@@ -260,6 +260,8 @@ Cron cada 30 minutos más el evento `issues: closed`. Script con `gh` que hace d
 
 Es la única pieza propia del sistema. 🧪 los nombres de los campos JSON de `blockedBy`.
 
+**Extensión para el panel del Product Owner** ([[capa-producto]] §3): la misma pasada añade `safe-outputs.update-project` (refleja `estado:*` como campo `Status` en un tablero de Projects v2) y, semanalmente, `create-project-status-update` (semáforo `ON_TRACK`/`AT_RISK`/`OFF_TRACK`/`COMPLETE`). Requiere un PAT con scope `project` — el `GITHUB_TOKEN` por defecto no llega a Projects v2.
+
 ## 8. Puertas de CI (checks obligatorios en el ruleset de `main`)
 
 Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
@@ -332,10 +334,15 @@ Si se prefiere ejecutar en la VM:
 - **Coste:** hay que operar `tmux`, el servidor de CAO y la reserva con la referencia git (sección 5).
 - **Riesgo:** fallos abiertos en su *dispatcher* ([[flujo-fase-c2-orquestacion-ejecucion-revision]] §2.2).
 
+## 14. Capa de producto
+
+Cómo el usuario dirige este motor como Product Owner de una sola persona (captura de la idea, backlog sin scoring formal, panel, bugs con el mismo contrato de tarea, versionado por checkpoint, registro de decisiones de producto): [[capa-producto]]. No es una pieza más del pipeline técnico, es quien lo dirige.
+
 ## Enlaces
 
 - [[flujo-agentes-informe]] — evidencia y descartes
 - [[flujo-agentes-runbook]] — puesta en marcha y comprobación de coherencia
 - [[astillero-replicacion]] — cómo se replica este diseño a cada proyecto y cómo se propagan los cambios
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[capa-producto]] — cómo el usuario dirige este motor como Product Owner
+- [[astillero]] — proyecto
 - [[_index]]

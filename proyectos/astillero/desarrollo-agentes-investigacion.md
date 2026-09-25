@@ -10,7 +10,7 @@ Cómo construye hoy la comunidad software con agentes de IA de principio a fin, 
 
 ## 1. Introducción
 
-**Pregunta.** Cuál es la mejor forma de montar un sistema genérico que lleve una idea hasta software desplegado usando IA: especificación, implementación, revisión, git, CI/CD y DevSecOps. También qué modelo de Anthropic usar en cada fase, cómo se cambia y cómo se ve quién hizo qué. Proyecto: [[sistema-desarrollo-con-agentes]].
+**Pregunta.** Cuál es la mejor forma de montar un sistema genérico que lleve una idea hasta software desplegado usando IA: especificación, implementación, revisión, git, CI/CD y DevSecOps. También qué modelo de Anthropic usar en cada fase, cómo se cambia y cómo se ve quién hizo qué. Proyecto: [[astillero]].
 
 **Hipótesis del usuario, tratadas como tales:** Anthropic pone la inteligencia; los casos de uso se traducen en issues; DeepSeek las implementa; gitflow. Se contrastan en la sección 5.
 
@@ -240,7 +240,7 @@ Todas las piezas son herramientas existentes y mantenidas; nada se construye a m
 
 ## Enlaces
 
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[desarrollo-agentes-f1-especificacion]] · [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] · [[desarrollo-agentes-f3-git-cicd-infra]] · [[desarrollo-agentes-f4-devsecops]]
 - [[orquestacion-opus-deepseek-informe]] — informe parcial anterior (conexión entre modelos)
 - [[_index]]

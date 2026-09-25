@@ -175,5 +175,5 @@ Nota sobre fiabilidad de medición de coste: dos fuentes independientes (proxy d
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
-- [[sistema-desarrollo-con-agentes]] — proyecto al que pertenece
+- [[astillero]] — proyecto al que pertenece
 - [[_index]]

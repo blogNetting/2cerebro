@@ -12,7 +12,7 @@ Cómo hacer que Opus (suscripción Pro) dirija y DeepSeek (API) programe: qué h
 
 ## 1. Introducción
 
-Pregunta: cuál es la mejor forma, contrastada por la comunidad y no por el hype, de que Claude Opus planifique y revise mientras un modelo DeepSeek escribe el código y los tests, dentro de [[sistema-desarrollo-con-agentes]].
+Pregunta: cuál es la mejor forma, contrastada por la comunidad y no por el hype, de que Claude Opus planifique y revise mientras un modelo DeepSeek escribe el código y los tests, dentro de [[astillero]].
 
 Restricciones de partida: Opus va por **suscripción Pro**, no por API; DeepSeek por su API oficial; no hay código sin tests; la VM tiene 4 núcleos, 7 GB de RAM, ni `/dev/kvm` ni motor de contenedores instalado (comprobado con `ls /dev/kvm` y `which podman docker bwrap`).
 
@@ -145,6 +145,6 @@ Detalle en [[orquestacion-seguridad-ejecutor]]. Resumen de lo que aplica a esta 
 
 ## Enlaces
 
-- [[sistema-desarrollo-con-agentes]] — proyecto
+- [[astillero]] — proyecto
 - [[orquestacion-herramientas-y-patrones]] · [[orquestacion-modelos-y-costes]] · [[orquestacion-experiencia-comunidad]] · [[orquestacion-seguridad-ejecutor]]
 - [[_index]]

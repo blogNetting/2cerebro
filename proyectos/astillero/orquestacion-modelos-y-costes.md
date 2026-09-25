@@ -257,5 +257,5 @@ Hacker News (vía hn.algolia.com API):
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
-- [[sistema-desarrollo-con-agentes]] — proyecto al que pertenece
+- [[astillero]] — proyecto al que pertenece
 - [[_index]]
