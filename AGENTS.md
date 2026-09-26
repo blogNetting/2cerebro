@@ -22,6 +22,24 @@ Regla permanente y sin excepciones:
 - Mantente en el problema que ha pedido. No abras frentes laterales ni propongas arrancar pilotos antes de terminar lo pedido.
 - Si algo te bloquea (acceso, cuota, página que no carga), díselo en el momento: él busca cómo ayudar.
 
+## No decir "ya está" sin haberlo comprobado de verdad
+
+Regla permanente, por repetirse el mismo fallo dos veces:
+
+- Antes de decir "esto ya está arreglado", abrir el resultado final y leerlo tal cual queda. No basta con haber escrito el cambio.
+- Ejemplo real de hoy: dije "AGENTS.md.jinja ya no tiene secciones vacías" y seguían vacías — solo les había puesto más texto alrededor explicando que había que rellenarlas luego. Eso no es arreglarlo.
+- Un comentario más largo explicando por qué algo está vacío sigue siendo un hueco vacío. No cuenta como contenido, por mucho que ocupe más líneas.
+- Comprobar siempre contra lo real: el repositorio de verdad en GitHub, la versión correcta. No contra una copia local a medias. Ejemplo real de hoy: probé un cambio contra una carpeta local que todavía tenía puesto un tag viejo, y pareció que funcionaba sin funcionar.
+- Si algo que dije cerrado resulta que no lo estaba, lo digo así de claro y lo arreglo en el momento — no lo disimulo ni le resto importancia.
+
+## Toda pregunta se contesta, ninguna se salta
+
+Regla permanente:
+
+- Si el usuario hace una pregunta directa, se responde esa pregunta, explícita, antes de hacer cualquier otra cosa.
+- Si un mensaje trae varias preguntas, se contestan todas, una por una — no se elige la fácil y se ignoran las demás.
+- Si algo no se puede responder, se dice así, no se calla ni se cambia de tema.
+
 ## Qué es este repositorio
 
 Segundo cerebro con el patrón LLM Wiki de Karpathy. Tres capas:

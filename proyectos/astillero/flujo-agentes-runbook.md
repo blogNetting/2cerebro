@@ -121,7 +121,7 @@ En un repositorio de prueba:
 - El umbral de la cobertura del diff y de mutación, que se fija por proyecto.
 - ~~El plan de GitHub (rulesets, merge queue)~~ — **cerrado**: hace falta GitHub Pro para un repo privado, confirmado con una llamada real a la API (§2). Solo queda por confirmar la cuota exacta de minutos de Actions.
 - La elección entre runners alojados o propio en la VM.
-- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero .` más los secretos propios del proyecto — pendiente de reescribir §2 cuando exista el repo de Astillero.
+- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero . --vcs-ref v0.2.1` más los secretos propios del proyecto. Versionado real desde el 2026-09-26: todas las referencias se fijan a un tag (`astillero_ref`), no a `@main` — ver [[astillero-mantenimiento]] §2.
 
 ## Invocación: skill `/astillero-proyecto` (2026-09-26)
 

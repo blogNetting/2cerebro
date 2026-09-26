@@ -1,29 +1,32 @@
 ---
 title: Astillero — mantenimiento y propagación a proyectos existentes
 created: 2026-09-25
-updated: 2026-09-25
-tags: [astillero, mantenimiento, copier, gh-aw, propagacion]
+updated: 2026-09-26
+tags: [astillero, mantenimiento, copier, gh-aw, propagacion, versionado]
 zona: tecnico
 ---
 
 Cómo una actualización de `blogNetting/astillero` llega a un proyecto que ya está en marcha (no solo a uno nuevo), y cómo conviven el código de Astillero con el wiki de 2Cerebro. Extiende [[astillero-replicacion]], no la repite.
 
-## 1. Por qué esto no pasa solo
+## 1. Por qué esto no pasa solo (y por qué ahora es así a propósito)
 
-**Los reusable workflows (`workflow_call`) sí se actualizan solos** si el proyecto los referencia con `@main`: al correr, GitHub resuelve la versión actual del repo compartido en tiempo de ejecución. Ya verificado en [[astillero-replicacion]].
+**Corrección cerrada el 2026-09-26: nada se actualiza solo, ni siquiera los reusable workflows.** Hasta hoy, `revisar.yml`/`reconciliar.yml`/`reproducir-bug.yml` referenciaban `@main` (`uses: blogNetting/astillero/...@main`), y por cómo resuelve GitHub los reusable workflows (`workflow_call`), eso SÍ se actualizaba solo, en tiempo real, en cada ejecución — sin que nadie lo decidiera para ese proyecto en concreto. Decisión del usuario: quiere aprobar cada actualización, no recibirla sola. Se cerró el hueco: los 5 ficheros de la plantilla (`implementar`, `rehacer`, `revisar`, `reconciliar`, `reproducir-bug`) referencian ahora una versión fija — `@{{ '{{' }} astillero_ref {{ '}}' }}` (pregunta nueva de `copier`, tag real) — no `@main`. **Versión actual: `v0.2.1`** — `v0.1.0` se cortó antes de terminar `SECURITY.md`/la plantilla de bug y quedó incompleta; no usar esa, usar siempre la última etiquetada (`gh api repos/blogNetting/astillero/tags` para comprobar cuál es antes de fijar un proyecto nuevo).
 
-**Los imports de gh-aw y las plantillas de `copier` no.** Confirmado en fuente oficial: los imports remotos de gh-aw (*"Paths matching owner/repo/path@ref are fetched from GitHub at compile time"* ✔︎) se resuelven al ejecutar `gh aw compile`, no al ejecutar el workflow — el `.lock.yml` ya compilado queda congelado con lo que había en `blogNetting/astillero` el día que se compiló, aunque el `ref` sea `@main`. Igual con `copier`: el proyecto tiene su propia copia de los ficheros estáticos, generada una vez; el repo plantilla puede cambiar sin que eso llegue solo.
+**Los imports de gh-aw y las plantillas de `copier` ya eran así, por otro motivo — no por elección, por mecánica.** Confirmado en fuente oficial: los imports remotos de gh-aw (*"Paths matching owner/repo/path@ref are fetched from GitHub at compile time"* ✔︎) se resuelven al ejecutar `gh aw compile`, no al ejecutar el workflow — el `.lock.yml` ya compilado queda congelado con lo que había en el `ref` el día que se compiló. Igual con `copier`: el proyecto tiene su propia copia de los ficheros estáticos, generada una vez.
 
-**Consecuencia:** hace falta un mecanismo activo de sincronización por proyecto, no basta con "apuntar a `@main`".
+**Consecuencia, ahora uniforme en las dos piezas:** hace falta un mecanismo activo de sincronización por proyecto, y ese mecanismo propone una versión nueva concreta, nunca "lo último de `main`" sin más.
 
 ## 2. Mecanismo: `astillero-update.yml`, un workflow por proyecto
 
-Cron semanal + `workflow_dispatch` manual. Dos pasos:
+Cron semanal + `workflow_dispatch` manual. Tres pasos:
 
-1. `gh extension install githubnext/gh-aw` (no viene preinstalado en runners hosted) + `gh aw compile` — recompila los workflows finos que hacen `imports:` de `blogNetting/astillero/shared/*@ref`, trayendo lo último del repo compartido.
-2. `copier update --defaults` — actualiza CODEOWNERS/plantillas con merge a 3 bandas. Corre desatendido de verdad: reutiliza las respuestas previas sin preguntar (`--defaults`, confirmado en [copier.readthedocs.io/en/stable/updating](https://copier.readthedocs.io/en/stable/updating/) ✔︎), pero **no resuelve conflictos solo** — si los hay, deja marcadores tipo git inline (o ficheros `.rej`) en el propio diff, citado literal: *«If the update results in conflicts, you should review those manually before committing»* ✔︎.
+1. Comprueba si hay un tag más nuevo que el `astillero_ref` actual del proyecto (`gh api repos/blogNetting/astillero/tags`, o la última release de `release-please`). Si no hay nada nuevo, termina sin hacer nada.
+2. `copier update --data astillero_ref=<tag-nuevo> --defaults` — actualiza CODEOWNERS/plantillas/referencias de versión con merge a 3 bandas. Corre desatendido de verdad: reutiliza las demás respuestas previas sin preguntar (`--defaults`, confirmado en [copier.readthedocs.io/en/stable/updating](https://copier.readthedocs.io/en/stable/updating/) ✔︎), pero **no resuelve conflictos solo** — si los hay, deja marcadores tipo git inline (o ficheros `.rej`) en el propio diff, citado literal: *«If the update results in conflicts, you should review those manually before committing»* ✔︎.
+3. `gh extension install githubnext/gh-aw` (no viene preinstalado en runners hosted) + `gh aw compile` — recompila con la nueva versión ya fijada en `imports:`.
 
-Si cualquiera de los dos pasos genera diff, el workflow abre un PR con el cambio completo. Sin pieza nueva de revisión: cae bajo el `CODEOWNERS` que ya protege `.github/**` ([[flujo-agentes-arquitectura]] §8) — revisión humana obligatoria antes de mergear, igual que cualquier otro cambio a esa ruta. Si `copier` dejó marcadores de conflicto, quedan visibles en ese mismo PR, no se ocultan.
+Si genera diff, el workflow abre un PR con el cambio completo — incluido, siempre visible, el cambio de versión (`@v0.1.0` → `@v0.2.1`, por ejemplo). Sin pieza nueva de revisión: cae bajo el `CODEOWNERS` que ya protege `.github/**` ([[flujo-agentes-arquitectura]] §8) — revisión humana obligatoria antes de mergear, igual que cualquier otro cambio a esa ruta. Si `copier` dejó marcadores de conflicto, quedan visibles en ese mismo PR, no se ocultan.
+
+**Cómo se cortan las versiones de Astillero mismo:** `release-please` (`googleapis/release-please-action`, ya instalado en `blogNetting/astillero`) — cada push a `main` con commits en formato conventional-commits abre o actualiza una PR con el `CHANGELOG.md` y el bump de versión; se aprueba esa PR, no se corre nada a mano. Mismo mecanismo ya elegido para versionar cada proyecto ([[capa-producto]] §5), aplicado aquí a Astillero mismo — que sí es una pieza con "consumidores externos" en el sentido de SemVer (cada proyecto que lo importa), a diferencia de un producto sin API pública.
 
 **No encontré ninguna herramienta ya hecha y mantenida que combine estos dos pasos** (gh-aw compile + copier update) en un solo bot — es diseño propio sobre piezas verificadas por separado, no un patrón que alguien más ya publicó. Si aparece uno mejor, se sustituye (regla de skills de `AGENTS.md`).
 
