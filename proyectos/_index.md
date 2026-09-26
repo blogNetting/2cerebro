@@ -19,7 +19,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-alojamiento-descartes]] — qué se descartó y por qué: hoteles céntricos fuera de presupuesto, baño compartido, dormitorios y cápsulas
 - [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
-- [[duchas-negras-alquiler]] — grifería de ducha toda negra para alquiler: columna con grifo ≤100 € o grifo + teleducha ≤60 €, en Amazon, Leroy, Brico Depot y Obramat. Revisado por la resistencia del negro: ganador Clever Rocket 62082 a 52,95 € (2026-09-24)
+- [[duchas-alquiler-carballo]] — grifería de ducha gris (antracita/titanio) para alquiler en Carballo: conjunto ≤90-100 € o grifo + alcachofa de colgar ≤80 €, en Amazon, Leroy, Brico Depot y Obramat. El gris barato y fiable no existe por debajo de 140 €; mejor candidato INEX Europa Stelo a 69,95 € con reservas (2026-09-26)
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
 
 ## Subcarpetas
