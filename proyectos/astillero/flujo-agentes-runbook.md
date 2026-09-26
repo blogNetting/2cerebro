@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — runbook y comprobación de coherencia
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [agentes, runbook, github-actions, gh-aw, puesta-en-marcha]
 zona: tecnico
 ---
@@ -43,6 +43,8 @@ Pasos para poner en marcha el flujo de [[flujo-agentes-arquitectura]] en cualqui
    gh secret set CODECOV_TOKEN               # solo repos privados, gate de cobertura §8
    ```
    Se introducen por teclado; nunca van al repo. Los dos últimos, añadidos el 2026-09-25 tras una auditoría de coherencia: faltaban en esta lista y el sistema fallaría en vivo sin avisar hasta el primer intento real de escribir en Projects v2 o subir cobertura. Si además se activa `astillero-update.yml` ([[astillero-mantenimiento]] §3), hace falta un tercero: `gh secret set ASTILLERO_SYNC_TOKEN` (PAT scope `workflow` — el `GITHUB_TOKEN` por defecto no puede tocar `.github/workflows/`).
+
+   Un cuarto, `gh secret set ASTILLERO_RELEASE_TOKEN` (PAT o token de GitHub App, scope mínimo de escritura de contenido/PR), hace falta para `release-please.yml` — hallazgo real del 2026-09-26, confirmado con 5 repos reales no relacionados entre sí más una discusión oficial de GitHub ([`github/community#25702`](https://github.com/orgs/community/discussions/25702) ✔︎): una PR abierta por el `GITHUB_TOKEN` por defecto **no dispara los checks obligatorios** del ruleset (salvaguarda anti-recursión de la propia plataforma, no un bug). El día que se active el ruleset de `main` con checks obligatorios (§2, pendiente de GitHub Pro), la PR de release quedaría bloqueada sin CI para siempre si sigue usando el token por defecto.
 3. **`AGENTS.md`**: índice de unas 100 líneas que apunta a `docs/`. Es el patrón de OpenAI ([[flujo-fase-a2-practica-a-escala]] fuente 1). Incluye cómo compilar, cómo testear, las convenciones y la regla «no tocar tests existentes».
 4. **`CODEOWNERS`**: la lista de rutas de [[flujo-agentes-arquitectura]] §8, con tu usuario como dueño.
 5. **Workflow de CI** con las puertas del stack. Todas las acciones de terceros **fijadas por SHA**.
@@ -98,6 +100,8 @@ Cada salto indica la pieza que lo hace y la evidencia de que esa conexión exist
 
 **Resultado:** todas las conexiones existen en la documentación oficial de su pieza. Quedan **7 puntos 🧪** de detalle de configuración; ninguno es de concepto. Se cierran en la prueba de humo.
 
+**Riesgo real en el disparador `label_command` (el que usa el salto 3), verificado en el propio issue tracker de `gh-aw`, no solo en documentación:** un permiso incompleto puede dejar el job en verde («success») sin haber ejecutado ninguno de sus pasos reales — fallo silencioso, no un error visible ([`gh-aw#60268`](https://github.com/github/gh-aw/issues/60268) ✔︎). Si el workflow combina `label_command` con un `if:` propio en el frontmatter, la condición de la etiqueta puede pisarse en silencio y el workflow dispararse con cualquier etiqueta ([`gh-aw#47594`](https://github.com/github/gh-aw/issues/47594) ✔︎). **Añadir a la prueba de humo (§5):** comprobar explícitamente que un permiso incompleto produce fallo visible, no un falso verde. `gh-aw` lleva menos de 4 meses en *public preview* (creado 2025-08-12, preview público desde el 11-jun-2026, verificado con `gh api repos/github/gh-aw`) — revisar su changelog en cada actualización de `astillero_ref`, no asumir estabilidad de API.
+
 ## 5. Prueba de humo (antes de operar de verdad)
 
 En un repositorio de prueba:
@@ -121,7 +125,7 @@ En un repositorio de prueba:
 - El umbral de la cobertura del diff y de mutación, que se fija por proyecto.
 - ~~El plan de GitHub (rulesets, merge queue)~~ — **cerrado**: hace falta GitHub Pro para un repo privado, confirmado con una llamada real a la API (§2). Solo queda por confirmar la cuota exacta de minutos de Actions.
 - La elección entre runners alojados o propio en la VM.
-- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero . --vcs-ref v0.2.3` más los secretos propios del proyecto. Versionado real desde el 2026-09-26: todas las referencias se fijan a un tag (`astillero_ref`), no a `@main` — ver [[astillero-mantenimiento]] §2.
+- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero . --vcs-ref v0.2.4` más los secretos propios del proyecto. Versionado real desde el 2026-09-26: todas las referencias se fijan a un tag (`astillero_ref`), no a `@main` — ver [[astillero-mantenimiento]] §2.
 
 ## Invocación: skill `/astillero-proyecto` (2026-09-26)
 

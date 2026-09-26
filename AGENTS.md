@@ -140,6 +140,8 @@ Al ejecutar lint, además de corregir:
 
 Aplica a toda investigación (comparativas, búsquedas de precios, evaluación de herramientas, análisis de opciones). Permanente: el usuario no tiene que repetirlo.
 
+**Múltiples fuentes distintas, no una sola plataforma repetida.** Una investigación real busca en sitios de naturaleza diferente (foros, blogs independientes, repos reales, papers, prensa técnica — no cinco hilos del mismo sitio) y comprueba si convergen hacia el mismo punto. Si solo hay una fuente, o varias del mismo sitio, se dice así de claro — no se presenta como contrastado. Que una fuente acierte una vez no es validación; hace falta que varias fuentes independientes lleguen a lo mismo por caminos distintos.
+
 Estructura obligatoria del resultado, en este orden:
 
 1. Introducción: qué se pregunta y por qué.
@@ -152,6 +154,7 @@ Estructura obligatoria del resultado, en este orden:
 Enlaces (el fallo más frecuente, tratarlo como requisito duro):
 
 - Cada afirmación que venga de una fuente lleva su enlace en la misma línea o celda donde aparece: dato, precio, condición, cita. No basta un bloque de enlaces al final.
+- Junto al enlace, el motivo de por qué se dice (no solo el dato, el porqué) y quién lo respalda — un vendor documentando su propio producto no pesa igual que una fuente de comunidad independiente (ver `~/.claude/rules/comportamiento.md`, «Documentación oficial de un vendor no es evidencia de comunidad»). Si solo hay vendor y no hay comunidad, se dice explícito.
 - Cada opción, producto u oferta citada lleva su URL directa, con las fechas o parámetros de la búsqueda puestos cuando la web lo permita.
 - Los descartes y las fuentes que no aportaron también se enlazan.
 - Dato sin fuente enlazable: se marca como «sin verificar» o se omite. No se afirma sin enlace.

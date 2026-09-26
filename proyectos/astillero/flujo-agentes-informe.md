@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — informe de investigación
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [agentes, orquestacion, estado-del-trabajo, revision, trazabilidad, investigacion]
 zona: tecnico
 ---
@@ -153,6 +153,59 @@ Mecanismos verificados, sin firma criptográfica del modelo que hizo cada cambio
 | Algo guarda el trabajo pendiente entre medias | Sí: el tracker como fuente de verdad (Symphony) o la especificación en el repo (OpenAI). Los trackers específicos para agentes (Beads) tienen más fallos de los que prometen | ✅, pero con GitHub Issues y primitivas de Actions, no con Beads |
 | Enjambre de ejecutores | No es lo que funciona: 1–2 concurrentes y paralelismo sobre tareas independientes aisladas | ⚠️ empezar con 1–2 |
 | El resultado se revisa | Sí, con rondas acotadas y revisión humana en lo sensible. La revisión solo entre agentes existe (OpenAI), pero sin datos de defectos | ✅ con gates deterministas y aprobación humana |
+
+## 9. Segunda ronda de investigación (2026-09-26) — mejora integral de cada etapa, no vendor-vs-comunidad
+
+Corrección de encuadre: una pasada anterior de este mismo día se apoyó casi solo en Hacker News y presentó documentación de vendor como si fuera evidencia de comunidad. Esta ronda repite la investigación con 5 hilos en paralelo, cada uno sobre un bloque real distinto de Astillero, con la misma disciplina en los cinco: fuentes de naturaleza distinta (papers, foros, blogs independientes, issues reales, prensa técnica — no la misma plataforma repetida), documentación de vendor separada de evidencia de comunidad, y convergencia marcada explícitamente cuando existe, o su ausencia dicha igual de claro.
+
+### 9.1 Arquitectura barato+caro (DeepSeek ejecuta, Opus revisa)
+
+- **SWE-bench no es aplicable a esta decisión.** Dos fuentes independientes, sin interés en defender ni Anthropic ni DeepSeek (un paper académico y un blog de vendor competidor), convergen en que el marcador está inflado frente a scaffolds independientes y no mide "implementar feature nueva bajo contrato estricto" ([arXiv 2606.17799](https://arxiv.org/pdf/2606.17799) ✔︎, [runloop.ai](https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark) ✔︎).
+- **El revisor LLM falla en dos direcciones documentadas por separado**: falsos negativos y sobrecorrección ([arXiv 2603.00539](https://arxiv.org/pdf/2603.00539) ✔︎, [arXiv 2602.16741](https://arxiv.org/html/2602.16741v1) ✔︎).
+- **Hallazgo aplicado**: Opus↔DeepSeek son familias de modelos distintas, lo que evita el "shared blind spot" de que el mismo modelo revise su propia familia ([HackerNoon](https://hackernoon.com/the-problem-with-using-ai-to-review-ai-written-code) ✔︎ + [arXiv 2608.21311](https://arxiv.org/abs/2608.21311) sobre 248.641 PRs reales) — esto no estaba verificado con evidencia antes de hoy.
+- Cambios ya aplicados: [[flujo-agentes-arquitectura]] §1 (nueva fila) y §11 (advertencia sobre leaderboards y cambio de familia de modelo).
+
+### 9.2 Etiquetas de GitHub + gh-aw como máquina de estados
+
+- **`gh-aw` lleva menos de 4 meses en *public preview*** (creado 2025-08-12, preview público desde 11-jun-2026, verificado con `gh api repos/github/gh-aw`) — su único adoptante citado con nombre (Carvana) es material de marketing de GitHub, no verificación independiente.
+- **Convergencia real entre una fuente externa y la experiencia propia de este proyecto**: un desarrollador independiente ([shinglyu.com](https://shinglyu.com/blog/2026/04/15/automating-weekly-research-with-github-agentic-workflows.html) ✔︎) documentó el mismo bug de `network.allowed` que Astillero ya se encontró solo el 2026-09-25.
+- **Dos bugs reproducibles en el propio disparador que usa Astillero** (`label_command`): éxito silencioso con permiso incompleto ([`gh-aw#60268`](https://github.com/github/gh-aw/issues/60268) ✔︎) y filtro de etiqueta pisado por un `if:` propio ([`gh-aw#47594`](https://github.com/github/gh-aw/issues/47594) ✔︎).
+- Alternativas revisadas y descartadas con motivo real: Projects v2 nativo (limitado, tope de automatizaciones en plan gratis), Temporal (resolvería esto pero añade un segundo sistema con estado propio — anotado como salida de escalado, no descartado por principio).
+- Cambios ya aplicados: [[flujo-agentes-runbook]] §4 (riesgo explícito + nota de inmadurez de la herramienta).
+
+### 9.3 Puertas de calidad: cobertura, mutation testing, revisión por LLM
+
+- **Cobertura**: un estudio de Microsoft Research sobre 100 proyectos reales con bugs de producción (no artificiales) confirma correlación insignificante entre cobertura y defectos — converge con la crítica ya citada de Fowler ([Microsoft Research](https://www.microsoft.com/en-us/research/publication/code-coverage-and-post-release-defects-a-large-scale-study-on-open-source-projects/) ✔︎). El diseño actual de Astillero (solo cobertura de diff, sin umbral global) ya estaba alineado; no se cambia, solo se refuerza la cita.
+- **Mutation testing**: Google lo corre en producción sobre el 30% de sus diffs con 6.000 ingenieros, pero el propio hilo de discusión de su paper en HN señala que sin filtrar mutantes triviales genera ruido sin señal ([discusión HN](https://news.ycombinator.com/item?id=17515602) ✔︎).
+- **Revisión por LLM**: techo real de ~50-60% de detección documentado en un estudio académico (ISSTA 2024, vía [O'Reilly Radar](https://www.oreilly.com/radar/ai-code-review-only-catches-half-of-your-bugs/) ✔︎) y en un paper de arXiv — el fallo más citado es el "techo de intención" (el código cumple la letra pero no lo pedido).
+- Cambios ya aplicados: [[flujo-agentes-arquitectura]] §8 (cobertura y mutación) y §6 (nuevo campo "Riesgos de intención fuera del EARS" en el contrato de tarea, más el límite de EARS citado en 9.5).
+
+### 9.4 Seguridad de un repo gobernado por agentes de IA
+
+- **"Comment and Control"**: vulnerabilidad real de 2026 (CVSS 9.4) donde un título de PR/issue hacía que `claude-code-action` publicara su propia API key en un comentario público — mismo ataque contra Gemini CLI y Copilot Agent. Confirmado por 5 fuentes de naturaleza distinta: disclosure técnico original ([flatt.tech](https://flatt.tech/research/posts/poisoning-claude-code-one-github-issue-to-break-the-supply-chain/) ✔︎), 3 medios de prensa de seguridad independientes ([TheHackerNews](https://thehackernews.com/2026/06/claude-code-github-action-flaw-let-one.html) ✔︎, [SecurityWeek](https://www.securityweek.com/claude-code-gemini-cli-github-copilot-agents-vulnerable-to-prompt-injection-via-comments/) ✔︎, [VentureBeat](https://venturebeat.com/security/ai-agent-runtime-security-system-card-audit-comment-and-control-2026) ✔︎), y 2 laboratorios de seguridad. Parcheado en `claude-code-action` v1.0.94.
+- **Cuantificación académica**: 13.392 workflows agénticos reales analizados, 496 vulnerabilidades confirmadas explotables, 86,5% entran por título/cuerpo de issue — el vector exacto de `label_command` ([arXiv 2605.07135](https://arxiv.org/html/2605.07135v1) ✔︎).
+- **OWASP LLM Top 10 verificado como consorcio real** (500+ expertos, 75% voto comunitario + 25% incidentes reales), no un vendor disfrazado.
+- **CODEOWNERS no es una puerta si no hay ruleset activo** — conecta con el hueco de GitHub Pro ya documentado en el runbook; patrón de fallo real en otros repos ([ejemplo](https://github.com/thrwapp/thrw/issues/181) ✔︎).
+- **Hallazgo colateral, verificado con `gh api` y `git cat-file` (no de la investigación en sí, de comprobar el repo real durante ella)**: el SHA fijado de `claude-code-action` en `revisar.yml`/`reproducir.yml` no existía — corregido a `756cc22e19660d20e8cc9496b4f242475a7f7790` (tag real `v1.0.235`).
+- Cambios ya aplicados: `template/docs/SECURITY.md.jinja` (dos secciones nuevas) y el SHA corregido, en `blogNetting/astillero`.
+
+### 9.5 Spec-driven, `AGENTS.md.jinja`, `contrato-tarea.md.jinja`, versionado
+
+- **Beneficio de un AGENTS.md, medido, no asumido**: un paper de ETH Zurich mide +4% de éxito si lo escribe un humano, **-2/3% si lo genera un LLM**, +20% de coste de tokens en ambos casos ([arXiv 2602.11988](https://arxiv.org/abs/2602.11988) ✔︎) — corroborado por un caso real independiente que midió ~22.000 tokens de coste ([lalitmadan.com](https://lalitmadan.com/post/why-agents-md-doesnt-work/) ✔︎).
+- **Mecanismo real, no solo "puede que falte symlink"**: Claude Code solo lee `AGENTS.md` si no hay `CLAUDE.md` por encima en el árbol — cambiado en v2.1.277 (18-sep-2026).
+- **Límite real de EARS**: se rompe con más de 3 precondiciones o cuando el requisito es en realidad una fórmula/máquina de estados ([QRA Corp](https://qracorp.com/when-not-to-use-ears/) ✔︎, consultoría de ingeniería de requisitos, no vendor de IA).
+- **Hallazgo más accionable de toda la ronda**: confirmado con 5 repos reales no relacionados entre sí + una discusión oficial de GitHub, una PR de `release-please` abierta con el `GITHUB_TOKEN` por defecto **no dispara los checks obligatorios** de un ruleset — bloqueará sus propias releases el día que se active el ruleset de `main` ([discusión oficial](https://github.com/orgs/community/discussions/25702) ✔︎).
+- Cambios ya aplicados: `template/AGENTS.md.jinja`, `template/docs/contrato-tarea.md.jinja` y `.github/workflows/release-please.yml` (token nuevo) en `blogNetting/astillero`; secreto `ASTILLERO_RELEASE_TOKEN` añadido a [[flujo-agentes-runbook]] §2.
+
+### 9.6 Dónde se ha buscado (las 5 investigaciones juntas)
+
+WebSearch + WebFetch sobre: arXiv (9 papers distintos citados), Hacker News, blogs técnicos independientes (HackerNoon, O'Reilly Radar, Substack, blogs personales de practicantes), issues/discussions reales de GitHub no relacionados entre sí (más de 15 repos distintos), prensa de seguridad especializada (TheHackerNews, SecurityWeek, VentureBeat, Cloud Security Alliance Labs, Noma Security), documentación oficial (usada solo para mecanismo, nunca como prueba de eficacia), y verificación directa contra el repo real `blogNetting/astillero` y `anthropics/claude-code-action` con `gh api`/`git cat-file`. Bloqueos reales encontrados y no rellenados con otra cosa: 429 en 3 fetches directos (morphllm.com, dos hilos de HN), 403 en un blog de Medium, 404 en un intento de fetch ajeno al tema.
+
+### 9.7 Lo que queda abierto
+
+- `project-example/` en `blogNetting/astillero` sigue con referencias `@main` en varios workflows — quedó desactualizado desde antes del trabajo de versionado real (2026-09-26); se regenera con `copier` contra el `astillero_ref` actual, no se parchea a mano. No se ha tocado en esta ronda: es un frente lateral a lo que se pidió, se anota para no perderlo.
+- El paper sobre revisión cruzada entre modelos ([arXiv 2608.21311](https://arxiv.org/abs/2608.21311)) es de septiembre 2026 y no reporta tasas de detección por configuración — falta la métrica más útil para Astillero si se publica una versión más completa.
+- No se encontró ningún caso público con la combinación exacta "DeepSeek ejecuta + Opus revisa", ni ningún proyecto que combine copier + release-please exactamente como Astillero (plantilla que se autoactualiza) — Astillero pisa terreno menos transitado en ambos puntos, no que esté mal.
 
 ## Enlaces
 

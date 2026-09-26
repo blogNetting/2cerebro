@@ -24,6 +24,7 @@ El diseño del flujo completo: qué pieza cubre cada rol, qué se entregan entre
 | **Empezar con 1–2 ejecutores** | [[flujo-fase-a-practicas-reales]] P1/P6 |
 | **Cada rol tiene un modelo configurable en un único sitio** | Restricción del proyecto: quien ocupa cada rol es intercambiable |
 | **No basta con pedirle al ejecutor «haz TDD»; hace falta un gate que lo aplique** | La instrucción sola falla la mayoría de las veces. En el estudio preregistrado más riguroso encontrado, solo el 41,9 % de las ejecuciones tuvo un test en rojo antes de implementar, y la condición «con instrucción de TDD» rindió **peor** en corrección que sin instrucción alguna ([Dan Luu](https://danluu.com/agentic-testing/) ✔︎, corroborado de forma independiente por [arXiv 2602.07900](https://arxiv.org/abs/2602.07900) sobre 6 modelos en SWE-bench Verified). Ver [[flujo-agentes-evidencia-empirica]] |
+| **Un LLM revisor tiene fallos sistemáticos en ambas direcciones, no solo «a veces se le escapa algo»** | Falsos negativos y sobrecorrección (marca como malo lo que está bien) medidos por separado en dos papers de 2026 ([arXiv 2603.00539](https://arxiv.org/pdf/2603.00539) ✔︎, [arXiv 2602.16741](https://arxiv.org/html/2602.16741v1) ✔︎). La mitigación real de este proyecto: Opus (Anthropic) revisando código de DeepSeek son familias de modelos distintas, lo que evita el «shared blind spot» documentado cuando el mismo modelo o familia escribe y revisa a la vez ([HackerNoon](https://hackernoon.com/the-problem-with-using-ai-to-review-ai-written-code) ✔︎ + [arXiv 2608.21311](https://arxiv.org/abs/2608.21311) sobre 248.641 PRs reales). **Si el ejecutor migra algún día a un modelo de la familia Claude (sección 11), esta garantía desaparece — revisarlo explícito en ese momento, no dar por hecho que sigue aplicando** |
 | **El wiki y el repo de cada proyecto no se pisan**: conocimiento reusable entre proyectos (y todo lo que conecta con vida no técnica) va al wiki; lo específico de un proyecto (entidades exactas, stack, contratos de tarea) va a `specs/` dentro de su propio repo, no se duplica en las dos partes | Corrección del usuario (2026-09-26) sobre [[patrimonial]]: mientras un proyecto está en entrevista de requisitos, sin framework spec-driven elegido, su detalle vive en la nota hub del wiki porque no hay `specs/` al que trasladarlo todavía. En el momento en que arranca el diseño formal (K1: Diseñador → repo), ese detalle se **traslada** a `specs/<proyecto>/spec.md` en el repo del proyecto, y la nota del wiki se resume a hub — no queda copiado en los dos sitios |
 
 ## 2. Roles y quién los ocupa
@@ -128,6 +129,10 @@ Es lo que evita la deriva del plan. Todo lo que el ejecutor necesita va dentro. 
 ## Criterios de aceptación (EARS)
 1. Cuando <disparador>, el <sistema> deberá <respuesta>.  → test: tests/<fichero>::<test>
 2. Si <condición no deseada>, entonces el <sistema> deberá <respuesta>.  → test: …
+3. Si un criterio real necesita más de una precondición, una fórmula o una máquina de estados, no lo fuerces a una sola frase EARS — descríbelo en prosa clara y anótalo así explícitamente (EARS se rompe en estos casos: [QRA Corp](https://qracorp.com/when-not-to-use-ears/) ✔︎).
+
+## Riesgos de intención fuera del EARS
+<comportamiento implícito que ningún criterio de arriba cubre explícitamente — el Desglosador lo anota si lo detecta al escribir el contrato; es el hueco real más citado en la revisión automática, "el código cumple la letra pero no lo que se pedía">
 
 ## Tests obligatorios
 - Unitarios: <ficheros>. Integración: <ficheros>.
@@ -249,7 +254,8 @@ jobs:
 
 - **Token.** `CLAUDE_CODE_OAUTH_TOKEN` es «an OAuth token that authenticates with your Claude subscription, available on Pro…»; se genera con `claude setup-token` ✔︎.
 - **Coste.** Opus revisa **solo con la CI en verde**, para no gastar cuota Pro en PRs que ya fallan.
-- **Acción fijada por SHA**, por los compromisos de tj-actions y Trivy ([[desarrollo-agentes-investigacion]]).
+- **Acción fijada por SHA**, por los compromisos de tj-actions y Trivy ([[desarrollo-agentes-investigacion]]). Comprobar en cada actualización que el SHA corresponde a una versión ≥ v1.0.94 de `claude-code-action` — la que corrigió el fallo real "Comment and Control" (ver `SECURITY.md`), no solo que "está fijada".
+- **El veredicto del revisor no se mide todavía, solo se asume.** Patrón real encontrado en la comunidad ([`Zenoctra/factory918#103`](https://github.com/Zenoctra/factory918/issues/103)): guardar cada hallazgo de revisión ya confirmado como real (por revisión humana posterior en ruta `CODEOWNERS`, o por un `rehacer` que lo confirmó) en un set de regresión, y volver a correrlo contra el modelo de revisor configurado cuando cambie (sección 11) — misma disciplina que ya se aplica al ejecutor con `tdd-guard` (7.1 bis), pendiente de aplicar al revisor.
 
 ### 7.3 Diseñador y desglosador (local)
 
@@ -275,8 +281,8 @@ Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
 |---|---|---|
 | Tipos estrictos | mypy/pyright strict | `tsc --strict` |
 | Tests y cobertura | pytest + coverage.py | Vitest, proveedor `v8` nativo (no `c8` aparte: desde Vitest 3.2 el proveedor `v8` integra el mismo motor, es el recomendado por defecto — [vitest.dev/guide/coverage](https://vitest.dev/guide/coverage.html) ✔︎) |
-| **Cobertura del diff** | Codecov `patch` status, sin umbral global de proyecto — un número fijo alto es gameable con tests triviales (Fowler: *«high coverage numbers are too easy to reach with low quality testing»*, [martinfowler.com/bliki/TestCoverage.html](https://martinfowler.com/bliki/TestCoverage.html) ✔︎). `patch` cerca del 100 % (toda línea nueva de una tarea acotada debe estar cubierta), `project` informativo sin bloquear | Igual, mismo mecanismo |
-| **Mutación del diff** | mutmut sobre los ficheros cambiados | Stryker incremental |
+| **Cobertura del diff** | Codecov `patch` status, sin umbral global de proyecto — un número fijo alto es gameable con tests triviales (Fowler: *«high coverage numbers are too easy to reach with low quality testing»*, [martinfowler.com/bliki/TestCoverage.html](https://martinfowler.com/bliki/TestCoverage.html) ✔︎, corroborado por un estudio independiente sobre 100 proyectos open-source reales con bugs de producción reales, no artificiales, que encuentra correlación insignificante entre cobertura y defectos post-release — [Microsoft Research](https://www.microsoft.com/en-us/research/publication/code-coverage-and-post-release-defects-a-large-scale-study-on-open-source-projects/) ✔︎). `patch` cerca del 100 % (toda línea nueva de una tarea acotada debe estar cubierta, que es donde la cobertura sí tiene sentido), `project` informativo sin bloquear | Igual, mismo mecanismo |
+| **Mutación del diff** | mutmut sobre los ficheros cambiados — filtrar mutantes triviales/equivalentes antes de ejecutar, si no generan ruido de CI sin señal (riesgo documentado incluso en el uso en producción de Google, [discusión HN sobre su propio paper](https://news.ycombinator.com/item?id=17515602) ✔︎) | Stryker incremental, mismo filtrado de mutantes triviales |
 | SAST | Semgrep CE, más Bandit | Semgrep CE |
 | Secretos | gitleaks + push protection | Igual |
 | Dependencias | OSV-Scanner + Dependabot | Igual |
@@ -332,6 +338,8 @@ Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
 | Diseñador | `/model` en Claude Code |
 
 La estructura del flujo no cambia en ningún caso.
+
+**No usar SWE-bench (ni ningún leaderboard público) para decidir qué modelo ocupa el ejecutor o el revisor.** Dos fuentes independientes (un paper académico y un blog de un vendor competidor, ninguno con interés en defender ni Anthropic ni DeepSeek) convergen en que el marcador está inflado frente a scaffolds independientes y no mide el tipo de tarea real de este proyecto — implementar una feature nueva bajo contrato estricto, no arreglar un bug en un repo ya conocido ([arXiv 2606.17799](https://arxiv.org/pdf/2606.17799) ✔︎, [runloop.ai](https://runloop.ai/blog/swe-bench-deep-dive-unmasking-the-limitations-of-a-popular-benchmark) ✔︎). Si el ejecutor pasa a un modelo de la familia Claude, revisar además la nota de la sección 1 sobre el «shared blind spot» del revisor — deja de aplicar la garantía de familias distintas.
 
 ## 12. Replicación a cada proyecto (Astillero)
 

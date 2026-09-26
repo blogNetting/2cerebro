@@ -1,7 +1,7 @@
 ---
 title: Patrimonial
 created: 2026-09-24
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [finanzas, patrimonio, webapp, self-hosted, dashboard]
 zona: tecnico
 ---
@@ -75,4 +75,8 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 
 - **Repo:** [blogNetting/patrimonial](https://github.com/blogNetting/patrimonial), privado.
 - **Ruta local:** `~/dev/patrimonial`.
-- **Estado (2026-09-26):** arrancado con la skill `astillero-proyecto` y completo, fijado a **Astillero v0.2.2** (no `@main`: actualizaciones controladas, no automáticas). Se actualizó dos veces el mismo día porque Astillero se está desarrollando en paralelo, en otra sesión: `v0.1.0` tenía `AGENTS.md` con secciones vacías (corregido en `v0.2.1`); `v0.2.1` migró `AGENTS.md` al formato oficial [agents.md](https://agents.md/) (`v0.2.2`). Bootstrap de copier completo: `AGENTS.md`, `CODEOWNERS` con `@blogNetting`, `docs/contrato-tarea.md`, `docs/SECURITY.md`, plantilla de bug, workflows de ejecutor/rehacer/revisor/reconciliador/CI/despliegue, compilados con `gh aw compile --approve` tras verificar que el único secreto nuevo (`DEEPSEEK_API_KEY`) coincide con el diseño. Ecosistema **Python** (solo puertas de CI y red del ejecutor, no es el framework de la app). Secretos `DEEPSEEK_API_KEY` y `CLAUDE_CODE_OAUTH_TOKEN` configurados por el usuario. Sin código de aplicación todavía. Entrevista de diseño formal (K1) en curso — se resincronizará contra Astillero otra vez antes de cerrar la especificación, no en cada tag nuevo.
+- **Estado (2026-09-26):** arrancado con la skill `astillero-proyecto` y completo, fijado a **Astillero v0.2.4** (actualizado el 2026-09-26 desde v0.2.2: cambian `AGENTS.md` y `docs/SECURITY.md`) (no `@main`: actualizaciones controladas, no automáticas). Se actualizó dos veces el mismo día porque Astillero se está desarrollando en paralelo, en otra sesión: `v0.1.0` tenía `AGENTS.md` con secciones vacías (corregido en `v0.2.1`); `v0.2.1` migró `AGENTS.md` al formato oficial [agents.md](https://agents.md/) (`v0.2.2`). Bootstrap de copier completo: `AGENTS.md`, `CODEOWNERS` con `@blogNetting`, `docs/contrato-tarea.md`, `docs/SECURITY.md`, plantilla de bug, workflows de ejecutor/rehacer/revisor/reconciliador/CI/despliegue, compilados con `gh aw compile --approve` tras verificar que el único secreto nuevo (`DEEPSEEK_API_KEY`) coincide con el diseño. Ecosistema **Python** (solo puertas de CI y red del ejecutor, no es el framework de la app). Secretos `DEEPSEEK_API_KEY` y `CLAUDE_CODE_OAUTH_TOKEN` configurados por el usuario. Sin código de aplicación todavía. Entrevista de diseño formal (K1) en curso — se resincronizará contra Astillero otra vez antes de cerrar la especificación, no en cada tag nuevo.
+
+## Pendiente en Astillero que afecta a Patrimonial
+
+- Arreglado en Astillero el 2026-09-26 (`94ce4ae`): la plantilla genera `CLAUDE.md` con `@AGENTS.md`, porque el Claude Code del ejecutor (2.1.273) no carga `AGENTS.md` por sí solo y `rehacer` trabajaba sin las reglas del repo. Detalle y pruebas en [[decisiones]]. **Falta:** que se publique v0.2.5 (PR #6 de Astillero, pendiente de merge) y actualizar Patrimonial a esa versión.
