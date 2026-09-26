@@ -91,6 +91,7 @@ Después de esas respuestas:
 - [[capa-producto]] — cómo se dirige como Product Owner
 - [[devops-minimo]] — informe de DevOps mínimo en producción
 - [[astillero-mantenimiento]] — cómo se actualizan proyectos ya en marcha y convivencia con 2Cerebro
+- [[flujo-agentes-runbook]] — incluye el skill `/astillero-proyecto`, el punto de entrada real
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
 - [[circuito-tareas-definicion]] — definición de la fase de organización del trabajo con agentes: roles, traspaso, coordinación, topología, revisión, trazabilidad; criterios, método por fases, qué cuenta como contrastado
 - [[orquestacion-opus-deepseek-informe]] — informe parcial (superado): conexión entre Claude y DeepSeek

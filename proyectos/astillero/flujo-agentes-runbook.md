@@ -123,10 +123,20 @@ En un repositorio de prueba:
 - La elección entre runners alojados o propio en la VM.
 - ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero .` más los secretos propios del proyecto — pendiente de reescribir §2 cuando exista el repo de Astillero.
 
+## Invocación: skill `/astillero-proyecto` (2026-09-26)
+
+Este runbook deja de ejecutarse a mano paso a paso — hay un skill que lo automatiza y decide él mismo si el proyecto es nuevo o ya existe (aunque sea a medias).
+
+- **Fichero:** `~/.claude/skills/astillero-proyecto/SKILL.md` (fuera del repo del wiki, en `~/.claude/skills/`, no en `2cerebro/.claude/commands/`) — deliberado: un comando de repo solo funciona abriendo Claude Code dentro de `2cerebro`; un skill en `~/.claude/skills/` funciona igual desde la sesión de cualquier proyecto (Patrimonial incluido), en cualquier directorio.
+- **Invocación:** `/astillero-proyecto`, escrito en cualquier sesión de Claude Code de esta máquina — no importa el directorio de trabajo ni el repo abierto.
+- **Qué hace:** localiza si el proyecto ya existe (aunque sea a medias) cruzando el wiki con `gh repo list` — si no lo encuentra así, pregunta el nombre directamente, no asume que es nuevo sin comprobar. Comprueba 6 piezas por separado (identidad, repo, nota hub, etiquetas de estado, ecosistema, bootstrap de copier — las 4 primeras imprescindibles, las 2 últimas con default razonable), y solo pregunta o genera lo que falta de verdad. Ruta local de un proyecto nuevo, siempre fija, nunca improvisada: `~/dev/<slug>/` — mismo patrón que ya usa Astillero consigo mismo. Nunca rellena secretos ni inventa la captura de idea — eso queda siempre para el humano.
+- **Sin probar en vivo todavía**: escrito hoy, pendiente de la primera invocación real (candidata: Patrimonial, en su propia sesión, no en esta).
+
 ## Enlaces
 
 - [[flujo-agentes-arquitectura]] — diseño
 - [[flujo-agentes-informe]] — evidencia
 - [[astillero-replicacion]] — mecanismo de replicación a cada proyecto
+- [[astillero-mantenimiento]] — propagación de actualizaciones a proyectos ya en marcha
 - [[astillero]] — proyecto
 - [[_index]]
