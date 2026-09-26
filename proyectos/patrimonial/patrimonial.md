@@ -12,6 +12,8 @@ Patrimonial: aplicación web responsive, autoalojada en el servidor casero, para
 
 Nombre decidido: **Patrimonial** (2026-09-24) — funciona en castellano como "sociedad patrimonial" (holding personal) y en inglés como adjetivo de *patrimony*, con acento natural en "mo". En fase de toma de requisitos (2026-09-25), modelando por entidades antes de decidir stack. Sin decisiones de stack ni de despliegue todavía.
 
+**Pendiente al arrancar el diseño formal (framework spec-driven elegido, primera sesión de Opus):** el modelo de entidades y las fuentes de datos de esta nota se **trasladan** a `specs/patrimonial/spec.md` en `~/dev/patrimonial` (contrato K1 de [[flujo-agentes-arquitectura]]), no se duplican. Esta nota se resume entonces a hub — qué es, estado, enlace al repo, enlaces de vida no técnica ([[apartamentos-calle-uruguay]], [[fiscalidad-alquiler-por-habitaciones]]) — y deja de llevar el detalle técnico.
+
 ## Principio transversal: pasividad
 
 Por defecto, si existe una fuente de solo lectura (API, dirección pública), se usa; la entrada manual es la excepción, no la norma. Se aplica de forma distinta según el activo: total en cripto, imposible gratis en banca (ver Fuentes), inexistente en inmuebles/pensiones.
