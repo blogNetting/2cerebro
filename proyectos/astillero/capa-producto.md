@@ -1,7 +1,7 @@
 ---
 title: Astillero — capa de producto
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [astillero, producto, roadmap, backlog, dashboard, releases]
 zona: tecnico
 ---
@@ -30,6 +30,16 @@ Dos fuentes independientes (Anthropic oficial, y un practicante) convergen en la
 - **No-gos**, si los tienes claros de entrada.
 
 Eso alimenta la entrevista ya documentada oficialmente por Anthropic: *«For larger features, have Claude interview you first... write a complete spec to SPEC.md»* ✔︎ ([[desarrollo-agentes-f1-especificacion]] §3.4). Encaja directo en el campo «Alcance / Fuera de alcance» que el contrato de tarea **ya tiene** ([[flujo-agentes-arquitectura]] §6) — no es una pieza nueva, es la misma disciplina un escalón antes.
+
+**Corrección del 2026-09-26: citar que "hay que entrevistar" no bastaba — sin el guion exacto, cada ejecución salía distinta.** No existe una lista fija de preguntas con adopción real en ningún framework evaluado (ni Spec Kit, ni OpenSpec, ni BMAD, ni Kiro) — verificado, no es un hueco de investigación, es que nadie lo resuelve así. Lo que sí existe, y hasta hoy nunca se copió, es esto:
+
+**El prompt exacto de Anthropic, para pegar tal cual, no parafrasear** ([code.claude.com/docs/en/best-practices](https://code.claude.com/docs/en/best-practices) ✔︎):
+
+> *"I want to build [brief description]. Interview me in detail using the AskUserQuestion tool. Ask about technical implementation, UI/UX, edge cases, concerns, and tradeoffs. Don't ask obvious questions, dig into the hard parts I might not have considered. Keep interviewing until we've covered everything, then write a complete spec to SPEC.md."*
+
+**Disciplina real contra la ambigüedad — de Spec Kit** (verificado directo en su fichero de comando real, [`templates/commands/specify.md`](https://github.com/github/spec-kit/blob/main/templates/commands/specify.md) ✔︎, no en su README): el agente asume razonablemente por defecto y solo marca duda explícita en puntos de alto impacto, con **límite duro de 3 marcas por especificación**, priorizadas en este orden — alcance > seguridad > UX > detalle técnico —, presentadas como tabla de opciones a elegir, no como preguntas abiertas. Esto es lo que faltaba para que la entrevista no varíe cada vez: un límite y un orden, no una lista de preguntas.
+
+**Qué hace bueno el resultado** (misma fuente Anthropic, literal): *«they name the files and interfaces involved, state what is out of scope, and end with an end-to-end verification step that proves the feature works»* — y una instrucción operativa real: empezar una sesión nueva para ejecutar el spec (*"start a fresh session to execute it"*), contexto limpio, no arrastrar la conversación de la entrevista a la implementación.
 
 ## 3. Panel: qué ves sin leer un log
 
@@ -80,6 +90,8 @@ Eso alimenta la entrevista ya documentada oficialmente por Anthropic: *«For lar
 ## 8. Dónde se ha buscado
 
 `code.claude.com`, `basecamp.com/shapeup` (varios capítulos, fuente primaria), `prodpad.com`, `elezea.com`, `semver.org`, `martinfowler.com`, `docs.github.com`, `github.github.com/gh-aw` (patterns/ProjectOps, IssueOps, LabelOps, MonitorOps, safe-outputs, auth-projects, agent-factory-status), `metabase.com/blog`, Hacker News vía la API de Algolia (más de 40 consultas entre los dos frentes, con las que no dieron nada documentadas explícitamente en [[capa-producto-definicion]]), verificación en vivo del orquestador con `curl` y GraphQL contra `github/gh-aw`.
+
+**Pasada del 2026-09-26 (guion de entrevista, corrección directa del usuario sobre citar sin copiar):** `code.claude.com/docs/en/best-practices` (fetch completo, no resumen — de ahí sale el prompt literal y el criterio de poda), `github.com/github/spec-kit/blob/main/templates/commands/specify.md` (fichero de comando real, no el README), `agents.md` (sitio oficial del formato, +60.000 proyectos), `raw.githubusercontent.com/openai/codex/main/AGENTS.md` y `raw.githubusercontent.com/apache/airflow/main/AGENTS.md` (ficheros reales de producción, no citados de segunda mano).
 
 ## Enlaces
 

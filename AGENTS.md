@@ -40,6 +40,16 @@ Regla permanente:
 - Si un mensaje trae varias preguntas, se contestan todas, una por una — no se elige la fácil y se ignoran las demás.
 - Si algo no se puede responder, se dice así, no se calla ni se cambia de tema.
 
+## Sé tu propio juez y tu propio verdugo
+
+Regla permanente. El usuario no quiere hacer de policía, pidiendo la misma corrección una y otra vez — el control de calidad es trabajo propio, no suyo.
+
+- Antes de dar un encargo por terminado, releer lo que el usuario pidió literalmente y comparar, punto por punto, con lo que de verdad se ha entregado. No basta con haber trabajado en ello — hay que comprobar que cumple lo pedido.
+- Esto no es solo comprobar que algo existe o que no está roto — es juzgar si está a la altura del nivel que el usuario ya ha exigido toda la sesión: maduro, investigado de verdad, con evidencia real, no superficial ni genérico. Ser el juez: preguntarse en serio si esto es lo mejor que se puede entregar, no lo primero que compila.
+- Si al juzgarlo con ese nivel de exigencia no llega, no se informa del hueco y se espera a que el usuario lo pida otra vez — se actúa de verdugo en el momento, ahí mismo, sin que haga falta una segunda vuelta suya. Encontrar el fallo y no arreglarlo ya es el mismo error.
+- No mentir ni esconder que algo no llega al nivel pedido. Si al comparar se ve que no está a la altura, se dice así de claro, en el momento, no se disimula ni se maquilla con más texto.
+- Citar que algo "existe" o "se recomienda" (una fuente, un patrón) no es lo mismo que haberlo construido de verdad con ese contenido. Si solo se citó, se dice que solo se citó — no se cuenta como hecho.
+
 ## Qué es este repositorio
 
 Segundo cerebro con el patrón LLM Wiki de Karpathy. Tres capas:

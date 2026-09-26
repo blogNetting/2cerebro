@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — arquitectura operable
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-26
 tags: [agentes, arquitectura, github-actions, gh-aw, deepseek, opus, flujo]
 zona: tecnico
 ---
@@ -59,6 +59,8 @@ El diseño del flujo completo: qué pieza cubre cada rol, qué se entregan entre
 | # | De → a | Qué se entrega | Formato | Interfaz | Fuente |
 |---|---|---|---|---|---|
 | K1 | Diseñador → repo | Especificación, plan y tareas | Markdown del framework (p. ej. `specs/<feature>/spec.md`, `plan.md`, `tasks.md`) | git (PR de especificación) | [[flujo-fase-c1-spec-y-estado]] §2 |
+
+> **Guion real de la entrevista que arranca K1** — corregido el 2026-09-26: citar que "hay que entrevistar" no bastaba, cada ejecución salía distinta sin un guion fijo copiado. El prompt literal de Anthropic para pegar, y la disciplina real de Spec Kit contra la ambigüedad (límite de 3 dudas, priorizadas alcance>seguridad>UX>técnico, en tabla de opciones): [[capa-producto]] §2.
 | K2 | Persona → repo | Aprobación del diseño (incluida la arquitectura de `plan.md`) | Review aprobada de la PR de especificación | GitHub | Nativo |
 | K3 | Desglosador → tracker | Una **épica** por *feature* y una **sub-issue por tarea**, cada una con el **contrato de tarea** (sección 6) y sus dependencias | Cuerpo de issue en markdown | `gh issue create --parent <épica> --blocked-by <n>` ✔︎ | `gh issue create --help` ✔︎ |
 
