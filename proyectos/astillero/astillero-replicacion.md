@@ -6,7 +6,7 @@ tags: [agentes, github-actions, gh-aw, reusable-workflows, copier, replicacion]
 zona: tecnico
 ---
 
-Cómo se monta un repo "plataforma" (**Astillero**, nombre elegido por el usuario el 2026-09-25) con los workflows y la configuración reutilizables del flujo de [[flujo-agentes-arquitectura]], de forma que (1) un proyecto nuevo (p. ej. [[app-seguimiento-patrimonio]]) se crea a partir de él ya configurado, y (2) cuando Astillero cambia después, ese cambio llega también a los proyectos que ya existen, no solo a los nuevos.
+Cómo se monta un repo "plataforma" (**Astillero**, nombre elegido por el usuario el 2026-09-25) con los workflows y la configuración reutilizables del flujo de [[flujo-agentes-arquitectura]], de forma que (1) un proyecto nuevo (p. ej. [[patrimonial]]) se crea a partir de él ya configurado, y (2) cuando Astillero cambia después, ese cambio llega también a los proyectos que ya existen, no solo a los nuevos.
 
 ## 1. Introducción
 
@@ -70,13 +70,14 @@ Validación independiente: *"Copier wins for fleet management due to native `cop
 ## 6. Otros
 
 - Esta nota **cierra** el punto 🧪 de [[flujo-agentes-arquitectura]] §7.1 sobre si gh-aw admite includes remotos: sí, y con eso el ejecutor no necesita copiarse a cada repo tampoco, solo los workflows de revisor y reconciliador (que ya se sabía que sí, por ser reusable workflows nativos).
-- El repo de Astillero será **privado** (decisión del usuario, 2026-09-25: todo repo de este ecosistema se crea privado, sin excepción). Hace falta activar el ajuste de "Access" de §3.1, y GitHub Pro (~4 $/mes de cuenta, no por repo) para que Astillero y cada proyecto tengan ruleset y merge queue propios.
-- Falta crear el repo `astillero` en GitHub y mover a él las piezas hoy en borrador dentro de [[flujo-agentes-arquitectura]] §7.
+- El repo de Astillero es **privado** (decisión del usuario, 2026-09-25: todo repo de este ecosistema se crea privado, sin excepción), con el ajuste de "Access" de §3.1 activado. GitHub Pro (~4 $/mes de cuenta, no por repo) sigue pendiente de contratar para que Astillero y cada proyecto tengan ruleset y merge queue propios.
+- **Cerrado (2026-09-25):** el repo `blogNetting/astillero` existe, con los workflows reutilizables, la plantilla de copier y un `project-example/` de prueba ya publicados — verificado en vivo. Cómo se propagan cambios posteriores a proyectos ya bootstrapped: [[astillero-mantenimiento]].
 
 ## Enlaces
 
 - [[flujo-agentes-arquitectura]] — diseño operable que esta nota hace replicable
 - [[flujo-agentes-runbook]] — puesta en marcha por proyecto, a actualizar con este mecanismo
+- [[astillero-mantenimiento]] — cómo se propagan las actualizaciones a proyectos ya en marcha, no solo a los nuevos
 - [[astillero]] — proyecto
-- [[app-seguimiento-patrimonio]] — primer proyecto candidato a usar este mecanismo
+- [[patrimonial]] — primer proyecto candidato a usar este mecanismo
 - [[_index]]

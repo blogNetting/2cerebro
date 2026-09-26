@@ -39,8 +39,10 @@ Pasos para poner en marcha el flujo de [[flujo-agentes-arquitectura]] en cualqui
    ```
    gh secret set DEEPSEEK_API_KEY
    gh secret set CLAUDE_CODE_OAUTH_TOKEN
+   gh secret set GH_AW_WRITE_PROJECT_TOKEN   # PAT scope "project" — solo si se activa el panel de PO, capa-producto.md §3
+   gh secret set CODECOV_TOKEN               # solo repos privados, gate de cobertura §8
    ```
-   Se introducen por teclado; nunca van al repo.
+   Se introducen por teclado; nunca van al repo. Los dos últimos, añadidos el 2026-09-25 tras una auditoría de coherencia: faltaban en esta lista y el sistema fallaría en vivo sin avisar hasta el primer intento real de escribir en Projects v2 o subir cobertura. Si además se activa `astillero-update.yml` ([[astillero-mantenimiento]] §3), hace falta un tercero: `gh secret set ASTILLERO_SYNC_TOKEN` (PAT scope `workflow` — el `GITHUB_TOKEN` por defecto no puede tocar `.github/workflows/`).
 3. **`AGENTS.md`**: índice de unas 100 líneas que apunta a `docs/`. Es el patrón de OpenAI ([[flujo-fase-a2-practica-a-escala]] fuente 1). Incluye cómo compilar, cómo testear, las convenciones y la regla «no tocar tests existentes».
 4. **`CODEOWNERS`**: la lista de rutas de [[flujo-agentes-arquitectura]] §8, con tu usuario como dueño.
 5. **Workflow de CI** con las puertas del stack. Todas las acciones de terceros **fijadas por SHA**.

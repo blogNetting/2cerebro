@@ -17,7 +17,7 @@ Las cinco piezas, construidas y enlazadas entre sí:
 1. **Motor de ingeniería** — [[flujo-agentes-arquitectura]] §1-14. Diseño operable (roles, contratos, máquina de estados, `tdd-guard` como control obligatorio) probado en vivo en un repo real desechable (`blogNetting/prueba-flujo-agentes`): reserva sin colisión, ejecución real de DeepSeek con 2 fallos reales corregidos (falta de permiso `issues: read`, cortafuegos de red sin el ecosistema `python`) y una tercera ejecución con PR real (#13) correctamente creada y marcada para revisión humana por tocar un fichero protegido.
 2. **Replicación a proyectos nuevos** — [[astillero-replicacion]]. Repo [blogNetting/astillero](https://github.com/blogNetting/astillero) con los workflows reutilizables (`implementar`/`rehacer`/`revisar`/`reconciliar`) publicados y una plantilla `copier`. Probado de extremo a extremo: un proyecto generado desde cero con `copier` compila contra el import remoto real de este repo.
 3. **Capa de producto** — [[capa-producto]]. Cómo el usuario dirige el motor como Product Owner de una sola persona: captura de idea, backlog sin scoring formal (sin evidencia real de que nadie lo use así en solitario), panel en GitHub Projects v2, bugs con el mismo contrato de tarea que una funcionalidad, versionado por checkpoint, registro de decisiones de producto.
-4. **Despliegue a producción** — [[flujo-agentes-arquitectura]] §15, nuevo hoy. CD automático en cada merge (sin checkpoint manual aparte del versionado), dónde corre la app, rollback como extensión de K10, migraciones de schema siempre en dos tareas — con evidencia real de 40+ operadores en solitario, no manual de empresa grande. **Diseñado, no ejecutado en vivo todavía**: no hay ningún proyecto real desplegado bajo este mecanismo.
+4. **Despliegue a producción** — [[flujo-agentes-arquitectura]] §15, nuevo hoy. CD automático en cada merge (sin checkpoint manual aparte del versionado), dónde corre la app, rollback como extensión de §10 (Fallos y recuperación), migraciones de schema siempre en dos tareas — con evidencia real de 40+ operadores en solitario, no manual de empresa grande. **Diseñado, no ejecutado en vivo todavía**: no hay ningún proyecto real desplegado bajo este mecanismo.
 5. **DevOps mínimo en producción** — [[devops-minimo]], nuevo hoy, el informe que pediste. Monitorización, alertado, gestión de incidentes (no hace falta on-call formal con un solo operador — hallazgo contraintuitivo con fuente), backup/DR, rotación de secretos, parcheo de dependencias, coste — todo anclado en un caso real auditable (Healthchecks.io, SaaS operado en solitario, stack de producción público). **Diseñado con evidencia real, no ejecutado en vivo**: nada de esto corre todavía sobre una app real de Astillero.
 
 **Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. El revisor con Opus tampoco se ha ejecutado todavía (falta tu token). La parametrización real de imports de gh-aw sigue sin resolver (ver «Pendiente de decidir»).
@@ -28,7 +28,7 @@ Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarr
 
 - **Repo:** [blogNetting/astillero](https://github.com/blogNetting/astillero), privado.
 - **Ruta local:** `~/dev/astillero`.
-- **Estado (2026-09-25):** creado, con acceso de Actions abierto a los repos de `blogNetting` (para los reusable workflows de [[astillero-replicacion]]). Solo tiene el README con los enlaces al diseño; todavía no contiene los workflows reutilizables ni la plantilla de copier — están en borrador en [[flujo-agentes-arquitectura]] §7, pendientes de trasladar.
+- **Estado (2026-09-25):** creado, con acceso de Actions abierto a los repos de `blogNetting` (para los reusable workflows de [[astillero-replicacion]]). Contiene ya los workflows reutilizables (`implementar`/`rehacer`, con `.lock.yml` compilado; `revisar`/`reconciliar`), la plantilla `copier` y un `project-example/` generado como prueba — verificado en vivo contra el repo real el 2026-09-25.
 
 ## Hipótesis iniciales del usuario (no son decisiones)
 
@@ -39,25 +39,20 @@ Se ponen en duda como cualquier otra alternativa: la inteligencia del ciclo la p
 - **Ejecutor abstracto (2026-09-25).** La arquitectura y la infraestructura funcionan igual sea quien sea el que implementa (DeepSeek, Sonnet u otro). Se usará DeepSeek **por coste**, no por calidad. Cómo se invoca a cada ejecutor es un problema aparte. El diseño y el desglose en tareas los hace Opus 5.5; el resultado siempre se revisa.
 - **Forja: GitHub (2026-09-25).**
 - **Framework spec-driven: se elige en cada proyecto**, según encaje.
-- **No hay piloto** hasta que el sistema esté completo. [[app-seguimiento-patrimonio]] no arranca antes.
+- **No hay piloto** hasta que el sistema esté completo. [[patrimonial]] no arranca antes.
 
 - **Genérico y abstracto.** Tiene que servir para cualquier desarrollo. Stack, plataforma git y despliegue se deciden en cada proyecto. Preferencias del usuario: Python con algún framework, o Node.js.
 - **Repos propios.** Este sistema y cada app que cuelgue de él tienen su propio repo, fuera de `2cerebro`, que es público y hace push cada hora. Desde el wiki se llega a cada uno con una nota hub (enlace al repo, ruta local y estado).
-- **No hay código sin tests**, sean unitarios o de integración. La exigencia de cobertura y complejidad se fijará más adelante.
+- **No hay código sin tests**, sean unitarios o de integración. Cobertura y complejidad: **cerrado el 2026-09-25**, ver [[desarrollo-agentes-f4-devsecops]] §3.3 y [[flujo-agentes-arquitectura]] §8 — sin umbral global fijo (gameable), `patch coverage` cerca del 100% en líneas nuevas + mutation testing del diff.
 - **Si se usa DeepSeek, su API oficial es aceptable.** Que los datos estén en China no es un problema para el usuario.
 - **Claude va por suscripción Pro (20 €/mes), no por API.** Es una restricción de diseño: hay límites de uso, sobre todo con Opus.
 - **Control de coste por saldo prepagado.** El usuario va recargando y decide la viabilidad según el consumo. Hay que poder medir el gasto por modelo y por tarea.
 
-## Bloques
+## Bloques (histórico, 2026-09-24 — superado por «Estado»)
 
-1. Proceso: fases, qué documento sale de cada una y dónde aprueba una persona. Los criterios de aceptación son el contrato que recibe el ejecutor.
-2. Orquestador y ejecutor, Opus y DeepSeek: se decide por investigación y pruebas, no por opinión. Pesa lo que funciona, lo que la comunidad ha probado y está contrastado, por encima de la novedad o el hype. Steve Yegge y Andrej Karpathy son pistas a las que recurrir si falta por dónde buscar, no frentes obligatorios.
-3. Git: ramas protegidas y un procedimiento para que no se pise el código. Puede que la herramienta que se elija ya resuelva esto.
-4. CI/CD y entornos.
-5. DevSecOps: controles del pipeline y seguridad del propio sistema de agentes.
-6. Integración con 2Cerebro: notas hub y skills.
-7. Economía: coste real, incluido el retrabajo y las revisiones de Opus.
-8. Piloto: seguramente [[app-seguimiento-patrimonio]], sin confirmar. Solo empieza cuando este sistema esté listo.
+> El plan original de 8 bloques, abierto el primer día. Todos resueltos hoy y reflejados en «Estado» arriba; se conserva solo como registro de por dónde empezó el proyecto, no como pendiente activo.
+
+1. Proceso → [[flujo-agentes-arquitectura]]. 2. Orquestador/ejecutor Opus+DeepSeek → resuelto, decisión cerrada arriba. 3. Git → trunk-based, rulesets ([[desarrollo-agentes-f3-git-cicd-infra]]). 4. CI/CD y entornos → §8, §15 de [[flujo-agentes-arquitectura]]. 5. DevSecOps → [[desarrollo-agentes-f4-devsecops]] + [[devops-minimo]]. 6. Integración con 2Cerebro → esta misma nota hub. 7. Economía → coste medido en vivo con DeepSeek, ver «Control de coste» abajo. 8. Piloto → [[patrimonial]], sigue sin arrancar por decisión propia, no por pieza faltante.
 
 ## Motor de ingeniería (2026-09-25): construido y probado en vivo
 
@@ -87,7 +82,7 @@ Después de esas respuestas:
 - Plataforma git por proyecto y nivel de autonomía, es decir, en qué puntos aprueba una persona. Aplazado a propósito.
 - Modelo de ramas: está propuesto trunk-based, falta confirmarlo.
 - Parametrización real de los imports de gh-aw (`uses:`/`with:`/`import-schema`): intentada y abandonada tras varios errores de compilación reales; hoy el ecosistema de red y demás variables por proyecto se fijan a mano en el wrapper fino, no se pasan como parámetro. Gap conocido, no bloqueante.
-- Cuándo arranca el primer piloto ([[app-seguimiento-patrimonio]]): el sistema ya está completo; falta que tú lo decidas.
+- Cuándo arranca el primer piloto ([[patrimonial]]): el sistema ya está completo; falta que tú lo decidas.
 
 ## Enlaces
 
@@ -95,10 +90,11 @@ Después de esas respuestas:
 - [[astillero-replicacion]] — cómo se replica a cada proyecto nuevo
 - [[capa-producto]] — cómo se dirige como Product Owner
 - [[devops-minimo]] — informe de DevOps mínimo en producción
+- [[astillero-mantenimiento]] — cómo se actualizan proyectos ya en marcha y convivencia con 2Cerebro
 - [[desarrollo-agentes-investigacion]] — investigación del ciclo completo (síntesis y decisiones)
 - [[circuito-tareas-definicion]] — definición de la fase de organización del trabajo con agentes: roles, traspaso, coordinación, topología, revisión, trazabilidad; criterios, método por fases, qué cuenta como contrastado
 - [[orquestacion-opus-deepseek-informe]] — informe parcial (superado): conexión entre Claude y DeepSeek
-- [[app-seguimiento-patrimonio]] — candidata a primer piloto
+- [[patrimonial]] — candidata a primer piloto
 - [[decisiones]] — registro de las decisiones de este proyecto
 - [[entorno]] — herramientas de investigación disponibles en esta máquina
 - [[_index]]

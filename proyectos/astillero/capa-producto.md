@@ -36,9 +36,9 @@ Eso alimenta la entrevista ya documentada oficialmente por Anthropic: *«For lar
 **Hallazgo que decide esto:** el propio `github/gh-aw` — la fuente del patrón que ya usamos (K3, [[flujo-agentes-arquitectura]]) — documenta GitHub Projects v2 como *«the dashboard»*, pero **no lo usa para sí mismo**. Verificado por el orquestador, dos veces: `projectsV2` de la organización sin resultados para `gh-aw`, y la propia página de proyectos del repo en `0 abiertos, 0 cerrados` ✔︎. Usan en su lugar una tabla con badges de Actions — una vista de ingeniero (¿está verde la última ejecución?), no de producto (¿qué espera mi aprobación?).
 
 **Por eso, para ti, la pieza correcta es la que GitHub prescribe y no usa para sí mismo, porque tu pregunta es la de producto, no la de ingeniería:**
-- **`safe-outputs.update-project`**, del reconciliador ya existente ([[flujo-agentes-arquitectura]] §7.4): en cada pasada, refleja la etiqueta `estado:*` de cada issue como campo `Status` de un tablero de una sola vista, agrupada por estado. Mismo mecanismo `safe-outputs` que ya usan el ejecutor y el revisor — extensión, no pieza nueva.
-- **`create-project-status-update`**: un semáforo semanal (`ON_TRACK`/`AT_RISK`/`OFF_TRACK`/`COMPLETE`) en la pestaña Updates del tablero — la única lectura que necesitas sin abrir una sola issue.
-- Requiere un PAT con scope `project` propio, porque el `GITHUB_TOKEN` por defecto no llega a Projects v2 ✔︎ — mismo patrón de secreto que ya usas para DeepSeek y Opus.
+- El reconciliador ya existente ([[flujo-agentes-arquitectura]] §7.4), un script con `gh` sin modelo de por medio, llama directamente a `gh project item-edit`: en cada pasada refleja la etiqueta `estado:*` de cada issue como campo `Status` de un tablero de una sola vista, agrupada por estado. **No es `safe-outputs`** — corrección del 2026-09-25: ese mecanismo es exclusivo de workflows gh-aw compilados (`.md`→`.lock.yml`), y el reconciliador es un `.yml` normal de Actions, sin juicio de IA que validar.
+- La misma pasada, semanalmente, llama a `gh api graphql` para un semáforo (`ON_TRACK`/`AT_RISK`/`OFF_TRACK`/`COMPLETE`) en la pestaña Updates del tablero — la única lectura que necesitas sin abrir una sola issue.
+- Ambas llamadas usan un PAT propio con scope `project` (secreto `GH_AW_WRITE_PROJECT_TOKEN`) ✔︎ — mismo patrón de secreto que ya usas para DeepSeek y Opus, porque el `GITHUB_TOKEN` por defecto no llega a Projects v2.
 
 ## 4. Bugs: la misma disciplina, con un paso delante
 

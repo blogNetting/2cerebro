@@ -260,7 +260,7 @@ Cron cada 30 minutos más el evento `issues: closed`. Script con `gh` que hace d
 
 Es la única pieza propia del sistema. 🧪 los nombres de los campos JSON de `blockedBy`.
 
-**Extensión para el panel del Product Owner** ([[capa-producto]] §3): la misma pasada añade `safe-outputs.update-project` (refleja `estado:*` como campo `Status` en un tablero de Projects v2) y, semanalmente, `create-project-status-update` (semáforo `ON_TRACK`/`AT_RISK`/`OFF_TRACK`/`COMPLETE`). Requiere un PAT con scope `project` — el `GITHUB_TOKEN` por defecto no llega a Projects v2.
+**Extensión para el panel del Product Owner** ([[capa-producto]] §3), corregida el 2026-09-25: **no vía `safe-outputs`** — `safe-outputs` es sintaxis exclusiva de workflows gh-aw compilados (`.md` → `.lock.yml`), y el reconciliador es un `.yml` de Actions normal, sin modelo de por medio; no hay juicio de IA que validar en un cron determinista, así que no tiene sentido convertirlo en workflow gh-aw solo para esto. La misma pasada del script llama directamente a `gh project item-edit` (refleja `estado:*` como campo `Status` en el tablero) y, semanalmente, `gh api graphql` para `create-project-status-update` (semáforo `ON_TRACK`/`AT_RISK`/`OFF_TRACK`/`COMPLETE`). Ambas llamadas usan el mismo PAT con scope `project` — secreto `GH_AW_WRITE_PROJECT_TOKEN` — porque el `GITHUB_TOKEN` por defecto no llega a Projects v2.
 
 ## 8. Puertas de CI (checks obligatorios en el ruleset de `main`)
 
@@ -277,7 +277,7 @@ Según el stack del proyecto ([[desarrollo-agentes-f4-devsecops]]):
 | Secretos | gitleaks + push protection | Igual |
 | Dependencias | OSV-Scanner + Dependabot | Igual |
 
-**Reporting de cobertura: Codecov, no Coveralls** — Coveralls no tiene plan gratis para repos privados (mínimo 10 $/mes), y todo repo de Astillero es privado por decisión ya cerrada ([[decisiones]]); Codecov sí (plan Developer gratis, hasta 250 cargas/mes) — [about.codecov.io/pricing](https://about.codecov.io/pricing/) ✔︎ frente a [coveralls.io/pricing](https://coveralls.io/pricing) ✔︎. Se integra como `commit-status` nativo en el ruleset, igual que los demás gates de esta tabla — [docs.codecov.com/docs/commit-status](https://docs.codecov.com/docs/commit-status) ✔︎.
+**Reporting de cobertura: Codecov, no Coveralls** — Coveralls no tiene plan gratis para repos privados (mínimo 10 $/mes), y todo repo de Astillero es privado por decisión ya cerrada ([[decisiones]]); Codecov sí (plan Developer gratis, hasta 250 cargas/mes) — [about.codecov.io/pricing](https://about.codecov.io/pricing/) ✔︎ frente a [coveralls.io/pricing](https://coveralls.io/pricing) ✔︎. Se integra como `commit-status` nativo en el ruleset, igual que los demás gates de esta tabla — [docs.codecov.com/docs/commit-status](https://docs.codecov.com/docs/commit-status) ✔︎. **Aclaración explícita (auditoría 2026-09-25):** subir a `codecov.io` no necesita tocar `network.allowed` del ejecutor — esta tabla corre en el workflow de CI determinista, Actions normal, fuera del cortafuegos que solo envuelve `implementar.md`/`rehacer.md` (los workflows compilados por gh-aw, §7.1).
 
 **`CODEOWNERS` con aprobación humana obligatoria:**
 - `.github/**`
@@ -327,7 +327,7 @@ La estructura del flujo no cambia en ningún caso.
 
 ## 12. Replicación a cada proyecto (Astillero)
 
-Cómo se lleva este diseño a un repo nuevo (p. ej. [[app-seguimiento-patrimonio]]) y cómo llegan los cambios posteriores a los proyectos ya creados: [[astillero-replicacion]]. Cierra el punto 🧪 de §7.1 sobre includes remotos de gh-aw — **sí los admite** (`imports: owner/repo/path@ref`).
+Cómo se lleva este diseño a un repo nuevo (p. ej. [[patrimonial]]) y cómo llegan los cambios posteriores a los proyectos ya creados: [[astillero-replicacion]]. Cierra el punto 🧪 de §7.1 sobre includes remotos de gh-aw — **sí los admite** (`imports: owner/repo/path@ref`).
 
 ## 13. Alternativa sin ejecutar en Actions
 
@@ -358,9 +358,11 @@ Hasta aquí el pipeline termina en K11 (merge en `main`, issue cerrada). Esto es
 
 Kubernetes gestionado aparece solo en minoría, ya descartado por exceso en [[desarrollo-agentes-f3-git-cicd-infra]] §2. **Sin staging permanente por defecto**: en 40+ comentarios reales nadie menciona un entorno de staging fijo — mismo argumento ya anotado para *preview environments* en [[desarrollo-agentes-f3-git-cicd-infra]] §3.4 (exceso probable a esta escala); si hace falta verificar antes de producción, el patrón real es un entorno efímero por PR, no uno permanente.
 
-**Rollback: extiende K10, no infraestructura nueva.** Revertir el commit en `main` dispara el mismo CD hacia atrás — *«Roll backs are easy, just revert»* (ransom1538, [HN 43487843](https://news.ycombinator.com/item?id=43487843)). Blue-green y feature flags no tienen evidencia de adopción real a esta escala — se descartan por ahora, no por principio.
+**Rollback: extiende §10 (Fallos y recuperación), no infraestructura nueva.** Revertir el commit en `main` dispara el mismo CD hacia atrás — *«Roll backs are easy, just revert»* (ransom1538, [HN 43487843](https://news.ycombinator.com/item?id=43487843)). Blue-green y feature flags no tienen evidencia de adopción real a esta escala — se descartan por ahora, no por principio.
 
 **Migraciones de base de datos: regla dura, no opcional.** Patrón *parallel change / expand-contract* — [martinfowler.com/bliki/ParallelChange.html](https://martinfowler.com/bliki/ParallelChange.html) ✔︎. Como el ejecutor barato puede tocar el schema dentro de una tarea aislada, **expandir y contraer el schema son siempre dos tareas distintas del backlog**, nunca una — igual que cada PR es pequeño y reversible por separado (§6), aquí aplica lo mismo al schema.
+
+**Hueco real detectado en auditoría (2026-09-25) y cerrado aquí: «cerrado» no es lo mismo que «desplegado».** El mecanismo de dependencias de §5 (`blockedBy`) solo sabe de «issue cerrada» (K11, al mergear) — con CD asíncrono y falible (§15 arriba), existe una ventana real donde la tarea de «contraer» se desbloquearía y hasta podría ejecutarse antes de que el despliegue de «expandir» esté confirmado en verde en producción. **Regla añadida:** la tarea de «expandir» no se etiqueta como dependencia satisfecha solo por `issue cerrada` — el reconciliador comprueba además el resultado real del job de CD asociado a ese merge (`gh run list` filtrado por el workflow de despliegue) antes de mover la tarea de «contraer» de `estado:bloqueado` a `estado:listo`. Mismo mecanismo que ya usa el reconciliador para caducidad (§5, «Caducidad»), un chequeo más en la misma pasada — sin pieza nueva de infraestructura.
 
 Lo que pasa después del despliegue — monitorización, alertado, incidentes, backup, rotación de secretos, parcheo de dependencias — no es parte de este pipeline determinista, es la disciplina operativa del Product Owner: [[devops-minimo]].
 

@@ -21,8 +21,8 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
 - [[duchas-negras-alquiler]] — grifería de ducha toda negra para alquiler: columna con grifo ≤100 € o grifo + teleducha ≤60 €, en Amazon, Leroy, Brico Depot y Obramat. Revisado por la resistencia del negro: ganador Clever Rocket 62082 a 52,95 € (2026-09-24)
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
-- [[app-seguimiento-patrimonio]] — Patrimonial: webapp autoalojada y responsive para seguir el patrimonio (inmuebles, cripto, pensiones, ahorro) y el gasto desde extractos bancarios
 
 ## Subcarpetas
 
 - `astillero/` — proyecto del sistema genérico de desarrollo de software con agentes: hub, investigaciones y decisiones. Índice propio en esa carpeta
+- `patrimonial/` — Patrimonial: webapp autoalojada y responsive para seguir el patrimonio (inmuebles, cripto, pensiones, ahorro) y el gasto desde extractos bancarios. Candidata a primer piloto de Astillero. Índice propio en esa carpeta

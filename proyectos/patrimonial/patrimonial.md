@@ -68,3 +68,9 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
 - [[astillero]] — sistema con el que se desarrollará; esta app es la candidata a primer piloto
 - [[_index]]
+
+## Repo
+
+- **Repo:** [blogNetting/patrimonial](https://github.com/blogNetting/patrimonial), privado.
+- **Ruta local:** `~/dev/patrimonial`.
+- **Estado (2026-09-25):** repo creado y clonado. Sin stack ni primer commit de código todavía — sigue en toma de requisitos (ver «Preguntas abiertas» arriba).

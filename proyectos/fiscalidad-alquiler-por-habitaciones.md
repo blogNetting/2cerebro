@@ -107,5 +107,5 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 
 - [[apartamentos-calle-uruguay]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
-- [[app-seguimiento-patrimonio]] — app donde se seguirán ingresos y gastos del alquiler
+- [[patrimonial]] — app donde se seguirán ingresos y gastos del alquiler
 - [[_index]]

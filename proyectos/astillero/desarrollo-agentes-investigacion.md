@@ -206,7 +206,7 @@ Todas las piezas son herramientas existentes y mantenidas; nada se construye a m
 2. **Forja**: GitHub, que tiene el mejor ecosistema de agentes, o Gitea/Forgejo autoalojado, que da soberanía pero menos integración.
 3. **Framework spec-driven para el piloto**: Spec Kit, el más adoptado, u OpenSpec, pensado para repos que ya existen.
 4. **Profundidad de la revisión humana**: qué rutas exigen tu aprobación siempre.
-5. **Piloto**: ¿[[app-seguimiento-patrimonio]]?
+5. **Piloto**: ¿[[patrimonial]]?
 
 ## 8. Dónde se ha buscado y qué se ha verificado
 
