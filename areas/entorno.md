@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-09-24
+updated: 2026-09-26
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -29,8 +29,8 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 
 - Fallan por `WebFetch` y exigen escalar a CDP: amazon.es (HTML sin cuerpo, precio/envío/opiniones no vienen; reseñas devuelven 503), leroymerlin.es (403), bauhaus.es (403).
 - Funcionan por `WebFetch`: tiendas pequeñas de ferretería/pintura (precio con IVA legible), fichas técnicas en PDF (se guardan en `tool-results/`, leer con `pdftotext`).
-- Por CDP, amazon.es se lee bien con `browser_evaluate` sobre el DOM: `#productTitle`, `#corePrice_feature_div .a-offscreen` (precio), `#deliveryBlockMessage` (envío al CP configurado en la cuenta), `#acrPopover`/`#acrCustomerReviewText` (nota), `[data-hook="review"]` (reseñas). Reseñas negativas: `/product-reviews/<ASIN>?filterByStar=critical`. Un bucle `browser_run_code_unsafe` sobre varias ASIN saca precio y nota de todas en una llamada, sin CAPTCHA. Trampa comprobada: no usar `.a-price .a-offscreen` como respaldo del precio; en fichas «No disponible» devuelve el precio de otro producto del carrusel (dio 11,16 € al Maurer, que era el PROA). Usar solo `#corePrice_feature_div` y, si falta, tratar el precio como ausente. Para descubrir alternativas, la búsqueda `amazon.es/s?k=...` con `[data-component-type="s-search-result"]` devuelve título, precio, nota y envío de ~12 productos.
-- Los resúmenes de `WebSearch` no son fuente de precio: «desde 13,99 €» resultó no ser el precio de venta (15,65 €).
+- Por CDP, amazon.es se lee bien con `browser_evaluate` sobre el DOM: `#productTitle`, `#corePrice_feature_div .a-offscreen` (precio), `#deliveryBlockMessage` (envío al CP configurado en la cuenta), `#acrPopover`/`#acrCustomerReviewText` (nota), `[data-hook="review"]` (reseñas). Reseñas negativas: `/product-reviews/<ASIN>?filterByStar=critical`. Un bucle `browser_run_code_unsafe` sobre varias ASIN saca precio y nota de todas en una llamada, sin CAPTCHA. Trampa comprobada: no usar `.a-price .a-offscreen` como respaldo del precio; en fichas «No disponible» devuelve el precio de otro producto del carrusel. Usar solo `#corePrice_feature_div` y, si falta, tratar el precio como ausente. Para descubrir alternativas, la búsqueda `amazon.es/s?k=...` con `[data-component-type="s-search-result"]` devuelve título, precio, nota y envío de ~12 productos.
+- Los resúmenes de `WebSearch` no son fuente de precio: el «desde X €» del buscador no coincide con el precio de venta de la ficha.
 - vueling.com: por CDP con URLs directas del calendario y del buscador; ver [[vueling-busqueda-por-url]].
 - booking.com: por CDP con la URL de búsqueda y filtros en `nflt`: `roomfacility=38` (baño privado), `review_score=70` (7+), `distance=5000`, `ht_id=201` (apartamentos) o `204` (hoteles), `tdb=3` (1 cama doble). La tabla de habitaciones de cada ficha es `#hprt-table`. Con `browser_run_code_unsafe` no hay `require`: para acumular resultados entre navegaciones usar `sessionStorage` y volcarlo después con `browser_evaluate`.
 
@@ -62,6 +62,10 @@ Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
 - Hacker News: la API de Algolia (`hn.algolia.com/api/v1/search`) funciona con `curl`, sin clave.
 - Reddit: su `.json` devuelve 403 y old.reddit redirige; se lee por CDP.
 - X/Twitter: la respuesta es 200, pero el contenido lo genera JavaScript; se lee por CDP.
+
+## Verificación de respuestas (hook global)
+
+- `~/.claude/hooks/verificar-respuesta.sh`, registrado como hook `Stop` en `~/.claude/settings.json`: antes de cerrar cada turno, Sonnet (por `claude -p`) compara la última petición con la respuesta; si no llega al mínimo, bloquea y devuelve el motivo (máximo 3 veces por petición). Contadores en `~/.cache/verificar-respuesta/`. Para desactivarlo: `/hooks`, o quitar la entrada `Stop` del settings. Motivo y pruebas en [[decisiones]].
 
 ## Qué falta / no está resuelto
 

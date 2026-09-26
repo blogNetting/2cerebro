@@ -2,7 +2,7 @@
 description: Resuelve una consulta o búsqueda en internet escalando por coste
 argument-hint: [pregunta o qué buscar]
 creado: 2026-09-19
-revisado: 2026-09-24
+revisado: 2026-09-26
 descartado: skill separada `precio-producto` con Keepa/SerpApi — el usuario decidió que comparar precio/producto es solo un criterio de búsqueda dentro de esta skill, no una capacidad aparte. Ver [[entorno]] y [[decisiones]].
 ---
 
@@ -15,7 +15,7 @@ Resuelve `$ARGUMENTS` escalando por coste. No saltes pasos.
    - `WebFetch` devuelve HTML sin el contenido pedido (solo scripts/navegación): lo genera JavaScript al cargar.
    - Hace falta interactuar: rellenar filtros, paginar, desplegar, iniciar sesión.
    - Hace falta una sesión iniciada para ver el contenido o el precio.
-4. Un bloqueo no es un resultado. Prohibido entregar «no verificado» o «sin precio» por un bloqueo de `WebFetch` sin haber escalado antes. No reintentes variantes de la misma URL: un fallo ya basta para escalar. Sitios ya comprobados que fallan por `WebFetch` (ver [[entorno]]): amazon.es, leroymerlin.es, bauhaus.es.
+4. Un bloqueo no es un resultado. Prohibido entregar «no verificado» o «sin precio» por un bloqueo de `WebFetch` sin haber escalado antes. No reintentes variantes de la misma URL: un fallo ya basta para escalar. Si el sitio ya consta en [[entorno]] como bloqueado para `WebFetch`, escala directamente sin probar.
 5. Solo una prohibición explícita del usuario («no uses el navegador») suspende el paso 3. Una duda, un escepticismo o una preferencia («no creo que lo saques sin navegador») no es una prohibición: es un reto, y se responde escalando. Si hay prohibición explícita, dilo, entrega lo verificado y marca lo que falta como no verificado.
 6. Consultas de precio o comparación de producto siguen el mismo escalado — no es una skill aparte, es solo el criterio de búsqueda. Precio, envío y opiniones de un producto salen de la página del producto, no de resúmenes del buscador («desde X €» no es un precio).
 7. Si el usuario nombra un sitio o tienda como prioritario, esa fuente se resuelve primero y se escala sin más para ella.
