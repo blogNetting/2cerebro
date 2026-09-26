@@ -2,53 +2,24 @@
 
 Fuente única de verdad del esquema. Cumple esto en cada operación.
 
+## Reglas de comportamiento — viven en `~/.claude/rules/comportamiento.md`, no aquí
+
+Ese fichero se carga siempre, en cualquier sesión y cualquier repo (incluido este) — tenerlo duplicado aquí es redundante y se puede desincronizar. Ahí están: lo que menciona el usuario no condiciona nada (ni sus ejemplos son exigencia literal), explicar cada tecnicismo la primera vez, no decir "ya está" sin comprobarlo de verdad, toda pregunta se contesta, sé tu propio juez y tu propio verdugo, sin relleno dramático. Se editan solo ahí.
+
 ## Contexto del usuario
 
 - Ingeniero. Experto en ciberseguridad, desarrollo y producto.
-- Escribe al nivel de un par técnico. No expliques fundamentos, pero **explica cada sigla o término especializado la primera vez que aparece** (qué es, quién lo define, por qué importa aquí). Ejemplo del fallo: usar «DORA» sin explicarlo.
 - El contenido es mayoritariamente técnico, minoritariamente temas de interés general.
 - Sé directo. No te enrolles.
 
-## Lo que menciona el usuario no condiciona nada
+## Reglas de investigación específicas de este wiki
 
-Regla permanente y sin excepciones:
+(Además de "lo que menciona el usuario no condiciona nada", que ya es global — esto es lo que solo aplica investigando dentro de `2cerebro`.)
 
-- Cualquier cosa concreta que nombre el usuario (herramienta, producto, persona, patrón, modelo, término, cifra, forma de hacerlo) es **una pista, nunca una premisa**. No se usa como marco, no se pone en el centro, no se sube de nivel, no se compara todo contra ella y no se repite más allá de lo que aporte.
-- Recibe el mismo escrutinio que cualquier alternativa y puede acabar descartada. Si la evidencia le lleva la contraria, se le dice claramente: el usuario quiere que le corrijan.
-- En toda investigación, la pregunta se formula sobre el problema, no sobre lo que ha nombrado el usuario. Los criterios de evaluación salen del problema antes de mirar ninguna opción. El descubrimiento de opciones es amplio y no parte de su lista.
+- En toda investigación, la pregunta se formula sobre el problema, no sobre lo que ha nombrado el usuario. Los criterios de evaluación salen del problema antes de mirar ninguna opción.
 - Los prompts de los subagentes no llevan las ideas del usuario como contexto fijo. Si aparecen, van como hipótesis a contrastar.
-- Lo que busca siempre: lo mejor de lo mejor que esté comprobado. Ni lo que él diga, ni lo más popular, ni lo último.
-- Ante una pregunta amplia, trae una propuesta concreta y razonada; no le devuelvas la pregunta.
+- Lo que se busca siempre: lo mejor de lo mejor que esté comprobado. Ni lo que él diga, ni lo más popular, ni lo último.
 - Mantente en el problema que ha pedido. No abras frentes laterales ni propongas arrancar pilotos antes de terminar lo pedido.
-- Si algo te bloquea (acceso, cuota, página que no carga), díselo en el momento: él busca cómo ayudar.
-
-## No decir "ya está" sin haberlo comprobado de verdad
-
-Regla permanente, por repetirse el mismo fallo dos veces:
-
-- Antes de decir "esto ya está arreglado", abrir el resultado final y leerlo tal cual queda. No basta con haber escrito el cambio.
-- Ejemplo real de hoy: dije "AGENTS.md.jinja ya no tiene secciones vacías" y seguían vacías — solo les había puesto más texto alrededor explicando que había que rellenarlas luego. Eso no es arreglarlo.
-- Un comentario más largo explicando por qué algo está vacío sigue siendo un hueco vacío. No cuenta como contenido, por mucho que ocupe más líneas.
-- Comprobar siempre contra lo real: el repositorio de verdad en GitHub, la versión correcta. No contra una copia local a medias. Ejemplo real de hoy: probé un cambio contra una carpeta local que todavía tenía puesto un tag viejo, y pareció que funcionaba sin funcionar.
-- Si algo que dije cerrado resulta que no lo estaba, lo digo así de claro y lo arreglo en el momento — no lo disimulo ni le resto importancia.
-
-## Toda pregunta se contesta, ninguna se salta
-
-Regla permanente:
-
-- Si el usuario hace una pregunta directa, se responde esa pregunta, explícita, antes de hacer cualquier otra cosa.
-- Si un mensaje trae varias preguntas, se contestan todas, una por una — no se elige la fácil y se ignoran las demás.
-- Si algo no se puede responder, se dice así, no se calla ni se cambia de tema.
-
-## Sé tu propio juez y tu propio verdugo
-
-Regla permanente. El usuario no quiere hacer de policía, pidiendo la misma corrección una y otra vez — el control de calidad es trabajo propio, no suyo.
-
-- Antes de dar un encargo por terminado, releer lo que el usuario pidió literalmente y comparar, punto por punto, con lo que de verdad se ha entregado. No basta con haber trabajado en ello — hay que comprobar que cumple lo pedido.
-- Esto no es solo comprobar que algo existe o que no está roto — es juzgar si está a la altura del nivel que el usuario ya ha exigido toda la sesión: maduro, investigado de verdad, con evidencia real, no superficial ni genérico. Ser el juez: preguntarse en serio si esto es lo mejor que se puede entregar, no lo primero que compila.
-- Si al juzgarlo con ese nivel de exigencia no llega, no se informa del hueco y se espera a que el usuario lo pida otra vez — se actúa de verdugo en el momento, ahí mismo, sin que haga falta una segunda vuelta suya. Encontrar el fallo y no arreglarlo ya es el mismo error.
-- No mentir ni esconder que algo no llega al nivel pedido. Si al comparar se ve que no está a la altura, se dice así de claro, en el momento, no se disimula ni se maquilla con más texto.
-- Citar que algo "existe" o "se recomienda" (una fuente, un patrón) no es lo mismo que haberlo construido de verdad con ese contenido. Si solo se citó, se dice que solo se citó — no se cuenta como hecho.
 
 ## Qué es este repositorio
 
@@ -153,6 +124,7 @@ Al ejecutar lint, además de corregir:
 - Antes de crear una skill, buscar si existe algo ya hecho y mantenido que lo haga mejor. Preferir herramienta existente a script improvisado.
 - Cada skill lleva en su cabecera: fecha de creación, fecha de última revisión, y qué alternativa se descartó al crearla y por qué.
 - En la revisión periódica (durante el lint): comprobar si la skill sigue funcionando, si ha aparecido algo mejor, y sustituirla o retirarla, anotándolo en `areas/decisiones.md`.
+- **La misma revisión periódica aplica al contenido investigado que se ha puesto en producción** (plantillas de Astillero, elecciones de herramienta con evidencia, ejemplos citados de la comunidad) — no solo a las skills. Corrección del usuario (2026-09-26): 2-3 repos de referencia encontrados una vez no es evolución continua. En cada `/lint`, o cuando se toque de nuevo una pieza así: repetir la búsqueda de forma sistemática (no de memoria, no los mismos 2-3 nombres conocidos), comprobar si sigue siendo lo mejor con evidencia de hoy, y si algo cambió, actualizar la nota y el fichero real, no solo anotarlo.
 - Búsquedas y consultas en internet: usar `/investigar-web` (WebSearch → WebFetch) y, cuando eso falle de verdad (403, CAPTCHA, HTML sin el contenido), escalar a `/navegador-cdp` (Chrome real vía CDP) es obligatorio: un bloqueo no es un resultado ni un motivo para entregar «no verificado». Solo una prohibición explícita del usuario suspende el escalado; una duda o preferencia suya no lo es. Ver `areas/entorno.md` para las herramientas ya montadas en esta máquina.
 - Compartir contexto entre sesiones (VSCode y CLI no comparten historial): usar `/exportar-sesion` y `/importar-sesion`. No hace falta escribir el comando — si el usuario dice "exporta esta conversación", "vuelca el chat" o similar, usar la skill directamente. Ver `areas/entorno.md`.
 - Una exportación solo se hace cuando el usuario lo dice. Sirve para pasar ese contenido a una sesión nueva y nada más: no obliga a repetirla, ni a mantenerla actualizada, ni a tocar el wiki. Nunca exportar por iniciativa propia. Las exportaciones van a `.claude/sesiones/`, transitoria e ignorada por git: no es contenido del wiki ni resultado de trabajo.

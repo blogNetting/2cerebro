@@ -58,7 +58,7 @@ Pasos para poner en marcha el flujo de [[flujo-agentes-arquitectura]] en cualqui
    - Historial lineal.
    - Merge queue.
    
-   > **Cerrado el 2026-09-25, probado en vivo, no leído en la documentación:** en un repo privado del plan actual (`blogNetting`, sin campo `plan` = Free), tanto `POST /rulesets` como la protección de rama clásica devuelven `403 — "Upgrade to GitHub Pro or make this repository public to enable this feature"`. **Sin GitHub Pro (o sin hacer el repo público), no hay rulesets, ni protección de rama, ni merge queue en privado.** Dos salidas: (a) pagar GitHub Pro — 4 $/mes en la fecha de esta comprobación, confirmar precio vigente antes de decidir; (b) hacer público el repo del proyecto real — no vale para código propietario. Se recomienda (a) si el proyecto es privado.
+   > **Cerrado el 2026-09-25, probado en vivo, no leído en la documentación:** en un repo privado del plan actual (`blogNetting`, sin campo `plan` = Free), tanto `POST /rulesets` como la protección de rama clásica devuelven `403 — "Upgrade to GitHub Pro or make this repository public to enable this feature"`. **Sin GitHub Pro (o sin hacer el repo público), no hay rulesets, ni protección de rama, ni merge queue en privado.** Dos salidas técnicas, ninguna decidida: (a) GitHub Pro — 4 $/mes en la fecha de esta comprobación; (b) hacer público el repo — no vale para código propietario. Ninguna de las dos se ha pedido ni se ha activado; sin rulesets ni merge queue, el sistema sigue funcionando igual, solo sin esa puerta extra.
 
 ## 3. Operación: de la idea al merge
 
@@ -121,7 +121,7 @@ En un repositorio de prueba:
 - El umbral de la cobertura del diff y de mutación, que se fija por proyecto.
 - ~~El plan de GitHub (rulesets, merge queue)~~ — **cerrado**: hace falta GitHub Pro para un repo privado, confirmado con una llamada real a la API (§2). Solo queda por confirmar la cuota exacta de minutos de Actions.
 - La elección entre runners alojados o propio en la VM.
-- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero . --vcs-ref v0.2.2` más los secretos propios del proyecto. Versionado real desde el 2026-09-26: todas las referencias se fijan a un tag (`astillero_ref`), no a `@main` — ver [[astillero-mantenimiento]] §2.
+- ~~Cómo se replica este runbook a un segundo proyecto sin copiar y pegar~~ — **cerrado**: [[astillero-replicacion]]. Reusable workflows para revisor y reconciliador, imports remotos de gh-aw para el ejecutor, copier para labels/`CODEOWNERS`/`AGENTS.md`/contrato de tarea. Este runbook pasa de "7 pasos manuales por proyecto" a `copier copy gh:blogNetting/astillero . --vcs-ref v0.2.3` más los secretos propios del proyecto. Versionado real desde el 2026-09-26: todas las referencias se fijan a un tag (`astillero_ref`), no a `@main` — ver [[astillero-mantenimiento]] §2.
 
 ## Invocación: skill `/astillero-proyecto` (2026-09-26)
 

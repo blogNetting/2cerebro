@@ -70,7 +70,7 @@ Validación independiente: *"Copier wins for fleet management due to native `cop
 ## 6. Otros
 
 - Esta nota **cierra** el punto 🧪 de [[flujo-agentes-arquitectura]] §7.1 sobre si gh-aw admite includes remotos: sí, y con eso el ejecutor no necesita copiarse a cada repo tampoco, solo los workflows de revisor y reconciliador (que ya se sabía que sí, por ser reusable workflows nativos).
-- El repo de Astillero es **privado** (decisión del usuario, 2026-09-25: todo repo de este ecosistema se crea privado, sin excepción), con el ajuste de "Access" de §3.1 activado. GitHub Pro (~4 $/mes de cuenta, no por repo) sigue pendiente de contratar para que Astillero y cada proyecto tengan ruleset y merge queue propios.
+- El repo de Astillero es **privado** (decisión del usuario, 2026-09-25: todo repo de este ecosistema se crea privado, sin excepción), con el ajuste de "Access" de §3.1 activado. Sin GitHub Pro no hay ruleset ni merge queue en repos privados (dato técnico verificado, no un pendiente ni una decisión tomada — nadie ha pedido contratarlo).
 - **Cerrado (2026-09-25):** el repo `blogNetting/astillero` existe, con los workflows reutilizables, la plantilla de copier y un `project-example/` de prueba ya publicados — verificado en vivo. Cómo se propagan cambios posteriores a proyectos ya bootstrapped: [[astillero-mantenimiento]].
 
 ## Enlaces
