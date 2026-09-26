@@ -46,10 +46,10 @@ Eso alimenta la entrevista ya documentada oficialmente por Anthropic: *«For lar
 
 **No encontré ni un caso donde un bug reportado en crudo entre directo a un ejecutor barato sin ese paso intermedio.** Coherente con lo ya visto en `daily-spdd-spec-planner` de GitHub: issues poco especificadas fallan en silencio incluso en su propio dogfood ([[flujo-agentes-arquitectura]] §K3).
 
-**Diseño (propuesta mía, apoyada en el caso Metabase):**
+**Diseño, implementado y verificado el 2026-09-26 (era propuesta, ya no lo es):**
 1. Plantilla de issue de bug nativa de GitHub, etiqueta automática `tipo:bug`.
-2. **Reproducción**, de solo lectura: un workflow disparado por esa etiqueta confirma el bug y localiza el código — como Repro-Bot, no arregla nada.
-3. **Re-especificación por Opus**: convierte el hallazgo en el mismo contrato de tarea de [[flujo-agentes-arquitectura]] §6 — Alcance, interfaces, criterios EARS con test que falla sin el fix.
+2. **Reproducción**, de solo lectura: `reproducir.yml` en `blogNetting/astillero` (`workflow_call`, `claude-code-action` con Opus, permisos `contents: read` + `issues: write`, nunca `contents: write` ni creación de PR) — como Repro-Bot, no arregla nada. Wrapper fino `reproducir-bug.yml.jinja` en la plantilla de copier, generado de serie en todo proyecto nuevo desde hoy.
+3. **Re-especificación por Opus**: el mismo workflow convierte el hallazgo en el contrato de tarea de `docs/contrato-tarea.md` — Alcance, interfaces, criterios EARS con test que falla sin el fix — y quita `tipo:bug` por `estado:listo`.
 4. A partir de aquí, **cero diferencia con una funcionalidad**: misma máquina de estados, mismo ejecutor, mismo revisor, mismas puertas de CI. Ningún atajo de «hotfix» que se salte tests o revisión.
 
 ## 5. Versionado: un checkpoint, no automatismo
