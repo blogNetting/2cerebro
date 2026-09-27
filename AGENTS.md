@@ -37,6 +37,16 @@ Metodología PARA. Raíz: `inbox.md` para captura sin clasificar.
 - Consulta: responder una pregunta usando el wiki. Índices primero, luego enlaces, luego ripgrep. Citar las notas de las que sale la respuesta.
 - Lint: comprobar la salud del wiki, corregir, y sintetizar de forma proactiva.
 
+## Verificación de citas
+
+Aplica a toda ingesta y a toda investigación. Es el fallo más medido del campo: una fracción grande de las frases de un informe generado lleva una cita que **no sostiene** lo que se le atribuye. En el único estudio que ha localizado el error agente por agente (Hirsch et al., EMNLP 2026, arXiv:2608.24306), el **84,7 % de los errores del informe final se originan en el redactor, no en la búsqueda** — y la única configuración sin errores de cita dominantes es la que resume documento a documento.
+
+- Al citar una fuente, guarda junto a la afirmación la **cita textual** que la sostiene, no solo el enlace. Una fuente que existe no es una fuente que respalda.
+- Antes de entregar, comprueba de forma mecánica que ese texto aparece de verdad en la fuente. Es la diferencia entre «tiene cita» y «está respaldado».
+- Afirmación sin cita textual localizable: se marca «sin verificar» o se omite. Nunca se afirma sin poder enseñar el texto que lo respalda.
+- Al resumir varias fuentes, resume **documento a documento** antes de sintetizar. No resumas el conjunto de resultados de una búsqueda.
+- Fuente contradictoria: no se elige la que más gusta. La contradicción se deja visible (ver Síntesis proactiva).
+
 ## Criterio de clasificación automático
 
 Decide tú la ubicación. No preguntes al usuario.
@@ -125,6 +135,7 @@ Al ejecutar lint, además de corregir:
 - Cada skill lleva en su cabecera: fecha de creación, fecha de última revisión, y qué alternativa se descartó al crearla y por qué.
 - En la revisión periódica (durante el lint): comprobar si la skill sigue funcionando, si ha aparecido algo mejor, y sustituirla o retirarla, anotándolo en `areas/decisiones.md`.
 - **La misma revisión periódica aplica al contenido investigado que se ha puesto en producción** (plantillas, elecciones de herramienta con evidencia, ejemplos citados de la comunidad), no solo a las skills. Unas pocas referencias encontradas una vez no son evolución continua. En cada `/lint`, o cuando se toque de nuevo una pieza así: repetir la búsqueda de forma sistemática (no de memoria, no los mismos nombres ya conocidos), comprobar si sigue siendo lo mejor con evidencia de hoy, y si algo cambió, actualizar la nota y el fichero real, no solo anotarlo.
+- **Toda investigación sigue `/investigar-metodo`** (skill global, en `~/.claude/skills/`): criterio de admisión y condiciones de terminación escritas antes de buscar, fuente primaria y segundo salto durante, verificación a ciegas y cobertura declarada al cerrar. Nace de la evidencia de que el comportamiento por defecto es el mínimo esfuerzo (Zipf, 1949) y de que pedir «busca mejor» no lo corrige — ver [[metodo-de-investigacion]]. Complementa a `/investigar-web`, que resuelve el acceso a las fuentes; esto resuelve el fondo.
 - Búsquedas y consultas en internet: usar `/investigar-web` (WebSearch → WebFetch) y, cuando eso falle de verdad (403, CAPTCHA, HTML sin el contenido), escalar a `/navegador-cdp` (Chrome real vía CDP) es obligatorio: un bloqueo no es un resultado ni un motivo para entregar «no verificado». Solo una prohibición explícita del usuario suspende el escalado; una duda o preferencia suya no lo es. Ver `areas/entorno.md` para las herramientas ya montadas en esta máquina.
 - Compartir contexto entre sesiones (VSCode y CLI no comparten historial): usar `/exportar-sesion` y `/importar-sesion`. No hace falta escribir el comando — si el usuario dice "exporta esta conversación", "vuelca el chat" o similar, usar la skill directamente. Ver `areas/entorno.md`.
 - Una exportación solo se hace cuando el usuario lo dice. Sirve para pasar ese contenido a una sesión nueva y nada más: no obliga a repetirla, ni a mantenerla actualizada, ni a tocar el wiki. Nunca exportar por iniciativa propia. Las exportaciones van a `.claude/sesiones/`, transitoria e ignorada por git: no es contenido del wiki ni resultado de trabajo.
@@ -158,6 +169,7 @@ Enlaces (el fallo más frecuente, tratarlo como requisito duro):
 - Cada opción, producto u oferta citada lleva su URL directa, con las fechas o parámetros de la búsqueda puestos cuando la web lo permita.
 - Los descartes y las fuentes que no aportaron también se enlazan.
 - Dato sin fuente enlazable: se marca como «sin verificar» o se omite. No se afirma sin enlace.
+- Cada afirmación que sostenga una conclusión lleva además la cita textual que la respalda, no solo el enlace (ver «Verificación de citas»).
 - Antes de entregar, repasa el documento y comprueba que ninguna afirmación con fuente queda sin enlace.
 
 Formato de salida:

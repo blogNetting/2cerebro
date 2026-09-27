@@ -130,5 +130,6 @@ Todo con Chrome real por CDP (anfitrión 192.168.1.5) el 2026-09-26.
 
 ## Enlaces
 
+- [[metodo-de-investigacion]] — este caso es el ejemplo de la regla «no existe es la conclusión más peligrosa»: se concluyó que el gris barato no existía y era falso, porque el criterio estaba mal (el cromado *es* gris)
 - [[apartamentos-calle-uruguay]]
 - [[_index]]

@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-09-26
+updated: 2026-09-27
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -54,6 +54,8 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Mecanismo puente: `.claude/sesiones/` (gitignored, fuera del wiki, no entra en `/lint`). Skills `/exportar-sesion` (vuelca un resumen de estado a un fichero con nombre `<slug>-<timestamp>.md`) y `/importar-sesion` (lee ese fichero en la sesión destino). Por defecto se vuelca resumen, no transcripción literal — cuesta menos contexto a la sesión receptora.
 
 ## Fuentes especializadas para investigación técnica (2026-09-24)
+
+Qué sistemas de investigación con agentes existen y cuáles se descartaron, con el motivo: [[sistemas-de-research-con-agentes]]
 
 Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
 
