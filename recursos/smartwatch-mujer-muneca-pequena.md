@@ -1,7 +1,7 @@
 ---
 title: Smartwatch para mujer con muñeca pequeña, gama económica
 created: 2026-09-23
-updated: 2026-09-23
+updated: 2026-09-27
 tags: [smartwatch, regalo, amazon, wearables]
 zona: general
 ---
@@ -65,3 +65,8 @@ Criterio de diseño definido antes de buscar (no después): se descarta cualquie
 - Ninguno de los tres trae packaging de regalo; comprobar en el checkout de Amazon si el vendedor ofrece "envolver para regalo".
 - El "problema" de muñeca pequeña lo resuelve el tamaño de la caja (los tres están en 40mm o por debajo), no la correa — todas son ajustables de serie.
 - Si más adelante aparece un TOOBUR o similar con más recorrido de reseñas, revisar esta nota: hoy es el más nuevo de los tres (539 reseñas frente a miles de Samsung/Huawei).
+
+## Enlaces
+
+- [[metodo-de-investigacion]] — este caso aplica la regla de definir el criterio antes de buscar candidatos (sección 1), en vez de filtrarlo a posteriori.
+- [[entorno]] — la búsqueda se hizo con navegador real por CDP contra Amazon.es (bloqueo del Chrome remoto incluido, sección 5).

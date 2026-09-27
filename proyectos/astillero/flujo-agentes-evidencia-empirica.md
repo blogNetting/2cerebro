@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — evidencia empírica de correctitud
 created: 2026-09-25
-updated: 2026-09-25
+updated: 2026-09-27
 tags: [agentes, deepseek, tdd, benchmarks, evidencia-empirica]
 zona: tecnico
 ---
@@ -70,5 +70,6 @@ Ninguna de las dos cifras es verificable en la fuente que se supone que mide est
 - [[flujo-agentes-arquitectura]] — dónde se aplica esta evidencia
 - [[orquestacion-modelos-y-costes]] — nota con la contradicción de benchmarks, ya corregida
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — nota con la cifra de reverts, ya corregida
+- [[verificacion-externa-agentes]] — síntesis del principio de verificación externa (§3, adherencia real a TDD)
 - [[astillero]] — proyecto
 - [[_index]]

@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — arquitectura operable
 created: 2026-09-25
-updated: 2026-09-26
+updated: 2026-09-27
 tags: [agentes, arquitectura, github-actions, gh-aw, deepseek, opus, flujo]
 zona: tecnico
 ---
@@ -389,5 +389,6 @@ Lo que pasa después del despliegue — monitorización, alertado, incidentes, b
 - [[astillero-replicacion]] — cómo se replica este diseño a cada proyecto y cómo se propagan los cambios
 - [[capa-producto]] — cómo el usuario dirige este motor como Product Owner
 - [[devops-minimo]] — mínimo operativo una vez la app está en producción
+- [[verificacion-externa-agentes]] — síntesis del principio de verificación externa (§7.1 bis, §7.2, §8)
 - [[astillero]] — proyecto
 - [[_index]]

@@ -25,6 +25,13 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Alternativa descartada: Puppeteer MCP — deprecado/archivado.
 - Alternativa descartada: navegadores cloud (BrowserBase y similares) — lanzan su propio navegador remoto, no conectan al Chrome existente. No cumplen el criterio eliminatorio.
 
+## Privacidad del navegador que se conduce
+
+- **El Chrome que se controla por CDP es el de uso diario, con las sesiones personales abiertas.** Cualquier `browser_snapshot` de una página de Google (Flights, búsqueda, Drive) incluye el rótulo de cuenta del perfil: nombre real y dirección de correo del usuario, dentro del árbol de accesibilidad. No es un fallo del MCP, es que el navegador está logueado.
+- **Consecuencia práctica:** los snapshots de páginas con sesión iniciada no son material publicable. Nunca pegar su contenido en una nota del wiki, en `fuentes/` ni en una exportación de sesión — el repo es público y el cron publica lo que no esté ignorado.
+- **Dónde se escriben:** `--output-dir=/home/netting/.cache/playwright-mcp`, fuera del repositorio (ver «Repositorio y sincronización»). Antes escribían en `./.playwright-mcp`, dentro, y el cron los subió: ver el incidente de 2026-09-19 en [[decisiones]].
+- **Mitigación pendiente de decidir:** para rastreo conviene un perfil de Chrome sin cuentas personales iniciadas. Hoy no existe; se asume el riesgo y se evita publicar snapshots de páginas logueadas.
+
 ## Sitios comprobados frente a WebFetch (2026-09-19)
 
 - Fallan por `WebFetch` y exigen escalar a CDP: amazon.es (HTML sin cuerpo, precio/envío/opiniones no vienen; reseñas devuelven 503), leroymerlin.es (403), bauhaus.es (403).
@@ -33,6 +40,7 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Los resúmenes de `WebSearch` no son fuente de precio: el «desde X €» del buscador no coincide con el precio de venta de la ficha.
 - vueling.com: por CDP con URLs directas del calendario y del buscador; ver [[vueling-busqueda-por-url]].
 - booking.com: por CDP con la URL de búsqueda y filtros en `nflt`: `roomfacility=38` (baño privado), `review_score=70` (7+), `distance=5000`, `ht_id=201` (apartamentos) o `204` (hoteles), `tdb=3` (1 cama doble). La tabla de habitaciones de cada ficha es `#hprt-table`. Con `browser_run_code_unsafe` no hay `require`: para acumular resultados entre navegaciones usar `sessionStorage` y volcarlo después con `browser_evaluate`.
+- Ejemplo de barrido completo de comparativa de producto con este escalado (Amazon.es por CDP, fichas y reseñas): [[smartwatch-mujer-muneca-pequena]].
 
 ## Datos de producto/precio
 
@@ -46,6 +54,8 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 ## Repositorio y sincronización
 
 - El repo `blogNetting/2cerebro` es público. `/home/netting/bin/cerebro-sync.sh` corre por cron cada hora: si hay cambios hace `git add -A`, commit `auto: <fecha>` y `git push`. Todo lo que no esté en `.gitignore` se publica solo. Ver la regla en `AGENTS.md` (Repositorio y artefactos) y el incidente de `.playwright-mcp/` en [[decisiones]].
+- **Nada binario se versiona salvo que sea imprescindible:** `*.pdf` está en `.gitignore` — los PDF generados son entregables para el usuario y el contenido es el `.md`, que sí se versiona (ver `AGENTS.md`, «Formato de investigaciones»).
+- **Lo que ya está publicado no se despublica sin decidirlo el usuario.** El historial contiene snapshots del 2026-09-19 con datos personales; la decisión y su análisis están en [[decisiones]] (2026-09-27).
 - Playwright MCP escribe sus logs, capturas y snapshots en `/home/netting/.cache/playwright-mcp` (`--output-dir` en `.mcp.json`, fuera del repo). Antes de ese cambio escribía en `.playwright-mcp/` dentro del repo, ahora ignorado.
 
 ## Compartir contexto entre sesiones

@@ -5,6 +5,7 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
 - [[astillero]] — hub del proyecto: decisiones cerradas, hipótesis, bloques y preguntas abiertas
+- [[la-fabrica]] — despiece del sistema en sus doce etapas, con quién actúa en cada una y cuáles pueden operar solas hoy. Los dos agujeros: verificación y medición
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación del ciclo completo con agentes: estándar de la comunidad fase a fase, modelos de Anthropic por fase, trazabilidad, hipótesis del usuario contrastadas y arquitectura propuesta
 - [[desarrollo-agentes-f1-especificacion]] — de la idea a las tareas: frameworks spec-driven (Spec Kit, OpenSpec, BMAD, Kiro), formatos de requisitos y modelo por fase
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — de la tarea a la PR: agentes issue→PR, orquestación, datos de revisión y merge, quién hizo qué

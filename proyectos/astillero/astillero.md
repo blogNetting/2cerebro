@@ -1,7 +1,7 @@
 ---
 title: Astillero
 created: 2026-09-24
-updated: 2026-09-25
+updated: 2026-09-27
 tags: [astillero, desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git, producto]
 zona: tecnico
 ---
@@ -19,6 +19,8 @@ Las cinco piezas, construidas y enlazadas entre sí:
 3. **Capa de producto** — [[capa-producto]]. Cómo el usuario dirige el motor como Product Owner de una sola persona: captura de idea, backlog sin scoring formal (sin evidencia real de que nadie lo use así en solitario), panel en GitHub Projects v2, bugs con el mismo contrato de tarea que una funcionalidad, versionado por checkpoint, registro de decisiones de producto.
 4. **Despliegue a producción** — [[flujo-agentes-arquitectura]] §15, nuevo hoy. CD automático en cada merge (sin checkpoint manual aparte del versionado), dónde corre la app, rollback como extensión de §10 (Fallos y recuperación), migraciones de schema siempre en dos tareas — con evidencia real de 40+ operadores en solitario, no manual de empresa grande. **Diseñado, no ejecutado en vivo todavía**: no hay ningún proyecto real desplegado bajo este mecanismo.
 5. **DevOps mínimo en producción** — [[devops-minimo]], nuevo hoy, el informe que pediste. Monitorización, alertado, gestión de incidentes (no hace falta on-call formal con un solo operador — hallazgo contraintuitivo con fuente), backup/DR, rotación de secretos, parcheo de dependencias, coste — todo anclado en un caso real auditable (Healthchecks.io, SaaS operado en solitario, stack de producción público). **Diseñado con evidencia real, no ejecutado en vivo**: nada de esto corre todavía sobre una app real de Astillero.
+
+**Despiece por etapas y estado de madurez:** [[la-fabrica]] — las doce etapas del sistema, quién actúa en cada una, y la separación entre lo que ya puede operar solo y lo que no. Los dos agujeros identificados hoy: **la verificación** (falta el oráculo que el agente no pueda tocar) y **la medición** (no existe).
 
 **Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. El revisor con Opus tampoco se ha ejecutado todavía (falta tu token). La parametrización real de imports de gh-aw sigue sin resolver (ver «Pendiente de decidir»).
 
@@ -98,4 +100,6 @@ Después de esas respuestas:
 - [[patrimonial]] — candidata a primer piloto
 - [[decisiones]] — registro de las decisiones de este proyecto
 - [[entorno]] — herramientas de investigación disponibles en esta máquina
+- [[verificacion-externa-agentes]] — síntesis del principio de verificación externa: los dos agujeros del sistema
+- [[contradiccion-agents-md]] — discrepancia sin resolver sobre el efecto medido de `AGENTS.md`/`CLAUDE.md`
 - [[_index]]

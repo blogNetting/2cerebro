@@ -97,6 +97,20 @@ El problema no es generar. Es **integrar y verificar**.
 - **La especificación útil es un contrato, no un documento.** Escribir **precondición / postcondición / comportamiento indefinido** antes de los tests dio **+9,8 puntos** de detección de bugs (p=0,0352, [arXiv:2608.17177](https://arxiv.org/abs/2608.17177)). Y un caso real de refactor de **717.000 líneas** sin revisión humana y sin tests previos: 31 pasadas de auditoría, **201 defectos corregidos antes de que nadie ejecutara el programa**, 3 días y 2.430 $ — con la regla de parada: **dos pasadas de verificación seguidas sin hallazgos** ([arXiv:2608.12440](https://arxiv.org/abs/2608.12440)).
 - **Y el hallazgo que contradice una práctica extendidísima:** los ficheros de contexto tipo `AGENTS.md` / `CLAUDE.md` **no mejoran de forma fiable el éxito de la tarea y suben el coste más de un 20 %** (ETH Zúrich + LogicStar, [arXiv:2602.11988](https://arxiv.org/abs/2602.11988)). Los escritos por desarrolladores mejoran un 2,4 % de media **sin significación** (p=21 %). Lo único con efecto medido: especificar **prácticas no estándar y verificables** («usa `uv`» → se usa 1,6× por instancia, frente a <0,01 si no se menciona). Los resúmenes del repositorio no ayudan.
 
+## 3.sexies Especificación y descomposición: lo medido
+
+Cinco hallazgos que condicionan el diseño, y uno de ellos va **contra** la intuición:
+
+- **Añadir reglas y plantillas al proceso, por defecto, no mejora nada.** SWE-Skills-Bench ([arXiv:2603.15401](https://arxiv.org/abs/2603.15401)): **39 de 49 skills no mejoraron nada**, ganancia media +1,2 %, coste en tokens de hasta **+451 %**, y **tres empeoraron el resultado** (hasta −10 %) por desajuste de versión. → **Cada regla que se añada tiene que justificar su coste medido.** Es el correctivo contra el entusiasmo por los formatos.
+- **La autovalidación del pipeline no es un control.** Caso real medido (hubreb, sobre Spec Kit): el sistema reportó *«todas las puertas en verde»* mientras en la rama fusionada **pasaban 55 de 440 tests** y **12 de 20 comprobaciones de CI fallaban**. Su conclusión, literal: *«pipeline self-validation is not a quality gate»*.
+- **Las citas de requisito por línea permiten detectar invenciones automáticamente; la trazabilidad a nivel de documento, no.** [arXiv:2606.30689](https://arxiv.org/abs/2606.30689): con IDs de requisito citados en el código, la detección de alucinaciones va del **86,4 % al 88,0 %**; con los formatos de Spec Kit y OpenSpec, **0,0 %**. El precio es menos determinismo entre ejecuciones.
+- **Valida el plan contra un esquema fijo antes de ejecutar la primera tarea.** Es la intervención con mejor retorno de todo lo revisado: [arXiv:2608.26197](https://arxiv.org/abs/2608.26197) elimina la varianza por completo (índice de determinismo 1,000), y SPOQ ([arXiv:2606.03115](https://arxiv.org/abs/2606.03115)) lleva los planes cíclicos a cero, el paralelismo de 31 a 75 y los defectos por tarea de 0,34 a 0,20.
+- **No existe un «tamaño óptimo de tarea».** Un barrido controlado ([arXiv:2608.23395](https://arxiv.org/abs/2608.23395), 4.400 ejecuciones) lo buscó y **no lo encontró**: los extremos rinden peor, pero el medio tampoco gana. Lo que sí apareció: **un solo dato alucinado que cumple el esquema invirtió el ranking de todas las configuraciones**, y las fragmentadas sufrieron más. Y el corte razonable que proponen: **un límite de partición en el punto medio de la capa de dependencias**.
+
+**Y dos reglas más que salen del barrido, ambas con medición detrás:**
+- **Menos agentes y mejor plan gana a más agentes** ([arXiv:2606.30524](https://arxiv.org/abs/2606.30524), ICSME 2026): el agente único usó **86 % menos tokens** y corrió el doble de rápido con calidad comparable. El cuello de botella es **la planificación**, no la ejecución — y la planificación guiada por un humano dio la mejor calidad de todas.
+- **No asumas que «reanudar» significa una sola vez.** Un análisis formal de cinco frameworks ([arXiv:2608.03836](https://arxiv.org/abs/2608.03836)) encontró que LangGraph escribe un valor de reanudación que **nunca lee** y repite trabajo durable tras una caída; CrewAI re-ejecuta métodos ya completados con efectos; y **con k reanudaciones concurrentes el efecto se dispara k veces** (saturación 1,0 en 36 de 40 celdas).
+
 ## 4. El principio de diseño que sale de todo esto
 
 **La mínima intervención humana es viable solo si la intervención que se conserva es la verificación, y esa verificación la posee algo externo que el agente no puede tocar.**
@@ -120,4 +134,4 @@ Papers verificados abriendo su página: [arXiv:2310.01798](https://arxiv.org/abs
 - Qué monta de verdad quien lo tiene funcionando, y qué se abandona — en curso.
 - La comparación pieza por pieza contra [[astillero]], y la decisión de qué se conserva, qué se corrige y qué se quema.
 
-Enlaces: [[astillero]] · [[metodo-de-investigacion]] · [[decisiones]]
+Enlaces: [[astillero]] · [[metodo-de-investigacion]] · [[decisiones]] · [[verificacion-externa-agentes]] · [[contradiccion-agents-md]]

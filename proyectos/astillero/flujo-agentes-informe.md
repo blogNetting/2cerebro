@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — informe de investigación
 created: 2026-09-25
-updated: 2026-09-26
+updated: 2026-09-27
 tags: [agentes, orquestacion, estado-del-trabajo, revision, trazabilidad, investigacion]
 zona: tecnico
 ---
@@ -212,5 +212,7 @@ WebSearch + WebFetch sobre: arXiv (9 papers distintos citados), Hacker News, blo
 - [[flujo-agentes-arquitectura]] — diseño operable
 - [[flujo-agentes-runbook]] — puesta en marcha paso a paso y comprobación de coherencia
 - [[circuito-tareas-definicion]] — definición de la fase
+- [[verificacion-externa-agentes]] — síntesis del principio de verificación externa que recorre este informe (§4.5, §9.3)
+- [[contradiccion-agents-md]] — nota que señala la discrepancia de cifras sobre `AGENTS.md` entre este informe (§9.5) y [[desarrollo-autonomo-con-agentes]]
 - [[astillero]] — proyecto
 - [[_index]]
