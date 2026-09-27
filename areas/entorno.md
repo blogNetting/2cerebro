@@ -84,6 +84,31 @@ Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
 - Reddit: su `.json` devuelve 403 y old.reddit redirige; se lee por CDP.
 - X/Twitter: la respuesta es 200, pero el contenido lo genera JavaScript; se lee por CDP.
 
+## El ancla de verdad: reglas de prohibición (`deny`), no hooks
+
+**Y esto se añadió el 2026-09-27, tras el tercer aviso del usuario.** El problema de fondo no era que los hooks estuvieran mal escritos: es que **un hook que comprueba un indicador siempre se puede satisfacer sin hacer el trabajo bien** — tocar un `.md` no es documentar, y prometer algo no es cumplirlo. El usuario lo dijo así: *«estoy hasta los cojones de que falles y hagas lo que te salga»*.
+
+**Lo que sí sostiene, y está medido:** reglas **`deny`** en `permissions`. Se comprobó **en vivo** que **se respetan aunque el modo sea `bypassPermissions`** — el harness contestó *«Permission to use Bash with command … has been denied»* y el comando no llegó a ejecutarse. No depende de que el modelo se acuerde, ni de que un hook acierte: **lo impone el programa**.
+
+Es la misma regla que el research del propio Astillero dice para el agente: *«el límite se pone con permisos, no con instrucciones»*.
+
+**Lo que está prohibido ahora** (irreversible, credenciales, o publicar):
+
+| Regla | Por qué |
+|---|---|
+| `gh pr merge*` | Fusionar no se deshace |
+| `gh secret set*` · `gh secret delete*` | Toca credenciales |
+| `gh release create/delete/edit*` | Publica versiones |
+| `gh api` con `-X`/`--method` POST, PUT, PATCH o DELETE | Escrituras por la API |
+
+**Y `git push` TAMBIÉN está prohibido desde el 2026-09-27** (antes no lo estaba). El usuario lo pidió así: *«haz lo que sea para que se cumpla y no pase más veces»*. **Consecuencia, y hay que asumirla: nada sale de manos del modelo.** Los commits se quedan en local y **el push lo hace el usuario**. Si resulta demasiado incómodo, se quita esa línea y las demás siguen.
+
+**Lo que antes decía este apartado: `git push` no estaba prohibido.** Subir una rama es reversible y es como se comparte el trabajo. Si se quiere control total, se añade `Bash(git push*)` y **cada push pasa a ser del usuario**.
+
+## Los tres hooks, y sus límites
+
+**El orden de fuerza, de menos a más:** una regla escrita (no sirve sola) → un hook que comprueba un indicador (se puede satisfacer en falso) → **una regla `deny` (no se puede saltar).** Cuando importe de verdad, va al tercer escalón.
+
 ## Los tres hooks globales, y cómo funcionan
 
 **Corrección del 2026-09-27, y es incómoda:** este apartado decía que `verificar-respuesta.sh` estaba «registrado como hook `Stop` en `~/.claude/settings.json`». **No lo estaba.** El fichero existía, pero **no había ninguna entrada `Stop` en la configuración**, así que nunca se ejecutó. Y la única entrada que sí había, `PermissionRequest`, era un `echo` que devolvía **`allow` para todo**: auto-aprobaba cualquier acción. Resultado: la regla escrita en `~/.claude/rules/comportamiento.md` («esto lo hace cumplir un hook») **no la hacía cumplir nadie**. Los dos están conectados desde hoy.
@@ -93,7 +118,7 @@ Los tres viven en `~/.claude/settings.json` y en `~/.claude/hooks/`:
 | Hook | Evento | Qué hace |
 |---|---|---|
 | `permisos-hacia-fuera.sh` | `PermissionRequest` | **No auto-aprueba las acciones hacia fuera.** Si detecta `git push`, `gh pr merge`, `gh secret set`, `gh release create/delete`, o una escritura por `gh api` (`-X`/`--method`/`-f`/`-F`), devuelve **`ask`** y el harness **para y pregunta al usuario**. Todo lo demás sigue auto-aprobado, para que no sea un peaje constante. Patrón y prueba en [[decisiones]]. |
-| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). Lo segundo se añadió el mismo día, tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. |
+| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). **Y no basta con tocar cualquier `.md`: tiene que ser un documento DE SEGUIMIENTO** — el plan de trabajo o la bitácora. Añadido el 2026-09-27, tras otro fallo real: se documentó la bitácora varias veces (y el hook pasaba) **mientras el plan de tareas se quedaba con cuatro tareas viejas**. El usuario lo pilló — *«¿el hook para qué sirve si haces lo que te sale?»* — y tenía razón: un hook que acepta cualquier `.md` no vigila lo que dice qué falta. Lo segundo se añadió el mismo día, tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. |
 | `verificar-respuesta.sh` | `Stop` | El que ya estaba escrito y nunca corría: antes de cerrar, un evaluador (Sonnet por `claude -p`) compara la última petición con la respuesta y bloquea si una investigación no llega al mínimo (máximo 3 veces). Contadores en `~/.cache/verificar-respuesta/`. |
 
 **Para desactivar cualquiera:** `/hooks`, o quitar su entrada del `settings.json`.

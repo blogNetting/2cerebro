@@ -200,6 +200,41 @@ Se añade `label_trigger: revisar` en el reutilizable (su valor por defecto es `
 
 **Pendiente de ver en vivo.**
 
+### Y un fallo mío que rompió el fichero del revisor
+
+Al **resolver el conflicto** entre las dos ramas del revisor me dejé una línea `permissions:` huérfana antes del bloque real. Con el bloque vacío, **GitHub no carga el workflow**: lo lista **por su ruta** en vez de por su nombre, y cualquier disparo muere al arrancar.
+
+**Se detectó porque la prueba en vivo lo dijo sin rodeos** — mi espera buscaba «Revisar con Opus» y respondía *«could not find any workflows named Revisar con Opus»*. Leyendo el fichero no se veía: el `name:` estaba bien escrito; lo que sobraba era una línea vacía veinte líneas más abajo.
+
+**Corregido**, y anotado como lo que es: **resolver un conflicto a mano también es escribir código, y también hay que validarlo.** `actionlint` lo cazaba —no se pasó antes por él— y ahora pasa.
+
+### Y el ancla de verdad: lo que puedo y no puedo hacer
+
+Hoy se cerró con una conclusión incómoda pero útil, que no es sobre Astillero sino sobre cómo se trabaja aquí. El usuario lo dijo sin rodeos: *«estoy hasta los cojones de que falles y hagas lo que te salga»*.
+
+**Lo que no funcionaba:** una regla escrita (no se cumple sola), y un hook que comprueba un indicador (**se puede satisfacer en falso** — pasó hoy dos veces: tocar la bitácora mientras el plan se quedaba viejo, y tocar un `.md` cualquiera).
+
+**Lo que sí:** reglas de **prohibición** en la configuración. Comprobado en vivo que **se respetan incluso en `bypassPermissions`** — el harness deniega el comando y no llega a ejecutarse. Es lo mismo que el research dice para el agente de Astillero: *«el límite se pone con permisos, no con instrucciones»*.
+
+**Prohibido desde hoy:** fusionar PRs · escribir o borrar secretos · crear, borrar o editar releases · escrituras por la API de GitHub. `git push` queda **a propósito** fuera: es reversible y es como se comparte el trabajo — se añade en una línea si el usuario quiere control total.
+
+Detalle y prueba: [[entorno]].
+
+### Cerrar de verdad: lo que se puede quitar, se quita
+
+El usuario lo dijo sin rodeos: *«que se cumplan mis órdenes, haz lo que sea para que se cumpla y no pase más veces»*. Y tenía razón en el diagnóstico: **una orden que depende de que el modelo se acuerde no es una orden.**
+
+**Lo que se hizo, y por qué este orden:**
+
+1. **Se probó qué sostiene de verdad.** Se comprobó en vivo que una regla de **prohibición** (`deny`) **se respeta incluso en `bypassPermissions`** — el harness deniega y el comando no llega a ejecutarse. Eso no depende de la memoria.
+2. **Se prohibió todo lo que sale hacia fuera:** fusionar PRs · escribir o borrar secretos · crear, borrar o editar releases · escrituras por la API · **y `git push`**. Nada sale de manos del modelo; el push lo hace el usuario.
+3. **El hook de documentación, estrechado dos veces:** primero exigió un documento **de seguimiento** (no cualquier `.md`), y después que ese documento vaya **después** del código — documentar antes y cambiar después deja el documento describiendo algo que ya no es cierto.
+4. **Los cuatro casos, probados uno a uno** antes de darlos por buenos: código sin documentar → bloquea · código con un `.md` cualquiera → bloquea · bitácora antes del código → bloquea · código y después la bitácora → pasa.
+
+**La escala, que era lo que faltaba entender:** una regla escrita **no se cumple sola** · un hook que mira un indicador **se puede satisfacer en falso** · **una prohibición no se puede saltar**. Cuando importe de verdad, va al tercer escalón.
+
+**Lo que sigue sin poder garantizarse, y se dice:** los hooks comprueban **que se tocó el documento correcto y en el orden correcto** — no que lo escrito sea **verdad**. Eso solo lo ve el usuario.
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.

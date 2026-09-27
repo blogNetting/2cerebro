@@ -44,13 +44,23 @@ Una a una: implementar, probar en vivo, redactar, actualizar bitácora. **No se 
 
 **8 · Medir la intención.** El hueco que le queda al verificador: hoy comprueba «pasa», no «es lo que se pidió». Un cambio que pasa los tests pero no resuelve lo pedido **pasa**. Es la parte de la etapa 7 que nunca se cerró.
 
-**9 · Probar el raíl de idea sobre un proyecto real.** Se probó como skill suelta; falta sobre un proyecto de verdad.
+**9 · Probar el raíl de idea sobre un proyecto real — DEJADO POR TI.** Se propuso hacerlo sobre [[patrimonial]], y dijiste que **ahora no quieres meterte en eso**. Se retoma cuando tú digas.
 
-**10 · Probar el flujo de agente completo** (ejecutor → PR) sobre un proyecto generado. El vigilante sí está probado ahí; el resto no.
+**10 · El flujo de agente completo — el agente YA funciona; falta la identidad.**
+Probado en vivo sobre un proyecto generado, y es lo mejor que salió hoy: el agente **lee el contrato, se apaña con el firewall montando un venv, escribe el código y los tests, y crea la rama**. **Pide la PR** (`create_pull_request` en las salidas seguras) y **no se crea**: `App token minting failed`.
 
-**11 · Probar la medición por `schedule`.** Todas las corridas han sido manuales.
+**Lo que falta, y es tuyo:** una **GitHub App** que le dé identidad de bot. El paso a paso completo está en `docs/crear-un-proyecto.md` del repo, y el bloque `safe-outputs: github-app:` ya está en las plantillas. **Sin ella el agente hace el trabajo entero y no lo puede entregar.**
 
-**12 · La rama de datos de la medición.** Hoy arrastra una copia del código del proyecto; debe ser una rama huérfana que solo lleve `metricas/`.
+**Por qué una App y no el respaldo por OIDC:** el research lo pide — *«identidad de bot vía GitHub App, el autor del PR no es una cuenta humana»* y *«identidad diferenciada por agente, no un token compartido»*. Con OIDC el trabajo saldría como `github-actions`, sin atribución.
+
+**11 · La medición automática NO arranca, y no se entiende.**
+El `schedule` está puesto en `main` (cron cada 30 minutos) y el workflow figura como `active`. **No ha disparado ni una vez en horas.** Y no es la frecuencia: **`Reconciliar tareas` sí dispara por `schedule`** con el mismo intervalo y en el mismo repo. Sin explicación comprobada — sigue abierto.
+
+**12 · La rama de datos de la medición — ARREGLADA, SIN PROBAR.** Arrastraba una copia entera del código del proyecto; ahora se crea **huérfana** y solo lleva `metricas/`. Publicado en la `v0.5.0`. **Falta probarla**, y para eso hay que partir de un proyecto sin esa rama.
+
+**22 · El revisor: que publique su veredicto.**
+Es el agente que lee una PR y **la compara contra el contrato de la tarea**. Corre de verdad (Opus, 10 turnos), y **no publicaba nada** porque la action de Claude **deduce la PR del evento** y `workflow_run` no la trae.
+**Arreglado y publicado en `v0.5.0`:** se dispara **por etiqueta** — la CI marca la PR al terminar en verde, y esa marca lo despierta, con la PR en el contexto y después de la CI (contrato K7). **Falta verlo en vivo.**
 
 **13 · Que la CI del molde no nazca en rojo — ✅ HECHO.** Cinco fallos encontrados, arreglados, documentados y verificados: la CI del proyecto generado pasó a **verde entero**. Comprobado el 2026-09-27 sobre un proyecto generado: **6 fallos de 6**, por **cuatro causas distintas** y solo una es el token que ya sabíamos:
 1. **`tipos`** — instala `mypy` pero **no las dependencias del proyecto**, así que mypy no encuentra `pytest`. Fallo del molde.
