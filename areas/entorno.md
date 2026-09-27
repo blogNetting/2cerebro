@@ -25,6 +25,15 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Alternativa descartada: Puppeteer MCP — deprecado/archivado.
 - Alternativa descartada: navegadores cloud (BrowserBase y similares) — lanzan su propio navegador remoto, no conectan al Chrome existente. No cumplen el criterio eliminatorio.
 
+## Documentación de librerías por MCP (2026-09-27)
+
+- **`context7`** montado para consultar documentación actualizada de librerías sin depender de lo que el modelo recuerde. Es de Upstash ([repo](https://github.com/upstash/context7), paquete `@upstash/context7-mcp`).
+- **Registrado en la configuración de usuario** (`~/.claude.json`), **no** en el `.mcp.json` del proyecto. Dos razones: sirve en cualquier directorio —no solo el wiki— y `.mcp.json` está versionado en un repo **público** con push cada hora, así que cualquier credencial ahí se publica. Comando: `claude mcp add --scope user --transport http context7 https://mcp.context7.com/mcp`.
+- **Transporte remoto HTTP, no local por `npx`.** Es lo que recomienda su propia documentación: más rápido y sin depender de Node. El local (`npx -y @upstash/context7-mcp`) funciona igual pero no aporta nada aquí.
+- **Autenticación por OAuth, sin clave de API.** `claude mcp login context7` abre el navegador y guarda el token en `~/.claude/.credentials.json` (clave `mcpOAuth`). Con `scope: profile email offline_access` y `refreshToken`, **se renueva solo**; no hay que repetir el login. La clave de API (`context7.com/dashboard`) existe y es opcional, pero con OAuth no hace falta.
+- **Trampa comprobada, y anotarla porque cuesta un rato:** `claude mcp list` **no prueba que estés autenticado**. El servidor responde `200` a una petición sin credencial ninguna (verificado con `curl`), así que el chequeo de salud pasa igual estando anónimo. La comprobación de verdad es mirar si `mcpOAuth` en `~/.claude/.credentials.json` tiene una entrada.
+- **Y otra:** `claude mcp remove` borra la entrada del servidor **con** su login. Si se quita y se vuelve a añadir, hay que repetir el `login` (o comprobar que el token sobrevivió). Mejor no quitarlo «para reconfigurarlo» sin motivo.
+
 ## Privacidad del navegador que se conduce
 
 - **El Chrome que se controla por CDP es el de uso diario, con las sesiones personales abiertas.** Cualquier `browser_snapshot` de una página de Google (Flights, búsqueda, Drive) incluye el rótulo de cuenta del perfil: nombre real y dirección de correo del usuario, dentro del árbol de accesibilidad. No es un fallo del MCP, es que el navegador está logueado.

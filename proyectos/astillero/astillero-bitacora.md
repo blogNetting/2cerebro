@@ -161,6 +161,45 @@ Los arreglos de hoy viven en **diez ramas sin fusionar**. Solo entraron en `main
 
 Lo correcto es **una sola rama con todo y un PR**, no diez, y **publicar la versión** después.
 
+### El ejecutor: hace el trabajo, y la PR no se crea
+
+Con los dos arreglos juntos, el agente **trabaja de verdad** — es lo mejor que ha salido hoy:
+
+- Lee el contrato, el código y los tests.
+- **Se apaña con el firewall**: monta un venv, instala, y **ejecuta pytest y mypy**.
+- Escribe el código y los tests, y **crea la rama `feat/resta-calculadora`**.
+- **Pide la PR**: `safe-output-items manifest: 1 item(s) logged (types: create_pull_request)`.
+
+Y la PR **no se crea**:
+
+```
+App token minting failed (safe_outputs/conclusion/activation): false/false/false
+```
+
+**Por qué.** `gh-aw` separa «el agente pide» de «un job con permisos lo ejecuta», y para eso **mintea un token de app**. Según su documentación, eso se configura con un bloque **`github-app:`** (una GitHub App con sus credenciales). **No hay ninguna configurada**, así que intenta el respaldo —y en el workflow compilado **`id-token` aparece 0 veces**, o sea que el respaldo por OIDC tampoco está disponible.
+
+**Tercera vez hoy del mismo tipo de fallo:** una pieza que necesita una credencial o un permiso que no se le ha dado, con un error que no dice cuál falta.
+
+**Lo que hace falta decidir:** configurar una **GitHub App** para los proyectos (o el respaldo por OIDC). Es configuración, no código — y afecta a todos los proyectos, así que va en la misma lista que el token.
+
+**Y el resumen honesto del día con el ejecutor:** de «no arranca» a «hace el trabajo y no puede entregarlo». Cuatro fallos por el camino (import, red, permisos, y este), los cuatro invisibles leyendo.
+
+### El revisor, disparado por etiqueta (decisión tomada y construida)
+
+**El problema, con la causa exacta:** la action de Claude **deduce la PR del evento** — no acepta que se la digan (sus entradas son `trigger_phrase`, `assignee_trigger`, `label_trigger`). Con `workflow_run` no hay PR que deducir, así que corre y no publica.
+
+**Lo que pide el research:** K7 dice *«CI → revisor, con la CI en verde»*, y K8 *«veredicto contra el contrato: review o comentario; si hay cambios, etiqueta `agente:rehacer`»*. Las dos a la vez.
+
+**La solución, en dos pasos:**
+1. La CI termina en verde → un job **marca la PR** con la etiqueta `revisar`.
+2. Esa marca dispara al revisor con `pull_request: types: [labeled]` — **con la PR en el contexto**, y **después de la CI**.
+
+Se añade `label_trigger: revisar` en el reutilizable (su valor por defecto es `claude`), que es lo que hace que la action active con el evento de etiqueta.
+
+**Por qué no la opción simple** (`pull_request` a secas): publicaría, pero revisaría **antes** de que la CI acabe — trabajo que puede no compilar. Rompe K7.
+
+**Pendiente de ver en vivo.**
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.
