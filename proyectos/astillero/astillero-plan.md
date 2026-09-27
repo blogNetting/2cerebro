@@ -8,6 +8,11 @@ zona: tecnico
 
 **Lista numerada y completa** de todo lo que queda, con quién depende de quién. Lo ya hecho está en [[astillero-bitacora]]. Se actualiza al cerrar cada tarea.
 
+## Dos reglas que se aplican a TODO lo de aquí
+
+1. **Nada se modifica en Astillero sin venir contrastado con el research.** Si el cambio no está respaldado por una nota del research, **no se hace**: o se pide, o se hace un research nuevo. Y queda dicho de qué nota sale.
+2. **Cada tarea cierra con las cuatro cosas:** modificar → **validar siempre** → verificar que funciona por el camino real → **documentar cómo funciona** (en el manual, no en el checklist). Si no está documentado, la tarea no está terminada.
+
 ## En curso, PARADA
 
 **1 · Estado verificado (etapa 3).** Empezada y parada a petición. Guardada en la rama `feat/estado-verificado` (**sin PR**, marcada incompleta): solo tiene el esqueleto `marcar_estado`.
@@ -19,9 +24,9 @@ zona: tecnico
 Qué: que el YAML valide, que las plantillas rendericen, que las llamadas finas declaren lo que el workflow llamado acepta, y que la lógica del veredicto acierte en cada caso (0 / 75 / fallo / test borrado / no arrancó).
 Listo cuando: corra en CI y **falle** si se reintroduce a propósito cualquiera de los tres fallos de hoy.
 
-**3 · Redactar «cómo funciona Astillero» de punta a punta.**
-Qué: un documento que explique el sistema **tal como está construido**, de la idea al código vivo, quién puede escribir qué y los modos de fallo. Hoy hay que juntar cuatro sitios.
-Listo cuando: alguien que no ha estado aquí lo lea solo y lo entienda.
+**3 · El manual técnico de Astillero — ✅ PRIMERA VERSIÓN HECHA** (PR #17).
+`docs/manual.md`, en `main`: cómo funciona el sistema entero, por piezas y en el orden en que ocurren las cosas. Se escribió fundiendo `como-funciona.md` en él.
+**Lo que falta:** separar lo que tengo claro de lo que no. Lo de hoy está redactado contra el código y las ejecuciones; lo anterior a esta sesión hay que **releerlo, probarlo y validarlo** antes de darlo por escrito. Y sigue creciendo con cada cambio, en el mismo paso.
 
 ## Fase 2 — las etapas que hoy solo son diseño
 
@@ -47,13 +52,27 @@ Una a una: implementar, probar en vivo, redactar, actualizar bitácora. **No se 
 
 **12 · La rama de datos de la medición.** Hoy arrastra una copia del código del proyecto; debe ser una rama huérfana que solo lleve `metricas/`.
 
-**13 · Que la CI del molde no nazca en rojo.** Exige un `CODECOV_TOKEN` que nadie ha creado, así que **el primer push de un proyecto nuevo falla sin que sea culpa del código**. O se hace opcional, o se deja claro y a prueba de error.
+**13 · Que la CI del molde no nazca en rojo — ✅ HECHO.** Cinco fallos encontrados, arreglados, documentados y verificados: la CI del proyecto generado pasó a **verde entero**. Comprobado el 2026-09-27 sobre un proyecto generado: **6 fallos de 6**, por **cuatro causas distintas** y solo una es el token que ya sabíamos:
+1. **`tipos`** — instala `mypy` pero **no las dependencias del proyecto**, así que mypy no encuentra `pytest`. Fallo del molde.
+2. **`dependencias`** — el SHA fijado de `google/osv-scanner-action` **apunta a algo que no es una action** (`Top level 'runs:' section is required`). Fallo del molde.
+3. **`tests-cobertura`** — Codecov con `fail_ci_if_error: true` y sin `CODECOV_TOKEN`. Fallo del molde.
+4. **`sast`** — eran **dos** cosas, las dos del molde: (a) semgrep marcaba **`github.base_ref` interpolado dentro de un `run:`** → **inyección de comandos**, el **único fallo de seguridad** de los cinco; (b) **`bandit -r . -x tests/` no excluía nada** —bandit compara por prefijo y con `-r .` las rutas salen como `./tests/...`—, así que escaneaba los tests y marcaba sus `assert` (B101), correctos en un test.
 
-**14 · Los cuatro pendientes viejos del hub** — «plataforma git y autonomía», «trunk-based», «imports de gh-aw» y «cuándo arranca el piloto». Son de **antes del research**. Se comprueban uno a uno contra las notas y **lo que no concuerde con hoy se borra.**
+**Y un quinto, que apareció al probar el arreglo del 2:** al convertir `dependencias` en llamada a un workflow, GitHub **no cargaba el fichero** (`startup_failure`) porque el workflow llamado exige `actions: read`, `contents: read` y `security-events: write`. **Ese se habría fusionado roto**: `actionlint` lo daba por limpio y el error de GitHub no dice cuál es el problema. Es el mejor argumento para la regla de probar siempre.
+
+Un agente que empiece en un proyecto nuevo se pelea con la CI en vez de con su tarea.
+
+**Arreglados los tres del molde** (rama `fix/ci-del-molde`, pendiente de probar en vivo antes de fusionar): `tipos` instala las dependencias antes de mypy; `dependencias` pasa a llamar al **workflow reutilizable** (no a una action) con `upload-sarif: false`, porque en repo privado el SARIF exige GitHub Advanced Security; y Codecov deja de tumbar la CI sin token, con un aviso explícito para que la ausencia se vea.
+
+**Y en la prueba salió algo sin querer, bueno:** `copier update` **se ha usado por primera vez de verdad** y funciona — aplicó el cambio de `ci.yml` y dejó los conflictos sin resolver en las llamadas finas, exactamente como dice `docs/actualizar-un-proyecto.md` del repo.
+
+**El research que respalda las herramientas es [[desarrollo-agentes-f4-devsecops]]** — los arreglos son corregir la configuración, no cambiar de herramienta.
+
+**14 · Los cuatro pendientes viejos del hub — ✅ HECHO.** Comprobados uno a uno contra el research y el código: **los tres primeros están resueltos** (plataforma = GitHub, medida en el research; trunk-based, decidido y en uso; los imports de gh-aw, ya parametrizados en el molde). **El cuarto** —cuándo arranca el piloto— **sigue abierto y es decisión tuya** (tarea 19).
 
 **15 · Subdividir `proyectos/astillero/`.** Pasó de 30 notas (37 + bitácora + plan). El reparto está preparado; **no se ejecuta sin tu OK**.
 
-## Parqueados y decisiones tuyas
+## Parqueados y decisiones tuyas — **no se hacen hoy**
 
 **16 · Despliegue (etapa 10)** — aparcado a propósito hasta decidir **dónde** se despliega. *(Esto faltaba en la lista anterior.)*
 

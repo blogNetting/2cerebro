@@ -28,6 +28,8 @@ Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarr
 
 **Estado del trabajo, al día:** [[astillero-bitacora]] — qué está hecho y comprobado (con su commit), qué está en curso y qué falta. Si una sesión se corta, eso es lo que sobrevive.
 
+**Cómo funciona, explicado entero:** [`docs/manual.md`](https://github.com/blogNetting/astillero/blob/main/docs/manual.md) — cada pieza construida por dentro, los contratos entre ellas, quién puede escribir qué y los modos de fallo.
+
 **Plan de trabajo, al día:** [[astillero-plan]] — lo que queda, en orden y con su porqué.
 
 **El protocolo, obligatorio en cada pieza:** **implementar → probar en vivo (por el camino que usa un proyecto de verdad) → redactar la wiki explicando cómo funciona → actualizar la bitácora.** Documentar no es listar cambios: es explicar el funcionamiento para que nadie tenga que reconstruirlo. El detalle está en [[astillero-bitacora]].
@@ -89,14 +91,15 @@ Después de esas respuestas:
 
 > **Ojo con esta lista: mezcla dos épocas.** Los cuatro primeros puntos son de **antes del research** (2026-09-24/25) y **no se han revisado desde entonces** — varios pueden estar ya cerrados o haber cambiado de forma. Los de **2026-09-27** son de hoy. Antes de dar cualquiera por abierto, comprobar. Esta mezcla sin fechar es lo que hizo que se volviera a plantear como pendiente algo ya tratado.
 
-- Plataforma git por proyecto y nivel de autonomía, es decir, en qué puntos aprueba una persona. Aplazado a propósito.
-- Modelo de ramas: está propuesto trunk-based, falta confirmarlo.
-- Parametrización real de los imports de gh-aw (`uses:`/`with:`/`import-schema`): intentada y abandonada tras varios errores de compilación reales; hoy el ecosistema de red y demás variables por proyecto se fijan a mano en el wrapper fino, no se pasan como parámetro. Gap conocido, no bloqueante.
+- ~~Plataforma git por proyecto y nivel de autonomía~~ — **cerrado (2026-09-27).** La plataforma es **GitHub**, y no por inercia: el research la mide (81,1 % de desarrolladores profesionales, 67,8 % de cuota — [[desarrollo-agentes-f3-git-cicd-infra]] §68). Y los puntos donde aprueba una persona **están definidos e implementados**: las rutas sensibles por `CODEOWNERS`, y cuando la puerta para una tarea tras dos fallos.
+- ~~Modelo de ramas: trunk-based~~ — **cerrado (2026-09-27).** Decidido por el research: *«trunk-based development (rama corta por issue/PR de agente, mergeada a `main` en <1 día, protegida por CI) es el estándar»* ([[desarrollo-agentes-f3-git-cicd-infra]] §46). Y es lo que el repo hace.
+- ~~Parametrización de los imports de gh-aw~~ — **cerrado (2026-09-27): ya está resuelto.** El molde **sí** los parametriza: `imports: .../implementar-core.md@{{ astillero_ref }}` y `network.allowed: [github, api.deepseek.com, {{ package_ecosystem }}]` en `template/.github/workflows/implementar.md.jinja`. El pendiente describía un estado anterior.
 - **Pruebas propias de Astillero, con cobertura.** Astillero no tiene tests que comprueben lo que él mismo hace. Hay que crearlos, de forma que al llevar Astillero a otro sitio se puedan **lanzar allí todos los tests y verificar que funciona también allí**, y medir cobertura para comprobar que los escenarios están cubiertos. Nace de un fallo real, no de una precaución: el verificador llevaba desde su primer commit sin poder ejecutar la suite (no instalaba las dependencias del proyecto), y **ninguna prueba lo detectó** — apareció el 2026-09-27 al ejecutarlo en vivo sobre un proyecto generado con `copier`. Detalle en [[decisiones]].
 - **Exportar Astillero para crear proyectos.** Qué habría que mover, cómo moverlo y con qué estructura de directorio (incluido sacarlo de la cuenta `blogNetting`). Instrucción tuya: se estudia **cuando todo lo demás esté cerrado y atado**, y entonces te lo pregunto yo. Ver [[decisiones]].
 - **El PDF de [[la-fabrica]].** Pedido por ti el 2026-09-27 («recuerda el PDF que te he pedido, cuando lo tengas avísame») y **sin anotar hasta ahora** — se perdía en cuanto cerrara la sesión. Quedó pendiente de los dos barridos que faltaban (verificación práctica y medición). Se avisa cuando esté.
 - ~~Las 7 revisiones de Gas City~~ — **cerrado.** El usuario confirma (2026-09-27) que **ya se trató**: no es un pendiente abierto. Lo único vivo de ahí es el código `75`, ya aplicado y dentro de `v0.4.0`. **No volver a plantearlo como pregunta.**
-- **Documentación interna del repo.** Rescatada el 2026-09-27 de un clon en `/tmp` (se iba a perder) a la rama `docs/estado-interno`. Está **desfasada** —dice «en construcción» de la Medición, la Puerta y el Raíl de idea, que ya existen en ramas— y el README **enlaza a cuatro ficheros que no existen**: `docs/piezas/`, `docs/crear-un-proyecto.md`, `docs/actualizar-un-proyecto.md` y `docs/decisiones/`. Además afirma que un proyecto «solo tiene llamadas de diez líneas»; el `ci.yml` que genera el molde son ~100 líneas copiadas dentro, no una llamada. Los cuatro enlaces rotos y esa afirmación necesitan decisión: escribirlos o corregir el README.
+- ~~Documentación interna del repo~~ — **cerrado (2026-09-27).** Los cuatro enlaces rotos resueltos, las afirmaciones falsas corregidas y el manual técnico escrito (`docs/manual.md`, PR #17). El checklist se comprobó contra las corridas reales (PR #18, #20): marcaba como probadas tres piezas que no lo están.
+
 - Cuándo arranca el primer piloto ([[patrimonial]]): el sistema ya está completo; falta que tú lo decidas.
 
 ## Enlaces

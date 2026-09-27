@@ -58,13 +58,38 @@ Donde no puede calcular dice **«no disponible» con el motivo** en vez de inven
 
 ### Documentación
 
+- **`docs/manual.md`, el manual técnico** (PR #17): cómo funciona el sistema **entero**, por piezas y en el orden en que ocurren las cosas. De cada una: qué es, cómo funciona por dentro, con qué se comunica, cómo falla y **qué la rompe**. `docs/como-funciona.md` se fundió dentro — dos documentos explicando lo mismo era lo que hacía que se contradijeran. Es la entrada de la documentación: https://github.com/blogNetting/astillero/blob/main/docs/manual.md
+- **El checklist, hecho fiable** (PR #18): `docs/estado.md` marcaba como **probadas** dos piezas que no lo están —el **Revisor** y el **Triage de bugs**, cuyas corridas han fallado o se han saltado siempre por falta de token— y daba el verificador por probado con la evidencia del banco, que no ejecutaba la suite. Corregido contra las corridas reales, no contra lo que decía el documento.
 - **Rescatada** de un clon en `/tmp` que se iba a borrar: `README.md`, `docs/estado.md`, `docs/etapas.md`.
 - **Escrita la que faltaba:** `docs/crear-un-proyecto.md` (lo que hay que preparar antes del primer push, sacado de generar un proyecto real), `docs/actualizar-un-proyecto.md` y `docs/decisiones.md`.
 - **`project-example/` regenerado** desde el molde: tenía 3 workflows de los 9 que genera y enseñaba un proyecto que ya no existe.
 - **`la-fabrica.md` y `docs/etapas.md` corregidos:** decían que la verificación, la puerta y la medición **no existen**. Las tres existen.
 
+### La CI del molde: nacía en rojo, y era peor de lo que parecía
+
+Comprobado sobre un proyecto generado con `copier`: **6 fallos de 6**. No era solo el `CODECOV_TOKEN` que ya sabíamos — eran **cinco causas**, y una de **seguridad**:
+
+| # | Fallo | Tipo |
+|---|---|---|
+| 1 | `tipos` no instalaba las dependencias → `mypy` no encontraba `pytest` | Config |
+| 2 | `dependencias` llamaba a una **action que es un workflow** reutilizable | Config |
+| 3 | Codecov tumbaba la CI sin token | Config |
+| 4a | **`github.base_ref` interpolado en un `run:`** → **inyección de comandos** | **Seguridad** |
+| 4b | **`bandit -x tests/` no excluía nada** → marcaba los `assert` de los tests | Config |
+| 5 | El workflow llamado exige permisos que hay que concederle (`startup_failure`) | Config |
+
+**El 5 apareció al probar el arreglo del 2, y se habría fusionado roto:** `actionlint` lo daba por limpio y el error de GitHub no dice cuál es el problema.
+
+**Arreglados los cinco** (PR #21), documentados (PR #22), y **verificado en vivo**: la CI del proyecto generado pasó de 6 fallos a **verde entero**.
+
+### Y dos cosas que se probaron sin buscarlo
+
+- **`copier update` funciona.** Primera vez que se usa de verdad: aplicó el cambio de `ci.yml` al proyecto y **dejó los conflictos sin resolver** en las llamadas finas —exactamente lo que dice `docs/actualizar-un-proyecto.md`—. La ruta de actualización queda probada, no solo escrita.
+
 ## Lo que NO está probado, y se dice
 
+- **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.
+- **El Revisor (Opus) y el Triage de bugs: NUNCA han funcionado.** Todas sus corridas han fallado o se han saltado — les falta el secreto `CLAUDE_CODE_OAUTH_TOKEN`. Estaban marcados como «probados» en el checklist, y era falso: se descubrió el 2026-09-27 al comprobarlo contra las corridas reales. **Necesitan tu token.**
 - **El raíl de idea sobre un proyecto real.** Se probó como skill suelta (11 turnos de CLI).
 - **El flujo de agente completo** (ejecutor → PR) sobre un proyecto generado. El vigilante sí está probado ahí; el resto no.
 - **La medición por `schedule`.** Todas las corridas han sido manuales.
