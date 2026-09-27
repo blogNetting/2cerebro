@@ -86,6 +86,81 @@ Comprobado sobre un proyecto generado con `copier`: **6 fallos de 6**. No era so
 
 - **`copier update` funciona.** Primera vez que se usa de verdad: aplicó el cambio de `ci.yml` al proyecto y **dejó los conflictos sin resolver** en las llamadas finas —exactamente lo que dice `docs/actualizar-un-proyecto.md`—. La ruta de actualización queda probada, no solo escrita.
 
+### La 10: el ejecutor, y un fallo que lo mataba entero
+
+Al probar el flujo de agente completo por primera vez sobre un proyecto generado, el ejecutor **murió en la activación**:
+
+```
+ERR_API: Failed to process runtime import for
+.github/workflows/blogNetting/astillero/.github/workflows/shared/implementar-core.md
+```
+
+**Qué pasaba, leído del registro, no supuesto:** el fichero tenía **dos** imports del núcleo compartido. El de compilación (`.github/aw/imports/.../implementar-core.md`) **funcionaba** — es la copia cacheada al compilar. El otro, un macro de import **en tiempo de ejecución**, se resolvía a una **ruta local inexistente** y tumbaba todo.
+
+**Y era redundante por diseño:** el research dice que los imports remotos de gh-aw **se resuelven al compilar** y el `.lock.yml` queda congelado con lo que había en el ref — que es justo el objetivo, fijar una versión, no traer la última en cada ejecución. El macro de ejecución iba en contra de eso.
+
+**Corregido** en las plantillas `implementar` y `rehacer`, con el motivo escrito al lado para que no se vuelva a añadir. **Pendiente de fusionar** hasta que el reejecutado confirme que el agente arranca.
+
+**Y esto obliga a corregir una afirmación mía:** cerré el pendiente viejo de «parametrización de los imports de gh-aw» diciendo que **ya estaba resuelto** porque el molde los parametriza. El de compilación sí; **el de ejecución estaba roto**. Lo cerré sin probarlo, que es exactamente lo que la regla prohíbe.
+
+### El revisor: nunca funcionó, y eran DOS fallos encadenados
+
+Se puso el token y se relanzó por primera vez. Falló. Leído del registro:
+
+```
+Could not fetch an OIDC token. Did you remember to add `id-token: write`
+to your workflow permissions?
+```
+
+**1. Faltaba `id-token: write`.** `claude-code-action` se autentica por **OIDC**, y ni `revisar.yml` ni `reproducir.yml` lo concedían. Peor: las **llamadas finas del molde no declaraban bloque `permissions` en absoluto** — y un workflow reutilizable **no puede elevar** los permisos de quien lo llama; sin bloque, recibe los **por defecto del repo**. Es el **mismo tipo de fallo** que el del `osv-scanner` (un workflow que usa una action sin darle lo que necesita), y el error no dice en cuál falta.
+
+**2. El disparo.** El revisor se lanza por `workflow_run` y, en ese evento, `PR_NUMBER` sale **vacío** — igual que le pasaba al vigilante, que ya se corrigió. Está anotado: **es el tercer sitio donde aparece el mismo patrón de `workflow_run`**, y hay que comprobarlo en cada workflow que lo use.
+
+**Lo que esto dice del método:** el revisor llevaba **desde el 2026-09-26 sin funcionar**, y el checklist lo daba por «probado». No lo cazó nadie leyendo: salió al **poner el token y ejecutarlo**. Es el cuarto caso hoy del mismo patrón — *lo que no se ejecuta, no está probado*.
+
+### El ejecutor: verde, y sin hacer nada
+
+Con el import arreglado, el agente **arrancó y terminó en `success`** — la primera vez que el flujo corre entero desde un proyecto generado. **Y no abrió ninguna PR.** El propio registro lo decía:
+
+```
+Firewall blocked 3 domains
+  - api.anthropic.com
+  - files.pythonhosted.org
+  - pypi.org
+```
+
+**La palabra clave del ecosistema no basta.** `network.allowed` llevaba `python`, y eso **no cubre de dónde salen los paquetes**: el firewall bloqueaba PyPI. Sin poder instalar dependencias el agente no puede ejecutar los tests, así que no puede hacer el trabajo…
+
+**…y el workflow termina en VERDE igual.** Ese es el peor modo de fallo de todos: **parece que funciona**. Un job en `success` sin PR es más peligroso que un job en rojo, porque nadie va a mirarlo.
+
+Corregido en las dos plantillas, añadiendo los registros del ecosistema a `network.allowed`. **Pendiente de probar en vivo.**
+
+**Cuarto fallo del ejecutor hoy**, y todos del mismo tipo: **la pieza existía, se daba por buena, y no funcionaba**. Los cuatro salieron al ejecutarla, ninguno leyéndola.
+
+### Y un fallo mío, que reintrodujo el primero
+
+Al arreglar lo de la red creé la rama **desde `main`** y regeneré los ficheros del proyecto desde esa plantilla. Pero **`main` todavía no tiene el arreglo del import** (está en su rama, sin fusionar), así que **volví a meter el macro roto** y el ejecutor murió otra vez con el mismo error de la activación.
+
+**La lección, y es de método:** cuando varios arreglos viven en **ramas sin fusionar**, regenerar desde `main` **deshace los que no estén dentro**. Hay que **juntarlos antes** de probar, o probar siempre desde el mismo sitio.
+
+**Corregido:** una rama `fix/agente-todo` con **los dos arreglos juntos** (import fuera + red abierta), verificada en el `.lock.yml` compilado (`pypi.org` presente, macro roto con cero apariciones).
+
+### El revisor YA funciona — y lo que le queda
+
+Con el token y los dos arreglos, **el revisor corre por primera vez**: Opus, **10 turnos, 21 segundos, 0,15 $ estimados** (`is_error: false`). Frente a los 0,5 s y coste 0 de sus intentos anteriores, que ni arrancaban.
+
+Está **fusionado y probado** lo que hacía falta para llegar hasta ahí: `id-token: write` (autenticación por OIDC) y el `ref` del checkout (leía `main` en vez de la PR).
+
+**Lo que le falta:** **publicar la revisión.** Bajo `workflow_run` no tiene PR sobre la que comentar — el mismo patrón del `workflow_run` que apareció en el vigilante y aquí otra vez. Las salidas son cambiar el disparo a `pull_request` o derivar el número de PR del evento. **Pendiente de decidir.**
+
+**Y una duda abierta, sin explicación:** el consumo de Opus del revisor **no aparece** en el medidor de la suscripción (una cuenta, 20 minutos, 0,15 $ estimados, 0 %). Es contabilidad de Anthropic, no del sistema — no se investiga más por ahora.
+
+### Las ramas de hoy, y por qué es el hueco más grande
+
+Los arreglos de hoy viven en **diez ramas sin fusionar**. Solo entraron en `main` el CI y la documentación. **Mientras no se fusionen, nada de esto llega a ningún proyecto**, y varias se pisan entre sí (dos tocan `revisar.yml`).
+
+Lo correcto es **una sola rama con todo y un PR**, no diez, y **publicar la versión** después.
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.

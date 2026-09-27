@@ -75,9 +75,21 @@ Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
 - Reddit: su `.json` devuelve 403 y old.reddit redirige; se lee por CDP.
 - X/Twitter: la respuesta es 200, pero el contenido lo genera JavaScript; se lee por CDP.
 
-## Verificación de respuestas (hook global)
+## Los tres hooks globales, y cómo funcionan
 
-- `~/.claude/hooks/verificar-respuesta.sh`, registrado como hook `Stop` en `~/.claude/settings.json`: antes de cerrar cada turno, Sonnet (por `claude -p`) compara la última petición con la respuesta; si no llega al mínimo, bloquea y devuelve el motivo (máximo 3 veces por petición). Contadores en `~/.cache/verificar-respuesta/`. Para desactivarlo: `/hooks`, o quitar la entrada `Stop` del settings. Motivo y pruebas en [[decisiones]].
+**Corrección del 2026-09-27, y es incómoda:** este apartado decía que `verificar-respuesta.sh` estaba «registrado como hook `Stop` en `~/.claude/settings.json`». **No lo estaba.** El fichero existía, pero **no había ninguna entrada `Stop` en la configuración**, así que nunca se ejecutó. Y la única entrada que sí había, `PermissionRequest`, era un `echo` que devolvía **`allow` para todo**: auto-aprobaba cualquier acción. Resultado: la regla escrita en `~/.claude/rules/comportamiento.md` («esto lo hace cumplir un hook») **no la hacía cumplir nadie**. Los dos están conectados desde hoy.
+
+Los tres viven en `~/.claude/settings.json` y en `~/.claude/hooks/`:
+
+| Hook | Evento | Qué hace |
+|---|---|---|
+| `permisos-hacia-fuera.sh` | `PermissionRequest` | **No auto-aprueba las acciones hacia fuera.** Si detecta `git push`, `gh pr merge`, `gh secret set`, `gh release create/delete`, o una escritura por `gh api` (`-X`/`--method`/`-f`/`-F`), devuelve **`ask`** y el harness **para y pregunta al usuario**. Todo lo demás sigue auto-aprobado, para que no sea un peaje constante. Patrón y prueba en [[decisiones]]. |
+| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). Lo segundo se añadió el mismo día, tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. |
+| `verificar-respuesta.sh` | `Stop` | El que ya estaba escrito y nunca corría: antes de cerrar, un evaluador (Sonnet por `claude -p`) compara la última petición con la respuesta y bloquea si una investigación no llega al mínimo (máximo 3 veces). Contadores en `~/.cache/verificar-respuesta/`. |
+
+**Para desactivar cualquiera:** `/hooks`, o quitar su entrada del `settings.json`.
+
+**Aviso al cambiarlos:** el vigilante de configuración del harness solo mira carpetas que ya tenían `settings.json` cuando arrancó la sesión. Si se editan desde una sesión abierta antes de crearlos, **hace falta abrir `/hooks` una vez o reiniciar** — si no, el harness sigue con la configuración vieja y parece que el hook no funciona. Comprobado el 2026-09-27.
 
 ## Qué falta / no está resuelto
 

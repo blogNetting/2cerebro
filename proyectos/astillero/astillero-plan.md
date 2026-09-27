@@ -72,6 +72,23 @@ Un agente que empiece en un proyecto nuevo se pelea con la CI en vez de con su t
 
 **15 · Subdividir `proyectos/astillero/`.** Pasó de 30 notas (37 + bitácora + plan). El reparto está preparado; **no se ejecuta sin tu OK**.
 
+**21 · Comprobar que el token de Opus del revisor hace algo de verdad.**
+**Pedido por el usuario, y con motivo: «no hay consumo y no me fío de lo que dices».**
+
+Lo que hay **comprobado**, y es solo del registro del runner:
+- `ANTHROPIC_BASE_URL` **vacío** → no apuntaba a DeepSeek.
+- El CLI reportó `"model": "claude-opus-5-5"`, `num_turns: 10`, `duration_ms: 21197`, `is_error: false`, `total_cost_usd: 0,15`.
+
+Lo que **no cuadra y no tiene explicación**:
+- El medidor de uso de su suscripción sigue en **0 %** — una sola cuenta, y pasados 10-20 minutos, así que no es retraso.
+
+**Por qué no vale lo que dije:** todo lo anterior es **lo que el propio CLI declara de sí mismo**. Que un programa diga que llamó a Opus no prueba que la llamada llegara a Opus. Es exactamente el error que este proyecto persigue: *«el verde del agente no es evidencia de nada»*.
+
+**Lo que sí lo cerraría**, y hay que hacerlo desde fuera del runner:
+- Comparar el consumo de la cuenta **antes y después** de una revisión, con la misma ventana de tiempo.
+- O mirar del lado de la cuenta si aparece la llamada (logs de la organización / facturación).
+- Si no aparece por ningún lado: **el revisor no está gastando tu cuota, y eso cambia lo que se puede esperar de él**.
+
 ## Parqueados y decisiones tuyas — **no se hacen hoy**
 
 **16 · Despliegue (etapa 10)** — aparcado a propósito hasta decidir **dónde** se despliega. *(Esto faltaba en la lista anterior.)*
