@@ -390,5 +390,6 @@ Lo que pasa después del despliegue — monitorización, alertado, incidentes, b
 - [[capa-producto]] — cómo el usuario dirige este motor como Product Owner
 - [[devops-minimo]] — mínimo operativo una vez la app está en producción
 - [[verificacion-externa-agentes]] — síntesis del principio de verificación externa (§7.1 bis, §7.2, §8)
+- [[gas-city-frente-a-la-fabrica]] — dos controles que se pueden copiar aquí: limpieza de variables de entorno heredadas por nombre sospechoso, y tabla de fronteras que marca el texto libre como dato no confiable
 - [[astillero]] — proyecto
 - [[_index]]

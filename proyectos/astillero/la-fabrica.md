@@ -55,7 +55,7 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 
 **Lo único que sí se sostiene de esa comparación:** que **usar alguna especificación escrita supera a no usar ninguna** (80-84 % frente a 72 %, 12 puntos, justo en el borde de la banda), y que **en arreglos pequeños el control gana** (90 %). La elección entre las cuatro **no está decidida por datos**.
 
-**3. Estado.** GitHub Issues más un campo propio. La única regla dura: **«cerrado» y «verificado» son cosas distintas y las escribe quien corresponda**, no quien hizo el trabajo.
+**3. Estado.** GitHub Issues más un campo propio. La única regla dura: **«cerrado» y «verificado» son cosas distintas y las escribe quien corresponda**, no quien hizo el trabajo. Despiece de las piezas 3 y 8: [[estado-de-verificacion]].
 
 **4. Despacho y 5. Ejecución.** `gh-aw` los cubre: compila un flujo escrito en Markdown a un workflow de Actions, arranca un recinto aislado por tarea, y **la clave del modelo la tiene un proxy, no el agente** — el agente la usa pero no puede leerla. El límite se pone con permisos, no con instrucciones.
 
@@ -63,7 +63,7 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 
 ## Las dos etapas que son el agujero
 
-**7. Verificación.** Es la que decide todo lo demás. **Corrección importante sobre lo que dije al principio:** propuse *ocultar* los tests al agente, y la evidencia dice que **ocultar mueve el agujero, no lo cierra**. Está medido: con tests invisibles, **más del 80 % de las ejecuciones especulan sobre un evaluador imaginado**, y en **el 10-25 % de los casos ese razonamiento desvía el trabajo de lo pedido y aun así cobra como correcto** — un fallo que además se vuelve **invisible** para quien solo mira el verde. La posición que sí está respaldada empíricamente es **solo lectura**: *«restaura el rendimiento legítimo a la vez que impide los intentos de modificar los tests»*.
+**7. Verificación.** Es la que decide todo lo demás. Despiece de la pieza: [[verificador-de-tareas]] (el mecanismo) y [[recibo-de-verificacion]] (lo que queda escrito, 7b). **Corrección importante sobre lo que dije al principio:** propuse *ocultar* los tests al agente, y la evidencia dice que **ocultar mueve el agujero, no lo cierra**. Está medido: con tests invisibles, **más del 80 % de las ejecuciones especulan sobre un evaluador imaginado**, y en **el 10-25 % de los casos ese razonamiento desvía el trabajo de lo pedido y aun así cobra como correcto** — un fallo que además se vuelve **invisible** para quien solo mira el verde. La posición que sí está respaldada empíricamente es **solo lectura**: *«restaura el rendimiento legítimo a la vez que impide los intentos de modificar los tests»*.
 
 La receta que sí tiene cifras de producción detrás, y que es la de los dos sistemas que funcionan (SWE-bench Pro V2 y el benchmark de Octomind):
 
@@ -76,12 +76,12 @@ La receta que sí tiene cifras de producción detrás, y que es la de los dos si
 
 **Lo que GitHub da de serie, verificado:** una regla que **impide empujar** a rutas concretas como `tests/`; exigir que el check verde venga de **una app concreta** (protege contra falsificar el resultado); **workflows obligatorios desde otro repositorio** que el agente no controla; y **separar quién aporta código de quién ejecuta el CI**. Lo que **no existe**: un permiso por ruta — no se puede decir «esta app escribe en los tests pero no en el código».
 
-**12. Medición.** Sin ella no puedes distinguir «va bien» de «va rápido». Los cuatro números: **reversión, defectos escapados, tiempo de revisión, coste por tarea**. Las referencias medidas existen (reversión de Codex 6,1 % frente a humano 11,5 %; tiempo mediano de revisión +441,5 % con adopción alta de IA), pero **nadie publica un sistema que mida esto para agentes**. Es diseño, no copia.
+**12. Medición.** Sin ella no puedes distinguir «va bien» de «va rápido». Despiece de la pieza: [[medicion-de-la-fabrica]]. Los cuatro números: **reversión, defectos escapados, tiempo de revisión, coste por tarea**. Las referencias medidas existen (reversión de Codex 6,1 % frente a humano 11,5 %; tiempo mediano de revisión +441,5 % con adopción alta de IA), pero **nadie publica un sistema que mida esto para agentes**. Es diseño, no copia.
 
 ## Lo que está a medias, y por qué se deja
 
 - **2. Descomposición** — el criterio existe y está medido (por dependencia de estado, no por tamaño; cada unidad dentro de 20-30 K tokens; grafo re-ejecutable). Falta escribirlo como regla operativa.
-- **8. Puerta** — falta el vigilante: contador de intentos, bloqueo y aviso. Medido: ~30 % de las ejecuciones se desvían y el 90 % de esas se recuperan con **una** intervención.
+- **8. Puerta** — falta el vigilante: contador de intentos, bloqueo y aviso. Despiece: [[vigilante-de-tareas]]. Medido: ~30 % de las ejecuciones se desvían y el 90 % de esas se recuperan con **una** intervención.
 - **11. Operación** — diseñado en [[devops-minimo]], sin estrenar.
 
 ## Lo que se aparca a propósito
@@ -101,3 +101,12 @@ Este diseño **no se cierra nunca**. El estado del arte cambió tres veces duran
 - [[astillero]] · [[flujo-agentes-arquitectura]] · [[devops-minimo]]
 - [[desarrollo-autonomo-con-agentes]] — la evidencia medida
 - [[verificacion-externa-agentes]] — síntesis del principio de la etapa 7, el agujero del oráculo
+- [[gas-city-frente-a-la-fabrica]] — contraste de las etapas 7, 8 y 12 contra Gas City: qué mecanismo se puede reutilizar y qué es marketing sin cifras
+
+**Despiece de las etapas que tienen nota propia** (cada una desarrolla la fila correspondiente de la tabla de arriba):
+
+- [[estado-de-verificacion]] — piezas 3 y 8: «cerrado» y «verificado», y quién puede escribir cada uno
+- [[verificador-de-tareas]] — pieza 7: cómo se decide sin que el agente influya, y las cuatro piezas de GitHub por debajo
+- [[recibo-de-verificacion]] — pieza 7b: qué queda escrito al verificar, y por qué un recibo que falta significa «no verificado»
+- [[vigilante-de-tareas]] — pieza 8: cuándo una tarea pasa, se reintenta o se bloquea
+- [[medicion-de-la-fabrica]] — pieza 12: las cinco de DORA más lo que hay que añadir

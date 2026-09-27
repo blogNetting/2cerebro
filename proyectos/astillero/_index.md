@@ -6,6 +6,13 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 
 - [[astillero]] — hub del proyecto: decisiones cerradas, hipótesis, bloques y preguntas abiertas
 - [[la-fabrica]] — despiece del sistema en sus doce etapas, con quién actúa en cada una y cuáles pueden operar solas hoy. Los dos agujeros: verificación y medición
+- [[guion-de-idea]] — etapas 0 y 1: el raíl común que hace que la misma idea produzca siempre las mismas preguntas y la misma forma de resultado, para poder pulirla
+- [[verificador-de-tareas]] — pieza 7: cómo se decide si una tarea está bien hecha sin que el agente pueda influir, y las cuatro piezas de GitHub que se usan por debajo
+- [[recibo-de-verificacion]] — pieza 7b: qué queda escrito al verificar, para que un tercero pueda reconstruirlo sin haber estado
+- [[estado-de-verificacion]] — piezas 3 y 8: cómo se separa «cerrado» de «verificado», y quién puede escribir cada uno
+- [[vigilante-de-tareas]] — pieza 8: cuándo una tarea pasa, se reintenta o se bloquea, con umbrales prestados de sistemas maduros
+- [[medicion-de-la-fabrica]] — pieza 12: las cinco de DORA más lo que hay que añadir, y con qué se instrumenta sin pagar
+- [[gas-city-frente-a-la-fabrica]] — qué se puede reutilizar de Gas City (el bucle `check`, el tercer estado con la salida 75, las puertas) y qué es marketing sin cifras; y por qué no se adopta la plataforma
 - [[desarrollo-agentes-investigacion]] — síntesis de la investigación del ciclo completo con agentes: estándar de la comunidad fase a fase, modelos de Anthropic por fase, trazabilidad, hipótesis del usuario contrastadas y arquitectura propuesta
 - [[desarrollo-agentes-f1-especificacion]] — de la idea a las tareas: frameworks spec-driven (Spec Kit, OpenSpec, BMAD, Kiro), formatos de requisitos y modelo por fase
 - [[desarrollo-agentes-f2-ejecucion-y-trazabilidad]] — de la tarea a la PR: agentes issue→PR, orquestación, datos de revisión y merge, quién hizo qué

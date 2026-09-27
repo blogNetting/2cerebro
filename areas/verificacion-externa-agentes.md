@@ -39,4 +39,5 @@ Formulado como regla de diseño en [[desarrollo-autonomo-con-agentes]] §4: la m
 - [[flujo-agentes-evidencia-empirica]] — adherencia real a TDD y por qué el prompt no basta
 - [[flujo-agentes-informe]] — techo medido de la revisión automática
 - [[la-fabrica]] — el despiece donde la verificación es el agujero
+- [[gas-city-frente-a-la-fabrica]] — un sistema que formula el principio igual («el paso está hecho cuando lo dice tu script») y a la vez declara que sus comandos «son una característica, no un recinto»: tener el principio no es tener la barrera
 - [[astillero]] — proyecto
