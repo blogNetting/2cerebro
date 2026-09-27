@@ -41,6 +41,25 @@ Todas verificadas en su documentación:
 
 **Y lo que no existe:** un permiso por ruta. **No se puede decir «esta app escribe en los tests pero no en el código».** Los permisos son por repositorio, no por ruta — por eso hay que sacar los tests del repo **o** usar la regla de rutas.
 
+## Lo que reveló construirlo (2026-09-27)
+
+Todo esto salió **ejecutándolo**, no leyéndolo. Los tres primeros son fallos que estuvieron vivos y ninguno se veía en el código.
+
+**1. El disparo tiene que ser `pull_request`, nunca `workflow_run`.**
+La plantilla del proyecto disparaba con `workflow_run` («cuando la CI termine»). En ese evento GitHub define **`GITHUB_REF` como la rama por defecto** y `GITHUB_SHA` como su último commit. Como el verificador hace el checkout sin fijar `ref:`, **miraba `main` en vez del trabajo**. Y el base se derivaba de la rama del propio agente, así que «restaurar los tests» reponía la versión que había dejado el agente. Efecto combinado: **el caso que esta pieza existe para cazar habría salido VERIFICADO en verde.** Con `pull_request`, el checkout coge el commit del trabajo y `pull_request.base.sha` da el base correcto sin deducir nada.
+
+**2. Hay que instalar las dependencias antes de ejecutar la suite.** El verificador lanzaba `python -m pytest -q` sobre un runner limpio, donde pytest no está: `No module named pytest`, código 1. **La suite no llegaba a ejecutarse nunca** — y como el código era 1, el sistema lo contaba como *veredicto*, gastando intento. En cualquier proyecto real, **toda tarea habría quedado bloqueada al segundo intento, siempre**. Hace falta un paso de instalación propio (`install_command`).
+
+**3. «No arrancó» no es «no pasa»: eso es el `75`.** Si el comando de test no llega a ejecutarse —falta un módulo, no existe el binario, código 127— **no hay medición**, y sin medición no hay veredicto. Va por el camino del `75`, que no consume intento. Se limita a **firmas inequívocas** a propósito: adivinar por el texto del fallo en general clasificaría un test real que fallara parecido como «no se pudo comprobar», y eso sería **aprobar trabajo roto en silencio** — el fallo opuesto y peor.
+
+**4. La salida de los tests la escribe el agente, y no se interpola nunca dentro de un `run:`.** Él redacta los tests; su salida es texto que no se controla. Meterla en un script de shell con llaves dobles sería **inyección de comandos**. Se compone leyendo del fichero capturado en tiempo de ejecución, y llega al aviso como variable de entorno.
+
+**5. Y la lección de método, que vale para todas las piezas.** Los tres primeros fallos **no aparecieron en el banco de pruebas hecho a mano** — que se había desfasado respecto al molde y daba un falso positivo. Aparecieron al probarlo **en un proyecto generado con `copier`**, que es por donde pasa un proyecto de verdad.
+
+> **Una pieza no está probada hasta que se prueba por el camino que usa de verdad un proyecto.**
+
+Corolario incómodo y anotado: durante unas horas este documento y `estado.md` dieron el verificador por «probado en vivo» a partir de una corrida del banco que **tenía el mismo agujero**. El veredicto era correcto **por el motivo equivocado**. Por eso el paso de redactar la wiki va **después** de probar: lo que se escribe antes de construir es diseño, no descripción del funcionamiento.
+
 ## Lo que hay que asumir
 
 - **El cuello de botella es el oráculo, no el criterio.** Está medido que **345 parches erróneos pasaban en verde** en SWE-bench (40,9 % de un subconjunto entero — denominador declarado por el paper). El verde mentía porque el test era insuficiente.

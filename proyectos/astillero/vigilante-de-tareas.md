@@ -48,6 +48,16 @@ Un contador por tarea, y cuatro estados de salida:
 - **No a un fallo no recuperable** (un test que exige algo imposible): reintentarlo es tirar saldo. Se marca `no-verificable` y para.
 - **No a un conflicto entre tareas**: eso no es un fallo de la tarea, es un fallo de la descomposición — y ahí lo que se arregla es la tarea, no el reintento.
 
+## Lo que reveló construirlo (2026-09-27)
+
+**1. De qué evento sale la PR tiene que estar contemplado en los dos casos.** El número de PR estaba cableado a `github.event.workflow_run.pull_requests[0].number`. Bajo el disparo que de verdad usa un proyecto (`pull_request`), ese campo viene **vacío**: la tarea no se resolvía, `closingIssuesReferences` no se consultaba nunca y **el intento no se contaba**. El veredicto se calculaba bien y la puerta se quedaba de adorno. Nada de eso era visible leyendo el código.
+
+**2. El aviso lleva el diagnóstico dentro, y el `75` lleva su motivo.** Antes, el aviso de fallo decía «intento 1 de 2», el código de salida y un enlace — **no decía qué falló**, que es justo lo que esta nota prohíbe. Y el caso `75` **no dejaba nada escrito en la tarea**: solo un aviso en el registro del workflow. Con `fail-closed` eso significa una PR bloqueada sin explicación, que es una tarea para ti sin que lo parezca. Ahora los dos comentan: el fallo trae el test que cae con su mensaje, la evidencia, qué pasa ahora y cómo reproducirlo; el `75` trae **por qué** no se pudo comprobar, no una lista de sospechas.
+
+**3. La guarda del reconciliador está comprobada, no solo escrita.** Promueve toda issue `estado:bloqueado` sin bloqueadores abiertos, así que desharía la parada en la misma pasada. La guarda (`vigilante:agotado` ⇒ no se promueve) **vive en el `reconciliar.yml` de Astillero, no en la plantilla del proyecto** — la plantilla solo delega. Comprobado en vivo: tras pasar el reconciliador, la tarea sigue bloqueada.
+
+**4. Y un falso positivo que vale la pena recordar.** La primera prueba se hizo contra un banco hecho a mano cuyo `reconciliar.yml` era una **copia vieja** sin la guarda, así que parecía que la guarda no llegaba a los proyectos. No era cierto: era el banco el que estaba desfasado. **El banco de pruebas hecho a mano miente por desfase; la prueba válida es un proyecto generado con `copier`.**
+
 ## Lo que hay que asumir
 
 - **Los umbrales son prestados.** No hay medición propia todavía; se ajustan cuando la pieza de medición lleve un tiempo corriendo. [[medicion-de-la-fabrica]]

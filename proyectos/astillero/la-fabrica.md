@@ -38,12 +38,12 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 | 4 | **Despacho** | Coge la siguiente tarea y arranca el agente | Máquina | ✅ |
 | 5 | **Ejecución** | El agente escribe test y código, aislado | Máquina | ✅ |
 | 6 | **Autocomprobación** | El agente corre sus pruebas y corrige | Máquina | ✅ |
-| 7 | **Verificación** | **Algo distinto del agente** decide si está bien | Máquina | ❌ **falta el oráculo** |
-| 8 | **Puerta** | Pasa, reintenta o bloquea | Máquina → **Tú** al bloquear | ⚠️ falta el vigilante |
+| 7 | **Verificación** | **Algo distinto del agente** decide si está bien | Máquina | ✅ **construido y probado** (2026-09-27) |
+| 8 | **Puerta** | Pasa, reintenta o bloquea | Máquina → **Tú** al bloquear | ✅ **construida y probada** (2026-09-27) |
 | 9 | **Aprobación y merge** | Rutas protegidas → tú; el resto, solo | Máquina → **Tú** en excepciones | ✅ |
 | 10 | **Despliegue** | Publicar y poder volver atrás | Máquina | ❌ sin destino decidido |
 | 11 | **Operación** | Que no se caiga en silencio | Máquina | ⚠️ diseñado, sin estrenar |
-| 12 | **Medición** | Saber si la fábrica funciona o solo va rápido | Máquina → **Tú** leyendo | ❌ **no existe** |
+| 12 | **Medición** | Saber si la fábrica funciona o solo va rápido | Máquina → **Tú** leyendo | ✅ **construida y probada** (2026-09-27) |
 
 **Apareces en cuatro de doce** (0, 8, 9, 12). De esos cuatro, **tres son avisos, no trabajo**: solo el 0 es tu tiempo de verdad.
 
@@ -61,7 +61,11 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 
 **6. Autocomprobación.** El agente corre sus pruebas. Es útil, pero **no es un control**: está medido que un agente satura sus propios tests, y que autocorregirse sin un oráculo externo **empeora** el resultado.
 
-## Las dos etapas que son el agujero
+## Las dos etapas que eran el agujero — **cerradas el 2026-09-27**
+
+> **Actualización (2026-09-27, tarde).** Esta sección se escribió cuando las etapas 7 y 12 eran los dos huecos del sistema. **Ya no lo son**: el verificador, la puerta y la medición están **construidos, probados en vivo y publicados en el tag `v0.4.0`**. Lo que sigue es el diseño que se decidió entonces, y sigue valiendo como despiece — pero **no como lista de lo que falta**. Estado real: [[astillero-bitacora]].
+>
+> Lo que **sí** queda de estos dos huecos es la parte que nunca se cerró: **medir la intención** (reconstruir el problema desde el cambio, sin ver el enunciado, y comprobar que reconcilia). El verificador mide «pasa», no «es lo que se pidió».
 
 **7. Verificación.** Es la que decide todo lo demás. Despiece de la pieza: [[verificador-de-tareas]] (el mecanismo) y [[recibo-de-verificacion]] (lo que queda escrito, 7b). **Corrección importante sobre lo que dije al principio:** propuse *ocultar* los tests al agente, y la evidencia dice que **ocultar mueve el agujero, no lo cierra**. Está medido: con tests invisibles, **más del 80 % de las ejecuciones especulan sobre un evaluador imaginado**, y en **el 10-25 % de los casos ese razonamiento desvía el trabajo de lo pedido y aun así cobra como correcto** — un fallo que además se vuelve **invisible** para quien solo mira el verde. La posición que sí está respaldada empíricamente es **solo lectura**: *«restaura el rendimiento legítimo a la vez que impide los intentos de modificar los tests»*.
 
@@ -81,7 +85,7 @@ La receta que sí tiene cifras de producción detrás, y que es la de los dos si
 ## Lo que está a medias, y por qué se deja
 
 - **2. Descomposición** — el criterio existe y está medido (por dependencia de estado, no por tamaño; cada unidad dentro de 20-30 K tokens; grafo re-ejecutable). Falta escribirlo como regla operativa.
-- **8. Puerta** — falta el vigilante: contador de intentos, bloqueo y aviso. Despiece: [[vigilante-de-tareas]]. Medido: ~30 % de las ejecuciones se desvían y el 90 % de esas se recuperan con **una** intervención.
+- ~~**8. Puerta** — falta el vigilante~~ — **hecho**: contador de intentos por tarea, bloqueo al segundo fallo y aviso con el diagnóstico dentro. Despiece: [[vigilante-de-tareas]]. Probado en vivo el 2026-09-27.
 - **11. Operación** — diseñado en [[devops-minimo]], sin estrenar.
 
 ## Lo que se aparca a propósito

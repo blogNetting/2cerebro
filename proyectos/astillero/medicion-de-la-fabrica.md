@@ -58,7 +58,18 @@ El modelo vigente tiene **cinco**, en dos grupos. **La quinta se añadió precis
 - **El desacuerdo DORA/Faros no está resuelto.** Si Faros tiene razón, **el caudal ya no es una señal válida** porque la IA lo sube y a la vez sube la inestabilidad. La postura de este diseño: se miden las cinco **y** el coste por cambio aceptado, y se vigila la **reversión** como la señal que no depende de ninguna encuesta.
 - **Sin la tasa de intervención humana, esto no se puede juzgar**: es la que dice si la fábrica es autónoma o eres tú haciéndola funcionar.
 
+## Lo que reveló construirla y correrla (2026-09-27)
+
+Se ejecutó de verdad sobre un proyecto generado con `copier`, y escribió `metricas/medicion.json`, `metricas/historial.jsonl` y `metricas/ultima.md` en una rama de datos. Tres cosas que solo se ven ejecutando:
+
+- **Los números que no puede calcular salen «no disponible» con su motivo, y eso es el comportamiento correcto.** Sin PRs fusionados en la ventana, la tasa de reversión **no es 0, es indefinida** — y así lo dice. El coste por cambio sale «no disponible» porque no hay colector de OpenTelemetry, y explica por qué: los tokens los emite Claude Code **en la máquina donde corre el CLI**, no en el repo. Un 0 en esa casilla habría sido una mentira con formato de dato.
+- **Funcionó sobre datos reales a la primera**: contó la tarea que el vigilante había bloqueado de verdad en ese mismo repo (1 con `estado:bloqueado`).
+- **Defecto conocido, dicho y no escondido:** la rama de datos se crea desde el checkout del proyecto, así que **arrastra una copia del árbol de código** del día en que corrió. Funciona y es estable, pero quien mire esa rama verá código viejo. Lo correcto sería una rama huérfana que solo llevara `metricas/`; cambiarlo obliga a volver a probarlo, así que queda anotado.
+
+**Sin verificar todavía:** el disparo por `schedule` (todas las corridas han sido manuales) y la consulta PromQL contra un colector real, que no existe.
+
 ## Enlaces
 
 - [[la-fabrica]] · [[vigilante-de-tareas]] · [[desarrollo-autonomo-con-agentes]]
+- [[astillero-bitacora]] — estado del trabajo y lo que falta
 - [[gas-city-frente-a-la-fabrica]] — un quinto caso de «nadie publica métricas de resultado»: el lanzamiento de Gas City v1.0, 4.613 palabras y cero cifras de calidad

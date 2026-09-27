@@ -20,11 +20,17 @@ Las cinco piezas, construidas y enlazadas entre sí:
 4. **Despliegue a producción** — [[flujo-agentes-arquitectura]] §15, nuevo hoy. CD automático en cada merge (sin checkpoint manual aparte del versionado), dónde corre la app, rollback como extensión de §10 (Fallos y recuperación), migraciones de schema siempre en dos tareas — con evidencia real de 40+ operadores en solitario, no manual de empresa grande. **Diseñado, no ejecutado en vivo todavía**: no hay ningún proyecto real desplegado bajo este mecanismo.
 5. **DevOps mínimo en producción** — [[devops-minimo]], nuevo hoy, el informe que pediste. Monitorización, alertado, gestión de incidentes (no hace falta on-call formal con un solo operador — hallazgo contraintuitivo con fuente), backup/DR, rotación de secretos, parcheo de dependencias, coste — todo anclado en un caso real auditable (Healthchecks.io, SaaS operado en solitario, stack de producción público). **Diseñado con evidencia real, no ejecutado en vivo**: nada de esto corre todavía sobre una app real de Astillero.
 
-**Despiece por etapas y estado de madurez:** [[la-fabrica]] — las doce etapas del sistema, quién actúa en cada una, y la separación entre lo que ya puede operar solo y lo que no. Los dos agujeros identificados hoy: **la verificación** (falta el oráculo que el agente no pueda tocar) y **la medición** (no existe).
+**Despiece por etapas y estado de madurez:** [[la-fabrica]] — las doce etapas del sistema, quién actúa en cada una, y la separación entre lo que ya puede operar solo y lo que no. Los dos agujeros identificados aquel día: **la verificación** (faltaba el oráculo que el agente no pueda tocar) y **la medición** (no existía). **Los dos CERRADOS el 2026-09-27** — construidos, probados en vivo y publicados en el tag `v0.4.0`. Ver [[astillero-bitacora]].
 
 **Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. El revisor con Opus tampoco se ha ejecutado todavía (falta tu token). La parametrización real de imports de gh-aw sigue sin resolver (ver «Pendiente de decidir»).
 
 Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarrollo-agentes-investigacion]]. El informe [[orquestacion-opus-deepseek-informe]] es la primera versión, parcial, superada por [[flujo-agentes-arquitectura]].
+
+**Estado del trabajo, al día:** [[astillero-bitacora]] — qué está hecho y comprobado (con su commit), qué está en curso y qué falta. Si una sesión se corta, eso es lo que sobrevive.
+
+**Plan de trabajo, al día:** [[astillero-plan]] — lo que queda, en orden y con su porqué.
+
+**El protocolo, obligatorio en cada pieza:** **implementar → probar en vivo (por el camino que usa un proyecto de verdad) → redactar la wiki explicando cómo funciona → actualizar la bitácora.** Documentar no es listar cambios: es explicar el funcionamiento para que nadie tenga que reconstruirlo. El detalle está en [[astillero-bitacora]].
 
 ## Repo: Astillero
 
@@ -81,9 +87,16 @@ Después de esas respuestas:
 
 ## Pendiente de decidir
 
+> **Ojo con esta lista: mezcla dos épocas.** Los cuatro primeros puntos son de **antes del research** (2026-09-24/25) y **no se han revisado desde entonces** — varios pueden estar ya cerrados o haber cambiado de forma. Los de **2026-09-27** son de hoy. Antes de dar cualquiera por abierto, comprobar. Esta mezcla sin fechar es lo que hizo que se volviera a plantear como pendiente algo ya tratado.
+
 - Plataforma git por proyecto y nivel de autonomía, es decir, en qué puntos aprueba una persona. Aplazado a propósito.
 - Modelo de ramas: está propuesto trunk-based, falta confirmarlo.
 - Parametrización real de los imports de gh-aw (`uses:`/`with:`/`import-schema`): intentada y abandonada tras varios errores de compilación reales; hoy el ecosistema de red y demás variables por proyecto se fijan a mano en el wrapper fino, no se pasan como parámetro. Gap conocido, no bloqueante.
+- **Pruebas propias de Astillero, con cobertura.** Astillero no tiene tests que comprueben lo que él mismo hace. Hay que crearlos, de forma que al llevar Astillero a otro sitio se puedan **lanzar allí todos los tests y verificar que funciona también allí**, y medir cobertura para comprobar que los escenarios están cubiertos. Nace de un fallo real, no de una precaución: el verificador llevaba desde su primer commit sin poder ejecutar la suite (no instalaba las dependencias del proyecto), y **ninguna prueba lo detectó** — apareció el 2026-09-27 al ejecutarlo en vivo sobre un proyecto generado con `copier`. Detalle en [[decisiones]].
+- **Exportar Astillero para crear proyectos.** Qué habría que mover, cómo moverlo y con qué estructura de directorio (incluido sacarlo de la cuenta `blogNetting`). Instrucción tuya: se estudia **cuando todo lo demás esté cerrado y atado**, y entonces te lo pregunto yo. Ver [[decisiones]].
+- **El PDF de [[la-fabrica]].** Pedido por ti el 2026-09-27 («recuerda el PDF que te he pedido, cuando lo tengas avísame») y **sin anotar hasta ahora** — se perdía en cuanto cerrara la sesión. Quedó pendiente de los dos barridos que faltaban (verificación práctica y medición). Se avisa cuando esté.
+- ~~Las 7 revisiones de Gas City~~ — **cerrado.** El usuario confirma (2026-09-27) que **ya se trató**: no es un pendiente abierto. Lo único vivo de ahí es el código `75`, ya aplicado y dentro de `v0.4.0`. **No volver a plantearlo como pregunta.**
+- **Documentación interna del repo.** Rescatada el 2026-09-27 de un clon en `/tmp` (se iba a perder) a la rama `docs/estado-interno`. Está **desfasada** —dice «en construcción» de la Medición, la Puerta y el Raíl de idea, que ya existen en ramas— y el README **enlaza a cuatro ficheros que no existen**: `docs/piezas/`, `docs/crear-un-proyecto.md`, `docs/actualizar-un-proyecto.md` y `docs/decisiones/`. Además afirma que un proyecto «solo tiene llamadas de diez líneas»; el `ci.yml` que genera el molde son ~100 líneas copiadas dentro, no una llamada. Los cuatro enlaces rotos y esa afirmación necesitan decisión: escribirlos o corregir el README.
 - Cuándo arranca el primer piloto ([[patrimonial]]): el sistema ya está completo; falta que tú lo decidas.
 
 ## Enlaces
