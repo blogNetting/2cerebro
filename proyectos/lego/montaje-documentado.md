@@ -10,7 +10,7 @@ zona: tecnico
 
 ## El montaje mínimo que existe, con sus ficheros
 
-**[fstandhartinger/ralph-wiggum](https://github.com/fstandhartinger/ralph-wiggum)** — MIT, 300★, último empujón mayo de 2026. **Es el más completo de los mínimos**, y sus ficheros están a la vista:
+**[fstandhartinger/ralph-wiggum](https://github.com/fstandhartinger/ralph-wiggum)** — MIT, 300★, último empujón mayo de 2026. **Es una implementación de Ralph Wiggum, la técnica de Huntley — una de las doce que existen, y no la de más estrellas.** Se elige por lo que trae, no por ser «la»:
 
 | Fichero | Para qué |
 |---|---|

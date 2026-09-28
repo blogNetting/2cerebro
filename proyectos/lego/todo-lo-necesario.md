@@ -478,7 +478,7 @@ git merge tarea/002-login
 | Repo | Qué es | Por qué |
 |---|---|---|
 | [`musistudio/claude-code-router`](https://github.com/musistudio/claude-code-router) | **El router.** 37.461★, MIT | **La pieza que hace conmutable el modelo** |
-| [`fstandhartinger/ralph-wiggum`](https://github.com/fstandhartinger/ralph-wiggum) | El bucle con cortacircuitos, reintentos y avisos | **El más completo** |
+| [`fstandhartinger/ralph-wiggum`](https://github.com/fstandhartinger/ralph-wiggum) | El bucle con cortacircuitos, reintentos y avisos | **Elección, no «la»**: es una de las doce implementaciones de Ralph. 300★, frente a los 3.160★ de `ralph-orchestrator` |
 | [`khgs2411/flow`](https://github.com/khgs2411/flow) | Un solo script de bash, sin dependencias | Si quieres lo mínimo |
 | [`ghuntley/how-to-ralph-wiggum`](https://github.com/ghuntley/how-to-ralph-wiggum) | El del creador del patrón | La fuente primaria |
 | [`BerriAI/litellm`](https://github.com/BerriAI/litellm) | Alternativa al router. 59.793★ | Si prefieres otra pasarela |
