@@ -452,3 +452,33 @@ El usuario preguntó directamente: *«¿el revisor revisa y comenta bien?»* No 
 **Lo comprobado:** la PR #17 (sube `proyecto-vigilante` a `v0.7.0`, con el prompt de K9 ya dentro) terminó `Revisar con Opus: success` **y no publicó ningún comentario**. Causa real, en el registro: `Workflow validation failed` — la protección de `claude-code-action` contra workflows modificados (se niega a correr si el que lo invoca difiere del de `main`), porque esa PR tocaba `revisar.yml`. **El `success` del job lo escondía.**
 
 **Repasadas las 15 corridas del revisor de hoy: la única que comentó de verdad fue con el prompt VIEJO** (00:53, antes de K9). Ninguna ejecución posterior a añadir la línea `VEREDICTO-MAQUINA` ha comentado nada — todas tocaban `revisar.yml` en la misma PR revisada. **No hay ninguna prueba de que el prompt actual siga comentando bien.** Se corrige el estado de la tarea 22 del plan, que lo daba por «hecho y probado en vivo» sin ese matiz.
+
+## 2026-09-28 (noche, aún más tarde) — Cerrado: el revisor sí comenta bien con el prompt actual
+
+El usuario pidió seguir con las tareas que no dependen de él. La primera fue esta, la más urgente de las abiertas. Se abrió una PR de prueba (`prueba/revisor-comenta-v0.7.0` en `proyecto-vigilante`, PR #18) diseñada para esquivar el bloqueo de la entrada anterior: una función sin contrato enlazado, **sin tocar `revisar.yml`**.
+
+**Resultado, confirmado con el comentario real:** veredicto `CAMBIOS_PEDIDOS` correcto (sin contrato, no se aprueba), con dos observaciones con criterio (fallo de tipado real en el test, commit sin Conventional Commits) y terminado con `VEREDICTO-MAQUINA: CAMBIOS_PEDIDOS` exacto. El paso de lectura de K9 lo detectó bien en producción (`pide_cambios=true`, intentó la App, se saltó con el aviso correcto). **El mecanismo entero queda confirmado hasta el único eslabón que sigue faltando: la GitHub App real.**
+
+Hallazgo menor sin bloquear nada: Claude señaló que publica editando su comentario de seguimiento, no creando uno con `gh pr comment` como pide el prompt — no rompe la lectura (coge el último comentario, sea cual sea su origen), pero el prompt describe algo que la acción no hace. Pendiente simplificar, no urgente. Tarea 22 del plan corregida a cerrada.
+
+## 2026-09-28 (madrugada) — Primera pieza de tests propios de Astillero (tarea 2), y tres avisos reales de shellcheck
+
+Siguiente tarea de la lista sin depender del usuario. Construida la primera pieza de la tarea 2 (pedida el 2026-09-27: *«tenemos que crear test que comprueben todo lo que hacemos en astillero... y obviamente hay que crear una cobertura»*): la lógica de clasificación del verificador, y un lint que impide que el bug del exit-1 reaparezca en cualquier workflow.
+
+**Decisión de diseño obligada, no elegida:** `scripts/clasificar-veredicto.sh` es una copia de la lógica real, no el código que corre — `verificar.yml` hace checkout del repo del **proyecto**, nunca del de Astillero, así que un script propio no está disponible cuando ese paso se ejecuta de verdad. La protección real está en `tests/test_lint_workflows.py`, que sí mira el fichero real con PyYAML.
+
+**Salieron tres avisos reales de `shellcheck`, invisibles hasta subir a un runner real** (el binario local no tiene `shellcheck`, así que «0 hallazgos en local» no probaba nada): tres `-gt` comparando contra `${{ ... }}` sin pasar por una variable (arreglados), y `grep | wc -l` en vez de `grep -c` (arreglado en dos de tres, con una trampa real comprobada antes de aplicar el cambio: `grep -c` sale 1 sin coincidencias, y bajo `bash -e` eso habría matado el paso en el caso común y bueno — cero tests borrados).
+
+**Dos fallos propios, corregidos antes de pedir revisión:** el primer commit subió `__pycache__` (Astillero nunca tuvo `.gitignore`, arreglado); y el primer intento de filtrar el falso positivo de `concurrency: queue` con `grep` a mano falló en el runner real (se comía el mensaje pero dejaba el contexto), corregido usando `-ignore`, el mecanismo propio de `actionlint`.
+
+**Probado en tres niveles**: los 11 tests en local y en runner real; el bug del exit-1 y la lógica de borrados reintroducidos a propósito, y los tests fallando donde tenían que; y el escenario original completo (`divide(1,0)` + test borrado) repetido sobre `proyecto-vigilante` contra el arreglo de `grep -c`, con el mismo resultado de siempre. **PR #31, abierta, `MERGEABLE`/`CLEAN`, sin fusionar** — no es cosa mía.
+
+## 2026-09-28 — Investigación de compra: no se entrega nada citando un listado de resultados en vez de la ficha del producto
+
+Investigando grifo de ducha para el alquiler de Carballo ([[duchas-alquiler-carballo]]), el usuario detectó el fallo: *«el producto de Amazon no existe, eso no es aceptable»*. La nota entregada citaba productos de Amazon con **enlaces de búsqueda** (`/s?k=…`) presentados como enlaces de producto, y con precios leídos de **tarjetas de resultados del buscador** sin abrir nunca la ficha. Al rehacerlo abriendo ficha por ficha aparecieron cuatro fallos más del mismo tipo:
+
+- Dos productos que parecían buenas ofertas y no lo son, y **solo se ve al abrir**: la Roca Sensum a 55,24 € **no lleva grifo y está sin stock**; el kit Stella a 63,75 € **tarda 6-7 meses** y tampoco lleva grifo.
+- Una oferta devuelta por el buscador (Roca Victoria Plus a **51,58 €**) que **no existe**: el listado real de vendedores de ese ASIN empieza en 68,50 €.
+- Una **Roca Mitos Plus de Bauhaus a 53,99 €** que **es un conjunto completo** (ducha Natura, flexo metálico 1,50 m, soporte articulado, cartucho cerámico) y que se había despachado como "mezclador suelto" por no abrir su ficha. Bauhaus tampoco publica la tarifa de envío en página general, pero **sí en la ficha** (3,90 €): de ahí salió un "sin publicar" que era falso.
+
+**Regla general que se deriva, aplicable a toda investigación de compra:** un listado de resultados no es una ficha, y un titular no es un producto. Antes de citar un producto se abre su ficha y se leen ahí el precio, el estado de stock, quién lo vende y **qué incluye exactamente** — porque "no lleva el grifo" y "sin stock" son cosas que la tarjeta de resultados no muestra. Los enlaces que se entreguen son de producto, nunca de búsqueda. Y una cifra que solo aparece en un resumen de buscador no se usa hasta reproducirla en la fuente.

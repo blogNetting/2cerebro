@@ -12,7 +12,7 @@ Cada paso va con las cuatro cosas que pediste: **quién actúa, qué genera, qu�
 
 ## El recorrido, dibujado
 
-![[01-recorrido.png]]
+![[04-los-17-pasos.png]]
 
 ---
 
@@ -155,7 +155,7 @@ Una web para ver mi patrimonio y mi gasto. Un solo usuario: yo.
 
 # PASO 4 — Las tareas
 
-![[03-anatomia.png]]
+*(El recorrido de una tarea está dibujado en [[una-tarea-completa]], con sus 17 pasos.)*
 
 ## El fichero, con la forma real
 

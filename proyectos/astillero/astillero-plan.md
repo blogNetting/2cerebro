@@ -20,9 +20,18 @@ zona: tecnico
 
 ## Fase 1 — lo siguiente (no depende de nadie)
 
-**2 · Tests propios de Astillero, con cobertura.**
+**2 · Tests propios de Astillero, con cobertura — ⚠️ PRIMERA PIEZA HECHA Y PROBADA, sin fusionar.**
 Qué: que el YAML valide, que las plantillas rendericen, que las llamadas finas declaren lo que el workflow llamado acepta, y que la lógica del veredicto acierte en cada caso (0 / 75 / fallo / test borrado / no arrancó).
-Listo cuando: corra en CI y **falle** si se reintroduce a propósito cualquiera de los tres fallos de hoy.
+
+**Construido (2026-09-28, PR #31):** `scripts/clasificar-veredicto.sh` (copia probada de la lógica de «Clasificar» de `verificar.yml` — no puede ser el código real porque ese paso hace checkout del repo del *proyecto*, no del de Astillero), `tests/test_clasificar_veredicto.py` (8 casos), `tests/test_lint_workflows.py` (impide que el patrón del bug del exit-1 reaparezca en cualquier workflow), y `.github/workflows/test.yml` (actionlint, fuente oficial fijada por commit y versión, + pytest, en cada PR). De paso, **Astillero nunca había tenido `.gitignore`** — añadido.
+
+**Encontró tres avisos reales de shellcheck que no se sabía que existían** (solo salen en el runner real de GitHub, el binario local no tiene shellcheck): dos `-gt` comparando directo contra `${{ ... }}` interpolado en vez de una variable — arreglados en las tres ocurrencias. Y al intentar aplicar la sugerencia de `grep -c` en vez de `grep | wc -l`, **se encontró una trampa real antes de aplicarla, comprobada en vivo**: `grep -c` sale con código 1 sin coincidencias, y bajo `bash -e` eso mata el paso — el caso común y bueno (0 tests borrados) habría hecho fallar el verificador siempre. Corregido con `|| true` donde aplica; la tercera ocurrencia (`grep -r` multi-fichero) se dejó igual y documentada como falso positivo, mismo criterio que `concurrency: queue`.
+
+**Probado, no solo escrito:** 11 tests pasan, en local y en el runner real de GitHub. Se reintrodujo a propósito el bug del exit-1 y `test_lint_workflows` falló exactamente donde tenía que; se rompió a propósito la lógica de borrados y `test_clasificar_veredicto` también. Y el escenario original completo (`divide(1,0)` roto + test borrado, sobre `proyecto-vigilante` apuntando a la rama) se repitió contra el arreglo de `grep -c`: lo sigue cazando bien, `Tests eliminados: 1 funciones`, veredicto `aun-no`.
+
+**Estado:** PR **#31 abierta, sin fusionar**, `MERGEABLE`/`CLEAN`, los dos checks en verde.
+
+**Lo que le falta a esta tarea, sin cerrar:** que las plantillas Jinja del molde rendericen sin errores, y que las llamadas finas de un proyecto generado declaren lo que el workflow reutilizable acepta. Listo cuando eso también corra en CI.
 
 **3 · El manual técnico de Astillero — ✅ PRIMERA VERSIÓN HECHA** (PR #17).
 `docs/manual.md`, en `main`: cómo funciona el sistema entero, por piezas y en el orden en que ocurren las cosas. Se escribió fundiendo `como-funciona.md` en él.
@@ -57,12 +66,11 @@ Probado en vivo sobre un proyecto generado, y es lo mejor que salió hoy: el age
 
 **12 · La rama de datos de la medición — ARREGLADA, SIN PROBAR.** Arrastraba una copia entera del código del proyecto; ahora se crea **huérfana** y solo lleva `metricas/`. Publicado en la `v0.5.0`. **Falta probarla**, y para eso hay que partir de un proyecto sin esa rama.
 
-**22 · El revisor: que publique su veredicto — ⚠️ PROBADO CON EL PROMPT VIEJO, NO CON EL ACTUAL.**
+**22 · El revisor: que publique su veredicto — ✅ CONFIRMADO CON EL PROMPT ACTUAL (2026-09-28, tarde-noche).**
 Es el agente que lee una PR y **la compara contra el contrato de la tarea**. Lo de aquí arriba (disparo por etiqueta tras la CI, contrato K7) **resultó imposible de construir**: GitHub no crea ejecuciones a partir de eventos que dispara el propio `GITHUB_TOKEN`, y la etiqueta nunca disparaba nada. Se cambió a `pull_request` directo, sin esperar a la CI — **desviación explícita de K7**, no un descuido: el revisor ya puede correr con la CI en rojo.
-**Probado en vivo de verdad, pero con el prompt de ANTES de K9:** sobre la PR #13 de `proyecto-vigilante` (00:53 del 2026-09-28), con veredicto real publicado y una segunda pasada reconociendo qué cambios ya se habían corregido. Ese prompt no tenía la línea `VEREDICTO-MAQUINA` que se le añadió después para K9.
-**Corrección del 2026-09-28 noche, encontrada al preguntarme el usuario directamente si el revisor comenta bien:** **desde que se añadió esa línea, ninguna ejecución ha comentado nada.** Comprobado en las 15 corridas de hoy: las que tocaban `revisar.yml` en la misma PR se saltaron por la protección de `claude-code-action` contra workflows modificados (`Workflow validation failed`) — **y el job salía en `success` igual, escondiéndolo.** No hay ninguna prueba de que el prompt actual siga comentando bien. Detalle completo en [[astillero-bitacora]].
-**Cómo se cierra de verdad:** una PR que no toque `revisar.yml`, contra `main` (ya en `v0.7.0`). Pendiente, no hecho.
-**Y sigue faltando, tarea 24:** etiquetar `agente:rehacer` cuando pide cambios (K9) — sin eso el bucle de rehacer sigue sin arrancar nunca, y ahora tampoco está confirmado que llegue a pedir cambios correctamente.
+**El hueco de esta noche (el revisor daba `success` sin comentar) — cerrado.** Se abrió una PR de prueba (#18 de `proyecto-vigilante`) que a propósito **no tocaba `revisar.yml`**, para esquivar la protección de `claude-code-action` que se había estado comiendo las pruebas anteriores en silencio. Resultado: **el revisor comentó de verdad**, con veredicto `CAMBIOS_PEDIDOS` correcto (la PR no enlazaba ningún contrato, tal y como se esperaba de la prueba), señalando además un fallo real de tipado en el test añadido y que el commit no seguía Conventional Commits — una revisión con criterio, no genérica. Terminó con la línea `VEREDICTO-MAQUINA: CAMBIOS_PEDIDOS` tal y como pide el prompt de K9.
+**Y el paso de lectura de K9 la detectó bien, en producción, no solo en local:** `pide_cambios=true`, intentó minar el token de la GitHub App, y se saltó con el aviso correcto (`vars.APP_ID` vacío) — exactamente el comportamiento diseñado. Confirma que el mecanismo entero funciona hasta el último eslabón que falta: la App.
+**Hallazgo menor, no bloqueante:** el propio Claude señaló en su comentario que publica editando su comentario de seguimiento (`track_progress`), no creando uno nuevo con `gh pr comment` como pide el prompt — no rompe nada porque el paso de lectura coge el **último** comentario sea cual sea su origen, pero vale la pena simplificar el prompt para que no pida un mecanismo que la acción no usa.
 
 **13 · Que la CI del molde no nazca en rojo — ✅ HECHO.** Cinco fallos encontrados, arreglados, documentados y verificados: la CI del proyecto generado pasó a **verde entero**. Comprobado el 2026-09-27 sobre un proyecto generado: **6 fallos de 6**, por **cuatro causas distintas** y solo una es el token que ya sabíamos:
 1. **`tipos`** — instala `mypy` pero **no las dependencias del proyecto**, así que mypy no encuentra `pytest`. Fallo del molde.

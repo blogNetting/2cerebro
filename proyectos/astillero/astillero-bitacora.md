@@ -449,6 +449,29 @@ Action skipped due to workflow validation error.
 
 **Cómo se prueba de verdad:** una PR que NO toque `.github/workflows/revisar.yml`, contra `main` ya con `v0.7.0` fusionado (que ya lo está). No hace falta ningún bloqueo nuevo — el motivo de que no se haya hecho hoy es que las tres PRs de prueba de esta sesión (16 y 17) tocaban precisamente ese fichero, por error de diseño de la prueba, no por un bloqueo real.
 
+### Cerrado: la PR #18, hecha bien, confirma que el revisor funciona con el prompt actual
+
+Se abrió la PR que faltaba — `prueba/revisor-comenta-v0.7.0` en `proyecto-vigilante`, una función `resta()` con su test, **sin tocar `revisar.yml`** y **sin enlazar ningún contrato**, para forzar el mismo escenario que ya dio un `CAMBIOS_PEDIDOS` real ayer (PR #13).
+
+**Resultado: comentó de verdad.** Veredicto real, con criterio, no genérico:
+- `CAMBIOS_PEDIDOS`, correcto: sin contrato enlazado, no se puede aprobar.
+- Señaló un fallo de tipado real que ni se había buscado a propósito: `def test_resta():` sin anotación de retorno, que `mypy --strict` marcaría.
+- Señaló que el commit no seguía Conventional Commits.
+- Terminó con `VEREDICTO-MAQUINA: CAMBIOS_PEDIDOS`, exactamente como pide el prompt de K9.
+
+**Y el paso de lectura de K9 lo cazó bien, en producción, no solo en la prueba de 6 casos en local de anoche:**
+```
+Leer el veredicto de la máquina: success  →  pide_cambios=true
+Token de la GitHub App: skipped
+Poner agente:rehacer: skipped
+Sin GitHub App configurada — aviso, no fallo: success
+```
+El aviso `::warning::` salió con el texto exacto escrito para ese caso. **El mecanismo entero de K9 queda confirmado hasta el último eslabón que falta, que sigue siendo solo la GitHub App real.**
+
+**Un hallazgo menor, sin bloquear nada, que el propio Claude señaló en su comentario:** publica editando su comentario de seguimiento (`track_progress: true`), no creando uno nuevo con `gh pr comment` como le pide el prompt. No rompe la lectura del veredicto —el paso coge el **último** comentario, sea cual sea su origen—, pero el prompt describe un mecanismo que la acción no usa. Pendiente simplificarlo, no urgente.
+
+**La tarea 22 del plan queda corregida a `✅ CONFIRMADO CON EL PROMPT ACTUAL`.** La corrección de esta madrugada («no hay ninguna prueba») queda como estaba, sin reescribirla — es el registro real de por qué hacía falta esta prueba.
+
 **Bloqueos de permisos confirmados hoy, con intentos reales, no supuestos:**
 
 | Acción | Bloqueado por |
@@ -458,6 +481,31 @@ Action skipped due to workflow validation error.
 | `gh api -X DELETE` sobre una rama | Clasificador «Git Destructive» |
 
 Las tres las tuvo que hacer el usuario.
+
+## 2026-09-28 (madrugada) — Primera pieza de tests propios, y encontró tres avisos que nadie sabía que existían
+
+Tarea 2 del plan, la que el usuario pidió el 2026-09-27 («que se puedan lanzar todos los tests y verificar que todo funciona»). Primera pieza real: la lógica de clasificación del verificador y un lint contra el bug del exit-1.
+
+**El obstáculo de diseño, resuelto antes de escribir nada:** `verificar.yml` hace checkout del repo del **proyecto** que se está verificando, nunca del de Astillero — así que un script guardado en Astillero no puede ejecutarse desde dentro de ese paso, en ningún proyecto real. Solución: `scripts/clasificar-veredicto.sh` es una **copia probada** de esa lógica (parametrizada por variables de entorno en vez de `${{ ... }}`), y `tests/test_lint_workflows.py` es la protección que sí mira el fichero **real**: comprueba, con PyYAML, que ningún workflow (no solo `verificar.yml`) repite el patrón exacto del bug de ayer — una guarda `[ ... ] && algo` como última línea de un paso `run:`.
+
+**Salieron tres avisos reales de `shellcheck` que nadie sabía que existían**, y solo aparecieron en el runner real de GitHub — el binario local de `actionlint` no tiene `shellcheck` instalado, así que 0 hallazgos en local no significaba «no hay nada», significaba «no se está mirando».
+
+1. **Tres `-gt` comparando directo contra `${{ ... }}` interpolado**, en vez de asignarlo antes a una variable de shell (SC2170). Arreglados los tres, mismo patrón ya usado en `scripts/clasificar-veredicto.sh`.
+2. **`grep | wc -l` en vez de `grep -c`** (SC2126), con una trampa real detrás que se comprobó **antes** de aplicar el cambio, no después: `grep -c` sale con código 1 si no hay coincidencias, y el paso corre bajo `bash -e`. Sin un `|| true` explícito, **el caso común y bueno — cero tests borrados — habría matado el paso entero**, una regresión peor que el aviso de estilo que se estaba corrigiendo. Comprobado con `bash -e -c` suelto antes de tocar el fichero real. Arreglado en dos de las tres ocurrencias; la tercera (`grep -r` sobre varios ficheros) se deja igual y se documenta como falso positivo — con `-c` y `-r`, `grep` cuenta por fichero, no un total agregado, y cambiarlo rompería la cuenta. Mismo criterio ya establecido para `concurrency: queue`.
+3. **Tres `echo >> $GITHUB_OUTPUT` sueltos**, consolidados en un bloque (SC2129), sin riesgo, puramente cosmético.
+
+**`actionlint` en la CI usa la fuente oficial de la herramienta** (el script de descarga de `rhysd/actionlint`, fijado por commit y por versión concreta), no una action de terceros sin relación con el proyecto — mismo criterio de fijar dependencias que el resto del repo.
+
+**Un fallo mío en el primer intento, corregido antes de pedir revisión:** el primer commit subió sin querer `tests/__pycache__/*.pyc` — Astillero nunca había tenido `.gitignore`, ni uno. Corregido con `--amend`, añadido el `.gitignore` que faltaba.
+
+**Y un segundo fallo, esta vez en la propia CI nueva:** el primer intento de filtrar el falso positivo de `concurrency: queue` con `grep -v` a mano **falló en el runner real** — se comía la línea del mensaje pero dejaba el contexto de abajo (el fragmento del YAML con la flecha `^~~~~~`), y el paso seguía fallando igual. Corregido usando `-ignore`, el mecanismo propio de `actionlint` para esto.
+
+**Probado de verdad, en tres niveles:**
+1. Los 11 tests pasan, en local y en el runner real de GitHub Actions.
+2. Se reintrodujo a propósito el bug del exit-1 en una copia y `test_lint_workflows` falló exactamente donde tenía que; se rompió a propósito la comparación de tests borrados y `test_clasificar_veredicto` también. Los dos, restaurados y vueltos a pasar antes del commit real.
+3. Se repitió el escenario original completo que validó el verificador la primera vez (`divide(1,0)` roto + `test_divide_por_cero` borrado) sobre `proyecto-vigilante`, apuntado temporalmente a la rama del arreglo: `Tests eliminados: 1 funciones`, `NO VERIFICADO`, veredicto `aun-no`, `DID NOT RAISE ValueError`. El arreglo de `grep -c` no rompió el caso que todo esto existe para cazar.
+
+**Estado: PR #31 en `blogNetting/astillero`, abierta, `MERGEABLE`/`CLEAN`, dos checks en verde.** Sin fusionar — no es cosa mía.
 
 ## Enlaces
 
