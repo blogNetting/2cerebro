@@ -272,6 +272,75 @@ Y una **imprecisión del manual**, corregida: decía «el agente no puede etique
 
 **Y un fallo mío, del mismo día y del mismo tipo:** dos filas del checklist llevaban sin actualizar desde la mañana porque **mis ediciones anteriores no se aplicaron y no lo comprobé**. El Ejecutor seguía en «probado» cuando lo real es que hace el trabajo y no lo entrega. Es exactamente el fallo que el usuario señala: dar por hecho sin abrir el resultado.
 
+### El cotejo research ↔ montado: los doce contratos, uno a uno
+
+El research define **doce contratos** entre piezas (`flujo-agentes-arquitectura` §4). Comprobados contra el código el 2026-09-28, uno por uno:
+
+| Contrato | Qué es | ¿Construido? |
+|---|---|---|
+| **K1** · Diseñador → repo | La especificación (`specs/<feature>/spec.md`, `plan.md`, `tasks.md`) como PR | ❌ **No** |
+| **K2** · Persona → repo | Aprobación del diseño por revisión de esa PR | ❌ **No** |
+| **K3** · Desglosador → tracker | Una épica por *feature* y una sub-issue por tarea, con su contrato y dependencias | ❌ **No** |
+| **K4** · Tracker → ejecutor | Etiqueta `agente:implementar` de un solo uso | ✅ El `label_command` de gh-aw, que la retira solo |
+| **K5** · Ejecutor → repo | PR con prefijo `[agente] `, `Closes #N` y etiqueta `estado:en-revision` | ✅ Las tres, en `shared/implementar-core.md`. Y la idempotencia: *«si la tarea ya tiene PR abierta, termina sin hacer nada»* |
+| **K6** · PR → CI | Checks obligatorios por ruleset | ❌ **No** — necesita GitHub Pro en repo privado, confirmado por el research |
+| **K7** · CI → revisor | El disparo del revisor | ✅ Arreglado el 2026-09-27: **por etiqueta tras la CI** |
+| **K8** · Revisor → PR | Veredicto, y `agente:rehacer` si pide cambios | ⚠️ **A medias**: comenta, pero **no puede etiquetar** (sin `issues: write`) |
+| **K9** · PR → ejecutor (rehacer) | Etiqueta `agente:rehacer` + empujar a la rama de la PR | ⚠️ **Configurado y desconectado**: `push-to-pull-request-branch` está en `shared/rehacer-core.md`, pero **nadie pone la etiqueta** |
+| **K10** · PR aprobada → integración | Merge queue | ❌ **No** — mismo motivo que K6 |
+| **K11** · Merge → tracker | `Closes #N` cierra la issue | ✅ Nativo de GitHub |
+| **K12** · Cierre → reconciliador | Promover lo desbloqueado con `estado:listo` + `agente:implementar` | ✅ `reconciliar.yml`, con `issues: closed` y `blockedBy` |
+
+**Lo que dicen las doce, en una frase:** **cinco no existen** (K1, K2, K3, K6, K10), **dos están a medias y por el mismo motivo** (K8 y K9: el revisor no puede etiquetar, así que el bucle de rehacer no arranca nunca), y **cinco funcionan**.
+
+**Y el hueco de los tres primeros no es un descuido suelto: K1, K2 y K3 son la entrada del sistema** — convertir una idea en especificación, que alguien la apruebe, y partirla en tareas. Es lo que en el plan son la **descomposición (etapa 2)** y la **capa de producto**. **Hoy el sistema sabe ejecutar y verificar, y no sabe empezar.**
+
+### Más errores: el contrato ✓, la cobertura ✗
+
+**El contrato de tarea, comprobado y COINCIDE.** El research pide ocho secciones (`arquitectura` §6) y la plantilla del molde **las trae las ocho**: Objetivo · Contexto · Alcance · Interfaces · Criterios de aceptación (EARS) · Riesgos de intención fuera del EARS · Tests obligatorios · Hecho cuando. Sin huecos.
+
+**Y la cobertura, no coincide — falta el control que el research llama «el correcto».**
+
+El research lo pone como **obligatorio** en dos sitios:
+
+> *«coverage.py/Vitest v8 + **Codecov patch gate obligatorio**, sin umbral global»* (`desarrollo-agentes-f4-devsecops` §159)
+> *«Patch/diff coverage — Gate específico para "¿las líneas que tocó este PR están testeadas?" — **el control correcto**»* (`f4-devsecops` §138)
+
+**Lo montado:** el job instala coverage, lo ejecuta, genera `coverage.xml` y lo sube a Codecov con `fail_ci_if_error: false`. Y **no hay ningún fichero de configuración de Codecov en el repo** — comprobado buscando en el árbol de `main`. Es decir: **se sube un número y nadie comprueba nada**. No hay gate por cambio, y tampoco el umbral global que el research descarta — simplemente **no hay gate**.
+
+**Por qué importa, con las palabras del propio research:** la cobertura de línea «es necesaria pero no suficiente y por sí sola es fácil de engañar por un agente que genera tests triviales para cumplir el número». El patch gate es justo lo que **impide subir el número sin cubrir lo nuevo**.
+
+### El hallazgo que más pesa: **el fail-closed no está en vigor**
+
+El manual afirma, y el diseño entero se apoya en ello:
+
+> **«Fail-closed: sin veredicto no se fusiona; el check queda rojo a propósito.»**
+
+**Y eso hoy no es verdad.** Comprobado el 2026-09-28 contra la API real:
+
+```
+rulesets de main           → 403 «Upgrade to GitHub Pro…»   → NO EXISTEN
+branch protection de main  → 403 «Upgrade to GitHub Pro…»   → NO EXISTE
+```
+
+**Un check rojo no impide fusionar si nadie lo declara obligatorio.** Sin ruleset, **ninguno de los trabajos de la CI bloquea nada** — ni el verificador, ni el tipo estricto, ni los tests. El «check rojo a propósito» del verificador es hoy **información en una pantalla, no una puerta**. Cualquiera con permiso de escritura puede fusionar una PR con todo en rojo.
+
+**Por qué no es un descuido menor:** medio sistema está diseñado alrededor de esa puerta. El verificador, la puerta con contador y el contrato de los tres códigos **asumen que su veredicto impide la fusión**. Si no la impide, lo que hay es un semáforo que nadie mira.
+
+**Y la causa está documentada desde antes:** el research ya lo dijo — *«requiere GitHub Pro en repo privado, confirmado con la API real el 2026-09-25»* (K6). **Lo que faltaba era decirlo en el manual**, donde hoy se afirma lo contrario.
+
+### Y tres huecos más del molde, del mismo cotejo
+
+| Qué pide el research (`arquitectura` §8) | Lo que hay |
+|---|---|
+| **Cobertura del diff** — «Codecov `patch` status, sin umbral global… el control correcto» | ❌ **No existe**: no hay ni fichero de configuración de Codecov. Se sube el número y **nadie comprueba que lo nuevo esté cubierto** |
+| **Mutación del diff** — mutmut **sobre los ficheros cambiados**, filtrando antes los mutantes triviales o «generan ruido de CI sin señal» | ⚠️ **Corre pero no es puerta**: `mutmut run` + `mutmut results`, y **nunca falla**. Si sobreviven todos los mutantes, la CI pasa igual. Y **no filtra** los triviales, que es justo el ruido que el research avisa |
+| **Dependencias** — «OSV-Scanner **+ Dependabot**» | ⚠️ **OSV sí, Dependabot no**: el árbol de `main` no tiene `.github/dependabot.yml` |
+
+**Y ya está corregido en la documentación** (rama `docs/manual-completo`, PR #27): el manual y `decisiones.md` dicen ahora que **la puerta no está en vigor** y que **la puerta real, mientras tanto, es una persona**.
+
+**El resumen del cotejo, hoy:** de los doce contratos, **cinco no existen** (los tres de la entrada del sistema, y los dos que piden GitHub Pro); **dos están rotos por el mismo motivo** (el revisor no puede etiquetar → el bucle de rehacer no arranca); y **ninguno de los controles de CI bloquea nada**, porque **sin ruleset no hay checks obligatorios**.
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.
