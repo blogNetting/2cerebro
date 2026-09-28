@@ -415,6 +415,50 @@ Los fallos del verificador **no se veían leyendo el código**. Aparecieron al e
 
 Y el corolario incómodo: durante un rato, `docs/estado.md` dio el verificador por «probado en vivo» a partir de una corrida del banco que tenía el mismo agujero. **El veredicto era correcto por el motivo equivocado.**
 
+## 2026-09-28 (noche) — K9 fusionado, versión cortada dos veces, y confirmado en vivo con el tag real
+
+Cierre de la cadena que empezó con la auditoría de la tarde. En orden:
+
+1. **PR #28 (verificador) fusionada** por el usuario (`141fed2`).
+2. **K9 construido**: un paso aparte —nunca el agente— mina un token de la GitHub App ya usada por el ejecutor y lo usa solo para poner `agente:rehacer` cuando el revisor pide cambios. El agente decide leyendo su propio último comentario (línea fija `VEREDICTO-MAQUINA: ...`), sin recibir el token — la misma separación de permisos que ya defendía el resto del sistema. **Por qué no bastaba con dar `issues: write`:** habría sido el mismo agujero que K7 — el job recibe `GITHUB_TOKEN` por defecto, y ese token no dispara ejecuciones nuevas sobre `labeled` (confirmado contra la documentación oficial de GitHub, no solo por analogía con K7).
+3. **Un fallo real encontrado probando la lógica en local**, antes de subirla: la comprobación del veredicto (`grep -qF`) detectaba la frase en cualquier parte del comentario, no solo como línea final. Corregido a `tail -n1 | grep -qxF` y probado con 6 casos, incluido el límite del salto de línea final.
+4. **La PR #29 (K9) chocó con las #26 y #27** al abrir el conflicto en `docs/manual.md` — las tres tocaban la sección del revisor. Resuelto a mano combinando lo probado de cada versión, sin descartar ninguna; de paso corregidas dos líneas de `docs/estado.md` y `docs/decisiones.md` que seguían diciendo «sin fusionar» sobre PRs ya fusionadas.
+5. **El hook de documentación bloqueó el cierre** hasta explicar el mecanismo de K9 en `docs/manual.md` — no solo listar el cambio. Corregido en el mismo commit que resolvió el conflicto, y de paso se arregló una sección del manual (el disparo del revisor) que llevaba desde el `main` de la tarde sin ponerse al día con el propio código.
+6. **PR #29 fusionada** por el usuario (13:51). `release-please` propuso **v0.7.0** con K9 dentro; fusionada también (13:54).
+7. **`proyecto-vigilante` actualizado a `v0.7.0`** en sus cinco pines finos (PR #17, fusionada) — `revisar.yml` pasa de `@main` (transitorio) a un tag fijo, como manda `docs/decisiones.md`. Añadido el paso del secreto `APP_PRIVATE_KEY` para K9.
+8. **Confirmado en vivo con el tag real, no con la rama de pruebas:** `Uses: .../verificar.yml@refs/tags/v0.7.0`, `Veredicto: verificado (código 0)`, `success` limpio.
+
+**Lo que sigue sin poder verificarse, dicho explícito una vez más:** que la etiqueta puesta con el token de la App realmente haga arrancar `rehacer.md`. Dos bloqueos, ninguno mío: no hay ninguna GitHub App configurada en el proyecto de prueba (mismo hueco que bloqueaba al ejecutor), y `claude-code-action` se niega a correr si el workflow que lo invoca difiere del de `main` — así que no se puede probar el cambio de `revisar.yml` dentro de la misma PR que lo introduce, hace falta que esté ya fusionado.
+
+### Y un hallazgo más grave que el anterior: el revisor no está confirmado que comente NADA con el prompt nuevo
+
+Encontrado el 2026-09-28 tarde, preguntado directamente por el usuario («¿estás seguro de que el revisor revisa y comenta bien?») — **no lo estaba, y comprobarlo destapó un hueco real**, no una duda retórica.
+
+**Lo comprobado:** la PR #17 (la que subió `proyecto-vigilante` a `v0.7.0`, con el prompt nuevo de K9 ya dentro) terminó con `Revisar con Opus: success`. **Y no publicó ningún comentario** — comprobado leyendo `gh api repos/.../issues/17/comments`, vacío. La causa, en el registro real del job:
+
+```
+##[warning]Skipping action due to workflow validation: Workflow validation failed.
+Action skipped due to workflow validation error.
+```
+
+**Es la misma protección de `claude-code-action`** que ya bloqueó las pruebas de K9 antes (se niega a correr si el workflow que lo invoca difiere del de `main`) — y como la PR #17 tocaba `revisar.yml` (para subir el pin), se saltó otra vez, **en silencio, sin que el `success` del job lo delatara**. Exactamente el modo de fallo que este proyecto lleva dos días persiguiendo: parece que funciona.
+
+**Repasadas TODAS las ejecuciones del revisor de hoy (15 corridas):** la única que publicó un comentario de verdad fue a las **00:53, con el prompt VIEJO, antes de que existiera K9**. Todas las posteriores a añadir la línea `VEREDICTO-MAQUINA` al prompt tocaban `revisar.yml` en la misma PR que se revisaba, y se saltaron igual.
+
+**Lo que esto significa, dicho sin suavizarlo:** **no hay ninguna prueba de que el prompt nuevo (con la instrucción del veredicto-máquina) no rompa algo en cómo comenta Claude.** Podría funcionar exactamente igual que antes, o podría no hacerlo — no se sabe, porque no se ha podido observar ni una vez desde que se cambió. La tarea 22 del plan (dar el revisor por «probado en vivo») se apoya en una corrida (00:53) que es de **antes** del cambio que se está dando por bueno hoy.
+
+**Cómo se prueba de verdad:** una PR que NO toque `.github/workflows/revisar.yml`, contra `main` ya con `v0.7.0` fusionado (que ya lo está). No hace falta ningún bloqueo nuevo — el motivo de que no se haya hecho hoy es que las tres PRs de prueba de esta sesión (16 y 17) tocaban precisamente ese fichero, por error de diseño de la prueba, no por un bloqueo real.
+
+**Bloqueos de permisos confirmados hoy, con intentos reales, no supuestos:**
+
+| Acción | Bloqueado por |
+|---|---|
+| `gh pr merge` | Regla de permisos (denegado tres veces) |
+| `git push` directo a `main` de un proyecto | Clasificador «Security Weaken» |
+| `gh api -X DELETE` sobre una rama | Clasificador «Git Destructive» |
+
+Las tres las tuvo que hacer el usuario.
+
 ## Enlaces
 
 - [[astillero]] — hub del proyecto

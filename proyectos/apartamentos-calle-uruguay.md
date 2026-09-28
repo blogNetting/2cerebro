@@ -44,7 +44,7 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 
 ## Enlaces
 
-- [[duchas-alquiler-carballo]] — opciones de grifería de ducha gris barata para los baños
+- [[duchas-alquiler-carballo]] — grifo de ducha cromado con teleducha y soporte para los baños: ganador Ramon Soler Tarraco (41 €, Obramat)
 - [[patrimonial]] — app de patrimonio donde este inmueble aparecerá valorado
 
 - [[_index]]

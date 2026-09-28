@@ -6,9 +6,30 @@ tags: [lego, comunidad, reddit, evidencia]
 zona: tecnico
 ---
 
-El veredicto de la gente que lo usa, separado de la academia y del fabricante. Lo que importa aquí no es una cita suelta: es **dónde varias personas independientes, por caminos distintos, acaban diciendo lo mismo**.
+El veredicto de la gente que lo usa, separado de la academia y del fabricante.
 
-## Convergencia 1 — el desarrollo dirigido por especificación no entrega en empresas reales
+> ## ⚠️ CORREGIDO EL 2026-09-28 — esta nota estaba **invertida**
+>
+> La auditoría de fuentes comprobó los votos reales de cada hilo con la API, y encontró que **elegí los hilos que decían lo que yo esperaba**:
+>
+> | Hilo | Puntos reales | Qué dice de verdad |
+> |---|---:|---|
+> | [«¿Alguien usa SDD?» (r/ChatGPTCoding)](https://www.reddit.com/r/ChatGPTCoding/comments/1otf3xc/does_anyone_use_specdriven_development/) | **78** | **El más votado de todos, y está A FAVOR** |
+> | [«La masturbación técnica» (r/ChatGPTCoding)](https://www.reddit.com/r/ChatGPTCoding/comments/1o6j1yr/specdriven_development_for_ai_is_a_form_of/) | **66** | **Su comentario principal REBATE al autor** |
+> | [«Spec Driven Development and other shitty stuff»](https://www.reddit.com/r/ExperiencedDevs/comments/1reiro1/spec_driven_development_and_other_shitty_stuff/) | **7** | Pequeño y **dividido** |
+> | [«Agentic, Spec-driven…»](https://www.reddit.com/r/ExperiencedDevs/comments/1ox40ww/agentic_specdriven_development_flow_on/) | **15** | Ambivalente, no anticonsenso |
+>
+> **La afirmación «la comunidad rechaza el SDD» es falsa**, y era la columna vertebral de esta nota. Lo que hay es una **discusión dividida**, no un veredicto. Y el hilo más sustancial de todos —[«Spec-Driven Development: The Waterfall Strikes Back», 225 puntos y 191 comentarios](https://news.ycombinator.com/item?id=45935763)— no lo había mirado.
+>
+> **Lo que sí se sostiene, y es lo que importa para el diseño:** los que dicen que les funciona describen siempre lo mismo —tareas partidas, sesión nueva por tarea, revisión en cada paso, tests—. **Eso no cambia.** Lo que cambia es que **no son minoría**.
+
+
+
+## Convergencia 1 (REBAJADA) — nadie presenta un caso de éxito a escala, pero tampoco un rechazo
+
+**Lo que aguanta tras auditar los votos:** en los hilos donde se pide explícitamente un caso de éxito **a escala empresarial**, no aparece. Lo que hay son proyectos propios, y los casos de éxito de empresa que se citan (Stripe, Spotify) son autopromoción sin denominador — ver [[quien-dice-que]].
+
+**Lo que NO aguanta, y era mi tesis:** que la comunidad lo rechace. Está dividida, y **el hilo más votado está a favor**.
 
 **Tres fuentes de naturaleza distinta llegan al mismo punto**, y eso es lo que lo hace sólido:
 
@@ -102,13 +123,15 @@ Y el remate de otro: «**la spec son tus guardarraíles, no se supone que sea ap
 
 **Y ésta es la corrección que importa:** en [[investigacion-lego]] decía que nadie presenta un caso de éxito a escala en un código establecido. **Sigue siendo cierto para la escala y para el código establecido** — los casos de éxito que aparecen son proyectos propios, no empresas grandes — pero **no es cierto que no haya casos de éxito**. Los hay, son condicionales, y describen exactamente el diseño que la evidencia sostiene.
 
-## Lo que la comunidad tiene en común, dijeron lo que dijeron
+## Lo que de verdad se repite, sin atribuirle consenso
 
-- **Nadie presenta un caso de éxito de SDD a escala empresarial**, en ninguno de los hilos, pese a pedirse explícitamente. Los que hay son proyectos propios.
-- **Los que dicen que funciona describen siempre lo mismo**: tareas pequeñas, muy acotadas, **sesión nueva por tarea**, revisión en cada paso, y la spec convertida en test.
-- **Los que dicen que no funciona describen siempre lo mismo**: specs grandes, requisitos contradictorios, revisar 10 o 15 ficheros, contaminación de contexto.
-- **La acusación de promoción aparece sola**, sin que nadie la organice, en varios hilos.
-- Un comentario de **MindCrusader** resume la postura intermedia, y coincide con la del informe: «Creo flujos que van al problema uno a uno y exigen revisiones frecuentes cuando se cierra un hito. Funciona, pero **sólo porque detecto los problemas pronto**.»
+*(No hay consenso. Esto son los patrones que aparecen en los dos lados.)*
+
+- **Los que dicen que les funciona describen todos lo mismo**: tareas pequeñas, muy acotadas, **sesión nueva por tarea**, revisión en cada paso, y la spec convertida en test. **Y no son minoría**: el hilo más votado del tema está a favor.
+- **Los que dicen que no funciona describen todos lo mismo**: specs grandes, requisitos contradictorios, revisar 10 o 15 ficheros, contaminación de contexto.
+- **Hay promoción en los dos lados**, y aparece sola: anuncios de herramientas en el bando favorable y cuentas nuevas en el crítico.
+- **Lo que nadie presenta es un caso de éxito a escala empresarial** en los hilos donde se pide explícitamente. Eso sí aguanta.
+- Un comentario de **MindCrusader** resume la postura intermedia: «Creo flujos que van al problema uno a uno y exigen revisiones frecuentes cuando se cierra un hito. Funciona, pero **sólo porque detecto los problemas pronto**.»
 
 ## Dónde se ha buscado
 

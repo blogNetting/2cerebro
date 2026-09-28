@@ -28,7 +28,7 @@ El desglose, del plan de revisión del propio autor:
 
 Y la frase que lo resume todo, del propio autor: **«el 97,5% del tratamiento es “este PR referencia una incidencia o un ticket”».**
 
-**Auditoría del árbol de ficheros:** de los 120 repositorios, **cero** tienen un directorio de herramienta SDD (`.specify/`, `.speckit/`, `.kiro/`). Tres los excluyen explícitamente en `.gitignore` — grafana, con el comentario *«los ficheros de Spec-kit no deberían registrarse sin un proceso de diseño mayor»*. Es decir: **donde se usan, su salida no entra en git, así que ninguna medición basada en artefactos del repositorio puede verlos — ésta incluida.**
+**Auditoría del árbol de ficheros:** de los **119** repositorios que dice el paper —el manifiesto del repositorio tiene 120, y ahí me equivoqué yo—, **cero** tienen un directorio de herramienta SDD (`.specify/`, `.speckit/`, `.kiro/`). Tres los excluyen explícitamente en `.gitignore` — grafana, con el comentario *«los ficheros de Spec-kit no deberían registrarse sin un proceso de diseño mayor»*. Es decir: **donde se usan, su salida no entra en git, así que ninguna medición basada en artefactos del repositorio puede verlos — ésta incluida.**
 
 ### Otros problemas del estudio, todos documentados
 

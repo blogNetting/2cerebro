@@ -10,6 +10,18 @@ zona: tecnico
 
 Etiquetas: **[IND]** tercero independiente · **[AUTO]** el propio equipo, sin auditoría · **[VEND]** fabricante vendiendo.
 
+> ### ⚠️ CORREGIDO EL 2026-09-28 — tres cifras estaban mal, y una de ellas no existía
+>
+> La auditoría fue a la página primaria de cada empresa. Resultado:
+>
+> - **La cifra de LinearB no es la que yo daba.** El **4,7%** no es un dato de la industria: es **el techo del decil superior de «organizaciones élite» dentro de una muestra auto-seleccionada de clientes de LinearB**. Su propio texto dice que incluso en el percentil 90, «la parte autónoma de la cadena abre **1 de cada 20 PRs**». Y el vendedor **se contradice a sí mismo**: una página dice «2,7 M de PRs, 253 organizaciones» y otra «8,1 M de PRs, 4.800 equipos» — **dos universos distintos**.
+> - **Dos cifras de Spotify no están en la fuente.** Ni «**1.000 PRs cada 10 días**» ni «**del año a la semana para el 70% de la flota**» aparecen en el artículo primario. Lo que dice es **1.500+ PRs en total** y que **«alrededor de la mitad»** de los PRs de Spotify están automatizados. **Las dos cifras que yo citaba: sin verificar.**
+> - **La cifra de Anthropic está mal atribuida.** La página que yo enlazaba **no contiene el «90% del código»**. Procede del director financiero en una declaración de mayo de 2026, y un medio lo reporta como rango **70–90%**.
+>
+> **Y dos añadidos:** StrongDM **no publica ninguna métrica de resultado** —la web sólo tiene el eslogan de los 1.000 $/día en tokens— y en el hilo de Hacker News un **exempleado afirma que la empresa fue vendida y el CTO se marchó a una consultora**. Y el informe citaba «los dos estudios de METR»: **sólo se pudo verificar uno**.
+>
+
+
 ## El único caso independiente con número duro
 
 **Un mandato corporativo de duplicar la producción, en una empresa B2B anonimizada** ([arXiv:2607.01904](https://arxiv.org/abs/2607.01904), julio 2026). Autores académicos —Hao He, Yegor Denisov-Blanch, Sanmi Koyejo, Bogdan Vasilescu— y una salvaguarda que le da peso:
@@ -29,11 +41,11 @@ Traducido: **funciona donde el trabajo es nuevo y acotado, y no funciona en el c
 
 ## Cuánta autonomía hay de verdad
 
-El dato que más corrige la intuición ([LinearB, 2,7 M de PRs, 83.000 desarrolladores, 253 organizaciones](https://linearb.io/resources/ai-engineering-productivity-gap)):
+El dato que más corrige la intuición, **una vez leído con precisión** ([LinearB](https://linearb.io/blog/does-your-software-factory-work), 2,7 M de PRs, 83.000 desarrolladores, 253 organizaciones). **Ojo: el 4,7% no es la industria —es el techo del decil superior de «organizaciones élite», en una muestra auto-seleccionada de clientes de LinearB**:
 
 | Grupo | PRs abiertos por agentes autónomos |
 |---|---|
-| Decil superior | **4,7%** |
+| Decil superior de «élite» | **4,7%** — y su propio texto dice «**1 de cada 20 PRs**» |
 | Mejor 30% | **1,1%** |
 | Mejor 60% | **0,1%** |
 
@@ -60,7 +72,7 @@ Y los PRs de agente se fusionan menos: **79% frente a 92%** de los humanos en el
 | Caso | Cifra | Por qué no es prueba |
 |---|---|---|
 | **[Stripe Minions](https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents)** | «**más de mil PRs fusionados por semana**… sin código escrito por humanos» | **[AUTO]** Sin denominador. La comunidad lo calculó: ~3.000–3.500 ingenieros → **menos de 1 PR por ingeniero y semana**, y lo llamó «métrica de vanidad» ([HN](https://news.ycombinator.com/item?id=47110495)) |
-| **[Spotify Honk](https://www.infoq.com/news/2026/03/spotify-honk-rewrite/)** | «1.000 PRs cada 10 días» frente a «1.000 en tres meses»; migraciones «de casi un año a menos de una semana para el **70%** de la flota» | **[AUTO]** Y el dato clave: **el 30% restante sigue haciéndose con scripts deterministas.** El cuello de botella declarado pasa a ser la revisión |
+| **[Spotify Honk](https://engineering.atspotify.com/2025/11/spotifys-background-coding-agent-part-1)** | **Lo que dice de verdad:** **1.500+ PRs** en total, y «alrededor de la mitad» de los PRs de Spotify automatizados. **Las cifras que yo citaba —«1.000 cada 10 días» y «70% de la flota»— NO están en la fuente** | **[AUTO]** Sin metodología |
 | **[Salesforce](https://www.salesforce.com/news/stories/how-engineering-became-agentic/)** | «PRs fusionados por desarrollador **+79%**», «salida total **+151,3%**» | **[AUTO]** No publica denominador ni define qué es su «Effective Output» |
 | **Uber** | 11% de PRs abiertos por agentes; presupuesto anual de IA agotado en **4 meses** | **[AUTO]**, y no se pudo leer fuente primaria de Uber |
 

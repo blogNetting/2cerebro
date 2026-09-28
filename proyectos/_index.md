@@ -19,7 +19,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-alojamiento-descartes]] — qué se descartó y por qué: hoteles céntricos fuera de presupuesto, baño compartido, dormitorios y cápsulas
 - [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
-- [[duchas-alquiler-carballo]] — grifería de ducha gris para alquiler en Carballo (el cromado cuenta como gris): conjunto ≤90-100 € o grifo + alcachofa de colgar ≤80 €, en Amazon, Leroy, Brico Depot y Obramat. Ganadores en el catálogo profesional de Obramat: New Boreal Termostático (97 €, inox) y Ramon Soler Tarraco (41 €, latón) (2026-09-26)
+- [[duchas-alquiler-carballo]] — grifo de ducha cromado (monomando + teleducha + soporte + flexo) para alquiler en Carballo, tope 80 €. Ganador: Ramon Soler Tarraco, 41 € en Obramat, con Tres Palma (43 €) y Roca Nora (41,75 €) empatados; sin reseñas de usuario de ningún modelo (2026-09-28)
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos
 
 ## Subcarpetas
