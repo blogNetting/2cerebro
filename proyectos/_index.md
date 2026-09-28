@@ -25,4 +25,6 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 ## Subcarpetas
 
 - `astillero/` — proyecto del sistema genérico de desarrollo de software con agentes: hub, investigaciones y decisiones. Índice propio en esa carpeta
+- `lego/` — crear software y webs con el mínimo de piezas: cómo debe escribirse la tarea y cómo la consume un sistema de agentes. Investigación cerrada el 2026-09-28; el montaje queda documentado, no ejecutado. Índice propio en esa carpeta
 - `patrimonial/` — Patrimonial: webapp autoalojada y responsive para seguir el patrimonio (inmuebles, cripto, pensiones, ahorro) y el gasto desde extractos bancarios. Candidata a primer piloto de Astillero. Índice propio en esa carpeta
+- `lego/` — proyecto Lego: cómo crear software y webs de la forma más autónoma posible con el menor número de piezas, con el foco en la creación de la tarea y su consumo por un sistema de agentes. Entrega: informe (pendiente). Índice propio en esa carpeta

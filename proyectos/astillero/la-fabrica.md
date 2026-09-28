@@ -117,3 +117,4 @@ Este diseño **no se cierra nunca**. El estado del arte cambió tres veces duran
 - [[recibo-de-verificacion]] — pieza 7b: qué queda escrito al verificar, y por qué un recibo que falta significa «no verificado»
 - [[vigilante-de-tareas]] — pieza 8: cuándo una tarea pasa, se reintenta o se bloquea
 - [[medicion-de-la-fabrica]] — pieza 12: las cinco de DORA más lo que hay que añadir
+- [[github-pro-en-astillero]] — la puerta que falta en la etapa 9: qué habilita GitHub Pro y qué contratos dependen de él

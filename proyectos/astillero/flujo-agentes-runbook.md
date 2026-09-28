@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — runbook y comprobación de coherencia
 created: 2026-09-25
-updated: 2026-09-26
+updated: 2026-09-28
 tags: [agentes, runbook, github-actions, gh-aw, puesta-en-marcha]
 zona: tecnico
 ---
@@ -143,4 +143,5 @@ Este runbook deja de ejecutarse a mano paso a paso — hay un skill que lo autom
 - [[astillero-replicacion]] — mecanismo de replicación a cada proyecto
 - [[astillero-mantenimiento]] — propagación de actualizaciones a proyectos ya en marcha
 - [[astillero]] — proyecto
+- [[github-pro-en-astillero]] — la puerta de rulesets/merge queue (§2): qué habilita GitHub Pro y qué contratos dependen de él
 - [[_index]]

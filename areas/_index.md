@@ -12,3 +12,5 @@ Responsabilidades continuas sin fecha de fin. Notas de síntesis y contradiccion
 - [[vueling-busqueda-por-url]] — cómo barrer un mes de vuelos Vueling con URLs directas del calendario y del buscador, sin el autocomplete de la home
 - [[verificacion-externa-agentes]] — síntesis: por qué la verificación solo cuenta si la posee algo distinto del agente y fuera de su alcance, y cómo se materializa en Astillero. Los dos huecos: el oráculo y la medición
 - [[contradiccion-agents-md]] — contradicción sin resolver: dos notas citan el mismo paper sobre `AGENTS.md`/`CLAUDE.md` con cifras y conclusión incompatibles
+- [[github-pro-en-astillero]] — síntesis: qué habilita GitHub Pro en repos privados y qué contratos de Astillero dependen de esa puerta (K6, K10, etapa 9), sin ser una decisión de compra
+- [[contradiccion-precio-github-pro]] — contradicción abierta: la cifra de ~4 $/mes para GitHub Pro no se sostiene en fuente primaria (2026-09-28)

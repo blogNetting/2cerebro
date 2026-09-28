@@ -70,4 +70,5 @@ Tipos de fuente, con la primaria marcada.
 
 ## Enlaces
 
-- [[investigacion-lego]] — el informe
+- `investigacion-lego` — el informe (pendiente de escribir; la nota aún no existe, por eso no se enlaza)
+- [[_index]]

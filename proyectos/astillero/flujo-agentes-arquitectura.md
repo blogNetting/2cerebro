@@ -394,4 +394,5 @@ Lo que pasa después del despliegue — monitorización, alertado, incidentes, b
 - [[verificacion-externa-agentes]] — síntesis del principio de verificación externa (§7.1 bis, §7.2, §8)
 - [[gas-city-frente-a-la-fabrica]] — dos controles que se pueden copiar aquí: limpieza de variables de entorno heredadas por nombre sospechoso, y tabla de fronteras que marca el texto libre como dato no confiable
 - [[astillero]] — proyecto
+- [[github-pro-en-astillero]] — la puerta que falta en K6 y K10: qué habilita GitHub Pro y qué depende de él
 - [[_index]]
