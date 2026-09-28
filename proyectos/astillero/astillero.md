@@ -28,11 +28,11 @@ Las cinco piezas, construidas y enlazadas entre sí:
 
 Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarrollo-agentes-investigacion]]. El informe [[orquestacion-opus-deepseek-informe]] es la primera versión, parcial, superada por [[flujo-agentes-arquitectura]].
 
-**Estado del trabajo, al día:** [[astillero-bitacora]] — qué está hecho y comprobado (con su commit), qué está en curso y qué falta. Si una sesión se corta, eso es lo que sobrevive.
+**Estado del trabajo, al día:** [[astillero-bitacora]] — movida al repo el 2026-09-28 (`docs/bitacora.md`), para que el mecanismo de documentación obligatoria la pueda exigir. Qué está hecho y comprobado (con su commit), qué está en curso y qué falta. Si una sesión se corta, eso es lo que sobrevive.
 
 **Cómo funciona, explicado entero:** [`docs/manual.md`](https://github.com/blogNetting/astillero/blob/main/docs/manual.md) — cada pieza construida por dentro, los contratos entre ellas, quién puede escribir qué y los modos de fallo.
 
-**Plan de trabajo, al día:** [[astillero-plan]] — lo que queda, en orden y con su porqué.
+**Plan de trabajo, al día:** [[astillero-plan]] — movido al repo el mismo día (`docs/plan.md`). Lo que queda, en orden y con su porqué.
 
 **El protocolo, obligatorio en cada pieza:** **implementar → probar en vivo (por el camino que usa un proyecto de verdad) → redactar la wiki explicando cómo funciona → actualizar la bitácora.** Documentar no es listar cambios: es explicar el funcionamiento para que nadie tenga que reconstruirlo. El detalle está en [[astillero-bitacora]].
 

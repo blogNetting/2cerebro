@@ -5,8 +5,8 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
 - [[astillero]] — hub del proyecto: decisiones cerradas, hipótesis, bloques y preguntas abiertas
-- [[astillero-plan]] — **plan de trabajo**: todo lo que queda, en orden, con qué es, por qué y de quién depende
-- [[astillero-bitacora]] — **estado del trabajo**: qué está hecho y comprobado (con su commit), qué está en curso y qué falta. Es lo que sobrevive si una sesión se corta
+- [[astillero-plan]] — **puntero**: el plan de trabajo se movió al repo (`docs/plan.md`) el 2026-09-28, para que el mecanismo de documentación obligatoria lo pueda exigir
+- [[astillero-bitacora]] — **puntero**: la bitácora se movió al repo (`docs/bitacora.md`) el mismo día, mismo motivo
 - [[la-fabrica]] — despiece del sistema en sus doce etapas, con quién actúa en cada una y cuáles pueden operar solas hoy. Los dos agujeros: verificación y medición
 - [[guion-de-idea]] — etapas 0 y 1: el raíl común que hace que la misma idea produzca siempre las mismas preguntas y la misma forma de resultado, para poder pulirla
 - [[verificador-de-tareas]] — pieza 7: cómo se decide si una tarea está bien hecha sin que el agente pueda influir, y las cuatro piezas de GitHub que se usan por debajo

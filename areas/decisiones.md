@@ -471,7 +471,7 @@ Siguiente tarea de la lista sin depender del usuario. Construida la primera piez
 
 **Dos fallos propios, corregidos antes de pedir revisión:** el primer commit subió `__pycache__` (Astillero nunca tuvo `.gitignore`, arreglado); y el primer intento de filtrar el falso positivo de `concurrency: queue` con `grep` a mano falló en el runner real (se comía el mensaje pero dejaba el contexto), corregido usando `-ignore`, el mecanismo propio de `actionlint`.
 
-**Probado en tres niveles**: los 11 tests en local y en runner real; el bug del exit-1 y la lógica de borrados reintroducidos a propósito, y los tests fallando donde tenían que; y el escenario original completo (`divide(1,0)` + test borrado) repetido sobre `proyecto-vigilante` contra el arreglo de `grep -c`, con el mismo resultado de siempre. **PR #31, abierta, `MERGEABLE`/`CLEAN`, sin fusionar** — no es cosa mía.
+**Probado en tres niveles**: los 11 tests en local y en runner real; el bug del exit-1 y la lógica de borrados reintroducidos a propósito, y los tests fallando donde tenían que; y el escenario original completo (`divide(1,0)` + test borrado) repetido sobre `proyecto-vigilante` contra el arreglo de `grep -c`, con el mismo resultado de siempre. **PR #31, fusionada por el usuario (18:50)**, confirmado leyendo `main` en vivo. `release-please` propuso v0.7.1 (PR #32).
 
 ## 2026-09-28 — Investigación de compra: no se entrega nada citando un listado de resultados en vez de la ficha del producto
 
@@ -482,3 +482,19 @@ Investigando grifo de ducha para el alquiler de Carballo ([[duchas-alquiler-carb
 - Una **Roca Mitos Plus de Bauhaus a 53,99 €** que **es un conjunto completo** (ducha Natura, flexo metálico 1,50 m, soporte articulado, cartucho cerámico) y que se había despachado como "mezclador suelto" por no abrir su ficha. Bauhaus tampoco publica la tarifa de envío en página general, pero **sí en la ficha** (3,90 €): de ahí salió un "sin publicar" que era falso.
 
 **Regla general que se deriva, aplicable a toda investigación de compra:** un listado de resultados no es una ficha, y un titular no es un producto. Antes de citar un producto se abre su ficha y se leen ahí el precio, el estado de stock, quién lo vende y **qué incluye exactamente** — porque "no lleva el grifo" y "sin stock" son cosas que la tarjeta de resultados no muestra. Los enlaces que se entreguen son de producto, nunca de búsqueda. Y una cifra que solo aparece en un resumen de buscador no se usa hasta reproducirla en la fuente.
+
+## 2026-09-28 — Astillero: documentación obligatoria por CI, y la bitácora+plan se mueven al repo
+
+Pedido por el usuario: un mecanismo que obligue a **cualquier** modelo o persona que toque código de Astillero a actualizar su documentación — no solo a quien use Claude Code, donde la misma política ya se había probado y funcionado como un hook de Stop.
+
+**Construido:** `scripts/comprobar-documentacion.py` + `.github/workflows/documentar.yml`, en `blogNetting/astillero`. Exige `docs/manual.md` (cómo funciona) y al menos uno de `docs/bitacora.md` / `docs/plan.md` (seguimiento) siempre que se toca código de Astillero (`.github/workflows/*.yml`, `template/**`, `scripts/*` — los `.lock.yml` generados quedan fuera). Corre en cada PR y en cada push a `main`.
+
+**Por qué la bitácora y el plan se mudaron del wiki al repo, decisión del usuario retomando (parcialmente) «exportar Astillero»:** un CI de `blogNetting/astillero` no puede ver ni exigir nada sobre una nota de este wiki, que vive en un repo aparte. Sin moverlas, el mecanismo no las podía alcanzar. Es solo esta pieza — la migración completa de Astillero sigue aparcada, sin fecha.
+
+**Probado en vivo, con las dos caras:**
+- **Caso positivo:** el propio commit que crea el mecanismo toca código (`documentar.yml`, `comprobar-documentacion.py`) y `docs/manual.md` a la vez — el check corrió sobre sí mismo y salió `success`, con el mensaje real `«Código y documentación, los dos tocados. OK.»`.
+- **Caso negativo:** una PR de prueba que solo tocaba `.github/workflows/reconciliar.yml`, sin documentación — el check falló de verdad, `exit code 1`, con el mensaje completo (qué se tocó, qué falta, por qué) visible en el registro real de GitHub. Cerrada sin fusionar, era solo para comprobarlo.
+
+**Su límite, dicho explícito:** sin GitHub Pro no hay ruleset que declare este check obligatorio, así que avisa en rojo pero no bloquea técnicamente el botón de fusionar — mismo hueco que el resto de checks del repo. Y comprueba que se **tocó** el fichero correcto, no que lo escrito en él sea verdad.
+
+Las notas del wiki `astillero-bitacora` y `astillero-plan` quedan como punteros al repo, no como copias — se evita que las dos versiones se desfasen entre sí.
