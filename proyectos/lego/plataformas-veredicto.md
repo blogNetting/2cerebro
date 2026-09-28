@@ -12,6 +12,27 @@ Y el dato que falta en toda la categoría, dicho por delante: **nadie publica cu
 
 ---
 
+## El filtro contra el objetivo
+
+Tres condiciones, sacadas de [[objetivo]]: **O1 funciona** (terceros que lo cuentan), **O2 le quita trabajo** (hace parte del trabajo de entregar software, no solo ordena la pantalla), **O3 cubre** (cuántas piezas del proceso). Lo que dice el README va marcado como **capacidad declarada por el fabricante**, no como prueba de que funcione — eso solo lo dan los terceros.
+
+| Candidata | O1 · Funciona | O2 · Le quita trabajo | O3 · Qué cubre | Veredicto |
+|---|---|---|---|---|
+| **OpenChamber** | **Sí** — [58 votos comparando GUIs](https://redlib.catsarch.com/r/opencodeCLI/comments/1wi52e9/how_is_the_opencode_gui_missing_so_many_features/), [HN 190/93](https://news.ycombinator.com/item?id=49233448) | **Sí**, y es la única que cierra el círculo | Ejecución · aislamiento · aprobaciones · **límites del proveedor, uso de tokens y coste** · CI y PR · **«send failed checks or review comments back to the agent, then merge»** — el fallo vuelve como trabajo nuevo, que es un mecanismo de la lista | **La que más merece análisis a fondo.** Capacidad declarada en su README; su límite es depender de OpenCode |
+| **Emdash** | **Sí** — [HN 206/71](https://news.ycombinator.com/item?id=47140322) | Sí | Ejecución · aislamiento · «review diffs, create pull requests, **inspect CI checks, and merge** from one place» | Cumple. No declara gasto ni verificación propia |
+| **Orca** | **Sí pero con la contradicción abierta** — [r/ClaudeCode 162 votos](https://redlib.catsarch.com/r/ClaudeCode/search?q=orca&restrict_sr=on) frente a «no conozco a otros usuarios» | Sí | «Fan one prompt across five agents, each in its own isolated worktree — compare the results and merge the winner» · aviso al móvil | Cumple con reserva: la señal de uso no está resuelta |
+| **kandev** | **Débil** — npm **5.969/mes** sí, comunidad casi nula | Sí | Kanban de tareas · revisión · PRs · sub-tareas · automatizaciones. **Gasto y presupuestos están en su hoja de ruta, no en el producto** | Cumple con reserva: mucha capacidad, ninguna voz independiente |
+| **Agent of Empires** | **Sí** — [HN 118/44](https://news.ycombinator.com/item?id=46588905) + un «daily driver» | Parcial | Detección de estado y avisos · worktrees · sandboxing (Docker, Podman, Apple Containers) · sesiones que sobreviven a un cierre de SSH | Cumple en su parte: aislamiento y atención, no verificación ni gasto |
+| **Herdr · cmux** | **Sí**, con fallos concretos reportados | **Solo la parte de atención** | Aislamiento y «el agente te espera». No crean tareas ni comprueban nada | Cumplen solo la pieza de aviso |
+| **Happy · HAPI · T3 Code · Muxy** | Sí, muy usadas | **No**: mueven la interfaz al móvil, no hacen trabajo de entrega | — | Fuera como plataformas; entran como accesorio |
+| **Superset** | Sí | **No**: su doc admite que no muestra si el trabajo tuvo éxito, así que revisar sigue siendo tuyo entero | — | No cumple |
+| **Paseo** | Sí, el más elogiado | Sí | — | **No cumple**: un aviso crítico de seguridad sin acuse 7 días no es «fiable» |
+| **Vibe Kanban** | — | — | — | No cumple: se cae |
+| **Subtask · Tutti** | **Sin datos** | ? | ? | **Los primeros a mirar**: por titular son el encaje más directo |
+| Conductor · Superconductor · Solo · Clor · atrium · Xum · nodeterm · CodeNomad · tmux-ide · dmux · Sidecar · Luvus · Acepe · Sidequest | **Sin evidencia de terceros** | — | — | No se pueden juzgar: falta la prueba, no sobra |
+
+**La columna que nadie llena es la del ahorro.** Ninguna de estas publica cuánto trabajo quita: ni funcionalidades entregadas, ni horas, ni defectos. Lo que hay son señales de uso.
+
 ## El hallazgo que reordena la pregunta
 
 **De 60 entradas del catálogo, 8 tienen uso real declarado por terceros.** Las demás son propietarias sin cifra pública (12), muertas o paradas (5), o repos con estrellas y sin una sola voz que cuente que las usó.
