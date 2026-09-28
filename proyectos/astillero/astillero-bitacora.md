@@ -235,6 +235,43 @@ El usuario lo dijo sin rodeos: *«que se cumplan mis órdenes, haz lo que sea pa
 
 **Lo que sigue sin poder garantizarse, y se dice:** los hooks comprueban **que se tocó el documento correcto y en el orden correcto** — no que lo escrito sea **verdad**. Eso solo lo ve el usuario.
 
+### El hook también se equivocaba, y se arregló
+
+Al estrecharlo para que la documentación fuera **después** del código, empezó a bloquear turnos que sí estaban bien. La causa, encontrada depurándolo contra el transcript real:
+
+**El comando con el que se escribía la bitácora contaba como «código»** — porque **el texto que se redactaba dentro mencionaba `git push` y `git commit`**. El filtro buscaba esas palabras en todo el comando, incluido el contenido que se está escribiendo. Es decir: **escribir sobre git contaba como hacer git.**
+
+Corregido: solo cuenta si el comando **ejecuta de verdad** esas órdenes — al principio o tras `&&`, `;` o `|`. Un `git push` **citado dentro de un texto** ya no engaña al hook.
+
+**Y un hueco que queda, dicho claro:** el hook solo ve el código escrito con las herramientas `Edit`/`Write`. **Si el código se escribe desde `bash`** —como hice yo casi todo el día, con bloques de `python` que escriben ficheros— **no lo ve.** Dos salidas: estrechar más el filtro (con riesgo de falsos positivos al confundir texto con órdenes) o **dejar de escribir código desde `bash`** y usar la herramienta de edición, que además deja el cambio a la vista.
+
+### El agujero de verdad del hook: no veía el trabajo real
+
+Y era el peor de todos. El hook **excluía del recuento todo lo que estuviera en `/tmp`** —se puso así para que un fichero de pruebas no contara como código— y resulta que **los clones de Astillero viven en `/tmp`**. Consecuencia: **el hook nunca ha visto mi trabajo de Astillero.** Podía tocar lo que quisiera y él no se enteraba.
+
+Corregido: se excluyen **los ficheros sueltos de `/tmp`** (`/tmp/algo.txt`), no los árboles de trabajo (`/tmp/astillero-docs/...`).
+
+**Y un segundo fallo que salió al buscar el primero:** el botón decía «documentado» cuando solo se había tocado la bitácora. El manual —que es **la explicación**— no lo exigía nadie. **Justo al revés de la prioridad del usuario: «primordial redactar documentación de cómo funciona Astillero».**
+
+Ahora el hook exige, cuando se toca código **de Astillero**, las **dos** cosas: **el manual** (cómo funciona) y **uno de seguimiento** (el plan o la bitácora), y **el manual después del código**.
+
+**La batería, ocho casos, todos comprobados uno a uno:** código solo → bloquea · con un `.md` cualquiera → bloquea · con bitácora y sin manual → **bloquea** · con manual y bitácora → pasa · código de la máquina → pasa (no es Astillero) · bitácora antes del código → bloquea · y después → pasa.
+
+### La documentación, revisada contra el código: cuatro contradicciones
+
+Se repasó **el manual entero, afirmación por afirmación, contra los ficheros reales**. No que las secciones existieran — que lo que dicen sea verdad. Cuatro cosas no cuadraban, y las cuatro son **errores de Astillero o del manual**, no del research:
+
+| # | Contradicción | Quién manda |
+|---|---|---|
+| 1 | El manual decía que **el recibo lleva el motivo**. **No lo lleva**: guarda código de salida y recuentos, no la salida | **El research**: *«status codes are lies, outputs are evidence»* → el recibo se queda corto |
+| 2 | **`estado:en-curso` no lo pone nadie** | El research lo dibuja (arquitectura §5) → **hueco del código** |
+| 3 | **`estado:rehacer` y `estado:humano` no existen**: el tope de rondas no está implementado | El research lo pide → **hueco del código** |
+| 4 | **El bucle de rehacer está desconectado**: `rehacer.md` se dispara con `agente:rehacer` y **nadie pone esa etiqueta** — el revisor debería, pero no tiene `issues: write` | El research (K9) → **hueco del código** |
+
+Y una **imprecisión del manual**, corregida: decía «el agente no puede etiquetar». No puede por sí mismo, pero **sí puede pedir** etiquetas por las salidas seguras de `gh-aw`, que aplica un job aparte — solo del patrón `estado:*`.
+
+**Y un fallo mío, del mismo día y del mismo tipo:** dos filas del checklist llevaban sin actualizar desde la mañana porque **mis ediciones anteriores no se aplicaron y no lo comprobé**. El Ejecutor seguía en «probado» cuando lo real es que hace el trabajo y no lo entrega. Es exactamente el fallo que el usuario señala: dar por hecho sin abrir el resultado.
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.
