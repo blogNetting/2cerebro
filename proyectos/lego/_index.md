@@ -4,6 +4,10 @@ Proyecto Lego: cómo crear software y webs de la forma más autónoma posible co
 
 Entrega: **informe cerrado el 2026-09-28**. El montaje se documenta pero no se ejecuta ni se instala nada.
 
+**Objetivo aclarado por el usuario (2026-09-28), manda sobre lo anterior:** [[objetivo]]. En resumen: qué existe hoy que funcione de verdad y le quite trabajo al desarrollar, aunque tenga que participar él, y cuánto ahorra cada cosa.
+
+- [[objetivo]] — **el objetivo real, dicho por el usuario**: qué funciona hoy y le ahorra trabajo, cuanto más cubra mejor si funciona; la fábrica perfecta no existe; Lego es para empezar ya
+
 - [[investigacion-lego]] — informe: introducción, considerado y descartado, análisis, recomendaciones, verificación, dónde se ha buscado y lo que no encaja
 - [[metodo-y-alcance]] — qué se pregunta, qué queda fuera, criterio de admisión de candidatos, hipótesis rivales, mapa del terreno y condiciones de cierre declaradas antes de buscar
 - [[crear-la-tarea]] — los dos resultados duros que mandan sobre el diseño (P(todas)≈p^n y la calidad de la spec que no reduce defectos) y los cinco campos que sobreviven: objetivo, alcance, criterios en EARS, comando de comprobación y formato de retorno
@@ -32,6 +36,8 @@ Entrega: **informe cerrado el 2026-09-28**. El montaje se documenta pero no se e
 - [[piezas-y-coste]] — recuento de 2 a 7 piezas por opción, las tres piezas que nadie cuenta, y qué se rompe de verdad en cada herramienta
 - [[montaje-documentado]] — el montaje reproducible con las tres piezas: ficheros, bucle, verificación, disparador, sandbox y reglas. **No ejecutado.**
 - [[plataformas-auditadas]] — **las plataformas grandes, auditadas una por una** (oh-my-claudecode, Paseo, Superset, DeepCode, edict): qué traen, qué piezas cuestan, y **los problemas graves que tienen** — el peaje en estrellas, el fallo crítico sin responder, el «no verifica si el trabajo tuvo éxito», y el proyecto que está muerto por dentro
+- [[plataformas-uso-real]] — **las 60 del catálogo agentmgmt.dev, barridas de ancho**: estrellas, licencia, último empujón, y sobre todo **cuánto se usan de verdad** (npm, Homebrew, descargas de release) y qué dice la comunidad con la cifra del hilo delante. Incluye la **colisión de nombres en npm** que habría inflado siete plataformas y la contradicción sin resolver de Orca
+- [[plataformas-veredicto]] — **qué encaja con Lego y qué no**: las ocho con uso real de terceros, los descartes con motivo, los dos leads que salen de Reddit y no estaban en el catálogo, la **mortalidad de la categoría** (cinco muertas, tres de las más votadas) y el mejor caso contra la conclusión
 - [[mecanismos-nuevos]] — **los ~60 mecanismos que no estaban en el mapa**, de tres barridos, con los **tres huecos estructurales** de la lista original: recuperación, verificar al verificador, y detección de fallo de proceso
 
 ## Frontera de alcance

@@ -153,6 +153,8 @@ Ocho piezas que **no están en mi lista y no son importaciones obvias**:
 ## Enlaces
 
 - [[mecanismos-nuevos]] — la lista consolidada de todo lo que no estaba en el mapa
+- [[plataformas-uso-real]] — las 60 del catálogo con uso medido y la voz de la comunidad
+- [[plataformas-veredicto]] — cuáles encajan con el objetivo y cuáles no, y por qué
 - [[las-piezas]] — el mapa original
 - [[quien-dice-que]] — la auditoría de fuentes académicas
 - [[etapas]] — el veredicto por etapas

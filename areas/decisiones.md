@@ -498,3 +498,9 @@ Pedido por el usuario: un mecanismo que obligue a **cualquier** modelo o persona
 **Su límite, dicho explícito:** sin GitHub Pro no hay ruleset que declare este check obligatorio, así que avisa en rojo pero no bloquea técnicamente el botón de fusionar — mismo hueco que el resto de checks del repo. Y comprueba que se **tocó** el fichero correcto, no que lo escrito en él sea verdad.
 
 Las notas del wiki `astillero-bitacora` y `astillero-plan` quedan como punteros al repo, no como copias — se evita que las dos versiones se desfasen entre sí.
+
+## 2026-09-28 — Lego: el usuario aclara el objetivo
+
+Corrección del usuario: el objetivo de Lego no es «un ingeniero con un agente, él al mando» (lo había añadido yo) ni filtrar por lo que ya tiene instalado. Es **saber qué existe hoy que funcione de verdad y le quite trabajo al desarrollar, aunque tenga que participar él**; cuanto más cubra, mejor, siempre que funcione. La fábrica perfecta la querría, pero no existe. Para qué: proyectos de cualquier tamaño, mucho más rápido. Detalle en [[objetivo]].
+
+Consecuencia: las plataformas multiagente no quedan descartadas por categoría; entran si funcionan. Aclarar el objetivo no es un encargo de investigar.
