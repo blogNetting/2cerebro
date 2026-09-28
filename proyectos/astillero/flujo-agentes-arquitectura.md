@@ -1,7 +1,7 @@
 ---
 title: Flujo de desarrollo con agentes — arquitectura operable
 created: 2026-09-25
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [agentes, arquitectura, github-actions, gh-aw, deepseek, opus, flujo]
 zona: tecnico
 ---
@@ -79,6 +79,8 @@ El diseño del flujo completo: qué pieza cubre cada rol, qué se entregan entre
 | K10 | PR aprobada → integración | Merge | Merge queue | Nativo | — |
 | K11 | Merge → tracker | Cierre de la tarea | `Closes #N` cierra la issue | Nativo | — |
 | K12 | Cierre → reconciliador | Promover lo que se ha desbloqueado | Etiquetas `estado:listo` y `agente:implementar` | Workflow con `issues: closed` + `gh issue view --json blockedBy` — **campo confirmado real y probado en vivo el 2026-09-25**: cerrar la tarea A promovió sola la tarea B | [[flujo-agentes-runbook]] §4 |
+
+> **K7, construido distinto de como está diseñado aquí — decisión tomada al chocar con la realidad de GitHub (2026-09-28).** El disparo «CI en verde → revisor» de esta fila **es imposible de implementar con `GITHUB_TOKEN`**: GitHub no crea ejecuciones a partir de eventos que dispara el propio token de las Actions, y `labeled` no está entre las excepciones documentadas (`workflow_dispatch`, `repository_dispatch`, `pull_request` con `opened`/`synchronize`/`reopened`). Lo construido y probado en vivo dispara el revisor en `pull_request` **directo**, sin esperar a la CI. Cumple la mitad de K8 (publica veredicto real, probado sobre una PR de prueba) y **no cumple K9**: el revisor no etiqueta `agente:rehacer`, así que el bucle de rehacer sigue sin arrancar. Detalle y evidencia: [[astillero-bitacora]], [[decisiones]].
 
 ## 5. Máquina de estados de una tarea
 

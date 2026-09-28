@@ -1,7 +1,7 @@
 ---
 title: La fábrica — despiece por etapas
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [astillero, agentes, fabrica, diseno, autonomia]
 zona: tecnico
 ---
@@ -40,7 +40,7 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 | 6 | **Autocomprobación** | El agente corre sus pruebas y corrige | Máquina | ✅ |
 | 7 | **Verificación** | **Algo distinto del agente** decide si está bien | Máquina | ✅ **construido y probado** (2026-09-27) |
 | 8 | **Puerta** | Pasa, reintenta o bloquea | Máquina → **Tú** al bloquear | ✅ **construida y probada** (2026-09-27) |
-| 9 | **Aprobación y merge** | Rutas protegidas → tú; el resto, solo | Máquina → **Tú** en excepciones | ✅ |
+| 9 | **Aprobación y merge** | Rutas protegidas → tú; el resto, solo | Máquina → **Tú** en excepciones | ⚠️ **no bloquea de verdad**: sin ruleset (falta GitHub Pro en repo privado) ningún check es obligatorio, así que se puede fusionar en rojo. Detalle en [[astillero-bitacora]] |
 | 10 | **Despliegue** | Publicar y poder volver atrás | Máquina | ❌ sin destino decidido |
 | 11 | **Operación** | Que no se caiga en silencio | Máquina | ⚠️ diseñado, sin estrenar |
 | 12 | **Medición** | Saber si la fábrica funciona o solo va rápido | Máquina → **Tú** leyendo | ✅ **construida y probada** (2026-09-27) |
@@ -66,6 +66,8 @@ Despiezarla con esos dos ejes sale de una observación incómoda: **una etapa pu
 > **Actualización (2026-09-27, tarde).** Esta sección se escribió cuando las etapas 7 y 12 eran los dos huecos del sistema. **Ya no lo son**: el verificador, la puerta y la medición están **construidos, probados en vivo y publicados en el tag `v0.4.0`**. Lo que sigue es el diseño que se decidió entonces, y sigue valiendo como despiece — pero **no como lista de lo que falta**. Estado real: [[astillero-bitacora]].
 >
 > Lo que **sí** queda de estos dos huecos es la parte que nunca se cerró: **medir la intención** (reconstruir el problema desde el cambio, sin ver el enunciado, y comprobar que reconcilia). El verificador mide «pasa», no «es lo que se pidió».
+>
+> **Y un bug encontrado el 2026-09-28, después de darla por cerrada:** el paso final del verificador salía en rojo aunque el veredicto fuera «verificado» — la última línea del script devolvía código 1 cuando no había nada que explicar. Arreglado, probado en vivo dos veces (fuera del runner y sobre una PR de prueba real) y **fusionado en `main`** (PR #28, commit `141fed2`). No cambia el diseño; era un fallo de una línea de shell. Falta cortar versión para que llegue a un proyecto real, que hoy sigue fijado a un tag anterior. Detalle en [[verificador-de-tareas]] y [[astillero-bitacora]].
 
 **7. Verificación.** Es la que decide todo lo demás. Despiece de la pieza: [[verificador-de-tareas]] (el mecanismo) y [[recibo-de-verificacion]] (lo que queda escrito, 7b). **Corrección importante sobre lo que dije al principio:** propuse *ocultar* los tests al agente, y la evidencia dice que **ocultar mueve el agujero, no lo cierra**. Está medido: con tests invisibles, **más del 80 % de las ejecuciones especulan sobre un evaluador imaginado**, y en **el 10-25 % de los casos ese razonamiento desvía el trabajo de lo pedido y aun así cobra como correcto** — un fallo que además se vuelve **invisible** para quien solo mira el verde. La posición que sí está respaldada empíricamente es **solo lectura**: *«restaura el rendimiento legítimo a la vez que impide los intentos de modificar los tests»*.
 
@@ -106,6 +108,7 @@ Este diseño **no se cierra nunca**. El estado del arte cambió tres veces duran
 - [[desarrollo-autonomo-con-agentes]] — la evidencia medida
 - [[verificacion-externa-agentes]] — síntesis del principio de la etapa 7, el agujero del oráculo
 - [[gas-city-frente-a-la-fabrica]] — contraste de las etapas 7, 8 y 12 contra Gas City: qué mecanismo se puede reutilizar y qué es marketing sin cifras
+- [[verificacion-sin-oraculo-informe]] — el informe que respalda la etapa 7: cómo se implementa una verificación que el agente no puede tocar, con los ocho mecanismos y el agujero de cada uno
 
 **Despiece de las etapas que tienen nota propia** (cada una desarrolla la fila correspondiente de la tabla de arriba):
 

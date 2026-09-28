@@ -1,7 +1,7 @@
 ---
 title: Bitácora de Astillero — lo construido el 2026-09-27
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [astillero, estado, bitacora, trabajo]
 zona: tecnico
 ---
@@ -161,6 +161,8 @@ Los arreglos de hoy viven en **diez ramas sin fusionar**. Solo entraron en `main
 
 Lo correcto es **una sola rama con todo y un PR**, no diez, y **publicar la versión** después.
 
+> **Corrección (2026-09-28):** esto ya no describe el estado real. Auditando el repo contra GitHub, no contra lo escrito aquí, la mayoría de esas ramas **se fusionaron directamente a `main`** a lo largo del propio 2026-09-27 (ver los commits de `id-token`, `checkout`, `etiqueta`, `red del agente`, etc. en `git log`). De las 29 ramas que había el 2026-09-28 por la mañana, **25 ya estaban fusionadas del todo** (`git compare main...<rama>` con `ahead_by: 0`) y solo 4 tenían algo que `main` no tiene. La frase de arriba fue cierta en el momento en que se escribió; dejó de serlo antes de que nadie la corrigiera.
+
 ### El ejecutor: hace el trabajo, y la PR no se crea
 
 Con los dos arreglos juntos, el agente **trabaja de verdad** — es lo mejor que ha salido hoy:
@@ -284,14 +286,14 @@ El research define **doce contratos** entre piezas (`flujo-agentes-arquitectura`
 | **K4** · Tracker → ejecutor | Etiqueta `agente:implementar` de un solo uso | ✅ El `label_command` de gh-aw, que la retira solo |
 | **K5** · Ejecutor → repo | PR con prefijo `[agente] `, `Closes #N` y etiqueta `estado:en-revision` | ✅ Las tres, en `shared/implementar-core.md`. Y la idempotencia: *«si la tarea ya tiene PR abierta, termina sin hacer nada»* |
 | **K6** · PR → CI | Checks obligatorios por ruleset | ❌ **No** — necesita GitHub Pro en repo privado, confirmado por el research |
-| **K7** · CI → revisor | El disparo del revisor | ✅ Arreglado el 2026-09-27: **por etiqueta tras la CI** |
-| **K8** · Revisor → PR | Veredicto, y `agente:rehacer` si pide cambios | ⚠️ **A medias**: comenta, pero **no puede etiquetar** (sin `issues: write`) |
-| **K9** · PR → ejecutor (rehacer) | Etiqueta `agente:rehacer` + empujar a la rama de la PR | ⚠️ **Configurado y desconectado**: `push-to-pull-request-branch` está en `shared/rehacer-core.md`, pero **nadie pone la etiqueta** |
+| **K7** · CI → revisor | El disparo del revisor | ⚠️ **Construido distinto de lo que pide el contrato — decisión anotada, no descuido.** El encadenado por etiqueta (12:16 de hoy: era **imposible**, GitHub no crea ejecuciones a partir de eventos que dispara el propio `GITHUB_TOKEN`) se sustituyó por `pull_request` **directo**, sin esperar a que la CI esté en verde. Cumple «el revisor se dispara», no cumple «con la CI en verde» |
+| **K8** · Revisor → PR | Veredicto, y `agente:rehacer` si pide cambios | ⚠️ **La mitad, y esa mitad ya PROBADA en vivo (no solo diseñada):** en la PR #13 de `proyecto-vigilante` el revisor publicó comentario real con veredicto (`CAMBIOS PEDIDOS`, y una segunda pasada tras `synchronize` reconociendo qué se había corregido) — `claude-opus-5-5`, is_error:false. La otra mitad sigue sin existir: el prompt no pide etiquetar, así que **sigue sin poner `agente:rehacer`** |
+| **K9** · PR → ejecutor (rehacer) | Etiqueta `agente:rehacer` + empujar a la rama de la PR | ❌ **Sin cambios, sigue desconectado.** `push-to-pull-request-branch` está en `shared/rehacer-core.md`, pero nadie pone la etiqueta — el revisor de hoy comenta, no etiqueta. `rehacer` sigue en cero corridas |
 | **K10** · PR aprobada → integración | Merge queue | ❌ **No** — mismo motivo que K6 |
 | **K11** · Merge → tracker | `Closes #N` cierra la issue | ✅ Nativo de GitHub |
 | **K12** · Cierre → reconciliador | Promover lo desbloqueado con `estado:listo` + `agente:implementar` | ✅ `reconciliar.yml`, con `issues: closed` y `blockedBy` |
 
-**Lo que dicen las doce, en una frase:** **cinco no existen** (K1, K2, K3, K6, K10), **dos están a medias y por el mismo motivo** (K8 y K9: el revisor no puede etiquetar, así que el bucle de rehacer no arranca nunca), y **cinco funcionan**.
+**Lo que dicen las doce, en una frase, corregido a 2026-09-28:** **cinco no existen** (K1, K2, K3, K6, K10); **K7 se cumple con un contrato distinto al pactado** (dispara siempre, no solo con CI verde — desviación documentada); **K8 tiene su mitad de publicar el veredicto ya probada en vivo**, pero sigue sin poder etiquetar; **K9 sigue roto por eso**, así que el bucle de rehacer **sigue sin arrancar nunca**; y **cinco funcionan** sin matices (K4, K5, K11, K12, y ahora la mitad probada de K8).
 
 **Y el hueco de los tres primeros no es un descuido suelto: K1, K2 y K3 son la entrada del sistema** — convertir una idea en especificación, que alguien la apruebe, y partirla en tareas. Es lo que en el plan son la **descomposición (etapa 2)** y la **capa de producto**. **Hoy el sistema sabe ejecutar y verificar, y no sabe empezar.**
 
@@ -341,10 +343,46 @@ branch protection de main  → 403 «Upgrade to GitHub Pro…»   → NO EXISTE
 
 **El resumen del cotejo, hoy:** de los doce contratos, **cinco no existen** (los tres de la entrada del sistema, y los dos que piden GitHub Pro); **dos están rotos por el mismo motivo** (el revisor no puede etiquetar → el bucle de rehacer no arranca); y **ninguno de los controles de CI bloquea nada**, porque **sin ruleset no hay checks obligatorios**.
 
+## 2026-09-28 (tarde) — auditoría contra el repo real: un bug nuevo, y esta bitácora se había desfasado
+
+Se auditó Astillero contra GitHub de verdad (ramas, tags, secretos, ejecuciones reales), no contra lo que esta bitácora decía. Salieron dos cosas: esta bitácora tenía **afirmaciones que ya no eran ciertas** (corregidas arriba, en su sitio, no aquí abajo aparte — «diez ramas» y «el revisor nunca ha funcionado»), y un **bug nuevo que nadie había encontrado**.
+
+### El verificador: el check salía en rojo aunque el veredicto fuera «verificado»
+
+**Encontrado leyendo el registro real de la ejecución de la PR #13 de `proyecto-vigilante`**, la misma PR que ya sirvió para probar el revisor:
+
+```
+Veredicto: verificado (código 0)
+##[error]Process completed with exit code 1.
+```
+
+**La causa, en `.github/workflows/verificar.yml:350`:** la última orden del paso `clasificar` era
+
+```bash
+[ -n "$motivo" ] && printf 'Motivo: %s\n' "$motivo"
+```
+
+Cuando el veredicto es limpio, `$motivo` queda vacío a propósito (no hay nada que explicar). `[ -n "$motivo" ]` da **falso**, ese comando devuelve **código 1**, y al ser la **última orden del paso**, `bash -e` — el shell por defecto de un bloque `run:` de Actions — toma ese código como el resultado del paso entero. **Cada PR que verifica bien sale con el check en rojo igual**, exactamente el modo de fallo que este mismo proyecto lleva un día entero cazando en otras piezas: «parece que falló, y no falló».
+
+**Por qué importa junto con el hallazgo de más arriba («el fail-closed no está en vigor»):** son dos fallos distintos que se refuerzan. Sin ruleset, un check rojo no bloquea nada — y ahora además ese check **mentía en rojo** incluso cuando el trabajo era correcto. Un humano mirando la pantalla vería rojo en una PR buena, y ninguna puerta automática lo habría parado de todas formas.
+
+**Arreglado, y probado de dos formas distintas antes de darlo por bueno:**
+1. **Fuera del runner**, reproduciendo el bloque exacto de bash con `bash -e`: con el código viejo y `$motivo` vacío, sale **exit 1**; con el `if` nuevo, sale **exit 0** en los dos casos (con y sin motivo).
+2. **En vivo, en el runner real**: se apuntó temporalmente `vigilar.yml` de `proyecto-vigilante` a la rama del arreglo (`fix/veredicto-exit-code`) — mismo mecanismo `uses: ./...` con el que `vigilar.yml` llama a `verificar.yml` en el mismo ref — se abrió una PR de prueba real (#15) y se observó la ejecución: `Veredicto: verificado (código 0)`, job en `success`, sin el `exit code 1` espurio detrás. Confirmado en el run `36422499482`, commit `ec96828`. La PR de prueba se cerró después; el proyecto volvió a su pin de siempre.
+
+**Estado: FUSIONADA.** PR #28 fusionada por el usuario el 2026-09-28 a las 12:51 (commit `141fed2`), confirmado leyendo `verificar.yml` en `main` en vivo: el `if` ya está ahí. `release-please` la recogió sola en la propuesta de versión (`Bug Fixes: verificador: el paso salía en rojo…`). `actionlint` no lo detecta (es un fallo de lógica de shell, no de sintaxis YAML) — se revisó el resto de los workflows del repo por el mismo patrón (una guarda `[ ... ] && algo` como última línea de un paso) y no aparece en ningún otro sitio.
+
+**Lo que falta para que llegue a un proyecto real:** el arreglo está en `main`, no en un tag. `proyecto-vigilante` sigue fijado a `vigilar.yml@v0.4.0`, anterior al arreglo. Hasta que se corte una versión nueva (la PR #26 de `release-please` ya la trae) y se actualice el pin, un proyecto real sigue viendo el bug.
+
+### Limpieza de ramas: identificada, no ejecutada
+
+De las 29 ramas del repo, **24 estaban fusionadas del todo** en `main` (`ahead_by: 0` contra `main`) y no aportan nada que no esté ya dentro. Se intentó borrarlas por la API de GitHub y **el propio harness lo bloqueó** — es una acción destructiva hacia fuera y el permiso no está concedido. Quedan sin tocar; las borra el usuario si quiere, o concede el permiso.
+
 ## Lo que NO está probado, y se dice
 
 - **`Rehacer`: cero corridas.** El checklist lo daba por probado «en el mismo banco» y **nunca se ha ejecutado** (comprobado el 2026-09-27, PR #20). Comparte motor con el ejecutor, que sí ha funcionado 2 veces.
-- **El Revisor (Opus) y el Triage de bugs: NUNCA han funcionado.** Todas sus corridas han fallado o se han saltado — les falta el secreto `CLAUDE_CODE_OAUTH_TOKEN`. Estaban marcados como «probados» en el checklist, y era falso: se descubrió el 2026-09-27 al comprobarlo contra las corridas reales. **Necesitan tu token.**
+- **El Triage de bugs: sigue sin probarse.** Falta el secreto `CLAUDE_CODE_OAUTH_TOKEN` en los sitios que lo necesitan y ninguna corrida real lo ha ejercitado.
+- ~~El Revisor (Opus): NUNCA ha funcionado~~ — **corregido el 2026-09-28: ya funciona, probado en vivo.** Con el token puesto y el disparo cambiado a `pull_request` directo (ver contrato K7/K8 arriba), corrió de verdad sobre la PR #13 de `proyecto-vigilante`: `claude-opus-5-5`, comentario real con veredicto, `is_error: false`. Detalle completo en [[decisiones]], entrada «2026-09-28 — El revisor con Opus: por qué no había funcionado nunca, y las cinco causas». Lo que le sigue faltando es etiquetar `agente:rehacer` (K9, arriba sigue en ❌).
 - **El raíl de idea sobre un proyecto real.** Se probó como skill suelta (11 turnos de CLI).
 - **El flujo de agente completo** (ejecutor → PR) sobre un proyecto generado. El vigilante sí está probado ahí; el resto no.
 - **La medición por `schedule`.** Todas las corridas han sido manuales.

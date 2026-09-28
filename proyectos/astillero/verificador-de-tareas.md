@@ -1,7 +1,7 @@
 ---
 title: El verificador — pieza 7 de la fábrica
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [astillero, verificacion, diseno, seguridad]
 zona: tecnico
 ---
@@ -56,6 +56,8 @@ La plantilla del proyecto disparaba con `workflow_run` («cuando la CI termine»
 
 **5. Y la lección de método, que vale para todas las piezas.** Los tres primeros fallos **no aparecieron en el banco de pruebas hecho a mano** — que se había desfasado respecto al molde y daba un falso positivo. Aparecieron al probarlo **en un proyecto generado con `copier`**, que es por donde pasa un proyecto de verdad.
 
+**6. Un veredicto correcto puede seguir saliendo en rojo — encontrado el 2026-09-28, un día después de dar la pieza por cerrada.** La última orden del paso `clasificar` era `[ -n "$motivo" ] && printf 'Motivo: %s\n' "$motivo"`. Con veredicto limpio, `$motivo` queda vacío a propósito — no hay nada que explicar —, la comprobación `[ -n ... ]` da **falso** (código 1), y al ser la **última orden del paso**, `bash -e` (el shell por defecto de un `run:` de Actions) toma ese código como el resultado del paso entero. Encontrado leyendo el registro real: `Veredicto: verificado (código 0)` seguido de `Process completed with exit code 1`. **Cada PR que verificaba bien salía con el check en rojo igual** — el mismo tipo de mentira que el punto 1 de arriba, pero al revés: aquí el veredicto era correcto y el check mentía. Arreglado cambiando el `&&` final por un `if`; probado fuera del runner (exit 1 antes, exit 0 después) y en vivo, apuntando temporalmente un proyecto de prueba a la rama del arreglo. `actionlint` no lo detecta — es lógica de shell, no sintaxis YAML. **PR #28, fusionada en `main` el 2026-09-28** (commit `141fed2`). Falta cortar versión para que un proyecto real la reciba.
+
 > **Una pieza no está probada hasta que se prueba por el camino que usa de verdad un proyecto.**
 
 Corolario incómodo y anotado: durante unas horas este documento y `estado.md` dieron el verificador por «probado en vivo» a partir de una corrida del banco que **tenía el mismo agujero**. El veredicto era correcto **por el motivo equivocado**. Por eso el paso de redactar la wiki va **después** de probar: lo que se escribe antes de construir es diseño, no descripción del funcionamiento.
@@ -71,3 +73,4 @@ Corolario incómodo y anotado: durante unas horas este documento y `estado.md` d
 - [[la-fabrica]] · [[recibo-de-verificacion]] · [[estado-de-verificacion]] · [[vigilante-de-tareas]]
 - [[desarrollo-autonomo-con-agentes]] — la evidencia
 - [[gas-city-frente-a-la-fabrica]] — el constructo `check` de Gas City: «el paso está hecho cuando lo dice tu script, no cuando lo dice el agente», con presupuesto de intentos. Aporta el patrón, no el aislamiento
+- [[verificacion-sin-oraculo-informe]] — el informe que respalda esta pieza: los ocho mecanismos para que el agente no toque los tests, cada uno con su agujero, y por qué **ocultar** no es la respuesta y **solo lectura** sí

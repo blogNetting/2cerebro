@@ -13,7 +13,14 @@ prompt*.txt
 # artefactos de herramientas (logs, capturas, cachés): nunca se versionan.
 # El repo es público y cerebro-sync.sh hace `git add -A` + push cada hora.
 .playwright-mcp/
+.cache/
+node_modules/
+__pycache__/
+tool-results/
 *.log
+*.har
+.env
+.env.*
 
 # adjuntos binarios de terceros (fotos de fichas de Booking, PDF generados)
 fuentes/londres-alojamiento-2026-09-19/

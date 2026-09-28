@@ -1,7 +1,7 @@
 ---
 title: Astillero
 created: 2026-09-24
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [astillero, desarrollo, agentes, opus, deepseek, devsecops, ci-cd, git, producto]
 zona: tecnico
 ---
@@ -22,7 +22,9 @@ Las cinco piezas, construidas y enlazadas entre sí:
 
 **Despiece por etapas y estado de madurez:** [[la-fabrica]] — las doce etapas del sistema, quién actúa en cada una, y la separación entre lo que ya puede operar solo y lo que no. Los dos agujeros identificados aquel día: **la verificación** (faltaba el oráculo que el agente no pueda tocar) y **la medición** (no existía). **Los dos CERRADOS el 2026-09-27** — construidos, probados en vivo y publicados en el tag `v0.4.0`. Ver [[astillero-bitacora]].
 
-**Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. El revisor con Opus tampoco se ha ejecutado todavía (falta tu token). La parametrización real de imports de gh-aw sigue sin resolver (ver «Pendiente de decidir»).
+**Lo que sigue sin cerrar, dicho explícito y no escondido:** el sistema de cobertura de tests ya estaba resuelto desde ayer ([[desarrollo-agentes-f4-devsecops]] §3.3, corregido hoy: Vitest con proveedor `v8` nativo en vez de `c8`, Codecov en vez de Coveralls por el plan gratis de repos privados, sin umbral global fijo por ser gameable) pero nunca se ha ejecutado en ninguna de las 3 corridas reales de DeepSeek — sigue siendo diseño verificado, no comportamiento probado. Y no hay gate real: no existe fichero de configuración de Codecov en el repo, así que nadie comprueba que lo nuevo esté cubierto.
+
+**Corrección (2026-09-28):** esta nota decía que «el revisor con Opus tampoco se ha ejecutado todavía». **Ya no es así** — corrió de verdad el 2026-09-28, con veredicto real publicado sobre una PR de prueba. Detalle en [[astillero-bitacora]]. La frase de la parametrización de imports de gh-aw ya estaba desactualizada desde el 2026-09-27 (se cerró ese día, ver «Pendiente de decidir» abajo). Y nuevo hoy: un bug del verificador que sacaba el check en rojo con veredicto correcto — arreglado, probado en vivo y **fusionado en `main`** (PR #28). Falta cortar versión para que llegue a un proyecto real.
 
 Investigación del ciclo completo (fase previa, cerrada el 2026-09-25): [[desarrollo-agentes-investigacion]]. El informe [[orquestacion-opus-deepseek-informe]] es la primera versión, parcial, superada por [[flujo-agentes-arquitectura]].
 

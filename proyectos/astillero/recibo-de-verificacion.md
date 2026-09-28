@@ -65,3 +65,4 @@ cambios_en_tests_por_el_agente: ninguno | <detalle>
 
 - [[verificador-de-tareas]] · [[estado-de-verificacion]] · [[la-fabrica]]
 - [[gas-city-frente-a-la-fabrica]] — `NO_VERIFICABLE` está implementado en un orquestador real con la convención `75` (`EX_TEMPFAIL`): deja de justificarse solo con FHIR y gestión de incidentes
+- [[verificacion-sin-oraculo-informe]] — precedente fuera de este proyecto: `in-toto test-result/v0.1` existe y está ligado a commit, pero casi nadie lo emite (174 repos, casi todos verificadores, no productores), y **no garantiza que el recibo llegue**

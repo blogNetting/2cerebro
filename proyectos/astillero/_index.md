@@ -11,6 +11,7 @@ Sistema genérico para desarrollar software con agentes de IA: hub del proyecto,
 - [[guion-de-idea]] — etapas 0 y 1: el raíl común que hace que la misma idea produzca siempre las mismas preguntas y la misma forma de resultado, para poder pulirla
 - [[verificador-de-tareas]] — pieza 7: cómo se decide si una tarea está bien hecha sin que el agente pueda influir, y las cuatro piezas de GitHub que se usan por debajo
 - [[recibo-de-verificacion]] — pieza 7b: qué queda escrito al verificar, para que un tercero pueda reconstruirlo sin haber estado
+- [[verificacion-sin-oraculo-informe]] — informe: cómo se implementa de verdad una capa de verificación que el agente no puede tocar. Ocho mecanismos probados, y el hallazgo que da la vuelta al problema: ocultar los tests no lo cierra, lo desplaza
 - [[estado-de-verificacion]] — piezas 3 y 8: cómo se separa «cerrado» de «verificado», y quién puede escribir cada uno
 - [[vigilante-de-tareas]] — pieza 8: cuándo una tarea pasa, se reintenta o se bloquea, con umbrales prestados de sistemas maduros
 - [[medicion-de-la-fabrica]] — pieza 12: las cinco de DORA más lo que hay que añadir, y con qué se instrumenta sin pagar

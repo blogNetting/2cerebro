@@ -1,7 +1,7 @@
 ---
 title: Plan de trabajo de Astillero
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-09-28
 tags: [astillero, plan, trabajo]
 zona: tecnico
 ---
@@ -53,14 +53,15 @@ Probado en vivo sobre un proyecto generado, y es lo mejor que salió hoy: el age
 
 **Por qué una App y no el respaldo por OIDC:** el research lo pide — *«identidad de bot vía GitHub App, el autor del PR no es una cuenta humana»* y *«identidad diferenciada por agente, no un token compartido»*. Con OIDC el trabajo saldría como `github-actions`, sin atribución.
 
-**11 · La medición automática NO arranca, y no se entiende.**
-El `schedule` está puesto en `main` (cron cada 30 minutos) y el workflow figura como `active`. **No ha disparado ni una vez en horas.** Y no es la frecuencia: **`Reconciliar tareas` sí dispara por `schedule`** con el mismo intervalo y en el mismo repo. Sin explicación comprobada — sigue abierto.
+**11 · La medición automática — ✅ CERRADO, era un falso pendiente.** Comprobado el 2026-09-28 contra las ejecuciones reales del proyecto de prueba: `Medir` **sí dispara por `schedule`** (corridas reales a las 03:14 y 10:02 de hoy, ambas `success`). Lo que decía este punto ya no era cierto cuando se leyó; se corrige aquí en vez de dejarlo como pendiente abierto.
 
 **12 · La rama de datos de la medición — ARREGLADA, SIN PROBAR.** Arrastraba una copia entera del código del proyecto; ahora se crea **huérfana** y solo lleva `metricas/`. Publicado en la `v0.5.0`. **Falta probarla**, y para eso hay que partir de un proyecto sin esa rama.
 
-**22 · El revisor: que publique su veredicto.**
-Es el agente que lee una PR y **la compara contra el contrato de la tarea**. Corre de verdad (Opus, 10 turnos), y **no publicaba nada** porque la action de Claude **deduce la PR del evento** y `workflow_run` no la trae.
-**Arreglado y publicado en `v0.5.0`:** se dispara **por etiqueta** — la CI marca la PR al terminar en verde, y esa marca lo despierta, con la PR en el contexto y después de la CI (contrato K7). **Falta verlo en vivo.**
+**22 · El revisor: que publique su veredicto — ✅ HECHO Y PROBADO EN VIVO (2026-09-28), con una desviación anotada.**
+Es el agente que lee una PR y **la compara contra el contrato de la tarea**. Lo de aquí arriba (disparo por etiqueta tras la CI, contrato K7) **resultó imposible de construir**: GitHub no crea ejecuciones a partir de eventos que dispara el propio `GITHUB_TOKEN`, y la etiqueta nunca disparaba nada. Se cambió a `pull_request` directo, sin esperar a la CI — **desviación explícita de K7**, no un descuido: el revisor ya puede correr con la CI en rojo.
+**Probado en vivo de verdad:** sobre la PR #13 de `proyecto-vigilante`, con veredicto real publicado y una segunda pasada reconociendo qué cambios ya se habían corregido. Arreglado y fusionado directamente en `main` de Astillero (commits `65a8a35` y `282f97c`, 2026-09-28). Detalle completo en [[astillero-bitacora]] y [[decisiones]].
+**Lo que le sigue faltando, y es la tarea 9 nueva de abajo:** etiquetar `agente:rehacer` cuando pide cambios — sin eso el bucle de rehacer (K9) sigue sin arrancar nunca.
+**Y un pendiente de fontanería:** el arreglo está en `main`, no en un tag. `patrimonial` sigue fijado a `@v0.2.4` (anterior al arreglo) y `proyecto-vigilante` a `@main` (transitorio, no es cómo se fija un proyecto real). Hay que cortar versión y repasar los pines — mismo motivo que la tarea 23 de abajo.
 
 **13 · Que la CI del molde no nazca en rojo — ✅ HECHO.** Cinco fallos encontrados, arreglados, documentados y verificados: la CI del proyecto generado pasó a **verde entero**. Comprobado el 2026-09-27 sobre un proyecto generado: **6 fallos de 6**, por **cuatro causas distintas** y solo una es el token que ya sabíamos:
 1. **`tipos`** — instala `mypy` pero **no las dependencias del proyecto**, así que mypy no encuentra `pytest`. Fallo del molde.
@@ -99,6 +100,23 @@ Lo que **no cuadra y no tiene explicación**:
 - O mirar del lado de la cuenta si aparece la llamada (logs de la organización / facturación).
 - Si no aparece por ningún lado: **el revisor no está gastando tu cuota, y eso cambia lo que se puede esperar de él**.
 
+**23 · El verificador salía en rojo con veredicto limpio — ✅ ARREGLADO, PROBADO EN VIVO Y FUSIONADO.**
+Encontrado el 2026-09-28 auditando el repo contra GitHub: la última orden del paso `clasificar` de `verificar.yml` era `[ -n "$motivo" ] && printf ...`; con veredicto limpio el motivo queda vacío, esa comprobación da falso (código 1), y al ser la última orden del paso `bash -e` la tomaba como el resultado del paso entero. **Cada PR que verificaba bien salía con el check en rojo igual.**
+**Probado dos veces:** reproducido fuera del runner con `bash -e` (exit 1 antes, exit 0 después, con y sin motivo) y en vivo apuntando temporalmente `proyecto-vigilante` a la rama del arreglo — PR de prueba #15, run `36422499482`, `success` sin el exit 1 espurio.
+**Estado:** PR #28 **fusionada en `main`** el 2026-09-28 (commit `141fed2`), confirmado leyendo `verificar.yml` de `main` en vivo. **Lo que queda:** el arreglo está en `main`, no en un tag — `proyecto-vigilante` sigue fijado a `@v0.4.0`, así que hasta que se corte versión (la PR #26 ya la trae) y se actualice el pin, un proyecto real no lo recibe.
+
+**24 · Que el revisor pueda etiquetar `agente:rehacer` (cierra K9).**
+Con el revisor ya publicando veredicto (tarea 22), lo único que falta para que el bucle de rehacer arranque es que, cuando pida cambios, ponga la etiqueta `agente:rehacer` — hace falta darle permiso `issues: write` y añadirlo al prompt/`--allowedTools`. Sin esto, `rehacer.md` sigue en cero corridas pase lo que pase con el resto.
+
+**25 · Fusionar lo que queda esperando.**
+**#28 ya fusionada** (2026-09-28, tarea 23). Quedan dos PRs abiertas en `blogNetting/astillero`:
+- **#26** — `chore(main): release 0.6.0` (release-please, automática; ya recoge también el arreglo de la 23 y del revisor — cortarla es lo que hace falta para que los proyectos reales reciban ambos).
+- **#27** — `docs/manual-completo`, completa el manual y anota las contradicciones con el research.
+Fusionarlas es tuyo — tengo prohibido fusionar PRs.
+
+**26 · Limpiar las ramas ya fusionadas.**
+De 30 ramas del repo, **26** están fusionadas del todo en `main` y no aportan nada (recomprobado el 2026-09-28 tras fusionar la #28, `ahead_by: 0` contra `main` cada una — subió de 24 a 26 porque `fix/veredicto-exit-code` se sumó a la lista). Se intentó borrarlas por la API y **el propio harness lo bloqueó** por ser una acción destructiva hacia fuera. Pendiente de que tú las borres o concedas el permiso.
+
 ## Parqueados y decisiones tuyas — **no se hacen hoy**
 
 **16 · Despliegue (etapa 10)** — aparcado a propósito hasta decidir **dónde** se despliega. *(Esto faltaba en la lista anterior.)*
@@ -116,6 +134,8 @@ Lo que **no cuadra y no tiene explicación**:
 ## Lo que faltaba en la lista anterior
 
 Se me habían quedado fuera **seis**: la **1** (lo empezado y parado), la **8** (medir la intención), la **9**, la **10** y la **11** (tres cosas probadas a medias), la **13** (la CI que nace en rojo) y la **16** (el despliegue, que estaba en los documentos pero no en el plan).
+
+**Actualización 2026-09-28, tras auditar el repo contra GitHub, no contra este documento:** la 11 estaba mal — la medición ya dispara sola, se corrige arriba, en su sitio. La 22 se cerró con una desviación anotada del contrato K7. Nuevas: **23** (bug del verificador, arreglado y sin fusionar), **24** (etiquetar `agente:rehacer`, cierra K9), **25** (tres PRs probadas esperando que las fusiones) y **26** (24 ramas ya fusionadas, pendientes de borrar). Detalle completo de la auditoría en [[astillero-bitacora]].
 
 ## Enlaces
 
