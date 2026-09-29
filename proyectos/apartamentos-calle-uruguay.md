@@ -46,6 +46,5 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 
 - [[duchas-alquiler-carballo]] — grifo de ducha cromado con teleducha y soporte para los baños: ganador Ramon Soler Tarraco (41 €, Obramat)
 - [[patrimonial]] — app de patrimonio donde este inmueble aparecerá valorado
-- [[rentabilidad-inmobiliaria-con-datos]] — proyecto aparte para buscar nuevas oportunidades de inversión inmobiliaria con datos; este piso es solo referencia de contexto, no forma parte de ese método
 
 - [[_index]]
