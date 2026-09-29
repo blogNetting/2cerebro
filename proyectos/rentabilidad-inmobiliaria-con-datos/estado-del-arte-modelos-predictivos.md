@@ -136,3 +136,4 @@ Cruzando todo lo anterior, para replicar algo tipo Radar en España:
 
 - [[rentabilidad-inmobiliaria-con-datos]] — hub del proyecto: qué hace Prophero y qué dicen sus transcripciones
 - [[fuentes-prophero]] — catálogo de fuentes de Prophero, pendientes de extraer
+- [[sintesis-radar]] — síntesis consolidada de todo el conocimiento del proyecto

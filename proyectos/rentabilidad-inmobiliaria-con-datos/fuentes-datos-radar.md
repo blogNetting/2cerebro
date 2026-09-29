@@ -49,6 +49,51 @@ Un dato suelto del año actual **no sirve para un modelo**: hace falta la serie 
 
 **Lectura**: la base gratuita **sí tiene historia suficiente para entrenar**. Población desde 1996, paro desde 2006, alquiler desde 2011. Ocho a treinta años por variable. Lo que no la tiene es el precio de vivienda municipal y los visados — los dos huecos, que además son cortos en el tiempo.
 
+## Dónde consultar cada dato — tabla de trabajo
+
+Los datos a extraer (salen de las transcripciones, ver [[sintesis-radar]] sección 1). **Solo fuentes nacionales.**
+
+**Municipios fijos de prueba** — siempre los mismos, cinco comunidades distintas, elegidos para que compliquen:
+
+| Municipio | Código INE | Comunidad | Por qué |
+|---|---|---|---|
+| A Coruña | 15030 | Galicia | ciudad pequeña |
+| Madrid | 28079 | Madrid | gran ciudad |
+| Sagunto | 46220 | Comunitat Valenciana | mediano; **nombre bilingüe** (Sagunt/Sagunto) |
+| Setenil de las Bodegas | 11034 | Andalucía | pueblo pequeño (~2.600 hab.) |
+| Ricote | 30034 | Región de Murcia | pueblo pequeño (~1.200 hab.) |
+
+| Dato a extraer | ¿De dónde? | URL | A Coruña | Madrid | Sagunto | Setenil | Ricote | Comentarios |
+|---|---|---|---|---|---|---|---|---|
+| **Población del municipio** | INE (Padrón) | `servicios.ine.es/wstempus/js/ES/DATOS_TABLA/29005` | 251.543 | 3.506.730 | 73.031 | 2.634 | 1.197 | ✅ **CHECK VERDE** — serie 1996-2025 en los cinco, municipal, gratis, sin clave |
+| Crecimiento de población (1 y 5 años) | derivado de INE | (la anterior) | — | — | — | — | — | ✅ **CHECK VERDE** — se calcula de la serie de arriba; misma calidad |
+| Población de la comarca | INE (agregación) | por localizar | | | | | | ⚠️ **Por confirmar** |
+| **Tasa de paro** | SEPE | `sede.sepe.gob.es/.../Dtes_empleo_por_municipios_2025_csv.csv` | 18.626 | 197.202 | 7.277 | 402 | 161 | ✅ **CHECK VERDE** — serie 2006-2025 en los cinco, municipal, gratis |
+| Renta per cápita | INE `ADRH` · AEAT | `servicios.ine.es/.../TABLAS_OPERACION/ADRH` | | | | | | ⚠️ **Por confirmar** — municipal existe, tabla sin localizar |
+| Tasa de esfuerzo | derivada | — | | | | | | ✅ **CHECK VERDE** — se calcula (precio ÷ renta) |
+| Impagos | — | — | | | | | | ⛔ **SIN FUENTE MUNICIPAL** — el Banco de España solo da agregado |
+| Industria / empleo | DIRCE (INE) · Seguridad Social · Catastro (uso) | por localizar | | | | | | ⚠️ **Indirecta** — no hay un dato directo, se deduce |
+| **Precio de la vivienda** | INE `IPV` | `servicios.ine.es/.../DATOS_TABLA/80270` | +12,9% | +12,9% | +13,0% | +11,9% | pendiente | ⚠️ **FIABLE A MEDIAS** — serie 2007-2026 pero **solo por CCAA**, no distingue municipios |
+| Precio por m² | Idealista | `idealista.com/data/` | | | | | | ⚠️ **No oficial** — son precios de anuncio, no de transacción |
+| Transacciones | INE `ETDP` · Registradores | `ine.es` · `opendata.registradores.org` | | | | | | ❌ **NO FIABLE a municipio** — solo baja a provincia |
+| Liquidez / tiempo de venta | Idealista · Tinsa | `idealista.com/data/` | | | | | | ⚠️ **No oficial** — indicador de portal |
+| Stock en oferta | Idealista / Fotocasa | `idealista.com/data/` | | | | | | ⚠️ **No oficial** — dato de portal |
+| **Precio del alquiler** | SERPAVI (MIVAU) | `serpavi.mivau.gob.es` | | | | | | ⚠️ **Por confirmar** — municipal y sección censal, gratis, pero sin API (Excel) |
+| Tiempo hasta alquilar | Idealista | `idealista.com/data/` | | | | | | ⚠️ **No oficial** |
+| Ocupación (viviendas vacías) | INE, Censos | `ine.es` | | | | | | ⚠️ **FIABLE A MEDIAS** — solo 2011 y 2021, dos puntos, no es serie |
+| Stock en alquiler | Idealista / Fotocasa | `idealista.com/data/` | | | | | | ⚠️ **No oficial** |
+| Visados de obra nueva | MITMS · colegios por CCAA | `mptmd.gob.es` | | | | | | ⚠️ **FIABLE A MEDIAS** — provincial; municipal solo en algunas CCAA |
+| Suelo industrial / logístico | Catastro (uso) · CORINE/SIOSE | `catastro.hacienda.gob.es` | | | | | | ⚠️ **Indirecta** — se deduce del uso del suelo |
+| Infraestructuras | MITMS · boletines oficiales | `mptmd.gob.es` | | | | | | ⚠️ **Por confirmar** |
+| IBI — tipo por municipio | Catastro, Ordenanzas fiscales · Hacienda | `catastro.hacienda.gob.es` | | | | | | ⚠️ **Por confirmar** |
+| Valor catastral | Catastro | `catastro.hacienda.gob.es` | | | | | | ❌ **NO DISPONIBLE** — dato protegido |
+| Comunidad, seguro, mantenimiento | — | — | | | | | | ⛔ **SIN FUENTE PÚBLICA** — se estima |
+| Compra por extranjeros | Registradores ERI | `opendata.registradores.org` | | | | | | ❌ **NO FIABLE a municipio** — solo provincia/CCAA |
+
+**Clave de la columna Comentarios**: ✅ CHECK VERDE (dato sólido, histórico largo, municipal, gratis) · ⚠️ FIABLE A MEDIAS o por confirmar (existe, pero con límites o sin verificar) · ❌ NO FIABLE (existe pero no a nivel municipal, o no utilizable) · ⛔ SIN FUENTE.
+
+**Resumen**: de 24 datos, solo **cuatro tienen check verde** (población, su crecimiento, paro, tasa de esfuerzo) y **cuatro más son fiables a medias** por estar solo a nivel CCAA o con muy pocos puntos temporales. El resto está por confirmar o directamente no existe a nivel municipal.
+
 ## Detalle por variable
 
 ### Población — INE, [VERIFICADO EN VIVO]
@@ -130,3 +175,4 @@ Búsquedas web (INE, SEPE, Catastro, IGE, SERPAVI, Idealista) **más pruebas en 
 - [[rentabilidad-inmobiliaria-con-datos]] — hub: las variables que se quieren cubrir y de dónde salen
 - [[estado-del-arte-modelos-predictivos]] — con qué se entrena el modelo y cómo se valida
 - [[fuentes-prophero]] — catálogo de fuentes sobre Prophero
+- [[sintesis-radar]] — síntesis consolidada de todo el conocimiento del proyecto

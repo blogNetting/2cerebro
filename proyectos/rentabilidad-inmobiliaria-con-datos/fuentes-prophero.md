@@ -113,3 +113,4 @@ Las lleva otro modelo, no este documento. Aquí solo se inventan para **no volve
 ## Relacionado en el wiki
 
 - [[rentabilidad-inmobiliaria-con-datos]] — hub del proyecto, donde se extrae el conocimiento de las transcripciones
+- [[sintesis-radar]] — síntesis consolidada de todo el conocimiento del proyecto
