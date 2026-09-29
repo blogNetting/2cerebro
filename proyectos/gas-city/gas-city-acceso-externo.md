@@ -42,11 +42,14 @@ bind = "0.0.0.0"
 allowed_hosts = ["192.168.1.8"]
 EOF
 
-gc supervisor stop
-gc supervisor start
+systemctl --user restart gascity-supervisor.service
 ```
 
-**Nota:** el propio `gc supervisor start` imprime `Dashboard: http://127.0.0.1:8372/` incluso cuando está en `0.0.0.0` — es solo el texto que muestra, normaliza `0.0.0.0`→`127.0.0.1` para ese mensaje. No te fíes de esa línea para saber dónde escucha de verdad; compruébalo con `ss -tlnp` o con un `curl` a la IP real.
+> **⚠️ CORREGIDO EL 2026-09-29 — el comando de arriba era el malo.** Esta receta decía `gc supervisor stop` + `gc supervisor start`. **Comprobado en vivo que eso deja el proceso huérfano, fuera del control de systemd**: `systemctl` lo marca como `inactive (dead)` mientras el proceso real sigue vivo por su cuenta, y encima deja un `tmux` de una sesión anterior sin matar. Consecuencia real medida: los 15 pedidos automáticos de mantenimiento llevaron horas sin dispararse porque nada los relanzaba. Usa siempre `systemctl --user restart gascity-supervisor.service` para tocar la configuración del supervisor, nunca `gc supervisor stop`/`start` sueltos.
+>
+> **Cómo se detecta si ya pasó:** `systemctl --user status gascity-supervisor.service` dice `inactive` pero `curl` al panel sigue respondiendo, o `ps aux | grep "gc supervisor run"` muestra un proceso vivo que `systemctl --user stop` no consigue parar. Limpieza: `kill <pid>` de los procesos sueltos (el `gc supervisor run` y cualquier `tmux -u -L gas-city` huérfano), luego `systemctl --user start gascity-supervisor.service`.
+
+**Nota:** el propio `gc supervisor start`/`systemctl` imprime `Dashboard: http://127.0.0.1:8372/` incluso cuando está en `0.0.0.0` — es solo el texto que muestra, normaliza `0.0.0.0`→`127.0.0.1` para ese mensaje. No te fíes de esa línea para saber dónde escucha de verdad; compruébalo con `ss -tlnp` o con un `curl` a la IP real.
 
 ## Verificación, la que se hizo de verdad
 
