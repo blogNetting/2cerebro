@@ -26,7 +26,7 @@ Sin verificar todavía: si el "análisis de datos" es una ventaja real y diferen
 
 ## Fuentes disponibles
 
-- [[fuentes-index|fuentes/prophero-transcripciones-2026-09-29]] — 8 transcripciones de vídeos de YouTube sobre Prophero e inversión inmobiliaria, aportadas por el usuario. **Sin ingerir todavía**: pendiente de extraer citas textuales y contrastarlas con lo de arriba.
+- `fuentes/prophero-transcripciones-2026-09-29/` — 8 transcripciones de vídeos de YouTube sobre Prophero e inversión inmobiliaria, aportadas por el usuario. **Sin ingerir todavía**: pendiente de extraer citas textuales y contrastarlas con lo de arriba.
 
 ## Estado
 
