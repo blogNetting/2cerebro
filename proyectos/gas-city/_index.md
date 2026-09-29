@@ -9,6 +9,7 @@ Gas City (sucesor de Gas Town, de Steve Yegge) como pieza central del montaje pa
 - [[gas-city-alcalde]] — trabajar solo con el alcalde: los dos alcaldes (`gastown` reparte y fusiona solo; `gc.mayor` planifica contigo), el flujo paso a paso, quién te pregunta (solo él), qué te llega, los tres flujos que parten de un issue/PR de GitHub, y cómo operar con Claude y DeepSeek a la vez
 - [[gas-city-con-2cerebro]] — cómo usarlo con 2cerebro para crear y desarrollar aplicaciones: el reparto (2cerebro = método, cada app = rig), el flujo paso a paso, y los cuatro puntos que hay que tocar para que conviva con el wiki
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos de Gas City sirven y qué es marketing: el bucle `check` como primitiva de verificación, las puertas, los presupuestos, el tercer estado con la convención `75`, y las métricas que el propio proyecto publica de sí mismo
+- [[gas-city-acceso-externo]] — **probado en vivo, acceso confirmado**: el enlace fijo del panel desde fuera de la VM (`http://192.168.1.8:8372`), los dos cambios necesarios en `~/.gc/supervisor.toml` (`bind` + `allowed_hosts`, uno solo no basta), por qué queda en solo lectura, y que persiste solo
 
 ## La evidencia que sostiene el montaje
 

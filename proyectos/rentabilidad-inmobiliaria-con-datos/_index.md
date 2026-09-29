@@ -5,3 +5,4 @@ Buscar buenas rentabilidades en inversión inmobiliaria apoyándose en datos, us
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
 - [[rentabilidad-inmobiliaria-con-datos]] — hub del proyecto: qué es Prophero (verificado, con cita y enlace), fuentes disponibles sin ingerir todavía, y próximos pasos
+- [[fuentes-prophero]] — catálogo de fuentes externas: lo ya revisado (las 8 transcripciones), lo encontrado para revisar (técnico, entrevistas, podcasts, prensa, empleo) y lo descartado

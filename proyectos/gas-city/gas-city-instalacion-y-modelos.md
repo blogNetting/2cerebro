@@ -411,7 +411,40 @@ Ordenado por relación entre lo que cuesta y lo que aporta. Los tres primeros so
 4. **Empezar con 2-3 agentes y autonomía baja, y subir tarea a tarea.** La fusión la haces tú al principio. Es la recomendación de [[gas-city-traje-a-medida]] §5.1 y no ha cambiado: la organización del proyecto no sostiene la promesa de fiabilidad, y su propio panel público mide la cola de PRs multiplicándose por 3,2 en cuatro meses ([[gas-city-frente-a-la-fabrica]] §3.7).
 5. **Sin `gh` no pasa nada.** Si no instalas el CLI de GitHub, *«the core pack's maintenance orders skip GitHub gate checks when the GitHub CLI is not installed»*. Es una pieza menos.
 
-## 7. Dónde se ha buscado
+## 7. Cómo no exponerse: aislar el ejecutor — **recomendación, no algo instalado ni decidido**
+
+Todo este apartado es una propuesta a considerar, verificada el 2026-09-29, sobre cómo protegería la máquina real y las credenciales si algún día se pone Gas City en marcha. **Nada de esto está montado ni ejecutado.** Parte de §3.2: como se confirmó ahí, un agente corre en `tmux` directo sobre el sistema operativo, sin contenedor por defecto, y hereda el entorno completo de la máquina.
+
+### 7.1. Alternativas de aislamiento consideradas, con lo que se descarta de cada una
+
+| Opción | Aislamiento | Límite conocido, verificado en vivo | Viable en una máquina sin privilegios de root |
+|---|---|---|---|
+| **Sandbox nativo de Claude Code** | De proceso, no de kernel | Bypass real de su lista blanca de red, expuesto 5,5 meses, sin CVE propio ([oddguan.com](https://oddguan.com/blog/second-time-same-sandbox-anthropic-claude-code-network-allowlist-bypass-data-exfiltration/)) | Sí |
+| **Devcontainers** tal cual | Namespaces estándar de Docker | En la práctica suele correr con el socket de Docker expuesto y `sudo` sin contraseña, salvo que se endurezca a mano ([opencomputer.dev](https://opencomputer.dev/guides/podman-vs-docker-untrusted-code/)) | Sí, con trabajo |
+| **Docker/Podman rootless** | Namespaces de usuario | Un escape de namespace compromete la máquina real | Sí |
+| **gVisor (`runsc`)** | Intercepta las llamadas al sistema en espacio de usuario, antes de llegar al kernel real | Coste de rendimiento en cargas intensivas en llamadas al sistema | Sí, modo sin root documentado |
+| **Kata Containers** | Máquina virtual ligera por contenedor, kernel propio | **Verificado en vivo, el 2026-09-29:** el modo sin root sigue con un issue abierto desde mayo de 2024 — *«Kata claims to support rootless, but I fail to achieve that in many machines»* ([#9591](https://github.com/kata-containers/kata-containers/issues/9591)) | No — pide `/dev/kvm` |
+| **Firecracker / E2B** | MicroVM, aislamiento de hardware | Auto-alojarlo es «un proyecto de infraestructura real, no un `helm install`» ([beam.cloud](https://www.beam.cloud/blog/how-to-self-host-code-sandbox)) | No — pide `/dev/kvm` |
+| **OpenHands runtime** | Contenedor Docker configurable | Permite cortar la red por completo con una sola variable (`SANDBOX_NETWORK_DISABLED=true`) | Sí |
+
+**Descartadas para este caso, y por qué:** Kata y Firecracker/E2B dan más aislamiento (hardware, no solo kernel) pero piden `/dev/kvm` y virtualización anidada, que una máquina sin privilegios de root no garantiza. Devcontainers tal cual viene mal configurado por defecto. El sandbox nativo de Claude Code queda como capa extra, nunca como única barrera, por el bypass documentado.
+
+**Lo que quedaría mejor situado, si se hiciera:** Podman rootless como base, con gVisor como motor de ejecución — el mismo patrón que usa **Google** en sus propios servicios, confirmado en su documentación oficial de Google Cloud (no en la del propio gVisor, que no lo dice tan explícito): *GKE Sandbox y Cloud Run usan gVisor para aislar cargas no confiables* ([docs.cloud.google.com](https://docs.cloud.google.com/kubernetes-engine/docs/concepts/sandbox-pods)).
+
+### 7.2. El resto de la propuesta, si se hiciera
+
+- **Un proxy de salida con lista blanca de dominios**: solo `api.anthropic.com`, `api.deepseek.com` y GitHub — nada más.
+- **Las claves nunca en el entorno del agente, inyectadas solo por el proxy.** Confirmado en vivo en la documentación oficial de Claude Code, cita textual: *«With `mask`, the sandboxed command sees a per-session sentinel value instead of the real one. Each `mask` entry can list `injectHosts`, the hosts the real value is allowed to reach. When a request leaves the sandbox for one of them, the sandbox proxy replaces the sentinel with the real value.»* ([code.claude.com/docs/en/sandboxing](https://code.claude.com/docs/en/sandboxing)). El comando nunca ve la clave real.
+- **Autonomía baja al empezar, fusión en manos del usuario** — ya recomendado en §6, punto 4, y esto no lo sustituye, lo refuerza.
+- **Apagar lo que ya se identificó en §5**: la telemetría, y vigilar `prune-branches`.
+
+**Dos cifras que se manejaron en la conversación y no se sostuvieron al comprobarlas: retiradas, no incluidas aquí.** Eran un caso citado de `future-architect/vuls` con 52 fallos y una cifra de Spotify sobre sesiones vetadas; ninguna de las dos fuentes consultadas las contiene, así que no figuran como hecho en esta nota.
+
+### 7.3. Enlace con la investigación previa del wiki
+
+Esta comparativa reutiliza y reverifica en vivo (2026-09-29) la que ya existía en [[orquestacion-seguridad-ejecutor]] (investigación del 2026-09-24, mismo caso de una VM Linux sin GPU ni contraseña de root). Las estrellas y la actividad de los repositorios se comprobaron de nuevo por `gh api` en esta fecha, no se copiaron de la nota anterior.
+
+## 8. Dónde se ha buscado
 
 | Fuente | Tipo | Resultado |
 |---|---|---|
@@ -437,7 +470,7 @@ Ordenado por relación entre lo que cuesta y lo que aporta. Los tres primeros so
 
 **Cobertura, dicha sin adornos:** de las fuentes que existen, miré las dos primarias completas (documentación y código) y el catálogo de packs entero, más tres fuentes de comunidad independientes de naturaleza distinta (un informe de uso con cifras, un hilo con contador propio, y un blog de adoptante). **No miré**: el Discord de gastownhall.ai (requiere cuenta), el código de los packs de terceros del registro, ni el historial de git de cada fichero (leí el estado actual, no cuándo cambió). Lo que queda sin mirar está donde estaría la prueba de si un pack ajeno puede redirigir credenciales — el riesgo anotado en §4.4 — y donde estaría un informe de Gas City (no Gas Town) en producción, que **sigue sin existir**.
 
-## 8. Verificación y límites
+## 9. Verificación y límites
 
 - **Qué se comprobó mecánicamente:** todas las citas de esta nota se localizaron con búsqueda literal sobre los ficheros descargados en `/tmp/gcdocs` y `/tmp/gascity-src` el 2026-09-29, no sobre un resumen. Las versiones (`DOLT_VERSION=2.1.7`, `BD_VERSION=v1.3.0`) y las claves de configuración salen de los ficheros del repositorio, no de la documentación que las describe.
 - **Dos errores míos, encontrados y corregidos dentro de la propia investigación.** Quedan escritos en vez de borrados, porque los dos son ilustrativos.
@@ -458,4 +491,5 @@ Ordenado por relación entre lo que cuesta y lo que aporta. Los tres primeros so
 - [[las-piezas]] — Gas Town y Beads, con el aviso original de la contribución automática que esta nota resuelve
 - [[verificacion-externa-agentes]] — por qué la condición de salida tiene que ser un script
 - [[orquestacion-modelos-y-costes]] — el detalle de modelos DeepSeek, precios y benchmarks que sostiene este reparto
+- [[orquestacion-seguridad-ejecutor]] — la investigación original de aislamiento (2026-09-24) que §7 reutiliza y reverifica
 

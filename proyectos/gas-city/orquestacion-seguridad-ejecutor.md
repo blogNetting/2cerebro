@@ -104,4 +104,5 @@ Contexto: Claude Code (Opus) orquesta; un modelo DeepSeek vía API oficial actú
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
+- [[gas-city-instalacion-y-modelos]] — §7 reutiliza esta comparativa aplicada a Gas City, reverificada en vivo el 2026-09-29 (dos cifras de esta nota no se sostuvieron al comprobarlas y se retiraron allí)
 - [[_index]]

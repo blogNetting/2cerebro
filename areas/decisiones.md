@@ -285,3 +285,27 @@ El usuario copió a la carpeta compartida con el anfitrión (`/mnt/hgfs/2Cerebro
 - Recreado `proyectos/rentabilidad-inmobiliaria-con-datos/rentabilidad-inmobiliaria-con-datos.md` con lo ya verificado sobre Prophero en la ronda de búsqueda anterior (modelo, comisiones, rentabilidad anunciada 6-7% neto, contraste con el 3,0% de rentabilidad bruta media que da el Banco de España, opiniones mixtas en Trustpilot/foros) — cada dato con su cita y su enlace. **No se relanza más búsqueda** hasta que el usuario confirme el alcance (ingerir las transcripciones, comparar competidores, o construir un método propio).
 
 Enlazado desde [[apartamentos-calle-uruguay]], [[fiscalidad-alquiler-por-habitaciones]] y [[patrimonial]] (mismo patrón de enlace bidireccional que la primera vez).
+
+**Cierre de esta entrada, tras el commit:** subido en dos commits a `origin/main` — `a0c8c99` (proyecto + fuentes) y `882813d` (enlaces bidireccionales que faltaban en el primer commit: `_index.md` de la subcarpeta y las tres notas relacionadas). Estado final: proyecto con Prophero verificado y citado, transcripciones versionadas y sin ingerir todavía, sin más investigación lanzada.
+
+## 2026-09-29 — El hook de documentación se recorta: fuera lo obsoleto
+
+Corrección del usuario: *«cárgate todas estas cosas que han quedado obsoletas»*, tras verse bloqueado un turno por un requisito que ya no aplicaba.
+
+**El síntoma:** el hook de `Stop` `~/.claude/hooks/documentacion-al-dia.sh` exigía, además de documentar, tocar un **documento de seguimiento** —plan o bitácora— y su mensaje apuntaba a `proyectos/astillero/astillero-plan.md`. Esa ruta **ya no existe**: Astillero se retiró del wiki el mismo día (entrada anterior). Y el seguimiento de un proyecto vive en el repo de ese proyecto (`~/dev/<proyecto>/docs/`), no aquí.
+
+**Lo que se retiró, y por qué:**
+
+| Capa | Qué exigía | Por qué se va |
+|---|---|---|
+| **Seguimiento** | Tocar un `.md` que case `(bitacora\|plan\|estado\|manual\|decisiones)`, y **después** del último cambio de código | El seguimiento salió del wiki. Bloqueaba turnos que no tocaban ningún proyecto abierto, que es lo que pasó |
+| **Manual de Astillero** | El manual cuando el código tocado era suyo | Astillero está **deprecado** por instrucción explícita del usuario |
+| **Orden** | Que la documentación fuera posterior al código | Dependía de la capa de seguimiento; sin ella no tiene sujeto |
+
+**Lo que queda:** la regla base, que sí sigue viva — si el turno toca código (fichero que no es `.md`, o `commit`/`push`/`merge`) y **ninguna** documentación, bloquea. Sigue contando la documentación escrita de las dos formas (`Edit`/`Write` y desde `bash`), y sigue excluyendo `/tmp/`.
+
+**Verificado antes de darlo por bueno**, con transcripciones sintéticas: código sin documentación → bloquea; código con `.md` por `Edit` → pasa; borrado con el índice actualizado → pasa; borrado con el `.md` escrito desde `bash` con `write_text` → pasa; solo documentación → pasa. `bash -n` sin errores.
+
+**Lo que NO cambia:** la regla de comportamiento («modificas → validas → documentas») ni el hook `verificar-respuesta.sh`. Se recortó el mecanismo que vigilaba algo que ya vive en otro sitio.
+
+Actualizado también `areas/entorno.md` (la fila que documentaba el hook) y la memoria `project_astillero_deprecado`.

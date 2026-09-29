@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-09-27
+updated: 2026-09-29
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -118,7 +118,7 @@ Los tres viven en `~/.claude/settings.json` y en `~/.claude/hooks/`:
 | Hook | Evento | Qué hace |
 |---|---|---|
 | `permisos-hacia-fuera.sh` | `PermissionRequest` | **No auto-aprueba las acciones hacia fuera.** Si detecta `git push`, `gh pr merge`, `gh secret set`, `gh release create/delete`, o una escritura por `gh api` (`-X`/`--method`/`-f`/`-F`), devuelve **`ask`** y el harness **para y pregunta al usuario**. Todo lo demás sigue auto-aprobado, para que no sea un peaje constante. Patrón y prueba en [[decisiones]]. |
-| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). **Y no basta con tocar cualquier `.md`: tiene que ser un documento DE SEGUIMIENTO** — el plan de trabajo o la bitácora. Añadido el 2026-09-27, tras otro fallo real: se documentó la bitácora varias veces (y el hook pasaba) **mientras el plan de tareas se quedaba con cuatro tareas viejas**. El usuario lo pilló — *«¿el hook para qué sirve si haces lo que te sale?»* — y tenía razón: un hook que acepta cualquier `.md` no vigila lo que dice qué falta. Lo segundo se añadió el mismo día, tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. |
+| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). **No juzga si la documentación es buena, solo que exista.** El segundo camino se añadió el 2026-09-27 tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. **Recortado el 2026-09-29:** tenía dos capas más —exigir además un documento *de seguimiento* (plan o bitácora) apuntando a `proyectos/astillero/astillero-plan.md`, y exigir el manual de Astillero cuando el código era suyo— y se retiraron **las dos**, por obsoletas: esa ruta ya no existe (Astillero se retiró del wiki) y el seguimiento de un proyecto vive en el repo de ese proyecto, no aquí. Ver `areas/decisiones.md`, 2026-09-29. |
 | `verificar-respuesta.sh` | `Stop` | El que ya estaba escrito y nunca corría: antes de cerrar, un evaluador (Sonnet por `claude -p`) compara la última petición con la respuesta y bloquea si una investigación no llega al mínimo (máximo 3 veces). Contadores en `~/.cache/verificar-respuesta/`. |
 
 **Para desactivar cualquiera:** `/hooks`, o quitar su entrada del `settings.json`.
