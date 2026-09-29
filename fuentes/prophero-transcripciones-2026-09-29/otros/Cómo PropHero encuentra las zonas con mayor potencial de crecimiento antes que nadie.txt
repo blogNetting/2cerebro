@@ -1,0 +1,241 @@
+¿Cómo encontramos las zonas para
+invertir con mayor potencial de
+crecimiento antes que nadie? La data es
+la clave. Hay muchísimas empresas de
+inversión inmobiliaria que están
+centradas en ofrecer oportunidades de
+inversión. están centrados en entrenarte
+y en que te leas el libro o el manual de
+cómo conseguir la mejor inversión, la
+mejor oportunidad de tu barrio, cómo
+enseñarte a negociar para conseguir el
+mejor precio y cómo enseñarte a hacer la
+reforma más eficiente para ahorrarte 200
+€ en la reforma. Pero esto en la mayoría
+de los casos no va a tener un impacto
+relevante en tu inversión. El impacto va
+a venir de ser el primero en invertir en
+una zona con potencial de revalorización
+y con potencial de crecimiento. Esto es
+lo que te va a permitir hacer una
+inversión de un ticket y que en pocos
+años veas como el inmueble ha tenido una
+revalorización astronómica llegando a
+duplicarse o más el precio del inmueble.
+¿Cómo vamos a ser capaces de llegar aquí
+los primeros? Pues os voy a contar cuál
+es la historia de Propgiro y de su
+relación con la data. Cuando abrimos en
+Prop Gir en España, empezamos a comprar
+bases de datos, a comprar datos de
+información que considerábamos que eran
+importantes para que tuviera relación
+con la casuística que finalmente iba a
+producir que los precios de una vivienda
+subieran. Estos datos eran datos como la
+renta por cápita, los datos de
+demografía, cuánto crecía o decrecía una
+población, datos de impagos, datos de
+ocupaciones, datos de liquidez de venta
+y y liquidez de alquiler, cómo se
+alquilaban o se vendían de rápido una
+propiedades, esto viviendas a la ventaja
+y todos estos datos, la suma de todo
+esto era lo que configuró nuestro modelo
+reactivo. Era un modelo en el cual
+después de analizar unos datos
+reaccionaban y sucedía una serie de
+hechos en el mercado inmobiliario y a
+nosotros era lo que nos movía el elegir
+unas zonas u otras para invertir. Y te
+pongo un ejemplo muy sencillo. Si en una
+población viven 100,000 personas y la
+población crece un 2%, el año que viene
+vivirán 102,000. Si el stock de
+viviendas no crece o incluso decrece,
+hay menos viviendas y la población ha
+crecido 2,000 habitantes, asumiendo que
+viven dos personas en una vivienda,
+habrá necesidad de 1000 viviendas
+nuevas. ¿Me puedes decir dónde se están
+construyendo 1000 viviendas anuales en
+una población de 100,000 habitantes?
+Pues yo te lo voy a decir, en ningún
+sitio. En España, por lo menos, en
+ningún sitio. Esto, ¿qué va a producir?
+pues que tengamos la certeza absoluta de
+que en esa población los precios van a
+seguir creciendo porque tenemos los
+datos que nos lo confirman. Si a esto le
+añadimos que la renta por cita sube, que
+la tasa de liquidez de venta y de
+alquiler sigue creciendo, que hay menos
+stock y encima no hay obra nueva, pues
+los precios tienen un recorrido para
+varios años creciendo. Este es el modelo
+reactivo, pero que además cuando va
+vinculado a un subyacente como un parque
+de logístico, una zona industrial, un
+nuevo aeropuerto, es algo que no solo lo
+reflejan los datos, sino de que detrás
+hay un subyacente que lo fortalece. Este
+fue nuestro modelo reactivo y el que nos
+ha traído hasta el éxito que ha derivado
+las inversiones de Prof. Hero, pero hoy
+somos la única empresa que hay en España
+de inversión inmobiliaria que tiene un
+departamento de Datax y este
+departamento lo que está realizando es
+un modelo predictivo. ¿En qué consiste
+el modelo predictivo? El reactivo, como
+habíais escuchado, transformaba los
+datos que tenemos en un resultado, pero
+nuestro modelo predictivo lo que nos va
+a permitir es a través de la
+inteligencia artificial y la
+programación que está haciendo el
+equipo, obtener qué cosas van a hacer
+que luego ocurran estas variables que
+luego van a producir que los precios
+suban agajen. Es decir, vamos a ver qué
+variables van a activarse para que luego
+la población suba, como por ejemplo, si
+van a activar 1 millón de metros de
+suelo logístico o industrial en una
+zona, quiere decir que luego ahí habrán
+empresas y luego habrá gente trabajando
+y luego habrá gente que necesite pisos y
+luego los pisos crecerán, con lo cual
+esto nos va a permitir cada día llegar
+más pronto a estas zonas. Yo recuerdo
+hace un año cuando empezamos a viajar a
+Toledo y me decían, "No, voy a Toledo,
+eso es una zona vaciada." Bueno, pues
+hoy cada día tiene más sentido ir a
+zonas como Toledo, donde se están
+estableciendo grandes parques logísticos
+como en Noblejas, en Illescas, en Fuen
+Salida y esto tiene cada día más sentido
+de no invertir donde yo tengo la
+intuición que es un buen sitio, sino
+invertir donde el dato me está indicando
+que es la ubicación perfecta porque la
+gente está yendo a vivir a estas zonas.
+Nosotros en Prop Hero en este momento
+estamos invirtiendo en las siguientes
+zonas. corredor mediterráneo, Castellón,
+provincia de Valencia, sobre todo lo más
+pegado a la costa, Alicante,
+prácticamente toda la provincia, alguna
+población en el interior está perdiendo
+población y no tenemos en Murcia muchas
+zonas de inversión, no solo alrededor de
+Murcia Capital, sino también más alejado
+en Cartagena. Zaragoza para nosotros
+siempre también ha sido un punto clave y
+estamos en toda la zona del norte de
+Toledo, sur de Madrid, norte de Toledo y
+el corredor de Nares y perdón y Jerez,
+la zona de Jerez también estamos
+invirtiendo. Estas serían donde hoy
+estamos en España, luego estamos en
+otros países. Esto sería donde estamos
+en España, lo cual me quiere decir que
+dentro de 6 meses no tengamos nuevas
+zonas o algunas de estas hayamos dejado
+de invertir y habremos dejado de
+invertir porque los precios ya serán
+excesivamente caros y ya no tendremos
+buenas rentabilidades o buenas
+revalorizaciones porque ya las hemos
+disfrutado con nuestros clientes. Os voy
+a poner un par de ejemplos de cómo
+elegimos o un par de de pueblos en
+concreto y sobre todo explicar cómo
+elegimos la zona, porque para elegir una
+zona tenemos diferentes criterios.
+diferentes métodos, pero a mí hay la que
+más me gusta, que es el subyacente de
+donde Prop Hero reside, que es en el
+tema demográfico. Y os voy a poner
+ejemplos concretos. Molina de Segura.
+Molina de Segura es una población que
+está apenas unos kilómetros de Murcia
+capital, que en el año 2016 Molina de
+Segura tenía 70.000 habitantes y en el
+año 2022 tenía ya 76.000, 1000. Es
+decir, en 6 años creció 6000 habitantes.
+Tú piensas que en una propiedad viven
+dos personas de media y si han crecido
+6,000 habitantes en Molina de Segura se
+han llenado 3,000 viviendas en 6 años.
+3000 viviendas no se están construyendo
+en ninguna ciudad de 76,000 habitantes
+ni de suerte. ¿Qué está produciendo
+esto? La renta disponible ha pasado de
+21,978 a 23,600.
+ha incrementado la renta por cápita. La
+población que está trabajando en monedas
+segura no para de crecer, no para de
+generarse riqueza. Otro caso de éxito o
+un claro otro caso de ejemplo que
+estamos disfrutando a día de hoy en Prop
+Hero y es una población donde hemos
+comprado bastantes edificios es Ocaña.
+Ocaña en Toledo es una población que
+está en el sur de Madrid al norte de
+Toledo y donde se están construyendo
+muchísimos centros logísticos. Están
+construyéndose centros logísticos porque
+tiene una ubicación estratégica a los
+puertos más importantes de mercancías
+con salida al Mediterráneo y tiene dos
+impactos, una, el actuar como central
+logístico, donde están yendo todos los
+Amazon, los Alcampos, los Corte Inglés
+hacer sus centros logísticos para ahí
+distribuir. Y por otra parte tenemos el
+efecto Madrid, gente que no puede vivir
+en Madrid y se sale a vivir más hacia
+fuera, sobre todo el corredor del sur de
+Madrid, de Pinto, Getafe, Lenganés,
+Valdemoro, toda esta gente vive más al
+sur porque no caña por hoy 650 euritos
+te alquilas un piso y el mismo piso en
+Leganés, en Getafe o en Vallecas valen
+el doble o dos veces y medio más que en
+Ocaña Ciudad. Como dato, Ocaña ha pasado
+prácticamente de 10,000 habitantes a
+14,700. Es que casi 5,000 habitantes son
+2,500 viviendas nuevas que necesitado
+caña o que se han ido llenando de las
+que estaban vandalizadas, del boom
+inmobiliario, vacías y todavía no están
+en marcha los centros logísticos de
+Ocañanlejas, que os invito a que lo
+googleéis y busquéis qué está pasando en
+estas zonas y por qué este subyacente va
+a ser tan importante por la dimensión
+que tienen estos proyectos. El mundo
+está teniendo, a unificarse para vivir
+en los mismos sitios y tenemos que ser
+muy inteligentes a la hora de decidir
+dónde queremos invertir. Y obviamente
+las buenas ubicaciones van a ser
+aquellos sitios donde la gente esté
+agrupándose para vivir, porque cada día,
+si os fijáis en el mapa de España o en
+el mundo, en el de España es muy claro,
+la gente vive en toda la costa
+mediterránea, en Madrid y alrededor, en
+Zaragoza, en Granada, en Sevilla y en la
+zona de Cádiz y en el País Vasco. Estas
+son las zonas donde se está agrupando.
+Eliminemos las que son muy caras y el
+resto son las que son realmente
+interesantes, pero tenemos que ir
+averiguando cuáles serán las nuevas
+zonas de inversión en el futuro, donde
+además vaya agrupándose la población.
+Entonces, la data será clave para tu
+inversión.
