@@ -90,7 +90,7 @@ Comprobadas desde esta VM. Detalle de uso en `/investigar-web`, paso 10.
 
 **Lo que sí sostiene, y está medido:** reglas **`deny`** en `permissions`. Se comprobó **en vivo** que **se respetan aunque el modo sea `bypassPermissions`** — el harness contestó *«Permission to use Bash with command … has been denied»* y el comando no llegó a ejecutarse. No depende de que el modelo se acuerde, ni de que un hook acierte: **lo impone el programa**.
 
-Es la misma regla que el research del propio Astillero dice para el agente: *«el límite se pone con permisos, no con instrucciones»*.
+Es la misma regla que dice la evidencia sobre agentes: *«el límite se pone con permisos, no con instrucciones»*.
 
 **Lo que está prohibido ahora** (irreversible, credenciales, o publicar):
 

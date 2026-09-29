@@ -2,11 +2,11 @@
 title: Desarrollo autónomo con agentes
 created: 2026-09-27
 updated: 2026-09-27
-tags: [astillero, agentes, autonomia, evidencia, meta]
+tags: [agentes, autonomia, evidencia, meta]
 zona: tecnico
 ---
 
-Qué dice la evidencia medida sobre desarrollar software con agentes y mínima intervención humana. Alimenta la revisión de [[astillero]]: no se da nada por bueno de lo que hay.
+Qué dice la evidencia medida sobre desarrollar software con agentes y mínima intervención humana. No se da nada por bueno de lo que hay.
 
 ## 1. Qué se pregunta
 
@@ -132,6 +132,5 @@ Papers verificados abriendo su página: [arXiv:2310.01798](https://arxiv.org/abs
 
 - Qué se ha medido que **sí funciona** en un pipeline (verificación, tests, revisión por otro agente, contexto y memoria) — en curso.
 - Qué monta de verdad quien lo tiene funcionando, y qué se abandona — en curso.
-- La comparación pieza por pieza contra [[astillero]], y la decisión de qué se conserva, qué se corrige y qué se quema.
 
-Enlaces: [[astillero]] · [[metodo-de-investigacion]] · [[decisiones]] · [[verificacion-externa-agentes]] · [[contradiccion-agents-md]]
+Enlaces: [[metodo-de-investigacion]] · [[decisiones]] · [[verificacion-externa-agentes]] · [[contradiccion-agents-md]]

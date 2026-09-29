@@ -21,7 +21,7 @@ Autonomía y número de piezas van en contra: más autonomía se suele comprar c
 
 ## Frontera de alcance
 
-Fuera: `proyectos/astillero/` y cualquier nota derivada de ese trabajo. No se ha leído, no se usa como punto de partida, comparación ni referencia. Instrucción explícita del usuario.
+Fuera: el trabajo previo de diseño ya hecho en el wiki y cualquier nota derivada de él. No se usa como punto de partida, comparación ni referencia. Instrucción explícita del usuario.
 
 Fuera también: construir o instalar nada. El informe documenta el montaje completo (piezas, ficheros, comandos, conexiones) para que sea reproducible, pero no se ejecuta.
 

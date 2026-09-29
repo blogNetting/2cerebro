@@ -42,4 +42,4 @@ Entrega: **informe cerrado el 2026-09-28**. El montaje se documenta pero no se e
 
 ## Frontera de alcance
 
-Por instrucción explícita, quedan **fuera** de esta investigación las notas de `proyectos/astillero/` y todo lo que derive de ese trabajo. No se han leído ni se usan como punto de partida, comparación ni referencia. Esta investigación parte de cero.
+Por instrucción explícita, esta investigación **parte de cero**: no reutiliza ni se apoya en trabajo previo de diseño ya hecho en el wiki, y no lo usa como punto de partida, comparación ni referencia.

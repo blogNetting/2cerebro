@@ -12,7 +12,7 @@ Patrimonial: aplicación web responsive, autoalojada en el servidor casero, para
 
 Nombre decidido: **Patrimonial** (2026-09-24) — funciona en castellano como "sociedad patrimonial" (holding personal) y en inglés como adjetivo de *patrimony*, con acento natural en "mo". En fase de toma de requisitos (2026-09-25), modelando por entidades antes de decidir stack. Sin decisiones de stack ni de despliegue todavía.
 
-**Pendiente al arrancar el diseño formal (framework spec-driven elegido, primera sesión de Opus):** el modelo de entidades y las fuentes de datos de esta nota se **trasladan** a `specs/patrimonial/spec.md` en `~/dev/patrimonial` (contrato K1 de [[flujo-agentes-arquitectura]]), no se duplican. Esta nota se resume entonces a hub — qué es, estado, enlace al repo, enlaces de vida no técnica ([[apartamentos-calle-uruguay]], [[fiscalidad-alquiler-por-habitaciones]]) — y deja de llevar el detalle técnico.
+**Pendiente al arrancar el diseño formal (framework spec-driven elegido, primera sesión de Opus):** el modelo de entidades y las fuentes de datos de esta nota se **trasladan** a `specs/patrimonial/spec.md` en `~/dev/patrimonial`, no se duplican. Esta nota se resume entonces a hub — qué es, estado, enlace al repo, enlaces de vida no técnica ([[apartamentos-calle-uruguay]], [[fiscalidad-alquiler-por-habitaciones]]) — y deja de llevar el detalle técnico.
 
 ## Principio transversal: pasividad
 
@@ -68,15 +68,12 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 
 - [[apartamentos-calle-uruguay]] — inmueble que entraría en el dashboard
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
-- [[astillero]] — sistema con el que se desarrollará; esta app es la candidata a primer piloto
 - [[_index]]
 
 ## Repo
 
-- **Repo:** [blogNetting/patrimonial](https://github.com/blogNetting/patrimonial), privado.
-- **Ruta local:** `~/dev/patrimonial`.
-- **Estado (2026-09-26):** arrancado con la skill `astillero-proyecto` y completo, fijado a **Astillero v0.2.4** (actualizado el 2026-09-26 desde v0.2.2: cambian `AGENTS.md` y `docs/SECURITY.md`) (no `@main`: actualizaciones controladas, no automáticas). Se actualizó dos veces el mismo día porque Astillero se está desarrollando en paralelo, en otra sesión: `v0.1.0` tenía `AGENTS.md` con secciones vacías (corregido en `v0.2.1`); `v0.2.1` migró `AGENTS.md` al formato oficial [agents.md](https://agents.md/) (`v0.2.2`). Bootstrap de copier completo: `AGENTS.md`, `CODEOWNERS` con `@blogNetting`, `docs/contrato-tarea.md`, `docs/SECURITY.md`, plantilla de bug, workflows de ejecutor/rehacer/revisor/reconciliador/CI/despliegue, compilados con `gh aw compile --approve` tras verificar que el único secreto nuevo (`DEEPSEEK_API_KEY`) coincide con el diseño. Ecosistema **Python** (solo puertas de CI y red del ejecutor, no es el framework de la app). Secretos `DEEPSEEK_API_KEY` y `CLAUDE_CODE_OAUTH_TOKEN` configurados por el usuario. Sin código de aplicación todavía. Entrevista de diseño formal (K1) en curso — se resincronizará contra Astillero otra vez antes de cerrar la especificación, no en cada tag nuevo.
+[blogNetting/patrimonial](https://github.com/blogNetting/patrimonial), privado. **Su estado, sus versiones y sus pendientes viven en el repo, no aquí** — este wiki no lleva el seguimiento de ningún proyecto.
 
-## Pendiente en Astillero que afecta a Patrimonial
+## Stack
 
-- Arreglado en Astillero el 2026-09-26 (`94ce4ae`): la plantilla genera `CLAUDE.md` con `@AGENTS.md`, porque el Claude Code del ejecutor (2.1.273) no carga `AGENTS.md` por sí solo y `rehacer` trabajaba sin las reglas del repo. Detalle y pruebas en [[decisiones]]. **Falta:** que se publique v0.2.5 (PR #6 de Astillero, pendiente de merge) y actualizar Patrimonial a esa versión.
+Ecosistema **Python**, y solo para las puertas de CI y la red del ejecutor: no es el framework de la app, que sigue sin decidirse.

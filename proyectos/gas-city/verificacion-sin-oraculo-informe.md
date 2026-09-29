@@ -2,11 +2,11 @@
 title: Cómo se implementa una capa de verificación que el agente no puede tocar
 created: 2026-09-27
 updated: 2026-09-28
-tags: [astillero, verificacion, oraculo, tests-ocultos, sandbox, investigacion]
+tags: [verificacion, oraculo, tests-ocultos, sandbox, investigacion]
 zona: tecnico
 ---
 
-Informe de investigación sobre los mecanismos reales para verificar el trabajo de un agente sin que el agente pueda tocarlos: ocho formas de aislar los tests, seis preguntas, cada una con sus mecanismos marcados como **probados** o **propuestos**, con su URL. Resuelve el agujero de la pieza 7 de [[la-fabrica]] ([[verificador-de-tareas]], [[recibo-de-verificacion]]).
+Informe de investigación sobre los mecanismos reales para verificar el trabajo de un agente sin que el agente pueda tocarlos: ocho formas de aislar los tests, seis preguntas, cada una con sus mecanismos marcados como **probados** o **propuestos**, con su URL. Resuelve el agujero de la pieza 7 de la-fabrica (verificador-de-tareas, recibo-de-verificacion).
 
 **Lo que hay que llevarse por delante de todo:** el hallazgo transversal de §«El hallazgo transversal» — ocultar los tests **no cierra el agujero, lo desplaza**; la posición respaldada es **solo lectura**. Y el resumen de la pregunta 1: existe un stack nativo completo para que el agente no empuje a `tests/`, no ejecute el CI que lo juzga y no pueda falsificar el verde — **lo que no existe es un permiso por ruta**.
 

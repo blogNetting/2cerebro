@@ -1,7 +1,7 @@
 ---
 title: Lego — las piezas, una por una: qué es cada cosa y de quién es
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-29
 tags: [lego, piezas, genealogia, gas-town, autores]
 zona: tecnico
 ---
@@ -90,15 +90,24 @@ while :; do cat PROMPT.md | claude ; done
 
 **Mi lectura, marcada como mía:** esto **no es un montaje, es una plataforma.** Está pensado para llevar 20 o 30 agentes a la vez sobre varios proyectos. **Para lo que tú quieres —una persona, un proyecto, un agente— sobra por todos lados**, y cada pieza es algo que puede romperse un domingo por la tarde.
 
-**Y hay controversia documentada, verificada en vivo el 2026-09-28** (corrige la versión anterior de esta nota, que la atribuía mal a un hilo de Hacker News): es [issue #3649 de su propio repositorio](https://github.com/gastownhall/gastown/issues/3649), *«Does Gas Town "steal" usage from users' LLM credits & paid services to improve itself?»* — **cerrado**, sin respuesta visible del mantenedor. Cita literal: *«tus créditos de Claude / tu uso pueden estar financiando arreglos al código del mantenedor, y tu cuenta de GitHub envía PRs a su repositorio»*, y *«no hay opt-in, no hay opt-out, no hay aviso»*.
+**Y hay controversia documentada, verificada en vivo el 2026-09-28** (corrige la versión anterior de esta nota, que la atribuía mal a un hilo de Hacker News): es [issue #3649 de su propio repositorio](https://github.com/gastownhall/gastown/issues/3649), *«Does Gas Town "steal" usage from users' LLM credits & paid services to improve itself?»* — **cerrado**. Cita literal: *«tus créditos de Claude / tu uso pueden estar financiando arreglos al código del mantenedor, y tu cuenta de GitHub envía PRs a su repositorio»*, y *«no hay opt-in, no hay opt-out, no hay aviso»*.
 
 > ### ⚠️ SI SE ELIGE GAS TOWN: apagar antes de usarlo que arregle bugs de sí mismo y mande PRs con tus créditos y tu cuenta de GitHub
 >
 > Por defecto trae un flujo de «contribuir de vuelta a upstream»: puede lanzar agentes que arreglen fallos del propio Gas Town y manden ese parche como PR a su repositorio, gastando tus créditos de Claude y usando tu cuenta de GitHub, sin pedir permiso.
 >
-> **Buscado en vivo el 2026-09-28 y no encontrado: ningún flag, variable de entorno ni fórmula con nombre para desactivarlo.** El propio issue #3649 lo dice explícito: *«no hay opt-in, no hay opt-out»*. Antes de instalar, comprobar en la documentación de fórmulas/moléculas (`gastown.dev/docs`, sitio caído en el momento de esta búsqueda) si ya existe un mecanismo, y si no, revisar el estado del issue #3649 por si se resolvió.
+> **Buscado en vivo el 2026-09-28 y no encontrado: ningún flag, variable de entorno ni fórmula con nombre para desactivarlo.** El propio issue #3649 lo dice explícito: *«no hay opt-in, no hay opt-out»*.
+
+**RESUELTO el 2026-09-29 — y corrige una afirmación mía.** Este aviso pedía «revisar el estado del issue #3649 por si se resolvió». Revisado. Y lo que encontré corrige dos cosas de arriba:
+
+1. **Sí hay respuesta en el cierre, y no dice «lo hemos quitado».** El comentario que cierra el issue es: *«Gastown is in maintenance mode and staying focused on infrastructure and reliability fixes only. If you want to pursue broader product/policy work like this, please check out Gas City instead.»* Es decir, se cerró **redirigiendo a Gas City**, no confirmando una retirada.
+2. **Y por eso había que comprobarlo en Gas City, no darlo por heredado.** Comprobado sobre su repositorio y su catálogo de packs: **no arrastra el mecanismo.** No hay ninguna fórmula de release en el pack `core`, la búsqueda en todo el catálogo oficial da vacío, y el único código Go que menciona `gastownhall/*` son rutas de import del propio módulo. La función existe — pero como pack **`contributing`**, aparte, opt-in, y cuya cabecera declara que su propósito es que contribuyas tú: *«the external-contributor lifecycle for gastownhall/gascity»*. Detalle verificado en [[gas-city-instalacion-y-modelos]] §5.1.
+
+**Lo que sí hay que apagar en Gas City es otra cosa:** su **telemetría de producto**, que viene **activada por defecto** (opt-out, no opt-in) y se apaga con `gc metrics off`, `DO_NOT_TRACK=1` o `GC_DISABLE_USAGE_METRICS=1`. Nunca recoge nada en sesiones de agente, CI o scripts. Ver [[gas-city-instalacion-y-modelos]] §5.2.
 
 **Piezas que añade: 7 o más.**
+
+**Actualización 2026-09-29:** Gas Town tiene sucesor, **Gas City**, del mismo equipo; su propia organización presenta Gas Town como *«the predecessor software-factory project that inspired Gas City»*. El montaje con Gas City está en [[gas-city-traje-a-medida]]; la instalación en esta máquina, el reparto de modelos entre Opus/Sonnet/DeepSeek y qué apagar, en [[gas-city-instalacion-y-modelos]]; y cómo usarlo con el wiki para desarrollar aplicaciones, en [[gas-city-con-2cerebro]].
 
 ---
 

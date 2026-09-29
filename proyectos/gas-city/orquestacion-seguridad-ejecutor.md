@@ -104,5 +104,4 @@ Contexto: Claude Code (Opus) orquesta; un modelo DeepSeek vía API oficial actú
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
-- [[astillero]] — proyecto al que pertenece
 - [[_index]]

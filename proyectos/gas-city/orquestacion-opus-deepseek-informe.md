@@ -8,11 +8,11 @@ zona: tecnico
 
 Cómo hacer que Opus (suscripción Pro) dirija y DeepSeek (API) programe: qué hay, qué funciona según la comunidad, qué se descarta y qué arquitecturas pasan a pruebas.
 
-> **Informe parcial (2026-09-24).** Solo cubre la conexión entre modelos, que es una pieza menor. No responde al encargo: arquitectura, estrategia, infraestructura y herramientas del ciclo completo, ni qué es el estándar de la comunidad. El esqueleto de la sección 5 es una propuesta mía, no un hallazgo. La investigación completa está en [[desarrollo-agentes-investigacion]].
+> **Informe parcial (2026-09-24).** Solo cubre la conexión entre modelos, que es una pieza menor. No responde al encargo: arquitectura, estrategia, infraestructura y herramientas del ciclo completo, ni qué es el estándar de la comunidad. El esqueleto de la sección 5 es una propuesta mía, no un hallazgo. La investigación completa está en desarrollo-agentes-investigacion.
 
 ## 1. Introducción
 
-Pregunta: cuál es la mejor forma, contrastada por la comunidad y no por el hype, de que Claude Opus planifique y revise mientras un modelo DeepSeek escribe el código y los tests, dentro de [[astillero]].
+Pregunta: cuál es la mejor forma, contrastada por la comunidad y no por el hype, de que Claude Opus planifique y revise mientras un modelo DeepSeek escribe el código y los tests, dentro de un montaje multiagente.
 
 Restricciones de partida: Opus va por **suscripción Pro**, no por API; DeepSeek por su API oficial; no hay código sin tests; la VM tiene 4 núcleos, 7 GB de RAM, ni `/dev/kvm` ni motor de contenedores instalado (comprobado con `ls /dev/kvm` y `which podman docker bwrap`).
 
@@ -145,6 +145,5 @@ Detalle en [[orquestacion-seguridad-ejecutor]]. Resumen de lo que aplica a esta 
 
 ## Enlaces
 
-- [[astillero]] — proyecto
 - [[orquestacion-herramientas-y-patrones]] · [[orquestacion-modelos-y-costes]] · [[orquestacion-experiencia-comunidad]] · [[orquestacion-seguridad-ejecutor]]
 - [[_index]]
