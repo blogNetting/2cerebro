@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-09-28
+updated: 2026-09-29
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -258,3 +258,11 @@ El usuario, después de verme borrar media carpeta y discutir dónde iba el segu
 **Lo que NO cambia:** las reglas de comportamiento, el método de investigación y el resto del esquema. Se corrigió dónde vive el seguimiento, no el criterio.
 
 Enlazado desde: [[gas-city-instalacion-y-modelos]], [[gas-city-con-2cerebro]].
+
+## 2026-09-29 — Lint del wiki: una nota aislada y enlaces de síntesis que faltaban
+
+- Recorrido completo de `proyectos/` (incluidas `lego/`, `gas-city/`, `patrimonial/`), `areas/`, `recursos/` y `archivo/`; `fuentes/` fuera de alcance. Resultado mecánico: **ningún enlace roto** — los `[[steps]]` de `gas-city-con-2cerebro` y los `[[:space:]]` de las recetas están dentro de bloques/inline de código, y `[[04-los-17-pasos.png]]` / `[[02-arquitectura.png]]` resuelven a `proyectos/lego/diagramas/`. **Frontmatter completo** en las 70 notas de contenido (`zona` siempre `tecnico` o `general`), y **los siete índices exactos** (listan todas las notas de su carpeta, solo esas, con su descripción).
+- **1 nota aislada corregida:** `proyectos/gas-city/verificacion-sin-oraculo-informe` no tenía ningún enlace saliente y su único entrante era el índice. Añadida sección de enlaces hacia [[gas-city-frente-a-la-fabrica]], [[orquestacion-seguridad-ejecutor]], [[verificacion-externa-agentes]] y [[gas-city-con-2cerebro]], y enlace entrante desde [[gas-city-frente-a-la-fabrica]].
+- **Enlaces de síntesis completados:** la nota de síntesis [[verificacion-externa-agentes]] no enlazaba las notas del frente Lego donde el mismo tema aparece. Añadidos enlaces desde ella hacia [[verificacion-y-oraculo]], [[clausura-semantica]] y [[verificacion-sin-oraculo-informe]], con la vuelta desde las dos primeras.
+- **Frontera entre los dos bloques de `gas-city/`:** el bloque del montaje (`gas-city-*`) y el de orquestación (`orquestacion-*`) no se enlazaban entre sí. Añadido el enlace mutuo que el índice daba por hecho: [[gas-city-instalacion-y-modelos]] ↔ [[orquestacion-modelos-y-costes]].
+- **Reportado, no tocado:** el par `gas-city-frente-a-la-fabrica` ↔ orquestacion-seguridad-ejecutor, y el bloque Gas City frente a la síntesis de verificación, siguen sin enlace directo — queda a decisión del usuario por si el agrupado en dos secciones del índice es deliberado.

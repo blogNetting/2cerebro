@@ -1,7 +1,7 @@
 ---
 title: Cómo se implementa una capa de verificación que el agente no puede tocar
 created: 2026-09-27
-updated: 2026-09-28
+updated: 2026-09-29
 tags: [verificacion, oraculo, tests-ocultos, sandbox, investigacion]
 zona: tecnico
 ---
@@ -340,3 +340,11 @@ La consecuencia práctica para tu diseño: la pieza que de verdad aporta no es "
 9. **El caso Feddi (`feddi-io/feddi-heldout`) NO es un caso real**: es andamiaje sin blob cifrado y sin repo padre. Lo señalo porque en una búsqueda rápida parece el ejemplo perfecto del patrón "tests cifrados".
 10. **No he encontrado que Cognition/Devin, Cursor, METR ni Anthropic usen tests ocultos** para verificar agentes. El caso publicado de Anthropic es el opuesto: tests **visibles** como señal de recompensa.
 11. **Un hueco mío, declarado**: una línea de búsqueda sobre datos de adopción y medición (informe DORA, Thoughtworks Radar, dataset AIDev de PRs de agentes) seguía abierta cuando cierro esta entrega. No la cito porque no llegué a verificar sus cifras en las fuentes primarias. Si la quieres, la retomo.
+
+## Enlaces
+
+- [[gas-city-frente-a-la-fabrica]] — el bucle `check`, las puertas y los presupuestos del montaje, que esta capa de verificación completa
+- [[orquestacion-seguridad-ejecutor]] — el aislamiento y los controles del ejecutor que estas formas de verificar asumen
+- [[verificacion-externa-agentes]] — el principio de síntesis: la verificación solo cuenta si la posee algo externo al agente
+- [[gas-city-con-2cerebro]] — cómo encaja esta verificación en el flujo con el wiki
+- [[_index]] — índice de esta carpeta

@@ -1,7 +1,7 @@
 ---
 title: Lego — clausura semántica: el marco que faltaba
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-29
 tags: [lego, verificacion, teoria, marco]
 zona: tecnico
 ---
@@ -102,3 +102,4 @@ El ensayo es de un blog personal (Substack), no de una publicación revisada. Va
 - [[autonomia-medida]] — el peso del andamiaje, que es la clausura medida
 - [[montaje-documentado]] — el diseño, ahora con su motivo
 - [[investigacion-lego]] — el informe completo
+- [[verificacion-externa-agentes]] — el principio general que este marco explica

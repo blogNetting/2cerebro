@@ -1,7 +1,7 @@
 ---
 title: Lego — verificación: el oráculo y sus límites
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-09-29
 tags: [lego, verificacion, agentes, pruebas]
 zona: tecnico
 ---
@@ -109,3 +109,4 @@ GitHub lo tiene puesto en el diseño, no como accidente: en su agente de codific
 - [[crear-la-tarea]] — el formato que hace verificable la tarea
 - [[consumir-la-tarea]] — el bucle y el aislamiento
 - [[investigacion-lego]] — el informe completo
+- [[verificacion-externa-agentes]] — la síntesis del principio en todo el wiki: qué verificación cuenta y cuál no

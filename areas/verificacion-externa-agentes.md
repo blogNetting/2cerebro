@@ -38,4 +38,7 @@ Formas concretas que la evidencia respalda, y que sirven de criterio para juzgar
 
 - [[desarrollo-autonomo-con-agentes]] — la evidencia medida que sostiene el principio
 - [[gas-city-frente-a-la-fabrica]] — un orquestador que formula el principio igual («el paso está hecho cuando lo dice tu script») y a la vez declara que sus comandos «son una característica, no un recinto»
+- [[verificacion-sin-oraculo-informe]] — los mecanismos concretos (rulesets de push, CODEOWNERS, tests cifrados, recibos firmados) y qué está probado frente a propuesto
+- [[verificacion-y-oraculo]] — el oráculo y su techo medido, desde el frente Lego
+- [[clausura-semantica]] — por qué el canal de verificación no puede ser la propia generación
 - [[metodo-de-investigacion]] — el método con el que se recoge esta evidencia

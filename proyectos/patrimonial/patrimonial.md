@@ -68,6 +68,7 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 
 - [[apartamentos-calle-uruguay]] — inmueble que entraría en el dashboard
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
+- [[rentabilidad-inmobiliaria-con-datos]] — proyecto para buscar nuevas oportunidades de inversión inmobiliaria; cualquier inmueble que resulte acabaría entrando aquí
 - [[_index]]
 
 ## Repo

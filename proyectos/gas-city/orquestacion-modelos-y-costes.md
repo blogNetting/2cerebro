@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek: modelos y costes
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-09-29
 tags: [agentes, deepseek, costes, benchmarks]
 zona: tecnico
 ---
@@ -257,4 +257,5 @@ Hacker News (vía hn.algolia.com API):
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
+- [[gas-city-instalacion-y-modelos]] — el reparto Opus/Sonnet/DeepSeek aplicado al montaje con Gas City
 - [[_index]]

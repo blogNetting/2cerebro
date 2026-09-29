@@ -457,4 +457,5 @@ Ordenado por relación entre lo que cuesta y lo que aporta. Los tres primeros so
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos sirven y qué es marketing: el bucle `check`, las puertas, los presupuestos, el tercer estado con la convención `75`, y las métricas que el proyecto publica de sí mismo
 - [[las-piezas]] — Gas Town y Beads, con el aviso original de la contribución automática que esta nota resuelve
 - [[verificacion-externa-agentes]] — por qué la condición de salida tiene que ser un script
+- [[orquestacion-modelos-y-costes]] — el detalle de modelos DeepSeek, precios y benchmarks que sostiene este reparto
 

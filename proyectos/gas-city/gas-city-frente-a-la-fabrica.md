@@ -185,4 +185,5 @@ Ordenadas por relación entre lo que cuesta y lo que aporta.
 - [[gas-city-traje-a-medida]] — Gas City como montaje para desarrollar más rápido
 - [[gas-city-con-2cerebro]] — cómo usarlo junto con el wiki para crear y desarrollar aplicaciones
 - [[verificacion-externa-agentes]] — el principio que Gas City formula igual y no garantiza
+- [[verificacion-sin-oraculo-informe]] — los mecanismos concretos para que el agente no toque los tests: qué está probado y qué solo propuesto
 - [[metodo-de-investigacion]] — el método con el que se hizo este barrido
