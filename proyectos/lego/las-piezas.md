@@ -90,7 +90,13 @@ while :; do cat PROMPT.md | claude ; done
 
 **Mi lectura, marcada como mía:** esto **no es un montaje, es una plataforma.** Está pensado para llevar 20 o 30 agentes a la vez sobre varios proyectos. **Para lo que tú quieres —una persona, un proyecto, un agente— sobra por todos lados**, y cada pieza es algo que puede romperse un domingo por la tarde.
 
-**Y hay controversia documentada:** un hilo en Hacker News sobre si consume créditos del usuario, con **253 puntos y 127 comentarios**, en su propio rastreador de incidencias.
+**Y hay controversia documentada, verificada en vivo el 2026-09-28** (corrige la versión anterior de esta nota, que la atribuía mal a un hilo de Hacker News): es [issue #3649 de su propio repositorio](https://github.com/gastownhall/gastown/issues/3649), *«Does Gas Town "steal" usage from users' LLM credits & paid services to improve itself?»* — **cerrado**, sin respuesta visible del mantenedor. Cita literal: *«tus créditos de Claude / tu uso pueden estar financiando arreglos al código del mantenedor, y tu cuenta de GitHub envía PRs a su repositorio»*, y *«no hay opt-in, no hay opt-out, no hay aviso»*.
+
+> ### ⚠️ SI SE ELIGE GAS TOWN: apagar antes de usarlo que arregle bugs de sí mismo y mande PRs con tus créditos y tu cuenta de GitHub
+>
+> Por defecto trae un flujo de «contribuir de vuelta a upstream»: puede lanzar agentes que arreglen fallos del propio Gas Town y manden ese parche como PR a su repositorio, gastando tus créditos de Claude y usando tu cuenta de GitHub, sin pedir permiso.
+>
+> **Buscado en vivo el 2026-09-28 y no encontrado: ningún flag, variable de entorno ni fórmula con nombre para desactivarlo.** El propio issue #3649 lo dice explícito: *«no hay opt-in, no hay opt-out»*. Antes de instalar, comprobar en la documentación de fórmulas/moléculas (`gastown.dev/docs`, sitio caído en el momento de esta búsqueda) si ya existe un mecanismo, y si no, revisar el estado del issue #3649 por si se resolvió.
 
 **Piezas que añade: 7 o más.**
 

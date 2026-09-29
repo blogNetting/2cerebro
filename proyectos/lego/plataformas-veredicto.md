@@ -111,6 +111,97 @@ De las 60, **cinco están muertas o paradas** y tres de ellas son de las más vo
 
 **60 de 60** entradas del catálogo enumeradas desde su fuente. **44** con repo medido en vivo. **Reddit** entró por la vía de Redlib sobre Chrome real, después de que los cuatro frentes lo recibieran bloqueado (403 y «blocked due to a network policy») — sin eso, toda la evidencia de comunidad habría sido de una sola plataforma.
 
+## Lista ordenada, de más a menos relevancia
+
+**76 entradas: las 60 del catálogo `agentmgmt.dev` —comprobadas una a una contra su `tools.yml`— más 16 que no están en él** (6 de fuera: `Claude Code agent teams`, `oh-my-claudecode`, `DeepCode`, `edict`, `Subtask` y `Tutti`; y 10 repos encontrados por tema al final).
+
+Cada línea lleva la marca, el criterio y la prueba:
+
+- **✓** funciona según terceros **y** hace parte del trabajo
+- **~** funciona, pero solo cubre la capa de aviso
+- **✗** auditada con problema grave, cerrada o sin licencia
+- **?** sin ninguna prueba de terceros
+- **⚠** lead sin verificar
+
+```
+ 1  OpenChamber          ✓  coste y fallos devueltos al agente, PR y merge · Reddit 58 votos, HN 190/93
+ 2  Emdash               ✓  worktree, diffs, PR, CI y merge · HN 206/71
+ 3  Orca                 ✓  5 agentes en paralelo, comparar y fusionar · r/ClaudeCode 162 votos — uso sin resolver
+ 4  kandev               ✓  kanban, revisión, PR, sub-tareas · npm 5.969/mes · gasto solo en hoja de ruta
+ 5  Agent of Empires     ✓  aislamiento, sandbox, aviso · HN 118/44 + un «daily driver»
+ 6  Claude Code agent teams ✓  nativo, cero piezas nuevas: tareas, cron, aprobación de plan · 20 subagentes concurrentes · sin worktree para los compañeros · evidencia de terceros fina
+ 7  Paseo                ✗  aviso crítico de seguridad sin acuse 7 días · auditada
+ 8  Subtask              ⚠  SIN VERIFICAR · r/ClaudeCode 267 votos, solo el titular
+ 9  Tutti                ⚠  SIN VERIFICAR · r/LLMDevs, solo una mención
+10  Herdr                ~  solo aviso · brew 8.151/30d, HN 404/178
+11  cmux                 ~  solo aviso · HN 198/77, r/cmux 45 votos
+12  Nimbalyst            ~  aviso y edición visual · release 135.395 · hilos del propio autor
+13  Happy                ~  cliente móvil · npm 33.712/mes
+14  tmux-ide             ~  reparto de paneles · npm 4.534/mes, HN 88/38
+15  CodeNomad            ~  GUI de un agente · 3 usuarios independientes en HN
+16  dmux                 ~  worktree por panel · npm 915/mes · HN 9/0
+17  HAPI                 ~  control remoto · brew 10/30d
+18  T3 Code              ~  superficie de control · HN 6/0
+19  Muxy                 ~  terminal macOS · HN 4/0
+20  Sidecar              ~  shell con paneles · brew 39/30d
+21  Xum                  ?  sin uso ajeno
+22  nodeterm             ?  sin uso ajeno
+23  Ghostex              ?  release 281-373, ningún hilo
+24  Luvus                ?  sin uso ajeno
+25  Acepe                ?  sin uso ajeno
+26  Sidequest            ?  sin uso ajeno
+27  oh-my-claudecode     ✗  peaje en estrellas, bucle de tokens, un solo autor · auditada
+28  Superset             ✗  no verifica el trabajo; licencia Elastic 2.0 · auditada
+29  Vibe Kanban          ✗  sunsetting
+30  Opcode               ✗  22.412★, último commit de código en oct-2025
+31  Supacode             ?  127.094 descargas, ningún hilo
+32  Amux                 ?  0 descargas del binario empaquetado
+33  Kooky                ?  sin uso ajeno
+34  Shep                 ✗  sin licencia: no hay derecho de uso
+35  Rabbitty             ✗  fuente privada, 7 descargas
+36  OpenScout            ?  sin cifra ni hilos
+37  Synara               ?  366.967 descargas, ningún hilo
+38  jean                 ?  6.955 descargas, sin voz propia
+39  Agent Orchestrator   ?  sin cifra atribuible · Show HN 15/0
+40  Fusion               ?  release más descargado: 18 · su verificación es código muerto
+41  Conductor            ?  propietario, cero terceros
+42  Superconductor       ?  solo datos del vendor
+43  Solo                 ?  propietario
+44  Clor                 ?  HN 11/5
+45  atrium               ?  HN 3/0
+46  Podium               ?  26★, solo el autor
+47  Zeron                ?  5.762 descargas, ningún hilo
+48  AgentsDock           —  no es plataforma: IDE · HN 81/32
+49  stagewise            —  no es plataforma: agente de front-end · HN 46/50
+50  den                  —  repo 404, no auditable
+51  Xirp                 —  propietario, una sola sesión
+52  Polyscope            —  opaco
+53  Spruce               ?  propietario, sin métricas
+54  maestri              ?  dos anuncios en HN, 0 comentarios
+55  nyx                  ?  de pago, sin rastro
+56  pi-vis               —  no es plataforma: GUI de un agente
+57  DeepCode             ✗  cero evidencia de uso real · auditada
+58  edict                ✗  muerto por dentro · auditada
+59  Amp                  —  dentro del agente, sin repo público · npm 78.778/mes
+60  Cursor               —  IDE
+61  Warp                 —  terminal
+62  Zed                  —  editor
+63  VS Code              —  editor
+64  Codex app            —  propietaria, sin cifra
+65  Antigravity          —  editor
+66  Devin                —  servicio cerrado de un proveedor
+67  worktrunk            ?  8.446★, sin testimonio
+68  ccpm                 ?  8.391★, parada desde marzo
+69  treehouse            ?  1.797★, sin testimonio
+70  arbor                ?  829★, sin testimonio
+71  codexia              ?  921★, sin testimonio
+72  uzi                  ?  583★, sin testimonio
+73  FleetCode            ?  424★, parada desde marzo
+74  cc-haha              ?  14.749★, sin testimonio
+75  pi-subagents         ?  1.225★, sin testimonio
+76  helix                ?  812★, sin testimonio
+```
+
 ## Enlaces
 
 - [[plataformas-uso-real]] — la tabla de medición, plataforma a plataforma
