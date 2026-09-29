@@ -12,7 +12,7 @@ Dónde se puede conseguir, en España, cada dato que las transcripciones de Prop
 
 Las variables salen de las transcripciones (ver [[rentabilidad-inmobiliaria-con-datos]]): **población, tasa de paro, renta per cápita, tasa de esfuerzo, precio de vivienda, precio de alquiler**, más los indicadores adelantados (**visados de obra nueva**, suelo). Y para el cálculo de rentabilidad: **transacciones, valor catastral, IBI**.
 
-**Criterio**: fuente real y accesible, gratis primero; si es de pago, con precio. Y **comprobada con A Coruña**.
+**Criterio**: fuente real y accesible, gratis primero; si es de pago, con precio. **Comprobada con A Coruña.** Y con **serie histórica**: un modelo no se entrena con el dato de un año, sino con la progresión completa — de ahí la sección de profundidad histórica más abajo.
 
 **Etiquetas de estado**:
 - **[VERIFICADO EN VIVO]** — he llamado a la fuente con A Coruña y ha devuelto el dato. Se enseña el valor.
@@ -33,6 +33,21 @@ Las variables salen de las transcripciones (ver [[rentabilidad-inmobiliaria-con-
 | **Visados de obra nueva** | MITMS (provincial); IBESTAT, ICANE (municipal en su CCAA) | Excel | Gratis | [SNIPPET] |
 | **Anuncios (precio, stock, tiempo)** | Idealista (API limitada / scrapers) | API / pago | Gratis-limitado / 0,4-10 $ por 1.000 | [SNIPPET] |
 | **Tasa de esfuerzo** | *derivada* (precio ÷ renta) | cálculo propio | — | — |
+
+## Profundidad histórica — lo que de verdad decide el proyecto
+
+Un dato suelto del año actual **no sirve para un modelo**: hace falta la serie completa, para ver la progresión y para entrenar. Esto es hasta dónde llega cada fuente, **comprobado llamándola**:
+
+| Variable | Fuente | Serie histórica (verificado en vivo) |
+|---|---|---|
+| **Población** | INE `29005` | **1996 → 2025** (29 años) para A Coruña. Hay además una operación aparte con **1986-1995** |
+| **Población (Galicia)** | IGE | **1900 → 2025** |
+| **Paro municipal** | SEPE | **2006 → 2025** — en enero de 2006 A Coruña tenía **19.190** demandantes, frente a 30.710 en 2013 |
+| **Alquiler** | SERPAVI | **2011 → 2024** (declarado por el Ministerio; descarga en Excel) |
+| **Precio vivienda (capitales)** | Banco de España / Registradores | **2007-2024** (Banco de España) y **1995-2010** (IPVVR, base 2005) |
+| **Renta municipal** | INE `ADRH` | por confirmar (el municipal arranca hacia 2015) |
+
+**Lectura**: la base gratuita **sí tiene historia suficiente para entrenar**. Población desde 1996, paro desde 2006, alquiler desde 2011. Ocho a treinta años por variable. Lo que no la tiene es el precio de vivienda municipal y los visados — los dos huecos, que además son cortos en el tiempo.
 
 ## Detalle por variable
 
