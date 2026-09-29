@@ -6,3 +6,4 @@ Buscar buenas rentabilidades en inversión inmobiliaria apoyándose en datos, us
 
 - [[rentabilidad-inmobiliaria-con-datos]] — hub del proyecto: qué es Prophero (verificado, con cita y enlace), fuentes disponibles sin ingerir todavía, y próximos pasos
 - [[fuentes-prophero]] — catálogo de fuentes externas: lo ya revisado (las 8 transcripciones), lo encontrado para revisar (técnico, entrevistas, podcasts, prensa, empleo) y lo descartado
+- [[estado-del-arte-modelos-predictivos]] — qué arte previo existe (abierto, comercial y académico) para valorar y predecir inmuebles, qué datos hacen falta y cómo se entrena y valida
