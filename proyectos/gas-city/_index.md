@@ -11,6 +11,7 @@ Gas City (sucesor de Gas Town, de Steve Yegge) como pieza central del montaje pa
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos de Gas City sirven y qué es marketing: el bucle `check` como primitiva de verificación, las puertas, los presupuestos, el tercer estado con la convención `75`, y las métricas que el propio proyecto publica de sí mismo
 - [[gas-city-acceso-externo]] — **probado en vivo, acceso confirmado**: el enlace fijo del panel desde fuera de la VM (`http://192.168.1.8:8372`), los dos cambios necesarios en `~/.gc/supervisor.toml` (`bind` + `allowed_hosts`, uno solo no basta), por qué queda en solo lectura, y que persiste solo
 - [[gas-city-operacion-real]] — **probado en vivo, ciudad `NeTT-City` en marcha**: el reparto Opus/DeepSeek ya aplicado (`mayor` sin `upstream` = tu suscripción, `obrero-seek` con la clave de DeepSeek), el fallo real que impedía arrancar cualquier sesión (el diálogo de confianza de carpeta de Claude Code, no `tmux`), y los tres sitios distintos donde vive el nombre de una ciudad
+- [[gas-city-tmux-scroll]] — **probado en vivo**: por qué la rueda del ratón no hacía scroll en la sesión de tmux (el modo ratón viene apagado por defecto, fuente `man tmux`), `mouse on` + `history-limit` aplicado en caliente y guardado en `~/.tmux.conf`, y las alternativas de comunidad descartadas (scrollback nativo del terminal, plugin `tmux-mighty-scroll`)
 
 ## La evidencia que sostiene el montaje
 

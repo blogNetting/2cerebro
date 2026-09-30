@@ -86,3 +86,4 @@ Citas comprobadas de forma mecánica contra los ficheros descargados del repo `g
 - [[gas-city-con-2cerebro]] — el camino con el pack `gastown` y cómo convive con el wiki
 - [[gas-city-instalacion-y-modelos]] — instalación y modelos
 - [[gas-city-operacion-real]] — el reparto Opus/DeepSeek aplicado de verdad a `mayor` y `obrero-seek`, y el fallo real que impedía que el alcalde arrancara
+- [[gas-city-tmux-scroll]] — por qué el scroll con la rueda del ratón no funcionaba en esta misma sesión de tmux y cómo se arregló de raíz
