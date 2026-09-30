@@ -75,3 +75,4 @@ Corre como el mismo servicio de systemd de usuario (`gascity-supervisor.service`
 
 - [[_index]] — índice de esta carpeta
 - [[gas-city-instalacion-y-modelos]] — la instalación base sobre la que se hizo esto
+- [[gas-city-operacion-real]] — otro fallo real de arranque de sesión (el diálogo de confianza de Claude Code), causa distinta a la de esta nota

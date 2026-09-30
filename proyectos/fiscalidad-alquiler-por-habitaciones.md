@@ -108,5 +108,5 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 - [[apartamentos-calle-uruguay]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[patrimonial]] — app donde se seguirán ingresos y gastos del alquiler
-- [[rentabilidad-inmobiliaria-con-datos]] — cualquier cálculo de rentabilidad neta de una compra futura tiene que incorporar este tratamiento fiscal
+- [[radar]] — cualquier cálculo de rentabilidad neta de una compra futura tiene que incorporar este tratamiento fiscal
 - [[_index]]

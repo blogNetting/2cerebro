@@ -1,10 +1,10 @@
-# Índice: proyectos/rentabilidad-inmobiliaria-con-datos
+# Índice: proyectos/radar
 
 Buscar buenas rentabilidades en inversión inmobiliaria apoyándose en datos, usando el modelo de negocio de Prophero como hipótesis a contrastar, no como premisa.
 
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
-- [[rentabilidad-inmobiliaria-con-datos]] — hub del proyecto: qué es Prophero (verificado, con cita y enlace), fuentes disponibles sin ingerir todavía, y próximos pasos
+- [[radar]] — hub del proyecto: qué es Prophero (verificado, con cita y enlace), fuentes disponibles sin ingerir todavía, y próximos pasos
 - [[sintesis-radar]] — **síntesis consolidada**: todo el conocimiento del proyecto en un documento (método, estado del arte, fuentes de datos, casos y huecos). Excluye lo comercial de Prophero
 - [[fuentes-prophero]] — catálogo de fuentes externas: lo ya revisado (las 8 transcripciones), lo encontrado para revisar (técnico, entrevistas, podcasts, prensa, empleo) y lo descartado
 - [[estado-del-arte-modelos-predictivos]] — qué arte previo existe (abierto, comercial y académico) para valorar y predecir inmuebles, qué datos hacen falta y cómo se entrena y valida

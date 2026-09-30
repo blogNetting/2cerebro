@@ -10,6 +10,7 @@ Gas City (sucesor de Gas Town, de Steve Yegge) como pieza central del montaje pa
 - [[gas-city-con-2cerebro]] — cómo usarlo con 2cerebro para crear y desarrollar aplicaciones: el reparto (2cerebro = método, cada app = rig), el flujo paso a paso, y los cuatro puntos que hay que tocar para que conviva con el wiki
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos de Gas City sirven y qué es marketing: el bucle `check` como primitiva de verificación, las puertas, los presupuestos, el tercer estado con la convención `75`, y las métricas que el propio proyecto publica de sí mismo
 - [[gas-city-acceso-externo]] — **probado en vivo, acceso confirmado**: el enlace fijo del panel desde fuera de la VM (`http://192.168.1.8:8372`), los dos cambios necesarios en `~/.gc/supervisor.toml` (`bind` + `allowed_hosts`, uno solo no basta), por qué queda en solo lectura, y que persiste solo
+- [[gas-city-operacion-real]] — **probado en vivo, ciudad `NeTT-City` en marcha**: el reparto Opus/DeepSeek ya aplicado (`mayor` sin `upstream` = tu suscripción, `obrero-seek` con la clave de DeepSeek), el fallo real que impedía arrancar cualquier sesión (el diálogo de confianza de carpeta de Claude Code, no `tmux`), y los tres sitios distintos donde vive el nombre de una ciudad
 
 ## La evidencia que sostiene el montaje
 

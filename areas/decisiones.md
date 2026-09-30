@@ -309,3 +309,9 @@ Corrección del usuario: *«cárgate todas estas cosas que han quedado obsoletas
 **Lo que NO cambia:** la regla de comportamiento («modificas → validas → documentas») ni el hook `verificar-respuesta.sh`. Se recortó el mecanismo que vigilaba algo que ya vive en otro sitio.
 
 Actualizado también `areas/entorno.md` (la fila que documentaba el hook) y la memoria `project_astillero_deprecado`.
+
+## 2026-09-29 — `rentabilidad-inmobiliaria-con-datos` renombrado a `radar`
+
+Corrección del usuario, insistida dos veces: la carpeta y la nota central pasan a llamarse `radar` (antes `rentabilidad-inmobiliaria-con-datos`/`rentabilidad-inmobiliaria-con-datos.md`). Hecho con `git mv` (conserva historial) y `sed` en los 8 enlaces que apuntaban al nombre viejo, dentro de la carpeta y en `apartamentos-calle-uruguay.md`, `fiscalidad-alquiler-por-habitaciones.md`, `patrimonial/patrimonial.md`, `fuentes/_index.md` y `proyectos/_index.md`. El registro histórico de más arriba en este fichero (creación, borrado, recreación del proyecto) no se toca — describe lo que pasó con ese nombre en su momento.
+
+Consecuencia: el proyecto de software real (repo + rig en Gas City) se crea con el nombre `radar`, no con el anterior.

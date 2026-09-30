@@ -493,3 +493,4 @@ Esta comparativa reutiliza y reverifica en vivo (2026-09-29) la que ya existía 
 - [[orquestacion-modelos-y-costes]] — el detalle de modelos DeepSeek, precios y benchmarks que sostiene este reparto
 - [[orquestacion-seguridad-ejecutor]] — la investigación original de aislamiento (2026-09-24) que §7 reutiliza y reverifica
 
+- [[gas-city-operacion-real]] — el reparto de modelos ya aplicado y probado en vivo, con el fallo real de arranque encontrado y su arreglo

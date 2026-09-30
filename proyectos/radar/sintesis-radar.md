@@ -16,7 +16,7 @@ Un sistema que, con datos, identifique dónde merece la pena invertir en viviend
 
 ## 1. El método, según Prophero (de las 8 transcripciones)
 
-Todo lo de esta sección sale de las transcripciones ya ingeridas. Detalle con cita y línea: [[rentabilidad-inmobiliaria-con-datos]].
+Todo lo de esta sección sale de las transcripciones ya ingeridas. Detalle con cita y línea: [[radar]].
 
 ### 1.1 Las variables que dicen usar
 
@@ -158,7 +158,7 @@ Las fuentes son de momentos distintos (**~2022-23 → 2024 → 2025 → septiemb
 
 ## Relacionado en el wiki
 
-- [[rentabilidad-inmobiliaria-con-datos]] — hub: extracción completa de las transcripciones, con cita y línea
+- [[radar]] — hub: extracción completa de las transcripciones, con cita y línea
 - [[fuentes-datos-radar]] — variable a variable: fuente, acceso, coste, histórico y comprobación con A Coruña
 - [[estado-del-arte-modelos-predictivos]] — arte previo, modelos y validación
 - [[fuentes-prophero]] — catálogo de fuentes externas sobre Prophero, pendientes de extraer

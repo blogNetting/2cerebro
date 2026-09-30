@@ -10,7 +10,7 @@ Dónde se puede conseguir, en España, cada dato que las transcripciones de Prop
 
 ## Qué se necesitaba y para qué
 
-Las variables salen de las transcripciones (ver [[rentabilidad-inmobiliaria-con-datos]]): **población, tasa de paro, renta per cápita, tasa de esfuerzo, precio de vivienda, precio de alquiler**, más los indicadores adelantados (**visados de obra nueva**, suelo). Y para el cálculo de rentabilidad: **transacciones, valor catastral, IBI**.
+Las variables salen de las transcripciones (ver [[radar]]): **población, tasa de paro, renta per cápita, tasa de esfuerzo, precio de vivienda, precio de alquiler**, más los indicadores adelantados (**visados de obra nueva**, suelo). Y para el cálculo de rentabilidad: **transacciones, valor catastral, IBI**.
 
 **Criterio**: fuente real y accesible, gratis primero; si es de pago, con precio. **Comprobada con A Coruña.** Y con **serie histórica**: un modelo no se entrena con el dato de un año, sino con la progresión completa — de ahí la sección de profundidad histórica más abajo.
 
@@ -50,6 +50,8 @@ Un dato suelto del año actual **no sirve para un modelo**: hace falta la serie 
 **Lectura**: la base gratuita **sí tiene historia suficiente para entrenar**. Población desde 1996, paro desde 2006, alquiler desde 2011. Ocho a treinta años por variable. Lo que no la tiene es el precio de vivienda municipal y los visados — los dos huecos, que además son cortos en el tiempo.
 
 ## Dónde consultar cada dato — tabla de trabajo
+
+> **La tabla viva es `datos-radar.xlsx`** (hoja "Datos": 38 datos, 10 bloques, con columna `Bloque`, formatos y colores de fiabilidad). Esta sección es el resumen en texto; si se actualiza una, hay que actualizar la otra. El Excel es donde se trabaja.
 
 Los datos a extraer (salen de las transcripciones, ver [[sintesis-radar]] sección 1). **Solo fuentes nacionales.**
 
@@ -172,7 +174,7 @@ Búsquedas web (INE, SEPE, Catastro, IGE, SERPAVI, Idealista) **más pruebas en 
 
 ## Relacionado en el wiki
 
-- [[rentabilidad-inmobiliaria-con-datos]] — hub: las variables que se quieren cubrir y de dónde salen
+- [[radar]] — hub: las variables que se quieren cubrir y de dónde salen
 - [[estado-del-arte-modelos-predictivos]] — con qué se entrena el modelo y cómo se valida
 - [[fuentes-prophero]] — catálogo de fuentes sobre Prophero
 - [[sintesis-radar]] — síntesis consolidada de todo el conocimiento del proyecto

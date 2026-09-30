@@ -1,7 +1,7 @@
 ---
 title: Patrimonial
 created: 2026-09-24
-updated: 2026-09-26
+updated: 2026-09-29
 tags: [finanzas, patrimonio, webapp, self-hosted, dashboard]
 zona: tecnico
 ---
@@ -21,6 +21,8 @@ Por defecto, si existe una fuente de solo lectura (API, dirección pública), se
 ## Diseño
 
 Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only o dark por defecto con opción a claro?
+
+Stack de interfaz decidido, ver «Stack» más abajo (tabla completa con backend y base de datos).
 
 ## Alcance
 
@@ -62,19 +64,28 @@ Modo oscuro como requisito de UI desde el primer boceto. Pendiente: ¿dark-only 
 - Saldo de cada cuenta: ¿sale de sumar los movimientos importados, o se sigue tecleando aparte?
 - Backups de los datos del servidor casero.
 - Dark-only o dark + toggle a claro.
-- Stack y forma de despliegue.
+- ~~Stack~~ — **cerrado (2026-09-29), ver «Stack»**: Flask + Jinja2 + SQLite + SQLAlchemy, Bootstrap 5.3/SCSS/Chart.js/Inter. Sigue abierta la **forma de despliegue** (Docker, systemd directo, etc.) — eso no se decidió.
 
 ## Enlaces
 
 - [[apartamentos-calle-uruguay]] — inmueble que entraría en el dashboard
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
-- [[rentabilidad-inmobiliaria-con-datos]] — proyecto para buscar nuevas oportunidades de inversión inmobiliaria; cualquier inmueble que resulte acabaría entrando aquí
+- [[radar]] — proyecto para buscar nuevas oportunidades de inversión inmobiliaria; cualquier inmueble que resulte acabaría entrando aquí
 - [[_index]]
 
 ## Repo
 
 [blogNetting/patrimonial](https://github.com/blogNetting/patrimonial), privado. **Su estado, sus versiones y sus pendientes viven en el repo, no aquí** — este wiki no lleva el seguimiento de ningún proyecto.
 
-## Stack
+## Stack — decidido (2026-09-29)
 
-Ecosistema **Python**, y solo para las puertas de CI y la red del ejecutor: no es el framework de la app, que sigue sin decidirse.
+| Capa | Elección |
+|---|---|
+| Backend | **Flask** + Jinja2 (plantillas renderizadas en servidor, no API separada) |
+| Base de datos | **SQLite** + SQLAlchemy — un solo usuario/familia, autoalojado, sin servidor de BD aparte que mantener |
+| Interactividad | **HTMX**, opcional — actualizar trozos de página sin JS framework, si hace falta |
+| Interfaz | **Bootstrap 5.3**, **Bootstrap Icons**, **SCSS**, **Chart.js** (gráficas), fuente **Inter** |
+| Componentes de Bootstrap a usar | Grid, Cards, Tables, Forms, Dropdowns, Modals, Offcanvas |
+| CI / red del ejecutor | Ecosistema Python (esto no es el framework de la app, es la herramienta con la que Astillero verifica el código) |
+
+**Por qué Flask y no FastAPI:** es monolito con HTML renderizado en servidor, no una API consumida aparte — Jinja2 viene integrado de fábrica en Flask, y la ventaja de FastAPI (async, validación automática) no aporta nada aquí porque no hay carga que la justifique. Confirmado contra proyectos reales del mismo tipo (dashboard de finanzas personal, autoalojado): [CoinTrack](https://github.com/devmoatassem/CoinTrack) (Flask + Bootstrap + SQLite), [biweeklybudget](https://pypi.org/project/biweeklybudget/) (Flask/SQLAlchemy) y [FinReports](https://github.com/SimarMann/FinReports) (Flask + SQLite) — ninguno de los proyectos reales encontrados en esta categoría usa FastAPI.

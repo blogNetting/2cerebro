@@ -85,3 +85,4 @@ Citas comprobadas de forma mecánica contra los ficheros descargados del repo `g
 - [[gas-city-traje-a-medida]] — por qué Gas City
 - [[gas-city-con-2cerebro]] — el camino con el pack `gastown` y cómo convive con el wiki
 - [[gas-city-instalacion-y-modelos]] — instalación y modelos
+- [[gas-city-operacion-real]] — el reparto Opus/DeepSeek aplicado de verdad a `mayor` y `obrero-seek`, y el fallo real que impedía que el alcalde arrancara
