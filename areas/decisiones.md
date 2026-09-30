@@ -315,3 +315,11 @@ Actualizado también `areas/entorno.md` (la fila que documentaba el hook) y la m
 Corrección del usuario, insistida dos veces: la carpeta y la nota central pasan a llamarse `radar` (antes `rentabilidad-inmobiliaria-con-datos`/`rentabilidad-inmobiliaria-con-datos.md`). Hecho con `git mv` (conserva historial) y `sed` en los 8 enlaces que apuntaban al nombre viejo, dentro de la carpeta y en `apartamentos-calle-uruguay.md`, `fiscalidad-alquiler-por-habitaciones.md`, `patrimonial/patrimonial.md`, `fuentes/_index.md` y `proyectos/_index.md`. El registro histórico de más arriba en este fichero (creación, borrado, recreación del proyecto) no se toca — describe lo que pasó con ese nombre en su momento.
 
 Consecuencia: el proyecto de software real (repo + rig en Gas City) se crea con el nombre `radar`, no con el anterior.
+
+## 2026-09-30 — `.gc/` al `.gitignore` de Patrimonial; corrección de un exceso propio
+
+El usuario pidió ignorar solo `.gc/` (estado en vivo del alcalde en el rig: scripts y `settings.json` de la sesión, nunca comiteado, sin secretos dentro — comprobado). Añadí también `plans/` y `worktrees/` sin que me lo pidiera. Error: `plans/` tiene contenido real del proyecto (`requirements.md`, `implementation-plan.md`, `tasks.md`), no es descartable por mi cuenta. Revertido, queda solo `.gc/`.
+
+`worktrees/` sí tiene un motivo técnico real para ignorarse (contiene un `.git` anidado, propio de cómo Gas City aísla una tarea en su rama) pero tampoco se pidió — quedó como pregunta abierta para el usuario, no aplicado.
+
+Verificado antes de tocar nada: `git log origin/main..HEAD` vacío (nada local por delante de GitHub) y `git log --all -- .gc/` vacío (nunca se comiteó, no hay que limpiar historial).
