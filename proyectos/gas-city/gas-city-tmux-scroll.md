@@ -2,11 +2,13 @@
 title: Gas City — que el scroll en tmux no dependa de entrar en modo copia
 created: 2026-09-30
 updated: 2026-09-30
-tags: [gas-city, tmux, terminal, runbook]
+tags: [gas-city, tmux, terminal, vscode, runbook]
 zona: tecnico
 ---
 
-Por qué la rueda del ratón no hacía scroll en la sesión de tmux del alcalde, qué se aplicó para arreglarlo de raíz y qué alternativas se descartaron.
+Por qué la rueda del ratón no hacía scroll en la sesión de tmux del alcalde, y la tecla que lo resuelve de verdad sin depender del ratón.
+
+**Corregido el mismo día (2026-09-30): el primer intento (`mouse on` + `history-limit`) no bastaba.** Quedó probado en el servidor de tmux (banderas correctas, ver más abajo) pero en el uso real, desde el terminal integrado de VSCode, la rueda seguía sin hacer scroll — movía el historial de mensajes escritos, como si se pulsara flecha arriba/abajo. La causa real no estaba en tmux: es un fallo conocido y sin arreglo de VSCode, ver «Causa real» más abajo. La solución que funciona de verdad es una tecla dedicada que no pasa por el ratón en ningún momento (`Shift+Re Pág`), no la configuración del ratón.
 
 ## El problema
 
