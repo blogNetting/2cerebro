@@ -1,7 +1,7 @@
 ---
 title: Patrimonial
 created: 2026-09-24
-updated: 2026-09-29
+updated: 2026-10-01
 tags: [finanzas, patrimonio, webapp, self-hosted, dashboard]
 zona: tecnico
 ---
@@ -71,6 +71,7 @@ Stack de interfaz decidido, ver «Stack» más abajo (tabla completa con backend
 - [[apartamentos-calle-uruguay]] — inmueble que entraría en el dashboard
 - [[fiscalidad-alquiler-por-habitaciones]] — ingresos y gastos del alquiler, candidatos a seguirse en la app
 - [[radar]] — proyecto para buscar nuevas oportunidades de inversión inmobiliaria; cualquier inmueble que resulte acabaría entrando aquí
+- [[control-de-versiones-y-ci]] — cómo se protege `main` frente a los agentes, el CI del PR y el uso de tags
 - [[_index]]
 
 ## Repo
