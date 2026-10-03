@@ -187,3 +187,4 @@ Ordenadas por relación entre lo que cuesta y lo que aporta.
 - [[verificacion-externa-agentes]] — el principio que Gas City formula igual y no garantiza
 - [[verificacion-sin-oraculo-informe]] — los mecanismos concretos para que el agente no toque los tests: qué está probado y qué solo propuesto
 - [[metodo-de-investigacion]] — el método con el que se hizo este barrido
+- [[linear-y-jev-frente-a-gas-city]] — si Linear + JEV (TypeSafe) mejoran a Gas City: no lo sustituyen, y dónde encaja JEV

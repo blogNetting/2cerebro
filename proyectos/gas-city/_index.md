@@ -21,4 +21,5 @@ Gas City (sucesor de Gas Town, de Steve Yegge) como pieza central del montaje pa
 - [[orquestacion-experiencia-comunidad]] — qué reporta de verdad quien lo ha usado, con sus cifras
 - [[orquestacion-seguridad-ejecutor]] — el ejecutor como superficie de riesgo: qué puede tocar y qué no debería
 - [[verificacion-sin-oraculo-informe]] — cómo se implementa una capa de verificación que el agente no puede tocar
+- [[linear-y-jev-frente-a-gas-city]] — comparativa (2026-10-04): por qué Linear + JEV no sustituyen a Gas City (categorías distintas, JEV no escribe código), dónde sí encaja JEV como capa de decisión barata, y el precio real de Linear
 

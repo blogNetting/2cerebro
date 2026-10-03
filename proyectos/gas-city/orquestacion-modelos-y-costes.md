@@ -256,6 +256,7 @@ Hacker News (vía hn.algolia.com API):
 
 ## Enlaces
 
+- [[linear-y-jev-frente-a-gas-city]] — JEV (TypeSafe) como capa de decisión barata: qué aporta que DeepSeek no, y por qué no sustituye a Gas City
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
 - [[gas-city-instalacion-y-modelos]] — el reparto Opus/Sonnet/DeepSeek aplicado al montaje con Gas City
 - [[_index]]
