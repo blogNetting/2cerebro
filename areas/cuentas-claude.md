@@ -12,7 +12,8 @@ Cómo se elige qué suscripción de Claude usa todo (terminales, VS Code, Gas Ci
 
 - Elegir la cuenta con un comando (`cc N`) y que **todo** lo que arranque Claude después use esa: terminal, VS Code y Gas City (`gc session attach mayor`).
 - Que nada note que es otra cuenta: mismo modelo, memoria, historial, hooks, plugins, skills, reglas, settings y MCP. **Solo cambia la suscripción.**
-- `cc` no abre Claude: solo carga la cuenta.
+- `cc` no abre Claude: solo cambia la cuenta. Después el usuario decide qué lanza (`claude`, Gas City…).
+- Que funcione esté donde esté: en cualquier terminal, también en las que ya estaban abiertas, sin `source` ni pasos extra.
 - `cc-quien` dice la verdad: lo lee de los ficheros y procesos reales, no de una marca.
 - No perder tokens.
 
@@ -25,13 +26,15 @@ Cómo se elige qué suscripción de Claude usa todo (terminales, VS Code, Gas Ci
    - sincroniza los MCP entre **todas** las carpetas `~/.claude*`: cada una queda con la unión de `mcpServers` (en `.claude.json`) y `mcpOAuth` (en `.credentials.json`), con `jq`. No toca `claudeAiOauth` (la suscripción);
    - sincroniza también la configuración por proyecto (`projects` de `.claude.json`): unión de todas las cuentas y, si una carpeta tiene la confianza aceptada (`hasTrustDialogAccepted`) en alguna, queda aceptada en todas;
    - escribe `N` en `~/.cc-activa`;
-   - si la cuenta no tiene login, abre Claude para hacerlo; si no, muestra `cc-quien`.
-4. **`~/bin/claude`** es un `claude` intermedio: lee `~/.cc-activa`, pone `CLAUDE_CONFIG_DIR=~/.claude-N` y lanza el real (`~/.local/bin/claude`). No toca la variable si ya viene puesta (un claude lanzado desde otro claude —hooks, subagentes— sigue con la cuenta del padre) ni si hay `ANTHROPIC_BASE_URL` (agentes DeepSeek, que no usan cuenta de Claude).
+   - comprueba que `~/.local/bin/claude` es un enlace a `~/bin/claude` y, si no (el actualizador de Claude lo devuelve al binario al instalar una versión), lo vuelve a poner;
+   - si la cuenta no tiene login, abre Claude para hacerlo (única excepción en que abre algo); si no, muestra `cc-quien` y termina.
+4. **`~/bin/claude`** es un `claude` intermedio: lee `~/.cc-activa`, pone `CLAUDE_CONFIG_DIR=~/.claude-N` y lanza el binario real, la versión más nueva de `~/.local/share/claude/versions/`. No toca la variable si ya viene puesta (un claude lanzado desde otro claude —hooks, subagentes— sigue con la cuenta del padre) ni si hay `ANTHROPIC_BASE_URL` (agentes DeepSeek, que no usan cuenta de Claude).
 5. **Quién pasa por `~/bin/claude`:**
 
 | Dónde | Cómo | Fichero |
 |---|---|---|
-| Terminales | `export PATH="$HOME/bin:$PATH"` al final, para ir por delante de `~/.local/bin` | `~/.bashrc` |
+| Terminales, también las ya abiertas | `~/.local/bin/claude` es un enlace a `~/bin/claude`. Es el `claude` que encuentra cualquier shell, aunque se abriera antes del cambio o VS Code ponga `~/.local/bin` delante en el `PATH` | `~/.local/bin/claude` (lo mantiene `cc`) |
+| Terminales nuevas (refuerzo) | `export PATH="$HOME/bin:$PATH"` y `alias claude="$HOME/bin/claude"` al final | `~/.bashrc` |
 | VS Code | `"claudeCode.claudeProcessWrapper": "/home/netting/bin/claude"`. La extensión pasa su propio binario como primer argumento; el intermedio lo detecta y lo usa | `~/.vscode-server/data/Machine/settings.json` |
 | Gas City | `command = "/home/netting/bin/claude"` en `[providers.claude]` | `~/gas-city/city.toml` |
 
@@ -41,7 +44,7 @@ Cómo se elige qué suscripción de Claude usa todo (terminales, VS Code, Gas Ci
 
 ```
 cc            # = cc-quien
-cc 2          # carga la 2 para todo lo que arranque a partir de ahora
+cc 2          # cambia a la 2 y vuelve al prompt; lo que arranques después usa la 2
 cc 3          # cuenta nueva: crea ~/.claude-3 enlazada y abre Claude para el login
 ```
 
@@ -69,6 +72,8 @@ Ambas herramientas son proyectos que venden el cambio de cuenta: no son neutrale
 
 ## Verificado (2026-10-03)
 
+- **Terminal vieja** (sin alias, sin `~/bin` en el `PATH`, `~/.local/bin` delante, como una de VS Code abierta días antes): `type claude` da `~/.local/bin/claude` y `claude auth status` da el email de la cuenta 2 con la 2 cargada y el de la 1 con la 1. Confirmado por el usuario en uso real.
+- `cc 2` termina con `exit=0` sin abrir Claude.
 - Con `~/.cc-activa` = 2, un `bash -i` nuevo resuelve `claude` a `/home/netting/bin/claude` y `claude auth status` da el email de la cuenta 2; con 1, el de la cuenta 1. Lo mismo simulando VS Code (`~/bin/claude <binario de la extensión> auth status`).
 - `claude mcp list` da `context7 … ✔ Connected` en las dos cuentas tras la sincronización.
 - Tras la sincronización, `claudeAiOauth` de cada cuenta es idéntico al previo (comparado con copia).
@@ -86,14 +91,15 @@ No verificado: VS Code real tras recargar la ventana.
 - **Un MCP borrado reaparece**: la sincronización es una unión. Para quitarlo, quitarlo en todas las cuentas antes de volver a ejecutar `cc`.
 - **Un claude abierto reescribe su `.claude.json` al cerrar** y puede deshacer la sincronización de esa cuenta; el siguiente `cc` la vuelve a hacer.
 - **VS Code con `claudeProcessWrapper`**: si no se ha elegido modo de permisos, la extensión arranca en `default` (visto en su `extension.js`, 2.1.288). Hay que recargar la ventana para que use el ajuste.
-- **Terminales abiertas antes del cambio de `~/.bashrc`** no tienen `~/bin` delante y usan la cuenta 1.
-- **El actualizador de Claude reescribe `~/.local/bin/claude`**: por eso el intermedio vive en `~/bin`, no ahí.
+- **Terminales abiertas antes del cambio de `~/.bashrc` usaban la cuenta 1** (2026-10-03). No tenían `~/bin` delante ni el alias, y las de VS Code ponen `~/.local/bin` delante en el `PATH`. Un `claude` lanzado ahí salía con la 1, que no tenía cuota («You've hit your weekly limit»), aunque `cc 2` estuviera bien. Una shell abierta no se puede cambiar desde fuera, así que el arreglo fue convertir `~/.local/bin/claude`, el que todas encuentran, en enlace al intermedio.
+- **El actualizador de Claude reescribe `~/.local/bin/claude`** apuntándolo al binario nuevo. Hasta el siguiente `cc`, un `claude` de una terminal sin alias saldría con la cuenta 1. `cc` lo repara cada vez que se ejecuta.
+- **Un claude ya abierto no cambia de cuenta**: hay que cerrarlo (`/exit`) y relanzarlo.
 - Lo de la cuenta 2 anterior a enlazarla (2026-10-03) quedó en `~/.claude-2/.antes-de-enlazar/`.
 
 ## Si algo falla
 
 - `cc-quien` primero: dice qué cuenta está cargada y con cuál corre cada claude abierto.
-- `type -p claude` debe dar `/home/netting/bin/claude`. Si da `~/.local/bin/claude`, la terminal es anterior al cambio de `~/.bashrc`.
+- `readlink ~/.local/bin/claude` debe dar `/home/netting/bin/claude`. Si da `…/versions/X`, ha actualizado Claude: ejecutar `cc N` lo repara.
 - `claude auth status | jq -r .email` dice con qué cuenta arranca un claude nuevo.
 - `tr '\0' '\n' < /proc/<pid>/environ | grep CLAUDE_CONFIG_DIR` dice con qué cuenta corre un proceso concreto.
 

@@ -337,3 +337,5 @@ Correcciones del usuario por el camino:
 - No reiniciar el mayor por iniciativa propia. Aun así, el cambio de `command` en `city.toml` lo reinició solo (Gas City reinicia las sesiones cuya configuración cambia).
 
 Descartado copiar el token de cada cuenta en una sola carpeta (propuesta del usuario, contrastada): el refresh token es de un solo uso y una sesión abierta de otra cuenta lo pisaría. Fuentes y citas en [[cuentas-claude]].
+
+Corrección posterior (mismo día): `cc` había vuelto a abrir Claude (opción `--solo` añadida por otra sesión) y el fichero `/home/netting/load_gas_city_command` había desaparecido. Se quitó la apertura (`cc N` solo cambia la cuenta) y se recreó el fichero. Además, `claude` seguía saliendo con la cuenta 1 en terminales abiertas antes del cambio, porque una shell abierta no relee `~/.bashrc`. Arreglo: `~/.local/bin/claude` pasa a ser un enlace a `~/bin/claude`, y `cc` lo vuelve a poner si el actualizador lo cambia. El usuario confirmó que así funciona. Detalle en [[cuentas-claude]].
