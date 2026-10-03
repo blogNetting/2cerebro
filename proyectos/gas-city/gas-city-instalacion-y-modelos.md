@@ -1,7 +1,7 @@
 ---
 title: Gas City — instalación en esta máquina y configuración de modelos (Opus/Sonnet/DeepSeek)
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-03
 tags: [gas-city, instalacion, modelos, deepseek, opus, sonnet, telemetria, privacidad]
 zona: tecnico
 ---
@@ -483,6 +483,8 @@ Esta comparativa reutiliza y reverifica en vivo (2026-09-29) la que ya existía 
 - **«No existe» donde no puedo probarlo:** sobre la contribución automática digo «no he encontrado ningún mecanismo, en el repositorio ni en el catálogo», no «es imposible». Un pack de terceros fuera del catálogo oficial no lo he mirado.
 
 ## Enlaces
+
+- [[cuentas-claude]] — qué cuenta de Claude usa el mayor: `[providers.claude] command` apunta a `~/bin/claude`, que lee la cuenta cargada con `cc`
 
 - [[_index]] — índice de esta carpeta
 - [[gas-city-traje-a-medida]] — por qué Gas City es la pieza central del montaje, y qué tocar para ajustarlo

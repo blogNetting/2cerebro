@@ -323,3 +323,17 @@ El usuario pidió ignorar solo `.gc/` (estado en vivo del alcalde en el rig: scr
 `worktrees/` sí tiene un motivo técnico real para ignorarse (contiene un `.git` anidado, propio de cómo Gas City aísla una tarea en su rama) pero tampoco se pidió — quedó como pregunta abierta para el usuario, no aplicado.
 
 Verificado antes de tocar nada: `git log origin/main..HEAD` vacío (nada local por delante de GitHub) y `git log --all -- .gc/` vacío (nunca se comiteó, no hay que limpiar historial).
+
+## 2026-10-03 — Varias cuentas de Claude: `cc` carga la suscripción para todo
+
+Montaje completo en [[cuentas-claude]]. Una carpeta por cuenta con todo enlazado a la cuenta 1 salvo `.credentials.json` y `.claude.json`; `cc N` solo anota la cuenta y sincroniza los MCP entre todas; un `claude` intermedio en `~/bin` (por `PATH`, por `claudeCode.claudeProcessWrapper` en VS Code y por `command` en `city.toml`) arranca cada claude con la cuenta cargada.
+
+Correcciones del usuario por el camino:
+- Lo pedido era cargar la cuenta **para todo**, no solo la terminal donde se lanza `cc`, y que `cc` no abra Claude.
+- Que nada cambie salvo la suscripción: las cuentas tenían carpetas separadas (memoria, historial, plugins, MCP propios) y no se dijo hasta que preguntó.
+- No crear un script aparte (`cc-compartir`) para lo que cabe en `cc`.
+- `cc-quien` tiene que leer lo real; se le había añadido una marca «ACTIVA (Gas City)» sin pedirla.
+- Los MCP se sincronizan entre todas las cuentas en cada `cc`, no solo de la 1 a las demás, porque sin cuota no se puede usar siempre la 1.
+- No reiniciar el mayor por iniciativa propia. Aun así, el cambio de `command` en `city.toml` lo reinició solo (Gas City reinicia las sesiones cuya configuración cambia).
+
+Descartado copiar el token de cada cuenta en una sola carpeta (propuesta del usuario, contrastada): el refresh token es de un solo uso y una sesión abierta de otra cuenta lo pisaría. Fuentes y citas en [[cuentas-claude]].

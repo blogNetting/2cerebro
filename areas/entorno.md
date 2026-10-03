@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-09-29
+updated: 2026-10-03
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -66,6 +66,10 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - **Nada binario se versiona salvo que sea imprescindible:** `*.pdf` está en `.gitignore` — los PDF generados son entregables para el usuario y el contenido es el `.md`, que sí se versiona (ver `AGENTS.md`, «Formato de investigaciones»).
 - **Lo que ya está publicado no se despublica sin decidirlo el usuario.** El historial contiene snapshots del 2026-09-19 con datos personales; la decisión y su análisis están en [[decisiones]] (2026-09-27).
 - Playwright MCP escribe sus logs, capturas y snapshots en `/home/netting/.cache/playwright-mcp` (`--output-dir` en `.mcp.json`, fuera del repo). Antes de ese cambio escribía en `.playwright-mcp/` dentro del repo, ahora ignorado.
+
+## Varias cuentas de Claude (2026-10-03)
+
+- `cc N` carga la cuenta N para todo lo que arranque Claude después; `cc-quien` dice cuál está cargada y con qué cuenta corre cada claude abierto. Detalle, motivos y problemas conocidos en [[cuentas-claude]].
 
 ## Compartir contexto entre sesiones
 

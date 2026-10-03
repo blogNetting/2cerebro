@@ -5,6 +5,7 @@ Responsabilidades continuas sin fecha de fin. Notas de síntesis y contradiccion
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
 - [[decisiones]] — registro de decisiones de arquitectura y correcciones del usuario, con fecha
+- [[cuentas-claude]] — varias cuentas de Claude Code: `cc N` carga la suscripción para todo (terminal, VS Code, Gas City) sin cambiar nada más; `cc-quien`; por qué no se copian tokens
 - [[entorno]] — herramientas y MCPs montados en esta máquina: navegador por CDP, escalado de búsquedas, qué se descartó y por qué
 - [[desarrollo-autonomo-con-agentes]] — qué dice la evidencia medida sobre desarrollar software con agentes y mínima intervención: límites duros, contra-evidencia y el principio de diseño que se deduce
 - [[metodo-de-investigacion]] — cómo investigar bien: por qué la búsqueda se queda en lo primero que cumple (Zipf, satisficing, terminación prematura) y qué intervenciones están medidas que lo evitan. Origen de la skill `/investigar-metodo`
