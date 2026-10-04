@@ -349,3 +349,14 @@ Corrección posterior (mismo día): `cc` había vuelto a abrir Claude (opción `
 - **Diferido, no tocado.** El par `gas-city-frente-a-la-fabrica` ↔ `orquestacion-seguridad-ejecutor` sigue sin enlace directo — ya constaba así desde el lint del 2026-09-29, a decisión del usuario.
 - **Sin nota de síntesis nueva.** El tema recurrente «la verificación solo cuenta si la posee algo distinto del agente» ya tiene su nota de síntesis en [[verificacion-externa-agentes]].
 - **Observación para el usuario, no contradicción formal.** [[gas-city-frente-a-la-fabrica]] concluye en contra de adoptar la plataforma Gas City, mientras el wiki documenta una ciudad en marcha ([[gas-city-operacion-real]]). No hay decisión registrada que explique la diferencia; queda como pregunta, no la resuelvo yo.
+
+## 2026-10-04 — Forge gratis con puerta en `main`, y el coste de GitLab para Gas City
+
+Investigación de 7 rondas, dos notas nuevas:
+
+- [[forges-gratis-con-puerta-en-main]] (`areas/`) — qué forge da gratis, en repo privado, una protección de rama impuesta por el servidor y con el CI obligatorio. GitHub Free **no** (su API contesta `403` en el repo de Patrimonial); **GitLab.com Free sí** (protected branches + «Allowed to push: No one» + «Pipelines must succeed»); Bitbucket Free tiene el muro pero los *merge checks* son Premium y los access tokens no funcionan con branch restrictions (BCLOUD-22400); Azure DevOps lo cumple y se descarta por encaje; Codeberg, por sus límites de privados.
+- [[gas-city-y-gitlab]] (`proyectos/gas-city/`) — las dependencias de GitHub de Gas City, y que `bd` **ya trae paridad GitLab** (`bd gitlab`: projects/pull/push/status/sync), mientras lo GitHub-only es la automatización de PRs (refinery con `merge_strategy=pr`, flujos `github-issue-*`, `gc github pr`). El forge de cada rig vive en el repo de ese rig (`.beads/config.yaml`), no en la ciudad: mezclar forges entre rigs no rompe nada.
+
+**Corrección del usuario, aplicada:** el forge autoalojado (Forgejo/Gitea) **no es una opción** para él — no lo pidió y no es un estándar suyo. Queda excluido de la comparativa y no se vuelve a proponer salvo que él lo pida.
+
+**Corrección de una nota antigua:** [[control-de-versiones-y-ci]] mandaba montar un ruleset (§5) que en un repo privado de cuenta Free no existe, y su `ci.yml` daba por hechos `requirements.txt` y Python 3.12 cuando el repo usa `pyproject.toml` y `>=3.13`. Añadido el aviso al principio de esa nota; el §5 se conserva porque sirve tal cual si algún día hay Pro.

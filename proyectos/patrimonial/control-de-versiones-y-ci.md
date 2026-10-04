@@ -8,6 +8,22 @@ zona: tecnico
 
 Cómo se protege `main` en el repo de Patrimonial, quién puede escribir dónde, qué comprobaciones automáticas (CI) se ejecutan al abrir un Pull Request y cómo montar todo eso a mano en GitHub. Es el "cómo" que acompaña al montaje de agentes descrito en [[gas-city-alcalde]].
 
+## Aviso (2026-10-04): el §5 no se puede aplicar en este repo, hoy
+
+El repo es **privado** y la cuenta es **Free**, y en esa combinación GitHub no ofrece rulesets ni protección de rama. Comprobado contra la API con la propia cuenta:
+
+```
+$ gh api repos/blogNetting/patrimonial/rulesets
+{"message":"Upgrade to GitHub Pro or make this repository public to enable this feature.","status":"403"}
+
+$ gh api repos/blogNetting/patrimonial/branches/main/protection
+{"message":"Upgrade to GitHub Pro or make this repository public to enable this feature.","status":403}
+```
+
+O sea: **el §5 explica bien cómo se monta la puerta, pero esa pantalla hoy no existe para este repo.** Lo que sí funciona gratis es el CI del §7 — Actions está activo (`{"enabled":true,"allowed_actions":"all"}`) —; lo que falta es que la puerta obligue. El abanico de salidas, con lo que cuesta cada una, está en [[forges-gratis-con-puerta-en-main]]; el detalle de qué parte es de Gas City y qué de GitHub, en [[gas-city-y-gitlab]].
+
+**Segunda corrección, mismo día: el `ci.yml` del §7.2 no encaja con este repo.** No hay `requirements.txt` (las dependencias viven en `pyproject.toml`, extras `dev`), exige Python `>=3.13` (aquí pone 3.12) y ya existe `make check` (`ruff check .` + `pytest -m "not network"`). Hay que adaptarlo antes de copiarlo.
+
 ## 1. A qué montaje aplica
 
 - Repo privado: `blogNetting/patrimonial`.
@@ -34,7 +50,7 @@ Cómo se protege `main` en el repo de Patrimonial, quién puede escribir dónde,
 | Rama | Quién escribe | Protección |
 |---|---|---|
 | **`development`** | El alcalde y sus obreros, a su aire. Zona libre. | Ninguna. Es el terreno de pruebas del usuario. |
-| **`main`** | **Nadie directamente.** Solo avanza al fusionar un PR aprobado. | Ruleset activo: sin push directo, con CI obligatorio y con la aprobación del usuario. |
+| **`main`** | **Nadie directamente.** Solo avanza cuando el usuario fusiona un PR. | Ruleset activo: sin push directo y con CI obligatorio; el usuario decide al pulsar Merge. |
 
 La idea de fondo: **un único punto de parada —la fusión `development → main`— donde el sistema pide permiso**. Todo lo demás es libre. El porqué de concentrar la frontera solo ahí (y no en cada fusión) está razonado en [[gas-city-alcalde]] y, en general, en la práctica de "proteger la frontera, no cada merge".
 
@@ -60,28 +76,26 @@ Interfaz actual de GitHub (2026). Se hace **una vez**:
 6. **Rules** — activa, como mínimo:
    - **Restrict creations** (nadie crea `main` desde cero sin permiso).
    - **Restrict deletions** (nadie borra `main`).
-   - **Require a pull request before merging** → **Required approvals: 1** (o las que quieras; tú, o quien tú decidas). Esta regla es la que impide el push directo: todo cambio en `main` tiene que llegar por un PR.
+   - **Require a pull request before merging** → **Required approvals: 0**. Esta regla es la que impide el push directo: todo cambio en `main` tiene que llegar por un PR. Aprobaciones a 0 porque el PR lo abres tú y GitHub no deja aprobar un PR propio (*"Pull request authors cannot approve their own pull requests"*, [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/approving-a-pull-request-with-required-reviews)); con 1, tu propio PR se quedaría bloqueado. La decisión es tuya al pulsar Merge.
    - **NO actives Restrict updates.** GitHub la define así: *"If selected, only users with bypass permissions can push to branches or tags whose name matches the pattern you specify"* ([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets)). Fusionar un PR también es un push a `main`, así que con la lista de bypass vacía **nadie podría fusionar nunca**, ni tú. Lo han comprobado usuarios en [community #113172](https://github.com/orgs/community/discussions/113172): con la regla activa aparece *"Merging is blocked / The base branch does not allow updates."*, y *"Even if 'repository admins' are included in the bypass list for a ruleset which has the "Restrict update" rule enabled, they cannot merge PRs which are targeted at branches matched by the ruleset"*. En [#150269](https://github.com/orgs/community/discussions/150269) también se ve que la lista de bypass no exime: *"Experimentation shows that the bypass list does not bypass the listed actor from the Ruleset"*. En contra, un [blog de Medium (Pankaj Aswal)](https://iampankajaswal.medium.com/github-branch-rulesets-explained-protecting-master-keeping-branches-in-sync-and-building-a-safe-2d00ad1680ff) recomienda *"Restrict updates / Require pull request / Block force pushes"*, pero no dice haberlo probado con una fusión real. Pesan más los dos hilos, que sí cuentan pruebas reales. Comprobado solo con fuentes, sin prueba propia en un repo. (Corrección de una versión anterior de esta nota, que la recomendaba.)
    - **Require status checks to pass** → añade **`tests`** y **`lint`** (los nombres de los jobs del §7.2) y marca **Require branches to be up to date before merging** (esto es el **strict mode**, que actúa como se explica en el §6).
    - **Block force pushes** (nadie reescribe la historia de `main`).
 7. **Create**. A partir de aquí, todo PR hacia `main` queda sujeto a estas reglas.
 
-**Aviso: quién abre el PR.** GitHub no deja aprobar tu propio PR: *"Pull request authors cannot approve their own pull requests"* ([GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/approving-a-pull-request-with-required-reviews)). Si el alcalde abre el PR con **tu** token, el autor eres tú, no puedes aprobarlo, y con la lista de bypass vacía el PR se queda bloqueado. Para que la aprobación sea tuya, los agentes tienen que actuar con **otra identidad**: una cuenta de máquina o una GitHub App. No bajes las aprobaciones a 0 para salir del paso: entonces el propio agente podría fusionar el PR en cuanto el CI se ponga en verde, y desaparecería la puerta.
-
 ### Qué NO hace falta para empezar
 
 - **Merge queue**: la cola nativa de GitHub que prueba fusiones combinadas. Sirve para repos con **muchos PR concurrentes** hacia `main`. Como aquí se fusiona de uno en uno, no aporta y añade complejidad. Si algún día crecen los PR simultáneos, se revisa.
-- **Codeowners / aprobaciones múltiples**: útiles en equipo. Para un solo usuario, con 1 aprobación sobra.
+- **Codeowners / aprobaciones**: útiles en equipo. Para un solo usuario que abre y fusiona él mismo, 0 aprobaciones.
 
 ## 6. El PR `development → main`: qué pasa al abrirlo
 
 Secuencia real, en orden:
 
-1. Abres el PR de `development` hacia `main`.
+1. Abres tú el PR de `development` hacia `main`.
 2. GitHub dispara el workflow del CI (el fichero del §7). Cada comprobación es un **job** independiente; corren y **suman** sus resultados como *status checks* sobre el commit del PR.
 3. Cada job termina con un **código de salida**: `0` = ✅ pasa; **distinto de `0`** = ❌ falla. Ese es el "qué devuelve para continuar o parar": un test roto lanza salida ≠ 0, y el job entero falla.
-4. Los checks que marcaste como **requeridos** (`tests`, `lint`) aparecen en el PR. Mientras **alguno esté rojo o pendiente**, el botón **Merge** queda **bloqueado** — no puedes aprobar la fusión.
-5. Cuando **todos** los requeridos están en verde **y** el PR está aprobado, el botón **se habilita**. Entonces, y solo entonces, tú pulsas Merge.
+4. Los checks que marcaste como **requeridos** (`tests`, `lint`) aparecen en el PR. Mientras **alguno esté rojo o pendiente**, el botón **Merge** queda **bloqueado**.
+5. Cuando **todos** los requeridos están en verde, el botón **se habilita**. Entonces decides tú: pulsas Merge o cierras el PR sin fusionar.
 6. **Modo strict**: si `main` recibiera un commit nuevo entre medias, el PR quedaría "out of date" y habría que resincronizar y **volver a correr el CI** sobre el resultado real. En tu caso `main` no se mueve solo (nadie empuja a `main`, §5), así que esto casi nunca se activará — pero es la red que garantiza que lo que pruebas es lo que se fusiona.
 7. **Por qué NO hay que repetir los tests tras el merge**: en un `pull_request`, GitHub no prueba la rama sola sino la fusión simulada (`GITHUB_REF` = *"PR merge branch `refs/pull/PULL_REQUEST_NUMBER/merge`"*, [GitHub Docs — events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)), y el modo strict garantiza que esa fusión sigue al día cuando pulsas Merge. Es decir, el CI ya corrió sobre el árbol exacto que quedará en `main`. Repetir los mismos tests después sería redundante. Lo único que sí puede correr *sobre `main` ya fusionada* es el **despliegue/release** (construir, publicar, desplegar), que es otra cosa y no entra aquí.
 
@@ -217,6 +231,8 @@ O desde la web: repo → **Releases** → el release que quieras → *Source cod
 
 - [[patrimonial]] — hub del proyecto (estado, stack, repo)
 - [[gas-city-alcalde]] — quién es el alcalde, los obreros y cómo fusionan (`merge_strategy`)
+- [[forges-gratis-con-puerta-en-main]] — qué forge da la puerta gratis en privado, y qué cuesta cada salida
+- [[gas-city-y-gitlab]] — qué parte de esto es de Gas City y qué parte de GitHub
 - [[_index]] — índice de esta carpeta
 
 ### Fuentes

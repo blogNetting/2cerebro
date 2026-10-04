@@ -1,12 +1,12 @@
 ---
 title: Gas City — operación real en esta máquina: modelos, el fallo del diálogo de confianza, y dónde vive el nombre
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-04
 tags: [gas-city, operacion, modelos, deepseek, opus, bug, probado-en-vivo]
 zona: tecnico
 ---
 
-Tres cosas aplicadas y probadas en vivo el 2026-09-29 sobre la ciudad `NeTT-City` (antes `gas-city`) de esta máquina: el reparto real Opus/DeepSeek, un fallo real que impedía arrancar cualquier sesión, y los tres sitios distintos donde vive el nombre de una ciudad. Complementa a [[gas-city-instalacion-y-modelos]] (que documentaba el reparto sin haberlo aplicado) y a [[gas-city-acceso-externo]] (otro fallo de arranque, causa distinta).
+Tres cosas aplicadas y probadas en vivo el 2026-09-29 sobre la ciudad `NeTT-City` (antes `gas-city`) de esta máquina: el reparto real Opus/DeepSeek, un fallo real que impedía arrancar cualquier sesión, y los tres sitios distintos donde vive el nombre de una ciudad. Complementa a [[gas-city-instalacion-y-modelos]] (que documentaba el reparto sin haberlo aplicado) y a [[gas-city-acceso-externo]] (otro fallo de arranque, causa distinta). Dónde vive la forja de cada rig y qué costaría meter uno en GitLab, en [[gas-city-y-gitlab]].
 
 ## 1. El reparto Opus/DeepSeek, aplicado de verdad
 

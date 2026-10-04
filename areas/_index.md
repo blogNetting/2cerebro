@@ -13,3 +13,4 @@ Responsabilidades continuas sin fecha de fin. Notas de síntesis y contradiccion
 - [[vueling-busqueda-por-url]] — cómo barrer un mes de vuelos Vueling con URLs directas del calendario y del buscador, sin el autocomplete de la home
 - [[verificacion-externa-agentes]] — síntesis: por qué la verificación solo cuenta si la posee algo distinto del agente y fuera de su alcance de escritura, con los modos de fallo medidos
 - [[contradiccion-agents-md]] — qué dice de verdad el paper de ETH Zúrich sobre si `AGENTS.md`/`CLAUDE.md` mejora la tarea, y la cifra que circulaba sin sostén
+- [[forges-gratis-con-puerta-en-main]] — qué forge da gratis, en repo privado, una protección de rama impuesta por el servidor con el CI obligatorio: GitHub Free no, GitLab Free sí; con las citas y lo que queda sin verificar

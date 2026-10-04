@@ -1,7 +1,7 @@
 ---
 title: Gas City — trabajar con el alcalde: qué hace, quién te pregunta y qué te llega
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-04
 tags: [gas-city, alcalde, mayor, flujo, aprobacion]
 zona: tecnico
 ---
@@ -51,6 +51,8 @@ La única excepción documentada es la etapa de requisitos cuando se lanza *dent
 El flujo de [[gas-city-con-2cerebro]] §4 lanza trabajo con `mol-polecat-work`, la fórmula del pack `gastown`, cuyo final es el refinery. Con la `merge_strategy` por defecto (`direct`), **el trabajo se fusiona solo en `main`**, lo que choca con su propio paso 7 («no fundir nada tú hasta tener base de confianza»). Si se usa ese camino, marcar las tareas con `merge_strategy=pr`.
 
 ## 6. Usar issues de GitHub, si hace falta
+
+Estos tres flujos son **GitHub-only**: usan `gh` y `github.com` escrito a fuego en sus scripts. Qué haría falta para el equivalente en GitLab, y qué parte ya viene hecha, en [[gas-city-y-gitlab]].
 
 No es el camino por defecto (§2), pero el pack `gascity` trae tres flujos que parten de un issue o una PR en vez de una conversación con el alcalde ([README del pack](https://github.com/gastownhall/gascity-packs/tree/main/gascity)):
 
