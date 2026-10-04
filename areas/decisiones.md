@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-09-29
+updated: 2026-10-04
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -339,3 +339,13 @@ Correcciones del usuario por el camino:
 Descartado copiar el token de cada cuenta en una sola carpeta (propuesta del usuario, contrastada): el refresh token es de un solo uso y una sesión abierta de otra cuenta lo pisaría. Fuentes y citas en [[cuentas-claude]].
 
 Corrección posterior (mismo día): `cc` había vuelto a abrir Claude (opción `--solo` añadida por otra sesión) y el fichero `/home/netting/load_gas_city_command` había desaparecido. Se quitó la apertura (`cc N` solo cambia la cuenta) y se recreó el fichero. Además, `claude` seguía saliendo con la cuenta 1 en terminales abiertas antes del cambio, porque una shell abierta no relee `~/.bashrc`. Arreglo: `~/.local/bin/claude` pasa a ser un enlace a `~/bin/claude`, y `cc` lo vuelve a poner si el actualizador lo cambia. El usuario confirmó que así funciona. Detalle en [[cuentas-claude]].
+
+## 2026-10-04 — Lint del wiki: sano; tres enlaces de serie completados
+
+- **Repositorio (git): limpio.** Nada versionado que coincida con `.gitignore`; bajo `.claude/` solo `agents/`, `commands/` y `settings.json` (nada de contenido); sin artefactos de herramienta, sin carpetas nuevas sin ignorar, sin ficheros de más de 1 MB, y **sin datos sensibles** (los aciertos del barrido son el texto de la propia regla, notas que describen barridos previos y marcadores de posición como `$ANTHROPIC_API_KEY` o `x-access-token:TOKEN@`). Tres binarios fuera de `fuentes/` revisados y **conservados**: los diagramas de `lego` y `datos-radar.xlsx`, enlazados por notas — son entregables, no capturas ni artefactos.
+- **Contenido del wiki: sano.** Ningún enlace roto (los corchetes dobles sueltos son imágenes válidas incrustadas, sintaxis TOML dentro de bloques de código, el `[[:space:]]` de una regex y el placeholder de los índices). Sin notas huérfanas salvo los ficheros estructurales `CLAUDE.md` e `inbox.md`. Los siete `_index.md` exactos. Frontmatter completo en todas las notas de contenido.
+- **Tres enlaces de serie completados (aditivos).** `orquestacion-herramientas-y-patrones` ↔ `orquestacion-experiencia-comunidad` no se enlazaban entre sí; añadido el mutuo. Y la vuelta que faltaba: `receta-completa` → `todo-lo-necesario`.
+- **Verificación independiente del subagente `auditor` (hecha después, sin aplicar cambios).** Encontró tres huecos que la primera pasada no vio, todos corregidos: (1) `updated` sin subir en `gas-city-frente-a-la-fabrica` y `orquestacion-modelos-y-costes`, editadas al enlazar la nota nueva; (2) faltaban las vueltas hacia [[linear-y-jev-frente-a-gas-city]] desde `gas-city-instalacion-y-modelos` y [[verificacion-externa-agentes]]; (3) solapamiento real de dominio entre [[desarrollo-autonomo-con-agentes]] y el bloque de evidencia de Lego (`investigacion-lego` y siguientes), sin enlace en ninguna dirección — añadido el mutuo con `investigacion-lego`. Confirmó además, punto por punto, todo lo que sí cuadraba.
+- **Diferido, no tocado.** El par `gas-city-frente-a-la-fabrica` ↔ `orquestacion-seguridad-ejecutor` sigue sin enlace directo — ya constaba así desde el lint del 2026-09-29, a decisión del usuario.
+- **Sin nota de síntesis nueva.** El tema recurrente «la verificación solo cuenta si la posee algo distinto del agente» ya tiene su nota de síntesis en [[verificacion-externa-agentes]].
+- **Observación para el usuario, no contradicción formal.** [[gas-city-frente-a-la-fabrica]] concluye en contra de adoptar la plataforma Gas City, mientras el wiki documenta una ciudad en marcha ([[gas-city-operacion-real]]). No hay decisión registrada que explique la diferencia; queda como pregunta, no la resuelvo yo.

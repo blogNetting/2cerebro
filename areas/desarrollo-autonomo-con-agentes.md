@@ -1,7 +1,7 @@
 ---
 title: Desarrollo autónomo con agentes
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-10-04
 tags: [agentes, autonomia, evidencia, meta]
 zona: tecnico
 ---
@@ -133,4 +133,4 @@ Papers verificados abriendo su página: [arXiv:2310.01798](https://arxiv.org/abs
 - Qué se ha medido que **sí funciona** en un pipeline (verificación, tests, revisión por otro agente, contexto y memoria) — en curso.
 - Qué monta de verdad quien lo tiene funcionando, y qué se abandona — en curso.
 
-Enlaces: [[metodo-de-investigacion]] · [[decisiones]] · [[verificacion-externa-agentes]] · [[contradiccion-agents-md]]
+Enlaces: [[metodo-de-investigacion]] · [[decisiones]] · [[verificacion-externa-agentes]] · [[contradiccion-agents-md]] · [[investigacion-lego]]

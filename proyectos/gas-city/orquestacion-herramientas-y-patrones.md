@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek: herramientas y patrones
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-04
 tags: [agentes, orquestacion, herramientas, git]
 zona: tecnico
 ---
@@ -129,4 +129,5 @@ No aportaron señal útil / descartadas tras revisar:
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
+- [[orquestacion-experiencia-comunidad]] — qué reporta de verdad quien ha usado el patrón
 - [[_index]]

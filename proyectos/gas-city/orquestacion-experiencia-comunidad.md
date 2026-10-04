@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek: experiencia de la comunidad
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-04
 tags: [agentes, deepseek, tests, comunidad]
 zona: tecnico
 ---
@@ -175,4 +175,5 @@ Nota sobre fiabilidad de medición de coste: dos fuentes independientes (proxy d
 ## Enlaces
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
+- [[orquestacion-herramientas-y-patrones]] — las herramientas y patrones que existen y cuáles aguantan
 - [[_index]]

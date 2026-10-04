@@ -1,7 +1,7 @@
 ---
 title: Verificación externa en sistemas con agentes
 created: 2026-09-27
-updated: 2026-09-29
+updated: 2026-10-04
 tags: [agentes, verificacion, evidencia, meta]
 zona: tecnico
 ---
@@ -42,3 +42,4 @@ Formas concretas que la evidencia respalda, y que sirven de criterio para juzgar
 - [[verificacion-y-oraculo]] — el oráculo y su techo medido, desde el frente Lego
 - [[clausura-semantica]] — por qué el canal de verificación no puede ser la propia generación
 - [[metodo-de-investigacion]] — el método con el que se recoge esta evidencia
+- [[linear-y-jev-frente-a-gas-city]] — un verificador barato y con probabilidad calibrada (JEV) como candidato a capa de decisión, y por qué no sustituye al orquestador

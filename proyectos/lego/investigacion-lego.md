@@ -1,7 +1,7 @@
 ---
 title: Lego — investigación: crear software y webs con agentes, con las mínimas piezas
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-04
 tags: [lego, agentes, sdd, investigacion, autonomia]
 zona: tecnico
 ---
@@ -265,3 +265,4 @@ Un agente desatendido con red y credenciales deja de ser una herramienta. Claude
 - [[limites-del-andamiaje]] — el límite: lo que ninguna verificación automática cubre hoy
 - [[piezas-y-coste]] — recuento de piezas y qué se rompe
 - [[montaje-documentado]] — el montaje reproducible, no ejecutado
+- [[desarrollo-autonomo-con-agentes]] — la síntesis en `areas/` del mismo dominio: qué está medido sobre desarrollar con agentes

@@ -1,7 +1,7 @@
 ---
 title: Gas City — qué mecanismos sirven y qué es marketing
 created: 2026-09-27
-updated: 2026-09-29
+updated: 2026-10-04
 tags: [gas-city, yegge, verificacion, puerta, auditoria, investigacion]
 zona: tecnico
 ---

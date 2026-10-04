@@ -1,7 +1,7 @@
 ---
 title: Lego — la receta completa: ficheros, scripts y repos
 created: 2026-09-28
-updated: 2026-09-28
+updated: 2026-10-04
 tags: [lego, receta, scripts, repos, ficheros]
 zona: tecnico
 ---
@@ -295,3 +295,4 @@ tu-proyecto/
 - [[montaje-documentado]] — los montajes reales y sus ficheros
 - [[etapas]] — qué está maduro y qué necesita tu mano
 - [[implementaciones-reales]] — los fracasos documentados
+- [[todo-lo-necesario]] — el recorrido completo de la etapa, fichero a fichero
