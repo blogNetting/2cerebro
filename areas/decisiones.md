@@ -360,3 +360,7 @@ Investigación de 7 rondas, dos notas nuevas:
 **Corrección del usuario, aplicada:** el forge autoalojado (Forgejo/Gitea) **no es una opción** para él — no lo pidió y no es un estándar suyo. Queda excluido de la comparativa y no se vuelve a proponer salvo que él lo pida.
 
 **Corrección de una nota antigua:** [[control-de-versiones-y-ci]] mandaba montar un ruleset (§5) que en un repo privado de cuenta Free no existe, y su `ci.yml` daba por hechos `requirements.txt` y Python 3.12 cuando el repo usa `pyproject.toml` y `>=3.13`. Añadido el aviso al principio de esa nota; el §5 se conserva porque sirve tal cual si algún día hay Pro.
+
+## 2026-10-10 — Área `devops-proyectos-propios`
+
+Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps; mañana quizá formación o consultoría) van en `areas/devops-proyectos-propios/`, no en `proyectos/` ni dentro de Patrimonial. Patrimonial es solo el banco de pruebas; lo específico queda en su repo y solo sube lo reutilizable. Regla de entrada: aplica a dos o más proyectos. **Corrección del usuario:** el nombre debe llevar «DevOps» acotado a lo propio, nunca «devops» a secas, para que una consulta de DevOps general no se mezcle con esto.
