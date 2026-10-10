@@ -4,4 +4,5 @@ Mi forma personal de montar y llevar DevOps en todos mis proyectos (control de v
 
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
-- Vacío a propósito hasta que haya algo cerrado y reutilizable. Material ya existente que puede subir aquí cuando se destile: [[control-de-versiones-y-ci]], [[forges-gratis-con-puerta-en-main]].
+- [[agentes-comparten-usuario-y-credenciales]] — límite conocido: los agentes de Gas City comparten usuario y pueden leerse las credenciales; qué se acepta, qué lo arreglaría y qué queda pendiente
+- Material ya existente que puede subir aquí cuando se destile: [[control-de-versiones-y-ci]], [[forges-gratis-con-puerta-en-main]].

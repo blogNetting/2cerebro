@@ -99,4 +99,5 @@ Consecuencias:
 - [[gas-city-con-2cerebro]] — qué es un rig y por qué 2cerebro no lo es
 - [[forges-gratis-con-puerta-en-main]] — qué forge da puerta gratis en privado
 - [[control-de-versiones-y-ci]] — el caso concreto de Patrimonial
+- [[agentes-comparten-usuario-y-credenciales]] — por qué las identidades por rol en GitLab no impiden la suplantación entre agentes
 - [[_index]]

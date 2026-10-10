@@ -73,6 +73,7 @@ Todo lo de esta nota se comprobó en vivo el 2026-09-29, con la salida real pega
 
 ## Enlaces
 
+- [[agentes-comparten-usuario-y-credenciales]] — límite de seguridad: los agentes comparten usuario y credenciales
 - [[_index]] — índice de esta carpeta
 - [[gas-city-instalacion-y-modelos]] — el reparto de modelos como se diseñó, antes de aplicarlo
 - [[gas-city-acceso-externo]] — otro fallo real de arranque de sesión (systemd desincronizado), causa distinta a la de esta nota
