@@ -28,7 +28,7 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 
 - [ ] **Web de captación de inquilinos** — formulario para recoger datos de candidatos (solvencia, referencias, documentación). Hosting, stack, RGPD del formulario.
 - [ ] **Medición y reparto de suministros** — programación de los dos contadores de agua, Shelly EM por unidad, criterio de reparto (consumo real vs. cuota), cómo se refleja en el contrato.
-- [ ] **Contrato de arrendamiento por habitaciones** — redacción, cláusulas de gastos, uso de zonas comunes, fianza, duración, LAU vs. Código Civil.
+- [~] **Contrato de arrendamiento por habitaciones** → [[contrato-habitaciones-redaccion-y-fiscalidad]]. Reparto por % de superficie, plano anexo y efecto en gastos deducibles (sin verificar). Pendiente: cláusulas de gastos, zonas comunes, fianza, duración, LAU vs. Código Civil.
 - [~] **Portero automático no moleste a los dos inquilinos** → [[portero-automatico-timbre-unico]]. Un único timbre para dos unidades independientes; cualquier llamada suena en ambas. En análisis.
 - [x] **Legalidad de la división y del alquiler** → [[legalidad-division-y-alquiler-por-habitaciones]]. Resuelto de fondo: es una vivienda alquilada por habitaciones, posición sólida. Problema abierto real: la **extracción de las cocinas al shunt colectivo**. Menor: estatutos, seguro, CEE.
 - [~] **Argumentario frente a vecinos** → [[argumentario-frente-a-comunidad-y-vecinos]]. Playbook con artículos citados literalmente. Pendiente: ROJ de la STS 31-5-2021, revisar estatutos, modelo de contestación escrita.

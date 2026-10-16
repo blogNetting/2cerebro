@@ -140,4 +140,5 @@ Consultas web 2026-09-09: homming.com (dividir sin segregar), lafita-arquitectur
 - [[apartamentos-calle-uruguay]]
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[fiscalidad-alquiler-por-habitaciones]]
+- [[contrato-habitaciones-redaccion-y-fiscalidad]] — cláusulas y anexo del contrato por habitaciones
 - [[_index]]

@@ -107,6 +107,7 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 
 - [[apartamentos-calle-uruguay]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
+- [[contrato-habitaciones-redaccion-y-fiscalidad]] — redacción del contrato por % de superficie y reparto de gastos con zonas vacías
 - [[patrimonial]] — app donde se seguirán ingresos y gastos del alquiler
 - [[radar]] — cualquier cálculo de rentabilidad neta de una compra futura tiene que incorporar este tratamiento fiscal
 - [[_index]]
