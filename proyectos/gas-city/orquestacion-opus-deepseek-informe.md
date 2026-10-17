@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek — informe de investigación
 created: 2026-09-24
-updated: 2026-09-24
+updated: 2026-10-17
 tags: [agentes, orquestacion, opus, deepseek, investigacion, devsecops]
 zona: tecnico
 ---
@@ -146,4 +146,5 @@ Detalle en [[orquestacion-seguridad-ejecutor]]. Resumen de lo que aplica a esta 
 ## Enlaces
 
 - [[orquestacion-herramientas-y-patrones]] · [[orquestacion-modelos-y-costes]] · [[orquestacion-experiencia-comunidad]] · [[orquestacion-seguridad-ejecutor]]
+- [[contradiccion-sudo-en-la-vm]] — este informe dice que el usuario está en el grupo `sudo`; el registro de decisiones dice que no hay sudo
 - [[_index]]

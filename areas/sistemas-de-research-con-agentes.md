@@ -1,7 +1,7 @@
 ---
 title: Sistemas de research con agentes
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-10-17
 tags: [research, herramientas, agentes, meta]
 zona: tecnico
 ---
@@ -62,4 +62,5 @@ El fallo dominante de esta categoría **no es encontrar: es que la cita no soste
 - **Reddit es accesible de forma intermitente** por espejos (Redlib) y archivos históricos (PullPush); el acceso directo está bloqueado por la propia API de Anthropic ([issue #88941](https://github.com/anthropics/claude-code/issues/88941)).
 - **Los benchmarks de esta categoría no son criterio de compra**: la mitad los escribe un vendor que sale bien parado (DRACO lo escribe Perplexity, el libro blanco de SciSpace lo escribe SciSpace), y el juez LLM mueve las puntuaciones absolutas 10-25 puntos.
 - **Regla operativa que aparece en toda pila local**: las instancias de SearXNG se banean rápido; hay que autoalojarlas o rotar VPNs. Ver [[entorno]].
+- **Privilegios de la máquina:** esta nota da la máquina como «sin Docker»; si hay `sudo` o no está en contradicción abierta entre notas, ver [[contradiccion-sudo-en-la-vm]].
 - **Lo que ninguna herramienta de esta comparativa resuelve**: que la investigación se quede en lo primero que cumple. Eso no es un problema de herramienta sino de método — [[metodo-de-investigacion]].

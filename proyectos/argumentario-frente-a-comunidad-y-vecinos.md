@@ -1,7 +1,7 @@
 ---
 title: Argumentario frente a comunidad y vecinos
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-10-17
 tags: [legal, propiedad-horizontal, alquiler, argumentario]
 zona: tecnico
 ---
@@ -182,4 +182,5 @@ No es jurídico, es de hecho, y desactiva la preocupación real de los vecinos.
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[apartamentos-calle-uruguay]]
+- [[contradiccion-extraccion-de-humos-duplex]] — la solución de humos que propone este argumentario (conducto propio hasta cubierta) no coincide con las dos vías de legalidad; pendiente del usuario
 - [[_index]]

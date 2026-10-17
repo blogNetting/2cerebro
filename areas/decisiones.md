@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-10-04
+updated: 2026-10-17
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -364,3 +364,21 @@ Investigación de 7 rondas, dos notas nuevas:
 ## 2026-10-10 — Área `devops-proyectos-propios`
 
 Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps; mañana quizá formación o consultoría) van en `areas/devops-proyectos-propios/`, no en `proyectos/` ni dentro de Patrimonial. Patrimonial es solo el banco de pruebas; lo específico queda en su repo y solo sube lo reutilizable. Regla de entrada: aplica a dos o más proyectos. **Corrección del usuario:** el nombre debe llevar «DevOps» acotado a lo propio, nunca «devops» a secas, para que una consulta de DevOps general no se mezcle con esto.
+
+## 2026-10-17 — Contrato por habitaciones: nota única, imputación validada, aviso del RDL 29/2026
+
+- Había creado la nota [[contrato-habitaciones-redaccion-y-fiscalidad]] sin buscar antes «contrato» en todo el wiki; las reglas sobre contratos ya estaban repartidas en legalidad, argumentario y fiscalidad. **Corrección del usuario, aplicada:** la nota pasa a ser el hub que reúne esas reglas y deja las cuentas de gastos solo en [[fiscalidad-alquiler-por-habitaciones]].
+- El texto pegado sobre habitación vacía se validó antes de meterlo (BOE + sentencia). Fallos corregidos: el Supremo **no** permite deducir gastos de la parte vacía por anunciarla (STS 270/2021 dice lo contrario); el umbral del 1,1 % para 2026 es «desde 2012», no «2016 o después»; el tipo marginal depende de la base liquidable.
+- Hallazgo: el Real Decreto-ley 29/2026 (BOE 7-10-2026) regula el alquiler por habitaciones (tope de rentas, LAU) y reforma la reducción del rendimiento. Pendiente de leer entero y de comprobar convalidación.
+
+## 2026-10-17 — Lint del wiki: un enlace roto, dos contradicciones nuevas, y `lego/` por encima del umbral
+
+- Recorrido de `proyectos/` (con `lego/`, `gas-city/`, `radar/`, `patrimonial/`), `areas/` (con `devops-proyectos-propios/`), `recursos/` y `archivo/`: 94 ficheros `.md`, de ellos 85 notas y 9 `_index.md`. `fuentes/` y `.claude/` no se han tocado.
+- **1 enlace roto corregido:** `[[devops-proyectos-propios]]` en `areas/_index.md` apuntaba a una carpeta, no a una nota. Ahora `[[devops-proyectos-propios/_index]]`.
+- **1 índice ajustado:** `areas/devops-proyectos-propios/_index.md` listaba como viñeta dos notas que no son de su carpeta; pasan a un párrafo de «material relacionado». `proyectos/_index.md`: descripción de [[contrato-habitaciones-redaccion-y-fiscalidad]] actualizada al contenido actual de la nota. `areas/_index.md`: añadidas las dos notas de contradicción nuevas.
+- **1 afirmación obsoleta señalada:** [[gas-city-instalacion-y-modelos]] §1 daba «Opus/Sonnet no utilizable hasta que exista una clave de Anthropic» y remitía a un §5.1 equivocado (era §4.4). Añadida actualización fechada que remite a [[gas-city-operacion-real]] y [[cuentas-claude]].
+- **Contradicciones nuevas, abiertas, a decisión del usuario:** [[contradiccion-extraccion-de-humos-duplex]] (por dónde sale la extracción de las cocinas del dúplex; hub, legalidad y argumentario no coinciden) y [[contradiccion-sudo-en-la-vm]] (la entrada del 2026-09-24 de este registro dice «No hay sudo»; el informe de orquestación dice que el usuario está en el grupo `sudo`).
+- **Crecimiento — propuesto, no ejecutado:** `proyectos/lego/` tiene 32 notas (más `_index.md`), por encima de las 30. Propuesta de subdivisión, a aprobar por el usuario: `informe/` (investigacion-lego, metodo-y-alcance, objetivo, crear-la-tarea, consumir-la-tarea, verificacion-y-oraculo, robustez-desatendida, clausura-semantica, contra-evidencia, limites-del-andamiaje, casos-medidos, autonomia-medida, lo-que-dice-la-comunidad, quien-dice-que; 14), `montaje/` (gratis-y-local, piezas-y-coste, las-piezas, montaje-documentado, receta-completa, todo-lo-necesario, etapas, ejemplo-paso-a-paso, una-tarea-completa; 9) y `herramientas-y-material/` (panorama-de-herramientas, mecanismos-nuevos, plataformas-auditadas, plataformas-uso-real, plataformas-veredicto, implementaciones-reales, material-practico, cursos, videos-y-comunidad; 9). Los wikilinks no se rompen al mover, porque son por nombre.
+- **Sin nota de síntesis nueva:** ningún tema recurrente sin nota propia alcanzó el umbral en esta pasada; los ya existentes ([[verificacion-externa-agentes]], [[metodo-de-investigacion]]) siguen vigentes.
+- **No comprobable en esta pasada:** los chequeos con `git` del `/lint` (ficheros versionados que coinciden con `.gitignore`, tamaños, datos sensibles) no se ejecutaron porque la sesión no tenía shell. Lo único comprobado: `.gitignore` incluye `*.pdf`, `.playwright-mcp/`, `*.log`, `.claude/settings.local.json` y `.claude/sesiones/`; bajo `.claude/` solo hay `agents/`, `commands/`, `settings.json` y `settings.local.json` (este último ignorado).
+

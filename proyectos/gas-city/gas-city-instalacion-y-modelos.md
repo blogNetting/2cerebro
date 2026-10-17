@@ -1,7 +1,7 @@
 ---
 title: Gas City — instalación en esta máquina y configuración de modelos (Opus/Sonnet/DeepSeek)
 created: 2026-09-29
-updated: 2026-10-04
+updated: 2026-10-17
 tags: [gas-city, instalacion, modelos, deepseek, opus, sonnet, telemetria, privacidad]
 zona: tecnico
 ---
@@ -24,7 +24,9 @@ ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro[1m]
 ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-flash[1m]
 ```
 
-**Claude Code hoy corre entero sobre DeepSeek**, con Opus y Sonnet *remapeados* a modelos DeepSeek. No hay ninguna credencial de Anthropic en el entorno. Eso convierte «configurar Opus/Sonnet y DeepSeek» en un problema de reparto, no de instalación — y deja la mitad «Opus/Sonnet» **no utilizable hasta que exista una clave de Anthropic** (ver §5.1).
+**Claude Code hoy corre entero sobre DeepSeek**, con Opus y Sonnet *remapeados* a modelos DeepSeek. No hay ninguna credencial de Anthropic en el entorno. Eso convierte «configurar Opus/Sonnet y DeepSeek» en un problema de reparto, no de instalación — y deja la mitad «Opus/Sonnet» **no utilizable hasta que exista una clave de Anthropic** (ver §4.4).
+
+> Actualización (lint 2026-10-17): esto describe el estado de la máquina cuando se escribió la nota. La ciudad ya aplicada usa la suscripción de Claude Code ya logueada para `mayor` (sin clave de API), ver [[gas-city-operacion-real]] §1 y [[cuentas-claude]]. La nota original no se reescribe porque documenta el diseño; la frase «no utilizable» ya no describe la ciudad en marcha.
 
 ## 2. Considerado y descartado
 
@@ -486,6 +488,7 @@ Esta comparativa reutiliza y reverifica en vivo (2026-09-29) la que ya existía 
 
 - [[cuentas-claude]] — qué cuenta de Claude usa el mayor: `[providers.claude] command` apunta a `~/bin/claude`, que lee la cuenta cargada con `cc`
 
+- [[contradiccion-sudo-en-la-vm]] — los comandos con `sudo` de esta nota chocan con la entrada «no hay sudo» del registro de decisiones; pendiente del usuario
 - [[_index]] — índice de esta carpeta
 - [[gas-city-traje-a-medida]] — por qué Gas City es la pieza central del montaje, y qué tocar para ajustarlo
 - [[gas-city-con-2cerebro]] — cómo se usa con 2cerebro para crear y desarrollar aplicaciones

@@ -1,7 +1,7 @@
 ---
 title: Apartamentos Calle Uruguay
 created: 2026-09-09
-updated: 2026-09-24
+updated: 2026-10-17
 tags: [alquiler, inmobiliario, legal, fiscalidad, domotica]
 zona: tecnico
 ---
@@ -45,6 +45,7 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 ## Enlaces
 
 - [[duchas-alquiler-carballo]] — grifo de ducha cromado con teleducha y soporte para los baños: ganador Ramon Soler Tarraco (41 €, Obramat)
+- [[contradiccion-extraccion-de-humos-duplex]] — la descripción de la extracción de las cocinas no cuadra con la de legalidad y argumentario; pendiente de que el usuario confirme la instalación real
 - [[patrimonial]] — app de patrimonio donde este inmueble aparecerá valorado
 - [[radar]] — proyecto aparte para buscar nuevas oportunidades de inversión inmobiliaria con datos; este piso es solo referencia de contexto, no forma parte de ese método
 

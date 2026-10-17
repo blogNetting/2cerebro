@@ -9,7 +9,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[jurisprudencia-prescripcion-urbanistica-galicia]] — plazos de prescripción urbanística en Galicia y jurisprudencia del TSXG: las obras prescriben a los 6 años, los usos ilegales no prescriben nunca
 - [[argumentario-frente-a-comunidad-y-vecinos]] — munición lista para usar ante vecinos, presidente o administrador: hechos comprobables, artículos, jurisprudencia, respuestas a objeciones y qué no decir
 - [[fiscalidad-alquiler-por-habitaciones]] — IRPF del alquiler por habitaciones: amortización del 3%, gastos deducibles, reducción del 50%, IVA exento y otros tributos
-- [[contrato-habitaciones-redaccion-y-fiscalidad]] — cómo redactar los contratos por habitaciones (% de superficie, plano anexo) para acreditar ante Hacienda que toda la vivienda produce renta y cómo se reparten los gastos deducibles; sin verificar
+- [[contrato-habitaciones-redaccion-y-fiscalidad]] — hub del contrato por habitaciones: reglas ya decididas, propuesta de redacción por % de superficie con plano anexo (sin verificar) y aviso del Real Decreto-ley 29/2026 sobre alquiler por habitaciones (convalidación sin verificar)
 - [[portero-automatico-timbre-unico]] — solución técnica para que el único timbre del portero automático no moleste a las dos unidades independientes
 - [[portero-bloques-funcionales]] — funciones que necesita el interceptor del portero (detección, conmutación, generador de llamada, locuciones, control), sin elegir piezas
 - [[portero-comprobaciones-en-sitio]] — checklist de mediciones en la instalación real (topología, colores, hilo 4, audio, espacio) que validan o tumban el diseño del portero

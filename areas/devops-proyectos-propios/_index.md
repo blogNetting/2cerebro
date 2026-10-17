@@ -5,4 +5,5 @@ Mi forma personal de montar y llevar DevOps en todos mis proyectos (control de v
 <!-- una línea por nota: [[nombre-de-nota]] — descripción -->
 
 - [[agentes-comparten-usuario-y-credenciales]] — límite conocido: los agentes de Gas City comparten usuario y pueden leerse las credenciales; qué se acepta, qué lo arreglaría y qué queda pendiente
-- Material ya existente que puede subir aquí cuando se destile: [[control-de-versiones-y-ci]], [[forges-gratis-con-puerta-en-main]].
+
+Material relacionado fuera de esta carpeta (no son notas de ella; podrían subir aquí cuando se destile lo reutilizable): [[control-de-versiones-y-ci]] (protección de `main` y CI de Patrimonial) y [[forges-gratis-con-puerta-en-main]] (qué forge da gratis la puerta en `main`).

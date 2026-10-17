@@ -1,7 +1,7 @@
 ---
 title: Fiscalidad del alquiler por habitaciones
 created: 2026-09-09
-updated: 2026-09-24
+updated: 2026-10-17
 tags: [fiscalidad, irpf, alquiler, amortizacion]
 zona: tecnico
 ---
@@ -75,14 +75,42 @@ Sobre el rendimiento neto **positivo**, tras Ley 12/2023:
 
 De ahí que los **contratos deban ser de vivienda habitual permanente**, no de temporada. Un contrato de temporada (curso, meses) pierde la reducción y además complica la tesis de "vivienda". Conecta con [[legalidad-division-y-alquiler-por-habitaciones]].
 
+> **Aviso 2026-10-17 — el régimen puede haber cambiado.** El Real Decreto-ley 29/2026 (BOE 7-10-2026, en vigor el 8-10-2026, [texto](https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823)) dice reformar la reducción del art. 23.2 con nuevos porcentajes (100/95/90/85/70/60/50 %…) según condiciones de renta, zona y continuidad del inquilino, y excluye contratos que incumplan sus límites. Resumen leído del preámbulo; **no he leído aún el articulado del art. 23.2**. Hasta leerlo, los porcentajes de esta sección (50 % general) son del régimen anterior. Ver también [[contrato-habitaciones-redaccion-y-fiscalidad]]: el mismo RDL regula el alquiler por habitaciones.
+
 **Requisitos formales para no perder la reducción**:
 
 - El rendimiento debe **declararse** en la autoliquidación (no vale que lo regularice Hacienda).
 - Registrar los contratos en la **Ventanilla Única Digital** (condición para deducir, desde 2025).
 
-## Periodos con habitaciones vacías
+## Periodos con habitaciones vacías: imputación de rentas
 
-Por los días que una habitación no está alquilada: **imputación de renta** (art. 85 LIRPF), 1,1% o 2% del valor catastral, proporcional a los días y a la superficie. Los gastos de esos periodos no son deducibles (o solo en proporción).
+Validado el 2026-10-17 contra BOE y sentencia (texto pegado por el usuario, corregido donde fallaba).
+
+**Qué es.** Por la parte de la vivienda que no está alquilada se declara una renta ficticia (art. 85 LIRPF), aunque no se cobre nada. Solo por los días sin inquilino. Con las dos zonas alquiladas no hay imputación.
+
+- Cita del art. 85.1 ([BOE, LIRPF consolidada](https://www.boe.es/buscar/act.php?id=BOE-A-2006-20764&p=20261007&tn=0)): «no afectos en ambos casos a actividades económicas, ni generadores de rendimientos del capital, excluida la vivienda habitual» (la literalidad excluye los inmuebles que generan rendimientos del capital; que se impute la parte vacía de una vivienda alquilada por zonas es **criterio administrativo**, no texto de la ley). Apoyo: la DGT, en V1689-19 (dos viviendas contiguas con una sola referencia catastral), dice que se imputa «la parte del valor catastral del inmueble que resulte asignable a la vivienda vacía». **Solo fuente secundaria** ([elderecho.com](https://elderecho.com/viviendas-contiguas-una-unica-referencia-catastral)); no he leído la consulta original ni he encontrado una consulta sobre reparto entre habitaciones. Repartir por superficie es inferencia propia.
+
+**Fórmula (2026).** Valor catastral total × % × parte vacía × días vacía ÷ 365.
+
+- **%**: 2 % general. **1,1 %** si los valores catastrales del municipio se revisaron por valoración colectiva general. Texto original: entrada en vigor en el periodo o en los 10 anteriores (2016 o después para 2026). **Corrección sobre el texto pegado:** el Real Decreto-ley 29/2026 (BOE 7-10-2026) reescribe la disposición adicional 55ª con efectos de 1-1-2026: basta que entraran en vigor «a partir de 1 de enero de 2012» ([BOE-A-2026-20823](https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823), art. 6.Primero). Comprobar el municipio en la sede del Catastro.
+- **Desde 2027** el mismo RDL sustituye el % fijo por una escala sobre la suma de valores catastrales: 1,1 % hasta 100.000 €; 1,5 % de 100.000 a 500.000; 2 % de 500.000 a 1.000.000; 3 % por encima (art. 85.1, texto vigente desde 2027). Para un inmueble por debajo de 100.000 € de valor catastral equivale a 1,1 %.
+
+**Cómo tributa.**
+
+- Va a la **renta general**: art. 45 LIRPF («así como las imputaciones de renta a que se refieren los artículos 85…»). Se suma al sueldo y al resto.
+- **Sin gastos y sin reducción del 50 %**: STS 270/2021, de 25-2-2021 (rec. 1302/2020), cita textual: «sin que el art. 85 Ley IRPF contemple la deducción de gasto alguno» ([CEF, NFJ081316](https://www.fiscal-impuestos.com/sites/fiscal-impuestos.com/files/NFJ081316.pdf)). La reducción del art. 23.2 es del rendimiento neto del alquiler, no de la imputación (inferencia).
+- **Tipo marginal**: tramo de base liquidable 35.200–60.000 €: estatal 18,5 % (fuente secundaria: [guiafiscal](https://guiafiscal.es/irpf/tramos-irpf-2026/)) + Galicia **18,40 %** (verificado: art. 4 del Decreto Legislativo 1/2011, [BOE consolidado](https://www.boe.es/eli/es-ga/dlg/2011/07/28/1/con)) = 36,9 %. **Corrección:** la escala gallega tiene 9 % / 11,65 % / 14,90 % / 18,40 % / 22,50 % y el tipo real depende de la base liquidable de cada año, no es fijo.
+
+**Ejemplos** (valor catastral 60.000 €, 1,1 %, una de dos zonas, 50 %; aritmética comprobada):
+
+| Caso | Renta imputada | IRPF a 36,9 % |
+|---|---|---|
+| Vacía 3 meses (92 días) | 60.000 × 1,1 % × 50 % × 92/365 = 83,18 € | ≈ 31 € |
+| Vacía todo el año | 330 € | ≈ 122 € |
+
+**Los gastos de la parte vacía NO se deducen, aunque se anuncie.** El texto pegado decía que el Supremo (2020) los permite si el inmueble se anuncia activamente. **Es falso:** la STS 270/2021 fija que, en un inmueble «destinado a» alquilarse pero sin arrendar, «los gastos asociados… deben admitirse como deducibles única y exclusivamente por el tiempo en que los mismos estuvieron arrendados y generaron rentas, en la proporción que corresponda». Es doctrina del Supremo, no solo criterio de Hacienda. No hay sentencia de 2020 en ese sentido (existe un auto de admisión de julio de 2020 del mismo recurso). Guardar capturas del anuncio no cambia la deducibilidad; sí es buena práctica para acreditar la disponibilidad.
+
+**Consecuencia en la práctica.** IBI, comunidad, basura y seguro se pagan completos. Solo se deduce la parte alquilada por los días alquilados; la parte vacía paga además la imputación. Con huecos cortos entre inquilinos el impacto son decenas de euros. En la hoja de cálculo: zona sin inquilino → ingresos a 0 pero se mantiene su porcentaje (así sus gastos quedan sin deducir), y la imputación se calcula aparte y se suma a la base general. Cuenta de gastos por situación en [[contrato-habitaciones-redaccion-y-fiscalidad]].
 
 ## IVA
 
@@ -99,6 +127,7 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 ## Pendientes
 
 - Base de amortización concreta (valores de compra/ISD, catastral, % construcción, coste de la reforma de división).
+- **Leer el art. 6.Segundo.Dos del RDL 29/2026 (nuevo art. 23.2) y comprobar si fue convalidado por el Congreso** (los decretos-ley caducan si no, en 30 días).
 - Confirmar última doctrina sobre la reducción en habitaciones (V0412-25 y posteriores; posibles resoluciones TEAC).
 - Decidir modelo de repercusión de suministros y su reflejo en contrato e ingresos.
 - Alta y calendario: la renta se declara en el IRPF anual (no hay modelo trimestral por ser capital inmobiliario y estar exento de IVA).
@@ -108,6 +137,7 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 - [[apartamentos-calle-uruguay]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[contrato-habitaciones-redaccion-y-fiscalidad]] — redacción del contrato por % de superficie y reparto de gastos con zonas vacías
+- [[contradiccion-extraccion-de-humos-duplex]] — contradicción abierta sobre la extracción de humos del dúplex; menciona también que legalidad aún cita el Código Civil frente al contrato de vivienda permanente que exige la reducción
 - [[patrimonial]] — app donde se seguirán ingresos y gastos del alquiler
 - [[radar]] — cualquier cálculo de rentabilidad neta de una compra futura tiene que incorporar este tratamiento fiscal
 - [[_index]]
