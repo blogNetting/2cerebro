@@ -14,6 +14,4 @@ Responsabilidades continuas sin fecha de fin. Notas de síntesis y contradiccion
 - [[verificacion-externa-agentes]] — síntesis: por qué la verificación solo cuenta si la posee algo distinto del agente y fuera de su alcance de escritura, con los modos de fallo medidos
 - [[contradiccion-agents-md]] — qué dice de verdad el paper de ETH Zúrich sobre si `AGENTS.md`/`CLAUDE.md` mejora la tarea, y la cifra que circulaba sin sostén
 - [[forges-gratis-con-puerta-en-main]] — qué forge da gratis, en repo privado, una protección de rama impuesta por el servidor con el CI obligatorio: GitHub Free no, GitLab Free sí; con las citas y lo que queda sin verificar
-- [[contradiccion-extraccion-de-humos-duplex]] — las notas del dúplex de Carballo describen de forma incompatible por dónde sale la extracción de las cocinas y cuál es la solución prevista; lo decide el usuario
-- [[contradiccion-sudo-en-la-vm]] — el wiki dice a la vez que no hay `sudo` en esta máquina y que el usuario está en el grupo `sudo`; lo decide el usuario
 - [[devops-proyectos-propios/_index]] — carpeta `devops-proyectos-propios/` (índice propio): mi DevOps personal para todos mis proyectos; Patrimonial es el banco de pruebas. No es DevOps genérico

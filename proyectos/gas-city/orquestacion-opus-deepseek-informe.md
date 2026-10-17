@@ -146,5 +146,4 @@ Detalle en [[orquestacion-seguridad-ejecutor]]. Resumen de lo que aplica a esta 
 ## Enlaces
 
 - [[orquestacion-herramientas-y-patrones]] · [[orquestacion-modelos-y-costes]] · [[orquestacion-experiencia-comunidad]] · [[orquestacion-seguridad-ejecutor]]
-- [[contradiccion-sudo-en-la-vm]] — este informe dice que el usuario está en el grupo `sudo`; el registro de decisiones dice que no hay sudo
 - [[_index]]

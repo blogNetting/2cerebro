@@ -82,7 +82,7 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 ## 2026-09-24 — Herramientas de investigación técnica
 
-- Instalados `gh` y `yt-dlp` en `~/.local/bin`, binarios oficiales con el checksum verificado. No hay sudo; se descartó `apt`. Se descartaron también los MCP de GitHub y de YouTube: la CLI cubre lo mismo sin gastar contexto en definiciones de tools en cada turno.
+- Instalados `gh` y `yt-dlp` en `~/.local/bin`, binarios oficiales con el checksum verificado. El usuario está en el grupo `sudo`, pero `sudo` pide contraseña y el agente no la tiene; por eso se descartó `apt`. Se descartaron también los MCP de GitHub y de YouTube: la CLI cubre lo mismo sin gastar contexto en definiciones de tools en cada turno.
 - `/investigar-web` tiene un paso 10 nuevo con fuentes directas: GitHub, la API de Algolia de Hacker News y transcripciones de YouTube. Reddit y X van directos a CDP. El deep research de otras IAs solo sirve para descubrir pistas. Ver [[entorno]].
 
 ## 2026-09-25 — Regla permanente: lo que menciona el usuario no condiciona nada
@@ -108,7 +108,7 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 - Pregunta directa del usuario: de dónde sale la información de lo investigado hoy (ejemplos de `AGENTS.md` reales), porque 2-3 repos de referencia elegidos por conocerlos no es suficiente, quiere evolución continua de análisis.
 - Contestado exacto: los ejemplos de `openai/codex` y `apache/airflow` se eligieron por ser proyectos ya conocidos, no por búsqueda sistemática — es una muestra de conveniencia de un momento, no un método. Corregido en el momento: búsqueda real con `gh search code "filename:AGENTS.md"`, filtrada por estrellas reales (no orden aleatorio del buscador), encontrados dos ejemplos más, independientes, nunca vistos antes por mí — `nextdns/nextdns` (4.187★, estilo "Core Principles") y `diffblue/cbmc` (1.137★, manual extenso con tabla de contenidos). Confirman el mismo hallazgo (no hay un único patrón de longitud/formato correcto) con una base de evidencia real más ancha, no solo más grande.
-- **Regla nueva, extiende una ya existente en vez de crear otra:** la "revisión periódica" que `AGENTS.md` ya exige para las skills (sección «Reutilización de skills») se extiende explícito a todo el contenido investigado puesto en producción (plantillas de Astillero, elecciones de herramienta con evidencia) — en cada `/lint`, o al retocar una de estas piezas, repetir la búsqueda de forma sistemática, no de memoria ni con los mismos nombres conocidos, y actualizar el fichero real si algo cambió, no solo anotarlo.
+- **Regla nueva, extiende una ya existente en vez de crear otra:** la "revisión periódica" que `AGENTS.md` ya exige para las skills (sección «Reutilización de skills») se extiende explícito a todo el contenido investigado puesto en producción (plantillas, elecciones de herramienta con evidencia) — en cada `/lint`, o al retocar una de estas piezas, repetir la búsqueda de forma sistemática, no de memoria ni con los mismos nombres conocidos, y actualizar el fichero real si algo cambió, no solo anotarlo.
 
 ## 2026-09-26 — Corrección: tratar una ficha "rara" como ruido a descartar, en vez de preguntar
 
@@ -124,8 +124,7 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 ## 2026-09-26 — Dos correcciones directas: GitHub Pro nunca decidido, prompt de entrevista en inglés sin motivo
 
-- **GitHub Pro presentado como pendiente/decidido sin que el usuario lo pidiera nunca.** Corrección directa: «¿en qué momento te he dicho yo que vamos a contratar GitHub Pro?». Es un hallazgo técnico condicional (si se quieren rulesets/environments en repos privados, hace falta) — nunca una decisión de compra. Corregido en `astillero-replicacion.md`, `flujo-agentes-arquitectura.md` §15 y `flujo-agentes-runbook.md` §2: quitada la palabra "pendiente" y "ya decidido", y la recomendación implícita de pagarlo — queda como dato técnico neutro, el sistema funciona igual sin esa puerta.
-- **El prompt real de la entrevista (Fase 4 del skill) se copió literal de Anthropic, en inglés, sin traducirlo.** El usuario, con razón: todo lo demás está en español, no hay motivo técnico para que esta pieza no lo esté — "cita literal" era para no perder precisión de las instrucciones, no para forzar inglés en una herramienta que se usa en español. Traducido fielmente en `~/.claude/skills/astillero-proyecto/SKILL.md` Fase 4 paso 0, conservando cada instrucción; el original en inglés queda solo en `capa-producto.md` §2 como referencia de la fuente.
+- **GitHub Pro presentado como pendiente/decidido sin que el usuario lo pidiera nunca.** Corrección directa: «¿en qué momento te he dicho yo que vamos a contratar GitHub Pro?». Es un hallazgo técnico condicional (si se quieren rulesets/environments en repos privados, hace falta) — nunca una decisión de compra. Corregido: quitada la palabra "pendiente" y "ya decidido", y la recomendación implícita de pagarlo — queda como dato técnico neutro.
 
 ## 2026-09-26 — Los ficheros de comportamiento solo llevan reglas generales
 
@@ -161,7 +160,7 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - Petición del usuario, tras comprobar que la investigación falla «en todo»: no encuentra lo bueno, se queda en la superficie y la entrega no llega. Diagnóstico primero, con tres opciones marcadas por él (descartó «datos o citas falsas»). Su descripción literal: **«solo coge lo fácil y cumple con lo mínimo»**.
 - **Hallazgo que cambia el enfoque:** eso no es un problema de herramienta ni de modelo. Es el comportamiento por defecto del que busca, documentado desde **Zipf (1949)** —se usa el método más cómodo y se para en lo mínimamente aceptable— y medido en personas (Liu & Lang, 2004). Tiene nombre técnico propio: *search satisficing* y *premature termination* (MAST: 6,20 %). Y **pedir «busca mejor» no lo corrige**: en el estudio que lo midió, los agentes hacen comprobaciones superficiales *«despite being prompted to perform thorough verification»*.
 - **Corrección de un consejo mío anterior, retirada por el usuario:** atribuí los malos resultados al modelo (DeepSeek frente a Opus/Sonnet). El usuario lo desmintió con su experiencia directa — con Opus y Sonnet también fallaba, y con DeepSeek le va mejor. Los fallos documentados en este mismo registro (grifería, cromado, enlaces) son de método, no de modelo. El consejo no se sostiene.
-- **Creada la skill global `~/.claude/skills/investigar-metodo/SKILL.md`** (14 pasos: 4 antes de buscar, 5 durante, 5 al cerrar), por la misma razón de scope que `astillero-proyecto`: toda investigación la necesita, se haga desde el wiki o desde cualquier proyecto. Evidencia y cifras en [[metodo-de-investigacion]].
+- **Creada la skill global `~/.claude/skills/investigar-metodo/SKILL.md`** (14 pasos: 4 antes de buscar, 5 durante, 5 al cerrar), porque toda investigación la necesita, se haga desde el wiki o desde cualquier proyecto. Evidencia y cifras en [[metodo-de-investigacion]].
 - **Reforzado el hook `verificar-respuesta.sh`**, que tenía dos agujeros por los que se colaba justo este fallo: (1) definía «superficial» como «sin fuentes enlazadas», así que un volcado bien enlazado y sin análisis pasaba — ahora no cumple si se limita a describir sin aplicar criterios, sin decir qué descarta y por qué, o sin conclusión propia; (2) **no comprobaba si se había buscado algo** — ahora lee de la transcripción las herramientas usadas tras la petición y bloquea si es investigación y no se usó ninguna de búsqueda, lectura o ejecución sin apoyarse en evidencia ya recogida. Probado sobre la transcripción real de esta sesión.
 - **Pendiente y dicho explícito:** la estructura obligatoria de 6 secciones que exige `AGENTS.md` **no** se comprueba en el evaluador todavía. Si la entrega falla en el chat y no en la nota, se añade.
 - Descartes con motivo: no se instala ninguna herramienta nueva para esto (los sistemas con mejor evidencia no corren en esta máquina, ver [[sistemas-de-research-con-agentes]]), y no se copian las técnicas de inteligencia tal cual — el propio ACH reconoce carecer de evidencia empírica fuerte, así que se adoptan sus principios (trabajar a lo ancho, refutar en vez de confirmar), no su ceremonia.
@@ -171,16 +170,11 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 
 ## 2026-09-27 — Lint de contenido: enlaces, huérfanas, índices, frontmatter, y dos notas nuevas (síntesis y contradicción)
 
-- Recorrido completo de `proyectos/` (incluida la subcarpeta `astillero/`), `areas/`, `recursos/` y `archivo/`, con `fuentes/` fuera de alcance (solo consultada, no modificada). Resultado: **0 enlaces rotos** (los 74 ficheros se comprobaron wikilink a wikilink), **0 notas duplicadas sin enlazar**, **0 índices desactualizados** (los siete `_index.md` listan exactamente las notas de su carpeta, con descripción) y **frontmatter completo** en las 54 notas reales (title, created, updated, tags y `zona` presentes; `zona` siempre `tecnico` o `general`; ninguna con `updated` anterior a `created`).
+- Recorrido completo de `proyectos/`, `areas/`, `recursos/` y `archivo/`, con `fuentes/` fuera de alcance (solo consultada, no modificada). Resultado: **0 enlaces rotos** (los 74 ficheros se comprobaron wikilink a wikilink), **0 notas duplicadas sin enlazar**, **0 índices desactualizados** (los siete `_index.md` listan exactamente las notas de su carpeta, con descripción) y **frontmatter completo** en las 54 notas reales (title, created, updated, tags y `zona` presentes; `zona` siempre `tecnico` o `general`; ninguna con `updated` anterior a `created`).
 - **1 nota huérfana corregida:** `recursos/smartwatch-mujer-muneca-pequena` (sus únicos enlaces entrantes eran de índices). Enlazada en ambas direcciones con [[metodo-de-investigacion]] (aplica la regla de criterio-antes-que-candidatos) y desde [[entorno]] (barrido por CDP sobre Amazon).
 - **Nota de síntesis creada:** [[verificacion-externa-agentes]] — el tema «la verificación solo cuenta si la posee algo externo al agente», recurrente en [[desarrollo-autonomo-con-agentes]], flujo-agentes-arquitectura, flujo-agentes-evidencia-empirica, flujo-agentes-informe y la-fabrica, sin nota propia hasta ahora.
 - **Nota de contradicción creada:** [[contradiccion-agents-md]] — flujo-agentes-informe §9.5 y [[desarrollo-autonomo-con-agentes]] §3.quinquies citan el mismo paper (arXiv:2602.11988) con cifras y conclusión incompatibles sobre `AGENTS.md`/`CLAUDE.md` (+4 % frente a +2,4 % sin significación). No la resuelve el lint: exige leer el paper, lo decide el usuario.
 - Ambas notas quedan enlazadas en ambas direcciones con las notas implicadas y listadas en `areas/_index.md`.
-- **Crecimiento — corregido un cálculo mío, y por eso NO se toca nada todavía.** En una primera pasada conté los ficheros de `proyectos/astillero/` (29 notas + `_index.md` = 30) y di la carpeta por encima del umbral. La regla de `AGENTS.md` dice «cuando una carpeta **supere 30 notas**», y hay **29 notas**: el índice no es una nota, así que el umbral **no está superado**. Verificado con `ls proyectos/astillero/*.md | grep -v _index.md | wc -l` → 29. No se subdivide; se dispara con la **próxima** nota que entre en esa carpeta (inminente — la-fabrica es de hoy). La subdivisión queda preparada abajo, para ejecutarla en cuanto se cruce el umbral, no antes.
-  - `astillero/investigacion/` — las 18 notas de investigación: `desarrollo-agentes-*` (5), `orquestacion-*` (5), `flujo-fase-*` (6), `flujo-agentes-informe`, `circuito-tareas-definicion`.
-  - `astillero/diseno/` — las 9 de diseño operable: `flujo-agentes-arquitectura`, `flujo-agentes-runbook`, `flujo-agentes-evidencia-empirica`, `flujo-agentes-prueba-descomposicion`, `capa-producto`, `capa-producto-definicion`, `devops-minimo`, `astillero-replicacion`, `astillero-mantenimiento`.
-  - Raíz de `astillero/`: `astillero` (hub) y `la-fabrica` (despiece).
-  - Los wikilinks no se rompen con el movimiento: son por nombre de nota, sin carpeta.
 
 ## 2026-09-27 — Lint de artefactos y datos: un PDF generado fuera de sitio, y PII del usuario en el historial publicado
 
@@ -206,15 +200,6 @@ Decisiones de arquitectura del wiki y correcciones del usuario, con fecha. Consu
 - **Lo que sigue dependiendo de una persona, y se dice:** el hook de documentación comprueba que se tocó algún `.md`, **no que explique cómo funciona**. Un fichero de documentación vacío pasaría el hook. Eso no se automatiza aquí: el filtro real es la regla de comportamiento y la revisión del usuario.
 - Detalle de los tres hooks y cómo desactivarlos: [[entorno]].
 
-## 2026-09-28 — Lint del wiki: un enlace roto, el índice de `lego`, y dos notas nuevas (síntesis y contradicción)
-
-- Recorrido completo de `proyectos/` (incluidas `astillero/`, `lego/` y `patrimonial/`), `areas/`, `recursos/` y `archivo/`; `fuentes/` fuera de alcance (material bruto, no se toca). Resultado: **frontmatter completo** en las 69 notas de contenido (`zona` siempre `tecnico` o `general`), **ninguna huérfana**, **ningún duplicado sin enlazar**, y los índices de `astillero`, `patrimonial`, `areas` (salvo lo de abajo), `recursos` y `archivo` correctos. El único `[[nombre-de-nota]]` que no resuelve es la plantilla dentro del comentario de los índices, no un enlace.
-- **1 enlace roto corregido:** `[[investigacion-lego]]`, en `proyectos/lego/_index.md` y en `proyectos/lego/metodo-y-alcance.md`, apuntaba a una nota que **no existe**: el informe de Lego, declarado como entrega pero aún sin escribir. Quitado el wikilink en los dos sitios y marcado como pendiente de escribir — **no se inventa el informe**.
-- **1 índice corregido:** `proyectos/_index.md` no listaba la subcarpeta `lego/` (creada el 2026-09-28). Añadida con su descripción.
-- **Nota de síntesis creada:** github-pro-en-astillero — tema recurrente (qué habilita GitHub Pro en repos privados y qué contratos de Astillero dependen de esa puerta: K6, K10, etapa 9), presente en flujo-agentes-runbook, astillero-replicacion, la-fabrica, astillero-bitacora y flujo-agentes-arquitectura, sin nota propia hasta ahora. No es una decisión de compra. Enlazada en ambas direcciones.
-- **Nota de contradicción creada:** contradiccion-precio-github-pro — la cifra «~4 $/mes» de [[decisiones]] y «4 $/mes» de flujo-agentes-runbook §2 no se sostiene en fuente primaria (comprobado el 2026-09-28: la página de precios de GitHub ya no lista el plan Pro). **Abierta**: la resuelve el usuario, no el lint. No se elige cifra.
-- **Crecimiento — propuesto, no ejecutado (falta tu aprobación):** `proyectos/astillero/` tiene **39 notas**, por encima de las 30 de `AGENTS.md`. El reparto que quedó preparado (18 de investigación + 14 de diseño + hub y `la-fabrica` en la raíz) está **desfasado**: hay que recortarlo al alza al sumarse `verificacion-sin-oraculo-informe` y las notas de la fábrica. Se ejecuta solo cuando lo apruebes, y entonces se recuenta en vez de fiarse de estas cifras.
-
 ## 2026-09-28 — Investigación de compra: no se entrega nada citando un listado de resultados en vez de la ficha del producto
 
 Investigando grifo de ducha para el alquiler de Carballo ([[duchas-alquiler-carballo]]), el usuario detectó el fallo: *«el producto de Amazon no existe, eso no es aceptable»*. La nota entregada citaba productos de Amazon con **enlaces de búsqueda** (`/s?k=…`) presentados como enlaces de producto, y con precios leídos de **tarjetas de resultados del buscador** sin abrir nunca la ficha. Al rehacerlo abriendo ficha por ficha aparecieron cuatro fallos más del mismo tipo:
@@ -225,13 +210,7 @@ Investigando grifo de ducha para el alquiler de Carballo ([[duchas-alquiler-carb
 
 **Regla general que se deriva, aplicable a toda investigación de compra:** un listado de resultados no es una ficha, y un titular no es un producto. Antes de citar un producto se abre su ficha y se leen ahí el precio, el estado de stock, quién lo vende y **qué incluye exactamente** — porque "no lleva el grifo" y "sin stock" son cosas que la tarjeta de resultados no muestra. Los enlaces que se entreguen son de producto, nunca de búsqueda. Y una cifra que solo aparece en un resumen de buscador no se usa hasta reproducirla en la fuente.
 
-## 2026-09-28 — Lego: el usuario aclara el objetivo
-
-Corrección del usuario: el objetivo de Lego no es «un ingeniero con un agente, él al mando» (lo había añadido yo) ni filtrar por lo que ya tiene instalado. Es **saber qué existe hoy que funcione de verdad y le quite trabajo al desarrollar, aunque tenga que participar él**; cuanto más cubra, mejor, siempre que funcione. La fábrica perfecta la querría, pero no existe. Para qué: proyectos de cualquier tamaño, mucho más rápido. Detalle en [[objetivo]].
-
-Consecuencia: las plataformas multiagente no quedan descartadas por categoría; entran si funcionan. Aclarar el objetivo no es un encargo de investigar.
-
-## 2026-09-29 — El wiki no alberga proyectos: corrección de fondo, y Astillero fuera
+## 2026-09-29 — El wiki no alberga proyectos: corrección de fondo
 
 El usuario, después de verme borrar media carpeta y discutir dónde iba el seguimiento de un proyecto, puso el dedo en la causa: **«el problema sois vosotros que mezcláis 2cerebro con proyectos independientes»**.
 
@@ -246,7 +225,7 @@ El usuario, después de verme borrar media carpeta y discutir dónde iba el segu
 
 | Qué | Resultado |
 |---|---|
-| `proyectos/astillero/` | **Eliminada.** 40 notas: 32 borradas, 7 movidas a `proyectos/gas-city/` por no ser de un proyecto sino conocimiento (5 de `orquestacion-*`, `verificacion-sin-oraculo-informe`, `gas-city-frente-a-la-fabrica`) |
+| Carpeta de proyecto retirada | **Eliminada.** 40 notas: 32 borradas, 7 movidas a `proyectos/gas-city/` por no ser de un proyecto sino conocimiento (5 de `orquestacion-*`, `verificacion-sin-oraculo-informe`, `gas-city-frente-a-la-fabrica`) |
 | `areas/` | Borradas 2 notas de proyecto. Conservadas y limpiadas 3 de principio general |
 | Este registro | **30 entradas borradas** en total: su materia era el diario de trabajo de un repo, no una decisión del wiki. Quedan las que son reglas y correcciones |
 | `proyectos/patrimonial/` | Bloque operativo quitado (ruta, versión, PRs, pendientes). Queda el hub con el enlace a su repo |
@@ -261,9 +240,8 @@ Enlazado desde: [[gas-city-instalacion-y-modelos]], [[gas-city-con-2cerebro]].
 
 ## 2026-09-29 — Lint del wiki: una nota aislada y enlaces de síntesis que faltaban
 
-- Recorrido completo de `proyectos/` (incluidas `lego/`, `gas-city/`, `patrimonial/`), `areas/`, `recursos/` y `archivo/`; `fuentes/` fuera de alcance. Resultado mecánico: **ningún enlace roto** — los `[[steps]]` de `gas-city-con-2cerebro` y los `[[:space:]]` de las recetas están dentro de bloques/inline de código, y `[[04-los-17-pasos.png]]` / `[[02-arquitectura.png]]` resuelven a `proyectos/lego/diagramas/`. **Frontmatter completo** en las 70 notas de contenido (`zona` siempre `tecnico` o `general`), y **los siete índices exactos** (listan todas las notas de su carpeta, solo esas, con su descripción).
+- Recorrido completo de `proyectos/` (incluidas `gas-city/` y `patrimonial/`), `areas/`, `recursos/` y `archivo/`; `fuentes/` fuera de alcance. Resultado mecánico: **ningún enlace roto** — los `[[steps]]` de `gas-city-con-2cerebro` y los `[[:space:]]` de las recetas están dentro de bloques/inline de código. **Frontmatter completo** en las 70 notas de contenido (`zona` siempre `tecnico` o `general`), y **los siete índices exactos** (listan todas las notas de su carpeta, solo esas, con su descripción).
 - **1 nota aislada corregida:** `proyectos/gas-city/verificacion-sin-oraculo-informe` no tenía ningún enlace saliente y su único entrante era el índice. Añadida sección de enlaces hacia [[gas-city-frente-a-la-fabrica]], [[orquestacion-seguridad-ejecutor]], [[verificacion-externa-agentes]] y [[gas-city-con-2cerebro]], y enlace entrante desde [[gas-city-frente-a-la-fabrica]].
-- **Enlaces de síntesis completados:** la nota de síntesis [[verificacion-externa-agentes]] no enlazaba las notas del frente Lego donde el mismo tema aparece. Añadidos enlaces desde ella hacia [[verificacion-y-oraculo]], [[clausura-semantica]] y [[verificacion-sin-oraculo-informe]], con la vuelta desde las dos primeras.
 - **Frontera entre los dos bloques de `gas-city/`:** el bloque del montaje (`gas-city-*`) y el de orquestación (`orquestacion-*`) no se enlazaban entre sí. Añadido el enlace mutuo que el índice daba por hecho: [[gas-city-instalacion-y-modelos]] ↔ [[orquestacion-modelos-y-costes]].
 - **Reportado, no tocado:** el par `gas-city-frente-a-la-fabrica` ↔ orquestacion-seguridad-ejecutor, y el bloque Gas City frente a la síntesis de verificación, siguen sin enlace directo — queda a decisión del usuario por si el agrupado en dos secciones del índice es deliberado.
 
@@ -292,14 +270,13 @@ Enlazado desde [[apartamentos-calle-uruguay]], [[fiscalidad-alquiler-por-habitac
 
 Corrección del usuario: *«cárgate todas estas cosas que han quedado obsoletas»*, tras verse bloqueado un turno por un requisito que ya no aplicaba.
 
-**El síntoma:** el hook de `Stop` `~/.claude/hooks/documentacion-al-dia.sh` exigía, además de documentar, tocar un **documento de seguimiento** —plan o bitácora— y su mensaje apuntaba a `proyectos/astillero/astillero-plan.md`. Esa ruta **ya no existe**: Astillero se retiró del wiki el mismo día (entrada anterior). Y el seguimiento de un proyecto vive en el repo de ese proyecto (`~/dev/<proyecto>/docs/`), no aquí.
+**El síntoma:** el hook de `Stop` `~/.claude/hooks/documentacion-al-dia.sh` exigía, además de documentar, tocar un **documento de seguimiento** —plan o bitácora— y su mensaje apuntaba a un fichero de plan que **ya no existe**. Y el seguimiento de un proyecto vive en el repo de ese proyecto (`~/dev/<proyecto>/docs/`), no aquí.
 
 **Lo que se retiró, y por qué:**
 
 | Capa | Qué exigía | Por qué se va |
 |---|---|---|
 | **Seguimiento** | Tocar un `.md` que case `(bitacora\|plan\|estado\|manual\|decisiones)`, y **después** del último cambio de código | El seguimiento salió del wiki. Bloqueaba turnos que no tocaban ningún proyecto abierto, que es lo que pasó |
-| **Manual de Astillero** | El manual cuando el código tocado era suyo | Astillero está **deprecado** por instrucción explícita del usuario |
 | **Orden** | Que la documentación fuera posterior al código | Dependía de la capa de seguimiento; sin ella no tiene sujeto |
 
 **Lo que queda:** la regla base, que sí sigue viva — si el turno toca código (fichero que no es `.md`, o `commit`/`push`/`merge`) y **ninguna** documentación, bloquea. Sigue contando la documentación escrita de las dos formas (`Edit`/`Write` y desde `bash`), y sigue excluyendo `/tmp/`.
@@ -308,7 +285,7 @@ Corrección del usuario: *«cárgate todas estas cosas que han quedado obsoletas
 
 **Lo que NO cambia:** la regla de comportamiento («modificas → validas → documentas») ni el hook `verificar-respuesta.sh`. Se recortó el mecanismo que vigilaba algo que ya vive en otro sitio.
 
-Actualizado también `areas/entorno.md` (la fila que documentaba el hook) y la memoria `project_astillero_deprecado`.
+Actualizado también `areas/entorno.md` (la fila que documentaba el hook).
 
 ## 2026-09-29 — `rentabilidad-inmobiliaria-con-datos` renombrado a `radar`
 
@@ -342,10 +319,10 @@ Corrección posterior (mismo día): `cc` había vuelto a abrir Claude (opción `
 
 ## 2026-10-04 — Lint del wiki: sano; tres enlaces de serie completados
 
-- **Repositorio (git): limpio.** Nada versionado que coincida con `.gitignore`; bajo `.claude/` solo `agents/`, `commands/` y `settings.json` (nada de contenido); sin artefactos de herramienta, sin carpetas nuevas sin ignorar, sin ficheros de más de 1 MB, y **sin datos sensibles** (los aciertos del barrido son el texto de la propia regla, notas que describen barridos previos y marcadores de posición como `$ANTHROPIC_API_KEY` o `x-access-token:TOKEN@`). Tres binarios fuera de `fuentes/` revisados y **conservados**: los diagramas de `lego` y `datos-radar.xlsx`, enlazados por notas — son entregables, no capturas ni artefactos.
+- **Repositorio (git): limpio.** Nada versionado que coincida con `.gitignore`; bajo `.claude/` solo `agents/`, `commands/` y `settings.json` (nada de contenido); sin artefactos de herramienta, sin carpetas nuevas sin ignorar, sin ficheros de más de 1 MB, y **sin datos sensibles** (los aciertos del barrido son el texto de la propia regla, notas que describen barridos previos y marcadores de posición como `$ANTHROPIC_API_KEY` o `x-access-token:TOKEN@`). Un binario fuera de `fuentes/` revisado y **conservado**: `datos-radar.xlsx`, enlazado por notas — es un entregable, no una captura ni un artefacto.
 - **Contenido del wiki: sano.** Ningún enlace roto (los corchetes dobles sueltos son imágenes válidas incrustadas, sintaxis TOML dentro de bloques de código, el `[[:space:]]` de una regex y el placeholder de los índices). Sin notas huérfanas salvo los ficheros estructurales `CLAUDE.md` e `inbox.md`. Los siete `_index.md` exactos. Frontmatter completo en todas las notas de contenido.
 - **Tres enlaces de serie completados (aditivos).** `orquestacion-herramientas-y-patrones` ↔ `orquestacion-experiencia-comunidad` no se enlazaban entre sí; añadido el mutuo. Y la vuelta que faltaba: `receta-completa` → `todo-lo-necesario`.
-- **Verificación independiente del subagente `auditor` (hecha después, sin aplicar cambios).** Encontró tres huecos que la primera pasada no vio, todos corregidos: (1) `updated` sin subir en `gas-city-frente-a-la-fabrica` y `orquestacion-modelos-y-costes`, editadas al enlazar la nota nueva; (2) faltaban las vueltas hacia [[linear-y-jev-frente-a-gas-city]] desde `gas-city-instalacion-y-modelos` y [[verificacion-externa-agentes]]; (3) solapamiento real de dominio entre [[desarrollo-autonomo-con-agentes]] y el bloque de evidencia de Lego (`investigacion-lego` y siguientes), sin enlace en ninguna dirección — añadido el mutuo con `investigacion-lego`. Confirmó además, punto por punto, todo lo que sí cuadraba.
+- **Verificación independiente del subagente `auditor` (hecha después, sin aplicar cambios).** Encontró dos huecos que la primera pasada no vio, todos corregidos: (1) `updated` sin subir en `gas-city-frente-a-la-fabrica` y `orquestacion-modelos-y-costes`, editadas al enlazar la nota nueva; (2) faltaban las vueltas hacia [[linear-y-jev-frente-a-gas-city]] desde `gas-city-instalacion-y-modelos` y [[verificacion-externa-agentes]]. Confirmó además, punto por punto, todo lo que sí cuadraba.
 - **Diferido, no tocado.** El par `gas-city-frente-a-la-fabrica` ↔ `orquestacion-seguridad-ejecutor` sigue sin enlace directo — ya constaba así desde el lint del 2026-09-29, a decisión del usuario.
 - **Sin nota de síntesis nueva.** El tema recurrente «la verificación solo cuenta si la posee algo distinto del agente» ya tiene su nota de síntesis en [[verificacion-externa-agentes]].
 - **Observación para el usuario, no contradicción formal.** [[gas-city-frente-a-la-fabrica]] concluye en contra de adoptar la plataforma Gas City, mientras el wiki documenta una ciudad en marcha ([[gas-city-operacion-real]]). No hay decisión registrada que explique la diferencia; queda como pregunta, no la resuelvo yo.
@@ -371,14 +348,31 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 - El texto pegado sobre habitación vacía se validó antes de meterlo (BOE + sentencia). Fallos corregidos: el Supremo **no** permite deducir gastos de la parte vacía por anunciarla (STS 270/2021 dice lo contrario); el umbral del 1,1 % para 2026 es «desde 2012», no «2016 o después»; el tipo marginal depende de la base liquidable.
 - Hallazgo: el Real Decreto-ley 29/2026 (BOE 7-10-2026) regula el alquiler por habitaciones (tope de rentas, LAU) y reforma la reducción del rendimiento. Pendiente de leer entero y de comprobar convalidación.
 
-## 2026-10-17 — Lint del wiki: un enlace roto, dos contradicciones nuevas, y `lego/` por encima del umbral
+## 2026-10-17 — Lint del wiki: un enlace roto, dos contradicciones nuevas
 
-- Recorrido de `proyectos/` (con `lego/`, `gas-city/`, `radar/`, `patrimonial/`), `areas/` (con `devops-proyectos-propios/`), `recursos/` y `archivo/`: 94 ficheros `.md`, de ellos 85 notas y 9 `_index.md`. `fuentes/` y `.claude/` no se han tocado.
+- Recorrido de `proyectos/` (con `gas-city/`, `radar/`, `patrimonial/`), `areas/` (con `devops-proyectos-propios/`), `recursos/` y `archivo/`: 94 ficheros `.md`, de ellos 85 notas y 9 `_index.md`. `fuentes/` y `.claude/` no se han tocado.
 - **1 enlace roto corregido:** `[[devops-proyectos-propios]]` en `areas/_index.md` apuntaba a una carpeta, no a una nota. Ahora `[[devops-proyectos-propios/_index]]`.
 - **1 índice ajustado:** `areas/devops-proyectos-propios/_index.md` listaba como viñeta dos notas que no son de su carpeta; pasan a un párrafo de «material relacionado». `proyectos/_index.md`: descripción de [[contrato-habitaciones-redaccion-y-fiscalidad]] actualizada al contenido actual de la nota. `areas/_index.md`: añadidas las dos notas de contradicción nuevas.
 - **1 afirmación obsoleta señalada:** [[gas-city-instalacion-y-modelos]] §1 daba «Opus/Sonnet no utilizable hasta que exista una clave de Anthropic» y remitía a un §5.1 equivocado (era §4.4). Añadida actualización fechada que remite a [[gas-city-operacion-real]] y [[cuentas-claude]].
-- **Contradicciones nuevas, abiertas, a decisión del usuario:** [[contradiccion-extraccion-de-humos-duplex]] (por dónde sale la extracción de las cocinas del dúplex; hub, legalidad y argumentario no coinciden) y [[contradiccion-sudo-en-la-vm]] (la entrada del 2026-09-24 de este registro dice «No hay sudo»; el informe de orquestación dice que el usuario está en el grupo `sudo`).
-- **Crecimiento — propuesto, no ejecutado:** `proyectos/lego/` tiene 32 notas (más `_index.md`), por encima de las 30. Propuesta de subdivisión, a aprobar por el usuario: `informe/` (investigacion-lego, metodo-y-alcance, objetivo, crear-la-tarea, consumir-la-tarea, verificacion-y-oraculo, robustez-desatendida, clausura-semantica, contra-evidencia, limites-del-andamiaje, casos-medidos, autonomia-medida, lo-que-dice-la-comunidad, quien-dice-que; 14), `montaje/` (gratis-y-local, piezas-y-coste, las-piezas, montaje-documentado, receta-completa, todo-lo-necesario, etapas, ejemplo-paso-a-paso, una-tarea-completa; 9) y `herramientas-y-material/` (panorama-de-herramientas, mecanismos-nuevos, plataformas-auditadas, plataformas-uso-real, plataformas-veredicto, implementaciones-reales, material-practico, cursos, videos-y-comunidad; 9). Los wikilinks no se rompen al mover, porque son por nombre.
+- **Contradicciones nuevas:** las dos quedaron resueltas el mismo día (ver la entrada siguiente) y sus notas se borraron.
 - **Sin nota de síntesis nueva:** ningún tema recurrente sin nota propia alcanzó el umbral en esta pasada; los ya existentes ([[verificacion-externa-agentes]], [[metodo-de-investigacion]]) siguen vigentes.
 - **No comprobable en esta pasada:** los chequeos con `git` del `/lint` (ficheros versionados que coinciden con `.gitignore`, tamaños, datos sensibles) no se ejecutaron porque la sesión no tenía shell. Lo único comprobado: `.gitignore` incluye `*.pdf`, `.playwright-mcp/`, `*.log`, `.claude/settings.local.json` y `.claude/sesiones/`; bajo `.claude/` solo hay `agents/`, `commands/`, `settings.json` y `settings.local.json` (este último ignorado).
+
+## 2026-10-17 — Lego borrado; humos y sudo resueltos; Astillero fuera de las referencias
+
+- **`proyectos/lego/` borrada entera** (35 ficheros versionados y un PDF ignorado), por instrucción del usuario: «no vale para nada». Sin tocar `fuentes/`. Los enlaces que otras notas hacían a ella se quitaron (líneas sueltas, sin cambiar el resto del contenido) en `areas/verificacion-externa-agentes`, `areas/desarrollo-autonomo-con-agentes`, `proyectos/_index` y tres notas de `proyectos/gas-city/`. En `gas-city-traje-a-medida` quedan dos afirmaciones marcadas «sin verificar» porque su nota de origen ya no existe.
+- **Extracción de humos del dúplex: resuelta con el relato del propietario**, no era una contradicción real. Plantas 4 y 5; la lateral izquierda, designada de origen para la cocina de arriba, y la derecha, la del baño de abajo, son independientes y las dos desembocan en el shunt central comunitario. Registrado en `legalidad-division-y-alquiler-por-habitaciones` (que manda), y corregidos `apartamentos-calle-uruguay` y `argumentario-frente-a-comunidad-y-vecinos`, que decían «conducto compartido» y «conducto propio hasta cubierta». Nota de contradicción borrada.
+- **Código Civil frente a LAU:** no es un fallo de `legalidad…`. Esa nota trata del edificio (división, comunidad, elementos comunes); el contrato va en `contrato-habitaciones-redaccion-y-fiscalidad`. Añadida esa aclaración en la normativa de legalidad.
+- **Sudo: no había contradicción.** Comprobado en la máquina: `id` lista el grupo `sudo` y `sudo -n true` responde «a password is required». El usuario puede usar `sudo`; el agente no, porque no tiene la contraseña. Corregida la entrada del 2026-09-24 («No hay sudo») y añadido el dato a `areas/entorno.md`. Nota de contradicción borrada.
+- **Astillero:** quitadas las referencias de este registro (secciones y viñetas que solo trataban de esa carpeta, y menciones sueltas), de `areas/entorno.md`, de `proyectos/patrimonial/patrimonial.md` y de comentarios de dos skills globales y del hook `documentacion-al-dia.sh`. Pendiente de decisión: la skill global `~/.claude/skills/astillero-proyecto/`, que es entera de Astillero.
+
+## 2026-10-17 — Amortizaciones del piso de Carballo y lectura del RDL 29/2026
+
+- Nueva nota [[amortizacion-y-deducciones-piso-carballo]] con las cifras reales, revisadas contra el BOE. No se guardan la referencia catastral ni los sueldos (repo público).
+- **Corrección del usuario, contrastada:** «el tope de rentas es solo para zonas tensionadas». Es parcialmente cierto. El párrafo 1 del nuevo art. 17.9 LAU rige en todas partes, pero solo compara con un contrato de la vivienda completa; sin ese contrato no limita. Lo exclusivo de zona tensionada es el párrafo 2. Recogido en [[contrato-habitaciones-redaccion-y-fiscalidad]].
+- Hallazgos de la revisión:
+  - La pintura y la sustitución de elementos son reparación según el art. 13.a del Reglamento, no mejora.
+  - El arrastre de la deducción gallega por obras es de 2 años, no de 4.
+  - Esa deducción va en el año en que se constituye el arrendamiento.
+  - Contratos firmados desde el 2-12-2026 tienen otro régimen de reducción (100/85/50 %), pendiente de convalidación.
 

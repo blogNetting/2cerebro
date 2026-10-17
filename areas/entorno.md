@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-10-03
+updated: 2026-10-17
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -58,6 +58,7 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 ## Herramientas disponibles en esta VM
 
 - Node.js v22.23.2 y npx 10.9.8 instalados (verificado `node --version` / `npx --version`). Suficiente para lanzar `@playwright/mcp` bajo demanda; no hace falta instalación previa, `npx -y` lo descarga la primera vez.
+- `sudo`: el usuario está en el grupo `sudo`, pero `sudo` pide contraseña y el agente no la tiene (verificado el 2026-10-17: `id` lista el grupo `sudo`; `sudo -n true` responde «a password is required»). Los comandos con `sudo` de las notas de instalación los ejecuta el usuario; el agente no puede.
 - Sin GPU, sin entorno gráfico: irrelevante para esta arquitectura porque el navegador real corre en el anfitrión Windows, no aquí. Esta VM solo ejecuta el proceso Node del MCP, que habla por red al CDP remoto.
 
 ## Repositorio y sincronización
@@ -122,7 +123,7 @@ Los tres viven en `~/.claude/settings.json` y en `~/.claude/hooks/`:
 | Hook | Evento | Qué hace |
 |---|---|---|
 | `permisos-hacia-fuera.sh` | `PermissionRequest` | **No auto-aprueba las acciones hacia fuera.** Si detecta `git push`, `gh pr merge`, `gh secret set`, `gh release create/delete`, o una escritura por `gh api` (`-X`/`--method`/`-f`/`-F`), devuelve **`ask`** y el harness **para y pregunta al usuario**. Todo lo demás sigue auto-aprobado, para que no sea un peaje constante. Patrón y prueba en [[decisiones]]. |
-| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). **No juzga si la documentación es buena, solo que exista.** El segundo camino se añadió el 2026-09-27 tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. **Recortado el 2026-09-29:** tenía dos capas más —exigir además un documento *de seguimiento* (plan o bitácora) apuntando a `proyectos/astillero/astillero-plan.md`, y exigir el manual de Astillero cuando el código era suyo— y se retiraron **las dos**, por obsoletas: esa ruta ya no existe (Astillero se retiró del wiki) y el seguimiento de un proyecto vive en el repo de ese proyecto, no aquí. Ver `areas/decisiones.md`, 2026-09-29. |
+| `documentacion-al-dia.sh` | `Stop` | Si en el turno se ha tocado **código** —editar/crear un fichero que no es `.md`, o `git commit`/`push`/`gh pr merge`— y **ninguna documentación** (ningún `.md`, ni nada bajo `docs/`, `proyectos/`, `areas/`, `recursos/`), **bloquea el cierre** con el motivo. **Excluye `/tmp/`**, que no es código de nadie. Y cuenta la documentación escrita **de dos formas**: con las herramientas `Edit`/`Write`, y **desde `bash`** (un `write_text`, un `sed -i`, un `tee` o una redirección que apunte a un `.md`). **No juzga si la documentación es buena, solo que exista.** El segundo camino se añadió el 2026-09-27 tras un **falso positivo real**: se documentó la bitácora con un script dentro de un comando y el hook, que solo miraba `Edit`/`Write`, bloqueó un turno que **sí** había documentado. **Recortado el 2026-09-29:** tenía dos capas más, exigir un documento *de seguimiento* (plan o bitácora) y un manual concreto, y se retiraron **las dos**, por obsoletas: el seguimiento de un proyecto vive en el repo de ese proyecto, no aquí. Ver `areas/decisiones.md`, 2026-09-29. |
 | `verificar-respuesta.sh` | `Stop` | El que ya estaba escrito y nunca corría: antes de cerrar, un evaluador (Sonnet por `claude -p`) compara la última petición con la respuesta y bloquea si una investigación no llega al mínimo (máximo 3 veces). Contadores en `~/.cache/verificar-respuesta/`. |
 
 **Para desactivar cualquiera:** `/hooks`, o quitar su entrada del `settings.json`.

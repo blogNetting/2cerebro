@@ -160,7 +160,7 @@ No es jurídico, es de hecho, y desactiva la preocupación real de los vecinos.
 | "Entra y sale mucha gente" | Al revés: antes vivía una familia de 5-6; ahora 2-4 adultos. Menos personas, menos ruido, menos uso del portal. |
 | "Vas a traer okupas" | La vivienda está siempre habitada, con contratos e inquilinos empadronados. El riesgo de ocupación baja, no sube. |
 
-**La extracción de humos NO es un argumento a favor: es un problema técnico real a resolver.** Ver [[legalidad-division-y-alquiler-por-habitaciones]]. Si un vecino se queja de olor a cocina, no discutir: la solución es sacar la extracción de las cocinas del shunt colectivo y llevarla a conducto propio hasta cubierta. No usar aquí la palabra "provisional" ni negar el hecho.
+**La extracción de humos está resuelta, pero no es un argumento a favor.** Ver [[legalidad-division-y-alquiler-por-habitaciones]]. Si un vecino se queja de olor a cocina, no discutir: cada cocina sale por una lateral del shunt de la vivienda (la de arriba por la izquierda, la de abajo por la derecha), independientes entre sí, y las dos desembocan en el shunt central comunitario, como las plantas inferiores. No usar aquí la palabra "provisional" ni negar el hecho.
 
 ## Qué NO decir
 
@@ -182,5 +182,4 @@ No es jurídico, es de hecho, y desactiva la preocupación real de los vecinos.
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[apartamentos-calle-uruguay]]
-- [[contradiccion-extraccion-de-humos-duplex]] — la solución de humos que propone este argumentario (conducto propio hasta cubierta) no coincide con las dos vías de legalidad; pendiente del usuario
 - [[_index]]

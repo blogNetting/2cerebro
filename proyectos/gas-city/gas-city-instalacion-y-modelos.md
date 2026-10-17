@@ -488,12 +488,10 @@ Esta comparativa reutiliza y reverifica en vivo (2026-09-29) la que ya existía 
 
 - [[cuentas-claude]] — qué cuenta de Claude usa el mayor: `[providers.claude] command` apunta a `~/bin/claude`, que lee la cuenta cargada con `cc`
 
-- [[contradiccion-sudo-en-la-vm]] — los comandos con `sudo` de esta nota chocan con la entrada «no hay sudo» del registro de decisiones; pendiente del usuario
 - [[_index]] — índice de esta carpeta
 - [[gas-city-traje-a-medida]] — por qué Gas City es la pieza central del montaje, y qué tocar para ajustarlo
 - [[gas-city-con-2cerebro]] — cómo se usa con 2cerebro para crear y desarrollar aplicaciones
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos sirven y qué es marketing: el bucle `check`, las puertas, los presupuestos, el tercer estado con la convención `75`, y las métricas que el proyecto publica de sí mismo
-- [[las-piezas]] — Gas Town y Beads, con el aviso original de la contribución automática que esta nota resuelve
 - [[verificacion-externa-agentes]] — por qué la condición de salida tiene que ser un script
 - [[orquestacion-modelos-y-costes]] — el detalle de modelos DeepSeek, precios y benchmarks que sostiene este reparto
 - [[orquestacion-seguridad-ejecutor]] — la investigación original de aislamiento (2026-09-24) que §7 reutiliza y reverifica

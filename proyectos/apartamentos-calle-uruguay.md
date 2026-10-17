@@ -13,7 +13,7 @@ Dividir un dúplex en dos unidades de alquiler que comparten acometida de luz y 
 - **Ubicación**: R/ Uruguay 2-4, 4ºB, Carballo (A Coruña), Galicia. Antes un dúplex (un solo elemento privativo). Plano aportado 2026-09-09 (guardar copia en `fuentes/`).
 - Dividido en uso por el propietario: planta baja = apartamento de 1 dormitorio (~44 m² útiles); planta alta = apartamento de 1 dormitorio (~44–49 m² útiles). Cada planta con dormitorio, baño y **cocina completa**.
 - **Acceso**: una puerta desde el rellano → **hall común** → a la izquierda puerta del apartamento de abajo; de frente **escalera común** → puerta del apartamento de arriba en el último peldaño. Hall y escalera son zona común compartida.
-- Obra ejecutada: **ningún tabique original demolido**, nada estructural. Abajo: se cierra la doble puerta del salón con trasdosado, la antigua cocina pasa a dormitorio y el antiguo salón pasa a salón-cocina. Arriba: un dormitorio se convierte en cocina (extracción por conducto compartido con la de abajo) y la barandilla del desembarco se sustituye por trasdosado con puerta.
+- Obra ejecutada: **ningún tabique original demolido**, nada estructural. Abajo: se cierra la doble puerta del salón con trasdosado, la antigua cocina pasa a dormitorio y el antiguo salón pasa a salón-cocina. Arriba: un dormitorio se convierte en cocina (extracción por la lateral izquierda del shunt, la que tenía asignada esa cocina; independiente de la de abajo) y la barandilla del desembarco se sustituye por trasdosado con puerta.
 - Elementos comunes / título constitutivo intactos: **un timbre, un buzón, una puerta desde el rellano, un contrato de luz, un contrato de agua**. Coeficiente de participación sin modificar.
 - Agua: **dos subcontadores internos** (tras el contador de compañía) pendientes de programar. Luz: **Shelly EM** por unidad para imputar consumo real.
 - Encaje legal adoptado: **una vivienda dividida sin segregar, alquilada por habitaciones**. Práctica legal y habitual. Test de riesgo y matices en [[legalidad-division-y-alquiler-por-habitaciones]].
@@ -30,22 +30,21 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 - [ ] **Medición y reparto de suministros** — programación de los dos contadores de agua, Shelly EM por unidad, criterio de reparto (consumo real vs. cuota), cómo se refleja en el contrato.
 - [~] **Contrato de arrendamiento por habitaciones** → [[contrato-habitaciones-redaccion-y-fiscalidad]]. Reparto por % de superficie, plano anexo y efecto en gastos deducibles (sin verificar). Pendiente: cláusulas de gastos, zonas comunes, fianza, duración, LAU vs. Código Civil.
 - [~] **Portero automático no moleste a los dos inquilinos** → [[portero-automatico-timbre-unico]]. Un único timbre para dos unidades independientes; cualquier llamada suena en ambas. En análisis.
-- [x] **Legalidad de la división y del alquiler** → [[legalidad-division-y-alquiler-por-habitaciones]]. Resuelto de fondo: es una vivienda alquilada por habitaciones, posición sólida. Problema abierto real: la **extracción de las cocinas al shunt colectivo**. Menor: estatutos, seguro, CEE.
+- [x] **Legalidad de la división y del alquiler** → [[legalidad-division-y-alquiler-por-habitaciones]]. Resuelto de fondo: es una vivienda alquilada por habitaciones, posición sólida. Extracción de las cocinas: resuelta, cada una por su lateral y ambas al shunt central (ver legalidad). Menor: estatutos, seguro, CEE.
 - [~] **Argumentario frente a vecinos** → [[argumentario-frente-a-comunidad-y-vecinos]]. Playbook con artículos citados literalmente. Pendiente: ROJ de la STS 31-5-2021, revisar estatutos, modelo de contestación escrita.
-- [~] **Fiscalidad** → [[fiscalidad-alquiler-por-habitaciones]]. Hub montado: amortización 3%, gastos deducibles, reducción 50% (DGT V0412-25), IVA exento. Pendiente: base de amortización concreta.
+- [~] **Fiscalidad** → [[fiscalidad-alquiler-por-habitaciones]]. Hub montado: amortización 3%, gastos deducibles, reducción 50% (DGT V0412-25), IVA exento, imputación por zona vacía, deducciones gallegas. Cifras del piso en [[amortizacion-y-deducciones-piso-carballo]]. **RDL 29/2026**: contratos firmados desde el 2-12-2026 pasan a otro régimen de reducción (100/85/50 %); decidir fecha de firma. Pendiente: gastos de compra, clasificar facturas en mejora/reparación.
 
 ## Preguntas abiertas
 
 - ¿Qué dicen los estatutos de la comunidad sobre nº de viviendas, hospedaje y alquiler por habitaciones? Único vector de los vecinos.
 - ¿Se presentó comunicación previa por los trasdosados y los cambios de uso? Si no, regularizable a coste bajo.
-- **Extracción de humos**: shunt de 3 verticales (central comunitaria + laterales por planta). La cocina de abajo se sacó por la vertical del baño. Flanco vecinal bajo (última planta); peros propios: grasa, y baño sin ventilar (moho a la larga). Dos vías: sellar el baño y dejar la campana ahí, o recirculación real. Confirmar si la lateral derecha es solo de esta vivienda. Ver [[legalidad-division-y-alquiler-por-habitaciones]].
+- **Extracción de humos**: shunt de 3 verticales (central comunitaria + laterales por planta). La cocina de arriba sale por la lateral izquierda y la de abajo por la derecha (la que era del baño); son independientes entre sí y las dos desembocan en el shunt central comunitario, como las plantas inferiores. Peros propios: grasa y baño sin ventilar (moho a la larga). Ver [[legalidad-division-y-alquiler-por-habitaciones]].
 - ¿Contratos de habitación independientes por inquilino? Redacción crítica: zona privativa + zonas comunes, nunca "apartamento independiente".
 - ¿Reparto de suministros como coste medido (Shelly EM + subcontadores)? Impacto fiscal (frente de fiscalidad, pendiente).
 
 ## Enlaces
 
 - [[duchas-alquiler-carballo]] — grifo de ducha cromado con teleducha y soporte para los baños: ganador Ramon Soler Tarraco (41 €, Obramat)
-- [[contradiccion-extraccion-de-humos-duplex]] — la descripción de la extracción de las cocinas no cuadra con la de legalidad y argumentario; pendiente de que el usuario confirme la instalación real
 - [[patrimonial]] — app de patrimonio donde este inmueble aparecerá valorado
 - [[radar]] — proyecto aparte para buscar nuevas oportunidades de inversión inmobiliaria con datos; este piso es solo referencia de contexto, no forma parte de ese método
 

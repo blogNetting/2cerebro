@@ -1,14 +1,14 @@
 ---
 title: Gas City — el traje a medida para desarrollar más rápido
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-17
 tags: [gas-city, gas-town, yegge, karpathy, agentes, montaje]
 zona: tecnico
 ---
 
 > **El punto 4 de §5 (comprobar la contribución automática) quedó resuelto el 2026-09-29.** Gas City **no** arrastra el mecanismo del issue [#3649](https://github.com/gastownhall/gastown/issues/3649): no hay ninguna fórmula de release en el pack `core` ni en el catálogo oficial. La función existe, pero como pack `contributing` opt-in, cuyo propósito declarado es que contribuyas tú. El detalle verificado, en [[gas-city-instalacion-y-modelos]] §5.1.
 
-Qué montaje encaja con el objetivo del usuario ([[objetivo]]: lo que funcione hoy y le quite trabajo aunque participe, cuanto más cubra mejor) partiendo del conocimiento de Yegge, Kim y Karpathy, y por qué la pieza central es Gas City y no Gas Town.
+Qué montaje encaja con el objetivo del usuario (lo que funcione hoy y le quite trabajo aunque participe, cuanto más cubra mejor) partiendo del conocimiento de Yegge, Kim y Karpathy, y por qué la pieza central es Gas City y no Gas Town.
 
 ## 1. Introducción
 
@@ -18,8 +18,8 @@ Pregunta: cuál es el «traje a medida» —o lo más parecido— y qué hay que
 
 | Qué | Motivo |
 |---|---|
-| **Gas Town como pieza central** | Su propia organización lo presenta como el predecesor: *«A legacy name you may encounter Gas Town is the predecessor software-factory project that inspired Gas City. Gas City recast that machinery as configurable primitives»* ([gascity.com](https://gascity.com/guide/gas-city-gas-town-gasworks-whos-who/)). Sigue valiendo su conocimiento (§3), no como producto nuevo. Sus problemas, en [[las-piezas]] §1.2 |
-| **Las 76 plataformas del catálogo** | Ver [[plataformas-veredicto]]. Ninguna publica ahorro medido |
+| **Gas Town como pieza central** | Su propia organización lo presenta como el predecesor: *«A legacy name you may encounter Gas Town is the predecessor software-factory project that inspired Gas City. Gas City recast that machinery as configurable primitives»* ([gascity.com](https://gascity.com/guide/gas-city-gas-town-gasworks-whos-who/)). Sigue valiendo su conocimiento (§3), no como producto nuevo. |
+| **Las 76 plataformas del catálogo** | Ninguna publica ahorro medido (sin verificar: la nota de origen se retiró) |
 | **Evaluar por opiniones de foro** | Corrección del usuario: lo que pesa es el conocimiento de quien lo diseña. Las opiniones se usan solo como aviso de fallos concretos |
 
 ## 3. El conocimiento que hay detrás
@@ -39,7 +39,7 @@ Pregunta: cuál es el «traje a medida» —o lo más parecido— y qué hay que
 | **Claude Code** | Escribe, prueba, corrige | Maduro |
 | **Gas City** | Fábrica por piezas: *«orchestration-builder SDK»*, configurada en `city.toml`, runtimes intercambiables (entre ellos `herdr`) ([repo](https://github.com/gastownhall/gascity)). Corre sobre Beads. Bucle `[steps.check]`: un paso cierra solo si tu script sale con 0 ([[gas-city-frente-a-la-fabrica]] §3.1) | MIT, 1.300★. **Ningún usuario ajeno encontrado contando uso real** |
 | **Beads** | Tareas y estado fuera del agente, con dependencias | Dependencia de Gas City. Quejas de conflictos de fusión ([HN](https://news.ycombinator.com/item?id=46458936)) |
-| **Herdr** (runtime) | Ver y controlar agentes en marcha | Mayor uso real del barrido ([[plataformas-uso-real]]) |
+| **Herdr** (runtime) | Ver y controlar agentes en marcha | Mayor uso real del barrido de plataformas (sin verificar: la nota de origen se retiró) |
 | **CI con tests** | Verificación objetiva; es lo que llama el `check` | Maduro |
 
 ## 5. Qué tocar para ajustarlo
@@ -66,10 +66,7 @@ Hacker News (API Algolia: hilos de Gas Town de 403, 354, 253, 219 y 113 puntos, 
 ## Enlaces
 
 - [[_index]] — índice de esta carpeta
-- [[objetivo]] — el objetivo del usuario, que manda
 - [[gas-city-instalacion-y-modelos]] — cómo instalarlo en esta máquina, el reparto Opus/Sonnet/DeepSeek, y los tres frentes a apagar
 - [[gas-city-con-2cerebro]] — cómo usarlo junto con el wiki para crear y desarrollar aplicaciones
-- [[las-piezas]] — Gas Town y Beads, con el aviso de apagar la contribución automática
-- [[plataformas-veredicto]] · [[plataformas-uso-real]] — el barrido de plataformas
 - [[gas-city-frente-a-la-fabrica]] — qué mecanismos de Gas City sirven y sus fallos, con issues
 - [[gas-city-alcalde]] — cómo es trabajar hablando solo con el alcalde, quién te pregunta y qué te llega

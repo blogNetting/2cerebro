@@ -1,7 +1,7 @@
 ---
 title: Patrimonial
 created: 2026-09-24
-updated: 2026-10-01
+updated: 2026-10-17
 tags: [finanzas, patrimonio, webapp, self-hosted, dashboard]
 zona: tecnico
 ---
@@ -87,6 +87,6 @@ Stack de interfaz decidido, ver «Stack» más abajo (tabla completa con backend
 | Interactividad | **HTMX**, opcional — actualizar trozos de página sin JS framework, si hace falta |
 | Interfaz | **Bootstrap 5.3**, **Bootstrap Icons**, **SCSS**, **Chart.js** (gráficas), fuente **Inter** |
 | Componentes de Bootstrap a usar | Grid, Cards, Tables, Forms, Dropdowns, Modals, Offcanvas |
-| CI / red del ejecutor | Ecosistema Python (esto no es el framework de la app, es la herramienta con la que Astillero verifica el código) |
+| CI / red del ejecutor | Ecosistema Python (esto no es el framework de la app, es la herramienta con la que se verifica el código) |
 
 **Por qué Flask y no FastAPI:** es monolito con HTML renderizado en servidor, no una API consumida aparte — Jinja2 viene integrado de fábrica en Flask, y la ventaja de FastAPI (async, validación automática) no aporta nada aquí porque no hay carga que la justifique. Confirmado contra proyectos reales del mismo tipo (dashboard de finanzas personal, autoalojado): [CoinTrack](https://github.com/devmoatassem/CoinTrack) (Flask + Bootstrap + SQLite), [biweeklybudget](https://pypi.org/project/biweeklybudget/) (Flask/SQLAlchemy) y [FinReports](https://github.com/SimarMann/FinReports) (Flask + SQLite) — ninguno de los proyectos reales encontrados en esta categoría usa FastAPI.

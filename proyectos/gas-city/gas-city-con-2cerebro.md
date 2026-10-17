@@ -1,7 +1,7 @@
 ---
 title: Gas City con 2cerebro — cómo usarlo para crear y desarrollar aplicaciones
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-17
 tags: [gas-city, 2cerebro, uso, flujo, formulas, apps]
 zona: tecnico
 ---
@@ -158,7 +158,7 @@ Sin adornos, porque es donde este montaje se rompe si se le pide lo que no da.
 | `docs.gascity.com`: *Coming from Coding Agents*, *Set Up a Multi-Agent Engineering Environment*, *Understanding Formulas*, *Understanding Packs*, quickstart, tutoriales 01/02/05/06/07 | **Artefacto primario del fabricante** | El mapeo de capacidades y el reparto en tres capas (pack / ciudad / `.gc/`) |
 | Clon del repositorio: `internal/hooks/hooks.go` y `config/claude.json`, `cmd/gc/gitignore.go`, `internal/config/config.go` | **Artefacto primario** | La precedencia real de los hooks, los valores exactos de `.gitignore`, y `install_agent_hooks` |
 | Los ficheros de `cmd/gc/` que provisionan un rig | **Artefacto primario** | Qué escribe `gc rig add` y qué no |
-| El wiki: [[gas-city-frente-a-la-fabrica]], [[gas-city-traje-a-medida]], [[verificacion-externa-agentes]], [[las-piezas]] | Investigación previa propia | Los límites de §6 y el criterio de verificación de §4 |
+| El wiki: [[gas-city-frente-a-la-fabrica]], [[gas-city-traje-a-medida]], [[verificacion-externa-agentes]] | Investigación previa propia | Los límites de §6 y el criterio de verificación de §4 |
 | [DoltHub, *A Week In Gas Town*](https://www.dolthub.com/blog/2026-03-24-a-week-in-gas-town/), 2026-03-24 | **Comunidad independiente** | Uso real con cifras, y los dos avisos de §6: los agentes saltándose el método y polecats fusionando a `master`. **Es Gas Town, no Gas City** |
 | [HN 48170083](https://marko-hn-example.netlify.app/story/48170083), apiemotion, ~2026-05 | Comunidad independiente | Modelos no-Claude en esta orquestación: **4.411 completados de 9.418 intentos**, y >120 arreglos para sortear alucinaciones |
 | [idvork.in/gas-city](https://idvork.in/gas-city) | Comunidad independiente, **peso reducido** (el autor declara *«approximately 70% AI slop»*) | El coste por tarea trivial, y la regla de §6.3 |

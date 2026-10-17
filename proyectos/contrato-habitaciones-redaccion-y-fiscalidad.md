@@ -10,17 +10,17 @@ Hub del frente «Contrato» de [[apartamentos-calle-uruguay]]: reúne lo ya deci
 
 ## Aviso: Real Decreto-ley 29/2026 regula el alquiler por habitaciones
 
-Publicado en el BOE el 7-10-2026, en vigor desde el 8-10-2026 ([BOE-A-2026-20823](https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823)). Leído del texto consolidado del BOE (de carácter informativo); **estado de convalidación en el Congreso sin verificar** (un decreto-ley decae si no se convalida en 30 días).
+Publicado en el BOE el 7-10-2026, en vigor desde el 8-10-2026 ([BOE-A-2026-20823](https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823)). Leído del texto consolidado del BOE (de carácter informativo); **sin convalidar** a 10-10-2026; le toca a la Diputación Permanente del Congreso, previsiblemente a finales de octubre o principios de noviembre ([wolorent](https://www.wolorent.com/blog/nuevo-decreto-de-vivienda-2026-que-esta-en-vigor-y-como-afecta-a-los-propietarios), fuente secundaria). Si no se convalida, decae.
 
 | Qué dice el texto | Cita | Efecto en este proyecto |
 |---|---|---|
 | El arrendamiento de vivienda habitual incluye el parcial de una habitación o estancia | «incluido el arrendamiento parcial de una habitación o estancia de la vivienda» (nuevo art. 2.1 LAU) | Resuelve en gran parte la duda abierta «LAU vs. Código Civil»: la habitación pasaría a la LAU |
 | Contrato de habitaciones o temporada sin causa temporal acreditada | «se convertirá automáticamente en un contrato habitual» (preámbulo) | Contratos de temporada ya eran mala idea; ahora además se recalifican |
-| Tope de rentas | «la suma de las rentas pactadas en los contratos parciales… vigentes de forma simultánea sobre la misma vivienda no podrá exceder el importe de la renta del contrato de arrendamiento unitario de la vivienda completa» (nuevo art. 17.9 LAU) | **Pendiente de entender bien**: no está claro qué referencia vale si nunca ha habido un contrato de la vivienda entera. Puede limitar el modelo de negocio |
-| Reducción IRPF del rendimiento | Nuevos porcentajes según renta, zona y inquilino (art. 6 del RDL) | El 50 % de la nota de fiscalidad puede estar desfasado; ver aviso allí |
+| Tope de rentas | Párrafo 1, sin limitarlo a ninguna zona: «la suma de las rentas pactadas en los contratos parciales… no podrá exceder el importe de la renta del contrato de arrendamiento unitario de la vivienda completa». Párrafo 2, solo en zona tensionada: «o, en defecto de este, la suma de las rentas de los contratos parciales» con los topes del art. 17.6-8 (nuevo art. 17.9 LAU) | **Carballo no es zona tensionada, así que el párrafo 2 no aplica.** El párrafo 1 sí rige en todas partes, pero solo compara con un contrato de la vivienda completa: si nunca lo ha habido, no hay con qué comparar. El fallback «en defecto de este» solo está en zona tensionada. En la práctica no limita aquí (lectura propia del texto) |
+| Reducción IRPF del rendimiento | Disposición transitoria 38ª: los contratos firmados hasta el 1-12-2026 siguen con el régimen anterior; desde el 2-12-2026, régimen nuevo (100 / 85 / 50 % en un primer alquiler) | Detalle en [[fiscalidad-alquiler-por-habitaciones]] y cifras en [[amortizacion-y-deducciones-piso-carballo]] |
 | Competencias autonómicas | «no impedirá la aplicación… [de] regulaciones» autonómicas | Mirar si Galicia tiene norma propia |
 
-Esto es un resumen del preámbulo y de partes del articulado. **Hay que leer el art. 3 y el art. 6 enteros antes de redactar ningún contrato.**
+Leídos el art. 3 (LAU) en las partes citadas y el art. 6 (IRPF) entero el 17-10-2026.
 
 ## Lo ya decidido sobre los contratos (reunido de otras notas)
 
@@ -54,8 +54,7 @@ Todo en [[fiscalidad-alquiler-por-habitaciones]], sección «Periodos con habita
 
 ## Pendiente
 
-- Leer art. 3 y art. 6 del RDL 29/2026 enteros y comprobar convalidación y norma gallega.
-- Entender el tope de rentas cuando no existe contrato de la vivienda completa.
+- Comprobar la convalidación del RDL 29/2026 y si Galicia tiene norma propia sobre alquiler de habitaciones.
 - Decidir régimen y título del contrato una vez resuelto lo anterior.
 - Medir m² reales de cada zona y fijar porcentajes.
 - Qué consta en escritura y nota simple (¿cuántos dormitorios figuran?).
@@ -67,5 +66,4 @@ Todo en [[fiscalidad-alquiler-por-habitaciones]], sección «Periodos con habita
 - [[fiscalidad-alquiler-por-habitaciones]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[argumentario-frente-a-comunidad-y-vecinos]]
-- [[contradiccion-extraccion-de-humos-duplex]] — contradicción abierta sobre la extracción de humos del dúplex (y nota de que legalidad aún cita el Código Civil)
 - [[_index]]

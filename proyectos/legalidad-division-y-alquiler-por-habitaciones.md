@@ -34,6 +34,8 @@ Ni un tabique original demolido, nada estructural.
 - **Lateral derecha**: era la del **baño**. Por ahí se ha metido la extracción de la **cocina de abajo**.
 - **No se ha abierto nada nuevo** en fachada ni cubierta: todo reaprovecha verticales existentes.
 
+**Aclaración del propietario (2026-10-17), manda sobre lo anterior si algo no cuadra:** el dúplex son las plantas 4 y 5. La lateral izquierda era, de origen, la designada para la cocina de arriba: sube por la planta 5 y sale al exterior. El propietario aprovechó ese hueco para pasar tuberías nuevas y desagües, lo selló algo más arriba y sacó por ahí la campana de arriba, que casi va directa a la chimenea. En la planta de abajo, la lateral derecha era la del baño y por ella sale ahora la campana de la cocina de abajo. **No comparten conducto:** la lateral de la planta de arriba empieza casi en el forjado de esa planta, unos centímetros por debajo, que es la separación con la lateral de la planta de abajo; cada una es independiente y **las dos desembocan en el shunt central comunitario**, que es el que sale al exterior, igual que las plantas inferiores.
+
 **Versión si preguntan** (comunidad, inspección):
 
 - "Las cocinas llevan campana con filtro de carbón; la salida usa las verticales que ya existían en mi vivienda; no se ha tocado el conducto comunitario ni se ha abierto nada en fachada o cubierta."
@@ -127,7 +129,7 @@ La legalidad de fondo (una vivienda alquilada por habitaciones) está resuelta. 
 ## Normativa y fuentes
 
 - **LPH (Ley 49/1960)**: arts. 7.2, 10.3.b, 17.6, 17.12.
-- **Código Civil**: arts. 1255, 1542 y ss (arrendamiento de habitación).
+- **Código Civil**: arts. 1255, 1542 y ss (arrendamiento de habitación): es la base del contrato, no del edificio. Esta nota trata de la división, la comunidad y los elementos comunes; la redacción del contrato y su régimen, en [[contrato-habitaciones-redaccion-y-fiscalidad]].
 - **Lei 2/2016 do solo de Galicia** + **Decreto 143/2016**: comunicación previa y actos sujetos a licencia.
 - **Decreto 29/2010, Normas do Hábitat Galego**.
 - **LAU (Ley 29/1994)** y **Ley 12/2023**. Galicia sin zonas de mercado tensionado → sin tope de renta por índice en Carballo.
@@ -141,5 +143,4 @@ Consultas web 2026-09-09: homming.com (dividir sin segregar), lafita-arquitectur
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[fiscalidad-alquiler-por-habitaciones]]
 - [[contrato-habitaciones-redaccion-y-fiscalidad]] — cláusulas y anexo del contrato por habitaciones
-- [[contradiccion-extraccion-de-humos-duplex]] — la descripción de las verticales de extracción aquí no coincide con el hub ni con el argumentario; pendiente del usuario
 - [[_index]]
