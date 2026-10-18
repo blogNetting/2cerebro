@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek — informe de investigación
 created: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-18
 tags: [agentes, orquestacion, opus, deepseek, investigacion, devsecops]
 zona: tecnico
 ---
@@ -85,6 +85,7 @@ Matiz sobre el benchmark de arneses: usa DeepSeek V4 Flash local, con 24 ejecuci
 | `deepseek-v4-pro` | $0,66 / $1,32 | $0,022 / $0,044 | $1,98 / $3,96 | [pricing](https://api-docs.deepseek.com/quick_start/pricing) |
 
 - El horario punta son las 01–04 y 06–10 UTC, de lunes a viernes. **En horario de España casi todo cae en valle**, a mitad de precio ([pricing](https://api-docs.deepseek.com/quick_start/pricing)).
+- **Búsqueda y lectura web, de pago desde el 1 de noviembre de 2026** (añadido el 2026-10-18). Claude Code apuntado a DeepSeek ya usa sin que se vea los servicios Search (búsqueda) y Fetch (lectura de página) de DeepSeek. Hoy son gratis. Desde las 00:00 hora de Pekín del 1 de noviembre (**17:00 del 31 de octubre en España**) se cobran a $0,75 por cada 1.000 peticiones con éxito, en cada servicio: *«per-request billing starts at 00:00 Beijing time on November 1, 2026»* (el cobro por petición empieza a las 00:00 hora de Pekín del 1 de noviembre de 2026) — [pricing](https://api-docs.deepseek.com/quick_start/pricing). Detalle y lo que no está claro en [[orquestacion-modelos-y-costes]] §1.2.1.
 - La caché de prefijos es automática y en disco ([Context Caching](https://api-docs.deepseek.com/guides/kv_cache)). El arnés pesado cuesta poco en entrada; su coste real está en la salida y en el tiempo.
 - Los benchmarks públicos se contradicen: 95,2 % frente a 80,6 % en SWE-bench Verified para el mismo modelo ([Fireworks](https://fireworks.ai/blog/DeepSeekV4Pro-Fable5), un proveedor con interés; frente a agregadores). Tomo como referencia la única prueba independiente sobre una especificación real: Opus 4.7 **91**, V4 Pro **77**, V4 Flash **60** sobre 100 ([Kilo](https://blog.kilo.ai/p/we-tested-deepseek-v4-pro-and-flash)).
 - **Punto ciego económico:** Anthropic no publica los límites numéricos de Pro ([soporte](https://support.claude.com/en/articles/11145838-using-claude-code-with-your-claude-max-or-claude-pro-plan)), y los estimadores locales fallan un 20–40 % ([Reddit](https://www.reddit.com/r/ClaudeCode/comments/1sb8fb3/)). Varios usuarios avisan de que la suscripción ya está subvencionada y mezclarla con pago por token puede ahorrar menos de lo que parece ([HN](https://news.ycombinator.com/item?id=48237663)). **El coste de DeepSeek se puede medir con exactitud; el consumo de cuota de Opus solo aproximadamente, con `/usage`.**

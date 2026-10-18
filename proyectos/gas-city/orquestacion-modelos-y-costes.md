@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek: modelos y costes
 created: 2026-09-24
-updated: 2026-10-04
+updated: 2026-10-18
 tags: [agentes, deepseek, costes, benchmarks]
 zona: tecnico
 ---
@@ -35,6 +35,18 @@ Peak: 01:00–04:00 y 06:00–10:00 UTC, lunes a viernes, excluyendo festivos ch
 |---|---|---|---|
 | `deepseek-flash` | $0.003 / $0.006 | $0.15 / $0.30 | $0.60 / $1.20 |
 | `deepseek-v4-pro` | $0.022 / $0.044 | $0.66 / $1.32 | $1.98 / $3.96 |
+
+### 1.2.1 Búsqueda y lectura web: de pago desde el 1 de noviembre de 2026 — **importante**
+
+Añadido el 2026-10-18 a partir del aviso de DeepSeek a sus clientes ([[deepseek-aviso-busqueda-web-2026-10-18]] en `fuentes/`), comprobado contra la documentación oficial ese mismo día. Fuente: solo el propio vendor; todavía no hay experiencia de comunidad.
+
+- **Qué cambia.** La API ofrece ya dos servicios aparte: Search (búsqueda) y Fetch (lectura de una página). Se cobran por petición, no por tokens: *«Search and Fetch are standalone APIs billed per request»* (Search y Fetch son API independientes que se cobran por petición) — [pricing](https://api-docs.deepseek.com/quick_start/pricing).
+- **Cuánto.** $0,75 por cada 1.000 peticiones con éxito, en cada uno de los dos servicios ([pricing](https://api-docs.deepseek.com/quick_start/pricing)). El aviso dice 5 RMB por cada 1.000, que es la misma tarifa en yuanes. Solo se cobra lo que *«returns HTTP 200 and produces a result»* (devuelve HTTP 200 y da un resultado). Los fallos, las búsquedas sin resultados y los tiempos agotados no se cobran ([guía Search & Fetch](https://api-docs.deepseek.com/guides/search)).
+- **Por qué nos afecta.** Claude Code apuntado a DeepSeek (el upstream `deepseek` de [[gas-city-instalacion-y-modelos]] §4.4) **ya usa estos servicios sin que se vea**. Las herramientas del lado del servidor (las que ejecuta DeepSeek, no la máquina local) de búsqueda y lectura web pasan por ahí: *«server-side tool calls already hit the Search and Fetch APIs»* (las llamadas a herramientas del servidor ya van a las API de Search y Fetch) — [guía](https://api-docs.deepseek.com/guides/search).
+- **Desde cuándo.** *«These calls are currently free of charge; per-request billing starts at 00:00 Beijing time on November 1, 2026»* (ahora estas llamadas son gratis; el cobro por petición empieza a las 00:00 hora de Pekín del 1 de noviembre de 2026) — [pricing](https://api-docs.deepseek.com/quick_start/pricing). **En España son las 17:00 del 31 de octubre de 2026**, porque el 25 de octubre se pasa al horario de invierno (UTC+1) y Pekín está en UTC+8.
+- **Lo que la documentación no aclara** (sin verificar). No dice si el texto que devuelven Search y Fetch se cobra además como tokens de entrada del modelo, que es lo esperable al meterse en el contexto. Tampoco explica cómo desactivar estas herramientas del servidor. Por eso, lo único que controla el gasto de forma segura es vigilar el consumo real en la consola de DeepSeek a partir del 1 de noviembre.
+- **Escala del coste** (cálculo propio). $0,75 por 1.000 búsquedas equivale a unos 1,25 millones de tokens de salida de `deepseek-flash` en horario valle (con la tabla de §1.2). Cada llamada cuesta poco. El riesgo está en un agente que busque en bucle sin límite, porque el coste crece con el número de llamadas y no con el resultado.
+- La aceptación es tácita: el aviso dice que seguir usando el servicio después del cambio *significa aceptar* el nuevo cobro, y que quien no esté de acuerdo puede darse de baja y pedir el reembolso ([[deepseek-aviso-busqueda-web-2026-10-18]]).
 
 Nota: cifras de terceros agregadores (pricepertoken.com, otros) muestran precios distintos para "deepseek-v3.2" ($0.214–$3.00/1M según proveedor de reventa) — corresponden a proveedores de inferencia de terceros, no a la API oficial de DeepSeek, y a un modelo ya retirado. Usar solo la tabla de api-docs.deepseek.com como referencia de coste real. [pricepertoken.com](https://pricepertoken.com/pricing-page/model/deepseek-deepseek-v3.2) (fuente de contraste, no autoritativa)
 

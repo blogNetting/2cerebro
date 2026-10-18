@@ -1,7 +1,7 @@
 ---
 title: Gas City — instalación en esta máquina y configuración de modelos (Opus/Sonnet/DeepSeek)
 created: 2026-09-29
-updated: 2026-10-17
+updated: 2026-10-18
 tags: [gas-city, instalacion, modelos, deepseek, opus, sonnet, telemetria, privacidad]
 zona: tecnico
 ---
@@ -293,6 +293,8 @@ provider        = "claude"
 upstream        = "deepseek"
 option_defaults = { model = "deepseek-flash[1m]" }   # id no listado: pasa tal cual
 ```
+
+> **Importante — coste nuevo desde el 1 de noviembre de 2026** (añadido el 2026-10-18). Todo agente con `upstream = "deepseek"` (como `tarea-mecanica`) usa, sin que se vea, la búsqueda y la lectura web del lado del servidor de DeepSeek. Hoy no se cobran. Desde las **00:00 hora de Pekín del 1 de noviembre (17:00 del 31 de octubre en España)** se cobran a $0,75 por cada 1.000 peticiones con éxito: *«per-request billing starts at 00:00 Beijing time on November 1, 2026»* (el cobro por petición empieza a las 00:00 hora de Pekín del 1 de noviembre de 2026) — [pricing](https://api-docs.deepseek.com/quick_start/pricing). La documentación no explica cómo desactivarlo. En un agente que corre solo durante horas, vigila el consumo en la consola de DeepSeek. Detalle en [[orquestacion-modelos-y-costes]] §1.2.1.
 
 Y para que **ningún agente caiga en el ambiente por olvido**, un valor por defecto explícito en la ciudad:
 
