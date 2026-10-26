@@ -19,6 +19,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-alojamiento-fichas-londres]] — ocho finalistas en Londres con tabla exacta de tarifas de Booking, condiciones, fotos y enlaces
 - [[londres-alojamiento-fichas-gatwick]] — hoteles junto a Gatwick para la noche del 8 al 9 dic (variante B), con tarifas, fotos y enlaces
 - [[londres-alojamiento-descartes]] — qué se descartó y por qué: hoteles céntricos fuera de presupuesto, baño compartido, dormitorios y cápsulas
+- [[londres-alojamiento-medianoche-gatwick]] — búsqueda del 26-oct con tope 700 €, entrada a las 00:00 y salida de madrugada a Gatwick: nada céntrico cabe; finalistas Common View, Roseview y Woodford con horarios TfL
 - [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
 - [[duchas-alquiler-carballo]] — grifo de ducha cromado (monomando + teleducha + soporte + flexo) para alquiler en Carballo, tope 80 €. Ganador: Ramon Soler Tarraco, 41 € en Obramat; alternativas con envío: Roca Mitos Plus 57,89 € (Bauhaus) y Roca Victoria 64,90 € (Amazon, 483 reseñas). Solo los de Amazon tienen reseñas de usuario (2026-09-28)
