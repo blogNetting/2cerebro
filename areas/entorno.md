@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-10-17
+updated: 2026-10-26
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -49,6 +49,9 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - Los resúmenes de `WebSearch` no son fuente de precio: el «desde X €» del buscador no coincide con el precio de venta de la ficha.
 - vueling.com: por CDP con URLs directas del calendario y del buscador; ver [[vueling-busqueda-por-url]].
 - booking.com: por CDP con la URL de búsqueda y filtros en `nflt`: `roomfacility=38` (baño privado), `review_score=70` (7+), `distance=5000`, `ht_id=201` (apartamentos) o `204` (hoteles), `tdb=3` (1 cama doble). La tabla de habitaciones de cada ficha es `#hprt-table`. Con `browser_run_code_unsafe` no hay `require`: para acumular resultados entre navegaciones usar `sessionStorage` y volcarlo después con `browser_evaluate`.
+- booking.com, listados completos: el HTML del servidor solo trae 20 resultados por página y el parámetro `offset` no pagina de verdad (repite los mismos). Para leer un listado entero, partirlo en tramos de precio (`price=EUR-60-70-1`) hasta que cada tramo tenga 20 o menos, y leerlos con `fetch` desde una pestaña de Booking (comprobado el 2026-10-26: 305 de 302). El filtro `roomfacility=38` (baño privado) deja fuera pisos enteros que no marcan esa casilla: buscarlos aparte con `ht_id=201`.
+- booking.com, comentarios: no vienen en el HTML. Se piden por POST a `/dml/graphql` con la operación `ReviewList` (consulta persistida; se ve con `browser_network_requests` al pulsar «Leer todos los comentarios») y el `b_hotel_id` de la ficha; acepta `sorter` `NEWEST_FIRST` y `SCORE_ASC`.
+- TfL (planificador `api.tfl.gov.uk/Journey/JourneyResults`): rechaza con 403 la cabecera por defecto de Python `urllib`; con `User-Agent: Mozilla/5.0` o con curl responde en 1-2 s. Acepta coordenadas `lat,lon` y fechas futuras con `nationalSearch=true` (incluye Thameslink y autocares nocturnos).
 - Ejemplo de barrido completo de comparativa de producto con este escalado (Amazon.es por CDP, fichas y reseñas): [[smartwatch-mujer-muneca-pequena]].
 
 ## Datos de producto/precio

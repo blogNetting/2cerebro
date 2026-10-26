@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-10-17
+updated: 2026-10-26
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -376,3 +376,9 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
   - Esa deducción va en el año en que se constituye el arrendamiento.
   - Contratos firmados desde el 2-12-2026 tienen otro régimen de reducción (100/85/50 %), pendiente de convalidación.
 
+
+## 2026-10-26 — Alojamiento de Londres: filtro de nota inventado y recomendación retirada
+
+- Corrección del usuario: en la búsqueda de alojamiento con entrada a medianoche apliqué una nota mínima de 7 que nadie había pedido (arrastrada de la búsqueda de septiembre) y descarté por ella, aunque el encargo decía «sé elástico, que prime el precio». La nota no filtra: filtran los comentarios, leídos.
+- Error propio detectado al rehacerlo: Common View, recomendado en la primera versión, no es un piso entero (comentario de mayo de 2025: baño y cocina compartidos). Retirado en [[londres-alojamiento-medianoche-gatwick]], que se rehízo leyendo el listado entero (305), 111 fichas y los comentarios de 81.
+- Cómo se leen listados y comentarios de Booking y el planificador de TfL sin bloqueos: [[entorno]].

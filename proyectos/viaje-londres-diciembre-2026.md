@@ -17,7 +17,7 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 ## Frentes de trabajo
 
 - Alojamiento: criterios, resultado y comparativa A/B en [[londres-alojamiento-diciembre-2026]]. Fichas con fotos en [[londres-alojamiento-fichas-londres]] y [[londres-alojamiento-fichas-gatwick]]. Lo descartado y por qué, en [[londres-alojamiento-descartes]].
-- Nueva búsqueda con entrada a medianoche, salida de madrugada y tope de 700 €: [[londres-alojamiento-medianoche-gatwick]].
+- Búsqueda del 26-oct con entrada a medianoche y salida de madrugada (vuelo de vuelta EZY8069 a las 06:55, llegada al aeropuerto ~04:00): [[londres-alojamiento-medianoche-gatwick]]. Informe en Word en la carpeta compartida con el anfitrión.
 - Transporte entre aeropuertos y alojamiento: [[londres-transporte-aeropuertos]].
 - ETA (autorización electrónica de viaje): [[londres-eta]].
 
