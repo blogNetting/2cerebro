@@ -1,7 +1,7 @@
 ---
 title: Viaje a Londres, 4-9 diciembre 2026
 created: 2026-09-19
-updated: 2026-10-26
+updated: 2026-10-28
 tags: [viaje, londres, alojamiento]
 zona: general
 ---
@@ -19,6 +19,7 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 - Alojamiento: criterios, resultado y comparativa A/B en [[londres-alojamiento-diciembre-2026]]. Fichas con fotos en [[londres-alojamiento-fichas-londres]] y [[londres-alojamiento-fichas-gatwick]]. Lo descartado y por qué, en [[londres-alojamiento-descartes]].
 - Búsqueda del 26-oct con entrada a medianoche y salida de madrugada (vuelo de vuelta EZY8069 a las 06:55, llegada al aeropuerto ~04:00): [[londres-alojamiento-medianoche-gatwick]]. Informe en Word en la carpeta compartida con el anfitrión.
 - Transporte entre aeropuertos y alojamiento: [[londres-transporte-aeropuertos]].
+- Patinetes, carné y pago del transporte en Londres: [[londres-patinetes-carne-pago]].
 - ETA (autorización electrónica de viaje): [[londres-eta]].
 
 ## Estado

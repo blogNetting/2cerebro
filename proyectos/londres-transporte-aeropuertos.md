@@ -1,7 +1,7 @@
 ---
 title: Londres, transporte entre aeropuertos y alojamiento
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-10-28
 tags: [viaje, londres, transporte, heathrow, gatwick]
 zona: general
 ---
@@ -42,3 +42,4 @@ Horarios del planificador de TfL para el miércoles 9-dic-2026, saliendo a parti
 
 - Hoteles junto a Gatwick: [[londres-alojamiento-fichas-gatwick]].
 - ETA: [[londres-eta]].
+- Patinetes, carné y pago: [[londres-patinetes-carne-pago]].
