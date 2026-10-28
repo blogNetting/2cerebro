@@ -24,6 +24,27 @@ Parte de [[viaje-londres-diciembre-2026]]. Trayectos de aeropuerto en [[londres-
 - **Pago:** sin contacto, una tarjeta por persona y siempre la misma. Topes de 2026: £8,90 al día en zonas 1–2 y bus a £1,85 con tope de £5,55 desde el 1 de noviembre de 2026 ([TfL](https://content.tfl.gov.uk/adult-fares.pdf), [GLA](https://www.london.gov.uk/md3517-july-2026-fare-changes)). N26 cobra 0 % cualquier día. Revolut cobra 1 % en fin de semana ([tarifas de Revolut](https://cdn.revolut.com/terms_and_conditions/pdf/comisiones_personales_plan_est_ndar_66cc991f_1.7.4_1788272225_es.pdf)). Oyster y Visitor Oyster no compensan (£10,50 de alta que no se devuelven).
 - **Bonos:** el London Pass no incluye transporte. El único bono de día ilimitado es el de las bicis de TfL (Santander Cycles), a £3,50.
 
+- **Decisión de patinete (28-oct, con precios que pasó el usuario, sin verificar en la web oficial):** Voi gana casi siempre. Con viajes de 16 minutos o más, Voi+ (£2,99 al mes + £1,70 por viaje). Con viajes cortos, el bono de Voi que cubra los minutos: 120 por £15, 200 por £23 o 300 por £32. Flota: máximo 4.715 patinetes entre Lime y Voi, y unas 2.000 plazas de aparcamiento (fase 3 de TfL, septiembre de 2026).
+
+## Cómo funciona la calculadora del HTML
+
+El HTML abre solo con la calculadora. El resto (resumen, patinetes, carné, pagar transporte, ahorro, fuentes) va en pestañas de un menú superior: cambian con el ancla de la URL (`#calc`, `#carne`…), sin recargar.
+
+- **Entradas:** días de uso, minutos al día y viajes al día (de ahí sale la duración media del viaje). Todo es por persona.
+- **Coste de cada opción, por empresa:**
+  - *Pago por uso:* desbloqueo × viajes + precio por minuto × minutos totales.
+  - *Suscripción:* cuota + £/viaje × viajes, más el precio por minuto normal por los minutos que pasen de los incluidos en cada viaje.
+  - *Un tipo de bono:* el viaje se parte en tramos de «validez» días (se usa la validez mínima, la conservadora). En cada tramo se elige cuántos bonos comprar; lo que no cubren se paga a la tarifa normal, con un desbloqueo por cada viaje nuevo.
+  - *Mezcla de bonos:* solo con bonos cuya validez cubre todo el viaje.
+  - Las opciones se ordenan de más barata a más cara y se marca la ganadora con su precio por minuto.
+- **Escalera:** para cada empresa recorre de 1 a 180 min/día y agrupa los tramos con la misma opción más barata, sin suscripciones, con los días y la duración media de las barras.
+- **Ajustes ocultos (⚙):** desbloqueo, precio por minuto, viaje máximo, suscripciones y bonos editables, con filas que se pueden añadir y borrar. Se guardan en el `localStorage` del navegador (almacenamiento local, por dispositivo) con la clave `londres-patinetes-precios-v1`. «Restaurar precios iniciales» borra esa clave.
+- **Validado el 28-oct-2026 en Chrome real:**
+  - A 1920 px y a 390 px (tamaño de iPhone): el menú queda en una fila y la página no se sale de la pantalla.
+  - Sin errores de JavaScript en la consola.
+  - Editar y guardar precios, añadir bonos y restaurar funcionan.
+  - Dos resultados comprobados a mano: Voi+ a £30,19 y el pase de 200 de Lime a £48,79, con 4 días, 60 min/día y 4 viajes/día.
+
 ## Revisar
 
 - Precios de los paquetes de Lime y Voi en la app, ya en Londres.

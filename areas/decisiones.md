@@ -382,3 +382,9 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 - Corrección del usuario: en la búsqueda de alojamiento con entrada a medianoche apliqué una nota mínima de 7 que nadie había pedido (arrastrada de la búsqueda de septiembre) y descarté por ella, aunque el encargo decía «sé elástico, que prime el precio». La nota no filtra: filtran los comentarios, leídos.
 - Error propio detectado al rehacerlo: Common View, recomendado en la primera versión, no es un piso entero (comentario de mayo de 2025: baño y cocina compartidos). Retirado en [[londres-alojamiento-medianoche-gatwick]], que se rehízo leyendo el listado entero (305), 111 fichas y los comentarios de 81.
 - Cómo se leen listados y comentarios de Booking y el planificador de TfL sin bloqueos: [[entorno]].
+
+## 2026-10-28 — Patinetes de Londres: precios del usuario y calculadora con validez conservadora
+
+- Los precios de los bonos de Voi y Lime en Londres no están publicados en ninguna web oficial: solo en la app. El usuario aportó una lista y pidió tomarla por real. Se usa en la calculadora marcada como «sin verificar», y los precios se pueden editar desde un panel de ajustes, para corregirlos con la app ya en Londres.
+- Error propio corregido: la primera calculadora suponía que todos los bonos duraban el viaje entero. Ahora usa la validez mínima de cada bono y lo vuelve a comprar cuando caduca. También se corrigieron, antes de entregarlas, dos afirmaciones que no cuadraban con los números: «Voi siempre más barata» (Lime gana por £1 entre 13 y 25 min/día) y una escalera de tramos que no contemplaba comprar varios bonos del mismo tipo.
+- Detalle y funcionamiento: [[londres-patinetes-carne-pago]].
