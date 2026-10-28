@@ -45,6 +45,13 @@ El HTML abre solo con la calculadora. El resto (resumen, patinetes, carné, paga
   - Editar y guardar precios, añadir bonos y restaurar funcionan.
   - Dos resultados comprobados a mano: Voi+ a £30,19 y el pase de 200 de Lime a £48,79, con 4 días, 60 min/día y 4 viajes/día.
 
+## Llegada, vuelta y moverse barato (añadido 28-oct-2026)
+
+- **Heathrow T5 → piso:** metro Piccadilly + Jubilee, £5,90 por persona (tarifa punta por pasar por zona 1). Solo buses: £3,70, pero son 5 buses y 115 min. Ir sin pasar por la zona 1, saliendo en la estación del Overground de West Hampstead, costaría £2,60 (API de TfL), pero el viernes por la noche no hay trenes para hacerlo.
+- **Piso → Gatwick:** Thameslink de las 02:20 pagando con la tarjeta en el torno, £10,70 fuera de hora punta, frente a £22,30 con billete. Según FlyerTalk (comunidad, no TfL), Gatwick no entra en el tope diario.
+- **Por la ciudad:** solo bus, como mucho £5,55 al día; metro, como mucho £8,90. El patinete no es lo más barato para ir al centro (10 km). Sirve para saltos cortos ya en el centro.
+- El HTML se publicó como Artifact privado. La copia que se publica es el mismo HTML sin las etiquetas `<html>`, `<head>` y `<body>` (las que envuelven la página), porque el visor las añade.
+
 ## Revisar
 
 - Precios de los paquetes de Lime y Voi en la app, ya en Londres.
