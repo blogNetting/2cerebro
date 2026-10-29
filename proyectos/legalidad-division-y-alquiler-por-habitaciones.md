@@ -1,7 +1,7 @@
 ---
 title: Legalidad de la división y del alquiler por habitaciones
 created: 2026-09-09
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [legal, urbanismo, propiedad-horizontal, galicia, alquiler]
 zona: tecnico
 ---
@@ -143,4 +143,6 @@ Consultas web 2026-09-09: homming.com (dividir sin segregar), lafita-arquitectur
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[fiscalidad-alquiler-por-habitaciones]]
 - [[contrato-habitaciones-redaccion-y-fiscalidad]] — cláusulas y anexo del contrato por habitaciones
+- [[argumentario-frente-a-comunidad-y-vecinos]] — la versión para usar ante vecinos, presidente o administrador
+- [[contradiccion-mayoria-lph-art-17-6]] — el art. 17.6 LPH aparece con dos mayorías distintas entre esta nota y el argumentario
 - [[_index]]

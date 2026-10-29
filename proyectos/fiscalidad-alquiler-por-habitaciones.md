@@ -1,7 +1,7 @@
 ---
 title: Fiscalidad del alquiler por habitaciones
 created: 2026-09-09
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [fiscalidad, irpf, alquiler, amortizacion]
 zona: tecnico
 ---
@@ -65,7 +65,7 @@ Suele pesar más que el IBI. Es un gasto deducible que **no supone desembolso**:
 
 Sobre el rendimiento neto **positivo**, tras Ley 12/2023:
 
-- **50%** general para contratos nuevos desde 2024.
+- **50%** general para contratos nuevos desde 2024. *(Choca con la tabla del RDL 29/2026, más abajo, que fija el inicio el 26-5-2023: ver [[contradiccion-reduccion-alquiler-fecha-inicio]].)*
 - 60% si el inmueble se rehabilitó en los 2 años anteriores.
 - 70% / 90% solo en **zonas de mercado tensionado**. **Galicia no las ha declarado** → no aplican.
 
@@ -77,6 +77,8 @@ Sobre el rendimiento neto **positivo**, tras Ley 12/2023:
 De ahí que los **contratos deban ser de vivienda habitual permanente**, no de temporada. Un contrato de temporada (curso, meses) pierde la reducción y además complica la tesis de "vivienda". Conecta con [[legalidad-division-y-alquiler-por-habitaciones]].
 
 ### Cambio de régimen: Real Decreto-ley 29/2026 (leído en el articulado, 2026-10-17)
+
+Resumen de todo lo que cambia el RDL (LAU, reducción e imputación) en [[real-decreto-ley-29-2026-alquiler]].
 
 [BOE-A-2026-20823](https://www.boe.es/buscar/act.php?id=BOE-A-2026-20823), art. 6.Segundo.Dos (nuevo art. 23.2) y Catorce (disposición transitoria 38ª). En vigor desde el 8-10-2026; **sin convalidar** a 10-10-2026, la convalidación toca a la Diputación Permanente del Congreso porque las Cortes están disueltas ([wolorent](https://www.wolorent.com/blog/nuevo-decreto-de-vivienda-2026-que-esta-en-vigor-y-como-afecta-a-los-propietarios), [economistjurist](https://www.economistjurist.es/articulos-juridicos-destacados/medidas-tributarias-del-real-decreto-ley-29-2026-sobre-vivienda/), fuentes secundarias). Si no se convalida, decae.
 
@@ -183,4 +185,6 @@ Arrendamiento de vivienda para uso exclusivo como tal → **exento** (art. 20.Un
 - [[contrato-habitaciones-redaccion-y-fiscalidad]] — redacción del contrato por % de superficie y reparto de gastos con zonas vacías
 - [[patrimonial]] — app donde se seguirán ingresos y gastos del alquiler
 - [[radar]] — cualquier cálculo de rentabilidad neta de una compra futura tiene que incorporar este tratamiento fiscal
+- [[real-decreto-ley-29-2026-alquiler]] — síntesis del RDL 29/2026
+- [[contradiccion-reduccion-alquiler-fecha-inicio]] — fecha de inicio del 50 % citada de dos formas en esta nota
 - [[_index]]

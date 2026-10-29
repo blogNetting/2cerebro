@@ -1,7 +1,7 @@
 ---
 title: Jurisprudencia y prescripción urbanística en Galicia
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-10-29
 tags: [legal, urbanismo, galicia, jurisprudencia, prescripcion]
 zona: tecnico
 ---
@@ -57,4 +57,5 @@ En R/ Uruguay 2-4, 4ºB: no hay división horizontal, no hay cambio de tipologí
 
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[apartamentos-calle-uruguay]]
+- [[argumentario-frente-a-comunidad-y-vecinos]] — remite aquí para el frente urbanístico
 - [[_index]]

@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-10-26
+updated: 2026-10-29
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -388,3 +388,12 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 - Los precios de los bonos de Voi y Lime en Londres no están publicados en ninguna web oficial: solo en la app. El usuario aportó una lista y pidió tomarla por real. Se usa en la calculadora marcada como «sin verificar», y los precios se pueden editar desde un panel de ajustes, para corregirlos con la app ya en Londres.
 - Error propio corregido: la primera calculadora suponía que todos los bonos duraban el viaje entero. Ahora usa la validez mínima de cada bono y lo vuelve a comprar cuando caduca. También se corrigieron, antes de entregarlas, dos afirmaciones que no cuadraban con los números: «Voi siempre más barata» (Lime gana por £1 entre 13 y 25 min/día) y una escalera de tramos que no contemplaba comprar varios bonos del mismo tipo.
 - Detalle y funcionamiento: [[londres-patinetes-carne-pago]].
+
+## 2026-10-29 — Lint del wiki: sin enlaces rotos; una síntesis, tres contradicciones y enlaces de vuelta
+
+- Recorrido de `proyectos/` (con `gas-city/`, `radar/`, `patrimonial/`), `areas/` (con `devops-proyectos-propios/`), `recursos/`, `archivo/` e `inbox.md`. `fuentes/` sin tocar. La parte de git la hizo el usuario aparte.
+- **Mecánico, limpio:** ningún enlace roto (los `[[rigs]]`, `[[patches.agent]]`, `[[agent]]` y `[[steps]]` están en bloques de código o entre comillas invertidas; `[[deepseek-aviso-busqueda-web-2026-10-18]]` resuelve a un fichero de `fuentes/`). Ninguna nota huérfana. Los ocho `_index.md` del wiki listan exactamente sus notas, con descripción. Frontmatter completo y `zona` válida en las 56 notas que había. Ninguna carpeta pasa de 30 notas directas (la mayor, `proyectos/`, tiene 21).
+- **Enlaces de vuelta añadidos:** `radar` hacia sus cuatro notas hijas y su índice; `londres-alojamiento-diciembre-2026` y `londres-transporte-aeropuertos` hacia `londres-alojamiento-medianoche-gatwick`; `legalidad-division-y-alquiler-por-habitaciones` y `jurisprudencia-prescripcion-urbanistica-galicia` hacia `argumentario-frente-a-comunidad-y-vecinos`; `forges-gratis-con-puerta-en-main` hacia `agentes-comparten-usuario-y-credenciales`; y el par nuevo `orquestacion-seguridad-ejecutor` ↔ `agentes-comparten-usuario-y-credenciales` (el mismo tema, la recomendación frente al caso real).
+- **Nota de síntesis:** [[real-decreto-ley-29-2026-alquiler]]. El RDL aparecía en cuatro notas de Carballo, con la convalidación como pendiente repetido en tres.
+- **Notas de contradicción, sin resolver (dependen de leer el BOE o de una decisión del usuario):** [[contradiccion-reduccion-alquiler-fecha-inicio]], [[contradiccion-mayoria-lph-art-17-6]] y [[contradiccion-londres-alojamiento-y-vuelta]]. Avisos añadidos en las notas implicadas; no se ha borrado ni cambiado ninguna cifra.
+- **Sigue abierto de lints anteriores, sin tocar:** el par `gas-city-frente-a-la-fabrica` ↔ `orquestacion-seguridad-ejecutor` sin enlace directo, y la observación de que `gas-city-frente-a-la-fabrica` desaconseja adoptar Gas City mientras la ciudad está en marcha. Las dos están a decisión del usuario.

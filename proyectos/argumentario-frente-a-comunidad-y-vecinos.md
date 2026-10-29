@@ -1,7 +1,7 @@
 ---
 title: Argumentario frente a comunidad y vecinos
 created: 2026-09-09
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [legal, propiedad-horizontal, alquiler, argumentario]
 zona: tecnico
 ---
@@ -182,4 +182,5 @@ No es jurídico, es de hecho, y desactiva la preocupación real de los vecinos.
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[jurisprudencia-prescripcion-urbanistica-galicia]]
 - [[apartamentos-calle-uruguay]]
+- [[contradiccion-mayoria-lph-art-17-6]] — aviso: esta nota cita el art. 17.6 LPH como tres quintos y como unanimidad; revisar antes de usarlo por escrito
 - [[_index]]

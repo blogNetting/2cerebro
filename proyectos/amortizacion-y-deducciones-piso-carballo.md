@@ -1,7 +1,7 @@
 ---
 title: Amortizaciones y deducciones del piso de Carballo (IRPF 2026)
 created: 2026-10-17
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [fiscalidad, irpf, amortizacion, galicia, alquiler]
 zona: tecnico
 ---
@@ -163,4 +163,6 @@ El 1,1 % vale si el valor catastral de Carballo se revisó con entrada en vigor 
 - [[fiscalidad-alquiler-por-habitaciones]]
 - [[contrato-habitaciones-redaccion-y-fiscalidad]]
 - [[patrimonial]] — donde se seguirán estos importes
+- [[real-decreto-ley-29-2026-alquiler]] — síntesis del RDL 29/2026 (régimen de reducción según fecha de firma)
+- [[contradiccion-reduccion-alquiler-fecha-inicio]] — fecha de inicio del 50 %: esta nota y la de fiscalidad la citan distinto
 - [[_index]]

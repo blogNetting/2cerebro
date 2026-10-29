@@ -1,7 +1,7 @@
 ---
 title: Londres, fichas de alojamiento con fotos (ciudad)
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-10-29
 tags: [viaje, londres, alojamiento, fotos]
 zona: general
 ---
@@ -48,6 +48,8 @@ Ordenadas de más barata a más cara en la variante A (5 noches).
 > Ojo: Las fotos enseñan una vivienda muy «vivida» (muebles y objetos personales) y una de las imágenes de la galería es una captura de pantalla de móvil; la he excluido de las fotos de abajo. Es de particular, no de gestora.
 
 > Ojo: No reembolsable tanto en 5 como en 4 noches.
+
+> Aviso (lint 2026-10-29): la revisión del 26-oct lo descarta por un comentario de cliente que habla de baño y cocina compartidos ([[londres-alojamiento-medianoche-gatwick]], §2). Choca con esta ficha: ver [[contradiccion-londres-alojamiento-y-vuelta]].
 
 ![Common View 1](../fuentes/londres-alojamiento-2026-09-19/img/common_0.jpg) ![Common View 2](../fuentes/londres-alojamiento-2026-09-19/img/common_1.jpg) ![Common View 3](../fuentes/londres-alojamiento-2026-09-19/img/common_2.jpg) ![Common View 5](../fuentes/londres-alojamiento-2026-09-19/img/common_4.jpg) ![Common View 6](../fuentes/londres-alojamiento-2026-09-19/img/common_5.jpg)
 

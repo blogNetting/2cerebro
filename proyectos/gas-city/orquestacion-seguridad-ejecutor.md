@@ -1,7 +1,7 @@
 ---
 title: Orquestación Opus/DeepSeek: seguridad del ejecutor
 created: 2026-09-24
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [agentes, devsecops, sandbox, seguridad]
 zona: tecnico
 ---
@@ -105,4 +105,5 @@ Contexto: Claude Code (Opus) orquesta; un modelo DeepSeek vía API oficial actú
 
 - [[orquestacion-opus-deepseek-informe]] — síntesis de la investigación y arquitecturas candidatas
 - [[gas-city-instalacion-y-modelos]] — §7 reutiliza esta comparativa aplicada a Gas City, reverificada en vivo el 2026-09-29 (dos cifras de esta nota no se sostuvieron al comprobarlas y se retiraron allí)
+- [[agentes-comparten-usuario-y-credenciales]] — el caso real en esta máquina: los agentes de Gas City comparten usuario y la clave de DeepSeek viaja visible en `ps`, justo lo que la sección «Credenciales» de esta nota pide evitar
 - [[_index]]

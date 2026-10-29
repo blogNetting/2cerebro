@@ -1,7 +1,7 @@
 ---
 title: Rentabilidad inmobiliaria con datos
 created: 2026-09-29
-updated: 2026-09-29
+updated: 2026-10-29
 tags: [inmobiliario, inversion, datos, rentabilidad]
 zona: tecnico
 ---
@@ -494,3 +494,8 @@ Fuente: `fuentes/prophero-transcripciones-2026-09-29/otros/Experto Inmobiliario 
 - [[apartamentos-calle-uruguay]] — inversión inmobiliaria ya en marcha del usuario; referencia de contexto, no parte de este método
 - [[fiscalidad-alquiler-por-habitaciones]] — fiscalidad del alquiler que cualquier cálculo de rentabilidad neta tiene que incorporar
 - [[patrimonial]] — dashboard de patrimonio donde acabaría reflejándose cualquier inmueble que resulte de este proyecto
+- [[sintesis-radar]] — síntesis consolidada del proyecto
+- [[fuentes-prophero]] — catálogo de fuentes externas sobre Prophero (el `fuentes-prophero.md` citado arriba)
+- [[estado-del-arte-modelos-predictivos]] — arte previo para valorar y predecir inmuebles
+- [[fuentes-datos-radar]] — dónde conseguir cada variable
+- [[_index]]

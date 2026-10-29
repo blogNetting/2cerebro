@@ -1,7 +1,7 @@
 ---
 title: Forge gratis con puerta real en `main` (repo privado)
 created: 2026-10-04
-updated: 2026-10-04
+updated: 2026-10-29
 tags: [git, forge, github, gitlab, bitbucket, azure-devops, ci, rulesets, gratis]
 zona: tecnico
 ---
@@ -105,4 +105,5 @@ Siete rondas. Primarias: GitLab (protected branches, approvals, auto-merge, comp
 - [[control-de-versiones-y-ci]] — la nota que destapó el problema: rulesets y CI en el repo de Patrimonial
 - [[gas-city-y-gitlab]] — qué le cuesta a Gas City trabajar contra GitLab
 - [[gas-city-operacion-real]] — la ciudad real y sus rigs
+- [[agentes-comparten-usuario-y-credenciales]] — por qué la puerta en `main` es la barrera que de verdad protege, si los agentes pueden leerse las credenciales
 - [[_index]]

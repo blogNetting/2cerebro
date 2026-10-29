@@ -1,7 +1,7 @@
 ---
 title: Londres, alojamiento 4-9 dic 2026: criterios y resultado
 created: 2026-09-19
-updated: 2026-09-19
+updated: 2026-10-29
 tags: [viaje, londres, alojamiento, booking]
 zona: general
 ---
@@ -66,3 +66,4 @@ Todo en €, total para 2 personas. A = 5 noches. B4 = 4 noches (4-8 dic). «+83
 - Descartes: [[londres-alojamiento-descartes]].
 - Transporte y llegada a Gatwick el 9 dic: [[londres-transporte-aeropuertos]].
 - Cómo se buscó en Booking y qué herramientas se usaron: [[entorno]].
+- Revisión posterior (26-oct) con llegada a medianoche y vuelta de madrugada: [[londres-alojamiento-medianoche-gatwick]]. Dónde choca con esta comparativa: [[contradiccion-londres-alojamiento-y-vuelta]].

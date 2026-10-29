@@ -1,7 +1,7 @@
 ---
 title: Apartamentos Calle Uruguay
 created: 2026-09-09
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [alquiler, inmobiliario, legal, fiscalidad, domotica]
 zona: tecnico
 ---
@@ -32,7 +32,7 @@ Cada uno se saca a su propia nota cuando lo abordemos. Marcar aquí el enlace al
 - [~] **Portero automático no moleste a los dos inquilinos** → [[portero-automatico-timbre-unico]]. Un único timbre para dos unidades independientes; cualquier llamada suena en ambas. En análisis.
 - [x] **Legalidad de la división y del alquiler** → [[legalidad-division-y-alquiler-por-habitaciones]]. Resuelto de fondo: es una vivienda alquilada por habitaciones, posición sólida. Extracción de las cocinas: resuelta, cada una por su lateral y ambas al shunt central (ver legalidad). Menor: estatutos, seguro, CEE.
 - [~] **Argumentario frente a vecinos** → [[argumentario-frente-a-comunidad-y-vecinos]]. Playbook con artículos citados literalmente. Pendiente: ROJ de la STS 31-5-2021, revisar estatutos, modelo de contestación escrita.
-- [~] **Fiscalidad** → [[fiscalidad-alquiler-por-habitaciones]]. Hub montado: amortización 3%, gastos deducibles, reducción 50% (DGT V0412-25), IVA exento, imputación por zona vacía, deducciones gallegas. Cifras del piso en [[amortizacion-y-deducciones-piso-carballo]]. **RDL 29/2026**: contratos firmados desde el 2-12-2026 pasan a otro régimen de reducción (100/85/50 %); decidir fecha de firma. Pendiente: gastos de compra, clasificar facturas en mejora/reparación.
+- [~] **Fiscalidad** → [[fiscalidad-alquiler-por-habitaciones]]. Hub montado: amortización 3%, gastos deducibles, reducción 50% (DGT V0412-25), IVA exento, imputación por zona vacía, deducciones gallegas. Cifras del piso en [[amortizacion-y-deducciones-piso-carballo]]. **RDL 29/2026** ([[real-decreto-ley-29-2026-alquiler]]): contratos firmados desde el 2-12-2026 pasan a otro régimen de reducción (100/85/50 %); decidir fecha de firma. Pendiente: gastos de compra, clasificar facturas en mejora/reparación.
 
 ## Preguntas abiertas
 

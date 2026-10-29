@@ -1,7 +1,7 @@
 ---
 title: Viaje a Londres, 4-9 diciembre 2026
 created: 2026-09-19
-updated: 2026-10-28
+updated: 2026-10-29
 tags: [viaje, londres, alojamiento]
 zona: general
 ---
@@ -25,6 +25,7 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 ## Estado
 
 - Alojamiento: analizado el 2026-09-19, sin reservar. Recomendación: variante B (4 noches en Londres + 1 noche junto a Gatwick). Decisión pendiente del usuario.
+  - Aviso (lint 2026-10-29): la revisión del 26-oct ([[londres-alojamiento-medianoche-gatwick]]) recomienda en cambio las 5 noches en Londres con salida de madrugada, y no cuadra con lo anterior. Ver [[contradiccion-londres-alojamiento-y-vuelta]]; lo decide el usuario.
 - ETA: pendiente de solicitar (recomendado pedirlo ya).
 - Nada reservado, sin datos personales introducidos, sin llegar a pantalla de pago.
 

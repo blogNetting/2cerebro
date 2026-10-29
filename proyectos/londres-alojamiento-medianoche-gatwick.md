@@ -1,7 +1,7 @@
 ---
 title: Londres 4-9 dic 2026, alojamiento con llegada a medianoche y vuelta de madrugada a Gatwick
 created: 2026-10-26
-updated: 2026-10-26
+updated: 2026-10-29
 tags: [viaje, londres, alojamiento, booking, gatwick, transporte-nocturno]
 zona: general
 ---
@@ -552,3 +552,4 @@ Juicio mío sobre los datos de arriba. Lo que pesa: que tenga historial de comen
 ## Enlaces
 
 - [[viaje-londres-diciembre-2026]], [[londres-alojamiento-diciembre-2026]], [[londres-alojamiento-descartes]], [[londres-transporte-aeropuertos]], [[londres-eta]].
+- [[contradiccion-londres-alojamiento-y-vuelta]] — dónde esta revisión choca con las notas de septiembre (Common View y variante B).

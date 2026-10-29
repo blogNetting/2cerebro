@@ -1,7 +1,7 @@
 ---
 title: Los agentes de Gas City comparten usuario y credenciales (sin solución gratis probada)
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-10-29
 tags: [gas-city, seguridad, credenciales, identidades, gitlab]
 zona: tecnico
 ---
@@ -35,3 +35,4 @@ Un usuario de Linux o un contenedor por rol, lanzando cada sesión con el *exec 
 - [[gas-city-operacion-real]] — dónde viven los secretos hoy (`~/.gc/secrets.env`)
 - [[gas-city-instalacion-y-modelos]] — el entorno heredado del servidor tmux
 - [[gas-city-y-gitlab]] — GitLab como forge para los rigs
+- [[orquestacion-seguridad-ejecutor]] — aislamiento y controles de credenciales recomendados para el ejecutor (secretos fuera de su entorno, inyectados solo en el proxy de salida)

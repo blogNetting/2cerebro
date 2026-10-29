@@ -1,7 +1,7 @@
 ---
 title: Contrato por habitaciones — redacción y su efecto fiscal
 created: 2026-10-16
-updated: 2026-10-17
+updated: 2026-10-29
 tags: [alquiler, contrato, fiscalidad, irpf, catastro, lau]
 zona: tecnico
 ---
@@ -20,7 +20,7 @@ Publicado en el BOE el 7-10-2026, en vigor desde el 8-10-2026 ([BOE-A-2026-20823
 | Reducción IRPF del rendimiento | Disposición transitoria 38ª: los contratos firmados hasta el 1-12-2026 siguen con el régimen anterior; desde el 2-12-2026, régimen nuevo (100 / 85 / 50 % en un primer alquiler) | Detalle en [[fiscalidad-alquiler-por-habitaciones]] y cifras en [[amortizacion-y-deducciones-piso-carballo]] |
 | Competencias autonómicas | «no impedirá la aplicación… [de] regulaciones» autonómicas | Mirar si Galicia tiene norma propia |
 
-Leídos el art. 3 (LAU) en las partes citadas y el art. 6 (IRPF) entero el 17-10-2026.
+Leídos el art. 3 (LAU) en las partes citadas y el art. 6 (IRPF) entero el 17-10-2026. Síntesis de todos los efectos del RDL en [[real-decreto-ley-29-2026-alquiler]].
 
 ## Lo ya decidido sobre los contratos (reunido de otras notas)
 
@@ -66,4 +66,5 @@ Todo en [[fiscalidad-alquiler-por-habitaciones]], sección «Periodos con habita
 - [[fiscalidad-alquiler-por-habitaciones]]
 - [[legalidad-division-y-alquiler-por-habitaciones]]
 - [[argumentario-frente-a-comunidad-y-vecinos]]
+- [[real-decreto-ley-29-2026-alquiler]] — síntesis del RDL 29/2026
 - [[_index]]
