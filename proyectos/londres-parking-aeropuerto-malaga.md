@@ -8,7 +8,7 @@ zona: general
 
 Dónde dejar el coche de alquiler en el aeropuerto de Málaga del vie 4-dic 17:30 al mié 9-dic ~11:30, investigado desde cero el 30-oct-2026: proceso completo, esperas reales, llaves y contrato.
 
-**Aviso (2026-10-30):** esta nota descarta parkings por la llave y recomienda, y el usuario pidió otra cosa: el análisis de todos, con el proceso completo en orden y si se deja la llave, sin filtrar ni recomendar. Rehecho el 2026-10-30 sin filtrar ni recomendar, en `/mnt/hgfs/2Cerebro/Parkings-aeropuerto-Malaga-proceso-completo.html` (fuera del repo); ver [[decisiones]] (2026-10-30). Los descartes de esta nota no son conclusiones válidas.
+**Aviso (2026-10-30):** esta nota descarta parkings por la llave y recomienda, y el usuario pidió otra cosa: el análisis de todos, con el proceso completo en orden y si se deja la llave, sin filtrar ni recomendar. Rehecho el 2026-10-30 sin filtrar ni recomendar, con fichas de Looking4, Parclick, Aena y Parkos y opiniones de Google, en `/mnt/hgfs/2Cerebro/Parkings-aeropuerto-Malaga-proceso-completo.html` (fuera del repo); ver [[decisiones]] (2026-10-30). Los descartes de esta nota no son conclusiones válidas.
 
 Parte de [[viaje-londres-diciembre-2026]]. Informe completo con citas y enlaces: `/mnt/hgfs/2Cerebro/Londres-parking-aeropuerto-malaga.html` (fuera del repo). Sustituye a la tabla de parkings de la conversación del 28-oct (precios y ubicación de Exclusive cambiados).
 

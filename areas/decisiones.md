@@ -402,4 +402,5 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 
 - **Corrección del usuario:** el encargo era analizar todo lo que hay, con el proceso completo en orden de cada parking, y decir si hay que dejar la llave, **nada más**. El informe de las 11:46 descartaba parkings por la llave y recomendaba: no era lo pedido. Se rehace desde cero, sin descartar ninguno y sin recomendar, con el resultado en HTML en la carpeta compartida. Detalle del contenido: [[londres-parking-aeropuerto-malaga]].
 - **Herramienta:** `playwright-cdp` dejó de inicializar con el Chrome compartido y se pasó a hablar CDP directo desde Node en una pestaña propia. Funcionamiento y diagnóstico en [[entorno]], sección «Navegador por CDP».
+- **Ampliación (mismo día):** el informe rehecho se completó con opiniones de Google (100-130 recientes por lugar), la tabla de Parkos (52 filas, tercera fuente de llaves) y los precios oficiales de Aena. Se descartaron del informe las opiniones de lugares de Google que no se pudieron confirmar como el operador buscado (King Parking, Vip Valet), y se declararon como no localizados los demás.
 
