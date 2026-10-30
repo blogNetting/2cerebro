@@ -1,7 +1,7 @@
 ---
 title: Entorno y herramientas de esta máquina
 created: 2026-09-19
-updated: 2026-10-28
+updated: 2026-10-30
 tags: [entorno, mcp, navegador, meta]
 zona: tecnico
 ---
@@ -21,6 +21,9 @@ Orden obligatorio, ver `AGENTS.md`: `WebSearch` → `WebFetch` → navegador rea
 - No hay ni se quiere servidor SSH en el anfitrión.
 - MCP registrado en `.mcp.json` de este proyecto: `playwright-cdp` (`@playwright/mcp`, vía `npx`), lanzado con `--cdp-endpoint=${CDP_ENDPOINT:-http://192.168.1.5:9222}`.
 - Limitación real: el endpoint se fija al arrancar el proceso MCP y no se puede recablear en caliente dentro de la misma sesión de Claude Code. Para apuntar a otra máquina hace falta relanzar la sesión con `CDP_ENDPOINT=http://IP:PUERTO claude`. Ver `/navegador-cdp` para el flujo completo, incluida la plantilla del `.bat`.
+- **Fallo conocido (2026-10-30): `playwright-cdp` se cuelga al iniciar** con `TimeoutError: async initializeServer: Timeout 30000ms exceeded`, aunque `curl <endpoint>/json/version` responde y el websocket conecta. Causa probable, sin confirmar: al conectar recorre todas las pestañas del Chrome compartido (había 25 destinos, con Booking y decenas de iframes) y a la vez hay otros procesos `playwright-mcp` de otras sesiones enganchados al mismo puerto (`ps aux | grep playwright-mcp`). Diagnóstico: `curl -s <endpoint>/json/list` lista las pestañas; si responde, el Chrome está bien y el problema es la herramienta.
+- **Vía de escape sin la herramienta MCP:** un script de Node 22 (trae `WebSocket` nativo, sin dependencias) habla CDP directamente con una pestaña propia. Pasos: `curl -X PUT "<endpoint>/json/new?about:blank"` crea una pestaña y devuelve su `id`; se abre `ws://<host>:9222/devtools/page/<id>`; `Page.navigate` carga la URL; tras una espera, `Runtime.evaluate` con `awaitPromise: true` y `returnByValue: true` ejecuta el JS y devuelve el resultado. No toca las pestañas del usuario; la pestaña creada se cierra al terminar (`/json/close/<id>`). El script es de usar y tirar y vive en el directorio temporal de la sesión, no en el repo.
+- Por esa vía: Parclick carga con la URL de búsqueda con fechas y el texto sale de `document.body.innerText`; Looking4 trae el formulario de búsqueda ya relleno con las fechas, y `form[action*=resultados-de-busqueda].submit()` desde JS devuelve la lista completa con precios de esas fechas (33 resultados para AGP, vie 4 dic 17:30 a mié 9 dic 11:30). WebFetch sobre las mismas URLs devuelve una lista parcial con precios genéricos o nada.
 - Alternativa descartada: `chrome-devtools-mcp` (Google). También conecta a un Chrome existente por CDP (`--browserUrl`) y cumple el criterio eliminatorio, pero está pensado para depurar (red, performance, consola), no para conducir el navegador. Playwright MCP se ajusta mejor a rellenar/paginar/iniciar sesión, y cada tool de más es contexto consumido en cada turno. Decisión en [[decisiones]].
 - Alternativa descartada: Puppeteer MCP — deprecado/archivado.
 - Alternativa descartada: navegadores cloud (BrowserBase y similares) — lanzan su propio navegador remoto, no conectan al Chrome existente. No cumplen el criterio eliminatorio.

@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-10-29
+updated: 2026-10-30
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -397,3 +397,9 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 - **Nota de síntesis:** [[real-decreto-ley-29-2026-alquiler]]. El RDL aparecía en cuatro notas de Carballo, con la convalidación como pendiente repetido en tres.
 - **Notas de contradicción, sin resolver (dependen de leer el BOE o de una decisión del usuario):** [[contradiccion-reduccion-alquiler-fecha-inicio]], [[contradiccion-mayoria-lph-art-17-6]] y [[contradiccion-londres-alojamiento-y-vuelta]]. Avisos añadidos en las notas implicadas; no se ha borrado ni cambiado ninguna cifra.
 - **Sigue abierto de lints anteriores, sin tocar:** el par `gas-city-frente-a-la-fabrica` ↔ `orquestacion-seguridad-ejecutor` sin enlace directo, y la observación de que `gas-city-frente-a-la-fabrica` desaconseja adoptar Gas City mientras la ciudad está en marcha. Las dos están a decisión del usuario.
+
+## 2026-10-30 — Parkings de Málaga: se rehace sin filtrar por llave, y se esquiva `playwright-cdp` cuando se cuelga
+
+- **Corrección del usuario:** el encargo era analizar todo lo que hay, con el proceso completo en orden de cada parking, y decir si hay que dejar la llave, **nada más**. El informe de las 11:46 descartaba parkings por la llave y recomendaba: no era lo pedido. Se rehace desde cero, sin descartar ninguno y sin recomendar, con el resultado en HTML en la carpeta compartida. Detalle del contenido: [[londres-parking-aeropuerto-malaga]].
+- **Herramienta:** `playwright-cdp` dejó de inicializar con el Chrome compartido y se pasó a hablar CDP directo desde Node en una pestaña propia. Funcionamiento y diagnóstico en [[entorno]], sección «Navegador por CDP».
+
