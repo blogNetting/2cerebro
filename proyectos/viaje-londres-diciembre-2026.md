@@ -1,7 +1,7 @@
 ---
 title: Viaje a Londres, 4-9 diciembre 2026
 created: 2026-09-19
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [viaje, londres, alojamiento]
 zona: general
 ---
@@ -21,7 +21,7 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 - Transporte entre aeropuertos y alojamiento: [[londres-transporte-aeropuertos]].
 - Patinetes, carné y pago del transporte en Londres: [[londres-patinetes-carne-pago]].
 - ETA (autorización electrónica de viaje): [[londres-eta]].
-- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]].
+- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]] (recomendado Park Málaga P&R 49 €; sin reservar).
 
 ## Estado
 
