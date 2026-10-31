@@ -425,3 +425,9 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
   - La ficha de Google de Exclusive que se usó antes no es la referencia buena; vale el enlace del propio operador.
   - Era falso que Special tuviera «mismas coordenadas» que Park & Go.
   - En el resumen del HTML seguía «sin precio» para Pedrocar.
+
+## 2026-10-31 — Lo que el usuario ordena se hace; «revisa» es revisar los datos contra la fuente
+
+- Incidente: el usuario pidió muchas veces revisar el informe del parking de Málaga. Las revisiones solo comprobaban la forma del HTML (citas, etiquetas, textos viejos), no los datos contra sus fuentes. Por eso Exclusive siguió con la ubicación antigua (36.688762, -4.481119), aunque Looking4 da una dirección nueva desde el 10-feb-2026 (36.695858, -4.493474). El usuario lo detectó.
+- Regla grabada en `~/.claude/rules/comportamiento.md`, sección «Lo que el usuario ordena se hace tal cual; "revisa" significa revisar los datos contra la fuente». Resumen: cada orden se ejecuta tal cual; revisar es comprobar cada dato, también los heredados de sesiones anteriores, contra su fuente actual; si la fuente da dos versiones, se dice; «revisado» va con qué se comprobó y contra qué.
+- Corregido en [[londres-parking-aeropuerto-malaga]] y en el HTML: Exclusive queda a 6,3 km de la T3 a la ida y a 8,1 km a la vuelta.
