@@ -21,7 +21,7 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 - Transporte entre aeropuertos y alojamiento: [[londres-transporte-aeropuertos]].
 - Patinetes, carné y pago del transporte en Londres: [[londres-patinetes-carne-pago]].
 - ETA (autorización electrónica de viaje): [[londres-eta]].
-- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]] (recomendado Pedrocar ECO 45-50 € en su web oficial, a pie a la terminal; sin reservar).
+- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]] (recomendado Park & Go, 28 € en Parclick; alternativa Exclusive, 24 €; sin reservar).
 
 ## Estado
 

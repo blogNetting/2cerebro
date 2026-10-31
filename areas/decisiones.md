@@ -415,3 +415,13 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 ## 2026-10-31 — Prohibido reservar o pagar desde el navegador
 
 - Orden del usuario: nunca se reserva, compra ni paga nada desde su Chrome (ni se llega a la pantalla de pago). Grabada como regla global en `~/.claude/rules/comportamiento.md`, en `/navegador-cdp` y en la memoria. Motivo: se le ofreció reservar el alojamiento de Londres desde su Chrome.
+
+## 2026-10-31 — Parking de Málaga: manda el tiempo de recogida, no el precio ni las reseñas generales
+
+- Corrección del usuario: el coche es de alquiler con seguro, así que pagar 50 € pudiendo pagar menos no es opción. Los baratos con lanzadera cuestan parecido, así que deciden los km, la frecuencia de la lanzadera y lo rápido que te recogen a la vuelta, porque los tiempos son justos.
+- Se compararon Vip Shuttle, Exclusive, Park & Go y Looking4Parking Special, con datos leídos de nuevo el 31-oct: Looking4, Parclick, ParkVia y Parkos (120 reseñas de cada uno), reseñas de Google ordenadas por fecha y 12 rutas de Google Maps con la fecha y la hora reales del viaje.
+- Recomendación: Park & Go, 28 €. Alternativa más barata: Exclusive, 24 €. Pedrocar queda retirado. Ver [[londres-parking-aeropuerto-malaga]].
+- Errores corregidos:
+  - La ficha de Google de Exclusive que se usó antes no es la referencia buena; vale el enlace del propio operador.
+  - Era falso que Special tuviera «mismas coordenadas» que Park & Go.
+  - En el resumen del HTML seguía «sin precio» para Pedrocar.
