@@ -17,5 +17,5 @@ Responsabilidades continuas sin fecha de fin. Notas de síntesis y contradiccion
 - [[real-decreto-ley-29-2026-alquiler]] — síntesis: qué cambia el RDL 29/2026 en el alquiler (LAU, reducción del rendimiento según fecha de firma, imputación de rentas), estado de convalidación y pendientes
 - [[contradiccion-reduccion-alquiler-fecha-inicio]] — contradicción: la reducción del 50 % del alquiler empieza «desde 2024» o «desde el 26-5-2023» según el párrafo; sin efecto en las cifras de Carballo
 - [[contradiccion-mayoria-lph-art-17-6]] — contradicción: el art. 17.6 LPH citado como tres quintos y como unanimidad en las notas legales de Carballo
-- [[contradiccion-londres-alojamiento-y-vuelta]] — contradicción: Common View (¿piso entero o baño compartido?) y variante B frente a cinco noches en Londres con vuelta de madrugada
+- [[contradiccion-londres-alojamiento-y-vuelta]] — contradicción, resuelta el 2026-10-31: Common View (baño compartido, retirado) y variante B frente a cinco noches en Londres (ganan las cinco noches)
 - [[devops-proyectos-propios/_index]] — carpeta `devops-proyectos-propios/` (índice propio): mi DevOps personal para todos mis proyectos; Patrimonial es el banco de pruebas. No es DevOps genérico

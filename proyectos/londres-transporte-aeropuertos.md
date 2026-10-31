@@ -1,12 +1,14 @@
 ---
 title: Londres, transporte entre aeropuertos y alojamiento
 created: 2026-09-19
-updated: 2026-10-29
+updated: 2026-10-31
 tags: [viaje, londres, transporte, heathrow, gatwick]
 zona: general
 ---
 
-Trayectos reales (planificador de TfL) desde Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic, y por qué eso favorece la variante B.
+Trayectos reales (planificador de TfL) desde Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic, y por qué eso favorecía la variante B.
+
+> **Superado (2026-10-31):** se decidió dormir las 5 noches en Londres con salida hacia las 02:00. La revisión del 26-oct encontró vuelta en transporte público con llegada a Gatwick a las 03:30 desde todos los finalistas: [[londres-alojamiento-medianoche-gatwick]]. Common View queda retirado (baño compartido).
 
 Parte de [[viaje-londres-diciembre-2026]]; alojamientos en [[londres-alojamiento-diciembre-2026]].
 

@@ -1,7 +1,7 @@
 ---
 title: Contradicción — alojamiento de Londres: Common View y la vuelta de madrugada a Gatwick
 created: 2026-10-29
-updated: 2026-10-29
+updated: 2026-10-31
 tags: [contradiccion, viaje, londres, alojamiento, transporte]
 zona: general
 ---
@@ -27,7 +27,12 @@ La ficha de septiembre recoge lo que declara el anuncio; la revisión de octubre
 
 Septiembre trata la salida hacia las 02:00 como el problema que justifica la variante B. Octubre la toma como plan: las cinco noches en Londres, saliendo de madrugada (y en algún caso sin autobús nocturno), y recomienda cuatro alojamientos con ese supuesto. Los datos no son del mismo día ni con los mismos filtros, así que pueden ser compatibles. Pero el hub da por vigente la variante B sin mencionar la revisión de octubre.
 
-## Qué decide el usuario
+## Resuelto (2026-10-31)
+
+- Última noche: el usuario cierra con **las cinco noches en Londres** y vuelta de madrugada (criterio de octubre). La variante B queda descartada.
+- Common View: retirado también de las notas de septiembre ([[londres-alojamiento-fichas-londres]], [[londres-transporte-aeropuertos]], [[londres-alojamiento-diciembre-2026]]), con aviso en cada una.
+
+## Qué decidía el usuario (histórico)
 
 - Qué criterio vale para la última noche: la variante B de septiembre o las cinco noches en Londres con salida de madrugada de octubre.
 - Si Common View se retira también de las fichas de septiembre. El lint no lo ha borrado; solo deja el aviso.

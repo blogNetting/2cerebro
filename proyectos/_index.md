@@ -22,7 +22,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[londres-alojamiento-medianoche-gatwick]] — revisión completa del 26-oct (305 de Booking, 111 fichas): 31 cumplen llegada a medianoche y vuelta a Gatwick antes de las 04:00; recomendados limehome Streatham, estudio en NW2, piso en Peckham y Charlie Hotel
 - [[londres-transporte-aeropuertos]] — trayectos y tarifas de TfL de Heathrow T5 a cada alojamiento y de cada alojamiento a Gatwick el 9 dic
 - [[londres-patinetes-carne-pago]] — patinetes (solo Lime y Voi, sin bonos ilimitados), carné que hay que llevar y cómo pagar el transporte; informe HTML con citas
-- [[londres-parking-aeropuerto-malaga]] — parkings del aeropuerto de Málaga (4-9 dic): todos con precio y esperas según Google; recomendado Park Málaga P&R 49 €, alternativa barata Velaris 35 €
+- [[londres-parking-aeropuerto-malaga]] — parkings del aeropuerto de Málaga (4-9 dic): todos con precio y esperas según Google; recomendado Pedrocar ECO 45-50 € (web oficial, a pie), alternativa con lanzadera Park Málaga P&R 49 €, barata Velaris 35 €
 - [[londres-eta]] — ETA del Reino Unido: obligatorio, 20 £ por persona, válido 2 años, pedirlo ya
 - [[duchas-alquiler-carballo]] — grifo de ducha cromado (monomando + teleducha + soporte + flexo) para alquiler en Carballo, tope 80 €. Ganador: Ramon Soler Tarraco, 41 € en Obramat; alternativas con envío: Roca Mitos Plus 57,89 € (Bauhaus) y Roca Victoria 64,90 € (Amazon, 483 reseñas). Solo los de Amazon tienen reseñas de usuario (2026-09-28)
 - [[vuelos-sevilla-octubre-2026]] — búsqueda cerrada de vuelos Vueling Santiago-Sevilla en octubre 2026: criterios, mejores combinaciones (91 € y 72 €) y errores corregidos

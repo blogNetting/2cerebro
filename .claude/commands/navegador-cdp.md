@@ -6,6 +6,9 @@ revisado: 2026-09-19
 descartado: chrome-devtools-mcp (Google) — también conecta por CDP a un Chrome existente (cumple el criterio eliminatorio), pero orientado a depurar (red, performance, consola) en vez de conducir el navegador; Puppeteer MCP — deprecado/archivado; navegadores cloud (BrowserBase y similares) — lanzan su propio navegador, no el existente. Ver [[entorno]] y [[decisiones]].
 ---
 
+> **PROHIBIDO reservar, comprar, pagar o confirmar nada desde el navegador**, ni llegar a la pantalla de pago ni rellenar datos personales o de tarjeta. Solo lectura. Regla global en `~/.claude/rules/comportamiento.md`.
+
+
 Paso 3 del escalado: navegador real por CDP contra un Chrome que ya está corriendo. Nunca lo lanzas tú, ni headless. El servidor MCP es `playwright-cdp`, definido en `.mcp.json` de este proyecto.
 
 0. Antes de preguntar nada, mira con Bash `echo $CDP_ENDPOINT` y `curl -s -m 5 <endpoint>/json/version`. Si `CDP_ENDPOINT` está definida y responde, esa es la máquina elegida por el usuario al arrancar la sesión: dilo en una línea y usa `playwright-cdp` sin preguntar. Si está definida y no responde, avisa y pide que arranque el Chrome (plantilla del `.bat` abajo).

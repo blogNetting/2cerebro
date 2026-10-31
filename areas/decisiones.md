@@ -1,7 +1,7 @@
 ---
 title: Registro de decisiones
 created: 2026-09-08
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [meta, arquitectura]
 zona: tecnico
 ---
@@ -405,4 +405,13 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 - **Ampliación (mismo día):** el informe rehecho se completó con opiniones de Google (100-130 recientes por lugar), la tabla de Parkos (52 filas, tercera fuente de llaves) y los precios oficiales de Aena. Se descartaron del informe las opiniones de lugares de Google que no se pudieron confirmar como el operador buscado (King Parking, Vip Valet), y se declararon como no localizados los demás.
 - **Cierre (2026-10-31):** la nota del wiki [[londres-parking-aeropuerto-malaga]] estaba aún con la versión que descartaba y recomendaba. Se reescribió con el contenido del HTML de las 21:39, sin descartar ni recomendar; citas comprobadas contra el informe y el PDF del contrato. Huecos abiertos listados en la sección 9 de esa nota.
 - **Corrección del usuario (2026-10-31):** la llave no es criterio para él (se anota si se sabe y nada más) y quiere una recomendación. La nota se reorganizó con la recomendación arriba: Park Málaga P&R (49 €) sobre Velaris (35 €), porque las 72 reseñas de Velaris son todas de los últimos 2 meses y Park Málaga tiene 578 con casi un año de historial. Una primera versión había llamado «evidencia sólida» a Velaris sin mirar la antigüedad de sus reseñas.
+- **Cambio de recomendación (2026-10-31):** el precio de Pedrocar estaba marcado «solo preguntando», pero estaba publicado en su web oficial ([parkingpedrocar.es](https://parkingpedrocar.es/)). Se llegó por el correo que da su ficha de Parkos. Pedrocar ECO exterior cuesta 45-50 € (5 o 6 días), lo mismo que Park Málaga. Va a pie, sin lanzadera, y tiene 3.117 reseñas sin quejas de esperas ni de daños entre las 120 recientes. Pasa a ser el recomendado y Park Málaga queda como alternativa. Lección: antes de declarar un precio «no obtenible», buscar la web propia del operador siguiendo los datos de contacto de las fichas de terceros.
 
+## 2026-10-31 — Alojamiento de Londres: se cierra con las 5 noches en Londres
+
+- El usuario da por cerrada la búsqueda y acepta la recomendación de la revisión del 26-oct: las 5 noches en Londres con vuelta de madrugada a Gatwick. La variante B de septiembre (4 noches más 1 junto a Gatwick) queda descartada. Se resuelve [[contradiccion-londres-alojamiento-y-vuelta]] y Common View se retira de las notas de septiembre.
+- Fichas abiertas de nuevo el 31-oct: 2 de los 4 recomendados (Amazing serviced, Charlie Hotel) y Calidore Close ya no tienen disponibilidad. El nº 1, Limehome Streatham, sigue disponible a 714 €. Detalle en [[londres-alojamiento-medianoche-gatwick]]. Sin reservar: el pago lo autoriza el usuario.
+
+## 2026-10-31 — Prohibido reservar o pagar desde el navegador
+
+- Orden del usuario: nunca se reserva, compra ni paga nada desde su Chrome (ni se llega a la pantalla de pago). Grabada como regla global en `~/.claude/rules/comportamiento.md`, en `/navegador-cdp` y en la memoria. Motivo: se le ofreció reservar el alojamiento de Londres desde su Chrome.

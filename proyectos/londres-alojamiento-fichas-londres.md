@@ -1,7 +1,7 @@
 ---
 title: Londres, fichas de alojamiento con fotos (ciudad)
 created: 2026-09-19
-updated: 2026-10-29
+updated: 2026-10-31
 tags: [viaje, londres, alojamiento, fotos]
 zona: general
 ---
@@ -34,6 +34,8 @@ Ordenadas de más barata a más cara en la variante A (5 noches).
 - [Ficha en Booking (4 noches, 4-8 dic)](https://www.booking.com/hotel/gb/double-room-oliver.es.html?checkin=2026-12-04&checkout=2026-12-08&group_adults=2&no_rooms=1&selected_currency=EUR)
 
 ## Common View
+
+> **Retirado (2026-10-31):** un comentario de cliente de mayo de 2025 dice que el baño y la cocina son compartidos, así que no es un piso entero. Ver [[londres-alojamiento-medianoche-gatwick]].
 
 - **Dirección:** 11 Leathwaite Road, Wandsworth, SW11 1XG
 - **Valoración Booking:** 7,7/10 (31 comentarios)

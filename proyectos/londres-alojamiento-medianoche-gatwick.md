@@ -1,7 +1,7 @@
 ---
 title: Londres 4-9 dic 2026, alojamiento con llegada a medianoche y vuelta de madrugada a Gatwick
 created: 2026-10-26
-updated: 2026-10-29
+updated: 2026-10-31
 tags: [viaje, londres, alojamiento, booking, gatwick, transporte-nocturno]
 zona: general
 ---
@@ -10,7 +10,23 @@ Revisión completa del listado de Booking con tus filtros (305 alojamientos) má
 
 Parte de [[viaje-londres-diciembre-2026]]. Sustituye a la versión anterior de esta misma nota (misma fecha), que recomendaba Common View por error: no es un piso entero (ver §2). Búsqueda de septiembre: [[londres-alojamiento-diciembre-2026]]; transporte de entonces: [[londres-transporte-aeropuertos]].
 
-## 1. Qué se pregunta y cómo se ha buscado
+## Actualización 2026-10-31: disponibilidad y precio de hoy, y decisión
+
+El usuario da por cerrada la búsqueda: las 5 noches en Londres (la variante B de septiembre queda descartada). Fichas de Booking abiertas de nuevo el 31-oct, mismas fechas, con su sesión iniciada (precios con descuento Genius):
+
+| Alojamiento | 26-oct | 31-oct | Estado |
+|---|---|---|---|
+| 1. [Limehome Streatham](https://www.booking.com/hotel/gb/limehome-london-streatham-high-rd.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 717 € | **714 €** no reembolsable · 845 € con cancelación gratis hasta el 2-dic | disponible |
+| 2. [Amazing serviced accommodations](https://www.booking.com/hotel/gb/amazing-serviced-accommodations-for-corporate-contractors-and-leisure-clients-lo.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 710 € | — | **sin disponibilidad**: «No tenemos disponibilidad en nuestra página web para este alojamiento entre el vie, 4 dic 2026 y el mié, 9 dic 2026» |
+| 3. [Stunning Garden Apartment](https://www.booking.com/hotel/gb/stunning-garden-apartment-centrally-locatedwith-free-off-road-parking-beautifull.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 773 € | **785 €** con cancelación gratis hasta el 29-nov | disponible |
+| 4. [Charlie Hotel](https://www.booking.com/hotel/gb/charlies.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 799 € | — | **sin disponibilidad** (mismo mensaje) |
+| [Calidore Close](https://www.booking.com/hotel/gb/calidore-close.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 627 € | — | **sin disponibilidad** (mismo mensaje) |
+| [Sutherland Apartments](https://www.booking.com/hotel/gb/sutherland-apartments-greater-london.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 786 € | 780 € no reembolsable · 821 € con cancelación hasta el 20-nov | disponible, sin comentarios |
+| [The Kings Road Apartment](https://www.booking.com/hotel/gb/the-kings-road-apartment.es.html?checkin=2026-12-04&checkout=2026-12-09&group_adults=2&no_rooms=1&group_children=0) | 799 € | 803 € con cancelación hasta el 4-nov | disponible, sin comentarios |
+
+**Recomendación final: Limehome Streatham.** Sigue siendo el nº 1 y ahora es además el más barato de los que quedan. La ficha declara entrada hasta las 00:00 con código. La tarifa de 714 € se cobra al reservar y no se devuelve; la de 845 € se puede cancelar gratis hasta el 2-dic. Si se prefiere poder cancelar por menos dinero: Stunning Garden Apartment (785 €, cancelación hasta el 29-nov; hay que pedir el código de la caja de llaves con antelación).
+
+
 
 2 adultos, vie 4 - mié 9 dic 2026. Llegada a Heathrow 21:50 (en el alojamiento hacia las 23:30-00:30) y vuelo desde Gatwick Norte el 9 a las 06:55, con la idea de estar en el aeropuerto a las 04:00. Lo que pediste: piso entero u hotel, baño privado, cama de matrimonio o dos individuales, tope orientativo de 700 € (más solo si compensa, nunca 1.000 €), lo más cerca posible del centro, entrada hacia las 00:00 y buena vuelta a Gatwick de madrugada. La nota de Booking no filtra; filtran los comentarios.
 

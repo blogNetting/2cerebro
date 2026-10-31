@@ -1,7 +1,7 @@
 ---
 title: Londres, alojamiento 4-9 dic 2026: criterios y resultado
 created: 2026-09-19
-updated: 2026-10-29
+updated: 2026-10-31
 tags: [viaje, londres, alojamiento, booking]
 zona: general
 ---
@@ -9,6 +9,8 @@ zona: general
 Resultado de la búsqueda de alojamiento en Londres (5 noches, 2 adultos): filtros aplicados, comparativa A/B y recomendación. Consulta del 2026-09-19.
 
 Parte de [[viaje-londres-diciembre-2026]].
+
+> **Superada (2026-10-31):** decisión final, las 5 noches en Londres con vuelta de madrugada, a partir de la revisión de [[londres-alojamiento-medianoche-gatwick]]. La variante B y Common View (que tiene baño compartido) quedan descartados. Esta nota se conserva como histórico.
 
 ## Qué se ha buscado (filtros)
 

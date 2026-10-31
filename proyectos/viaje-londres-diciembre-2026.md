@@ -21,13 +21,12 @@ Hub del viaje a Londres del 4 al 9 de diciembre de 2026: vuelos ya reservados y 
 - Transporte entre aeropuertos y alojamiento: [[londres-transporte-aeropuertos]].
 - Patinetes, carné y pago del transporte en Londres: [[londres-patinetes-carne-pago]].
 - ETA (autorización electrónica de viaje): [[londres-eta]].
-- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]] (recomendado Park Málaga P&R 49 €; sin reservar).
+- Parking del coche de alquiler en el aeropuerto de Málaga: [[londres-parking-aeropuerto-malaga]] (recomendado Pedrocar ECO 45-50 € en su web oficial, a pie a la terminal; sin reservar).
 
 ## Estado
 
-- Alojamiento: analizado el 2026-09-19, sin reservar. Recomendación: variante B (4 noches en Londres + 1 noche junto a Gatwick). Decisión pendiente del usuario.
-  - Aviso (lint 2026-10-29): la revisión del 26-oct ([[londres-alojamiento-medianoche-gatwick]]) recomienda en cambio las 5 noches en Londres con salida de madrugada, y no cuadra con lo anterior. Ver [[contradiccion-londres-alojamiento-y-vuelta]]; lo decide el usuario.
-- ETA: pendiente de solicitar (recomendado pedirlo ya).
+- Alojamiento: **decidido el 2026-10-31: las 5 noches en Londres**, con vuelta de madrugada a Gatwick en transporte público. Queda descartada la variante B de septiembre (4+1 junto a Gatwick). Recomendado: **Limehome London Streatham High Rd**, 714 € no reembolsable o 845 € con cancelación gratis hasta el 2-dic (precios de Booking a 31-oct). Alternativa con cancelación: Stunning Garden Apartment, 785 €, cancelación gratis hasta el 29-nov. Detalle y disponibilidad a 31-oct en [[londres-alojamiento-medianoche-gatwick]], § «Actualización 2026-10-31». Sin reservar.
+- ETA: hecha (confirmado por el usuario el 2026-10-31).
 - Nada reservado, sin datos personales introducidos, sin llegar a pantalla de pago.
 
 ## Enlaces
