@@ -64,7 +64,7 @@ Hechos del portero en los que se apoya: [[portero-hilos-y-senales]]. Proyecto: [
 
 1. **Mover D1 a antiparalelo** y hacer H1–H3. Mirar el código impreso en D1 por lo del 0,42 V.
 2. **En mesa: el módulo ZS-2-RELAY-1 cierra firme con 3,3 V en IN1/IN2** (puentes en COM–H; comprobado por el usuario que ya están así, 2026-11-23) y los relés se quedan quietos al arrancar la ESP. Si dudan: transistor NPN por canal con los puentes en COM–L, o relé NC de estado sólido.
-3. **El 4N35 detecta la llamada en modo normal, con los dos teléfonos conectados** (peor caso de carga; si funciona aquí, funciona en las ventanas de un solo teléfono), y el timbre no pierde volumen con el Cerebro conectado. Sirve también como prueba 12: forma y nivel reales de la llamada.
+3. **El 4N35 detecta la llamada en modo normal, con los dos teléfonos conectados**. Dentro de F4 se comprueba también si la señal dura lo que dura la pulsación (antigua prueba 13) y, **crítico, si el amplificador deja pasar una segunda pulsación a los 3 s** (antigua prueba 14, nunca hecha: el selector depende de ella) (peor caso de carga; si funciona aquí, funciona en las ventanas de un solo teléfono), y el timbre no pierde volumen con el Cerebro conectado. Sirve también como prueba 12: forma y nivel reales de la llamada.
 4. **Audio de prueba por C1 + R2 en el azul, con los dos teléfonos colgados**: escuchar en la calle si llega limpio, saturado o con golpe.
 
 Antes de dar corriente: B3g y B12 — **hechas el 2026-11-23: no pitan, sin cortos**.
@@ -91,9 +91,30 @@ Otras opciones normalmente cerradas, comparadas el 2026-11-23:
   - Reed: son NO.
   - Omron G5V-2 con contactos de oro: válido, pero electromecánico (bobina, transistor y desgaste mecánico).
 
-## Abierto, sin decidir
+## Para el montaje: lo que falta del usuario (2026-11-23)
 
-- Cambiar o no los relés del módulo (relé de señal con contactos de oro o relé NC de estado sólido). Depende de la comprobación 2 y del modelo real.
+Estado: D1 **todavía no movido** y condensador de 100 µF **todavía no puesto**. Antes de soldar hace falta:
+
+1. Fotos de cerca de la cara de soldaduras, rectas y con el borde (letras y números) legible: zona del 4N35, R1 y D1 (para mover D1 a antiparalelo) y zona junto al pin 5V de la ESP (para el 100 µF sin tocar uniones existentes). La foto de la cara inferior enviada es demasiado pequeña para ver qué agujeros están unidos.
+2. Tensión impresa en el condensador de 100 µF del kit (vale cualquiera de 10 V o más) y cuál es su pata negativa.
+3. Si quedan más 1N4007 en el kit (más cómodo que reutilizar D1 con las patas cortas).
+
+Para las pruebas: alguien en la calle al teléfono (F4, F5), un cable de auriculares de 3,5 mm para cortar (F6), y soldador con malla o chupón para mover D1.
+
+**Montaje de D1 corregido (2026-11-23):** no se desuelda D1. Se puentea D1 con un cable por debajo (T7 a V13) y se suelda un 1N4007 nuevo (D2) entre la pata 1 del 4N35 (franja) y la pata 2 (donde llega el cable blanco del gris), según el patillaje de Vishay «A 1 … C 2 … NC 3». **Error descartado:** añadir solo D2 dejando D1 en serie protege el LED, pero no deja volver la corriente en el semiciclo negativo; si la llamada sale por condensador, este se carga y el detector puede fallar en modo selector (cuando solo el detector carga la línea). Comprobación: H1 ≈ 1 kΩ, H2 900–1300, H3 400–700.
+
+Orden recomendado: puentear D1 y añadir D2 → H1–H3 → **F4** (incluida la doble pulsación, que decide si el diseño vale) → E7–E8 → F5 → F6.
+
+## HTML actualizados (2026-11-23)
+
+- **Selector de planta** (https://claude.ai/artifact/TEkU65sKkPD6Nmu7uGH6kT, versión 41): pestaña nueva «Revisión 2 (2Cerebro)» con conclusiones, errores corregidos, cambios y pruebas. Además, 18 textos corregidos en su sitio y marcados «rev. 2»: tipo de llamada, watchdog, D1 en antiparalelo, SW1/SW2, datos del 4N35, ESP, relés, bornas y estado de las pruebas.
+- **Pruebas del Cerebro** (https://claude.ai/artifact/7wxAZCPwR8RRKyXvMa2g35, versión 8): resumen de la revisión 2, pruebas nuevas E7–E8 y F4–F6, H0 marcada como innecesaria, y B3g y B12 hechas.
+- **Pruebas portero Fermax** (https://claude.ai/artifact/VDFqa5R3fe7Rv84eDPHHx7): prueba 16 con los bornes 1–5 del Tegui, y nota de llamada electrónica en la prueba 12.
+
+## Decidido por el usuario (2026-11-23)
+
+- **Se mantiene el módulo de relés ZS-2-RELAY-1.** El cambio a estado sólido no compensa el trabajo para un riesgo que puede no darse. Si algún día una planta deja de sonar a ratos, el sustituto es el AQY414EH o el AQY412EH en DIP-4: se quitan los cables IO13 → borna 8 e IO27 → borna 7, se añaden 2 chips y 2 resistencias de 390 Ω, y las bornas 8 y 7 pasan a recibir los verdes del VEO y del Tegui.
+- **D1 es un 1N4007** según el catálogo de compra del kit («Diodo rectifier (1N4007)»). El 0,42 V medido puede deberse a la poca corriente del modo diodo del multímetro (juicio, sin ficha del MAS830). En antiparalelo da igual: H0 deja de ser necesaria.
 
 ## Enlaces
 
