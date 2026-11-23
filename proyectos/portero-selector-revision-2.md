@@ -109,6 +109,7 @@ Orden recomendado: mover D1 a antiparalelo → H1–H3 → **F4** (incluida la d
 
 - 2026-11-23 · D1 movido a antiparalelo (R1 llega directa a la pata 1; D1 entre las patas 1 y 2, franja en la 1). **H1 = 1,01 kΩ, H2 = 928, H3 = 413**: correcto.
 - 2026-11-23 · Condensador de 100 µF entre +5 V y GND y resistencia de 10 kΩ de IN2 a GND, soldados en la placa (no atornillados). **Bornas 7–5 = 9,93 kΩ; bornas 9–5 no pita** (sin corto). Continuidad comprobada por el usuario.
+- 2026-11-23 · V1 (interruptores del VEO): **SW2 en E** (palanca a la izquierda, confirmado por el usuario a mano) y **SW1 en U−** (palanca a la izquierda, visto en su foto). La serigrafía de la placa marca U− y E a la izquierda, F+ y Z a la derecha. Bornas del VEO, vistas en foto: 1 rojo, 2 azul, 3 gris, 4 verde, 6 amarillo.
 
 ## Aprobado por el usuario (2026-11-23)
 
