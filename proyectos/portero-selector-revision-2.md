@@ -110,6 +110,7 @@ Orden recomendado: mover D1 a antiparalelo → H1–H3 → **F4** (incluida la d
 - 2026-11-23 · D1 movido a antiparalelo (R1 llega directa a la pata 1; D1 entre las patas 1 y 2, franja en la 1). **H1 = 1,01 kΩ, H2 = 928, H3 = 413**: correcto.
 - 2026-11-23 · Condensador de 100 µF entre +5 V y GND y resistencia de 10 kΩ de IN2 a GND, soldados en la placa (no atornillados). **Bornas 7–5 = 9,93 kΩ; bornas 9–5 no pita** (sin corto). Continuidad comprobada por el usuario.
 - 2026-11-23 · V1 (interruptores del VEO): **SW2 en E** (palanca a la izquierda, confirmado por el usuario a mano) y **SW1 en U−** (palanca a la izquierda, visto en su foto). La serigrafía de la placa marca U− y E a la izquierda, F+ y Z a la derecha. Bornas del VEO, vistas en foto: 1 rojo, 2 azul, 3 gris, 4 verde, 6 amarillo.
+- 2026-11-23 · Con el cargador, sin portero y con la ESP sin programa: **E1 sin clic** al enchufar; **E2 = 5,43 V** entre las bornas 9 y 5, el mismo valor que da el cargador sin carga. Es más que el 4,9–5,2 V previsto, pero cabe de sobra en el regulador de la ESP (ficha AMS1117: «Input Voltage 15V»). La tensión máxima de las bobinas QX73-C-S no se ha encontrado en ninguna ficha. **E4 = 3,34 V** en el pin 3V3 de la ESP y **E3 = 5,41 V** entre DC+ y DC− del módulo (correcto). E7 y E8 se aplazan, por decisión del usuario, a cuando haya programa: la primera prueba del programa será activar cada relé desde GPIO13 y GPIO27.
 
 ## Aprobado por el usuario (2026-11-23)
 
