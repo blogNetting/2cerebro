@@ -101,9 +101,21 @@ Estado: D1 **todavía no movido** y condensador de 100 µF **todavía no puesto*
 
 Para las pruebas: alguien en la calle al teléfono (F4, F5), un cable de auriculares de 3,5 mm para cortar (F6), y soldador con malla o chupón para mover D1.
 
-**Montaje de D1 corregido (2026-11-23):** no se desuelda D1. Se puentea D1 con un cable por debajo (T7 a V13) y se suelda un 1N4007 nuevo (D2) entre la pata 1 del 4N35 (franja) y la pata 2 (donde llega el cable blanco del gris), según el patillaje de Vishay «A 1 … C 2 … NC 3». **Error descartado:** añadir solo D2 dejando D1 en serie protege el LED, pero no deja volver la corriente en el semiciclo negativo; si la llamada sale por condensador, este se carga y el detector puede fallar en modo selector (cuando solo el detector carga la línea). Comprobación: H1 ≈ 1 kΩ, H2 900–1300, H3 400–700.
+**Montaje de D1 (aprobado por el usuario, 2026-11-23): un solo diodo, D1, en antiparalelo.** Se desuelda D1; la pata de R1 (T7) se une directa a la pata 1 del 4N35 (V13) con un puente; D1 se suelda entre la pata 1 (franja) y la pata 2 (donde llega el cable blanco del gris), según el patillaje de Vishay «A 1 … C 2 … NC 3» (ánodo en la 1, cátodo en la 2). Recorrido: semiciclo positivo verde → R1 → pata 1 → LED → pata 2 → gris; semiciclo negativo gris → pata 2 → D1 → pata 1 → R1 → verde; el LED no ve más de ≈ 0,7 V al revés. **Descartado:** D1 en serie más un D2 en antiparalelo (la corriente no vuelve en el semiciclo negativo) y la variante D2 más un puente sobre D1 (el usuario prefiere un solo diodo). Comprobación: H1 ≈ 1 kΩ, H2 900–1300, H3 400–700.
 
-Orden recomendado: puentear D1 y añadir D2 → H1–H3 → **F4** (incluida la doble pulsación, que decide si el diseño vale) → E7–E8 → F5 → F6.
+Orden recomendado: mover D1 a antiparalelo → H1–H3 → **F4** (incluida la doble pulsación, que decide si el diseño vale) → E7–E8 → F5 → F6.
+
+## Aprobado por el usuario (2026-11-23)
+
+- **Condensador de 100 µF / 50 V** entre la borna 9 (+5 V, J1) y la borna 5 (GND, J3), con la franja (−) en la 5. Absorbe los picos del WiFi y de los relés.
+- **Resistencia de 10 kΩ de IN2 (GPIO27) a GND**, entre la borna 7 y la borna 5: GPIO27 queda al aire durante el arranque según la tabla IO_MUX de Espressif («oe=0, ie=0»); así no queda al aire. Con GPIO27 en alto consume ≈ 0,33 mA.
+- **Programar por USB con el Cerebro desconectado del portero** (y sin el cargador): no unir la masa del ordenador a la del edificio y no alimentar por dos vías a la vez.
+- **Firmware:** watchdog del ESP32 con contador de reinicios (tras varios seguidos, arrancar en modo normal con los relés sueltos); llamada detectada por nivel bajo mantenido o pulsos; rampa suave del DAC antes de hablar.
+- **Plan B, solo si fallan las pruebas:**
+  - F6 satura incluso con R2 = 100 kΩ: divisor resistivo a masa antes de C1, en el lado de GPIO25, nunca en el lado del azul (10,6 V).
+  - E7/E8 no cierran bien con 3,3 V en COM–H: pasar a COM–L con un transistor NPN por canal. **En ese caso la resistencia de 10 kΩ de IN2 a GND se quita o pasa a la base del transistor**: en COM–L, IN a 0 V activa el relé y la planta 2 quedaría muda al arrancar.
+- **Descartados:** H11AA1, TPL5010, vigilante de pulsos con transistor y condensador, DAC externo por I2S, y D1 + D2.
+- **Siguiente:** pruebas físicas.
 
 ## HTML actualizados (2026-11-23)
 
