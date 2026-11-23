@@ -105,6 +105,11 @@ Para las pruebas: alguien en la calle al teléfono (F4, F5), un cable de auricul
 
 Orden recomendado: mover D1 a antiparalelo → H1–H3 → **F4** (incluida la doble pulsación, que decide si el diseño vale) → E7–E8 → F5 → F6.
 
+## Resultados de las pruebas físicas
+
+- 2026-11-23 · D1 movido a antiparalelo (R1 llega directa a la pata 1; D1 entre las patas 1 y 2, franja en la 1). **H1 = 1,01 kΩ, H2 = 928, H3 = 413**: correcto.
+- 2026-11-23 · Condensador de 100 µF entre +5 V y GND y resistencia de 10 kΩ de IN2 a GND, soldados en la placa (no atornillados). **Bornas 7–5 = 9,93 kΩ; bornas 9–5 no pita** (sin corto). Continuidad comprobada por el usuario.
+
 ## Aprobado por el usuario (2026-11-23)
 
 - **Condensador de 100 µF / 50 V** entre la borna 9 (+5 V, J1) y la borna 5 (GND, J3), con la franja (−) en la 5. Absorbe los picos del WiFi y de los relés.
