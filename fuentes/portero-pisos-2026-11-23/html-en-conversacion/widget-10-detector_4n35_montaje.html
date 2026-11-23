@@ -1,0 +1,54 @@
+<h2 class="sr-only">Montaje del detector: J4 verde a R1, D1, 4N35, gris, GND e IO32, agujero por agujero</h2>
+<div id="d"></div>
+<script>
+const C='ZYXWVUTSRQPONML',P=26,ox=70,oy=50;
+const X=c=>ox+C.indexOf(c)*P, Y=r=>oy+(r-1)*P, pt=h=>[X(h[0]),Y(+h.slice(1))];
+let s=`<svg width="100%" viewBox="0 0 680 760" role="img"><title>Detector</title><desc>Montaje de R1, D1 y 4N35</desc>`;
+s+=`<rect x="${ox-18}" y="${oy-18}" width="${P*14+36}" height="${P*26+36}" rx="8" fill="#1f6b45"/>`;
+for(let i=0;i<15;i++){s+=`<text x="${ox+i*P}" y="${oy-26}" text-anchor="middle" font-size="12" fill="#555" font-weight="500">${C[i]}</text>`;
+ for(let r=1;r<=27;r++) if(r<=27&&i<15&&r<=27){}}
+for(let i=0;i<15;i++)for(let r=1;r<=27;r++){if(r>27)continue;s+=`<circle cx="${ox+i*P}" cy="${oy+(r-1)*P}" r="3.2" fill="#c9cfc9"/>`}
+for(let r=1;r<=27;r++)s+=`<text x="${ox-30}" y="${Y(r)+4}" text-anchor="end" font-size="11" fill="#777">${r}</text>`;
+const W=(pts,col,w=5)=>{s+=`<path d="M${pts.map(pt).map(p=>p.join(' ')).join('L')}" fill="none" stroke="${col}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"/>`};
+const pad=(h,big)=>{const[x,y]=pt(h);s+=`<circle cx="${x}" cy="${y}" r="${big?6:5}" fill="#d9b24a" stroke="#222" stroke-width="1"/>`};
+const T=(x,y,t,c='#222',a='start')=>{s+=`<text x="${x}" y="${y}" font-size="12" fill="${c}" text-anchor="${a}">${t}</text>`};
+const lead=(h,lx,ly,t)=>{const[x,y]=pt(h);s+=`<path d="M${x+7} ${y}L${lx-6} ${ly-4}" stroke="#999" stroke-width="0.8" stroke-dasharray="3 3" fill="none"/>`;T(lx,ly,t)};
+/* terminals */
+[['Y1','U3','J5','#3f9a6a'],['T1','P3','J4','#4f83c6']].forEach(([a,b,l,f])=>{const[x1,y1]=pt(a),[x2,y2]=pt(b);s+=`<rect x="${x1-12}" y="${y1-12}" width="${x2-x1+24}" height="${y2-y1+24}" rx="5" fill="${f}" stroke="#222"/><text x="${(x1+x2)/2}" y="${(y1+y2)/2+5}" text-anchor="middle" font-size="14" font-weight="500" fill="#fff">${l}</text>`});
+/* ESP left pins */
+for(let r=13;r<=26;r++){const[x,y]=pt('M'+r);s+=`<rect x="${x-5}" y="${y-5}" width="10" height="10" fill="#333"/>`}
+T(X('M')+10,Y(13)-10,'ESP (pines izq.)','#555');
+/* wires */
+W(['S2','S14','R14'],'#2fa84f');
+W(['V2','V19','R19'],'#9a9a9a');
+W(['O20','O25','M25'],'#111');
+W(['O19','N19','N12','L12'],'#e07020');
+W(['X2','X26'],'#111');
+/* bridges */
+W(['R15','R16'],'#c0c0c0',4);W(['R17','R18'],'#c0c0c0',4);
+/* R1 */
+{const[x,y1]=pt('R14'),[,y2]=pt('R15');s+=`<rect x="${x-10}" y="${y1-9}" width="20" height="${y2-y1+18}" rx="6" fill="#5b8fd0" stroke="#222"/>`;}
+/* D1 */
+{const[x,y1]=pt('R16'),[,y2]=pt('R17');s+=`<rect x="${x-10}" y="${y1-9}" width="20" height="${y2-y1+18}" rx="5" fill="#222" stroke="#000"/><rect x="${x-10}" y="${y2}" width="20" height="7" fill="#bbb"/>`;}
+/* U1 */
+{const[x1,y1]=pt('R18'),[x2,y2]=pt('O20');s+=`<rect x="${x1+8}" y="${y1-14}" width="${x2-x1-16}" height="${y2-y1+28}" rx="4" fill="#eeeae0" stroke="#222"/><circle cx="${x1+20}" cy="${y1-2}" r="5" fill="none" stroke="#555"/><text x="${(x1+x2)/2}" y="${(y1+y2)/2+5}" text-anchor="middle" font-size="13" font-weight="500" fill="#333">4N35</text>`;}
+['S2','Q2','V2','X2','R14','R15','R16','R17','R18','R19','R20','O18','O19','O20','M25'].forEach(h=>pad(h));
+/* pin numbers */
+[['R18','1'],['R19','2'],['R20','3']].forEach(([h,n])=>{const[x,y]=pt(h);T(x-14,y+4,n,'#fff','end')});
+[['O18','6'],['O19','5'],['O20','4']].forEach(([h,n])=>{const[x,y]=pt(h);T(x+12,y+4,n,'#fff')});
+/* labels right */
+const LX=470;
+lead('S2',LX,Y(3),'J4 izq. = verde');
+lead('V2',LX,Y(5)+4,'J5 der. = gris');
+lead('R14',LX,Y(12),'R1 1 kΩ (de pie, R14–R15)');
+lead('R16',LX,Y(14)+4,'D1: lado NEGRO arriba (R16)');
+lead('R17',LX,Y(16)+4,'D1: franja GRIS abajo (R17)');
+lead('R18',LX,Y(18)+4,'4N35 pata 1 = punto (R18)');
+lead('R19',LX,Y(20)+4,'pata 2 ← gris');
+lead('O19',LX,Y(22)+4,'pata 5 → IO32 (naranja)');
+lead('O20',LX,Y(24)+4,'pata 4 → GND M25 (negro)');
+lead('X26',LX,Y(26)+4,'J5 izq. → GND M31 (sigue)');
+T(X('L')+4,Y(12)-8,'→ IO32 por debajo ESP','#c05a10');
+s+=`</svg>`;
+document.getElementById('d').innerHTML=s;
+</script>

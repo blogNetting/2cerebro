@@ -1,10 +1,12 @@
 ---
 title: Portero automático — comprobaciones en sitio
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-11-23
 tags: [portero-automatico, mediciones, domotica]
 zona: tecnico
 ---
+
+> **Estado a 2026-11-23.** Las mediciones hechas el 19-11-2026 y lo que se sabe de cada hilo están en [[portero-hilos-y-senales]]. Las comprobaciones físicas que quedan para el selector montado están en [[portero-selector-revision-2]].
 
 Procedimiento de comprobaciones y mediciones sobre la instalación real que validan o tumban los supuestos de [[portero-automatico-timbre-unico]]. Nada del diseño se cierra sin pasar las bloqueantes.
 
@@ -199,5 +201,7 @@ Solo lo medido, con fecha.
 ## Enlaces
 
 - [[portero-automatico-timbre-unico]]
+- [[portero-hilos-y-senales]]
+- [[portero-selector-revision-2]]
 - [[apartamentos-calle-uruguay]]
 - [[_index]]

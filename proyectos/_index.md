@@ -14,6 +14,8 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[portero-automatico-timbre-unico]] — solución técnica para que el único timbre del portero automático no moleste a las dos unidades independientes
 - [[portero-bloques-funcionales]] — funciones que necesita el interceptor del portero (detección, conmutación, generador de llamada, locuciones, control), sin elegir piezas
 - [[portero-comprobaciones-en-sitio]] — checklist de mediciones en la instalación real (topología, colores, hilo 4, audio, espacio) que validan o tumban el diseño del portero
+- [[portero-hilos-y-senales]] — portero 4+N del 4ºB comprobado: colores y bornes Fermax/Tegui, tensiones medidas el 19-11-2026, llamada electrónica 8–12 Vpp (no 50 Hz) y audio hacia la calle
+- [[portero-selector-revision-2]] — revisión 2 (2Cerebro) del selector de planta: errores de los HTML, conclusiones técnicas (watchdog, detector, relés NC) y las 4 comprobaciones físicas que quedan
 - [[viaje-londres-diciembre-2026]] — hub del viaje a Londres del 4 al 9 dic 2026: vuelos ya reservados, estado y frentes de trabajo (alojamiento, transporte, ETA)
 - [[londres-alojamiento-diciembre-2026]] — criterios y filtros de la búsqueda de alojamiento, resultado en una página y comparativa A (5 noches) frente a B (4 noches + Gatwick)
 - [[londres-alojamiento-fichas-londres]] — ocho finalistas en Londres con tabla exacta de tarifas de Booking, condiciones, fotos y enlaces

@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "nota": "Si meto el negro en el amarillo 0v en alterna a 200. Si lo hago en continua al reves tengo-9.95",
+    "vac": "",
+    "vdc": "9.95"
+  },
+  "test": "01",
+  "updatedAt": "2026-11-19T18:50:02.915Z"
+}

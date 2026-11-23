@@ -1,0 +1,222 @@
+<title>Pruebas del Cerebro</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+:root{--bg:#f6f4ef;--card:#fff;--fg:#1d1d1b;--mut:#5f5e5a;--line:#d8d4c8;--acc:#b4441f;--ok:#2f7a3a;--bad:#a32d2d;--warn:#8a5a00;--tag:#efeadf}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1b19;--card:#262522;--fg:#ecebe6;--mut:#a9a79f;--line:#3c3a35;--acc:#f0997b;--ok:#7fc48a;--bad:#f09595;--warn:#f2c26b;--tag:#33312c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1c1b19;--card:#262522;--fg:#ecebe6;--mut:#a9a79f;--line:#3c3a35;--acc:#f0997b;--ok:#7fc48a;--bad:#f09595;--warn:#f2c26b;--tag:#33312c;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font:15px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding-block:24px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:28px;margin:0 0 6px}h2{font-size:21px;margin:36px 0 10px;border-bottom:2px solid var(--fg);padding-bottom:4px}h3{margin:0 0 4px;font-size:17px}
+p{margin:6px 0}.mut{color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.test{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:start}
+@media(max-width:640px){.test{grid-template-columns:1fr}}
+.test>*{min-width:0}
+.id{display:inline-block;font-weight:800;font-size:18px;background:var(--fg);color:var(--bg);border-radius:6px;padding:0 8px;margin-right:8px}
+.tag{display:inline-block;font-size:12px;font-weight:700;border-radius:20px;padding:1px 10px;margin-left:6px;vertical-align:middle}
+.t-imp{background:#a32d2d;color:#fff}.t-pr{background:#854f0b;color:#fff}.t-fa{background:var(--tag);color:var(--mut)}
+.probes{margin:8px 0;display:grid;gap:4px}
+.pr{display:flex;gap:8px;align-items:center}.dot{width:16px;height:16px;border-radius:50%;flex:none;border:2px solid #fff;box-shadow:0 0 0 1px #888}
+.red{background:#d42020}.blk{background:#111}
+.res{border-radius:8px;padding:8px 12px;margin-top:8px;background:var(--tag)}
+.res b.ok{color:var(--ok)}.res b.bad{color:var(--bad)}
+.boardbox{overflow-x:auto;margin-top:8px}
+svg{display:block;max-width:100%;height:auto}
+.meas{margin-top:8px;padding:8px 12px;border-radius:8px;background:#dff0e0;color:#173404;border:1px solid #7fbf87}.meas.pend{background:#fff3d6;color:#633806;border-color:#e0b860}
+.quick{border-left:5px solid var(--acc);border-radius:0}
+table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+.tbl{overflow-x:auto}
+</style>
+<div class="wrap">
+<h1>Pruebas del Cerebro</h1>
+<p class="mut">Selector de planta · qué medir, cómo poner el multímetro y dónde va cada punta. Todos los dibujos están vistos <b>desde arriba</b> (lado de los componentes), con las bornas arriba y el USB de la ESP arriba.</p>
+
+<div class="card quick"><h3>Auditoría: estado</h3>
+<div class="tbl"><table><tr><th>Lo que decía la auditoría</th><th>Pruebas</th><th>Resultado</th></tr>
+<tr><td>M25 (GND entre IO19 e IO21) podría no ser masa</td><td>A3, A4</td><td>✔ <b>Falso.</b> Pitan: es masa.</td></tr>
+<tr><td>R2 y C1 mal unidas («en el mismo agujero»)</td><td>C2, C3, A9</td><td>✔ <b>Falso en el montaje.</b> 50 kΩ, sin corto, llega a IO25. Era un error de texto.</td></tr>
+<tr><td>D1 en serie con el LED del 4N35</td><td>D1, D2 (como está) · H1–H3 (después)</td><td><b>Cierto: es un fallo de diseño.</b> Soldado como se diseñó (D1 = 420, LED = 923). Falta moverlo a antiparalelo y verificar.</td></tr>
+<tr><td>CTR del 4N35, interruptores del VEO, GPIO25, textos</td><td>— (no se miden)</td><td>Errores de texto o recomendaciones. VEO: se mira en V1.</td></tr></table></div>
+<p><b>Lo único que queda de la auditoría:</b> mover D1 y hacer <a href="#H1">H1</a>, <a href="#H2">H2</a> y <a href="#H3">H3</a>. La ESP puede quedarse puesta.</p>
+<p class="mut">Opcional, para saber que el 4N35 no viene roto de fábrica (no es de la auditoría): <a href="#G2">G2</a> en frío (casi seguro) o <a href="#G1">G1</a> con el cargador (100 %).</p></div>
+<div class="card quick"><h3>¿ESP puesta o quitada?</h3>
+<p><b>1 · D1, R1 y patas 1–2 del 4N35</b> (pruebas C1, D1, D2, H1–H3): puedes <b>dejar la ESP puesta</b>. Ese lado del 4N35 no pasa por la ESP y no falsea nada.</p>
+<p><b>2 · Cortos y R2/C1</b> (pruebas B, C2, C3): mejor <b>sacar la ESP</b> (tirar recto hacia arriba). Con ella puesta puede pitar un instante o salir números raros por sus condensadores y su regulador. Si ya las hiciste con la ESP puesta y no pitó, valen igual: la ESP solo puede añadir lecturas, nunca quitarlas.</p>
+<p><b>3 · Masas</b> (pruebas A1, A3, A4): <b>solo con la ESP puesta</b>. Esos GND se unen dentro de la ESP; sin ella no pitan.</p><p><b>4 · Transistor del 4N35</b> (prueba G2): con la ESP <b>quitada</b>.</p><p><b>Al volver a ponerla:</b> misma posición que tenía, <b>USB hacia arriba</b> (hacia las bornas). Al revés se quema.</p></div>
+<div class="card quick"><h3>Ruta rápida</h3>
+<p>Haz como mínimo las marcadas <span class="tag t-imp">imprescindible</span> y <span class="tag t-pr">importante</span>. Las <span class="tag t-fa">para buscar fallos</span> solo hacen falta si algo no funciona.</p>
+<p><b>Orden:</b> Fase 1 sin corriente (A, B, C, D) → Fase 2 con corriente (E) → Fase 3 con el portero (F). No enchufes nada hasta que B1 y B2 salgan bien.</p></div>
+
+<h2>Resultados (23-11-2026)</h2><div class="card"><div class="tbl" id="sumTbl"></div></div>
+<h2>0 · Cómo se pone el multímetro</h2>
+<div class="card"><div class="test"><div id="mmLegend"></div><div>
+<p><b>Cable negro</b> siempre en el agujero <b>COM</b>. <b>Cable rojo</b> siempre en el agujero <b>VΩ</b> (el que tiene V y Ω; nunca en el de 10A ni en el de mA).</p>
+<table><tr><th>Posición de la rueda</th><th>Para qué</th><th>Qué verás</th></tr>
+<tr><td><b>•)))</b> pitido</td><td>Ver si dos puntos están unidos</td><td>Pita = unidos. No pita = no unidos</td></tr>
+<tr><td><b>→|</b> diodo</td><td>Diodos y el LED del 4N35</td><td>Un número (0,5–1,3) o OL</td></tr>
+<tr><td><b>Ω</b> resistencia</td><td>R1, R2, C1</td><td>kΩ</td></tr>
+<tr><td><b>V⎓</b> voltios continua (20 V)</td><td>5 V, 3,3 V, azul</td><td>Voltios</td></tr>
+<tr><td><b>V~</b> voltios alterna (200 V)</td><td>Verde cuando llaman</td><td>Voltios</td></tr></table>
+<p class="mut">En muchos multímetros •))) y →| están en la misma posición de la rueda y se cambia con el botón SELECT o FUNC.</p>
+<p><b>Comprueba el multímetro:</b> rueda en •))) y junta las dos puntas: tiene que pitar.</p>
+</div></div></div>
+
+<h2>1 · Las piezas que vas a tocar</h2>
+<div class="card"><h3>4N35 (el chip blanco de 6 patas)</h3><p>Visto desde arriba. El <b>punto</b> marca la pata 1. Las patas se cuentan en U: 1-2-3 bajando por el lado del punto, y 4-5-6 subiendo por el otro lado.</p><div id="chip"></div></div>
+<div class="card"><h3>El Cerebro (placa perforada) con todos los puntos de medida</h3><p>Bornas 1 a 9 de izquierda a derecha. La ESP va enchufada en las tiras hembra (barras negras). Con la ESP puesta, sus pines se tocan por arriba, en la soldadura de cada pin sobre la placa de la ESP (leyendo el nombre impreso). Con la ESP quitada, mete la punta en el agujero de la tira hembra correspondiente. <b>Ojo:</b> el pin justo debajo de 5V pone «GND» pero es CMD: no es masa.</p><div class="boardbox" id="overview"></div></div>
+<div class="card"><h3>Módulo de relés</h3><p>Se mide en los tornillos, leyendo el nombre impreso al lado de cada uno.</p><div id="modOverview"></div></div>
+
+<h2>2 · Preparación (Fase 1)</h2>
+<div class="card"><ol>
+<li>Desenchufa el cargador.</li>
+<li><b>Si ya hay cables de fuera conectados al Cerebro</b>, desatorníllalos (si no hay nada conectado, sáltate este paso): el <b>gris de la regleta</b> (borna 1), el que viene de <b>COM2</b> del módulo (borna 3) y el <b>azul</b> (borna 4). El cablecito entre la borna 1 y la 2 <b>se queda</b>.</li>
+<li>Negro en COM, rojo en VΩ.</li></ol></div>
+
+<div id="tests"></div>
+
+<h2>Si algo falla</h2>
+<div class="card"><p>Apunta el código de la prueba (por ejemplo B4) y lo que marca el multímetro, y dímelo. No sigas a la fase siguiente con un fallo en B.</p></div>
+</div>
+
+<script>
+const COLS='ZYXWVUTSRQPONMLKJIHGFEDCBA';
+const RP=['5V','CMD','D3','D2','IO13','GND','IO12','IO14','IO27','IO26','IO25','IO33','IO32','IO35','IO34','VN','VP','EN','3V3'];
+const LP=['CLK','D0','D1','IO15','IO2','IO0','IO4','IO16','IO17','IO5','IO18','IO19','GND','IO21','RX','TX','IO22','IO23','GND'];
+const BOR={X2:'1',V2:'2',S2:'3',Q2:'4',N2:'5',L2:'6',F2:'7',D2:'8',B2:'9'};
+const BNAME={X2:'gris',V2:'gris',S2:'verde',Q2:'azul',N2:'GND',L2:'interr.',F2:'IN2',D2:'IN1',B2:'+5V'};
+const hp=h=>[COLS.indexOf(h[0]),+h.slice(1)];
+function board(marks,opts={}){
+  const P=17,ox=80,oy=70,nC=26,nR=31;const X=c=>ox+P*c,Y=r=>oy+P*(r-1);const pt=h=>{const[c,r]=hp(h);return[X(c),Y(r)]};
+  const W=ox+P*25+120,H=oy+P*30+40;
+  let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" style="width:100%;max-width:${W}px" xmlns="http://www.w3.org/2000/svg" font-family="system-ui,sans-serif">`;
+  s+=`<rect x="${ox-16}" y="${oy-18}" width="${P*25+32}" height="${P*30+36}" rx="8" fill="#e8d9a8" stroke="#9a8a5a"/>`;
+  for(let c=0;c<nC;c++)for(let r=1;r<=nR;r++)s+=`<circle cx="${X(c)}" cy="${Y(r)}" r="2" fill="#b9a874"/>`;
+  // ESP
+  const xL=X(13)-10,xR=X(23)+10;s+=`<rect x="${xL}" y="${Y(13)-22}" width="${xR-xL}" height="${Y(31)-Y(13)+40}" rx="6" fill="#1f3d55" opacity=".88"/>`;
+  s+=`<rect x="${(xL+xR)/2-14}" y="${Y(13)-34}" width="28" height="16" rx="3" fill="#888"/><text x="${(xL+xR)/2}" y="${Y(13)-38}" text-anchor="middle" font-size="10" fill="#333">USB</text>`;
+  s+=`<text x="${(xL+xR)/2}" y="${Y(22)}" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">ESP32</text><text x="${(xL+xR)/2}" y="${Y(23)}" text-anchor="middle" font-size="9.5" fill="#cfe">en tiras hembra</text>`;
+  RP.forEach((n,i)=>{const[x,y]=pt('C'+(i+13));s+=`<circle cx="${x}" cy="${y}" r="3.6" fill="#d9d9d9"/><text x="${x-7}" y="${y+3.5}" text-anchor="end" font-size="9.5" fill="#fff" font-family="monospace">${n}${n==='CMD'?'*':''}</text>`});
+  LP.forEach((n,i)=>{const[x,y]=pt('M'+(i+13));s+=`<circle cx="${x}" cy="${y}" r="3.6" fill="#d9d9d9"/><text x="${x+7}" y="${y+3.5}" font-size="9.5" fill="#fff" font-family="monospace">${n}</text>`});
+  // bornas
+  [['Y','U','#3f9a6a','J5'],['T','P','#4f83c6','J4'],['O','K','#3f9a6a','J3'],['G','A','#4f83c6','J1']].forEach(([a,b,f,n])=>{const x1=X(COLS.indexOf(a))-8,x2=X(COLS.indexOf(b))+8;s+=`<rect x="${x1}" y="${Y(1)-8}" width="${x2-x1}" height="${P*2+16}" rx="4" fill="${f}"/><text x="${(x1+x2)/2}" y="${Y(1)-22}" text-anchor="middle" font-size="11" fill="#444">${n}</text>`;});
+  Object.entries(BOR).forEach(([h,n])=>{const[x,y]=pt(h);s+=`<circle cx="${x}" cy="${y}" r="8" fill="#ddd" stroke="#333"/><text x="${x}" y="${y+4}" text-anchor="middle" font-size="11" font-weight="800">${n}</text><text x="${x}" y="${Y(1)-34}" text-anchor="middle" font-size="9" fill="#555">${BNAME[h]}</text>`;});
+  // parts
+  const ln=(a,b,c,w)=>{const[x1,y1]=pt(a),[x2,y2]=pt(b);return`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${c}" stroke-width="${w}" stroke-linecap="round"/>`};
+  s+=ln('S4','T7','#8a8f98',2)+ln('T7','V13','#8a8f98',2)+ln('Q4','Q9','#8a8f98',2)+ln('Q9','P11','#8a8f98',2);
+  const mid=(a,b)=>{const[x1,y1]=pt(a),[x2,y2]=pt(b);return[(x1+x2)/2,(y1+y2)/2]};
+  {const[x,y]=mid('S4','T7');s+=`<rect x="${x-5}" y="${y-11}" width="10" height="22" rx="4" fill="#5b8fd0" transform="rotate(-18 ${x} ${y})"/><text x="${x-10}" y="${y+4}" text-anchor="end" font-size="10" font-weight="700">R1</text>`;}
+  {const[x,y]=mid('T7','V13');s+=`<rect x="${x-4}" y="${y-10}" width="8" height="20" rx="3" fill="#222" transform="rotate(-23 ${x} ${y})"/><text x="${x-10}" y="${y+4}" text-anchor="end" font-size="10" font-weight="700">D1</text>`;}
+  {const[x,y]=mid('Q4','Q9');s+=`<rect x="${x-6}" y="${y-13}" width="12" height="26" rx="4" fill="#5b8fd0"/><text x="${x+10}" y="${y+4}" font-size="10" font-weight="700">R2</text>`;}
+  {const[x,y]=mid('Q9','P11');s+=`<rect x="${x-8}" y="${y-10}" width="16" height="20" rx="5" fill="#222"/><text x="${x+12}" y="${y+4}" font-size="10" font-weight="700">C1</text>`;}
+  {const[x1,y1]=pt('V13'),[x2,y2]=pt('S15');s+=`<rect x="${x1-8}" y="${y1-9}" width="${x2-x1+16}" height="${y2-y1+18}" rx="3" fill="#f4f2ec" stroke="#555"/><circle cx="${x1+3}" cy="${y1-3}" r="2.5" fill="#555"/>`;
+   [['V13','1'],['V14','2'],['V15','3'],['S15','4'],['S14','5'],['S13','6']].forEach(([h,n])=>{const[x,y]=pt(h);const l=h[0]==='V';s+=`<circle cx="${x}" cy="${y}" r="3.2" fill="#999"/><text x="${l?x-6:x+6}" y="${y+3.5}" text-anchor="${l?'end':'start'}" font-size="10" font-weight="800">${n}</text>`;});}
+  // marks
+  const PN={};RP.forEach((n,i)=>PN['C'+(i+13)]=[n,'r']);LP.forEach((n,i)=>PN['M'+(i+13)]=[n,'l']);
+  (marks||[]).forEach((m,i)=>{const[x,y]=pt(m.at);const col={r:'#d42020',k:'#111',p:'#d97706',n:'#1f5fbf'}[m.c];const LBL={r:'ROJA',k:'NEGRA',p:'+ cargador',n:'− cargador'}[m.c];
+    const[ci,ri]=hp(m.at);const close=i<2&&marks.length>1&&Math.abs(pt(marks[0].at)[1]-pt(marks[1].at)[1])<30&&Math.abs(pt(marks[0].at)[0]-pt(marks[1].at)[0])<60;
+    const up=close?(pt(m.at)[1]<=pt(marks[1-i].at)[1]?-1:1):(i>=2?(i===2?-1:1)*0:0);let lx,ly;if(ri<=2&&i>=2){lx=m.c==='n'?x-112:x+14;ly=Y(1)-44;}else if(ri<=2){lx=x-49;ly=Y(1)-44-(close&&i?0:0);if(close)lx=x+(i?10:-108);}else if(ci>=22){lx=W-100;ly=y+up*14;}else if('SRQP'.includes(m.at[0])){lx=x+18;ly=y+up*14;}else{lx=x-(PN[m.at]?40:22)-98;ly=y+up*14;}
+    s+=`<path d="M${x} ${y}L${lx+(lx<x?94:0)} ${ly}" stroke="${col}" stroke-width="2" fill="none"/>`;
+    const LX=lx+4;
+    s+=`<circle cx="${x}" cy="${y}" r="12" fill="none" stroke="${col}" stroke-width="3"/><circle cx="${x}" cy="${y}" r="5" fill="${col}" stroke="#fff" stroke-width="1.5"/>`;
+    s+=`<rect x="${LX-4}" y="${ly-10}" width="94" height="20" rx="4" fill="${col}"/><text x="${LX+43}" y="${ly+4}" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">${LBL}</text>`;
+    if(PN[m.at]){const[n,side]=PN[m.at];const tx=side==='r'?x-16:x+16;const w=n.length*7+8;s+=`<rect x="${side==='r'?tx-w:tx-2}" y="${y-8}" width="${w}" height="16" rx="3" fill="#ffe14d"/><text x="${side==='r'?tx-4:tx+2}" y="${y+4}" text-anchor="${side==='r'?'end':'start'}" font-size="11" font-weight="800" font-family="monospace" fill="#000">${n}</text>`;}
+  });
+  if(opts.all){[['T7','unión R1–D1'],['Q9','unión R2–C1 (pata larga)'],['P11','pata corta C1']].forEach(([h,t])=>{const[x,y]=pt(h);s+=`<circle cx="${x}" cy="${y}" r="4" fill="#c33"/><text x="${x+8}" y="${y+14}" font-size="9.5" fill="#333">${t}</text>`;});}
+  return s+'</svg>';
+}
+const MODP={NO2:[0,0],COM2:[0,1],NC2:[0,2],NO1:[0,4],COM1:[0,5],NC1:[0,6],IN2:[1,1],IN1:[1,2],'DC−':[1,4],'DC+':[1,5]};
+function modulo(marks){const W=520,H=300;let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" style="width:100%;max-width:${W}px" font-family="system-ui,sans-serif">`;
+  s+=`<rect x="120" y="20" width="280" height="250" rx="8" fill="#1f4f8a"/><text x="260" y="140" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">Módulo de relés</text><rect x="160" y="40" width="90" height="70" rx="4" fill="#2d6fc0"/><text x="205" y="80" text-anchor="middle" fill="#fff" font-size="12">Relé 2</text><rect x="160" y="175" width="90" height="70" rx="4" fill="#2d6fc0"/><text x="205" y="215" text-anchor="middle" fill="#fff" font-size="12">Relé 1</text>`;
+  const pos=n=>{const[c,r]=MODP[n];return[c?400:120,40+r*33]};
+  Object.keys(MODP).forEach(n=>{const[x,y]=pos(n);s+=`<circle cx="${x}" cy="${y}" r="9" fill="#ddd" stroke="#333"/><text x="${MODP[n][0]?x+16:x-16}" y="${y+4}" text-anchor="${MODP[n][0]?'start':'end'}" font-size="12" font-weight="700" fill="currentColor">${n}</text>`;});
+  (marks||[]).forEach((m,i)=>{const[x,y]=pos(m.at);const col=m.c==='r'?'#d42020':'#111';s+=`<circle cx="${x}" cy="${y}" r="15" fill="none" stroke="${col}" stroke-width="3"/><circle cx="${x}" cy="${y}" r="6" fill="${col}" stroke="#fff" stroke-width="1.5"/><text x="${x+(MODP[m.at][0]?-20:20)}" y="${y-14}" text-anchor="${MODP[m.at][0]?'end':'start'}" font-size="12" font-weight="800" fill="${col}" stroke="#fff" stroke-width="3" paint-order="stroke">${m.c==='r'?'ROJA':'NEGRA'}</text>`;});
+  return s+'</svg>';}
+const DIAL={cont:'•)))',diode:'→|',ohm:'Ω',vdc:'V⎓',vac:'V~',none:''};
+function mm(sel){const ks=['cont','diode','ohm','vdc','vac'];let s=`<svg viewBox="0 0 150 200" width="150" font-family="system-ui,sans-serif"><rect x="5" y="5" width="140" height="190" rx="14" fill="#f2c230" stroke="#6b5310"/><rect x="20" y="16" width="110" height="32" rx="4" fill="#cfd8c4" stroke="#555"/>`;
+  s+=`<text x="75" y="38" text-anchor="middle" font-size="15" font-family="monospace" fill="#222">${sel==='cont'?'pita':sel==='diode'?'0.6':sel==='ohm'?'kΩ':sel?'V':''}</text>`;
+  s+=`<circle cx="75" cy="105" r="32" fill="#333"/>`;
+  ks.forEach((k,i)=>{const a=(-150+i*75)*Math.PI/180;const x=75+46*Math.cos(a),y=105+46*Math.sin(a);const on=k===sel;
+    s+=`<text x="${x}" y="${y+4}" text-anchor="middle" font-size="${on?14:11}" font-weight="${on?900:500}" fill="${on?'#b00':'#333'}">${DIAL[k]}</text>`;
+    if(on)s+=`<line x1="75" y1="105" x2="${75+28*Math.cos(a)}" y2="${105+28*Math.sin(a)}" stroke="#fff" stroke-width="5" stroke-linecap="round"/>`;});
+  s+=`<circle cx="45" cy="172" r="9" fill="#111"/><text x="45" y="192" text-anchor="middle" font-size="10">COM</text><circle cx="105" cy="172" r="9" fill="#d42020"/><text x="105" y="192" text-anchor="middle" font-size="10">VΩ</text>`;
+  return s+'</svg>';}
+document.getElementById('mmLegend').innerHTML=mm('cont');
+// chip grande
+document.getElementById('chip').innerHTML=(()=>{const W=640,H=270;let s=`<svg viewBox="0 0 ${W} ${H}" width="${W}" style="width:100%;max-width:${W}px" font-family="system-ui,sans-serif">`;
+ s+=`<rect x="250" y="40" width="140" height="190" rx="8" fill="#f4f2ec" stroke="#333" stroke-width="2"/><circle cx="272" cy="62" r="8" fill="#555"/><text x="320" y="140" text-anchor="middle" font-size="18" font-weight="800">4N35</text><text x="320" y="160" text-anchor="middle" font-size="11" fill="#555">visto desde arriba</text>`;
+ const L=[['1','R1 · franja de D1','pata 1 · LED +'],['2','borna 2 (gris) · lado negro de D1 (cuando lo muevas)','pata 2 · LED −'],['3','nada','pata 3']],R=[['6','nada','pata 6'],['5','IO4 de la ESP','pata 5 · salida'],['4','GND (M25)','pata 4 · masa']];
+ L.forEach((p,i)=>{const y=75+i*60;s+=`<rect x="226" y="${y-8}" width="24" height="16" fill="#aaa"/><text x="214" y="${y+6}" text-anchor="end" font-size="22" font-weight="900">${p[0]}</text><text x="190" y="${y-2}" text-anchor="end" font-size="12" font-weight="700">${p[2]}</text><text x="190" y="${y+14}" text-anchor="end" font-size="12" fill="#555">→ ${p[1]}</text>`;});
+ R.forEach((p,i)=>{const y=75+i*60;s+=`<rect x="390" y="${y-8}" width="24" height="16" fill="#aaa"/><text x="426" y="${y+6}" font-size="22" font-weight="900">${p[0]}</text><text x="450" y="${y-2}" font-size="12" font-weight="700">${p[2]}</text><text x="450" y="${y+14}" font-size="12" fill="#555">→ ${p[1]}</text>`;});
+ s+=`<text x="320" y="258" text-anchor="middle" font-size="12" fill="#555">La 6 está enfrente de la 1 · la 5 enfrente de la 2 · la 4 enfrente de la 3</text>`;return s+'</svg>';})();
+document.getElementById('overview').innerHTML=board([], {all:true});
+document.getElementById('modOverview').innerHTML=modulo([]);
+
+const B=n=>({X2:1,V2:2,S2:3,Q2:4,N2:5,L2:6,F2:7,D2:8,B2:9})[n];
+const T=[];
+const sec=(h,p)=>T.push({sec:h,p});
+const t=(o)=>T.push(o);
+const IMP='imp',PR='pr',FA='fa';
+sec('Fase 1 · Sin corriente','Cargador desenchufado. Sin cables de fuera en las bornas 1, 3 y 4 (ver Preparación).');
+sec('B · Cortocircuitos: NO tiene que pitar','Mejor con la ESP quitada (ver «¿ESP puesta o quitada?»). Rueda en •))). Si pita de forma continua hay estaño haciendo puente: para y búscalo. Si sale un número sin pitar, está bien (son componentes internos de la ESP). Si se enciende el LED de la ESP al medir, también es normal: el multímetro la alimenta un poco.');
+t({id:'B1',pr:IMP,d:'cont',r:'B2',k:'N2',txt:'+5 V contra GND',rd:'borna 9 (+5V)',kd:'borna 5 (GND)',ok:'No pita (o un pitido muy corto al tocar, por los condensadores de la ESP)',bad:'Pita fijo: cortocircuito en 5 V. NO enchufes.'});
+t({id:'B2',pr:IMP,d:'cont',r:'C31',k:'C18',txt:'3,3 V contra GND',rd:'pin 3V3 (abajo del todo, derecha)',kd:'pin GND de la derecha (debajo de IO13)',ok:'No pita (o pitido muy corto al tocar)',bad:'Pita fijo: cortocircuito en 3,3 V. NO enchufes.'});
+[['V2','S2'],['S2','Q2'],['Q2','N2'],['N2','L2'],['L2','F2'],['F2','D2'],['D2','B2']].forEach(([a,b],i)=>t({id:'B3'+'abcdefg'[i],pr:PR,d:'cont',r:a,k:b,txt:`Bornas vecinas ${B(a)} y ${B(b)}`,rd:`borna ${B(a)}`,kd:`borna ${B(b)}`,ok:'No pita',bad:`Pita: estaño uniendo las bornas ${B(a)} y ${B(b)} por debajo.`}));
+[['B4a','C17','C16','IO13','D2'],['B4b','C17','C18','IO13','GND (debajo de IO13)'],['B5a','C21','C20','IO27','IO14'],['B5b','C21','C22','IO27','IO26'],['B6','C22','C23','IO26','IO25'],['B7','C23','C24','IO25','IO33'],['B8','C13','C14','5V','CMD* (pone GND, no lo es)'],['B9a','M19','M18','IO4','IO0'],['B9b','M19','M20','IO4','IO16'],['B10a','M25','M24','GND (entre IO19 e IO21)','IO19'],['B10b','M25','M26','GND (entre IO19 e IO21)','IO21'],['B11','M31','M30','GND (abajo, izquierda)','IO23']].forEach(([id,a,b,na,nb])=>t({id,pr:PR,d:'cont',r:a,k:b,txt:`Pines vecinos de la ESP: ${na.split(' ')[0]} y ${nb.split(' ')[0]}`,rd:'pin '+na,kd:'pin '+nb,ok:'No pita',bad:'Pita: estaño uniendo esos dos pines.'}));
+t({id:'B12',pr:PR,d:'cont',r:'S14',k:'S15',txt:'4N35: pata 5 y pata 4',rd:'pata 5 del 4N35',kd:'pata 4 del 4N35',ok:'No pita',bad:'Pita: estaño entre las patas 5 y 4.'});
+sec('A · Cada cable llega a su sitio: TIENE que pitar','A1, A3 y A4 solo pitan con la ESP puesta. Rueda en •))). Si alguno no pita, ese cable o esa soldadura está mal.');
+t({id:'A1',pr:FA,d:'cont',r:'N2',k:'X2',txt:'Masa: borna 5 con borna 1',rd:'borna 5',kd:'borna 1',ok:'Pita',bad:'No pita: falla el cable negro de alguna de las dos bornas a la ESP.'});
+t({id:'A2',pr:FA,d:'cont',r:'X2',k:'V2',txt:'El cablecito entre las bornas 1 y 2',rd:'borna 1',kd:'borna 2',ok:'Pita',bad:'No pita: falta o está suelto el cablecito.'});
+t({id:'A3',pr:PR,d:'cont',r:'C18',k:'M25',txt:'Los GND de la ESP están unidos (1)',rd:'GND de la derecha (debajo de IO13)',kd:'GND de la izquierda (entre IO19 e IO21)',ok:'Pita',bad:'No pita: en tu clon ese pin no es GND. Dímelo.'});
+t({id:'A4',pr:PR,d:'cont',r:'M25',k:'M31',txt:'Los GND de la ESP están unidos (2)',rd:'GND entre IO19 e IO21',kd:'GND de abajo a la izquierda',ok:'Pita',bad:'No pita: dímelo.'});
+[['A5','B2','C13','borna 9','pin 5V'],['A6','D2','C17','borna 8','pin IO13'],['A7','F2','C21','borna 7','pin IO27'],['A8','L2','C22','borna 6','pin IO26']].forEach(([id,a,b,na,nb])=>t({id,pr:FA,d:'cont',r:a,k:b,txt:`${na} con ${nb}`,rd:na,kd:nb,ok:'Pita',bad:'No pita: el cable entre los dos está suelto o mal soldado.'}));
+t({id:'A9',pr:FA,d:'cont',r:'P11',k:'C23',txt:'Pata corta del condensador con IO25',rd:'pata corta de C1',kd:'pin IO25',ok:'Pita',bad:'No pita: falla el cable azul.'});
+t({id:'A10',pr:FA,d:'cont',r:'S14',k:'M19',txt:'Pata 5 del 4N35 con IO4',rd:'pata 5 del 4N35',kd:'pin IO4',ok:'Pita',bad:'No pita: falla el cable blanco.'});
+t({id:'A11',pr:FA,d:'cont',r:'S15',k:'M25',txt:'Pata 4 del 4N35 con GND',rd:'pata 4 del 4N35',kd:'GND entre IO19 e IO21',ok:'Pita',bad:'No pita: falla el cable negro.'});
+t({id:'A12',pr:FA,d:'cont',r:'L2',k:'N2',txt:'El interruptor',rd:'borna 6',kd:'borna 5',ok:'Interruptor en selector: pita. En normal: no pita.',bad:'Si no cambia al mover el interruptor, está mal conectado.'});
+t({id:'A13a',pr:FA,d:'cont',mod:1,r:'COM1',k:'COM2',txt:'Módulo: el puente entre COM1 y COM2',rd:'COM1',kd:'COM2',ok:'Pita',bad:'No pita: falta el puente.'});
+t({id:'A13b',pr:FA,d:'cont',mod:1,r:'COM1',k:'NC1',txt:'Módulo: relé 1 en reposo',rd:'COM1',kd:'NC1',ok:'Pita',bad:'No pita: el cable está en NO1 en vez de NC1.'});
+t({id:'A13c',pr:FA,d:'cont',mod:1,r:'COM2',k:'NC2',txt:'Módulo: relé 2 en reposo',rd:'COM2',kd:'NC2',ok:'Pita',bad:'No pita: el cable está en NO2 en vez de NC2.'});
+sec('C · Resistencias y condensador','C1 con la ESP puesta o quitada; C2 y C3 mejor con la ESP quitada. Rueda en Ω (2k para C1; 200k para C2 y C3; o automático).');
+t({id:'C1',pr:FA,d:'ohm',r:'S2',k:'T7',txt:'R1 (1 kΩ)',rd:'borna 3',kd:'unión de las patas de R1 y D1',ok:'Entre 0,95 y 1,05 kΩ',bad:'Otro valor: R1 equivocada o mal soldada.'});
+t({id:'C2',pr:FA,d:'ohm',r:'Q2',k:'Q9',txt:'R2 (las dos de 100 kΩ juntas)',rd:'borna 4',kd:'pata larga del condensador',ok:'Unos 50 kΩ',bad:'100 kΩ: una de las dos resistencias no hace contacto.'});
+t({id:'C3',pr:FA,d:'ohm',r:'Q9',k:'P11',txt:'Condensador C1 sin corto',rd:'pata larga de C1',kd:'pata corta de C1',ok:'El número va subiendo, o sale OL',bad:'0: condensador en corto.'});
+sec('D · D1 y el LED del 4N35','Puedes dejar la ESP puesta. Rueda en →|. Aquí SÍ importa qué punta va en cada sitio. Valores con D1 como está ahora (en serie).');
+t({id:'D1',pr:FA,d:'diode',r:'T7',k:'V13',txt:'Diodo D1',rd:'unión de las patas de R1 y D1',kd:'pata 1 del 4N35',ok:'Entre 0,5 y 0,7. Con las puntas al revés: OL',bad:'OL en los dos sentidos: D1 roto o suelto. Al revés de lo esperado: D1 girado.'});
+t({id:'D2',pr:FA,d:'diode',r:'V13',k:'V14',txt:'LED del 4N35',rd:'pata 1 del 4N35',kd:'pata 2 del 4N35',ok:'Entre 0,9 y 1,3. Con las puntas al revés: OL',bad:'OL en los dos sentidos: 4N35 mal soldado o girado.'});
+sec('G · El 4N35 no viene roto (opcional, no es de la auditoría)','G2 se hace en frío con la ESP quitada. G1 necesita el cargador. Sin la corriente de la ESP: la borna 9 sin nada. Rueda en →|. Necesitas el cargador con su ficha (rojo = +, negro = −).');
+t({id:'G1',pr:FA,d:'diode',r:'S14',k:'S15',ex:[{at:'V2',c:'n'},{at:'S2',c:'p'}],txt:'El 4N35 conmuta (opcional, con el cargador)',rd:'pata 5 del 4N35 (déjala quieta)',kd:'pata 4 del 4N35 (déjala quieta)',noProbe:'1) Ata el − del cargador (cable negro de la ficha) al tornillo de la <b>borna 2</b>. 2) Pon las puntas y apunta lo que marca. 3) Enchufa el cargador y <b>toca</b> con el + (cable rojo de la ficha) el tornillo de la <b>borna 3</b>; luego suelta. Pasan unos 3–4 mA por R1: no hay riesgo.',ok:'Sin tocar: OL o un número alto (con la ESP puesta puede salir un número, es su diodo interno). Al tocar la borna 3 con el +: la lectura <b>baja claramente</b>, y vuelve al soltar. Sacando la ESP de las tiras la lectura es más limpia: OL sin tocar.',bad:'No cambia al tocar: el 4N35 no conmuta, o no llega corriente al LED (repite C1 y D1/D2).'});
+t({id:'G2',pr:FA,d:'diode',r:'S13',k:'S15',txt:'Transistor del 4N35 (opcional, sin corriente, ESP quitada)',rd:'pata 6 del 4N35',kd:'pata 4 (y luego la pata 5)',ok:'Unos 600–750 hacia la pata 4 y hacia la pata 5. Con las puntas al revés: OL.',bad:'OL en todos los sentidos: transistor abierto. Si da bien, el chip casi seguro está sano; el 100 % solo lo da G1.'});
+sec('H · Después de mover D1','Cambio: desuelda D1. Une la pata de abajo de R1 directamente a la pata 1 del 4N35. Suelda D1 entre la pata 1 (lado de la FRANJA) y la pata 2 (lado NEGRO). Luego mide sin corriente. Puedes dejar la ESP puesta.');
+t({id:'H1',pr:IMP,d:'ohm',r:'S2',k:'V13',txt:'R1 llega directa a la pata 1',rd:'borna 3',kd:'pata 1 del 4N35',ok:'Unos 1 kΩ (0,95–1,05)',bad:'Otro valor: R1 no llega bien a la pata 1.'});
+t({id:'H2',pr:IMP,d:'diode',r:'V13',k:'V14',txt:'LED del 4N35 (con D1 ya movido)',rd:'pata 1 del 4N35',kd:'pata 2 del 4N35',ok:'900–1300, como antes',bad:'400–700: D1 está al revés (franja en la pata 2). Dale la vuelta.'});
+t({id:'H3',pr:IMP,d:'diode',r:'V14',k:'V13',txt:'D1 en antiparalelo',rd:'pata 2 del 4N35',kd:'pata 1 del 4N35',ok:'400–700 (es D1)',bad:'OL: D1 suelto o al revés.'});
+t({id:'H4',pr:FA,d:'none',txt:'Repite G1 (opcional, con el cargador)',noProbe:'Haz otra vez la prueba G1 con D1 ya movido.',ok:'Igual que en G1: la lectura baja al tocar la borna 3 con el +.',bad:'No baja: D1 al revés (repite H2 y H3).'});
+sec('Fase 2 · Con corriente (E)','Solo si B1 y B2 están bien. Enchufa el cargador. Los cables de fuera siguen quitados.');
+t({id:'E1',pr:IMP,d:'none',txt:'Al enchufar',ok:'Los relés NO hacen clic.',bad:'Si hacen clic al enchufar, dímelo.',noProbe:'No se mide: escucha.'});
+t({id:'E2',pr:IMP,d:'vdc',r:'B2',k:'N2',txt:'Llegan los 5 V',rd:'borna 9',kd:'borna 5',ok:'Entre 4,9 y 5,2 V',bad:'0 V: cargador o ficha. Negativo (−5): rojo y negro cambiados en la ficha. Menos de 4,75: cargador flojo.'});
+t({id:'E3',pr:PR,d:'vdc',mod:1,r:'DC+',k:'DC−',txt:'5 V en el módulo',rd:'DC+',kd:'DC−',ok:'Igual que E2',bad:'0 V: fallan los cables de los Wago al módulo.'});
+t({id:'E4',pr:IMP,d:'vdc',r:'C31',k:'C18',txt:'3,3 V de la ESP',rd:'pin 3V3',kd:'pin GND de la derecha',ok:'Entre 3,2 y 3,4 V',bad:'Otro valor: desenchufa y dímelo.'});
+t({id:'E5',pr:PR,d:'none',mod:1,txt:'Relé 1 funciona',noProbe:'Sin multímetro. Desatornilla de la borna 8 el cable que va a IN1. Toca con la punta de ese cable el tornillo de la borna 9 (+5V). Luego vuelve a atornillarlo en la 8.',ok:'El relé 1 hace clic y se enciende su LED.',bad:'Sin clic: jumper del módulo mal o falta corriente en el módulo (E3).'});
+t({id:'E6',pr:PR,d:'none',mod:1,txt:'Relé 2 funciona',noProbe:'Igual con el cable de IN2: desatorníllalo de la borna 7, tócalo en el tornillo de la borna 9 y vuelve a atornillarlo en la 7.',ok:'El relé 2 hace clic y se enciende su LED.',bad:'Sin clic: igual que E5.'});
+sec('Fase 3 · Con el portero (F)','Desenchufa. Vuelve a atornillar: gris en la borna 1, el de COM2 en la 3 y el azul en la 4. Enchufa.');
+t({id:'V1',pr:PR,d:'none',txt:'Interruptores del Fermax VEO',noProbe:'No se mide: se mira en el teléfono VEO (planta baja).',ok:'SW1 en masa común (U− / F−). SW2 en E (llamada electrónica).',bad:'Si en F3 el VEO no suena: SW2 en Z.'});
+t({id:'F1',pr:PR,d:'vdc',r:'Q2',k:'X2',txt:'Azul del portero',rd:'borna 4',kd:'borna 1',ok:'Unos 10,6 V',bad:'0 V: el azul no llega o está en otra borna.'});
+t({id:'F2',pr:PR,d:'vdc',r:'S2',k:'X2',txt:'Verde en reposo',rd:'borna 3',kd:'borna 1',ok:'0 V',bad:'Otro valor: dímelo.'});
+t({id:'F3',pr:PR,d:'vac',r:'S2',k:'X2',txt:'Verde cuando llaman',rd:'borna 3',kd:'borna 1',ok:'Mientras alguien pulsa en la calle: unos 12 V. Y suenan los dos teléfonos.',bad:'Si el VEO no suena: su interruptor SW2 de E a Z.'});
+
+const RES={B1:['ok','No pita (se enciende el LED de la ESP: normal)'],B2:['ok','No pita'],B3a:['ok','No pita'],B3b:['ok','No pita'],B3c:['ok','No pita'],B3d:['ok','No pita'],B3e:['ok','No pita'],B3f:['ok','No pita'],B3g:['pend',''],B4a:['ok','No pita'],B4b:['ok','No pita'],B5a:['ok','No pita'],B5b:['ok','No pita'],B6:['ok','No pita'],B7:['ok','No pita'],B8:['ok','No pita'],B9a:['ok','No pita'],B9b:['ok','No pita'],B10a:['ok','No pita'],B10b:['ok','No pita'],B11:['ok','No pita'],B12:['pend',''],A3:['ok','Pita'],A4:['ok','Pita'],A9:['ok','Pita'],C2:['ok','50 kΩ'],C3:['ok','En 200k marca 0 (el condensador se carga despacio); en pitido no pita: sin corto'],D1:['ok','420 (0,42 V). Al revés: OL'],D2:['ok','923 (0,92 V). Falta confirmar que al revés sale OL'],G1:['pend',''],G2:['pend',''],H1:['pend',''],H2:['pend',''],H3:['pend',''],H4:['pend','']};
+const STX={ok:'✔ Medido · bien',pend:'Pendiente',bad:'✘ Mal'};
+const tagH=p=>p===IMP?'<span class="tag t-imp">imprescindible</span>':p===PR?'<span class="tag t-pr">importante</span>':'<span class="tag t-fa">para buscar fallos</span>';
+let h='';T.forEach(o=>{if(o.sec){h+=`<h2>${o.sec}</h2><p class="mut">${o.p}</p>`;return;}
+  const marks=o.r?[{at:o.r,c:'r'},{at:o.k,c:'k'},...(o.ex||[])]:[];
+  h+=`<div class="card" id="${o.id}"><div class="test"><div>${mm(o.d==='none'?'':o.d)}<p class="mut" style="text-align:center;margin:4px 0 0">${o.d==='none'?'—':'Rueda en <b>'+DIAL[o.d]+'</b>'}</p></div><div>`;
+  h+=`<h3><span class="id">${o.id}</span>${o.txt}${tagH(o.pr)}</h3>`;
+  if(o.r)h+=`<div class="probes"><div class="pr"><span class="dot red"></span><span><b>Punta ROJA:</b> ${o.rd}</span></div><div class="pr"><span class="dot blk"></span><span><b>Punta NEGRA:</b> ${o.kd}</span></div></div>`;
+  if(o.noProbe)h+=`<p>${o.noProbe}</p>`;
+  if(RES[o.id]&&RES[o.id][0]!=='pend')h+=`<div class="meas"><b>${STX[RES[o.id][0]]}</b> · 23-11-2026 · ${RES[o.id][1]}</div>`;else if(RES[o.id])h+=`<div class="meas pend"><b>Pendiente</b>${RES[o.id][1]?' · '+RES[o.id][1]:''}</div>`;
+  h+=`<div class="res"><b class="ok">Bien:</b> ${o.ok}<br><b class="bad">Mal:</b> ${o.bad}</div>`;
+  if(o.mod)h+=`<div class="boardbox">${modulo(marks)}</div>`;else if(o.r)h+=`<div class="boardbox">${board(marks)}</div>`;
+  h+=`</div></div></div>`;});
+document.getElementById('tests').innerHTML=h;
+{let r='<table><tr><th>Prueba</th><th>Qué</th><th>Estado</th><th>Medido</th></tr>';T.filter(o=>o.id&&RES[o.id]).forEach(o=>{const v=RES[o.id];r+=`<tr><td><a href="#${o.id}"><b>${o.id}</b></a></td><td>${o.txt}</td><td>${v[0]==='ok'?'✔ bien':'Pendiente'}</td><td>${v[1]||'—'}</td></tr>`});document.getElementById('sumTbl').innerHTML=r+'</table><p class="mut">Para cerrar la auditoría solo faltan H1, H2 y H3 (después de mover D1). G1, G2 y H4 son opcionales. B3g y B12 son de cortos y no son de la auditoría.</p>';}
+</script>

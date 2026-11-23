@@ -1,10 +1,12 @@
 ---
 title: Portero automático — timbre único para dos unidades
 created: 2026-09-14
-updated: 2026-09-15
+updated: 2026-11-23
 tags: [domotica, alquiler, portero-automatico]
 zona: tecnico
 ---
+
+> **Estado a 2026-11-23.** Ya hay un selector de planta montado (ESP32 + 2 relés NC + detector 4N35, placa soldada). Su diseño y la revisión contra la documentación oficial están en [[portero-selector-revision-2]]. Hilos, bornes, tensiones medidas y tipo de llamada: [[portero-hilos-y-senales]]. Las secciones de abajo son el análisis de septiembre; lo que ha resultado falso está corregido en su sitio.
 
 Dos sistemas de timbre distintos avisan hoy a las dos unidades de [[apartamentos-calle-uruguay]] a la vez cuando debería sonar solo en una: el portero automático del edificio (llamada desde la calle) y el timbre de la puerta del piso (llamada desde el rellano). Son problemas separados, con cableado y encaje legal distintos — no confundir uno con otro.
 
@@ -33,7 +35,7 @@ Se intercepta la llamada del portero antes de que timbre dentro. Un mensaje de v
 
 ### Cómo funciona la señal (Fermax analógico de ~30 años)
 
-Sistema **Fermax 4+N** (gama Citymax/City, el ubicuo de los 90): 4 hilos comunes para todo el edificio + 1 hilo de llamada exclusivo por vivienda. En la caja llegan **5 hilos**. Tabla de terminales del estándar (común a los universales Fermax y a Tegui/Golmar/Auta):
+Sistema **4+N** convencional: 4 hilos comunes para todo el edificio + 1 hilo de llamada exclusivo por vivienda. En la caja llegan **5 hilos** (medido). Que la placa sea Fermax lo dice el usuario, sin verificar abriéndola. Tabla de terminales Fermax; **Tegui numera distinto** (1 llamada, 2 masa, 3 abrepuertas, 4 micrófono, 5 altavoz), con la correspondencia y los colores en [[portero-hilos-y-senales]]:
 
 | Term | Función |
 |---|---|
@@ -43,9 +45,9 @@ Sistema **Fermax 4+N** (gama Citymax/City, el ubicuo de los 90): 4 hilos comunes
 | 4 | **Llamada** (hilo individual de la vivienda) |
 | 6 | Altavoz |
 
-**El sistema es de 12V en alterna.** La llamada llega como ~12V AC entre terminal 4 y 3. No hay direccionamiento digital ni teclado en la placa.
+~~El sistema es de 12V en alterna. La llamada llega como ~12V AC entre terminal 4 y 3.~~ **Falso (corregido 2026-11-23):** las líneas comunes están en continua (rojo 11,84 V, azul 10,6 V, amarillo 9,95 V contra gris, medido) y la llamada es **electrónica, 8–12 Vpp** según el manual Fermax del teléfono Citymax 4+N. Que la línea es electrónica se deduce de que en ella suena el Tegui 0E7020, de llamada electrónica. Detalle y fuentes en [[portero-hilos-y-senales]]. No hay direccionamiento digital ni teclado en la placa.
 
-**Dato crítico: no hay ningún raíl de alimentación aprovechable en la caja.** Los 4 comunes son abrepuertas, micro, común y altavoz — líneas de señal (las de audio pueden llevar algo de bias del amplificador de la placa, pero nada de lo que alimentar electrónica). El telefonillo antiguo es pasivo. Los 12VAC viven en la fuente del portal, en zona común. Consecuencia: **hay que llevar 230V propios al dispositivo, con o sin radio** — no hay nada que "cosechar" del bus, ni para un MCU de 1 mA. Aprovechar la energía de la propia señal de llamada tampoco sirve: solo está viva mientras el visitante aprieta, y el dispositivo necesita hablar durante segundos después de que la suelte.
+**Dato crítico: no hay ningún raíl de alimentación aprovechable en la caja.** Los 4 comunes son abrepuertas, micro, común y altavoz — líneas de señal (las de audio pueden llevar algo de bias del amplificador de la placa, pero nada de lo que alimentar electrónica). El telefonillo antiguo es pasivo. Los 12VAC viven en la fuente del portal, en zona común. Consecuencia: **hay que llevar alimentación propia al dispositivo** (en el diseño montado, un cargador de 5 V cuyo cable va por el tubo del portero; ver [[portero-selector-revision-2]]) — no hay nada que "cosechar" del bus, ni para un MCU de 1 mA. Aprovechar la energía de la propia señal de llamada tampoco sirve: solo está viva mientras el visitante aprieta, y el dispositivo necesita hablar durante segundos después de que la suelte.
 
 Esto tiene dos implicaciones:
 
@@ -65,7 +67,7 @@ Efecto colateral aprovechable: el terminal 6 da el micro de la placa de forma pe
 
 **Esquema de respuesta del visitante: prompt secuencial, se pulsa al oír la opción.** Evolución en dos pasos, ambos por corrección del usuario (2026-09-14):
 
-1. **Contar pulsaciones queda descartado.** Sobre 12V AC a 50 Hz, rectificar da 100 semiciclos por segundo: contar flancos no significa nada. Hay que **rectificar, filtrar y extraer la envolvente**, convertirlo en un nivel "llamada activa / no activa", y medir tiempo sobre ese nivel. Detección de presencia, no de eventos.
+1. **Contar pulsaciones queda descartado.** ~~Sobre 12V AC a 50 Hz, rectificar da 100 semiciclos por segundo~~ (la llamada es un tono electrónico, no 50 Hz; ver [[portero-hilos-y-senales]]): contar flancos no significa nada, y con un tono de kHz el 4N35 puede quedarse conduciendo entre ciclos. Hay que **rectificar, filtrar y extraer la envolvente**, convertirlo en un nivel "llamada activa / no activa", y medir tiempo sobre ese nivel. Detección de presencia, no de eventos.
 2. **Pero "silencio = opción A" también se cae**, porque si no hacer nada ya es una respuesta, el visitante que no se ha enterado no puede pedir que se repita.
 
 Esquema resultante:
@@ -103,7 +105,9 @@ Corolarios:
 
 **No hay paso crítico.** Versiones anteriores de esta nota inventaron un "riesgo de handover" importando el concepto de estado de llamada de los sistemas digitales modernos. En 4+N no existe: el audio está siempre disponible para cualquier telefonillo descolgado, el interceptor solo tiene que dejar de inyectar y energizar el hilo de llamada del elegido.
 
-**Failsafe: si el aparato falla, abre directamente.** Si se queda sin alimentación o se cuelga, la propia señal de llamada del portal acciona el abrepuertas (une 1 con 3) mientras el visitante pulsa, sin alimentación ni lógica. En ese estado no suena ningún telefonillo. Decisión del usuario (2026-09-15) frente a "suena en los dos". Viabilidad pendiente de medir la corriente que da el hilo 4 en [[portero-comprobaciones-en-sitio]]. Esto aplica solo a fallo del aparato — con el aparato vivo y el visitante sin responder, se cuelga (ver arriba).
+**Sustituido por el diseño montado (noviembre de 2026):** los teléfonos van por los contactos NC de los relés; si el aparato pierde la alimentación, suenan los dos, como antes de instalarlo. Un cuelgue del programa no basta para eso: hace falta watchdog (ver [[portero-selector-revision-2]]). Planteamiento original de septiembre:
+
+~~**Failsafe: si el aparato falla, abre directamente.**~~ Si se queda sin alimentación o se cuelga, la propia señal de llamada del portal acciona el abrepuertas (une 1 con 3) mientras el visitante pulsa, sin alimentación ni lógica. En ese estado no suena ningún telefonillo. Decisión del usuario (2026-09-15) frente a "suena en los dos". Viabilidad pendiente de medir la corriente que da el hilo 4 en [[portero-comprobaciones-en-sitio]]. Esto aplica solo a fallo del aparato — con el aparato vivo y el visitante sin responder, se cuelga (ver arriba).
 
 Modos previstos (cambiables por radio): `AUTO` (lógica de enrutado), `BOTH` (passthrough), `SOLO_1` / `SOLO_2` (un inquilino fuera), `DND`.
 
@@ -111,9 +115,9 @@ Modos previstos (cambiables por radio): `AUTO` (lógica de enrutado), `BOTH` (pa
 
 Funciones que necesita el aparato, sin piezas: [[portero-bloques-funcionales]].
 
-**Principio que manda sobre todo lo demás: aislamiento galvánico total.** Es un aparato alimentado de red conectado a una instalación comunitaria. Todo lo que cruce esa frontera va aislado — opto en entradas, contactos de relé en lo conmutado, transformador en el audio. Cero cobre compartido entre la placa y el bus del edificio. Seguro y defendible.
+~~**Principio que manda sobre todo lo demás: aislamiento galvánico total.**~~ **Ya no aplica (noviembre de 2026):** el diseño montado se alimenta de un cargador de 5 V con salida aislada de la red, y la masa de la ESP va unida al gris del portero, porque es necesario para inyectar el mensaje por el azul. Siguen aislados el detector (optoacoplador 4N35) y la conmutación (contactos de relé).
 
-Ninguna pieza elegida todavía.
+Piezas del diseño montado y su revisión: [[portero-selector-revision-2]].
 
 Dos compras baratas que ahorran semanas:
 
@@ -143,6 +147,8 @@ Timbre de la puerta de entrada de la vivienda, distinto del portero de calle. **
 
 ## Enlaces
 
+- [[portero-hilos-y-senales]]
+- [[portero-selector-revision-2]]
 - [[apartamentos-calle-uruguay]]
 - [[argumentario-frente-a-comunidad-y-vecinos]]
 - [[_index]]

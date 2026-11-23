@@ -1,0 +1,84 @@
+<style>
+#pl .t{font:400 14px var(--font-sans);fill:var(--text-primary)}
+#pl .ts{font:400 12px var(--font-sans);fill:var(--text-secondary)}
+#pl .th{font:500 14px var(--font-sans);fill:var(--text-primary)}
+#pl .w{font:500 12px var(--font-sans);fill:#fff}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.lg span{display:inline-flex;align-items:center;gap:6px}
+.lg i{display:inline-block;width:16px;height:4px;border-radius:2px}
+</style>
+<h2 class="sr-only">Plano de la placa perforada de 70 por 90 mm del selector de planta: piezas por arriba y uniones por debajo</h2>
+<svg id="pl" width="100%" viewBox="0 0 680 1000" role="img"><title>Placa del selector de planta</title><desc>Dos vistas de la placa perforada de 70 por 90 milímetros con agujeros nombrados por columna A a X y fila 1 a 30. Arriba, la posición del ESP32, los cuatro bornes, el condensador C1, el optoacoplador U1, la resistencia R1 y el diodo D1. Abajo, los cables y puentes que unen cada pin.</desc></svg>
+<div class="lg" style="display:flex;flex-wrap:wrap;gap:6px 18px;font-size:13px;color:var(--text-secondary);padding:4px 0 8px">
+<span><i style="background:#D23B33"></i>+5V</span>
+<span><i style="background:#8A8F94"></i>GND / masa</span>
+<span><i style="background:#7F77DD"></i>Órdenes a los relés</span>
+<span><i style="background:#C99300"></i>Interruptor</span>
+<span><i style="background:#2F6FD1"></i>Audio (azul)</span>
+<span><i style="background:#2E9B4F"></i>Llamada (verde) y detector</span>
+<span><i style="background:#B4B2A9;height:6px"></i>Puente de estaño o pata sobrante</span>
+</div>
+<script>
+const S=document.getElementById('pl'),NS='http://www.w3.org/2000/svg',L='ABCDEFGHIJKLMNOPQRSTUVWX',P=13,BX=60;
+function el(t,a,txt,par){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;(par||S).appendChild(e);return e;}
+const TB=[[2,4],[6,8],[11,13],[17,19,21]];
+function panel(oy,title){
+const X=c=>BX+10+L.indexOf(c)*P,Y=r=>oy+10+(r-1)*P,pt=s=>[X(s[0]),Y(+s.slice(1))];
+el('text',{class:'th',x:BX,y:oy-30},title);
+el('rect',{x:BX,y:oy,width:23*P+20,height:29*P+20,rx:6,fill:'#3C8A55','fill-opacity':.2,stroke:'#2E7D4F'});
+L.split('').forEach(c=>el('text',{class:'ts',x:X(c),y:oy+29*P+38,'text-anchor':'middle'},c));
+for(let r=1;r<=30;r++)el('text',{class:'ts',x:BX-6,y:Y(r)+4,'text-anchor':'end'},String(r));
+const g=el('g',{fill:'#B07D3A','fill-opacity':.5});
+L.split('').forEach(c=>{for(let r=1;r<=30;r++)el('circle',{cx:X(c),cy:Y(r),r:2.2},null,g);});
+[[2,'5V'],[6,'G13'],[7,'GND'],[10,'G27'],[11,'G26'],[13,'G33'],[14,'G32']].forEach(([r,n])=>el('text',{class:'ts',x:X('K')-9,y:Y(r)+4,'text-anchor':'end'},n));
+[[2,'J1 · +5V → relé DC+'],[4,'J1 · IN1 → relé IN1'],[6,'J2 · GND → relé DC−'],[8,'J2 · IN2 → relé IN2'],[11,'J3 · interruptor'],[13,'J3 · GND interruptor'],[17,'J4 · AZUL'],[19,'J4 · GRIS'],[21,'J4 · VERDE (del portal)']].forEach(([r,n])=>el('text',{class:'t',x:392,y:Y(r)+5},n));
+return {X,Y,pt};
+}
+const A=panel(80,'1 · Por arriba: dónde va cada pieza');
+(()=>{const {X,Y}=A;
+el('rect',{x:X('F')-9,y:60,width:18,height:12,rx:2,fill:'#9AA0A6'});
+el('text',{class:'ts',x:X('F')+14,y:70},'USB');
+el('rect',{x:X('A')-9,y:72,width:X('K')-X('A')+18,height:Y(22)+4-72,rx:4,style:'fill:var(--text-primary);fill-opacity:.07;stroke:var(--text-secondary);stroke-dasharray:5 4'});
+['A','K'].forEach(c=>el('rect',{x:X(c)-4,y:Y(2)-6,width:8,height:Y(20)-Y(2)+12,rx:1,fill:'#2A2A2A'}));
+el('text',{class:'th',x:X('F'),y:Y(16),'text-anchor':'middle'},'ESP32');
+el('text',{class:'ts',x:X('F'),y:Y(17.4),'text-anchor':'middle'},'pinchado en las');
+el('text',{class:'ts',x:X('F'),y:Y(18.6),'text-anchor':'middle'},'dos tiras hembra');
+TB.forEach(ps=>{el('rect',{x:X('V')-5,y:Y(ps[0])-12,width:X('X')-X('V')+10,height:Y(ps[ps.length-1])-Y(ps[0])+24,rx:2,fill:'#2F6FD1'});ps.forEach(p=>el('circle',{cx:X('W'),cy:Y(p),r:4.5,fill:'#E8E8E8',stroke:'#555'}));});
+const cy=(Y(14)+Y(15))/2;
+el('circle',{cx:X('O'),cy:cy,r:12.5,fill:'#2F4F8F',stroke:'#1C3260'});
+el('text',{class:'w',x:X('O'),y:cy+4,'text-anchor':'middle'},'C1');
+el('text',{class:'ts',x:X('O')+17,y:Y(14)+4},'−');
+el('text',{class:'ts',x:X('O')+17,y:Y(15)+4},'+');
+['M','P'].forEach(c=>[18,19,20].forEach(r=>el('rect',{x:X(c)-3,y:Y(r)-2,width:6,height:4,fill:'#BDBDBD'})));
+el('rect',{x:X('M')+3,y:Y(18)-9,width:X('P')-X('M')-6,height:Y(20)-Y(18)+18,rx:2,fill:'#1E1E1E'});
+el('circle',{cx:(X('M')+X('P'))/2,cy:Y(20)+9,r:4,fill:'#6E9C7B'});
+el('circle',{cx:X('P')-9,cy:Y(20)+2,r:2.4,fill:'#E0E0E0'});
+el('text',{class:'w',x:(X('M')+X('P'))/2,y:Y(19)+4,'text-anchor':'middle'},'U1');
+el('line',{x1:X('P'),y1:Y(21),x2:X('P'),y2:Y(25),stroke:'#9E9E9E','stroke-width':1.5});
+el('rect',{x:X('P')-6,y:Y(23)-16,width:12,height:32,rx:5,fill:'#C9A97A',stroke:'#8A6A3A'});
+el('text',{class:'ts',x:X('P')-12,y:Y(23)+4,'text-anchor':'end'},'R1');
+el('line',{x1:X('P'),y1:Y(26),x2:X('T'),y2:Y(26),stroke:'#9E9E9E','stroke-width':1.5});
+el('rect',{x:X('R')-13,y:Y(26)-7,width:26,height:14,rx:3,fill:'#1E1E1E'});
+el('rect',{x:X('R')-13,y:Y(26)-7,width:5,height:14,fill:'#D0D0D0'});
+el('text',{class:'ts',x:X('R'),y:Y(27.7),'text-anchor':'middle'},'D1');
+})();
+const B=panel(577,'2 · Por debajo: las uniones (vista a través de la placa)');
+(()=>{const {X,Y,pt}=B;
+const dash='fill:none;stroke:var(--text-secondary);stroke-dasharray:3 3';
+['A','K'].forEach(c=>el('rect',{x:X(c)-4,y:Y(2)-6,width:8,height:Y(20)-Y(2)+12,rx:1,style:dash}));
+TB.forEach(ps=>el('rect',{x:X('V')-5,y:Y(ps[0])-12,width:X('X')-X('V')+10,height:Y(ps[ps.length-1])-Y(ps[0])+24,rx:2,style:dash}));
+el('circle',{cx:X('O'),cy:(Y(14)+Y(15))/2,r:12.5,style:dash});
+el('rect',{x:X('M')+3,y:Y(18)-9,width:X('P')-X('M')-6,height:Y(20)-Y(18)+18,rx:2,style:dash});
+el('rect',{x:X('P')-6,y:Y(23)-16,width:12,height:32,rx:5,style:dash});
+el('rect',{x:X('R')-13,y:Y(26)-7,width:26,height:14,rx:3,style:dash});
+const W=(pts,col,w)=>el('polyline',{points:pts.map(s=>pt(s).join(',')).join(' '),fill:'none',stroke:col,'stroke-width':w||2.6,'stroke-linecap':'round','stroke-linejoin':'round'});
+W(['K2','W2'],'#D23B33');
+W(['K6','W4'],'#7F77DD');W(['K10','W8'],'#7F77DD');
+W(['K7','W6'],'#8A8F94');W(['W6','X6','X19','W19'],'#8A8F94');W(['W13','X13'],'#8A8F94');W(['M18','P19'],'#8A8F94');W(['P19','W19'],'#8A8F94');
+W(['K13','W11'],'#C99300');
+W(['K11','O14'],'#2F6FD1');W(['O15','W17'],'#2F6FD1');
+W(['K14','L14','L19','M19'],'#2E9B4F');W(['T26','W26','W21'],'#2E9B4F');
+W(['P20','P21'],'#B4B2A9',4.5);W(['P25','P26'],'#B4B2A9',4.5);
+['K2','K6','K7','K10','K11','K13','K14','W2','W4','W6','W8','W11','W13','W17','W19','W21','O14','O15','M18','M19','M20','P18','P19','P20','P21','P25','P26','T26'].forEach(s=>{const [x,y]=pt(s);el('circle',{cx:x,cy:y,r:3.6,fill:'#D9D9D9',stroke:'#666'});});
+})();
+</script>

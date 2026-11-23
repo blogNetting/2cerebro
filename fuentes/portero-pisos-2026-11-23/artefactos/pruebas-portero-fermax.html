@@ -1,0 +1,249 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Pruebas portero Fermax</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: cuaderno de mediciones; una columna de fichas por prueba, agrupadas por fase, barra de progreso fija arriba */
+:root{
+  --bg:#f3f4f1; --panel:#ffffff; --ink:#1d2124; --muted:#5d6468; --line:#d9dcd6;
+  --accent:#c99300; --accent-ink:#3d2c00; --accent-soft:#fbf1d2;
+  --ok:#2f7d4a; --ok-soft:#e3f2e8; --warn:#a4561a;
+  --w-amarillo:#e2bb1c; --w-verde:#2e9b4f; --w-azul:#2f6fd1; --w-rojo:#d23b33; --w-gris:#8a8f94;
+  --font-display:"Space Grotesk",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#15181a; --panel:#1d2124; --ink:#e8eae6; --muted:#a2a9ac; --line:#30363a;
+  --accent:#f0c040; --accent-ink:#f8e3a8; --accent-soft:#3a3018;
+  --ok:#6cc48a; --ok-soft:#1f3a29; --warn:#e3995c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15181a; --panel:#1d2124; --ink:#e8eae6; --muted:#a2a9ac; --line:#30363a;
+  --accent:#f0c040; --accent-ink:#f8e3a8; --accent-soft:#3a3018;
+  --ok:#6cc48a; --ok-soft:#1f3a29; --warn:#e3995c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:860px;margin:0 auto}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:16px 12px;border-bottom:1px solid var(--line)}
+h1{font-family:var(--font-display);font-weight:600;font-size:26px;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:2px 0 10px;font-size:14px}
+.bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.progress{flex:1 1 220px;height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.progress > i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.count{font-family:var(--font-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-size:14px;font-weight:500;padding:7px 12px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+button.primary{background:var(--accent);border-color:var(--accent);color:#1d1600}
+.status{font-size:13px;color:var(--muted)}
+.notice{margin:14px 0 0;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);font-size:14px}
+.notice[data-kind="warn"]{border-color:var(--warn);color:var(--warn)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin:16px 0 4px;font-size:13px;color:var(--muted)}
+.wire{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.wire::before{content:"";width:11px;height:11px;border-radius:50%;background:var(--c);border:1px solid rgba(0,0,0,.25)}
+section.fase{margin-top:28px}
+section.fase > h2{font-family:var(--font-display);font-weight:500;font-size:19px;margin:0 0 4px}
+section.fase > p{margin:0 0 12px;color:var(--muted);font-size:14px;max-width:65ch}
+.test{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-top:10px}
+.test.done{border-color:var(--ok)}
+.test-h{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.num{font-family:var(--font-mono);font-weight:500;font-size:13px;color:var(--accent-ink);background:var(--accent-soft);padding:1px 7px;border-radius:4px}
+.test-h h3{font-size:16px;font-weight:600;margin:0;flex:1 1 200px;min-width:0}
+.tick{font-size:12px;font-weight:500;color:var(--ok);background:var(--ok-soft);padding:1px 8px;border-radius:10px}
+.setup{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 4px;font-size:13px}
+.setup .k{color:var(--muted)}
+.mode{font-family:var(--font-mono);font-size:12.5px;border:1px solid var(--line);padding:1px 6px;border-radius:4px}
+ol.steps{margin:8px 0 10px;padding-left:20px;font-size:14px;max-width:70ch}
+ol.steps li{margin:2px 0}
+.fields{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px 12px}
+.field{display:flex;flex-direction:column;gap:3px;min-width:0}
+.field.wide{grid-column:1/-1}
+.field label{font-size:12px;font-weight:500;color:var(--muted);letter-spacing:.02em}
+.inp{display:flex;align-items:center;border:1px solid var(--line);border-radius:6px;background:var(--bg)}
+.inp input,.inp select,.inp textarea{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:inherit;padding:7px 9px}
+.inp input[type=number]{font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+.inp .u{font-family:var(--font-mono);font-size:12px;color:var(--muted);padding-right:9px}
+.inp textarea{resize:vertical;min-height:38px}
+.saved{font-size:12px;color:var(--muted);margin-top:8px;min-height:1em}
+#exportBox{margin-top:12px}
+#exportBox textarea{width:100%;min-height:160px;font-family:var(--font-mono);font-size:12px;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+@media (prefers-reduced-motion: reduce){.progress > i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Pruebas portero Fermax</h1>
+    <p class="sub">Instalación 4+N: comprobaciones antes de montar el selector de planta.</p>
+    <div class="bar">
+      <div class="progress" aria-hidden="true"><i id="progressFill"></i></div>
+      <span class="count" id="count">0 / 22</span>
+      <div class="actions">
+        <button id="btnCsv" class="primary" type="button">Descargar CSV</button>
+        <button id="btnJson" type="button">Descargar JSON</button>
+        <button id="btnShow" type="button">Ver datos</button>
+      </div>
+    </div>
+    <div class="status" id="syncStatus" aria-live="polite">Conectando con el guardado compartido…</div>
+  </header>
+
+  <div id="banner" class="notice" hidden></div>
+  <div id="exportBox" hidden>
+    <textarea id="exportText" readonly aria-label="Datos exportados en CSV"></textarea>
+    <div class="actions" style="margin-top:6px"><button id="btnCopy" type="button">Copiar</button><span class="status" id="copyStatus"></span></div>
+  </div>
+
+  <div class="legend" aria-label="Colores de los cables">
+    <span>Cables de la regleta:</span>
+    <span class="wire" style="--c:var(--w-amarillo)">Amarillo</span>
+    <span class="wire" style="--c:var(--w-verde)">Verde</span>
+    <span class="wire" style="--c:var(--w-azul)">Azul</span>
+    <span class="wire" style="--c:var(--w-rojo)">Rojo</span>
+    <span class="wire" style="--c:var(--w-gris)">Gris</span>
+  </div>
+  <p class="status">Punta negra en el agujero COM, punta roja en VΩ. Mide sobre los tornillos de la regleta. Nunca juntes dos cables entre sí.</p>
+
+  <main id="tests"></main>
+</div>
+
+<script>
+const COLORS=["Amarillo","Verde","Azul","Rojo","Gris"];
+const SINO=["Sí","No","No lo tengo claro"];
+const WIRE={Amarillo:"--w-amarillo",Verde:"--w-verde",Azul:"--w-azul",Rojo:"--w-rojo",Gris:"--w-gris"};
+const FASES={
+ 1:["Fase 1 · Tipo de tensión y cuánta","Todo colgado y sin que nadie llame. Cada prueba son dos medidas: primero continua, después alterna."],
+ 2:["Fase 2 · Identificar cada cable","Punta negra siempre en el cable masa que salga de la fase 1. Usa la escala que haya salido (continua o alterna)."],
+ 3:["Fase 3 · El audio en la calle","Con un móvil grabando sonido en el portal."],
+ 4:["Fase 4 · El sitio del aparato","Para saber dónde y cómo va la caja."]
+};
+const PAIRS=[["Gris","Amarillo"],["Gris","Verde"],["Gris","Azul"],["Gris","Rojo"],["Rojo","Amarillo"],["Rojo","Verde"],["Rojo","Azul"],["Azul","Amarillo"],["Azul","Verde"],["Verde","Amarillo"]];
+const TESTS=[];
+PAIRS.forEach((p,i)=>TESTS.push({id:String(i+1).padStart(2,"0"),fase:1,title:`${p[1]} contra ${p[0]}`,black:p[0],red:p[1],modes:["V⎓ 20 V","V~ 200 V"],
+ steps:["Multímetro en V⎓ (continua), escala 20 V. Apunta la lectura.","Cambia a V~ (alterna), escala 200 V o la más baja que tenga. Apunta la lectura.","Si en continua sale negativo, apúntalo con el signo: solo indica que las puntas están al revés."],
+ fields:[{k:"vdc",label:"V⎓ continua",type:"number",u:"V"},{k:"vac",label:"V~ alterna",type:"number",u:"V"},{k:"nota",label:"Nota",type:"text",wide:true}]}));
+TESTS.push(
+ {id:"10b",fase:1,title:"Conclusión de la fase 1",steps:["Mira la tabla: el color que aparece en todas las parejas con tensión es la masa.","Apunta también si la tensión que hay es continua o alterna."],
+  fields:[{k:"masa",label:"Color masa",type:"select",opts:COLORS},{k:"tipo",label:"Tipo de tensión",type:"select",opts:["Continua","Alterna","Mezcla / no claro"]},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"11",fase:2,title:"Hilo 1 · abrepuertas",black:"masa",modes:["la escala de la fase 1"],
+  steps:["Descuelga el telefonillo.","Pon la roja, uno a uno, en los otros cuatro colores y apunta la tensión.","Con la roja puesta en cada uno, aprieta abrir. Si no tienes manos, sujeta la roja con cinta al tornillo.","El que cae casi a 0 al apretar es el hilo 1."],
+  fields:[{k:"color",label:"Color del hilo 1",type:"select",opts:COLORS},{k:"v_desc",label:"Tensión descolgado",type:"number",u:"V"},{k:"v_abrir",label:"Tensión al apretar abrir",type:"number",u:"V"},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"12",fase:2,title:"Hilo 4 · llamada",black:"masa",modes:["V~ 200 V"],
+  steps:["Roja en uno de los tres colores que quedan, multímetro en V~.","Pon el móvil grabando vídeo de la pantalla del multímetro.","Baja, pulsa tu timbre tres veces durante unos 2 segundos cada una y sube.","Repite con los otros dos colores. El que salta en el vídeo es el hilo 4.","9–12 V es zumbador; bastante menos o un valor que baila es llamada electrónica."],
+  fields:[{k:"color",label:"Color del hilo 4",type:"select",opts:COLORS},{k:"v_llamada",label:"Tensión al pulsar",type:"number",u:"V"},{k:"tipo",label:"Tipo de llamada",type:"select",opts:["Zumbador","Electrónica","No lo tengo claro"]},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"13",fase:2,title:"Pulsación corta y larga",black:"masa",red:"hilo 4",modes:["V~ 200 V"],
+  steps:["Roja en el hilo 4, grabando la pantalla.","Baja y pulsa medio segundo. Espera 10 segundos. Pulsa 4 segundos.","En el vídeo: ¿la señal dura lo mismo que la pulsación o siempre lo mismo?"],
+  fields:[{k:"resultado",label:"La señal…",type:"select",opts:["Dura lo mismo que la pulsación","Dura siempre lo mismo","No lo tengo claro"]},{k:"dur_fija",label:"Si es fija, cuánto dura",type:"number",u:"s"},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"14",fase:2,title:"Doble pulsación",black:"masa",red:"hilo 4",modes:["V~ 200 V"],
+  steps:["Roja en el hilo 4, grabando la pantalla.","Baja, pulsa 1 segundo, suelta, espera 3 segundos y vuelve a pulsar.","En el vídeo: ¿salta las dos veces? Si no, el diseño tiene que cambiar."],
+  fields:[{k:"dos_veces",label:"¿Salta las dos veces?",type:"select",opts:SINO},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"15",fase:2,title:"Hilos 2 y 6 · micrófono y altavoz",black:"masa",modes:["V~ 200 mV"],
+  steps:["Descuelga. Roja en uno de los dos colores que quedan, multímetro en V~ con la escala más baja (200 mV si la tiene).","Sopla o habla fuerte en el micrófono del auricular. Si la lectura se mueve, ese es el hilo 2.","El otro es el hilo 6."],
+  fields:[{k:"hilo2",label:"Color del hilo 2",type:"select",opts:COLORS},{k:"hilo6",label:"Color del hilo 6",type:"select",opts:COLORS},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"16",fase:2,title:"Confirmación con el telefonillo de arriba",
+  steps:["Abre el telefonillo de arriba y apunta qué color va a cada número de borne.","Tiene que coincidir con las pruebas 11 a 15."],
+  fields:[{k:"b1",label:"Borne 1",type:"select",opts:COLORS},{k:"b2",label:"Borne 2",type:"select",opts:COLORS},{k:"b3",label:"Borne 3",type:"select",opts:COLORS},{k:"b4",label:"Borne 4",type:"select",opts:COLORS},{k:"b6",label:"Borne 6",type:"select",opts:COLORS},{k:"coincide",label:"¿Coincide con las pruebas?",type:"select",opts:SINO},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"17",fase:3,title:"Audio sin llamada",
+  steps:["Deja el móvil en el portal grabando sonido.","Sube, descuelga sin que nadie haya llamado y di «prueba uno» tres veces. Cuelga.","Baja y escucha la grabación."],
+  fields:[{k:"se_oye",label:"¿Se oye en la calle?",type:"select",opts:["Sí, claro","Sí, flojo","No"]},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"18",fase:3,title:"Audio justo después de un timbrazo",
+  steps:["Deja el móvil grabando sonido en el portal.","Pulsa tu timbre, sube sin prisa, descuelga y di «prueba dos» tres veces.","Baja y escucha la grabación. Si no se oye, el mensaje de voz no llegaría al visitante."],
+  fields:[{k:"se_oye",label:"¿Se oye en la calle?",type:"select",opts:["Sí, claro","Sí, flojo","No"]},{k:"segundos",label:"Segundos del timbrazo a descolgar",type:"number",u:"s"},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"19",fase:3,title:"Cuánto dura el audio",
+  steps:["Igual que la 18, pero quédate contando en voz alta («uno, dos, tres…») durante dos minutos.","En la grabación: ¿hasta qué número se oye?"],
+  fields:[{k:"hasta",label:"Se oye hasta el número",type:"number"},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"20",fase:4,title:"WiFi junto al telefonillo",steps:["Pon el móvil junto al telefonillo y mira cuántas rayas de WiFi tiene de tu red."],
+  fields:[{k:"rayas",label:"Rayas de WiFi",type:"select",opts:["0","1","2","3","4"]},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"21",fase:4,title:"Distancia al enchufe",steps:["Mide con un metro desde el enchufe más cercano hasta el telefonillo, por donde iría el cable."],
+  fields:[{k:"metros",label:"Distancia",type:"number",u:"m"},{k:"nota",label:"Nota",type:"text",wide:true}]},
+ {id:"22",fase:4,title:"Hueco para la caja",steps:["Comprueba que cabe una caja de 158 × 90 × 60 mm al lado del telefonillo."],
+  fields:[{k:"cabe",label:"¿Cabe?",type:"select",opts:SINO},{k:"nota",label:"Nota",type:"text",wide:true}]}
+);
+const TOTAL=TESTS.length;
+const state={}; TESTS.forEach(t=>state[t.id]={fields:{},updatedAt:null,dirty:false});
+let db=null, local=false;
+const $=s=>document.querySelector(s);
+
+function el(tag,attrs={},...kids){const e=document.createElement(tag);for(const[k,v]of Object.entries(attrs)){if(k==="class")e.className=v;else if(k==="text")e.textContent=v;else if(k==="style")e.setAttribute("style",v);else e.setAttribute(k,v);}kids.flat().forEach(c=>c&&e.append(c));return e;}
+function wireTag(name){if(!WIRE[name])return el("strong",{text:name});return el("span",{class:"wire",style:`--c:var(${WIRE[name]})`,text:name});}
+
+function render(){
+  const root=$("#tests");
+  [1,2,3,4].forEach(f=>{
+    const sec=el("section",{class:"fase"},el("h2",{text:FASES[f][0]}),el("p",{text:FASES[f][1]}));
+    TESTS.filter(t=>t.fase===f).forEach(t=>{
+      const card=el("article",{class:"test",id:"t-"+t.id});
+      card.append(el("div",{class:"test-h"},el("span",{class:"num",text:t.id==="10b"?"✓":t.id}),el("h3",{text:t.title}),el("span",{class:"tick",hidden:"",id:"tick-"+t.id,text:"Hecha"})));
+      if(t.black||t.modes){const s=el("div",{class:"setup"});
+        if(t.black)s.append(el("span",{},el("span",{class:"k",text:"Negra en "}),wireTag(t.black)));
+        if(t.red)s.append(el("span",{},el("span",{class:"k",text:"Roja en "}),wireTag(t.red)));
+        if(t.modes)s.append(el("span",{},el("span",{class:"k",text:"Multímetro "}),...t.modes.map(m=>el("span",{class:"mode",text:m}))));
+        card.append(s);}
+      card.append(el("ol",{class:"steps"},t.steps.map(s=>el("li",{text:s}))));
+      const g=el("div",{class:"fields"});
+      t.fields.forEach(f=>{
+        const id=`f-${t.id}-${f.k}`; let input;
+        if(f.type==="select"){input=el("select",{id},el("option",{value:"",text:"—"}),f.opts.map(o=>el("option",{value:o,text:o})));}
+        else{input=el("input",{id,type:f.type==="number"?"number":"text",inputmode:f.type==="number"?"decimal":"text",step:"any",autocomplete:"off"});}
+        input.addEventListener(f.type==="select"?"change":"input",()=>onEdit(t.id,f.k,input.value));
+        g.append(el("div",{class:"field"+(f.wide?" wide":"")},el("label",{for:id,text:f.label}),el("div",{class:"inp"},input,f.u?el("span",{class:"u",text:f.u}):null)));
+      });
+      card.append(g,el("div",{class:"saved",id:"saved-"+t.id}));
+      sec.append(card);
+    });
+    root.append(sec);
+  });
+}
+
+function isDone(id){return Object.values(state[id].fields).some(v=>v!==""&&v!=null);}
+function refreshMeta(){
+  let n=0;TESTS.forEach(t=>{const d=isDone(t.id);if(d)n++;$("#t-"+t.id).classList.toggle("done",d);$("#tick-"+t.id).hidden=!d;
+    const u=state[t.id].updatedAt;$("#saved-"+t.id).textContent=state[t.id].dirty?"Guardando…":(u?"Guardado "+new Date(u).toLocaleString("es-ES",{dateStyle:"short",timeStyle:"short"}):"");});
+  $("#count").textContent=`${n} / ${TOTAL}`;$("#progressFill").style.width=(n/TOTAL*100)+"%";
+}
+function fillInputs(id){const t=TESTS.find(x=>x.id===id);t.fields.forEach(f=>{const inp=document.getElementById(`f-${id}-${f.k}`);if(document.activeElement===inp)return;const v=state[id].fields[f.k];inp.value=v==null?"":v;});}
+
+const timers={}, chains={};
+function onEdit(id,k,v){state[id].fields[k]=v;state[id].dirty=true;refreshMeta();clearTimeout(timers[id]);timers[id]=setTimeout(()=>save(id),700);}
+function save(id){
+  const body={test:id,fields:{...state[id].fields},updatedAt:new Date().toISOString()};
+  if(local){try{const all=JSON.parse(localStorage.getItem("pruebas-portero")||"{}");all[id]=body;localStorage.setItem("pruebas-portero",JSON.stringify(all));}catch(e){}state[id].updatedAt=body.updatedAt;state[id].dirty=false;refreshMeta();return;}
+  chains[id]=(chains[id]||Promise.resolve()).then(()=>db.doc("results/t"+id).set(body)).then(()=>{state[id].updatedAt=body.updatedAt;state[id].dirty=false;refreshMeta();setStatus("Guardado en el registro compartido.");})
+   .catch(e=>{state[id].dirty=false;refreshMeta();setStatus(e&&e.code==="permission_denied"?"No tienes permiso para guardar: pide al propietario acceso de edición.":"No se pudo guardar ("+(e&&e.code||"error")+"). Vuelve a cambiar el valor para reintentar.");});
+}
+function setStatus(s){$("#syncStatus").textContent=s;}
+function banner(text,kind){const b=$("#banner");b.textContent=text;b.dataset.kind=kind||"";b.hidden=false;}
+
+function useLocal(){local=true;try{const all=JSON.parse(localStorage.getItem("pruebas-portero")||"{}");for(const[id,b]of Object.entries(all)){if(state[id]){state[id].fields=b.fields||{};state[id].updatedAt=b.updatedAt;fillInputs(id);}}}catch(e){}
+  banner("El guardado compartido no está disponible en esta vista. Los datos se guardan solo en este navegador; descárgalos al terminar.","warn");setStatus("Guardado local.");refreshMeta();}
+
+async function connect(){
+  if(!window.claude||!window.claude.use){useLocal();return;}
+  db=await window.claude.use("db");
+  if(!db){useLocal();return;}
+  let first=true;const timer=setTimeout(()=>{if(first)setStatus("No se puede conectar todavía con el registro compartido; lo que escribas se guardará en cuanto conecte.");},10000);
+  db.collection("results").onSnapshot(snap=>{
+    snap.docs.forEach(d=>{const b=d.data()||{};const id=b.test||d.id.replace(/^t/,"");if(!state[id]||state[id].dirty)return;state[id].fields={...(b.fields||{})};state[id].updatedAt=b.updatedAt||null;fillInputs(id);});
+    if(!snap.metadata.fromCache&&first){first=false;clearTimeout(timer);setStatus("Conectado al registro compartido. Todo lo que escribas se guarda solo.");}
+    refreshMeta();
+  },err=>{clearTimeout(timer);setStatus("Se perdió la conexión con el registro ("+(err&&err.code||"error")+"). Recarga la página para reconectar.");});
+}
+
+function rows(){const out=[];TESTS.forEach(t=>{const s=state[t.id];t.fields.forEach(f=>{out.push({prueba:t.id,fase:t.fase,titulo:t.title,campo:f.label,valor:s.fields[f.k]??"",unidad:f.u||"",actualizado:s.updatedAt||""});});});return out;}
+function csv(){const r=rows();const head=Object.keys(r[0]);const esc=v=>{v=String(v);return /[",;\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v;};return "﻿"+[head.join(";"),...r.map(o=>head.map(h=>esc(o[h])).join(";"))].join("\n");}
+function json(){const o={exportado:new Date().toISOString(),pruebas:TESTS.map(t=>({prueba:t.id,fase:t.fase,titulo:t.title,valores:state[t.id].fields,actualizado:state[t.id].updatedAt}))};return JSON.stringify(o,null,2);}
+async function download(name,data){showExport(name.endsWith(".csv")?data.replace(/^﻿/,""):data);
+  try{const d=window.claude&&await window.claude.use("downloads");if(!d){$("#copyStatus").textContent="La descarga no está disponible aquí: copia los datos de arriba.";return;}await d.save({filename:name,data});$("#copyStatus").textContent="Archivo guardado.";}
+  catch(e){$("#copyStatus").textContent="Descarga cancelada o no disponible: puedes copiar los datos de arriba.";}}
+function showExport(text){$("#exportText").value=text;$("#exportBox").hidden=false;}
+$("#btnCsv").addEventListener("click",()=>download("pruebas-portero.csv",csv()));
+$("#btnJson").addEventListener("click",()=>download("pruebas-portero.json",json()));
+$("#btnShow").addEventListener("click",()=>{const b=$("#exportBox");if(!b.hidden&&$("#exportText").value===csv().replace(/^﻿/,"")){b.hidden=true;return;}showExport(csv().replace(/^﻿/,""));$("#copyStatus").textContent="";});
+$("#btnCopy").addEventListener("click",()=>{const t=$("#exportText");navigator.clipboard.writeText(t.value).then(()=>{$("#copyStatus").textContent="Copiado.";}).catch(()=>{t.focus();t.select();$("#copyStatus").textContent="Selecciona y copia con el teclado.";});});
+
+render();refreshMeta();connect();
+</script>
+
+</body></html>

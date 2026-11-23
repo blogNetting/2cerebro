@@ -1,0 +1,759 @@
+<title>Selector de planta</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{--bg:#f4f2ec;--card:#fffdf8;--ink:#1d1f22;--mute:#5d6168;--line:#d9d5ca;--acc:#c2410c;--acc2:#0f766e;--ok:#15803d;--warn:#b45309;--bad:#b91c1c;--board:#e9dcc0;--hole:#b9a77f;--pad:#c9a54a;
+--verde:#1f9d4c;--gris:#7c828c;--rojo:#d4372c;--azul:#2563eb;--amarillo:#d4a300;--v5:#e11d48;--gnd:#30343a;--sig:#7c3aed;--det:#ea580c;--aud:#0891b2;--hl:rgba(194,65,12,.12)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141518;--card:#1d1f23;--ink:#eceae4;--mute:#a2a6ad;--line:#33363c;--acc:#fb923c;--acc2:#2dd4bf;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171;--board:#3a3426;--hole:#6f6347;--pad:#b8953e;--verde:#34c46a;--gris:#a3a9b3;--rojo:#f0564b;--azul:#5b8df5;--amarillo:#f0c419;--v5:#fb7185;--gnd:#cbd0d6;--sig:#a78bfa;--det:#fb923c;--aud:#22d3ee;--hl:rgba(251,146,60,.14);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141518;--card:#1d1f23;--ink:#eceae4;--mute:#a2a6ad;--line:#33363c;--acc:#fb923c;--acc2:#2dd4bf;--ok:#4ade80;--warn:#fbbf24;--bad:#f87171;--board:#3a3426;--hole:#6f6347;--pad:#b8953e;--verde:#34c46a;--gris:#a3a9b3;--rojo:#f0564b;--azul:#5b8df5;--amarillo:#f0c419;--v5:#fb7185;--gnd:#cbd0d6;--sig:#a78bfa;--det:#fb923c;--aud:#22d3ee;--hl:rgba(251,146,60,.14);color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto;padding-block:18px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;text-wrap:balance;line-height:1.2}
+h1{font-size:1.7rem;margin:.2em 0}h2{font-size:1.35rem;margin:1.2em 0 .5em}h3{font-size:1.05rem;margin:1em 0 .4em}
+p{max-width:75ch}
+a{color:var(--acc2)}
+code,.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:.88em}
+.sub{color:var(--mute)}
+nav.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 18px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:8px 0;z-index:5;border-bottom:1px solid var(--line)}
+nav.tabs a{padding:6px 11px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);font-size:.86rem;background:var(--card);white-space:nowrap}
+nav.tabs a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+section.tab{display:none}section.tab.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0;min-width:0}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid>*{min-width:0}
+.tw{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}
+.tag{display:inline-block;font-size:.72rem;padding:1px 7px;border-radius:999px;border:1px solid currentColor;white-space:nowrap;font-weight:600}
+.t-med{color:var(--ok)}.t-doc{color:var(--azul)}.t-calc{color:var(--sig)}.t-pend{color:var(--warn)}.t-bad{color:var(--bad)}
+.sw{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid rgba(0,0,0,.2)}
+figure{margin:0}figure img{border-radius:10px;border:1px solid var(--line);display:block}figcaption{font-size:.82rem;color:var(--mute);margin-top:4px}
+.photos{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
+.note{border-left:4px solid var(--warn);background:var(--hl);padding:10px 14px;border-radius:0 10px 10px 0;margin:12px 0}
+.okbox{border-left:4px solid var(--ok);padding:10px 14px;margin:12px 0;background:var(--card);border-radius:0 10px 10px 0}
+ul.links li{margin:4px 0}
+/* zoom */
+.zoom{border:1px solid var(--line);border-radius:12px;background:var(--card);margin:12px 0;overflow:hidden}
+.zbar{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px;border-bottom:1px solid var(--line)}
+.zbar button,.btn{font:inherit;font-size:.85rem;padding:5px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.zbar button:hover,.btn:hover{border-color:var(--acc)}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.zbar .lvl{font-family:"JetBrains Mono",monospace;font-size:.8rem;color:var(--mute);min-width:48px}
+.zin{overflow:auto;max-height:78vh;touch-action:pan-x pan-y}
+.zin svg{display:block}
+svg text{font-family:Inter,sans-serif}
+/* sim */
+.simtop{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+.opts{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.opts label{font-size:.8rem;color:var(--mute);display:block}
+.opts select,.opts input{width:100%;font:inherit;padding:5px 8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.stepbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.stepbar .cnt{font-family:"JetBrains Mono",monospace;color:var(--mute)}
+.steptitle{font-family:"Space Grotesk",sans-serif;font-size:1.25rem;margin:6px 0}
+.cards{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.cc{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--card);font-size:.86rem;min-width:0}
+.cc b{font-family:"Space Grotesk",sans-serif;font-size:.95rem}
+.cc.chg{border-color:var(--acc);box-shadow:0 0 0 2px var(--hl)}
+.cc .st{font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+tr.chg td{background:var(--hl)}
+.log{font-family:"JetBrains Mono",monospace;font-size:.78rem;max-height:220px;overflow:auto;background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px}
+.log div.cur{color:var(--acc);font-weight:600}
+/* svg sim styling */
+.w{fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+.w.hot{opacity:1;stroke-width:5}
+.w.ac{stroke-dasharray:10 6;animation:flow .5s linear infinite}
+.w.aud{stroke-dasharray:2 7;animation:flow .8s linear infinite}
+.w.dc{filter:drop-shadow(0 0 2px currentColor)}
+@keyframes flow{to{stroke-dashoffset:-16}}
+@media (prefers-reduced-motion:reduce){.w.ac,.w.aud{animation:none}}
+.blk{fill:var(--card);stroke:var(--ink);stroke-width:1.5}
+.blk2{fill:var(--bg);stroke:var(--mute);stroke-width:1;stroke-dasharray:5 4}
+.lbl{fill:var(--ink);font-size:13px}.lbls{fill:var(--mute);font-size:11px}.lblb{fill:var(--ink);font-size:15px;font-weight:700;font-family:"Space Grotesk",sans-serif}
+.vb{font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:600}
+.on-fill{fill:var(--acc)}
+.dot{fill:var(--ink)}
+.glow{fill:var(--acc);opacity:0}.glow.on{opacity:.35}
+.ring{opacity:0}.ring.on{opacity:1;animation:shake .25s linear infinite}
+@keyframes shake{50%{transform:translateX(2px)}}
+</style>
+
+<div class="wrap">
+<header>
+<p class="sub mono" style="margin:0">Fermax 4+N · Tegui Horizon E · ESP32</p>
+<h1>Selector de planta para el portero</h1>
+<p class="sub">Todo lo que tenemos: portero, teléfonos, hilos, tensiones, placa, esquemas, caja y un simulador paso a paso. Cada tensión lleva su origen: <span class="tag t-med">medido</span> <span class="tag t-doc">documentación</span> <span class="tag t-calc">calculado</span> <span class="tag t-pend">pendiente</span></p>
+</header>
+<nav class="tabs" id="tabs"></nav>
+
+<!-- RESUMEN -->
+<section class="tab" id="t-resumen" data-name="Resumen">
+<h2>Qué hace</h2>
+<div class="grid">
+<div class="card"><h3>Modo selector</h3><ol>
+<li>El visitante pulsa el botón del piso. <b>No suena ningún teléfono</b>: la ESP lo detecta.</li>
+<li>Tras una espera configurable, suena en la calle: «¿A qué planta desea llamar? Si es la planta 1, pulse el timbre ahora».</li>
+<li>Ventana de planta 1. Si pulsa, suena <b>solo</b> P1 (llamada normal).</li>
+<li>«Si es la planta 2, pulse el timbre ahora». Ventana de planta 2.</li>
+<li>Repite N vueltas (configurable). Si nadie pulsa, termina y no pasa nada.</li></ol></div>
+<div class="card"><h3>Modo normal</h3><p>Suenan los dos teléfonos, como siempre. Se elige con el interruptor de la caja o desde la web/móvil.</p>
+<h3>A prueba de fallos</h3><p>Los teléfonos van por los contactos <b>NC</b> (normalmente cerrados) de los relés. Si la ESP se apaga, se cuelga o se va la luz, los relés sueltan y <b>suenan los dos</b>, como antes de instalar nada.</p></div>
+<div class="card"><h3>Qué toca del portero</h3><p>Solo se corta el <b style="color:var(--verde)">verde</b> (llamada) entre la placa y los dos teléfonos. Del <b style="color:var(--azul)">azul</b> y el <b style="color:var(--gris)">gris</b> se saca una derivación. El <b style="color:var(--rojo)">rojo</b> y el <b style="color:var(--amarillo)">amarillo</b> no se tocan.</p>
+<p>La ESP se alimenta con su propio cargador de 5 V, no del portero.</p></div>
+</div>
+<h2>Estado</h2>
+<div class="tw"><table>
+<tr><th>Tema</th><th>Estado</th></tr>
+<tr><td>Hilos y funciones (5 colores)</td><td><span class="tag t-med">medido</span> + <span class="tag t-doc">manual Tegui T-71</span>, coinciden</td></tr>
+<tr><td>Tensión del verde al llamar</td><td><span class="tag t-pend">pendiente: prueba 12</span>. Según documentación, 9–12 V alterna</td></tr>
+<tr><td>Audio en la calle sin llamada</td><td><span class="tag t-pend">pendiente: prueba 18</span></td></tr>
+<tr><td>Relé activado con 3,3 V</td><td><span class="tag t-pend">pendiente</span>: probar en mesa</td></tr>
+<tr><td>Relés quietos al arrancar la ESP</td><td><span class="tag t-pend">pendiente</span>: probar en mesa</td></tr>
+<tr><td>Separación de los pines de la ESP (10 o 9 agujeros)</td><td><span class="tag t-pend">pendiente</span>: no cambia nada del lado derecho</td></tr>
+<tr><td>Modelo del teléfono de la planta 2</td><td><span class="tag t-pend">pendiente</span></td></tr>
+<tr><td>Caja</td><td>Interior mínimo 90 × 165 × 40 mm. La de 160×85 de Leroy no vale.</td></tr>
+</table></div>
+</section>
+
+<!-- PORTERO -->
+<section class="tab" id="t-portero" data-name="Portero">
+<h2>Portero del edificio: Fermax 4+N</h2>
+<p>Sistema de audio de los años 90. Cuatro hilos comunes a todo el edificio (micrófono, altavoz, abrepuertas y masa) y <b>un hilo de llamada por vivienda</b> (N). En casa ese hilo es el verde, y llega a los dos teléfonos (planta 1 y planta 2) unidos en la regleta.</p>
+<div class="photos">
+<figure><img src="__IMG_placa__" alt="Placa de calle Fermax"><figcaption>Placa de calle Fermax (similar a la del edificio). Dentro: amplificador, altavoz, micrófono y pulsadores.</figcaption></figure>
+<figure><img src="__IMG_regleta__" alt="Regleta en la pared"><figcaption>Regleta en el hueco de la pared: aquí el verde se reparte a planta 1 y planta 2.</figcaption></figure>
+</div>
+<h3>Cómo funciona por dentro</h3>
+<ul>
+<li><b>Llamada</b>: al pulsar el botón del piso, la placa manda <b>alterna</b> por el verde y los teléfonos suenan. <span class="tag t-doc">doc</span></li>
+<li><b>Audio</b>: el amplificador de la placa está siempre encendido. Lo que entra por el azul sale por el altavoz de la calle, y el micrófono de la calle sale por el amarillo. <span class="tag t-doc">doc</span> <span class="tag t-pend">prueba 18</span></li>
+<li><b>Abrir</b>: el botón del teléfono une rojo con gris. La placa lo detecta y activa el abrepuertas. <span class="tag t-doc">doc</span></li>
+<li><b>Alimentación</b>: el alimentador del edificio da unos 12 V. Las líneas comunes están en continua (medido) y solo la llamada es alterna.</li>
+</ul>
+<h3>Documentación oficial</h3>
+<ul class="links">
+<li><a href="https://www.manualslib.com/manual/1239880/Fermax-4Plusn.html?page=2" target="_blank" rel="noopener">Fermax 4+N: manual de instalación (ManualsLib)</a></li>
+<li><a href="https://www.tdtprofesional.com/blog/manual-de-instalacion-para-el-kit-6201-de-fermax/" target="_blank" rel="noopener">Fermax kit 6201: llamada en 12 V alterna</a></li>
+<li><a href="https://www.antares-sistemas.es/descargas/manuales/T-71U_MANUAL_ESPA%C3%91OL.pdf" target="_blank" rel="noopener">Tegui T-71: manual con el significado de cada borne</a></li>
+<li><a href="https://teguivideoporteros.es/todo-lo-que-necesita-saber-sobre-los-telefonos-horizon-de-tegui/" target="_blank" rel="noopener">Tegui Horizon: modelos y compatibilidad</a></li>
+<li><a href="https://d7rh5s3nxmpy4.cloudfront.net/CMP2008/files/11/970176c_Telefono_Universal_VEO_V04_21.pdf" target="_blank" rel="noopener">Fermax VEO universal: manual</a></li>
+<li><a href="https://normatia.com/es/normativa/rebt/2025/itc-bt-20-instalaciones-interiores-o-receptoras-sistemas-de-instalacion/" target="_blank" rel="noopener">ITC-BT-20: por qué 230 V no puede ir por el tubo del portero (5 V sí)</a></li>
+<li><a href="https://tecnotizate.es/domotizando-telefonillo/" target="_blank" rel="noopener">Ejemplo de telefonillo domotizado (referencia)</a></li>
+</ul>
+</section>
+
+<!-- PLANTA 1 -->
+<section class="tab" id="t-planta1" data-name="Planta 1 · Tegui">
+<h2>Planta 1: Tegui Horizon E (0E7020), 1994</h2>
+<p>Teclas verdes y llamada electrónica. Es Tegui, no Fermax: los números de sus bornes no coinciden con los de Fermax. Por eso hay que guiarse por los colores.</p>
+<div class="photos">
+<figure><img src="__IMG_tegui_pared__" alt="Tegui en la pared"><figcaption>En la pared, junto a donde irá la caja.</figcaption></figure>
+<figure><img src="__IMG_tegui_abierto__" alt="Tegui abierto"><figcaption>Base y auricular. Tecla verde de abrir.</figcaption></figure>
+<figure><img src="__IMG_tegui_bornes__" alt="Bornes Tegui"><figcaption>Bornes 1, 5, 4, 3, 2 con sus colores.</figcaption></figure>
+<figure><img src="__IMG_tegui_1994__" alt="Fecha 1994"><figcaption>Auricular fechado en 1994.</figcaption></figure>
+</div>
+<div class="tw"><table>
+<tr><th>Borne Tegui</th><th>Color</th><th>Función (T-71)</th><th>Fermax</th></tr>
+<tr><td>1</td><td><span class="sw" style="background:var(--verde)"></span>Verde</td><td>Llamada</td><td>4 (N)</td></tr>
+<tr><td>2</td><td><span class="sw" style="background:var(--gris)"></span>Gris</td><td>Masa / común</td><td>3</td></tr>
+<tr><td>3</td><td><span class="sw" style="background:var(--rojo)"></span>Rojo</td><td>Abrepuertas</td><td>1</td></tr>
+<tr><td>4</td><td><span class="sw" style="background:var(--azul)"></span>Azul</td><td>Micrófono (hacia la calle)</td><td>2</td></tr>
+<tr><td>5</td><td><span class="sw" style="background:var(--amarillo)"></span>Amarillo</td><td>Altavoz (desde la calle)</td><td>6</td></tr>
+</table></div>
+<p class="sub">Comportamiento observado: al tocar el pulsador del teléfono se corta el audio. Para el selector no importa.</p>
+</section>
+
+<!-- PLANTA 2 -->
+<section class="tab" id="t-planta2" data-name="Planta 2">
+<h2>Planta 2: modelo sin identificar</h2>
+<div class="note">Falta saber la marca y el modelo. No cambia el diseño, porque el selector solo corta su hilo de llamada (verde). Si su timbre funciona hoy con la misma llamada que el de la planta 1, seguirá funcionando igual.</div>
+<h3>Qué comprobar</h3>
+<ol>
+<li>Marca y modelo (pegatina por dentro o debajo).</li>
+<li>Que su hilo de llamada sea <b>verde</b> y llegue por separado a la regleta, para poder cortarlo y llevarlo a NC2.</li>
+<li>Que los otros cuatro colores coincidan con los de planta 1.</li>
+</ol>
+</section>
+
+<!-- VEO -->
+<section class="tab" id="t-veo" data-name="Fermax VEO">
+<h2>Fermax VEO (comprado, ahora no se usa)</h2>
+<p>Teléfono universal que podría sustituir a un Tegui. No forma parte del selector. Si un día cambias un teléfono, conectas los mismos 5 hilos según su manual.</p>
+<div class="photos">
+<figure><img src="__IMG_veobox__" alt="Caja del VEO"><figcaption>Caja del Fermax VEO.</figcaption></figure>
+<figure><img src="__IMG_veoman__" alt="Manual VEO"><figcaption>Manual incluido.</figcaption></figure>
+</div>
+<p><a href="https://d7rh5s3nxmpy4.cloudfront.net/CMP2008/files/11/970176c_Telefono_Universal_VEO_V04_21.pdf" target="_blank" rel="noopener">Manual oficial del VEO (PDF)</a></p>
+</section>
+
+<!-- HILOS -->
+<section class="tab" id="t-hilos" data-name="Hilos y tensiones">
+<h2>Los 5 hilos y sus tensiones</h2>
+<p>Todas las tensiones están medidas contra el <b>gris</b> (masa), con el multímetro MAS830: punta negra en gris y punta roja en el hilo.</p>
+<div class="tw"><table>
+<tr><th>Color</th><th>Función</th><th>Reposo</th><th>Al llamar / hablar / abrir</th></tr>
+<tr><td><span class="sw" style="background:var(--verde)"></span><b>Verde</b></td><td>Llamada (solo tu vivienda)</td><td>0 V <span class="tag t-med">medido</span></td><td>9–12 V alterna mientras el visitante pulsa <span class="tag t-doc">doc</span> <span class="tag t-pend">prueba 12</span></td></tr>
+<tr><td><span class="sw" style="background:var(--gris)"></span><b>Gris</b></td><td>Masa común</td><td>0 V (referencia)</td><td>0 V</td></tr>
+<tr><td><span class="sw" style="background:var(--rojo)"></span><b>Rojo</b></td><td>Abrepuertas</td><td>11,8 V ⎓ <span class="tag t-med">medido</span></td><td>≈ 0 V al pulsar abrir (rojo unido a gris) <span class="tag t-doc">doc</span></td></tr>
+<tr><td><span class="sw" style="background:var(--azul)"></span><b>Azul</b></td><td>Micrófono → calle</td><td>10,6 V ⎓ <span class="tag t-med">medido</span></td><td>10,6 V ⎓ + audio de tu voz (o del mensaje de la ESP)</td></tr>
+<tr><td><span class="sw" style="background:var(--amarillo)"></span><b>Amarillo</b></td><td>Calle → altavoz</td><td>9,9 V ⎓ <span class="tag t-med">medido</span></td><td>9,9 V ⎓ + audio de la calle</td></tr>
+</table></div>
+<div class="photos" style="max-width:520px"><figure><img src="__IMG_multimetro__" alt="Multímetro"><figcaption>MAS830. Continua en V⎓ (20 V) y alterna en V~ (200 V).</figcaption></figure></div>
+<h3>Mapa de conexiones</h3>
+<div class="zoom" data-base="1180"><div class="zin"><svg id="svgHilos" viewBox="0 0 1180 470" role="img" aria-label="Mapa de hilos"></svg></div></div>
+</section>
+
+<!-- DISEÑO -->
+<section class="tab" id="t-diseno" data-name="Diseño">
+<h2>Lógica del selector</h2>
+<h3>Tabla de verdad de los relés (puente en H, contactos NC)</h3>
+<div class="tw"><table>
+<tr><th>IN1 (GPIO13)</th><th>IN2 (GPIO27)</th><th>RL1</th><th>RL2</th><th>Planta 1</th><th>Planta 2</th><th>Cuándo</th></tr>
+<tr><td>LOW</td><td>LOW</td><td>suelto</td><td>suelto</td><td><b style="color:var(--ok)">conectado</b></td><td><b style="color:var(--ok)">conectado</b></td><td>Modo normal · ESP apagada · fallo</td></tr>
+<tr><td>HIGH</td><td>HIGH</td><td>activo</td><td>activo</td><td>aislado</td><td>aislado</td><td>Selector en reposo y durante los mensajes</td></tr>
+<tr><td>LOW</td><td>HIGH</td><td>suelto</td><td>activo</td><td><b style="color:var(--ok)">conectado</b></td><td>aislado</td><td>Ventana P1 · llamada a P1</td></tr>
+<tr><td>HIGH</td><td>LOW</td><td>activo</td><td>suelto</td><td>aislado</td><td><b style="color:var(--ok)">conectado</b></td><td>Ventana P2 · llamada a P2</td></tr>
+</table></div>
+<p>Hacen falta <b>dos</b> relés: con uno solo no se consiguen los cuatro estados (los dos aislados, solo P1, solo P2 y los dos conectados).</p>
+<h3>Pines de la ESP32</h3>
+<div class="tw"><table>
+<tr><th>Pin</th><th>Uso</th><th>Por qué ese</th></tr>
+<tr><td class="mono">GPIO13</td><td>IN1 del relé (P1)</td><td>Salida libre, no afecta al arranque</td></tr>
+<tr><td class="mono">GPIO27</td><td>IN2 del relé (P2)</td><td>Salida libre, no afecta al arranque</td></tr>
+<tr><td class="mono">GPIO25</td><td>Audio (DAC)</td><td>Uno de los dos únicos pines con DAC (25/26)</td></tr>
+<tr><td class="mono">GPIO32</td><td>Detector de llamada</td><td>ADC1 con pull-up interno; funciona con WiFi</td></tr>
+<tr><td class="mono">GPIO26</td><td>Interruptor de modo</td><td>Pull-up interno. Abierto (o cable roto) = normal; cerrado a GND = selector</td></tr>
+</table></div>
+<h3>Parámetros configurables por web</h3>
+<div class="tw"><table>
+<tr><th>Parámetro</th><th>Ejemplo</th></tr>
+<tr><td>Espera antes del mensaje</td><td>2 s</td></tr>
+<tr><td>Ventana para pulsar en cada planta</td><td>5 s</td></tr>
+<tr><td>Repeticiones (N)</td><td>2</td></tr>
+<tr><td>Duración de la llamada elegida (luego vuelve a reposo)</td><td>90 s</td></tr>
+<tr><td>Volumen del mensaje</td><td>0–100 %</td></tr>
+<tr><td>Modo (si el interruptor está en selector)</td><td>selector / normal</td></tr>
+</table></div>
+<p class="sub">Además: actualización OTA por WiFi, registro de llamadas, botón «Probar mensaje» y «Modo prueba de calle». El programa se hará cuando estén hechas las pruebas pendientes.</p>
+</section>
+
+<!-- PLACA -->
+<section class="tab" id="t-placa" data-name="Placa">
+<h2>Placa perforada 7 × 9 cm (24 × 30 agujeros)</h2>
+<p>Columnas <b>A–X</b> (izquierda → derecha, vista de componentes) y filas <b>1–30</b> (arriba → abajo). La ESP va enchufada en tiras hembra soldadas, con el USB hacia arriba. Todos los cables van <b>por debajo</b>: cable aislado, y puentes de estaño desnudos solo entre agujeros contiguos.</p>
+<div class="note">Al dar la vuelta a la placa, izquierda y derecha se invierten. Usa el botón «Vista de soldadura» y marca A y X con rotulador en los dos lados antes de empezar.</div>
+<div class="zoom" data-base="760"><div class="zbar"><button data-act="mirror" class="btn">Vista de soldadura (espejo)</button><span class="sub" id="placaView">Vista: componentes (arriba)</span></div><div class="zin"><svg id="svgPlaca" role="img" aria-label="Placa"></svg></div></div>
+<div id="placaCheck"></div>
+<h3>Componentes</h3>
+<div class="tw"><table id="tblParts"></table></div>
+<h3>Cables y puentes (cara de soldadura)</h3>
+<div class="tw"><table id="tblWires"></table></div>
+<h3>Bornas: qué se atornilla en cada una</h3>
+<div class="tw"><table>
+<tr><th>Borna</th><th>Agujero</th><th>Va a</th></tr>
+<tr><td>J1</td><td class="mono">W2</td><td>Módulo de relés <b>DC+</b></td></tr>
+<tr><td>J1</td><td class="mono">W4</td><td>Módulo de relés <b>DC−</b></td></tr>
+<tr><td>J2</td><td class="mono">W6</td><td>Módulo de relés <b>IN1</b></td></tr>
+<tr><td>J2</td><td class="mono">W8</td><td>Módulo de relés <b>IN2</b></td></tr>
+<tr><td>J3</td><td class="mono">W11 / W13</td><td>Interruptor de modo (los dos cables)</td></tr>
+<tr><td>J4</td><td class="mono">W16</td><td><span class="sw" style="background:var(--azul)"></span>Azul (derivación)</td></tr>
+<tr><td>J4</td><td class="mono">W18</td><td><span class="sw" style="background:var(--verde)"></span>Verde <b>que viene de la placa de calle</b></td></tr>
+<tr><td>J4</td><td class="mono">W20</td><td><span class="sw" style="background:var(--gris)"></span>Gris (derivación)</td></tr>
+</table></div>
+<h3>Contactos del módulo de relés (sus propias bornas)</h3>
+<div class="tw"><table>
+<tr><th>Borna del módulo</th><th>Va a</th></tr>
+<tr><td>COM1 + COM2 (puente de cable entre ambos)</td><td><span class="sw" style="background:var(--verde)"></span>Verde de la placa de calle, con una ficha que también lo lleva a J4-W18</td></tr>
+<tr><td>NC1</td><td><span class="sw" style="background:var(--verde)"></span>Verde hacia el teléfono de la <b>planta 1</b></td></tr>
+<tr><td>NC2</td><td><span class="sw" style="background:var(--verde)"></span>Verde hacia el teléfono de la <b>planta 2</b></td></tr>
+<tr><td>NO1, NO2</td><td>Libres</td></tr>
+<tr><td>Puente H/L</td><td>En <b>H</b></td></tr>
+</table></div>
+<div class="note"><b>Masa común:</b> la masa de la ESP queda unida al gris del portero (J4-W20). Es necesario para que el mensaje llegue por el azul. No hay riesgo porque la salida del cargador USB está aislada de la red.</div>
+</section>
+
+<!-- ESQUEMAS -->
+<section class="tab" id="t-esquemas" data-name="Esquemas">
+<h2>Esquema completo</h2>
+<p>Mismo dibujo que el simulador, sin animación. Los puntos negros son uniones; donde dos líneas se cruzan sin punto, no hay conexión.</p>
+<div class="zoom" data-base="1260"><div class="zin" id="schemFull"></div></div>
+<h2>Detector de llamada</h2>
+<div class="zoom" data-base="900"><div class="zin"><svg viewBox="0 0 900 300" id="svgDet"></svg></div></div>
+<div class="tw"><table>
+<tr><th>Pieza</th><th>Qué hace</th><th>Valores</th></tr>
+<tr><td>R1 1 kΩ</td><td>Limita la corriente del LED de U1</td><td>(17 − 0,7 − 1,2) / 1000 ≈ <b>15 mA pico</b> <span class="tag t-calc">calc</span> (máx. del 4N35: 60 mA)</td></tr>
+<tr><td>D1 1N4007</td><td>Deja pasar solo el semiciclo positivo. En el negativo bloquea unos −17 V, que el LED no aguanta (máx. −6 V)</td><td>12 V~ → 17 V pico <span class="tag t-calc">calc</span></td></tr>
+<tr><td>U1 4N35</td><td>Optoacoplador: el LED enciende el fototransistor, que lleva GPIO32 a masa</td><td>GPIO32: 3,3 V en reposo, pulsos a 0 V a 50 Hz al pulsar</td></tr>
+</table></div>
+<h2>Inyección del mensaje</h2>
+<div class="zoom" data-base="900"><div class="zin"><svg viewBox="0 0 900 260" id="svgAud"></svg></div></div>
+<div class="tw"><table>
+<tr><th>Pieza</th><th>Qué hace</th><th>Valores</th></tr>
+<tr><td>C1 10 µF ≥ 25 V</td><td>Bloquea los 10,6 V ⎓ del azul y deja pasar el audio. <b>+ hacia el azul</b> y − hacia la ESP</td><td>Tensión en C1 ≈ 10,6 − 1,65 ≈ <b>9 V</b> <span class="tag t-calc">calc</span></td></tr>
+<tr><td>R2 1 kΩ</td><td>Evita que la ESP cortocircuite en alterna los micrófonos del edificio y limita la corriente de carga de C1</td><td>τ = R2·C1 = 10 ms <span class="tag t-calc">calc</span></td></tr>
+<tr><td>GPIO25</td><td>DAC de 0 a 3,3 V. Cuando no habla queda en alta impedancia (entrada)</td><td>Puede sonar un «clic» al empezar mientras C1 se carga</td></tr>
+</table></div>
+</section>
+
+<!-- CAJA -->
+<section class="tab" id="t-caja" data-name="Montaje en caja">
+<h2>Montaje en caja: interior mínimo 90 × 165 × 40 mm</h2>
+<div class="zoom" data-base="980"><div class="zin"><svg viewBox="0 0 980 560" id="svgCaja" role="img" aria-label="Montaje en caja"></svg></div></div>
+<div class="tw"><table>
+<tr><th>Pieza</th><th>Medida</th><th>Posición</th></tr>
+<tr><td>Placa perforada</td><td>70 × 90 mm</td><td>Abajo a la izquierda, con separadores</td></tr>
+<tr><td>ESP32 en tiras hembra</td><td>≈ 28 × 55 mm, alto ≈ 22 mm sobre la placa</td><td>Sobre la placa, USB hacia arriba</td></tr>
+<tr><td>Clavija micro-USB + cable</td><td>≈ 30 mm por encima de la ESP</td><td>Arriba a la izquierda</td></tr>
+<tr><td>Módulo de 2 relés</td><td>45,7 × 49,8 mm</td><td>Arriba a la derecha, con separadores</td></tr>
+<tr><td>Pasillo de cables y fichas</td><td>15 mm de ancho</td><td>Lado derecho</td></tr>
+<tr><td>Entrada de cables</td><td>—</td><td>Agujero en el fondo de la caja (al hueco de la regleta)</td></tr>
+</table></div>
+<div class="note">La caja de Leroy Merlin de 160 × 85 mm <b>no vale</b>: es más pequeña por dentro, no tiene tapa (es para mecanismos) y lleva torretas interiores.</div>
+</section>
+
+<!-- SIMULADOR -->
+<section class="tab" id="t-simulador" data-name="Simulador">
+<h2>Simulador paso a paso</h2>
+<div class="card opts" id="simOpts">
+<div><label>Modo</label><select id="o-modo"><option value="selector">Selector</option><option value="normal">Normal</option></select></div>
+<div><label>ESP</label><select id="o-esp"><option value="on">Encendida</option><option value="off">Apagada / desconectada</option></select></div>
+<div><label>Elección del visitante (selector)</label><select id="o-eleccion"><option value="p1-1">Pulsa en la ventana P1 · vuelta 1</option><option value="p2-1">Pulsa en la ventana P2 · vuelta 1</option><option value="p1-2">Pulsa en la ventana P1 · vuelta 2</option><option value="p2-2">Pulsa en la ventana P2 · vuelta 2</option><option value="durante">Pulsa durante el mensaje y luego en P1</option><option value="none">No pulsa nunca</option></select></div>
+<div><label>Quién descuelga</label><select id="o-descuelga"><option value="p1">Planta 1</option><option value="p2">Planta 2</option><option value="ambos">Las dos</option><option value="nadie">Nadie</option></select></div>
+<div><label>Abre la puerta</label><select id="o-abre"><option value="si">Sí</option><option value="no">No</option></select></div>
+<div><label>Repeticiones N</label><input id="o-n" type="number" min="1" max="4" value="2"></div>
+</div>
+<div class="card">
+<div class="stepbar"><button class="btn" id="bPrev">◀ Anterior</button><button class="btn pri" id="bNext">Siguiente ▶</button><button class="btn" id="bAuto">▶ Auto</button><button class="btn" id="bReset">Reiniciar</button><span class="cnt" id="sCnt"></span></div>
+<div class="steptitle" id="sTitle"></div>
+<p id="sDesc" style="max-width:none"></p>
+</div>
+<div class="zoom" data-base="1260"><div class="zin" id="simSvg"></div></div>
+<h3>Componentes en este paso</h3>
+<div class="cards" id="sCards"></div>
+<div class="grid" style="margin-top:12px">
+<div class="card"><h3 style="margin-top:0">Tensiones</h3><div class="tw"><table id="sVolt"></table></div></div>
+<div class="card"><h3 style="margin-top:0">Registro</h3><div class="log" id="sLog"></div></div>
+</div>
+</section>
+
+<!-- MATERIALES -->
+<section class="tab" id="t-materiales" data-name="Materiales">
+<h2>Materiales</h2>
+<div class="tw"><table>
+<tr><th>Pieza</th><th>Cant.</th><th>Para qué</th><th>Estado</th></tr>
+<tr><td>ESP32-WROOM-32D DevKit, 38 pines</td><td>1</td><td>Cerebro, WiFi, DAC</td><td><span class="tag t-med">tienes</span></td></tr>
+<tr><td>Módulo 2 relés 5 V con puente H/L (Innfeeltech)</td><td>1</td><td>Cortar el verde de cada planta</td><td><span class="tag t-doc">pedido</span></td></tr>
+<tr><td>Placa perforada 7×9 cm</td><td>1</td><td>Montaje</td><td><span class="tag t-doc">kit de placas</span></td></tr>
+<tr><td>Tiras hembra 2,54 mm (19 pines)</td><td>2</td><td>Enchufar la ESP</td><td><span class="tag t-pend">comprobar</span></td></tr>
+<tr><td>Bornas de tornillo 5,08 mm: 3 de 2 polos y 1 de 3 polos</td><td>4</td><td>J1–J4</td><td><span class="tag t-pend">comprobar</span></td></tr>
+<tr><td>Optoacoplador 4N35 (+ zócalo DIP-6, recomendado)</td><td>1</td><td>U1 detector</td><td><span class="tag t-pend">comprobar en el kit</span></td></tr>
+<tr><td>Diodo 1N4007</td><td>1</td><td>D1</td><td><span class="tag t-pend">comprobar en el kit</span></td></tr>
+<tr><td>Resistencia 1 kΩ</td><td>2</td><td>R1, R2</td><td><span class="tag t-pend">comprobar en el kit</span></td></tr>
+<tr><td>Condensador electrolítico 10 µF ≥ 25 V</td><td>1</td><td>C1</td><td><span class="tag t-pend">comprobar en el kit</span></td></tr>
+<tr><td>Interruptor (2 cables)</td><td>1</td><td>Modo normal/selector</td><td><span class="tag t-med">tienes</span></td></tr>
+<tr><td>Cargador 5 V 2 A (se corta su cable)</td><td>1</td><td>Alimentación</td><td><span class="tag t-med">tienes</span></td></tr>
+<tr><td>Cable 2,5 mm² (2 hilos)</td><td>5–10 m</td><td>5 V por el tubo del portero</td><td><span class="tag t-med">tienes</span></td></tr>
+<tr><td>Fichas de empalme</td><td>varias</td><td>Empalmes 5 V y derivaciones</td><td><span class="tag t-pend">comprar</span></td></tr>
+<tr><td>Separadores M3 de nylon</td><td>8</td><td>Placa y relés</td><td><span class="tag t-med">tienes</span></td></tr>
+<tr><td>Cable rígido fino aislado (0,5 mm)</td><td>1 rollo</td><td>Cables bajo la placa</td><td><span class="tag t-pend">comprobar</span></td></tr>
+<tr><td>Caja de superficie con tapa, interior ≥ 90×165×40</td><td>1</td><td>Alojamiento</td><td><span class="tag t-pend">elegir</span></td></tr>
+</table></div>
+<div class="photos">
+<figure><img src="__IMG_esp32__" alt="ESP32"><figcaption>Tu ESP32.</figcaption></figure>
+<figure><img src="__IMG_rele__" alt="Relé"><figcaption>Módulo de relés con medidas.</figcaption></figure>
+<figure><img src="__IMG_kit__" alt="Kit"><figcaption>Kit de componentes.</figcaption></figure>
+</div>
+</section>
+
+<!-- PRUEBAS -->
+<section class="tab" id="t-pruebas" data-name="Pruebas pendientes">
+<h2>Pruebas pendientes</h2>
+<div class="tw"><table>
+<tr><th>#</th><th>Prueba</th><th>Cómo</th><th>Esperado</th></tr>
+<tr><td>12</td><td>Verde al llamar</td><td>Multímetro en V~ 200; negra en gris, roja en verde; que alguien pulse el botón en la calle</td><td>9–12 V~</td></tr>
+<tr><td>18</td><td>Audio en la calle sin llamada</td><td>Descuelga sin que nadie llame y habla; otra persona escucha en la calle</td><td>Se oye</td></tr>
+<tr><td>R1</td><td>Relé con 3,3 V</td><td>Módulo con 5 V en DC+/DC− y puente en H; IN1 a 3,3 V de la ESP</td><td>Hace clic y se enciende el LED</td></tr>
+<tr><td>R2</td><td>Arranque</td><td>Conectar la ESP con el módulo y desenchufar y enchufar varias veces</td><td>No hace clic al arrancar</td></tr>
+<tr><td>H</td><td>Separación de pines</td><td>Pinchar la ESP en la placa: ¿10 o 9 agujeros entre filas?</td><td>Fila derecha en K</td></tr>
+<tr><td>P2</td><td>Teléfono planta 2</td><td>Marca, modelo y colores</td><td>—</td></tr>
+<tr><td>V</td><td>Verde separable</td><td>En la regleta: ¿llegan por separado el verde de la calle, el de P1 y el de P2?</td><td>3 cables</td></tr>
+</table></div>
+<p>Apunta los resultados en <a href="https://claude.ai/artifact/VDFqa5R3fe7Rv84eDPHHx7" target="_blank" rel="noopener">la página de pruebas</a>. Aviso: esa página aún usa los números de borne de Fermax; guíate por los colores.</p>
+</section>
+</div>
+
+<script>
+const $=s=>document.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+/* ---------- tabs ---------- */
+const tabs=$$('section.tab');
+$('#tabs').innerHTML=tabs.map(t=>`<a href="#${t.id.slice(2)}" data-t="${t.id.slice(2)}">${t.dataset.name}</a>`).join('');
+function route(){let h=(location.hash||'#resumen').slice(1);if(!$('#t-'+h))h='resumen';tabs.forEach(t=>t.classList.toggle('on',t.id==='t-'+h));$$('#tabs a').forEach(a=>a.classList.toggle('on',a.dataset.t===h));}
+addEventListener('hashchange',route);route();
+
+/* ---------- zoom ---------- */
+function setupZoom(z){
+  const base=+z.dataset.base,zin=z.querySelector('.zin');let s=null;
+  let bar=z.querySelector('.zbar');if(!bar){bar=document.createElement('div');bar.className='zbar';z.prepend(bar);}
+  bar.insertAdjacentHTML('afterbegin','<button data-z="-">−</button><button data-z="+">+</button><button data-z="fit">Ajustar</button><button data-z="1">100%</button><span class="lvl"></span>');
+  const lvl=bar.querySelector('.lvl');
+  const fit=()=>Math.min(1,(zin.clientWidth-2)/base);
+  function apply(){const svg=zin.querySelector('svg');if(!svg)return;const k=s??fit();svg.style.width=(base*k)+'px';svg.style.height='auto';lvl.textContent=Math.round(k*100)+'%';}
+  bar.addEventListener('click',e=>{const b=e.target.closest('button[data-z]');if(!b)return;const cur=s??fit();
+    if(b.dataset.z==='+')s=Math.min(6,cur*1.3);else if(b.dataset.z==='-')s=Math.max(.2,cur/1.3);else if(b.dataset.z==='fit')s=null;else s=1;apply();});
+  zin.addEventListener('wheel',e=>{if(!e.ctrlKey&&!e.metaKey)return;e.preventDefault();const cur=s??fit();s=Math.min(6,Math.max(.2,cur*(e.deltaY<0?1.15:1/1.15)));apply();},{passive:false});
+  new ResizeObserver(()=>{if(s===null)apply();}).observe(zin);
+  z._apply=apply;apply();
+}
+
+/* ---------- colors ---------- */
+const W={verde:'var(--verde)',gris:'var(--gris)',rojo:'var(--rojo)',azul:'var(--azul)',amarillo:'var(--amarillo)'};
+
+/* ---------- Hilos map ---------- */
+(function(){
+  const y={rojo:120,azul:160,amarillo:200,gris:240};let s='';
+  s+=`<rect class="blk" x="20" y="60" width="230" height="330" rx="10"/><text class="lblb" x="40" y="90">Placa de calle</text><text class="lbls" x="40" y="108">amplificador · altavoz · micro</text>`;
+  const vs={rojo:'11,8 V⎓',azul:'10,6 V⎓',amarillo:'9,9 V⎓',gris:'0 V'};
+  for(const k in y){s+=`<path class="w hot" style="stroke:${W[k]};opacity:1" d="M250 ${y[k]}H1150"/><text class="vb" x="270" y="${y[k]-6}" style="fill:${W[k]}">${k} · ${vs[k]}</text>`;}
+  s+=`<path class="w hot" style="stroke:var(--verde);opacity:1" d="M250 330H420"/><text class="vb" x="270" y="322" style="fill:var(--verde)">verde · 0 V / 9–12 V~ al llamar</text>`;
+  s+=`<rect class="blk2" x="420" y="290" width="180" height="90" rx="8"/><text class="lbl" x="440" y="320">Regleta</text><text class="lbls" x="440" y="340">hoy: verde unido</text><text class="lbls" x="440" y="356">con selector: pasa por la caja</text>`;
+  s+=`<path class="w hot" style="stroke:var(--verde);opacity:1" d="M600 320H800V300"/><path class="w hot" style="stroke:var(--verde);opacity:1" d="M600 350H1000V300"/>`;
+  [[720,'Planta 1 · Tegui'],[920,'Planta 2 · ?']].forEach(([x,t],i)=>{
+    s+=`<rect class="blk" x="${x}" y="300" width="170" height="110" rx="10"/><text class="lblb" x="${x+14}" y="330">${t}</text>`;
+    ['rojo','azul','amarillo','gris'].forEach((k,j)=>{const xx=x+20+j*22;s+=`<path class="w hot" style="stroke:${W[k]};opacity:1" d="M${xx} ${y[k]}V300"/><circle class="dot" cx="${xx}" cy="${y[k]}" r="4"/>`;});
+    s+=`<text class="lbls" x="${x+14}" y="390">5 hilos: 1 verde · 2 gris · 3 rojo · 4 azul · 5 amarillo</text>`;
+  });
+  s+=`<circle class="dot" cx="800" cy="300" r="0"/><text class="lbls" x="20" y="440">Las 4 líneas comunes van a todas las viviendas del edificio; el verde es solo de la tuya.</text>`;
+  $('#svgHilos').innerHTML=s;
+})();
+
+/* ---------- PLACA ---------- */
+const COLS='ABCDEFGHIJKLMNOPQRSTUVWX';
+const pinsR=['5V','CMD','D3','D2','IO13','GND','IO12','IO14','IO27','IO26','IO25','IO33','IO32','IO35','IO34','VN','VP','EN','3V3'];
+const pinsL=['CLK','D0','D1','IO15','IO2','IO0','IO4','IO16','IO17','IO5','IO18','IO19','GND','IO21','RX','TX','IO22','IO23','GND'];
+const NETC={'+5V':'var(--v5)','GND':'var(--gnd)','IN1':'var(--sig)','IN2':'var(--sig)','SW':'var(--acc2)','DAC':'var(--aud)','C1-R2':'var(--aud)','AZUL':'var(--azul)','VERDE':'var(--verde)','R1-D1':'var(--verde)','D1-LED':'var(--det)','DET':'var(--det)'};
+const parts=[
+ {id:'ESP32',desc:'ESP32 DevKit 38 pines en tiras hembra, USB arriba',pins:Object.fromEntries([...pinsR.map((n,i)=>['K'+(i+2),'R:'+n]),...pinsL.map((n,i)=>['A'+(i+2),'L:'+n])])},
+ {id:'J1',desc:'Borna 2 polos: alimentación del módulo de relés',pins:{W2:'+5V → DC+',W4:'GND → DC−'}},
+ {id:'J2',desc:'Borna 2 polos: señales del módulo de relés',pins:{W6:'IN1',W8:'IN2'}},
+ {id:'J3',desc:'Borna 2 polos: interruptor de modo',pins:{W11:'IO26',W13:'GND'}},
+ {id:'J4',desc:'Borna 3 polos: portero',pins:{W16:'azul',W18:'verde (calle)',W20:'gris'}},
+ {id:'R1',desc:'1 kΩ (marrón-negro-rojo)',pins:{V18:'lado verde',R18:'lado D1'}},
+ {id:'D1',desc:'1N4007: la banda (cátodo) ABAJO, en Q22',pins:{Q18:'ánodo',Q22:'cátodo (banda)'}},
+ {id:'U1',desc:'4N35: muesca HACIA ABAJO; pin 1 abajo a la derecha (P20)',pins:{P20:'1 ánodo LED',P19:'2 cátodo LED',P18:'3 sin conexión',M18:'4 emisor',M19:'5 colector',M20:'6 base (libre)'}},
+ {id:'C1',desc:'10 µF ≥25 V electrolítico: el − (franja) en M12, el + en N12',pins:{M12:'− (franja)',N12:'+'}},
+ {id:'R2',desc:'1 kΩ (marrón-negro-rojo)',pins:{O12:'lado C1',S12:'lado azul'}},
+];
+const wires=[
+ {id:'w1',net:'+5V',path:['K2','W2'],t:'cable'},
+ {id:'w2',net:'IN1',path:['K6','W6'],t:'cable'},
+ {id:'w3',net:'GND',path:['K7','X7'],t:'cable'},
+ {id:'w4',net:'GND',path:['X4','X20'],t:'bus',note:'Bus de masa: cable desnudo soldado en cada agujero de X4 a X20'},
+ {id:'b1',net:'GND',path:['W4','X4'],t:'puente'},
+ {id:'b2',net:'GND',path:['W13','X13'],t:'puente'},
+ {id:'b3',net:'GND',path:['W20','X20'],t:'puente'},
+ {id:'w5',net:'IN2',path:['K10','V10','V8','W8'],t:'cable'},
+ {id:'w6',net:'SW',path:['K11','W11'],t:'cable'},
+ {id:'w7',net:'DAC',path:['K12','M12'],t:'cable'},
+ {id:'b4',net:'C1-R2',path:['N12','O12'],t:'puente'},
+ {id:'w8',net:'AZUL',path:['S12','U12','U16','W16'],t:'cable'},
+ {id:'b5',net:'VERDE',path:['V18','W18'],t:'puente'},
+ {id:'b6',net:'R1-D1',path:['Q18','R18'],t:'puente'},
+ {id:'w9',net:'D1-LED',path:['Q22','P22','P20'],t:'cable'},
+ {id:'b7',net:'GND',path:['P18','P19'],t:'puente',note:'El pin 3 no tiene conexión interna: se usa como punto de unión'},
+ {id:'w10',net:'GND',path:['M18','P18'],t:'cable',note:'Pasa por debajo del 4N35'},
+ {id:'w11',net:'GND',path:['P19','S19','S20','V20'],t:'cable'},
+ {id:'b8',net:'GND',path:['V20','W20'],t:'puente'},
+ {id:'w12',net:'DET',path:['M19','L19','L14'],t:'cable'},
+ {id:'b9',net:'DET',path:['L14','K14'],t:'puente'},
+];
+const expected={'+5V':['ESP32.K2','J1.W2'],'GND':['ESP32.K7','J1.W4','J3.W13','J4.W20','U1.M18','U1.P19','U1.P18'],'IN1':['ESP32.K6','J2.W6'],'IN2':['ESP32.K10','J2.W8'],'SW':['ESP32.K11','J3.W11'],'DAC':['ESP32.K12','C1.M12'],'C1-R2':['C1.N12','R2.O12'],'AZUL':['R2.S12','J4.W16'],'VERDE':['J4.W18','R1.V18'],'R1-D1':['R1.R18','D1.Q18'],'D1-LED':['D1.Q22','U1.P20'],'DET':['U1.M19','ESP32.K14']};
+const hp=h=>[COLS.indexOf(h[0]),+h.slice(1)];
+function cells(path){const out=[];for(let i=0;i<path.length-1;i++){const[c1,r1]=hp(path[i]),[c2,r2]=hp(path[i+1]);if(c1===c2){const s=r2>r1?1:-1;for(let r=r1;r!==r2+s;r+=s)out.push(COLS[c1]+r);}else{const s=c2>c1?1:-1;for(let c=c1;c!==c2+s;c+=s)out.push(COLS[c]+r1);}}return[...new Set(out)];}
+function validate(){
+  const par={};const f=x=>{par[x]??=x;while(par[x]!==x)x=par[x];return x};const u=(a,b)=>par[f(a)]=f(b);
+  const hole2pin={};parts.forEach(p=>Object.keys(p.pins).forEach(h=>hole2pin[h]=p.id+'.'+h));
+  const errs=[];
+  wires.forEach(w=>{const cs=cells(w.path);const conn=w.t==='bus'||w.t==='puente'?cs:w.path;conn.forEach(h=>u(w.id,'h'+h));
+    if(w.t==='cable')cs.filter(h=>!w.path.includes(h)).forEach(h=>{if(hole2pin[h])errs.push(`${w.id} pasa por encima del pin ${hole2pin[h]}`)});});
+  // crossings: shared hole between wires of different nets
+  for(let i=0;i<wires.length;i++)for(let j=i+1;j<wires.length;j++){const A=wires[i],B=wires[j];if(f(A.id)===f(B.id))continue;const ca=cells(A.path),cb=new Set(cells(B.path));ca.forEach(h=>{if(cb.has(h))errs.push(`Cruce: ${A.id} y ${B.id} en ${h}`)})}
+  // nets compare
+  const nets={};Object.entries(hole2pin).forEach(([h,p])=>{if(par['h'+h]===undefined)return;(nets[f('h'+h)]??=[]).push(p)});
+  const got=Object.values(nets).filter(n=>n.length>1).map(n=>n.sort().join(' · ')).sort();
+  const exp=Object.values(expected).map(n=>[...n].sort().join(' · ')).sort();
+  exp.forEach(n=>{if(!got.includes(n))errs.push('Falta la conexión: '+n)});
+  got.forEach(n=>{if(!exp.includes(n))errs.push('Conexión de más: '+n)});
+  return{errs,got};
+}
+let mirror=false;
+function drawPlaca(){
+  const P=24,ox=46,oy=40,nC=24,nR=30,Wd=ox*2+P*(nC-1),Hd=oy+P*(nR-1)+40;
+  const X=c=>ox+P*(mirror?nC-1-c:c),Y=r=>oy+P*(r-1),pt=h=>{const[c,r]=hp(h);return[X(c),Y(r)]};
+  let s=`<rect x="${ox-20}" y="${oy-22}" width="${P*(nC-1)+40}" height="${P*(nR-1)+44}" rx="8" style="fill:var(--board);stroke:var(--line)"/>`;
+  for(let c=0;c<nC;c++){s+=`<text class="lbls" x="${X(c)}" y="${oy-28}" text-anchor="middle" style="font-weight:700">${COLS[c]}</text>`;}
+  for(let r=1;r<=nR;r++){s+=`<text class="lbls" x="${mirror?Wd-12:12}" y="${Y(r)+4}" text-anchor="middle">${r}</text>`;}
+  for(let c=0;c<nC;c++)for(let r=1;r<=nR;r++)s+=`<circle cx="${X(c)}" cy="${Y(r)}" r="3.2" style="fill:var(--hole)"/>`;
+  const top=!mirror,op=top?1:.28;
+  // part bodies
+  const box=(a,b,lab,fill)=>{const[x1,y1]=pt(a),[x2,y2]=pt(b);const x=Math.min(x1,x2)-11,y=Math.min(y1,y2)-11,w=Math.abs(x2-x1)+22,h=Math.abs(y2-y1)+22;return`<g opacity="${op}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="5" style="fill:${fill};stroke:var(--ink);stroke-width:1.2"/><text class="lbl" x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" style="font-weight:700">${lab}</text></g>`};
+  s+=`<g opacity="${op}"><rect x="${Math.min(X(0),X(10))-14}" y="${Y(1)-30}" width="${Math.abs(X(10)-X(0))+28}" height="${Y(21)-Y(1)+40}" rx="6" style="fill:#23465f;opacity:.18;stroke:var(--ink)"/><text class="lblb" x="${(X(0)+X(10))/2}" y="${Y(11)}" text-anchor="middle">ESP32</text><text class="lbls" x="${(X(0)+X(10))/2}" y="${Y(11)+18}" text-anchor="middle">tiras hembra en A y K</text><rect x="${(X(0)+X(10))/2-16}" y="${Y(1)-44}" width="32" height="22" rx="3" style="fill:var(--mute)"/><text class="lbls" x="${(X(0)+X(10))/2}" y="${Y(1)-50}" text-anchor="middle">USB ↑</text></g>`;
+  s+=box('W2','X4','J1','#4f83c6')+box('W6','X8','J2','#4f83c6')+box('W11','X13','J3','#4f83c6')+box('W16','X20','J4','#4f83c6');
+  s+=box('S18','U18','R1','#d8b48a')+box('Q19','Q21','D1','#555')+box('N18','O20','U1','#333')+box('P12','R12','R2','#d8b48a');
+  {const[a,b]=pt('M12'),[c]=pt('N12');s+=`<g opacity="${op}"><circle cx="${(a+c)/2}" cy="${b}" r="15" style="fill:#3b5ea8;stroke:var(--ink)"/><text class="lbl" x="${(a+c)/2}" y="${b+4}" text-anchor="middle" style="fill:#fff;font-weight:700">C1</text></g>`;}
+  {const[x,y]=pt('Q22');s+=`<rect opacity="${op}" x="${x-8}" y="${y-18}" width="16" height="5" style="fill:#ddd"/>`;const[ux,uy]=pt('N20');s+=`<path opacity="${op}" d="M${(ux+pt('O20')[0])/2-7} ${uy+11}a7 7 0 0 0 14 0" style="fill:var(--bg)"/>`;}
+  // wires (solder side): draw always, faded on top view
+  const wop=top?.75:1;
+  wires.forEach(w=>{const d='M'+w.path.map(pt).map(p=>p.join(' ')).join('L');const col=NETC[w.net];
+    if(w.t==='cable')s+=`<path d="${d}" style="fill:none;stroke:${col};stroke-width:5;stroke-linecap:round;stroke-linejoin:round;opacity:${wop}"><title>${w.id} · ${w.net}</title></path>`;
+    else s+=`<path d="${d}" style="fill:none;stroke:#b8bcc4;stroke-width:${w.t==='bus'?6:7};stroke-linecap:round;opacity:${wop}"/><path d="${d}" style="fill:none;stroke:${col};stroke-width:2;stroke-dasharray:${w.t==='bus'?'0':'3 3'};opacity:${wop}"><title>${w.id} · ${w.net}</title></path>`;});
+  // pads used
+  parts.forEach(p=>Object.entries(p.pins).forEach(([h,lab])=>{const[x,y]=pt(h);const used=wires.some(w=>cells(w.path).includes(h)&&(w.path.includes(h)||w.t!=='cable'));
+    s+=`<circle cx="${x}" cy="${y}" r="${used?6:4.5}" style="fill:var(--pad);stroke:${used?'var(--ink)':'none'};stroke-width:1.2"><title>${h} · ${p.id} ${lab}</title></circle>`;}));
+  // ESP pin labels on right header
+  pinsR.forEach((n,i)=>{const[x,y]=pt('K'+(i+2));const dx=mirror?14:-14;s+=`<text class="lbls" x="${x+dx}" y="${y+4}" text-anchor="${mirror?'start':'end'}" style="font-size:10px;font-family:'JetBrains Mono';${['5V','IO13','GND','IO27','IO26','IO25','IO32'].includes(n)?'fill:var(--ink);font-weight:600':''}">${n}</text>`});
+  // terminal labels
+  [['W2','+5V'],['W4','GND'],['W6','IN1'],['W8','IN2'],['W11','IO26'],['W13','GND'],['W16','AZUL'],['W18','VERDE'],['W20','GRIS']].forEach(([h,t])=>{const[x,y]=pt(h);s+=`<text class="vb" x="${mirror?x-40:x+40}" y="${y+4}" text-anchor="${mirror?'end':'start'}" style="fill:var(--ink);font-size:11px">${t}</text>`});
+  const Wtot=Wd+70;const svg=$('#svgPlaca');svg.setAttribute('viewBox',`${mirror?-70:0} -40 ${Wtot} ${Hd+50}`);svg.innerHTML=s;
+  $('#placaView').textContent=mirror?'Vista: soldadura (placa girada, columna A a la DERECHA)':'Vista: componentes (arriba). Cables de abajo vistos por transparencia';
+}
+document.querySelector('[data-act=mirror]').onclick=()=>{mirror=!mirror;drawPlaca();};
+drawPlaca();
+(function(){const{errs,got}=validate();
+  $('#placaCheck').innerHTML=errs.length?`<div class="note"><b>Validación con errores:</b><br>${errs.join('<br>')}</div>`:`<div class="okbox"><b>Validación automática correcta.</b> Las ${got.length} conexiones de la placa, calculadas a partir de los cables y puentes dibujados, coinciden con el esquema. 0 cruces. Ningún cable pasa por encima de un pin ajeno.</div>`;
+  $('#tblParts').innerHTML='<tr><th>Pieza</th><th>Montaje</th><th>Agujeros</th></tr>'+parts.filter(p=>p.id!=='ESP32').map(p=>`<tr><td><b>${p.id}</b></td><td>${p.desc}</td><td class="mono">${Object.entries(p.pins).map(([h,l])=>h+' '+l).join('<br>')}</td></tr>`).join('')+`<tr><td><b>ESP32</b></td><td>Tiras hembra en la columna A (filas 2–20) y en la K (filas 2–20). Si tu ESP tiene 9 agujeros entre filas, la izquierda va en B; la derecha sigue en K</td><td class="mono">K2 5V · K6 IO13 · K7 GND · K10 IO27 · K11 IO26 · K12 IO25 · K14 IO32</td></tr>`;
+  $('#tblWires').innerHTML='<tr><th>#</th><th>Tipo</th><th>Recorrido</th><th>Señal</th><th>Nota</th></tr>'+wires.map(w=>`<tr><td class="mono">${w.id}</td><td>${w.t==='cable'?'cable aislado':w.t==='bus'?'cable desnudo (bus)':'puente de estaño'}</td><td class="mono">${w.path.join(' → ')}</td><td><span class="sw" style="background:${NETC[w.net]}"></span>${w.net}</td><td>${w.note||''}</td></tr>`).join('');
+})();
+
+/* ---------- sub-schematics ---------- */
+$('#svgDet').innerHTML=`
+<path class="w hot" style="stroke:var(--verde);opacity:1" d="M30 80H120"/><text class="vb" x="30" y="70" style="fill:var(--verde)">verde (J4-W18)</text>
+<rect x="120" y="68" width="80" height="24" class="blk"/><text class="lbl" x="160" y="60" text-anchor="middle">R1 1 kΩ</text>
+<path class="w hot" style="stroke:var(--verde);opacity:1" d="M200 80H260"/>
+<path d="M260 64L260 96L290 80Z" style="fill:var(--ink)"/><path d="M292 62V98" style="stroke:var(--ink);stroke-width:3"/><text class="lbl" x="276" y="56" text-anchor="middle">D1 1N4007</text>
+<path class="w hot" style="stroke:var(--det);opacity:1" d="M292 80H380V100"/>
+<rect x="360" y="50" width="250" height="190" rx="10" class="blk2"/><text class="lbl" x="485" y="44" text-anchor="middle">U1 4N35</text>
+<path d="M366 100L394 100L380 126Z" style="fill:var(--det)"/><path d="M366 128H394" style="stroke:var(--ink);stroke-width:3"/>
+<path class="w" style="stroke:var(--gris);opacity:1" d="M380 128V200"/>
+<text class="lbls" x="400" y="100">1</text><text class="lbls" x="400" y="200">2</text>
+<path d="M415 105l25 8M415 120l25 8" style="stroke:var(--det);stroke-width:2"/>
+<path d="M480 90V150M480 110L540 80M480 130L540 160" style="stroke:var(--ink);stroke-width:3;fill:none"/><path d="M528 150l12 10l-15 2z" style="fill:var(--ink)"/>
+<text class="lbls" x="548" y="80">5 colector</text><text class="lbls" x="548" y="170">4 emisor</text>
+<path class="w hot" style="stroke:var(--det);opacity:1" d="M540 80H760"/><text class="vb" x="640" y="70" style="fill:var(--det)">GPIO32 (pull-up 3,3 V)</text>
+<path class="w hot" style="stroke:var(--gnd);opacity:1" d="M540 160V200"/>
+<path class="w hot" style="stroke:var(--gris);opacity:1" d="M30 200H760"/><text class="vb" x="30" y="222" style="fill:var(--gris)">gris = GND ESP (J4-W20)</text>
+<circle class="dot" cx="380" cy="200" r="5"/><circle class="dot" cx="540" cy="200" r="5"/>
+<text class="lbls" x="620" y="250">En reposo GPIO32 = 3,3 V · al pulsar: pulsos a 0 V a 50 Hz</text>`;
+$('#svgAud').innerHTML=`
+<path class="w hot" style="stroke:var(--aud);opacity:1" d="M40 100H180"/><text class="vb" x="40" y="88" style="fill:var(--aud)">GPIO25 (DAC 0–3,3 V)</text>
+<path d="M180 70V130M200 70V130" style="stroke:var(--ink);stroke-width:4"/><path d="M200 70q14 30 0 60" style="fill:none;stroke:var(--ink);stroke-width:3"/>
+<text class="lbl" x="190" y="60" text-anchor="middle">C1 10 µF</text><text class="vb" x="164" y="150">−</text><text class="vb" x="210" y="150">+</text>
+<path class="w hot" style="stroke:var(--aud);opacity:1" d="M205 100H290"/>
+<rect x="290" y="88" width="90" height="24" class="blk"/><text class="lbl" x="335" y="80" text-anchor="middle">R2 1 kΩ</text>
+<path class="w hot" style="stroke:var(--azul);opacity:1" d="M380 100H620"/><text class="vb" x="430" y="88" style="fill:var(--azul)">azul 10,6 V⎓ (J4-W16)</text>
+<rect x="620" y="60" width="240" height="90" rx="10" class="blk"/><text class="lblb" x="640" y="90">Amplificador de la placa</text><text class="lbls" x="640" y="112">→ altavoz de la calle</text>
+<text class="lbls" x="40" y="200">C1 soporta ≈ 9 V ⎓ (10,6 V del azul − 1,65 V de la mitad del DAC). Por eso el + va al azul.</text>
+<text class="lbls" x="40" y="222">GPIO25 en alta impedancia cuando no habla: los teléfonos del edificio no notan nada.</text>`;
+
+/* ---------- CAJA ---------- */
+(function(){const k=3,ox=40,oy=40;const R=(x,y,w,h,cls,st='')=>`<rect x="${ox+x*k}" y="${oy+y*k}" width="${w*k}" height="${h*k}" class="${cls}" style="${st}" rx="4"/>`;const T=(x,y,t,c='lbl',a='start')=>`<text class="${c}" x="${ox+x*k}" y="${oy+y*k}" text-anchor="${a}">${t}</text>`;
+ let s=T(0,-4,'Vista frontal (sin tapa), en mm','lblb');
+ s+=R(0,0,90,165,'blk','fill:var(--bg)');
+ s+=R(2,73,70,90,'','fill:var(--board);stroke:var(--ink)')+T(37,150,'Placa 70 × 90','lbl','middle');
+ s+=R(4,70,29,57,'','fill:#23465f;fill-opacity:.25;stroke:var(--ink)')+T(18.5,100,'ESP32','lblb','middle');
+ s+=R(14,40,10,30,'','fill:var(--mute);opacity:.7')+T(19,37,'micro-USB','lbls','middle');
+ s+=R(40,6,46,50,'','fill:#4f83c6;fill-opacity:.25;stroke:var(--ink)')+T(63,30,'Relés 2 canales','lbl','middle')+T(63,36,'45,7 × 49,8','lbls','middle');
+ s+=R(74,60,15,103,'blk2')+T(81.5,110,'fichas','lbls','middle');
+ s+=`<circle cx="${ox+81*k}" cy="${oy+150*k}" r="${5*k}" style="fill:none;stroke:var(--acc);stroke-width:2;stroke-dasharray:4 3"/>`+T(81.5,160,'entrada','lbls','middle');
+ s+=`<path d="M${ox} ${oy+170*k}H${ox+90*k}" style="stroke:var(--ink)"/>`+T(45,177,'90 mm interior','lbl','middle');
+ s+=`<path d="M${ox+96*k} ${oy}V${oy+165*k}" style="stroke:var(--ink)"/>`+`<text class="lbl" x="${ox+99*k}" y="${oy+82*k}">165 mm</text>`;
+ // side view
+ const sx=ox+135*k;s+=`<text class="lblb" x="${sx}" y="${oy-12}">Vista lateral</text><rect x="${sx}" y="${oy}" width="${40*k}" height="${165*k}" class="blk" style="fill:var(--bg)" rx="4"/>`;
+ s+=`<rect x="${sx}" y="${oy+73*k}" width="${6*k}" height="${90*k}" style="fill:var(--line)"/><rect x="${sx+6*k}" y="${oy+73*k}" width="${2*k}" height="${90*k}" style="fill:var(--board);stroke:var(--ink)"/><rect x="${sx+8*k}" y="${oy+70*k}" width="${20*k}" height="${57*k}" style="fill:#23465f;fill-opacity:.25;stroke:var(--ink)"/>`;
+ s+=`<rect x="${sx}" y="${oy+6*k}" width="${6*k}" height="${50*k}" style="fill:var(--line)"/><rect x="${sx+6*k}" y="${oy+6*k}" width="${19*k}" height="${50*k}" style="fill:#4f83c6;fill-opacity:.25;stroke:var(--ink)"/>`;
+ s+=`<text class="lbls" x="${sx+44*k}" y="${oy+100*k}">separador 6 mm + placa 1,6</text><text class="lbls" x="${sx+44*k}" y="${oy+108*k}">+ ESP en tiras ≈ 22 mm</text><text class="lbls" x="${sx+44*k}" y="${oy+30*k}">relés ≈ 19 mm de alto</text><text class="lbl" x="${sx}" y="${oy+175*k}">40 mm de fondo</text>`;
+ $('#svgCaja').setAttribute('viewBox',`0 0 ${ox+240*k} ${oy+185*k}`);$('#svgCaja').innerHTML=s;})();
+
+/* ---------- SIM SVG ---------- */
+function simSVG(){return`<svg viewBox="0 0 1260 730" role="img" aria-label="Simulación">
+<defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" style="fill:var(--acc)"/></marker></defs>
+<!-- placa -->
+<rect class="blk" x="20" y="40" width="200" height="300" rx="10"/><text class="lblb" x="36" y="66">Placa de calle</text>
+<rect data-c="btn" x="36" y="80" width="90" height="34" rx="6" style="fill:var(--bg);stroke:var(--ink)"/><text class="lbl" x="81" y="102" text-anchor="middle">Pulsador</text>
+<rect x="36" y="128" width="168" height="70" rx="6" class="blk2"/><text class="lbl" x="46" y="150">Amplificador</text><text class="lbls" x="46" y="168">siempre encendido</text>
+<g data-c="spk"><path d="M40 230h14l14-12v40l-14-12H40z" style="fill:var(--ink)"/><text class="lbls" x="78" y="242">altavoz calle</text><path data-c="spkw" d="M70 222q10 16 0 32M78 216q16 22 0 44" style="fill:none;stroke:var(--acc);stroke-width:3;opacity:0"/></g>
+<g><circle cx="52" cy="285" r="10" style="fill:var(--ink)"/><text class="lbls" x="70" y="290">micro calle</text><path data-c="micw" d="M30 270q-8 15 0 30" style="fill:none;stroke:var(--acc);stroke-width:3;opacity:0"/></g>
+<rect data-c="lock" x="140" y="270" width="64" height="40" rx="6" style="fill:var(--bg);stroke:var(--ink)"/><text class="lbls" x="172" y="295" text-anchor="middle">cerradura</text>
+<!-- bus -->
+<path data-w="rojo" class="w" style="stroke:var(--rojo)" d="M220 100H1170M920 100V280M1100 100V280"/>
+<path data-w="azul" class="w" style="stroke:var(--azul)" d="M220 130H1170M940 130V280M1120 130V280M280 130V330"/>
+<path data-w="amarillo" class="w" style="stroke:var(--amarillo)" d="M220 160H1170M960 160V280M1140 160V280"/>
+<path data-w="gris" class="w" style="stroke:var(--gris)" d="M220 190H1170M980 190V280M1160 190V280M262 190V680H620"/>
+<g class="dot"><circle cx="920" cy="100" r="4"/><circle cx="1100" cy="100" r="4"/><circle cx="940" cy="130" r="4"/><circle cx="1120" cy="130" r="4"/><circle cx="280" cy="130" r="4"/><circle cx="960" cy="160" r="4"/><circle cx="1140" cy="160" r="4"/><circle cx="980" cy="190" r="4"/><circle cx="1160" cy="190" r="4"/><circle cx="262" cy="190" r="4"/></g>
+<text class="vb" data-v="rojo" x="420" y="94" style="fill:var(--rojo)"></text><text class="vb" data-v="azul" x="420" y="124" style="fill:var(--azul)"></text><text class="vb" data-v="amarillo" x="420" y="154" style="fill:var(--amarillo)"></text><text class="vb" data-v="gris" x="420" y="184" style="fill:var(--gris)"></text>
+<!-- selector box -->
+<rect x="300" y="230" width="570" height="480" rx="12" class="blk2"/><text class="lblb" x="316" y="254">Caja selector</text>
+<!-- verde -->
+<path data-w="verdeIn" class="w" style="stroke:var(--verde)" d="M220 320H240V695H760V315H770M760 405H770"/>
+<circle class="dot" cx="760" cy="405" r="4"/><circle class="dot" cx="760" cy="615" r="4"/>
+<text class="vb" data-v="verdeIn" x="250" y="470" style="fill:var(--verde)"></text>
+<!-- charger -->
+<rect x="390" y="200" width="110" height="24" rx="4" style="fill:var(--bg);stroke:var(--v5)"/><text class="lbls" x="445" y="216" text-anchor="middle">cargador 5 V</text>
+<path data-w="usb" class="w" style="stroke:var(--v5)" d="M445 224V280"/>
+<!-- ESP -->
+<rect data-c="esp" x="400" y="280" width="120" height="200" rx="8" class="blk"/><text class="lblb" x="460" y="380" text-anchor="middle">ESP32</text><text class="lbls" data-v="espst" x="460" y="398" text-anchor="middle"></text>
+<g class="lbls" style="font-size:10px"><text x="506" y="304" text-anchor="end">5V</text><text x="506" y="334" text-anchor="end">IO13</text><text x="506" y="364" text-anchor="end">IO27</text><text x="506" y="404" text-anchor="end">IO26</text><text x="506" y="464" text-anchor="end">GND</text><text x="406" y="334">IO25</text><text x="490" y="474" text-anchor="middle"> </text><text x="500" y="474" text-anchor="end">IO32</text><text x="444" y="474" text-anchor="middle">GND</text></g>
+<path data-w="v5" class="w" style="stroke:var(--v5)" d="M520 300H660V285H680"/>
+<path data-w="in1" class="w" style="stroke:var(--sig)" d="M520 330H640V315H690"/>
+<path data-w="in2" class="w" style="stroke:var(--sig)" d="M520 360H620V405H690"/>
+<path data-w="sw" class="w" style="stroke:var(--acc2)" d="M520 400H545M585 400H600V460"/>
+<path data-c="swarm" d="M545 400L583 400" style="stroke:var(--ink);stroke-width:3"/><circle cx="545" cy="400" r="3" class="dot"/><circle cx="585" cy="400" r="3" class="dot"/><text class="lbls" x="565" y="390" text-anchor="middle">interruptor</text>
+<path data-w="gnd" class="w" style="stroke:var(--gnd)" d="M520 460H670V450H680M440 480V680"/>
+<circle class="dot" cx="600" cy="460" r="4"/><circle class="dot" cx="440" cy="680" r="4"/>
+<text class="vb" data-v="io13" x="560" y="326" style="fill:var(--sig);font-size:11px"></text><text class="vb" data-v="io27" x="540" y="356" style="fill:var(--sig);font-size:11px"></text>
+<!-- audio -->
+<path data-w="aud" class="w" style="stroke:var(--aud)" d="M400 330H385M365 330H355M315 330H280"/>
+<path d="M383 316V344M368 316V344" style="stroke:var(--ink);stroke-width:3"/><text class="lbls" x="376" y="310" text-anchor="middle">C1</text><text class="lbls" x="388" y="358">−</text><text class="lbls" x="358" y="358">+</text>
+<rect data-c="r2" x="317" y="322" width="36" height="16" class="blk"/><text class="lbls" x="335" y="316" text-anchor="middle">R2</text>
+<circle class="dot" cx="280" cy="330" r="4"/>
+<text class="vb" data-v="c1" x="316" y="380" style="fill:var(--aud);font-size:11px"></text>
+<!-- relay module -->
+<rect x="680" y="270" width="170" height="200" rx="8" class="blk"/><text class="lbls" x="690" y="465">módulo 2 relés · puente H</text>
+<rect data-c="coil1" x="690" y="290" width="40" height="50" rx="4" style="fill:var(--bg);stroke:var(--ink)"/><text class="lbl" x="710" y="320" text-anchor="middle">RL1</text>
+<rect data-c="coil2" x="690" y="380" width="40" height="50" rx="4" style="fill:var(--bg);stroke:var(--ink)"/><text class="lbl" x="710" y="410" text-anchor="middle">RL2</text>
+<path d="M730 315H750M730 405H750" style="stroke:var(--mute);stroke-dasharray:3 3"/>
+<circle cx="770" cy="315" r="4" class="dot"/><circle cx="835" cy="300" r="4" class="dot"/><circle cx="835" cy="335" r="4" style="fill:var(--mute)"/>
+<circle cx="770" cy="405" r="4" class="dot"/><circle cx="835" cy="390" r="4" class="dot"/><circle cx="835" cy="425" r="4" style="fill:var(--mute)"/>
+<line data-c="arm1" x1="770" y1="315" x2="831" y2="301" style="stroke:var(--ink);stroke-width:3"/>
+<line data-c="arm2" x1="770" y1="405" x2="831" y2="391" style="stroke:var(--ink);stroke-width:3"/>
+<text class="lbls" x="770" y="300" text-anchor="middle" style="font-size:9px">COM</text><text class="lbls" x="845" y="296" style="font-size:9px">NC</text><text class="lbls" x="845" y="346" style="font-size:9px">NO</text>
+<text class="lbls" x="845" y="386" style="font-size:9px">NC</text><text class="lbls" x="845" y="436" style="font-size:9px">NO</text>
+<path data-w="verde1" class="w" style="stroke:var(--verde)" d="M835 300H885V400H900"/>
+<path data-w="verde2" class="w" style="stroke:var(--verde)" d="M835 390H860V520H1220V460"/>
+<text class="vb" data-v="verde1" x="890" y="490" style="fill:var(--verde);font-size:11px"></text><text class="vb" data-v="verde2" x="980" y="540" style="fill:var(--verde);font-size:11px"></text>
+<!-- detector -->
+<path data-w="det" class="w" style="stroke:var(--det)" d="M760 615H745M695 615H685M645 615H620"/>
+<rect x="697" y="607" width="46" height="16" class="blk"/><text class="lbls" x="720" y="600" text-anchor="middle">R1</text>
+<path d="M683 603V627L655 615Z" style="fill:var(--ink)"/><path d="M653 603V627" style="stroke:var(--ink);stroke-width:3"/><text class="lbls" x="668" y="598" text-anchor="middle">D1</text>
+<rect data-c="d1g" x="648" y="596" width="40" height="38" rx="6" class="glow"/>
+<rect x="530" y="595" width="90" height="70" rx="6" class="blk"/><text class="lbls" x="575" y="590" text-anchor="middle">U1 4N35</text>
+<path data-c="led" d="M598 605L612 605L605 622Z" style="fill:var(--mute)"/><path d="M598 624H612" style="stroke:var(--ink);stroke-width:2"/>
+<path d="M590 620l-14 6" style="stroke:var(--det);stroke-width:2"/><path d="M552 605V645M552 615L540 615M552 640L540 645" style="stroke:var(--ink);stroke-width:2;fill:none"/>
+<rect data-c="u1g" x="526" y="591" width="98" height="78" rx="8" class="glow"/>
+<path data-w="detout" class="w" style="stroke:var(--det)" d="M530 615H500V480"/>
+<path data-w="gnd" class="w" style="stroke:var(--gnd)" d="M530 645V680M620 645V680"/>
+<circle class="dot" cx="530" cy="680" r="4"/><circle class="dot" cx="620" cy="680" r="4"/>
+<text class="vb" data-v="io32" x="470" y="560" style="fill:var(--det);font-size:11px" text-anchor="end"></text>
+<text class="lbls" x="330" y="676">gris = GND</text>
+<!-- phones -->
+${[['p1',900,'Planta 1','Tegui Horizon E'],['p2',1080,'Planta 2','modelo ?']].map(([id,x,t,m])=>`<rect data-c="${id}" x="${x}" y="280" width="160" height="180" rx="10" class="blk"/><text class="lblb" x="${x+12}" y="306">${t}</text><text class="lbls" x="${x+12}" y="322">${m}</text>
+<g data-c="${id}ring" class="ring"><path d="M${x+120} 340a16 16 0 1 1 32 0v14l6 8h-44l6-8z" style="fill:var(--acc)"/><text class="vb" x="${x+136}" y="384" text-anchor="middle" style="fill:var(--acc)">¡RIN!</text></g>
+<text class="lbl" data-v="${id}hook" x="${x+12}" y="420"></text><text class="lbls" data-v="${id}con" x="${x+12}" y="444"></text>`).join('')}
+</svg>`;}
+$('#schemFull').innerHTML=simSVG();$('#simSvg').innerHTML=simSVG();
+
+/* ---------- SIM LOGIC ---------- */
+const base0={esp:true,mode:'selector',io13:false,io27:false,verdeAC:false,dac:null,hook1:false,hook2:false,door:false,btn:false};
+function build(o){
+  const S=[];let st={...base0,esp:o.esp==='on',mode:o.mode};const push=(t,d,p={},log)=>{st={...st,...p};S.push({t,d,st:{...st},log:log||t});};
+  const N=Math.max(1,Math.min(4,+o.n||1));
+  if(!st.esp){push('Reposo · ESP apagada','La ESP no tiene alimentación (cargador desenchufado, sin luz o averiada). IN1 e IN2 están a 0 V, así que las bobinas no tienen corriente y los contactos NC están cerrados. Los dos teléfonos quedan conectados al verde: el portero funciona exactamente como antes. El modo elegido da igual.');}
+  else if(o.mode==='normal'){push('Reposo · modo normal','Interruptor abierto (GPIO26 = HIGH por el pull-up) o «normal» elegido en la web. La ESP pone IN1 e IN2 en LOW, los relés quedan sueltos y los NC cerrados: los dos teléfonos están conectados. La ESP solo escucha el detector para el registro.');}
+  else{push('Reposo · modo selector','Interruptor cerrado (GPIO26 = LOW). La ESP pone IN1 e IN2 en HIGH: las dos bobinas tienen corriente y los NC se abren. P1 y P2 quedan desconectados del verde: si llaman, no suena nadie.',{io13:true,io27:true});}
+  const relaysOn=st.io13&&st.io27&&st.esp;
+  if(!relaysOn){
+    push('El visitante pulsa el botón del piso','La placa manda alterna por el verde. Llega a COM1 y COM2, y como los NC están cerrados pasa a los dos teléfonos: <b>suenan P1 y P2</b>. El detector también recibe la alterna (R1 → D1 → LED de U1).'+(st.esp?' La ESP ve los pulsos en GPIO32 y lo apunta en el registro, sin tocar los relés.':' Con la ESP apagada, la salida de U1 no tiene efecto.'),{verdeAC:true,btn:true});
+    push('Suelta el botón','El verde vuelve a 0 V y los timbres paran. D1 y U1 dejan de conducir; GPIO32 vuelve a 3,3 V.',{verdeAC:false,btn:false});
+    callFlow(null);
+  } else {
+    push('El visitante pulsa el botón del piso','La placa manda alterna por el verde, que llega a COM1 y COM2. Los dos relés están activados (NC abiertos), así que <b>no suena ningún teléfono</b>. La misma alterna entra al detector: R1 limita la corriente, D1 deja pasar solo el semiciclo positivo y el LED de U1 se enciende. Su fototransistor lleva GPIO32 a 0 V a cada semiciclo: <b>pulsos a 50 Hz</b>. La ESP captura la llamada.',{verdeAC:true,btn:true},'Llamada capturada en GPIO32');
+    push('Suelta el botón','El verde vuelve a 0 V y GPIO32 a 3,3 V. La ESP arranca el temporizador de espera.',{verdeAC:false,btn:false});
+    push('Espera configurable','La ESP espera los segundos configurados (p. ej. 2 s) antes de hablar. Los relés siguen activados y nadie suena.',{});
+    let chosen=null;
+    for(let v=1;v<=N&&!chosen;v++){
+      push(`Vuelta ${v} · mensaje planta 1`,'GPIO25 (DAC) reproduce «¿A qué planta desea llamar? Si es la planta 1, pulse el timbre ahora». Recorrido: GPIO25 → C1 (bloquea la continua, deja pasar el audio) → R2 → azul → amplificador de la placa → <b>altavoz de la calle</b>. Los teléfonos no lo oyen: escuchan por el amarillo, no por el azul.',{dac:'planta 1',io13:true,io27:true},`Vuelta ${v}: mensaje P1`);
+      if(o.eleccion==='durante'&&v===1){push('Pulsa durante el mensaje → se ignora','La alterna llega al verde y el detector la ve, pero los dos relés están abiertos y la ESP ignora pulsaciones mientras habla. No suena nadie.',{verdeAC:true,btn:true},'Pulsación durante mensaje ignorada');push('Suelta el botón','El mensaje sigue.',{verdeAC:false,btn:false});}
+      push(`Vuelta ${v} · ventana planta 1`,'Termina el mensaje y GPIO25 queda en alta impedancia. IN1 pasa a LOW: RL1 suelta y NC1 se cierra, así que <b>P1 queda conectado al verde</b>. RL2 sigue activado (P2 aislado). La ESP espera una pulsación durante los segundos de la ventana.',{dac:null,io13:false},`Vuelta ${v}: ventana P1`);
+      if(o.eleccion==='p1-'+v||(o.eleccion==='durante'&&v===1)){chosen=1;push('Pulsa → suena solo la planta 1','La alterna pasa por NC1 (cerrado) y <b>suena P1</b>, como una llamada normal. RL2 está abierto, así que P2 no suena. El detector ve los pulsos y la ESP fija «planta 1»: deja IN1 en LOW e IN2 en HIGH durante el tiempo de llamada.',{verdeAC:true,btn:true},'Elegida planta 1');break;}
+      push(`Vuelta ${v} · mensaje planta 2`,'Nadie pulsó en la ventana. IN1 vuelve a HIGH y RL1 abre. GPIO25 reproduce «Si es la planta 2, pulse el timbre ahora».',{io13:true,dac:'planta 2'},`Vuelta ${v}: mensaje P2`);
+      push(`Vuelta ${v} · ventana planta 2`,'IN2 pasa a LOW: RL2 suelta y NC2 se cierra, así que <b>P2 queda conectado</b>. RL1 está activado (P1 aislado).',{dac:null,io27:false},`Vuelta ${v}: ventana P2`);
+      if(o.eleccion==='p2-'+v){chosen=2;push('Pulsa → suena solo la planta 2','La alterna pasa por NC2 y <b>suena P2</b>. P1 no suena. La ESP fija «planta 2».',{verdeAC:true,btn:true},'Elegida planta 2');break;}
+      push(`Vuelta ${v} · fin de ventana P2`,'Nadie pulsó. IN2 vuelve a HIGH: los dos relés quedan activados.',{io27:true});
+    }
+    if(!chosen){push('Fin: nadie eligió',(/-2$/.test(o.eleccion)&&N<2?'Con N = 1 no hay vuelta 2. ':'')+`Tras ${N} vuelta(s) sin pulsación, todo queda como en reposo: los dos relés activados. No sonó ningún teléfono. La ESP lo apunta en el registro.`,{},'Sin elección: fin');return S;}
+    push('Suelta el botón','El timbre para. Si el visitante vuelve a pulsar, suena otra vez solo la planta elegida.',{verdeAC:false,btn:false});
+    callFlow(chosen);
+  }
+  function callFlow(ch){
+    const h1=o.descuelga==='p1'||o.descuelga==='ambos',h2=o.descuelga==='p2'||o.descuelga==='ambos';
+    if(!h1&&!h2){push('Nadie descuelga',ch?'Pasa el tiempo de llamada configurado. La ESP vuelve a poner IN1 e IN2 en HIGH: reposo del selector.':'Nadie contesta. Todo sigue en reposo.',ch?{io13:true,io27:true}:{});return;}
+    const who=h1&&h2?'P1 y P2 descuelgan':h1?'P1 descuelga':'P2 descuelga';
+    const extra=ch&&((ch===1&&h2)||(ch===2&&h1))?' Ojo: el teléfono que <b>no</b> sonó también puede descolgar y oír y hablar, porque el audio (azul y amarillo) es común. Lo aceptamos para que todo sea sencillo.':'';
+    push(who,'Al descolgar, el teléfono conecta su auricular al amarillo y su micrófono al azul. El selector no interviene en el audio.'+extra,{hook1:h1,hook2:h2});
+    push('Conversación','<b>Calle → casa</b>: micro de la calle → amplificador → <b>amarillo</b> → auricular. <b>Casa → calle</b>: micro del teléfono → <b>azul</b> → amplificador → altavoz de la calle. GPIO25 está en alta impedancia y C1 no tiene camino de continua, así que la ESP no carga la línea: tu voz llega igual que siempre.',{});
+    if(o.abre==='si'){push('Pulsa abrir','La tecla del teléfono une el <b>rojo</b> (11,8 V) con el gris, y el rojo cae a ≈ 0 V. La placa lo detecta y activa la cerradura. El selector no interviene.',{door:true},'Puerta abierta');push('Suelta abrir','El rojo vuelve a 11,8 V.',{door:false});}
+    push('Cuelga','Auricular y micrófono se desconectan del amarillo y del azul.',{hook1:false,hook2:false});
+    if(ch)push('Fin del tiempo de llamada → reposo','La ESP no sabe cuándo cuelgas (no lo mide). Cuando pasa el tiempo de llamada configurado (p. ej. 90 s), pone IN1 e IN2 en HIGH y vuelve el reposo del selector.',{io13:true,io27:true},'Reposo selector');
+  }
+  return S;
+}
+let steps=[],idx=0,timer=null;
+const opt=()=>({mode:$('#o-modo').value,esp:$('#o-esp').value,eleccion:$('#o-eleccion').value,descuelga:$('#o-descuelga').value,abre:$('#o-abre').value,n:$('#o-n').value});
+function derive(s){const rl1=s.esp&&s.io13,rl2=s.esp&&s.io27,c1=!rl1,c2=!rl2;return{rl1,rl2,c1,c2,ring1:s.verdeAC&&c1,ring2:s.verdeAC&&c2,conv:s.hook1||s.hook2};}
+function cardsFor(s){const d=derive(s);const vAC='9–12 V~';
+ return[
+ ['Placa de calle',s.btn?'PULSADOR':(s.dac?'HABLA LA ESP':d.conv?'CONVERSACIÓN':'REPOSO'),s.btn?'Manda alterna por el verde.':s.dac?`El altavoz de la calle reproduce el mensaje «${s.dac}».`:d.conv?'Amplificador pasando audio en los dos sentidos.':'Amplificador encendido, sin señal.'+(s.door?' Cerradura ACTIVADA.':'')],
+ ['RL1 (planta 1)',d.rl1?'ACTIVADO · NC ABIERTO':'SUELTO · NC CERRADO',d.rl1?'IN1 = HIGH: corriente por la bobina, el contacto se separa del NC. P1 desconectado del verde.':'IN1 = LOW (o ESP apagada): sin corriente, NC cerrado. P1 conectado al verde.'],
+ ['RL2 (planta 2)',d.rl2?'ACTIVADO · NC ABIERTO':'SUELTO · NC CERRADO',d.rl2?'IN2 = HIGH: P2 desconectado del verde.':'IN2 = LOW (o ESP apagada): P2 conectado al verde.'],
+ ['D1 1N4007',s.verdeAC?'CONDUCE A MEDIAS':'SIN TENSIÓN',s.verdeAC?'Semiciclo +: conduce (cae ≈ 0,7 V). Semiciclo −: bloquea ≈ −17 V pico (con 12 V~), protegiendo el LED de U1.':'0 V en el verde: no conduce.'],
+ ['U1 4N35',s.verdeAC?'LED ENCENDIDO':'APAGADO',s.verdeAC?('LED ≈ 15 mA pico en cada semiciclo +. Fototransistor saturado: colector (pin 5) ≈ 0,2 V.'+(s.esp?'':' Pero la ESP está apagada: no hay pull-up y no pasa nada.')):'LED apagado, transistor cortado. Pin 5 = 3,3 V por el pull-up de GPIO32.'],
+ ['C1 + R2 (audio)',s.dac?'PASA AUDIO':'EN ESPERA',s.dac?'C1 cargado a ≈ 9 V ⎓ (10,6 − 1,65). Deja pasar solo la parte alterna del DAC; R2 limita la corriente. El mensaje entra en el azul.':(s.esp?'GPIO25 en alta impedancia: no circula corriente. El azul no nota nada.':'ESP apagada: C1 bloquea la continua y el audio del azul (pocos mV) no hace conducir los diodos internos del pin.')],
+ ['ESP32 · pines',s.esp?'ENCENDIDA':'SIN ALIMENTACIÓN',s.esp?`IO13=${s.io13?'HIGH':'LOW'} · IO27=${s.io27?'HIGH':'LOW'} · IO25=${s.dac?'DAC audio':'alta Z'} · IO32=${s.verdeAC?'pulsos 50 Hz':'HIGH'} · IO26=${s.mode==='selector'?'LOW (selector)':'HIGH (normal)'}`:'Todos los pines a 0 V. Relés sueltos.'],
+ ['Planta 1',d.ring1?'SUENA':s.hook1?'DESCOLGADO':'COLGADO',`${d.c1?'Conectado':'Aislado'} del verde. ${s.hook1?'Oye por el amarillo y habla por el azul.':''}`],
+ ['Planta 2',d.ring2?'SUENA':s.hook2?'DESCOLGADO':'COLGADO',`${d.c2?'Conectado':'Aislado'} del verde. ${s.hook2?'Oye por el amarillo y habla por el azul.':''}`],
+ ];}
+function voltsFor(s){const d=derive(s);const ac='9–12 V~',T=(t,c)=>`<span class="tag ${c}">${t}</span>`;
+ return[
+ ['Verde (calle)',s.verdeAC?ac:'0 V',s.verdeAC?T('doc · prueba 12','t-pend'):T('medido','t-med')],
+ ['Verde P1',d.c1?(s.verdeAC?ac:'0 V'):'0 V (aislado)',T('calc','t-calc')],
+ ['Verde P2',d.c2?(s.verdeAC?ac:'0 V'):'0 V (aislado)',T('calc','t-calc')],
+ ['Rojo',s.door?'≈ 0 V':'11,8 V ⎓',s.door?T('doc','t-doc'):T('medido','t-med')],
+ ['Azul',`10,6 V ⎓${s.dac?' + mensaje':d.conv?' + voz':''}`,T('medido','t-med')],
+ ['Amarillo',`9,9 V ⎓${d.conv?' + audio calle':''}`,T('medido','t-med')],
+ ['Gris','0 V (referencia)',T('ref','t-med')],
+ ['5 V ESP / relés',s.esp?'5 V ⎓':'0 V',T('cargador','t-doc')],
+ ['GPIO32',!s.esp?'0 V':s.verdeAC?'pulsos 0 / 3,3 V':'3,3 V',T('calc','t-calc')],
+ ['C1 (+ a −)',s.esp&&s.dac?'≈ 9 V ⎓':'—',T('calc','t-calc')],
+ ];}
+function applySVG(root,s){const d=derive(s);const set=(k,on,cls)=>$$(`[data-w="${k}"]`,root).forEach(e=>{e.classList.remove('hot','ac','aud','dc');if(on){e.classList.add('hot');if(cls)e.classList.add(cls);}});
+ set('verdeIn',s.verdeAC,'ac');set('verde1',s.verdeAC&&d.c1,'ac');set('verde2',s.verdeAC&&d.c2,'ac');set('det',s.verdeAC,'ac');set('detout',s.verdeAC&&s.esp,'ac');
+ set('rojo',s.door||true,s.door?'':'dc');set('azul',true,(s.dac||d.conv)?'aud':'dc');set('amarillo',true,d.conv?'aud':'dc');set('gris',true,'');
+ set('aud',!!s.dac,'aud');set('v5',s.esp,'dc');set('usb',s.esp,'dc');set('in1',s.esp&&s.io13,'dc');set('in2',s.esp&&s.io27,'dc');set('gnd',s.esp,'');set('sw',s.esp,'');
+ const arm=(k,on)=>{const e=root.querySelector(`[data-c="${k}"]`);e.setAttribute('y2',on?331:301);e.style.stroke=on?'var(--acc)':'var(--ink)';};arm('arm1',d.rl1);arm('arm2',d.rl2);
+ root.querySelector('[data-c="coil1"]').style.fill=d.rl1?'var(--acc)':'var(--bg)';root.querySelector('[data-c="coil2"]').style.fill=d.rl2?'var(--acc)':'var(--bg)';
+ root.querySelector('[data-c="btn"]').style.fill=s.btn?'var(--acc)':'var(--bg)';root.querySelector('[data-c="lock"]').style.fill=s.door?'var(--acc)':'var(--bg)';
+ root.querySelector('[data-c="spkw"]').style.opacity=(s.dac||d.conv)?1:0;root.querySelector('[data-c="micw"]').style.opacity=d.conv?1:0;
+ root.querySelector('[data-c="d1g"]').classList.toggle('on',s.verdeAC);root.querySelector('[data-c="u1g"]').classList.toggle('on',s.verdeAC);root.querySelector('[data-c="led"]').style.fill=s.verdeAC?'var(--det)':'var(--mute)';
+ root.querySelector('[data-c="swarm"]').setAttribute('y2',s.mode==='selector'?400:384);root.querySelector('[data-c="esp"]').style.opacity=s.esp?1:.4;
+ root.querySelector('[data-c="p1ring"]').classList.toggle('on',d.ring1);root.querySelector('[data-c="p2ring"]').classList.toggle('on',d.ring2);
+ const V=(k,t)=>{const e=root.querySelector(`[data-v="${k}"]`);if(e)e.textContent=t;};
+ V('rojo',s.door?'rojo ≈ 0 V (abriendo)':'rojo 11,8 V⎓');V('azul','azul 10,6 V⎓'+(s.dac?' + mensaje':d.conv?' + voz':''));V('amarillo','amarillo 9,9 V⎓'+(d.conv?' + audio calle':''));V('gris','gris 0 V (masa)');
+ V('verdeIn',s.verdeAC?'verde 9–12 V~':'verde 0 V');V('verde1',d.c1?(s.verdeAC?'→P1 9–12 V~':'→P1 conectado'):'→P1 aislado');V('verde2',d.c2?(s.verdeAC?'→P2 9–12 V~':'→P2 conectado'):'→P2 aislado');
+ V('io13',s.esp?(s.io13?'HIGH':'LOW'):'');V('io27',s.esp?(s.io27?'HIGH':'LOW'):'');V('io32',!s.esp?'':s.verdeAC?'IO32 pulsos':'IO32 3,3 V');V('c1',s.esp&&s.dac?'C1 ≈ 9 V⎓':'');
+ V('espst',s.esp?(s.mode==='selector'?'modo selector':'modo normal'):'APAGADA');
+ V('p1hook',s.hook1?'☎ descolgado':'colgado');V('p2hook',s.hook2?'☎ descolgado':'colgado');V('p1con',d.c1?'conectado al verde':'aislado del verde');V('p2con',d.c2?'conectado al verde':'aislado del verde');}
+function show(){const S=steps[idx],prev=steps[idx-1];$('#sCnt').textContent=`Paso ${idx+1} / ${steps.length}`;$('#sTitle').textContent=S.t;$('#sDesc').innerHTML=S.d;
+ applySVG($('#simSvg svg'),S.st);
+ const cs=cardsFor(S.st),pc=prev?cardsFor(prev.st):cs;$('#sCards').innerHTML=cs.map((c,i)=>`<div class="cc ${pc[i][1]!==c[1]||pc[i][2]!==c[2]?'chg':''}"><b>${c[0]}</b><div class="st" style="color:var(--acc)">${c[1]}</div><div>${c[2]}</div></div>`).join('');
+ const vs=voltsFor(S.st),pv=prev?voltsFor(prev.st):vs;$('#sVolt').innerHTML='<tr><th>Punto (vs gris)</th><th>Valor</th><th>Origen</th></tr>'+vs.map((v,i)=>`<tr class="${pv[i][1]!==v[1]?'chg':''}"><td>${v[0]}</td><td class="mono">${v[1]}</td><td>${v[2]}</td></tr>`).join('');
+ $('#sLog').innerHTML=steps.slice(0,idx+1).map((s,i)=>`<div class="${i===idx?'cur':''}">${String(i+1).padStart(2,'0')} · ${s.log}</div>`).join('');$('#sLog').scrollTop=1e6;
+ $('#bPrev').disabled=idx===0;$('#bNext').disabled=idx===steps.length-1;}
+function rebuild(){stopAuto();steps=build(opt());idx=0;show();}
+function stopAuto(){clearInterval(timer);timer=null;$('#bAuto').textContent='▶ Auto';}
+$('#bNext').onclick=()=>{if(idx<steps.length-1){idx++;show();}};$('#bPrev').onclick=()=>{if(idx>0){idx--;show();}};$('#bReset').onclick=rebuild;
+$('#bAuto').onclick=()=>{if(timer)return stopAuto();$('#bAuto').textContent='❚❚ Pausa';timer=setInterval(()=>{if(idx>=steps.length-1)return stopAuto();idx++;show();},2600);};
+$$('#simOpts select,#simOpts input').forEach(e=>e.addEventListener('change',rebuild));
+applySVG($('#schemFull svg'),{...base0,io13:true,io27:true});
+rebuild();
+$$('.zoom').forEach(setupZoom);
+addEventListener('hashchange',()=>$$('.zoom').forEach(z=>z._apply&&z._apply()));
+</script>

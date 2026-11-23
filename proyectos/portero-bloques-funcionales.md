@@ -1,10 +1,12 @@
 ---
 title: Portero automático — bloques funcionales
 created: 2026-09-15
-updated: 2026-09-15
+updated: 2026-11-23
 tags: [portero-automatico, domotica, arquitectura]
 zona: tecnico
 ---
+
+> **Estado a 2026-11-23.** Planteamiento de septiembre. El diseño montado no genera la llamada: deja pasar la del portal por el contacto NC del relé de la planta elegida. Se alimenta con un cargador de 5 V, no de 230 V, y su masa va unida al gris. Ver [[portero-selector-revision-2]] y [[portero-hilos-y-senales]].
 
 Qué funciones necesita el interceptor de [[portero-automatico-timbre-unico]], sin elegir piezas. Los valores concretos salen de [[portero-comprobaciones-en-sitio]].
 
@@ -27,4 +29,5 @@ Requisito transversal: todo lo que toca los hilos del portero va aislado galván
 
 - [[portero-automatico-timbre-unico]]
 - [[portero-comprobaciones-en-sitio]]
+- [[portero-selector-revision-2]]
 - [[_index]]

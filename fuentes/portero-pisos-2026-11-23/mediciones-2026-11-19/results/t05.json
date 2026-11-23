@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "nota": "Continua oscila por debajo de los 40. Rojo con rojo, negro amarillo en continua a escala 200mV. ",
+    "vac": "0.01",
+    "vdc": "40"
+  },
+  "test": "05",
+  "updatedAt": "2026-11-19T18:55:44.488Z"
+}
