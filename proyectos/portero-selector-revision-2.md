@@ -134,6 +134,7 @@ Orden recomendado: mover D1 a antiparalelo → H1–H3 → **F4** (incluida la d
 
 - **Se mantiene el módulo de relés ZS-2-RELAY-1.** El cambio a estado sólido no compensa el trabajo para un riesgo que puede no darse. Si algún día una planta deja de sonar a ratos, el sustituto es el AQY414EH o el AQY412EH en DIP-4: se quitan los cables IO13 → borna 8 e IO27 → borna 7, se añaden 2 chips y 2 resistencias de 390 Ω, y las bornas 8 y 7 pasan a recibir los verdes del VEO y del Tegui.
 - **D1 es un 1N4007** según el catálogo de compra del kit («Diodo rectifier (1N4007)»). El 0,42 V medido puede deberse a la poca corriente del modo diodo del multímetro (juicio, sin ficha del MAS830). En antiparalelo da igual: H0 deja de ser necesaria.
+- **Programa en dos fases (2026-11-24).** Primero un programa solo de pruebas (relés, registro de cada pulsación en milisegundos y tono por el DAC); el selector se escribe después, con los datos de F4. Código en el repositorio privado `blogNetting/portero-selector` (Arduino-ESP32 3.3 con PlatformIO). La primera grabación se hace por USB desde Chrome con la herramienta web de Espressif; las siguientes, por WiFi desde la página de la ESP. La ESP se conecta al WiFi de casa con IP fija 192.168.1.222 y crea además su propia red de respaldo (192.168.4.1). Las claves no van al wiki ni a git.
 
 ## Enlaces
 
