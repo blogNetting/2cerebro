@@ -1,7 +1,7 @@
 ---
 title: Portero automático — timbre único para dos unidades
 created: 2026-09-14
-updated: 2026-11-23
+updated: 2026-11-25
 tags: [domotica, alquiler, portero-automatico]
 zona: tecnico
 ---
@@ -18,7 +18,7 @@ Contexto físico: instalación de portero, elemento común hasta la entrada de l
 
 ### Contexto técnico del edificio
 
-- Portero automático **analógico**, gama clásica Fermax de hace ~30 años. **Sin videoportero.**
+- Portero automático **analógico** ~~gama clásica Fermax de hace ~30 años~~ **Tegui Serie Europa con grupo fónico EGF-1** (corregido 2026-11-25, ver [[portero-hilos-y-senales]]). **Sin videoportero.**
 - Edificio de 4 alturas: plantas 1ª-3ª con 4 viviendas cada una; planta 4ª son los dúplex, 6 unidades en total (incluye la 5ª planta, que es toda dúplex).
 - El problema es solo en la unidad propia (4ºB): una única línea de portero para las dos "habitaciones" (apartamentos) independientes en que se ha dividido.
 
@@ -33,9 +33,9 @@ Un dispositivo intermedio capta la señal de llamada del portal, no la deja pasa
 **c) Interceptor con locución de enrutado (IVR)** — la elegida, desarrollada abajo.
 Se intercepta la llamada del portero antes de que timbre dentro. Un mensaje de voz indica al visitante cómo elegir destino, y el dispositivo enruta la llamada solo al telefonillo del apartamento correspondiente.
 
-### Cómo funciona la señal (Fermax analógico de ~30 años)
+### Cómo funciona la señal (Tegui Serie Europa, 4+n convencional)
 
-Sistema **4+N** convencional: 4 hilos comunes para todo el edificio + 1 hilo de llamada exclusivo por vivienda. En la caja llegan **5 hilos** (medido). Que la placa sea Fermax lo dice el usuario, sin verificar abriéndola. Tabla de terminales Fermax; **Tegui numera distinto** (1 llamada, 2 masa, 3 abrepuertas, 4 micrófono, 5 altavoz), con la correspondencia y los colores en [[portero-hilos-y-senales]]:
+Sistema **4+N** convencional: 4 hilos comunes para todo el edificio + 1 hilo de llamada exclusivo por vivienda. En la caja llegan **5 hilos** (medido). ~~Que la placa sea Fermax lo dice el usuario~~ La placa es Tegui Serie Europa (corregido 2026-11-25). Tabla de terminales del teléfono Fermax VEO; **Tegui numera distinto** (1 llamada, 2 masa, 3 abrepuertas, 4 micrófono, 5 altavoz), con la correspondencia y los colores en [[portero-hilos-y-senales]]:
 
 | Term | Función |
 |---|---|
@@ -45,7 +45,7 @@ Sistema **4+N** convencional: 4 hilos comunes para todo el edificio + 1 hilo de 
 | 4 | **Llamada** (hilo individual de la vivienda) |
 | 6 | Altavoz |
 
-~~El sistema es de 12V en alterna. La llamada llega como ~12V AC entre terminal 4 y 3.~~ **Falso (corregido 2026-11-23):** las líneas comunes están en continua (rojo 11,84 V, azul 10,6 V, amarillo 9,95 V contra gris, medido) y la llamada es **electrónica, 8–12 Vpp** según el manual Fermax del teléfono Citymax 4+N. Que la línea es electrónica se deduce de que en ella suena el Tegui 0E7020, de llamada electrónica. Detalle y fuentes en [[portero-hilos-y-senales]]. No hay direccionamiento digital ni teclado en la placa.
+~~El sistema es de 12V en alterna. La llamada llega como ~12V AC entre terminal 4 y 3.~~ **Falso (corregido 2026-11-23):** las líneas comunes están en continua (rojo 11,84 V, azul 10,6 V, amarillo 9,95 V contra gris, medido) y la llamada es **electrónica**; ~~8–12 Vpp según el manual Fermax del teléfono Citymax 4+N~~ el nivel de esta instalación Tegui está por medir (corregido 2026-11-25). Que la línea es electrónica se deduce de que en ella suena el Tegui 0E7020, de llamada electrónica. Detalle y fuentes en [[portero-hilos-y-senales]]. No hay direccionamiento digital ni teclado en la placa.
 
 **Dato crítico: no hay ningún raíl de alimentación aprovechable en la caja.** Los 4 comunes son abrepuertas, micro, común y altavoz — líneas de señal (las de audio pueden llevar algo de bias del amplificador de la placa, pero nada de lo que alimentar electrónica). El telefonillo antiguo es pasivo. Los 12VAC viven en la fuente del portal, en zona común. Consecuencia: **hay que llevar alimentación propia al dispositivo** (en el diseño montado, un cargador de 5 V cuyo cable va por el tubo del portero; ver [[portero-selector-revision-2]]) — no hay nada que "cosechar" del bus, ni para un MCU de 1 mA. Aprovechar la energía de la propia señal de llamada tampoco sirve: solo está viva mientras el visitante aprieta, y el dispositivo necesita hablar durante segundos después de que la suelte.
 
@@ -57,7 +57,7 @@ Esto tiene dos implicaciones:
 
 ### Escenario c) en detalle: inyectar audio y esquema de pulsación
 
-**En un 4+N no existe "estado de llamada".** La placa es un amplificador tonto con N pulsadores. Los terminales 2 (micro) y 6 (altavoz) son un **bus de audio permanentemente activo** para todo el edificio: descuelgas cuando quieras y hablas con el portal sin que nadie haya llamado. Lo único que hace el hilo 4 es sonar el zumbador de esa vivienda.
+**En un 4+N no existe "estado de llamada".** La placa es un amplificador con N pulsadores; ~~la llamada sale de la placa~~ **la llamada la genera el alimentador del portal (E-14, borna 20) y el pulsador solo la conduce al hilo de la vivienda** (corregido 2026-11-25, ver [[portero-hilos-y-senales]]). Los terminales 2 (micro) y 6 (altavoz) son un **bus de audio permanentemente activo** para todo el edificio: descuelgas cuando quieras y hablas con el portal sin que nadie haya llamado. Lo único que hace el hilo 4 es sonar el zumbador de esa vivienda.
 
 Consecuencia: **no hay que simular ningún descolgado ni negociar nada con la placa.** Para hablarle al visitante basta con **inyectar audio en el terminal 2** — el de micrófono, que es el que alimenta el altavoz de la placa (el 6 es la dirección contraria: micro de la placa hacia el telefonillo). El interceptor inyecta, y al terminar **desconecta su salida con un contacto de relé** para no cargar la línea mientras habla el inquilino.
 

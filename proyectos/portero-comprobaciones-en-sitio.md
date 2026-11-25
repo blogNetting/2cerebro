@@ -1,7 +1,7 @@
 ---
 title: Portero automático — comprobaciones en sitio
 created: 2026-09-15
-updated: 2026-11-23
+updated: 2026-11-25
 tags: [portero-automatico, mediciones, domotica]
 zona: tecnico
 ---
@@ -15,7 +15,7 @@ Procedimiento de comprobaciones y mediciones sobre la instalación real que vali
 - **Bloqueante**: si el resultado no es el esperado, cambia el diseño.
 - **Dimensionado**: no tumba nada, da los valores para elegir componentes.
 - Los pasos van en **orden de ejecución**: los posteriores necesitan saber qué color es cada terminal.
-- Los valores esperados salen del [manual oficial Fermax Citymax 4+N, cod. 97771b V02_19](https://fermax.com/.doc-download?type=handbook&slug=97771b-telefono-citymax-4-n-proy-265-ru-arab-es-en-fr-de-ar-ru&lang=es). Es una revisión de 2019 y la instalación tiene ~30 años: el mapa de terminales es fiable, los voltajes se miden.
+- ~~Los valores esperados salen del manual Fermax~~ **Corregido 2026-11-25:** la placa es Tegui Serie Europa (EGF-1); los valores Tegui están en [[portero-hilos-y-senales]]. Lo que sigue citando Fermax es de su [manual oficial Fermax Citymax 4+N, cod. 97771b V02_19](https://fermax.com/.doc-download?type=handbook&slug=97771b-telefono-citymax-4-n-proy-265-ru-arab-es-en-fr-de-ar-ru&lang=es). Es una revisión de 2019 y la instalación tiene ~30 años: el mapa de terminales es fiable, los voltajes se miden.
 
 ## Material
 
@@ -118,7 +118,7 @@ Polímetro: negra en COM, roja en VΩ (ver preparación).
 3. Apuntar Vpp, frecuencia, forma (senoidal, cuadrada, pulsos) y si es simétrica respecto a 0 V.
 4. Polímetro: negra en 3, roja en 4, rueda en **V~ 20 V** (autorrango: V~). Ayudante: otra pulsación larga. Apuntar la lectura. Es orientativa; el valor bueno es el del osciloscopio.
 
-Esperado según manual: 8–12 Vpp. La nota del portero dice "12 V AC"; se corrige con este dato.
+~~Esperado según manual: 8–12 Vpp~~ Ese dato era de Fermax; para el Tegui E-14 no hay nivel en el manual: **lo que salga aquí es el dato** (corregido 2026-11-25).
 
 **4b. ¿La señal sigue al pulsador?**
 

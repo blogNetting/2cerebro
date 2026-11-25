@@ -442,3 +442,9 @@ Los temas transversales a todos mis proyectos y de criterio personal (hoy DevOps
 
 - Incidente: en [[portero-selector-revision-2]], el usuario preguntó tres veces «¿seguro?» sobre añadir un diodo D2 en antiparalelo dejando D1 en serie. Claude comprobó que D2 iba en su sitio (patillaje, cable, medida) y respondió «seguro». No recorrió el semiciclo negativo: D1 en serie bloqueaba el retorno de la corriente, que era la otra función del antiparalelo. Lo detectó una revisión externa; la solución correcta es puentear D1 y añadir D2.
 - Regla general grabada en `~/.claude/rules/comportamiento.md`, sección «"¿Seguro?" obliga a verificar el conjunto, no la parte fácil», y en la memoria.
+
+## 2026-11-25 — La placa de calle es Tegui Serie Europa, no Fermax
+
+- Corrección del usuario: placa Tegui Serie Europa 4+n convencional, grupo fónico EGF-1 (0E5501) o EGF-21, cassettes 006101 y 006100. Referencias comprobadas en el catálogo oficial y manuales descargados a `fuentes/portero-pisos-2026-11-23/manuales/`.
+- Corregido en [[portero-hilos-y-senales]], [[portero-automatico-timbre-unico]], [[portero-comprobaciones-en-sitio]] y [[portero-selector-revision-2]]: marca, origen de la llamada (el alimentador, no la placa), nivel de llamada «8–12 Vpp» (era de Fermax) y mando de volumen de placa del EGF-1 para el nivel del mensaje.
+

@@ -1,7 +1,7 @@
 ---
 title: Selector de planta — revisión 2 (2Cerebro)
 created: 2026-11-23
-updated: 2026-11-23
+updated: 2026-11-25
 tags: [portero-automatico, esp32, revision]
 zona: tecnico
 ---
@@ -22,7 +22,7 @@ Hechos del portero en los que se apoya: [[portero-hilos-y-senales]]. Proyecto: [
 
 ## Errores confirmados en los HTML
 
-1. **Tipo de llamada.** Presentan «alterna de 50 Hz (≈ 12 V~)» como hipótesis principal, calculan el detector para 17 V de pico y citan el kit 6201 como «llamada en 12 V alterna». La línea es de llamada electrónica, 8–12 Vpp (ver [[portero-hilos-y-senales]]). El cálculo de 15 mA no aplica; el detector sigue funcionando (≈ 2–4 mA en el LED, cálculo propio).
+1. **Tipo de llamada.** Presentan «alterna de 50 Hz (≈ 12 V~)» como hipótesis principal, calculan el detector para 17 V de pico y citan el kit 6201 como «llamada en 12 V alterna». La línea es de llamada electrónica (~~8–12 Vpp~~: dato de Fermax; en esta placa Tegui el nivel está por medir, corregido 2026-11-25; ver [[portero-hilos-y-senales]]). El cálculo de 15 mA no aplica; el detector sigue funcionando (≈ 2–4 mA en el LED, cálculo propio).
 2. **«Si la ESP se cuelga, los relés sueltan»: falso.** En modo selector, en reposo, IN1 e IN2 están en alto. Con el programa colgado se quedan así y no suena nadie.
 3. **SW2 del VEO**: el selector dice que el manual no indica la posición. Su tabla sí distingue modelos E y Z: en esta línea va en E.
 4. **Prueba 16** de «Pruebas portero Fermax»: pide en el Tegui los bornes 1, 2, 3, 4 y 6. El Tegui usa 1–5.
@@ -41,19 +41,19 @@ Hechos del portero en los que se apoya: [[portero-hilos-y-senales]]. Proyecto: [
 - **Watchdog** (vigilante que reinicia la ESP si el programa se bloquea), con contador de reinicios en memoria RTC: si hay varios reinicios seguidos en poco tiempo, arrancar en modo normal con los relés sueltos. Un reinicio simple vuelve a activar los relés en ≈ 1 s.
 - **D1 en antiparalelo** (ya decidido en «Pruebas del Cerebro», pruebas H1–H3): limita la inversa del LED a una caída de diodo. En esa posición sirve cualquier diodo, también un Schottky. D1 marcó 0,42 V, bajo para un 1N4007: mirar el código impreso o medir otro del kit.
 - **Relés: el contacto de reposo debe ser NC**, para que un fallo deje sonar los dos teléfonos. Descartados como sustitutos: los reed estándar, que son normalmente abiertos (NO), y el CPC1014N: «Solid State Photo-Coupled Relay (Photorelay) SPST-NO (1 Form A)», además «CPC1014N is Obsolete» ([Digi-Key](https://www.digikey.com/en/products/detail/ixys-integrated-circuits-division/CPC1014N/1973068), leído en Chrome el 2026-11-23). El AQV414 sí es «1 Form B», normalmente cerrado ([Panasonic](https://na.industrial.panasonic.com/products/relays-contactors/lineup/semiconductor-relays/series/12495/model/12506)).
-- **Relés del módulo**: confirmado con foto del módulo propio (2026-11-23): «QX73-C-S», «DC5V», «12A/125V~ · 12A/28V⎓ · 7A/250V~»; logo de marca ilegible (parecido a «NJK»). Son relés de potencia, no Songle SRD ni «QXT3-C-5». No se ha encontrado ficha con el material de contacto ni la carga mínima ([DatasheetCafe](https://datasheetcafe.com/qx73-c-s-datasheet-pdf/) solo da «Microminiature relay, 12A switching capability»). Para relés de potencia, Finder: «a 16 A Finder power relay has a specified minimum switching load of 10 V / 10 mA / 1000 mW» (un relé de potencia de 16 A tiene una carga mínima de 10 V / 10 mA / 1000 mW; [Finder](https://www.findernet.com/en/uk/news/relay-contact-materials-does-it-matter/)). La llamada (8–12 Vpp, pocos mA) queda por debajo. El material de contacto de estos relés no está impreso ni comprobado.
+- **Relés del módulo**: confirmado con foto del módulo propio (2026-11-23): «QX73-C-S», «DC5V», «12A/125V~ · 12A/28V⎓ · 7A/250V~»; logo de marca ilegible (parecido a «NJK»). Son relés de potencia, no Songle SRD ni «QXT3-C-5». No se ha encontrado ficha con el material de contacto ni la carga mínima ([DatasheetCafe](https://datasheetcafe.com/qx73-c-s-datasheet-pdf/) solo da «Microminiature relay, 12A switching capability»). Para relés de potencia, Finder: «a 16 A Finder power relay has a specified minimum switching load of 10 V / 10 mA / 1000 mW» (un relé de potencia de 16 A tiene una carga mínima de 10 V / 10 mA / 1000 mW; [Finder](https://www.findernet.com/en/uk/news/relay-contact-materials-does-it-matter/)). La llamada (pocos mA; ~~8–12 Vpp~~ era dato de Fermax, nivel Tegui por medir) queda por debajo. El material de contacto de estos relés no está impreso ni comprobado.
 - **Relés NC de estado sólido** (PhotoMOS u OptoMOS, si se cambian). Todos comprobados en la fuente con Chrome el 2026-11-23:
   - AQV414: «1 Form B» ([Panasonic](https://na.industrial.panasonic.com/products/relays-contactors/lineup/semiconductor-relays/series/12495/model/12506)).
   - AQY414EH: «AQY414EH 1 Form B DIP4 Through hole terminal AC/DC 400 0.12» ([Panasonic](https://industry.panasonic.com/ap/en/products/control/relay/photomos/ge1b_aqy41_e)). De patillas pasantes: se puede soldar en placa perforada.
   - CPC1117N: «SPST-NC (1 Form B) 4-SOP» ([Digi-Key](https://www.digikey.ca/en/products/detail/littelfuse-inc/CPC1117N/1280728)). De montaje superficial.
   - LCB110: «Normally Closed Relays Series: 1-Form-B», con estado «Not for New Designs» (no recomendado para diseños nuevos) ([Littelfuse](https://www.littelfuse.com/products/power-semiconductors-control-ics/solid-state-relays/optomos-relays/normally-closed-relays/1-form-b/lcb110)).
 - **Relé de señal electromecánico**: Omron G5V-2, DPDT (dos contactos conmutados, con NC), «Contact material Ag + Au-alloy» (plata con aleación de oro) y tasa de fallo de referencia medida con «10 μA resistive load at 10 mVDC» (10 µA a 10 mV de continua) ([ficha Omron](https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_2.pdf)). No cabe en el módulo ZS-2-RELAY-1, que tiene otra huella.
-- **Nivel del mensaje**: si satura incluso con R2 = 100 kΩ, pasar de resistencia en serie a divisor resistivo a masa.
+- **Nivel del mensaje**: si satura incluso con R2 = 100 kΩ, pasar de resistencia en serie a divisor resistivo a masa. **Si suena bajo** (prueba del 2026-11-25 con un receptor Bluetooth: se oye bajo al 100 %): primero bajar R2 por pasos; después, el mando «Volumen de placa» del EGF-1, que regula lo que entra por el azul hacia la calle (ver [[portero-hilos-y-senales]]), sabiendo que está en la placa común y afecta a todos los vecinos.
 - **C1 de 10 µF**: no desoldarlo antes de oírlo en la pared. Si suena un golpe, primero alargar la rampa del DAC y dejarlo fijo en 1,65 V entre frases. Solo si sigue molestando, cambiar a 1 µF.
 - **Condensador de 100 µF en 5 V–GND junto a la ESP**: ponerlo (está en el kit). Motivo: picos rápidos de corriente del WiFi y de los relés a través de ≈ 10 m de cable y del cargador. La caída en continua del cable es despreciable (≈ 0,07 V a 0,5 A con 2,5 mm²).
 - **SW1 del VEO**: empezar en masa común. La tabla T-71U pide masas separadas para Fermax 20440/21100, pero el Tegui de esta línea funciona con masas unidas. Etiquetas en el dibujo del manual VEO (comprobado renderizando la página): **«U-» = «Masa común»** y **«F+» = «Masas separadas»** («Anlagenbetrieb mit Plus»). El «U− / F−» de «Pruebas del Cerebro» y del chat original es una errata: la posición buena es U-.
 - **Tensiones del portero frente a la ESP (3,3 V).** Ningún pin recibe tensión del portero:
-  - Verde (8–12 Vpp): pasa por el 4N35; el ESP solo ve su transistor.
+  - Verde (llamada electrónica; nivel por medir): pasa por el 4N35; el ESP solo ve su transistor.
   - Azul (10,6 V⎓): la continua la bloquea C1 (50 V). Los saltos (al conectar, al descolgar) pasan por R2 de 50 kΩ: ≈ 0,2 mA como mucho y menos de un segundo (cálculo propio). Sin comprobar en la ficha del ESP32 la corriente que admite un pin.
   - Gris: es la masa del ESP, a propósito, como referencia común.
   - Puentes del módulo en COM–H: además de la lógica, evitan que la entrada IN quede tirada a 5 V hacia el pin del ESP, como pasaría en COM–L (deducido del funcionamiento típico de estos módulos; esquema del ZS-2-RELAY-1 no visto).
