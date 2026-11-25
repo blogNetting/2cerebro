@@ -15,7 +15,7 @@ Trabajo con fecha de fin. Mayoritariamente técnico.
 - [[portero-bloques-funcionales]] — funciones que necesita el interceptor del portero (detección, conmutación, generador de llamada, locuciones, control), sin elegir piezas
 - [[portero-comprobaciones-en-sitio]] — checklist de mediciones en la instalación real (topología, colores, hilo 4, audio, espacio) que validan o tumban el diseño del portero
 - [[portero-hilos-y-senales]] — portero 4+N del 4ºB comprobado: placa Tegui Serie Europa (EGF-1, 18 pulsadores), colores y bornes Fermax/Tegui, tensiones medidas el 19-11-2026, llamada electrónica (no 50 Hz, nivel por medir), volumen de placa y audio hacia la calle
-- [[portero-selector-revision-2]] — revisión 2 (2Cerebro) del selector de planta: errores de los HTML, conclusiones técnicas (watchdog, detector, relés NC) y las 4 comprobaciones físicas que quedan
+- [[portero-selector-revision-2]] — revisión 2 (2Cerebro) del selector de planta: errores de los HTML, conclusiones técnicas (watchdog, detector, relés NC) las 4 comprobaciones físicas, sus resultados y el plan de prueba en el portal con la versión 1.6 (C1, R2 ≈ 3,1 kΩ, zumbido del cargador, carga del azul)
 - [[viaje-londres-diciembre-2026]] — hub del viaje a Londres del 4 al 9 dic 2026: vuelos ya reservados, estado y frentes de trabajo (alojamiento, transporte, ETA)
 - [[londres-alojamiento-diciembre-2026]] — criterios y filtros de la búsqueda de alojamiento, resultado en una página y comparativa A (5 noches) frente a B (4 noches + Gatwick)
 - [[londres-alojamiento-fichas-londres]] — ocho finalistas en Londres con tabla exacta de tarifas de Booking, condiciones, fotos y enlaces
